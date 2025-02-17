@@ -323,7 +323,15 @@
     - ServiceBoardsStatic
     - CargoBoardsStatic
     #- MedicalBoardsStatic - Goobstation - Moved to Scifab and Medfab
-    - EngineeringBoardsStatic
+    #- EngineeringBoardsStatic - Goobstation - Moved to Scifab and Engifab
+    - CircuitFloorsStatic
+    #- Impr Packs
+    - ImpCoffeeMachineCircuitboard #imp
+    # Goobstation Packs
+    - SharedBoardsStatic
+    - MedicalBoardsStaticGoob
+    - SecurityBoardsStaticGoob
+    - ServiceBoardsStaticGoob
     dynamicPacks:
     # <Trauma>
     - SharedBoards

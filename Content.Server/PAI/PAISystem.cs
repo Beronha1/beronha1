@@ -67,6 +67,12 @@ public sealed partial class PAISystem : EntitySystem
 
     private void OnMicrowaved(EntityUid uid, PAIComponent comp, BeingMicrowavedEvent args)
     {
+
+        // Frontier: only scramble pAI names when irradiated
+        if (!args.BeingIrradiated)
+            return;
+        // End Frontier
+
         // name will always be scrambled whether it gets bricked or not, this is the reward
         ScrambleName(uid, comp);
 

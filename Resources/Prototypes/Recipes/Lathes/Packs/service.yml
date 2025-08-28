@@ -41,6 +41,8 @@
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - KitchenAssemblerMachineCircuitboard # Frontier
+  - ElectricRangeMachineCircuitboard # Frontier
   - SmartFridgeCircuitboard
 
 ## Dynamic

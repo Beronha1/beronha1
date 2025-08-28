@@ -5,7 +5,7 @@ namespace Content.Shared.Placeable;
 
 /// <summary>
 /// Tracks placed entities
-/// Subscribe to <see cref="ItemPlacedEvent"/> or <see cref="ItemRemovedEvent"/> to do things when items or placed or removed.
+/// Subscribe to <see cref="ItemPlacedEvent"/> or <see cref="ItemRemovedEvent"/> to do things when items are placed or removed.
 /// </summary>
 public sealed partial class ItemPlacerSystem : EntitySystem
 {
@@ -41,6 +41,8 @@ public sealed partial class ItemPlacerSystem : EntitySystem
         if (comp.MaxEntities > 0 && count >= (comp.MaxEntities - 1))
         {
             // Don't let any more items be placed if it's reached its limit.
+            if (TryComp<PlaceableSurfaceComponent>(uid, out var placeable)) // Frontier: cache last placeable status
+                comp.LastPlaceable = placeable.IsPlaceable; // Frontier
             _placeableSurface.SetPlaceable(uid, false);
         }
     }
@@ -55,7 +57,14 @@ public sealed partial class ItemPlacerSystem : EntitySystem
         var ev = new ItemRemovedEvent(args.OtherEntity);
         RaiseLocalEvent(uid, ref ev);
 
-        _placeableSurface.SetPlaceable(uid, true);
+        // Frontier: reset placeable status to last known value
+        if (comp.LastPlaceable != null)
+        {
+            _placeableSurface.SetPlaceable(uid, comp.LastPlaceable.Value);
+            comp.LastPlaceable = null;
+        }
+        // End Frontier
+        //_placeableSurface.SetPlaceable(uid, true); // Frontier
     }
 }
 

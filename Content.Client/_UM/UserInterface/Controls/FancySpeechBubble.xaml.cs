@@ -61,7 +61,7 @@ public sealed partial class FancySpeechBubble : Control
         return (null, null);
     }
 
-
+    // _Starfall Start
     private void BuildLines(ChatMessage chatMessage, string? tag)
     {
         string messageString;
@@ -74,8 +74,6 @@ public sealed partial class FancySpeechBubble : Control
             messageString = chatMessage.WrappedMessage;
         }
 
-        var glyphed = false;
-
         var font = ParseFont(chatMessage.WrappedMessage);
 
         if (font.FontName != null && !_forceFont)
@@ -85,6 +83,13 @@ public sealed partial class FancySpeechBubble : Control
             _fontSize = font.FontSize.Value;
 
         var wraptest = WordWrapHelper.WordWrap(messageString, WordWrapLength);
+
+        // Holds all wrapped text lines
+        var textContainer = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Vertical,
+            Align = BoxContainer.AlignMode.Center,
+        };
 
         foreach (var message in wraptest)
         {
@@ -98,6 +103,7 @@ public sealed partial class FancySpeechBubble : Control
                 {
                     { "size", new MarkupParameter(_fontSize) }
                 }));
+
             if (_color != null)
                 msg.PushColor(_color.Value);
 
@@ -117,32 +123,39 @@ public sealed partial class FancySpeechBubble : Control
                 HorizontalAlignment = HAlignment.Center,
                 Margin = new Thickness(thickness * 3),
             };
-            label.SetMessage(msg, tagsAllowed: [ typeof(FontTag), typeof(ColorTag), typeof(BoldTag) ]);
 
-            var labelContainer = new BoxContainer
+            label.SetMessage(msg,
+                tagsAllowed: [ typeof(FontTag), typeof(ColorTag), typeof(BoldTag) ]);
+
+            textContainer.AddChild(label);
+        }
+
+        // Root container that holds icon + text
+        var labelContainer = new BoxContainer
+        {
+            Orientation = BoxContainer.LayoutOrientation.Horizontal,
+            Align = BoxContainer.AlignMode.Center,
+            SeparationOverride = 6,
+        };
+
+        if (_glyph != null)
+        {
+            var textureRect = new TextureRect
             {
-                Align = BoxContainer.AlignMode.Center,
+                TexturePath = _glyph,
+                TextureScale = new Vector2(2, 2),
+                Stretch = TextureRect.StretchMode.KeepCentered,
                 VerticalAlignment = VAlignment.Center,
             };
 
-            if (_glyph != null && !glyphed)
-            {
-                var textureRect = new TextureRect
-                {
-                    TexturePath = _glyph,
-                    TextureScale = new Vector2(2, 2),
-                };
-
-                labelContainer.AddChild(textureRect);
-                glyphed = true;
-            }
-
-
-            labelContainer.AddChild(label);
-            TextContainer.AddChild(labelContainer);
-
+            labelContainer.AddChild(textureRect);
         }
+
+        labelContainer.AddChild(textContainer);
+
+        TextContainer.AddChild(labelContainer);
     }
+    // _Starfall End
 
     /// <summary>
     /// Where the barely working magic happens

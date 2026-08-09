@@ -1,6 +1,8 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
 using System.Linq;
+using System.Threading.Tasks;
+using Content.Server.Administration.Managers;
 using Content.Goobstation.Common.CCVar;
 using Content.Goobstation.Common.JoinQueue;
 using Content.Goobstation.Shared.JoinQueue;
@@ -11,6 +13,7 @@ using Prometheus;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
+using Robust.Shared.Log;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 
@@ -44,6 +47,11 @@ public sealed partial class JoinQueueManager : IJoinQueueManager
     [Dependency] private IConfigurationManager _configuration = default!;
     [Dependency] private ILinkAccountManager _linkAccount = default!;
     [Dependency] private IServerNetManager _net = default!;
+    [Dependency] private IAdminManager _adminManager = default!;
+    [Dependency] private ILogManager _logManager = default!;
+
+    private readonly System.Threading.SemaphoreSlim _queueLock = new(1, 1);
+    private ISawmill _sawmill = default!;
 
     /// <summary>
     ///     Queue of active player sessions
@@ -59,11 +67,26 @@ public sealed partial class JoinQueueManager : IJoinQueueManager
     private bool _patreonIsEnabled = true;
 
     public int PlayerInQueueCount => _queue.Count + _patronQueue.Count;
-    public int ActualPlayersCount => _player.PlayerCount - PlayerInQueueCount; // Now it's only real value with actual players count that in game
+    public int ActualPlayersCount
+    {
+        get
+        {
+            var players = _player.PlayerCount - PlayerInQueueCount;
+
+            if (!_configuration.GetCVar(CCVars.AdminsCountForMaxPlayers))
+            {
+                players -= _adminManager.ActiveAdmins.Count(session =>
+                    session.Status is not (SessionStatus.Disconnected or SessionStatus.Zombie));
+            }
+
+            return Math.Max(players, 0);
+        }
+    }
 
 
     public void Initialize()
     {
+        _sawmill = _logManager.GetSawmill("join-queue");
         _net.RegisterNetMessage<QueueUpdateMessage>();
 
         _configuration.OnValueChanged(GoobCVars.QueueEnabled, OnQueueCVarChanged, true);
@@ -78,9 +101,12 @@ public sealed partial class JoinQueueManager : IJoinQueueManager
 
         if (!value)
         {
-            foreach (var session in _queue)
-                session.Channel.Disconnect("Queue was disabled");
-            foreach (var session in _patronQueue)
+            var queuedSessions = _patronQueue.Concat(_queue).ToArray();
+            _queue.Clear();
+            _patronQueue.Clear();
+            QueueCount.Set(0);
+
+            foreach (var session in queuedSessions)
                 session.Channel.Disconnect("Queue was disabled");
         }
     }
@@ -91,26 +117,42 @@ public sealed partial class JoinQueueManager : IJoinQueueManager
 
     private async void OnPlayerStatusChanged(object? sender, SessionStatusEventArgs e)
     {
-        if (e.NewStatus == SessionStatus.Disconnected)
+        try
         {
-            var wasInQueue = _queue.Remove(e.Session) || _patronQueue.Remove(e.Session);
+            if (e.NewStatus == SessionStatus.Disconnected)
+            {
+                await _queueLock.WaitAsync();
 
-            if (!wasInQueue && e.OldStatus != SessionStatus.InGame) // Process queue only if player disconnected from InGame or from queue
-                return;
+                try
+                {
+                    var wasInQueue = _queue.Remove(e.Session) || _patronQueue.Remove(e.Session);
 
-            ProcessQueue(true, e.Session.ConnectedTime);
+                    if (!wasInQueue && e.OldStatus != SessionStatus.InGame)
+                        return;
 
-            if (wasInQueue)
-                QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
+                    ProcessQueue();
+
+                    if (wasInQueue)
+                        QueueTimings.WithLabels("Unwaited").Observe((DateTime.UtcNow - e.Session.ConnectedTime).TotalSeconds);
+                }
+                finally
+                {
+                    _queueLock.Release();
+                }
+            }
+            else if (e.NewStatus == SessionStatus.Connected)
+            {
+                await OnPlayerConnected(e.Session);
+            }
         }
-        else if (e.NewStatus == SessionStatus.Connected)
+        catch (Exception exception)
         {
-            OnPlayerConnected(e.Session);
+            _sawmill.Error("Failed to update the join queue: {0}", exception);
         }
     }
 
 
-    private async void OnPlayerConnected(ICommonSession session)
+    private async Task OnPlayerConnected(ICommonSession session)
     {
         if (!_isEnabled)
         {
@@ -119,57 +161,74 @@ public sealed partial class JoinQueueManager : IJoinQueueManager
         }
 
         var isPrivileged = await _connection.HasPrivilegedJoin(session.UserId);
-        var currentOnline = _player.PlayerCount - 1;
-        var haveFreeSlot = currentOnline < _configuration.GetCVar(CCVars.SoftMaxPlayers);
-        if (isPrivileged || haveFreeSlot)
+        await _queueLock.WaitAsync();
+
+        try
         {
-            SendToGame(session);
+            // The privilege lookup hits the database. The player may have disconnected or
+            // the queue may have been disabled while it was in flight.
+            if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
+                return;
 
-            if (isPrivileged && !haveFreeSlot)
-                QueueBypassCount.Inc();
+            if (!_isEnabled)
+            {
+                SendToGame(session);
+                return;
+            }
 
-            return;
+            var currentOnline = ActualPlayersCount - 1;
+            var haveFreeSlot = currentOnline < _configuration.GetCVar(CCVars.SoftMaxPlayers);
+            if (isPrivileged || haveFreeSlot)
+            {
+                SendToGame(session);
+
+                if (isPrivileged && !haveFreeSlot)
+                    QueueBypassCount.Inc();
+
+                return;
+            }
+
+            if (_patreonIsEnabled && _linkAccount.IsPatron(session))
+                _patronQueue.Add(session);
+            else
+                _queue.Add(session);
+
+            ProcessQueue();
         }
-
-        if (_patreonIsEnabled && _linkAccount.IsPatron(session))
-            _patronQueue.Add(session);
-        else
-            _queue.Add(session);
-
-        ProcessQueue(false, session.ConnectedTime);
+        finally
+        {
+            _queueLock.Release();
+        }
     }
 
     /// <summary>
     ///     If possible, takes the first player in the queue and sends him into the game
     /// </summary>
-    /// <param name="isDisconnect">Is method called on disconnect event</param>
-    /// <param name="connectedTime">Session connected time for histogram metrics</param>
-    private void ProcessQueue(bool isDisconnect, DateTime connectedTime)
+    private void ProcessQueue()
     {
         var players = ActualPlayersCount;
-        if (isDisconnect)
-            players--; // Decrease currently disconnected session but that has not yet been deleted
+        var maxPlayers = _configuration.GetCVar(CCVars.SoftMaxPlayers);
 
-        var haveFreeSlot = players < _configuration.GetCVar(CCVars.SoftMaxPlayers);
-        var patronQueueContains = _patronQueue.Count > 0;
-        var regularQueueContains = _queue.Count > 0;
-
-        if (haveFreeSlot && (patronQueueContains || regularQueueContains))
+        while (players < maxPlayers && (_patronQueue.Count > 0 || _queue.Count > 0))
         {
             ICommonSession session;
-            if (patronQueueContains)
+            if (_patronQueue.Count > 0)
             {
-                session = _patronQueue.First();
-                _patronQueue.Remove(session);
+                session = _patronQueue[0];
+                _patronQueue.RemoveAt(0);
             }
             else
             {
-                session = _queue.First();
-                _queue.Remove(session);
+                session = _queue[0];
+                _queue.RemoveAt(0);
             }
 
+            if (session.Status is SessionStatus.Disconnected or SessionStatus.Zombie)
+                continue;
+
             SendToGame(session);
-            QueueTimings.WithLabels("Waited").Observe((DateTime.UtcNow - connectedTime).TotalSeconds);
+            QueueTimings.WithLabels("Waited").Observe((DateTime.UtcNow - session.ConnectedTime).TotalSeconds);
+            players++;
         }
 
         SendUpdateMessages();

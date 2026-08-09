@@ -12,7 +12,7 @@
         reagents:
         - ReagentId: Caramexinin
           Quantity: 40
-  - type: Drink
+  - type: Edible
   - type: Label
     currentLabel: reagent-name-caramexinin
 
@@ -30,7 +30,7 @@
         reagents:
         - ReagentId: CocoaPowder
           Quantity: 150
-  - type: Drink
+  - type: Edible
   - type: Label
     currentLabel: reagent-name-cocoapowder
 

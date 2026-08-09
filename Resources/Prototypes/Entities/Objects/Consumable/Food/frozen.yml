@@ -117,7 +117,7 @@
     - state: popsicle-base
     - state: popsicle
       color: orange
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenPopsicleTrash
   - type: Tag
@@ -142,7 +142,7 @@
     - state: popsicle-base
     - state: popsicle
       color: red
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenPopsicleTrash
   - type: Tag
@@ -165,7 +165,7 @@
     layers:
     - state: stick
     - state: jumbo
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenPopsicleTrash
   - type: SolutionContainerManager
@@ -201,7 +201,7 @@
         - state: cone
         - state: alpha-filling
     #      color: foo
-    - type: Food
+    - type: Edible
       trash:
       - FoodFrozenSnowconeTrash
     - type: SolutionContainerManager
@@ -249,7 +249,7 @@
     layers:
     - state: cone
     - state: berry
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenSnowconeTrash
   - type: Tag
@@ -271,7 +271,7 @@
     layers:
     - state: cone
     - state: fruitsalad
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenSnowconeTrash
   - type: Tag
@@ -294,7 +294,7 @@
     layers:
     - state: cone
     - state: clown
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenSnowconeTrash
   - type: FlavorProfile # Frontier: add flavour profile
@@ -313,7 +313,7 @@
     layers:
     - state: cone
     - state: mime
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenSnowconeTrash
   - type: FlavorProfile # Frontier: add flavour profile
@@ -332,7 +332,7 @@
     layers:
     - state: cone
     - state: rainbow
-  - type: Food
+  - type: Edible
     trash:
     - FoodFrozenSnowconeTrash
   - type: FlavorProfile #Frontier port, add flavor profile

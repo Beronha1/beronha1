@@ -120270,13 +120270,6 @@ entities:
     - type: Transform
       pos: -57.427505,66.546776
       parent: 2
-- proto: FoodMeatSnailCooked
-  entities:
-  - uid: 19179
-    components:
-    - type: Transform
-      pos: -56.217983,71.74731
-      parent: 2
 - proto: FoodPieBananaCream
   entities:
   - uid: 4798

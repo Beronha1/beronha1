@@ -149,7 +149,6 @@
   time: 5
   group: Dessert
   solids:
-    FoodBakedWaffleCone: 1
     FoodCherry: 1 # critical
   reagents:
     IceCream: 10
@@ -163,7 +162,6 @@
   time: 5
   group: Dessert
   solids:
-    FoodBakedWaffleCone: 1
   reagents:
     IceCream: 8
     JuiceBerry: 2
@@ -177,7 +175,6 @@
   time: 5
   group: Dessert
   solids:
-    FoodBakedWaffleCone: 1
     FoodSnackChocolateBar: 1
   reagents:
     IceCream: 8

@@ -1,5 +1,6 @@
 using Robust.Client.Input;
 using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controls;
 using Robust.Client.UserInterface.Controllers;
 using Robust.Client.UserInterface.CustomControls;
 using Robust.Shared.Input;
@@ -11,6 +12,11 @@ public sealed partial class CloseRecentWindowUIController : UIController
 {
     [Dependency] private IInputManager _inputManager = default!;
     [Dependency] private IUserInterfaceManager _uiManager = default!;
+
+    // QuietToolbox 288.0.1 removed the built-in close handler when a window
+    // left the UI tree. Keep one content-side handler so cached clients can
+    // still close a reopened DefaultWindow with its X button.
+    private readonly HashSet<DefaultWindow> _windowsWithCloseFallback = new();
 
     /// <summary>
     /// A list of windows that have been interacted with recently.  Windows should only
@@ -113,11 +119,14 @@ public sealed partial class CloseRecentWindowUIController : UIController
 
     private void OnRootChildAdded(Control control)
     {
-        if (control is BaseWindow)
-        {
-            // On new window open, add to tracking
-            SetMostRecentlyInteractedWindow((BaseWindow) control);
-        }
+        if (control is not BaseWindow window)
+            return;
+
+        // On new window open, add to tracking
+        SetMostRecentlyInteractedWindow(window);
+
+        if (window is DefaultWindow defaultWindow && _windowsWithCloseFallback.Add(defaultWindow))
+            defaultWindow.FindControl<TextureButton>("CloseButton").OnPressed += _ => defaultWindow.Close();
     }
 
     /// <summary>

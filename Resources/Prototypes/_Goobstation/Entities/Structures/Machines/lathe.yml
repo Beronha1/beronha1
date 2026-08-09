@@ -256,6 +256,7 @@
     - ChemistryStatic
     - TapeRecorderStatic
     - CondimentStatic
+    - DrinkDisposableCup #imp recipe
     dynamicPacks:
     - Translators
     - Janitor

@@ -2,58 +2,58 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-examine-can-see-nothing = {CAPITALIZE(GENDER($ent))} is completely naked!
+examine-can-see-nothing = Está completamente sem roupa!
 
-id-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} belt.
+id-examine = - [bold]{$item}[/bold] no cinto.
 
-head-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} head.
+head-examine = - [bold]{$item}[/bold] na cabeça.
 
-eyes-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} eyes.
+eyes-examine = - [bold]{$item}[/bold] nos olhos.
 
-mask-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} face.
+mask-examine = - [bold]{$item}[/bold] no rosto.
 
-neck-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} neck.
+neck-examine = - [bold]{$item}[/bold] no pescoço.
 
-ears-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} ears.
+ears-examine = - [bold]{$item}[/bold] nas orelhas.
 
-jumpsuit-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] {SUBJECT($ent)} is wearing.
+jumpsuit-examine = - Está vestindo [bold]{$item}[/bold].
 
-outer-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} body.
+outer-examine = - [bold]{$item}[/bold] sobre o corpo.
 
-suitstorage-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} shoulder.
+suitstorage-examine = - [bold]{$item}[/bold] no ombro.
 
-back-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} back.
+back-examine = - [bold]{$item}[/bold] nas costas.
 
-gloves-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} hands.
+gloves-examine = - [bold]{$item}[/bold] nas mãos.
 
-belt-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] {SUBJECT($ent)} is wearing.
+belt-examine = - Está usando [bold]{$item}[/bold] no cinto.
 
-shoes-examine = - {CAPITALIZE(POSS-ADJ($ent))} [bold]{$item}[/bold] on {POSS-ADJ($ent)} feet.
+shoes-examine = - [bold]{$item}[/bold] nos pés.
 
-id-card-examine-full = - {CAPITALIZE(POSS-ADJ($wearer))} ID: [bold]{$nameAndJob}[/bold].
+id-card-examine-full = - ID: [bold]{$nameAndJob}[/bold].
 
-id-examine-selfaware = - Your [bold]{$item}[/bold] on your belt.
+id-examine-selfaware = - Seu [bold]{$item}[/bold] está no cinto.
 
-head-examine-selfaware = - Your [bold]{$item}[/bold] on your head.
+head-examine-selfaware = - Seu [bold]{$item}[/bold] está na cabeça.
 
-eyes-examine-selfaware = - Your [bold]{$item}[/bold] on your eyes.
+eyes-examine-selfaware = - Seu [bold]{$item}[/bold] está nos olhos.
 
-mask-examine-selfaware = - Your [bold]{$item}[/bold] on your face.
+mask-examine-selfaware = - Seu [bold]{$item}[/bold] está no rosto.
 
-neck-examine-selfaware = - Your [bold]{$item}[/bold] on your neck.
+neck-examine-selfaware = - Seu [bold]{$item}[/bold] está no pescoço.
 
-ears-examine-selfaware = - Your [bold]{$item}[/bold] on your ears.
+ears-examine-selfaware = - Seu [bold]{$item}[/bold] está nas orelhas.
 
-jumpsuit-examine-selfaware = - Your [bold]{$item}[/bold] you are wearing.
+jumpsuit-examine-selfaware = - Você está vestindo [bold]{$item}[/bold].
 
-outer-examine-selfaware = - Your [bold]{$item}[/bold] on your body.
+outer-examine-selfaware = - Seu [bold]{$item}[/bold] está sobre o corpo.
 
-suitstorage-examine-selfaware = - Your [bold]{$item}[/bold] on your shoulder.
+suitstorage-examine-selfaware = - Seu [bold]{$item}[/bold] está no ombro.
 
-back-examine-selfaware = - Your [bold]{$item}[/bold] on your back.
+back-examine-selfaware = - Seu [bold]{$item}[/bold] está nas costas.
 
-gloves-examine-selfaware = - Your [bold]{$item}[/bold] on your hands.
+gloves-examine-selfaware = - Seu [bold]{$item}[/bold] está nas mãos.
 
-belt-examine-selfaware = - Your [bold]{$item}[/bold] you are wearing.
+belt-examine-selfaware = - Você está usando [bold]{$item}[/bold] no cinto.
 
-shoes-examine-selfaware = - Your [bold]{$item}[/bold] on your feet.
+shoes-examine-selfaware = - Seu [bold]{$item}[/bold] está nos pés.

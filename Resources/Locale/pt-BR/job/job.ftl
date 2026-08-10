@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-job-greet-station-name = Bem-Vindo a bordo a {$stationName}.
+job-greet-station-name = Bem-vindo a bordo da {$stationName}.
 
 job-greet-introduce-job-name = Seu trabalho é: {$jobName}.
 
-job-greet-important-disconnect-admin-notify = Você está com um trabalho que é importante para o progresso do jogo. Se você precisar se desconectar, Por favor notifique os administradores via Ahelp.
+job-greet-important-disconnect-admin-notify = Você está em um trabalho importante para o progresso do jogo. Se precisar se desconectar, por favor, notifique os administradores via AHelp.
 
-job-greet-supervisors-warning = Você como um {$jobName} responde diretamente {$supervisors}.
+job-greet-supervisors-warning = Na função de {$jobName}, você responde diretamente {$supervisors}.
 
 job-greet-crew-shortages = Como esta estação foi inicialmente comandada com uma tripulação fantasma, acesso adicional foi dado ao seu ID.
 

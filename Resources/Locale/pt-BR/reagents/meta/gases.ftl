@@ -16,7 +16,7 @@ reagent-desc-carbon-dioxide = Você não tem a mínima ideia do que é isso.
 
 reagent-name-nitrogen = nitrogênio
 
-reagent-desc-nitrogen = Um gás incolor, inodoro e inerte. Altamete estável.
+reagent-desc-nitrogen = Um gás incolor, inodoro e inerte. Altamente estável.
 
 reagent-name-nitrous-oxide = óxido nitroso
 

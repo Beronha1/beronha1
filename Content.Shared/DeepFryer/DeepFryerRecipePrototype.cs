@@ -1,0 +1,26 @@
+using Robust.Shared.Prototypes;
+
+namespace Content.Shared.DeepFryer;
+
+[Prototype]
+public sealed partial class DeepFryerRecipePrototype : IPrototype
+{
+    [IdDataField]
+    public string ID { get; private set; } = default!;
+
+    [DataField]
+    public string Name = "";
+
+    [DataField]
+    public string Group = "Other";
+
+    [DataField]
+    public uint Time = 15;
+
+    [DataField]
+    public EntProtoId Result;
+
+    [DataField]
+    public Dictionary<EntProtoId, int> Ingredients = new();
+
+}

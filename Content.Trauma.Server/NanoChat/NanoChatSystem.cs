@@ -75,6 +75,12 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
         // Skip if the entity was deleted (e.g., by ID card system burning it)
         if (TerminatingOrDeleted(ent))
             return;
+        // DeltaV: only works with irradiation (actual microwaves)
+        if (!args.BeingIrradiated)
+        {
+            return;
+        }
+        // End DeltaV
 
         var randomPick = _random.NextFloat();
 

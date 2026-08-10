@@ -1,0 +1,46 @@
+- type: entity
+  id: ImpCoffeeMachineEmpty
+  name: spacepresso machine
+  suffix: Empty
+  description: A sleek, modern coffee machine, fit for any spacefaring species to enjoy.
+  parent: ReagentDispenserBase
+  components:
+  - type: Rotatable
+  - type: Sprite
+    sprite: _Impstation/Structures/coffeemachine.rsi
+    drawdepth: SmallObjects
+    layers:
+      - state: coffeemachine
+      - state: unshaded
+        shader: unshaded
+  - type: Storage
+    whitelist:
+      tags:
+      - DrinkBottle
+  - type: Transform
+    noRot: false
+  - type: Machine
+    board: ImpCoffeeMachineCircuitboard
+  - type: GuideHelp
+    guides:
+    - Bartender
+    - Drinks
+  - type: StealTarget
+    stealGroup: BoozeDispenser
+
+- type: entity
+  id: ImpCoffeeMachine
+  suffix: Filled
+  parent: ImpCoffeeMachineEmpty
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      storagebase: !type:AllSelector
+        children:
+        - id: DrinkCoffeeJug
+        - id: DrinkCreamCartonXL
+        - id: DrinkSugarJug
+        - id: DrinkIceJug
+        - id: DrinkMilkCarton
+        - id: DrinkSoyMilkCarton
+        - id: JugCocoa

@@ -12,6 +12,7 @@
   - DrinkGlass
   - DrinkShotGlass
   - DrinkGlassCoupeShaped
+  - DrinkDisposableCup #imp recipe
   - CustomDrinkJug
   - FoodPlate
   - FoodPlateSmall
@@ -41,6 +42,9 @@
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - ImpCoffeeMachineCircuitboard # Impstation
+  - KitchenAssemblerMachineCircuitboard # Frontier
+  - ElectricRangeMachineCircuitboard # Frontier
   - SmartFridgeCircuitboard
 
 ## Dynamic

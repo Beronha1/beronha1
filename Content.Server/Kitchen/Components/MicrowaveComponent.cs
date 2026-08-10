@@ -1,8 +1,12 @@
 using Content.Shared.DeviceLinking;
 using Content.Shared.Item;
+using Content.Shared.Kitchen; // Frontier
+using Content.Shared.Kitchen.Components;
 using Robust.Shared.Audio;
 using Robust.Shared.Containers;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization; // Frontier
+using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom; // Frontier
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
 namespace Content.Server.Kitchen.Components
@@ -39,6 +43,12 @@ namespace Content.Server.Kitchen.Components
 
         [DataField("loopingSound")]
         public SoundSpecifier LoopingSound = new SoundPathSpecifier("/Audio/Machines/microwave_loop.ogg");
+
+        /// <summary>
+        /// The sound that is played when a set of ingredients does not match an assembly recipe.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public SoundSpecifier NoRecipeSound = new SoundPathSpecifier("/Audio/Effects/Cargo/buzz_sigh.ogg"); // Frontier
         #endregion
 
         [ViewVariables]
@@ -101,6 +111,7 @@ namespace Content.Server.Kitchen.Components
 
         /// <summary>
         /// Chance of lightning occurring when we microwave a metallic object
+        /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public float LightningChance = .75f;
 
@@ -109,5 +120,46 @@ namespace Content.Server.Kitchen.Components
         /// </summary>
         [DataField, ViewVariables(VVAccess.ReadWrite)]
         public bool CanMicrowaveIdsSafely = true;
+
+        // Frontier: recipe type
+
+        /// <summary>
+        /// the types of recipes that this "microwave" can handle.
+        /// </summary>
+        [DataField(customTypeSerializer: typeof(FlagSerializer<MicrowaveRecipeTypeFlags>)), ViewVariables(VVAccess.ReadWrite)]
+        public int ValidRecipeTypes = (int)MicrowaveRecipeType.Microwave;
+
+        /// <summary>
+        /// If true, events sent off by the microwave will state that the object is being heated.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool CanHeat = true;
+
+        /// <summary>
+        /// If true, events sent off by the microwave will state that the object is being irradiated.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool CanIrradiate = true;
+
+        /// <summary>
+        /// The localization string to be displayed when something that's too large is inserted.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public string TooBigPopup = "microwave-component-interact-item-too-big";
+
+        /// <summary>
+        /// UI key
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadOnly)]
+        public MicrowaveUiKey Key = MicrowaveUiKey.Key;
+
+        // End Frontier
+
+        /// <summary>
+        /// DeltaV - Simple bool value that can be used to specify a debug mode for a "microwave",
+        /// allowing it to cook recipes regardless of Frontier recipe type
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool RecipeDebug = false;
     }
 }

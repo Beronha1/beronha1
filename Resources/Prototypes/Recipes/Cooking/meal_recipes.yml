@@ -6,6 +6,8 @@
   group: Breads
   solids:
     FoodDoughSlice: 1 # one third of a standard bread dough recipe
+  recipeType: # DeltaV - Frontier Cooking port, going for all recipes yay
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCottonBun
@@ -15,6 +17,8 @@
   group: Moth
   solids:
     FoodDoughCottonSlice: 1
+  recipeType:
+  - Oven
 
 #Bagels
 - type: microwaveMealRecipe
@@ -25,6 +29,8 @@
   group: Breads
   solids:
     FoodDoughRope: 1 # created by rolling a dough slice.
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBagelPoppy
@@ -35,6 +41,8 @@
   solids:
     FoodDoughRope: 1
     PoppySeeds: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBagelCotton
@@ -44,6 +52,8 @@
   group: Moth
   solids:
     FoodDoughCottonRope: 1
+  recipeType:
+  - Oven
 
 #Burgers
 
@@ -56,6 +66,8 @@
   solids:
     FoodBreadBun: 1
     OrganHumanAppendix: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBaconBurger
@@ -67,6 +79,8 @@
     FoodBreadBun: 1
     FoodMeatBacon: 1
     FoodCheeseSlice: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBaseballBurger
@@ -77,6 +91,8 @@
   solids:
     FoodBreadBun: 1
     BaseBallBat: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBearger
@@ -87,6 +103,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatBear: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBigBiteBurger
@@ -100,6 +118,8 @@
     FoodCheeseSlice: 1
     FoodTomato: 1
     FoodOnionSlice: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeBrainBurger
@@ -110,6 +130,8 @@
   solids:
     FoodBreadBun: 1
     OrganHumanBrain: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCatBurger
@@ -121,6 +143,8 @@
     FoodBreadBun: 1
     FoodMeat: 1
     ClothingHeadHatCatEars: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeCheeseburger
@@ -132,6 +156,8 @@
     FoodBreadBun: 1
     FoodMeat: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeChickenSandwich
@@ -144,6 +170,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatChicken: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeClownBurger
@@ -154,6 +182,8 @@
   solids:
     FoodBreadBun: 1
     ClothingMaskClown: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCorgiBurger
@@ -164,6 +194,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatCorgi: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeCrabBurger
@@ -174,6 +206,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatCrab: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCrazyHamburger
@@ -191,6 +225,8 @@
     FoodCabbage: 1
     CrayonGreen: 1
     Flare: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe #Added to metamorph recipes
   id: RecipeDuckBurger
@@ -202,6 +238,8 @@
     FoodBreadBun: 1
     FoodMeatDuck: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeEmpoweredBurger
@@ -212,6 +250,8 @@
   solids:
     FoodBreadBun: 1
     SheetPlasma1: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCarpBurger
@@ -223,6 +263,8 @@
     FoodBreadBun: 1
     FoodMeatFish: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeFiveBurger
@@ -234,6 +276,8 @@
     FoodBreadBun: 1
     FoodMeat: 1
     FoodChiliPepper: 3
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeGhostBurger
@@ -244,6 +288,8 @@
   solids:
     FoodBreadBun: 1
     Ectoplasm: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeHumanBurger
@@ -254,6 +300,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatHuman: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeJellyBurger
@@ -264,6 +312,8 @@
   solids:
     FoodBreadBun: 1
     FoodJellyAmanita: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBurgerMcguffin
@@ -276,6 +326,8 @@
   solids:
     FoodBreadBun: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBurgerMcrib
@@ -286,7 +338,9 @@
   solids:
     FoodBreadBun: 1
     FoodMealRibs: 1
-    FoodOnionSlice: 5
+    FoodOnionSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMimeBurger
@@ -297,6 +351,8 @@
   solids:
     FoodBreadBun: 1
     ClothingMaskMime: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipePlainBurger
@@ -307,6 +363,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeat: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRatBurger
@@ -317,6 +375,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatRat: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRobotBurger
@@ -327,6 +387,8 @@
   solids:
     FoodBreadBun: 1
     MicroManipulatorStockPart: 2
+  recipeType:
+  - Microwave
     # i would add steel to this recipe but the microwave explodes
 
 - type: microwaveMealRecipe
@@ -339,6 +401,8 @@
     FoodBreadBun: 1
     FoodCheeseSlice: 1
     FoodSoybeans: 2 #replace with soylent green when those become craftable
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeSpellBurger
@@ -349,6 +413,8 @@
   solids:
     FoodBreadBun: 1
     ClothingHeadHatWizard: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeSuperBiteBurger
@@ -365,6 +431,8 @@
     FoodMeat: 2
     FoodCheeseSlice: 1
     FoodTomato: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTofuBurger
@@ -375,6 +443,8 @@
   solids:
     FoodBreadBun: 1
     FoodTofuSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeXenoburger
@@ -385,6 +455,8 @@
   solids:
     FoodBreadBun: 1
     FoodMeatXeno: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMothRoachburger
@@ -394,6 +466,8 @@
   solids:
     FoodBreadBun: 1
     MobMothroach: 1
+  recipeType:
+  - Microwave
 
 #Breads & Sandwiches
 
@@ -406,6 +480,8 @@
   solids:
     FoodDough: 1
     FoodBanana: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCornbread
@@ -415,6 +491,8 @@
   group: Breads
   solids:
     FoodDoughCornmeal: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCreamCheeseBread
@@ -426,7 +504,9 @@
     Milk: 5
   solids:
     FoodDough: 1
-    FoodCheeseSlice: 1
+    FoodCheeseSlice: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMeatBread
@@ -437,7 +517,9 @@
   solids:
     FoodDough: 1
     FoodMeatCutlet: 2
-    FoodCheeseSlice: 1
+    FoodCheeseSlice: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMimanaBread
@@ -449,7 +531,9 @@
     Nothing: 5
   solids:
     FoodDough: 1
-    FoodMimana: 2
+    FoodMimana: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBread
@@ -459,6 +543,8 @@
   group: Breads
   solids:
     FoodDough: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBreadCotton
@@ -468,6 +554,8 @@
   group: Moth
   solids:
     FoodDoughCotton: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeSausageBread
@@ -478,6 +566,8 @@
   solids:
     FoodDough: 1
     FoodMeat: 1 #replace with sausage
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeSpiderMeatBread
@@ -488,7 +578,9 @@
   solids:
     FoodDough: 1
     FoodMeatSpiderCutlet: 2
-    FoodCheeseSlice: 1
+    FoodCheeseSlice: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeTofuBread
@@ -498,7 +590,9 @@
   group: Breads
   solids:
     FoodDough: 1
-    FoodTofuSlice: 1
+    FoodTofu: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeXenoMeatBread
@@ -510,6 +604,8 @@
     FoodDough: 1
     FoodMeatXenoCutlet: 2
     FoodCheeseSlice: 2
+  recipeType:
+  - Oven
 
 #Slices Only
 
@@ -524,6 +620,8 @@
     Blackpepper: 1
   solids:
     FoodDough: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBaguetteCotton
@@ -536,6 +634,8 @@
     Blackpepper: 1
   solids:
     FoodDoughCotton: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBaguetteSword
@@ -550,6 +650,8 @@
   solids:
     FoodDough: 1
     PartRodMetal1: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeButteredToast
@@ -560,6 +662,8 @@
   solids:
     FoodBreadPlainSlice: 1
     FoodButterSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeFrenchToast
@@ -572,6 +676,8 @@
     Egg: 6
   solids:
     FoodBreadPlainSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeGarlicBread
@@ -583,6 +689,8 @@
     FoodBreadPlainSlice: 1
     FoodGarlic: 1
     FoodButterSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeJellyToast
@@ -593,6 +701,8 @@
   solids:
     FoodBreadPlainSlice: 1
     FoodJellyAmanita: 1 #replace with jelly
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMoldyBreadSlice
@@ -603,6 +713,8 @@
   solids:
     FoodBreadPlainSlice: 1
     FoodFlyAmanita: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTwoBreadSlice
@@ -614,15 +726,8 @@
     Wine: 5
   solids:
     FoodBreadPlainSlice: 2
-
-- type: microwaveMealRecipe
-  id: RecipeOnionRings
-  name: onion rings recipe
-  result: FoodOnionRings
-  time: 15
-  group: Savory
-  solids:
-    FoodOnionSlice: 1
+  recipeType:
+  - Assembler
 
 #Pizzas TODO: contruction graph based pizza
 - type: microwaveMealRecipe
@@ -635,6 +740,8 @@
     FoodDoughFlat: 1
     FoodCheeseSlice: 1
     FoodTomato: 4
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMushroomPizza
@@ -645,6 +752,8 @@
   solids:
     FoodDoughFlat: 1
     FoodMushroom: 5
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMeatPizza
@@ -657,6 +766,8 @@
     FoodMeat: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeVegetablePizza
@@ -670,6 +781,8 @@
     FoodCarrot: 1
     FoodCorn: 1
     FoodTomato: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeHawaiianPizza
@@ -681,6 +794,8 @@
     FoodDoughFlat: 1
     FoodMeatChickenCutlet: 3
     FoodPineappleSlice: 5
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDankPizza
@@ -693,6 +808,8 @@
     LeavesCannabis: 2
     FoodCheeseSlice: 1
     FoodTomato: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketPizza
@@ -705,6 +822,8 @@
     FoodDonkpocketWarm: 3
     FoodCheeseSlice: 1
     FoodTomato: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeUraniumPizza
@@ -717,6 +836,8 @@
     FoodChiliPepper: 2
     FoodTomato: 2
     SheetUranium1: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCottonPizza
@@ -727,6 +848,8 @@
   solids:
     FoodDoughCottonFlat: 1
     CottonBol: 4
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeWorldpeasPizza
@@ -736,6 +859,8 @@
   solids:
     FoodDoughFlat: 1
     FoodWorldPeas: 3
+  recipeType:
+  - Oven
 
 #Italian
 - type: microwaveMealRecipe
@@ -748,6 +873,8 @@
     Flour: 15
     Egg: 6
     OilOlive: 5
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipePastaTomato
@@ -758,6 +885,8 @@
   solids:
     FoodNoodlesBoiled: 1
     FoodTomato: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMeatballSpaghetti
@@ -767,7 +896,9 @@
   group: Pasta
   solids:
     FoodNoodlesBoiled: 1
-    FoodMeatMeatball: 1
+    FoodMeatMeatball: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeButterNoodles
@@ -777,7 +908,9 @@
   group: Pasta
   solids:
     FoodNoodlesBoiled: 1
-    FoodButterSlice: 2
+    FoodButter: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeChowMein
@@ -792,6 +925,8 @@
     FoodEggplant: 1
     FoodCarrot: 1
     FoodCorn: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeOatmeal
@@ -804,6 +939,8 @@
     Water: 20
   solids:
     FoodBowlBig: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBoiledRice
@@ -816,6 +953,8 @@
     Water: 20
   solids:
     FoodBowlBig: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRicePudding
@@ -830,6 +969,8 @@
     Sugar: 5
   solids:
     FoodBowlBig: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRicePork
@@ -840,6 +981,8 @@
   solids:
     FoodRiceBoiled: 1
     FoodMeatCutlet: 3
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRiceGumbo
@@ -851,6 +994,8 @@
     FoodRiceBoiled: 1
     FoodMeatCutlet: 2
     FoodChiliPepper: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeEggRice
@@ -863,6 +1008,8 @@
   solids:
     FoodRiceBoiled: 1
     FoodCarrot: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCopypasta
@@ -873,6 +1020,8 @@
   solids:
     FoodNoodles: 2
     FoodPlateSmall: 2
+  recipeType:
+  - Assembler
 
 #Soups & Stew
 - type: microwaveMealRecipe
@@ -888,6 +1037,8 @@
     FoodTomato: 1
     FoodMushroom: 1
     FoodMeatFish: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMeatballSoup
@@ -902,6 +1053,8 @@
     FoodMeatMeatball: 1
     FoodCarrot: 1
     FoodPotato: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeNettleSoup
@@ -917,6 +1070,8 @@
     Nettle: 1
     FoodAmbrosiaDeus: 1
     FoodPotato: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeEyeballSoup
@@ -931,6 +1086,8 @@
     OrganHumanEyes: 1
     FoodCarrot: 1
     FoodPotato: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeAmanitaJelly
@@ -943,6 +1100,8 @@
     Vodka: 5
   solids:
     FoodFlyAmanita: 3
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeOnionSoup
@@ -956,6 +1115,8 @@
     FoodBowlBig: 1
     FoodOnionSlice: 5
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeMushroomSoup
@@ -969,6 +1130,8 @@
   solids:
     FoodBowlBig: 1
     FoodMushroom: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeStewSoup
@@ -986,6 +1149,8 @@
     FoodCarrot: 1
     FoodEggplant: 1
     FoodMushroom: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeTomatoSoup
@@ -998,6 +1163,8 @@
   solids:
     FoodBowlBig: 1
     FoodTomato: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTomatoBloodSoup
@@ -1010,6 +1177,8 @@
   solids:
     FoodBowlBig: 1
     FoodBloodTomato: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWingFangChuSoup
@@ -1021,7 +1190,9 @@
     Soysauce: 1 # Trauma - was 10, 80ml of soy sauce is a toxic soup lol
   solids:
     FoodBowlBig: 1
-    FoodMeatXenoCutlet: 5
+    FoodMeatXenoCutlet: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWingFangChuSoupSpider
@@ -1034,6 +1205,8 @@
   solids:
     FoodBowlBig: 1
     FoodMeatSpider: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeVegetableSoup
@@ -1049,6 +1222,8 @@
     FoodCarrot: 1
     FoodPotato: 1
     FoodEggplant: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeClownTearsSoup
@@ -1063,6 +1238,8 @@
     FoodBanana: 1
     MaterialBananium: 1
     ShardGlass: 1
+  recipeType:
+  - Microwave
     #idk probably replace shard with someting bananium when #14663 merged
 
 - type: microwaveMealRecipe
@@ -1079,6 +1256,8 @@
     FoodBowlBig: 1
     FoodBanana: 1
     MonkeyCube: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBungoSoup
@@ -1092,6 +1271,8 @@
     FoodBowlBig: 1
     FoodBungo: 2
     FoodChiliPepper: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBoiledSnail
@@ -1103,6 +1284,8 @@
     Water: 10
   solids:
     MobSnail: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeEscargotSoup
@@ -1117,7 +1300,8 @@
     FoodOnionSlice: 1
     FoodGarlic: 1
     FoodButterSlice: 2
-    FoodMeatSnailCooked: 1
+  recipeType:
+  - Microwave
 
 #Pies
 
@@ -1131,6 +1315,8 @@
     FoodDoughPie: 1
     FoodFlyAmanita: 1
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeApplePie
@@ -1142,6 +1328,8 @@
     FoodDoughPie: 1
     FoodApple: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBaklava
@@ -1153,6 +1341,8 @@
     FoodDoughPie: 1
     FoodSnackPistachios: 1 #i'd rather use a botany crop but we don't have nuts yet
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBananaCreamPie
@@ -1164,6 +1354,8 @@
     FoodDoughPie: 1
     FoodBanana: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBerryClafoutis
@@ -1175,6 +1367,8 @@
     FoodDoughPie: 1
     FoodBerries: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCherryPie
@@ -1186,6 +1380,8 @@
     FoodDoughPie: 1
     FoodCherry: 5
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeFrostyPie
@@ -1197,6 +1393,8 @@
     FoodDoughPie: 1
     FoodChillyPepper: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMeatPie
@@ -1208,6 +1406,8 @@
     FoodDoughPie: 1
     FoodMeat: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipePumpkinPie
@@ -1219,6 +1419,8 @@
     FoodDoughPie: 1
     FoodPumpkin: 1
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 #- type: microwaveMealRecipe
 #  id: RecipePlumpPie
@@ -1240,6 +1442,8 @@
     FoodDoughPie: 1
     FoodMeatXeno: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 #Tarts
 
@@ -1256,6 +1460,8 @@
     FoodDoughPie: 1
     FoodSnackChocolateBar: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeGappleTart
@@ -1271,6 +1477,8 @@
     FoodDoughPie: 1
     FoodApple: 2 #in absence of the real gapple i'm substituting one apple with 10u gold (one ingot)
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeGrapeTart
@@ -1285,6 +1493,8 @@
     FoodDoughPie: 1
     FoodGrape: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMimeTart
@@ -1299,6 +1509,8 @@
     FoodDoughPie: 1
     FoodMimana: 3
     FoodPlateTin: 1
+  recipeType:
+  - Oven
 
 #Other
 
@@ -1313,6 +1525,8 @@
     FoodCheeseSlice: 2
     FoodChiliPepper: 1
     FoodMeatFish: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeSashimi
@@ -1323,7 +1537,9 @@
   reagents:
     TableSalt: 1
   solids:
-    FoodMeatFish: 1
+    FoodMeatFish: 2
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeMisoColaSoup
@@ -1335,6 +1551,8 @@
     Cola: 5
   solids:
     FoodSoupMiso: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeLoadedBakedPotato
@@ -1345,40 +1563,8 @@
   solids:
     FoodPotato: 1
     FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
-  id: RecipeFries
-  name: space fries recipe
-  result: FoodMealFries
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 2
-  solids:
-    FoodPotato: 1
-
-- type: microwaveMealRecipe
-  id: RecipeCheesyFries
-  name: cheesy fries recipe
-  result: FoodMealFriesCheesy
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 2
-  solids:
-    FoodPotato: 1
-    FoodCheeseSlice: 1
-
-- type: microwaveMealRecipe
-  id: RecipeCarrotFries
-  name: carrot fries recipe
-  result: FoodMealFriesCarrot
-  time: 15
-  group: Savory
-  reagents:
-    TableSalt: 2
-  solids:
-    FoodCarrot: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeNachos
@@ -1391,6 +1577,8 @@
   solids:
     FoodDoughTortillaFlat: 1
     FoodPlateSmall: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeNachosCheesy
@@ -1404,6 +1592,8 @@
     FoodCheeseSlice: 1
     FoodDoughTortillaFlat: 1
     FoodPlateSmall: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeNachosCuban
@@ -1417,6 +1607,8 @@
     FoodChiliPepper: 1
     FoodDoughTortillaFlat: 1
     FoodPlateSmall: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipePopcorn
@@ -1426,6 +1618,8 @@
   group: Savory
   solids:
     FoodCorn: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipePancake
@@ -1437,6 +1631,8 @@
     Flour: 5
     Milk: 5
     Egg: 6
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBlueberryPancake
@@ -1450,6 +1646,8 @@
     Egg: 6
   solids:
     FoodBerries: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeWaffles
@@ -1462,6 +1660,8 @@
     Milk: 5
     Egg: 6
     SodaWater: 5
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeWaffleSoy
@@ -1474,6 +1674,8 @@
     MilkSoy: 5
     Egg: 6
     SodaWater: 5
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCookie
@@ -1487,6 +1689,8 @@
   solids:
     FoodButterSlice: 1
     FoodSnackChocolateBar: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeSugarCookie
@@ -1499,6 +1703,8 @@
     Sugar: 10
   solids:
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeRaisinCookie
@@ -1511,6 +1717,8 @@
     Sugar: 5
   solids:
     FoodSnackRaisins: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCookieOatmeal
@@ -1523,6 +1731,8 @@
     Sugar: 5
   solids:
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeChocolateChipPancake
@@ -1536,6 +1746,8 @@
     Egg: 6
   solids:
     FoodSnackChocolateBar: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeAppleCake
@@ -1546,6 +1758,8 @@
   solids:
     FoodCakePlain: 1
     FoodApple: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCarrotCake
@@ -1555,7 +1769,9 @@
   group: Cake
   solids:
     FoodCakePlain: 1
-    FoodCarrot: 2
+    FoodCarrot: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeLemonCake
@@ -1566,6 +1782,8 @@
   solids:
     FoodCakePlain: 1
     FoodLemon: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeLemoonCake
@@ -1577,6 +1795,8 @@
     FoodCakePlain: 1
     FoodLemoon: 1
     FoodBerries: 1 #dark colouring
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeOrangeCake
@@ -1587,6 +1807,8 @@
   solids:
     FoodCakePlain: 1
     FoodOrange: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBlueberryCake
@@ -1597,6 +1819,8 @@
   solids:
     FoodCakePlain: 1
     FoodBerries: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeLimeCake
@@ -1607,6 +1831,8 @@
   solids:
     FoodCakePlain: 1
     FoodLime: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCheeseCake
@@ -1619,6 +1845,8 @@
   solids:
     FoodCakePlain: 1
     FoodCheeseSlice: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipePumpkinCake
@@ -1629,6 +1857,8 @@
   solids:
     FoodCakePlain: 1
     FoodPumpkin: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeClownCake
@@ -1639,6 +1869,8 @@
   solids:
     ClothingMaskClown: 1
     FoodCakePlain: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCake
@@ -1648,6 +1880,8 @@
   group: Cake
   solids:
     FoodCakeBatter: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBirthdayCake
@@ -1659,6 +1893,8 @@
     Cream: 5
   solids:
     FoodCakePlain: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeChocolateCake
@@ -1669,6 +1905,8 @@
   solids:
     FoodCakePlain: 1
     FoodSnackChocolateBar: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBrainCake
@@ -1679,6 +1917,8 @@
   solids:
     FoodCakePlain: 1
     OrganHumanBrain: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeSlimeCake
@@ -1690,6 +1930,8 @@
     Slime: 15
   solids:
     FoodCakePlain: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeCatCake
@@ -1704,6 +1946,8 @@
     FoodCakePlain: 1
     FoodSnackRaisins: 1
     OrganAnimalHeart: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBerryDelight
@@ -1729,6 +1973,8 @@
     FoodBreadSausage: 1
     OrganAnimalHeart: 1
     FoodSpaceshroomCooked: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDumplings
@@ -1740,7 +1986,9 @@
     Water: 10
     UncookedAnimalProteins: 2
   solids:
-    FoodDoughSlice: 1
+    FoodDoughSlice: 3
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBrownies
@@ -1755,6 +2003,8 @@
   solids:
     FoodButter: 1
     FoodSnackChocolateBar: 2
+  recipeType:
+  - Oven
 
 #Donks i guess
 - type: microwaveMealRecipe
@@ -1765,6 +2015,8 @@
   group: Savory
   solids:
     FoodDonkpocket: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWarmDankpocket
@@ -1774,6 +2026,8 @@
   group: Savory
   solids:
     FoodDonkpocketDank: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWarmDonkpocketSpicy
@@ -1783,6 +2037,8 @@
   group: Savory
   solids:
     FoodDonkpocketSpicy: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWarmDonkpocketTeriyaki
@@ -1792,6 +2048,8 @@
   group: Savory
   solids:
     FoodDonkpocketTeriyaki: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeWarmDonkpocketPizza
@@ -1801,6 +2059,8 @@
   group: Savory
   solids:
     FoodDonkpocketPizza: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketHonk
@@ -1810,6 +2070,8 @@
   group: Savory
   solids:
     FoodDonkpocketHonk: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketBerry
@@ -1819,6 +2081,8 @@
   group: Savory
   solids:
     FoodDonkpocketBerry: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketStonk
@@ -1828,6 +2092,8 @@
   group: Savory
   solids:
     FoodDonkpocketStonk: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketCarp
@@ -1837,6 +2103,8 @@
   group: Savory
   solids:
     FoodDonkpocketCarp: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeDonkpocketMoth
@@ -1845,6 +2113,8 @@
   time: 5
   solids:
     FoodDonkpocketMoth: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeHotChili
@@ -1858,6 +2128,8 @@
     FoodMeatCutlet: 1
     FoodOnionSlice: 1
     FoodTomato: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeColdChili
@@ -1869,6 +2141,8 @@
     FrostOil: 10
   solids:
     FoodSoupChiliHot: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeClownTears
@@ -1881,6 +2155,8 @@
     FoodOnionSlice: 1
     FoodTomato: 1
     BikeHorn: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeChiliClown
@@ -1895,6 +2171,8 @@
     FoodOnionSlice: 1
     FoodTomato: 1
     ClothingShoesClown: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeQueso
@@ -1908,6 +2186,8 @@
   solids:
     FoodChiliPepper: 1
     FoodCheeseSlice: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeRibs
@@ -1920,6 +2200,8 @@
   solids:
     FoodMeat: 2
     FoodKebabSkewer: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeEnchiladas
@@ -1928,9 +2210,11 @@
   time: 20
   group: Savory
   solids:
-    FoodChiliPepper: 1
-    FoodMeatCutlet: 2
-    FoodDoughTortillaFlat: 1
+    FoodChiliPepper: 2
+    FoodMeatCutlet: 1
+    FoodCorn: 1
+  recipeType:
+  - Oven
 
 # SALADS: These should be moved out of the microwave as soon as possible
 - type: microwaveMealRecipe
@@ -1943,6 +2227,8 @@
     FoodBowlBig: 1
     FoodAmbrosiaVulgaris: 3
     FoodApple: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeValidSalad
@@ -1955,6 +2241,8 @@
     FoodAmbrosiaVulgaris: 2
     FoodPotato: 1
     FoodMeatMeatball: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeColeslaw
@@ -1966,8 +2254,10 @@
     Vinaigrette: 5
   solids:
     FoodBowlBig: 1
-    FoodOnionRed: 2
-    FoodCabbage: 2
+    FoodOnionRed: 1
+    FoodCabbage: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeCaesarSalad
@@ -1983,6 +2273,8 @@
     FoodBreadPlainSlice: 1
     FoodCheeseSlice: 1
     FoodCabbage: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeCitrusSalad
@@ -1995,6 +2287,8 @@
     FoodOrange: 1
     FoodLemon: 1
     FoodLime: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeKimchiSalad
@@ -2009,6 +2303,8 @@
     FoodCarrot: 1
     FoodCabbage: 2
     FoodGarlic: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeFruitSalad
@@ -2021,7 +2317,9 @@
     FoodOrange: 1
     FoodApple: 1
     FoodGrape: 1
-    FoodWatermelonSlice: 1
+    FoodWatermelonSlice: 2
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeJungleSalad
@@ -2034,7 +2332,9 @@
     FoodBanana: 1
     FoodApple: 1
     FoodGrape: 1
-    FoodWatermelonSlice: 1
+    FoodWatermelonSlice: 2
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeWatermelonFruitBowlSalad
@@ -2049,6 +2349,8 @@
     FoodLemon: 1
     FoodOrange: 1
     FoodAmbrosiaVulgaris: 1
+  recipeType:
+  - Assembler
 
 # Muffins
 
@@ -2063,6 +2365,8 @@
     FoodDoughSlice: 1
   reagents:
     Sugar: 10
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMuffinChocolate
@@ -2076,6 +2380,8 @@
     FoodSnackChocolateBar: 1
   reagents:
     Sugar: 10
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMuffinBerry
@@ -2089,6 +2395,8 @@
     FoodBerries: 1
   reagents:
     Sugar: 10
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMuffinBanana
@@ -2102,6 +2410,8 @@
     FoodBanana: 1
   reagents:
     Sugar: 10
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeMuffinCherry
@@ -2115,6 +2425,8 @@
     FoodCherry: 3
   reagents:
     Sugar: 10
+  recipeType:
+  - Oven
 
 # NOT ACTUAL FOOD
 
@@ -2125,6 +2437,8 @@
   time: 10
   solids:
     LeavesTea: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDriedTobacco
@@ -2134,6 +2448,8 @@
   group: Medicinal
   solids:
     LeavesTobacco: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDriedCannabis
@@ -2143,6 +2459,8 @@
   group: Medicinal
   solids:
     LeavesCannabis: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeDriedCannabisRainbow
@@ -2152,6 +2470,8 @@
   group: Medicinal
   solids:
     LeavesCannabisRainbow: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeTrashBakedBananaPeel
@@ -2160,6 +2480,8 @@
   time: 5
   solids:
     TrashBananaPeel: 1
+  recipeType:
+  - Oven
 
 # Suppermatter
 - type: microwaveMealRecipe
@@ -2173,6 +2495,8 @@
     Sugar: 30
     Nitrogen: 10
     Plasma: 10
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedChevreChaud
@@ -2183,6 +2507,8 @@
   solids:
     FoodChevreSlice: 1
     FoodBreadBaguetteSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeFoodBakedChevreChaudCotton
@@ -2193,6 +2519,8 @@
   solids:
     FoodChevreSlice: 1
     FoodBreadBaguetteCottonSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCannabisButter
@@ -2201,7 +2529,9 @@
   time: 15
   solids:
     FoodButter: 1
-    LeavesCannabis: 1
+    LeavesCannabis: 6
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeCannabisBrownies
@@ -2216,6 +2546,8 @@
   solids:
     FoodCannabisButter: 1
     FoodSnackChocolateBar: 2
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCornInButter
@@ -2226,7 +2558,9 @@
   solids:
     FoodCorn: 1
     FoodPlate: 1
-    FoodButterSlice: 1
+    FoodButter: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipePeaSoup
@@ -2238,7 +2572,9 @@
     FoodPeaPod: 3
     FoodBowlBig: 1
   reagents:
-    Water: 20
+    Water: 10
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoShell
@@ -2247,7 +2583,9 @@
   time: 5
   group: Breads
   solids:
-    FoodDoughTortillaFlat: 1 # one eighth a standard bread dough recipe
+    FoodDoughTortillaFlat: 1 # one third of a standard bread dough recipe
+  recipeType:
+  - Oven
 
 # Goobstation - I'm not reverting whatever shitcode changes piras did in wizden namespace. Feel free to do it on your own. Commit 9245deef
 #- type: microwaveMealRecipe
@@ -2333,6 +2671,8 @@
     FoodTacoShell: 1
     FoodMeatCutlet: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoChicken
@@ -2343,6 +2683,8 @@
     FoodTacoShell: 1
     FoodMeatChickenCutlet: 1
     FoodCheeseSlice: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoFish
@@ -2355,6 +2697,8 @@
     FoodOnionSlice: 2
     FoodTomato: 1
     FoodCabbage: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoRat
@@ -2365,6 +2709,8 @@
     FoodTacoShell: 1
     FoodCheeseSlice: 1
     FoodMeatRat: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoBeefSupreme
@@ -2378,6 +2724,8 @@
     FoodTomato: 1
     FoodCabbage: 1
     FoodOnionSlice: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoChickenSupreme
@@ -2391,6 +2739,8 @@
     FoodTomato: 1
     FoodCabbage: 1
     FoodOnionSlice: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeTacoDragon
@@ -2402,6 +2752,8 @@
     FoodTacoShell: 1
     FoodMeatDragonCutlet: 2
     FoodChiliPepper: 1
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeCroissant
@@ -2412,6 +2764,8 @@
   solids:
     FoodCroissantRaw: 1
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeCroissantCotton
@@ -2422,6 +2776,8 @@
   solids:
     FoodCroissantRawCotton: 1
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeThrowingCroissant
@@ -2434,6 +2790,8 @@
     FoodCroissantRaw: 1
     FoodButterSlice: 1
     ShardGlass: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeInertAnomalyMeat
@@ -2443,6 +2801,8 @@
   group: Savory
   solids:
     AnomalyCoreFleshInert: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeAnomalyMeat
@@ -2452,6 +2812,8 @@
   group: Savory
   solids:
     AnomalyCoreFlesh: 1
+  recipeType:
+  - Assembler
 
 - type: microwaveMealRecipe
   id: RecipeAnomalyMeatCooked
@@ -2461,6 +2823,8 @@
   group: Savory
   solids:
     FoodMeatAnomaly: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeGrilledCheeseSandwich
@@ -2472,6 +2836,8 @@
     FoodBreadPlainSlice: 2
     FoodCheeseSlice: 1
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeGrilledCheeseSandwichCotton
@@ -2483,6 +2849,8 @@
     FoodBreadCottonSlice: 2
     FoodCheeseSlice: 1
     FoodButterSlice: 1
+  recipeType:
+  - Oven
 
 - type: microwaveMealRecipe
   id: RecipeBreakfastAmerican
@@ -2496,6 +2864,8 @@
     FoodMeatBacon: 2
     FoodPotato: 1
     FoodBakedPancake: 2
+  recipeType:
+  - Microwave
 
 - type: microwaveMealRecipe
   id: RecipeBreakfastEnglish
@@ -2510,27 +2880,5 @@
     FoodMeat: 1
     FoodTomato: 1
     FoodSoybeans: 2 # replace these with green beans once those become a thing
-
-- type: microwaveMealRecipe
-  id: RecipeMoproach # TODO: Move this to be an actual surgery instead, once surgery gets implemented.
-  name: moproach recipe
-  result: MobMoproach
-  time: 30
-  group: Other
-  reagents:
-    SpaceCleaner: 15
-  solids:
-    MobMothroach: 1
-    OrganAnimalHeart: 1
-    MoproachShoes: 1
-
-- type: microwaveMealRecipe
-  id: RecipeCottonCake
-  name: cotton cake recipe
-  result: FoodCakeCotton
-  time: 5
-  group: Moth
-  reagents:
-    Fiber: 10
-  solids:
-    FoodCakePlain: 1
+  recipeType:
+    - Microwave

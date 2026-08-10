@@ -22,9 +22,9 @@ namespace Content.Trauma.Shared.DeepFryer.Systems;
 
 public abstract partial class SharedDeepFryerSystem : EntitySystem
 {
-    [Dependency] protected SharedSolutionContainerSystem _solution = default!;
-    [Dependency] protected IGameTiming _timing = default!;
-    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] protected SharedSolutionContainerSystem Solution = default!;
+    [Dependency] protected IGameTiming Timing = default!;
+    [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private SharedAppearanceSystem _appearance = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
@@ -62,21 +62,21 @@ public abstract partial class SharedDeepFryerSystem : EntitySystem
 
     private void OnTryClose(Entity<DeepFryerComponent> ent, ref StorageCloseAttemptEvent args)
     {
-        if (!_solution.TryGetSolution(ent.Owner,
+        if (!Solution.TryGetSolution(ent.Owner,
                 ent.Comp.FryerSolutionContainer,
                 out _,
                 out var deepFryerSolution)
             || deepFryerSolution.Volume <= 100f)
         {
             args.Cancelled = true;
-            _popup.PopupEntity(Loc.GetString("deep-fryer-not-enough-liquid"), ent.Owner, args.User);
+            Popup.PopupEntity(Loc.GetString("deep-fryer-not-enough-liquid"), ent.Owner, args.User);
             return;
         }
 
         if (!_power.IsPowered(ent.Owner))
         {
             args.Cancelled = true;
-            _popup.PopupEntity(Loc.GetString("deep-fryer-no-power"), ent.Owner, args.User);
+            Popup.PopupEntity(Loc.GetString("deep-fryer-no-power"), ent.Owner, args.User);
             return;
         }
 
@@ -109,7 +109,7 @@ public abstract partial class SharedDeepFryerSystem : EntitySystem
         EnsureComp<ActiveDeepFryerComponent>(ent);
         _audio.Stop(ent.Comp.Sound);
         ent.Comp.Sound = _audio.PlayPredicted(ent.Comp.StartSound, ent.Owner, ent.Owner)?.Entity;
-        ent.Comp.FryFinishTime = _timing.CurTime + ent.Comp.TimeToDeepFry;
+        ent.Comp.FryFinishTime = Timing.CurTime + ent.Comp.TimeToDeepFry;
 
         if (!TryComp<EntityStorageComponent>(ent.Owner, out var entStorage))
             return;
@@ -138,19 +138,19 @@ public abstract partial class SharedDeepFryerSystem : EntitySystem
         ent.Comp.StoredObjects.Clear();
         ent.Comp.FryFinishTime = TimeSpan.Zero;
 
-        if (_solution.TryGetSolution(ent.Owner,
+        if (Solution.TryGetSolution(ent.Owner,
             ent.Comp.FryerSolutionContainer,
             out var solution))
         {
-            _solution.SetTemperature(solution.Value, 293.7f); // Reset the temp when its opened
+            Solution.SetTemperature(solution.Value, 293.7f); // Reset the temp when its opened
         }
     }
 
     protected void DeepFryItems(Entity<DeepFryerComponent> ent)
     {
-        ent.Comp.FryFinishTime = _timing.CurTime + ent.Comp.TimeToDeepFry;
+        ent.Comp.FryFinishTime = Timing.CurTime + ent.Comp.TimeToDeepFry;
 
-        _popup.PopupEntity(Loc.GetString("deep-fryer-item-cooked"), ent.Owner, ent.Owner);
+        Popup.PopupEntity(Loc.GetString("deep-fryer-item-cooked"), ent.Owner);
 
         foreach (var storedObject in ent.Comp.StoredObjects)
         {
@@ -206,14 +206,14 @@ public abstract partial class SharedDeepFryerSystem : EntitySystem
         RaiseLocalEvent(item, ref ev, true);
         _nameModifier.RefreshNameModifiers(item);
 
-        if (!_solution.TryGetSolution(item, ent.Comp.SolutionContainer, out var solutionRef, out var solution)
-            || !_solution.TryGetSolution(ent.Owner, ent.Comp.FryerSolutionContainer, out var fryerSolution))
+        if (!Solution.TryGetSolution(item, ent.Comp.SolutionContainer, out var solutionRef, out var solution)
+            || !Solution.TryGetSolution(ent.Owner, ent.Comp.FryerSolutionContainer, out var fryerSolution))
             return;
 
-        var usedSolution = _solution.SplitSolution(fryerSolution.Value, ent.Comp.SolutionSpentPerFry); // spend a little solution to deep-fry
+        var usedSolution = Solution.SplitSolution(fryerSolution.Value, ent.Comp.SolutionSpentPerFry); // spend a little solution to deep-fry
 
-        _solution.SetCapacity(solutionRef.Value, solution.MaxVolume + ent.Comp.SolutionSpentPerFry);
-        _solution.AddSolution(solutionRef.Value, usedSolution);
+        Solution.SetCapacity(solutionRef.Value, solution.MaxVolume + ent.Comp.SolutionSpentPerFry);
+        Solution.AddSolution(solutionRef.Value, usedSolution);
     }
 
     #endregion

@@ -323,7 +323,8 @@
     - ServiceBoardsStatic
     - CargoBoardsStatic
     #- MedicalBoardsStatic - Goobstation - Moved to Scifab and Medfab
-    - EngineeringBoardsStatic
+    #- EngineeringBoardsStatic - Goobstation - Moved to Scifab and Engifab
+    - CircuitFloorsStatic
     dynamicPacks:
     # <Trauma>
     - SharedBoards

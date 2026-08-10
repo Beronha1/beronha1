@@ -24,13 +24,13 @@ public sealed partial class EntityHeaterSystem : SharedEntityHeaterSystem
     {
         // Set initial power level
         if (TryComp<ApcPowerReceiverComponent>(ent, out var power))
-            power.Load = SettingPower(ent.Comp.Setting, ent.Comp.Power);
+            power.Load = ent.Comp.PassivePower + SettingPower(ent.Comp.Setting, ent.Comp.Power);
     }
 
     public override void Update(float deltaTime)
     {
         var query = EntityQueryEnumerator<EntityHeaterComponent, ItemPlacerComponent, ApcPowerReceiverComponent>();
-        while (query.MoveNext(out _, out _, out var placer, out var power))
+        while (query.MoveNext(out _, out var heater, out var placer, out var power)) // Frontier cooking port: added var heater
         {
             if (!power.Powered)
                 continue;
@@ -38,7 +38,7 @@ public sealed partial class EntityHeaterSystem : SharedEntityHeaterSystem
             // divide by total entities to encourage the use of multiple grills
             // excess would just be wasted in the air but that's not worth simulating
             // if you want a heater thermomachine just use that...
-            var energy = power.PowerReceived * deltaTime;
+            var energy = Math.Max(power.PowerReceived - heater.PassivePower, 0f) * deltaTime; // Frontier cooking port: subtract PassivePower
             foreach (var ent in placer.PlacedEntities)
             {
                 _temperature.ChangeHeat(ent, energy / placer.PlacedEntities.Count);
@@ -57,6 +57,6 @@ public sealed partial class EntityHeaterSystem : SharedEntityHeaterSystem
         if (!TryComp<ApcPowerReceiverComponent>(ent, out var power))
             return;
 
-        power.Load = SettingPower(setting, ent.Comp.Power);
+        power.Load = ent.Comp.PassivePower + SettingPower(setting, ent.Comp.Power);
     }
 }

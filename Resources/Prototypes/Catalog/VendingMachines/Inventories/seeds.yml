@@ -6,13 +6,14 @@
     AppleSeeds: 5
     BananaSeeds: 5
     BerrySeeds: 5
-    CarrotSeeds: 5
     CabbageSeeds: 5
+    CarrotSeeds: 5
     ChanterelleSeeds: 5
     #Cherry seeds and cherries added as part of Goob-Station issue #302 by jellygato - 8/27/24
     CherrySeeds: 5
     ChiliSeeds: 5
     CocoaSeeds: 3
+    CoffeeSeeds: 5 # Frontier
     CornSeeds: 5
     CottonSeeds: 5
     EggplantSeeds: 5
@@ -21,14 +22,14 @@
     GrapeSeeds: 5
     LemonSeeds: 5
     LimeSeeds: 5
-    PineappleSeeds: 5
     LingzhiSeeds: 3
     MangoSeeds: 5 # Goob-Station change by Krispy-Lime 8/26/25 (porting RMC-14 PR #7226)
     OatSeeds: 5
-    OnionSeeds: 5
     OnionRedSeeds: 5
+    OnionSeeds: 5
     OrangeSeeds: 5
     PeaSeeds: 5
+    PineappleSeeds: 5
     PoppySeeds: 3
     PotatoSeeds: 5
     PumpkinSeeds: 5
@@ -38,17 +39,17 @@
     TeaPlantSeeds: 5
     TomatoSeeds: 5
     TowercapSeeds: 5
-    WheatSeeds: 5
     WatermelonSeeds: 5
+    WheatSeeds: 5
   contrabandInventory:
     TobaccoSeeds: 2
     FoodSnackSemki: 2
+  emaggedInventory:
     FlyAmanitaSeeds: 1
   # <Trauma>
     MeatwheatSeeds: 2
     CocaSeeds: 2
     CannabisSeeds: 2
-  emaggedInventory:
     RealCapfruitSeeds: 1
     RainbowCannabisSeeds: 2
   # </Trauma>

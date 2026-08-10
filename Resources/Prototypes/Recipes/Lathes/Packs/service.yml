@@ -42,6 +42,7 @@
   - ElectricGrillMachineCircuitboard
   - BoozeDispenserMachineCircuitboard
   - SodaDispenserMachineCircuitboard
+  - ImpCoffeeMachineCircuitboard # Impstation
   - KitchenAssemblerMachineCircuitboard # Frontier
   - ElectricRangeMachineCircuitboard # Frontier
   - SmartFridgeCircuitboard

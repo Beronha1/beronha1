@@ -1275,6 +1275,19 @@
   - Microwave
 
 - type: microwaveMealRecipe
+  id: RecipeBoiledSnail
+  name: boiled snail recipe
+  result: FoodMeatSnailCooked
+  time: 5
+  group: Savory
+  reagents:
+    Water: 10
+  solids:
+    MobSnail: 1
+  recipeType:
+  - Microwave
+
+- type: microwaveMealRecipe
   id: RecipeEscargotSoup
   name: escargot recipe
   result: FoodSoupEscargot

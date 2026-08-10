@@ -16,5 +16,5 @@
     FoodMeat: 6
     FoodMeatChicken: 4
     FoodMeatDuck: 2
-    ReagentContainerSalt: 1
-    ReagentContainerPepper: 1
+    FoodShakerSalt: 1
+    FoodShakerPepper: 1

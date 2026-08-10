@@ -1,7 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Chemistry.Components;
-using Content.Shared.Chemistry.Reagent;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -9,7 +7,6 @@ using Content.Shared.Storage.Components;
 using Robust.Shared.Map;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
-using Content.Shared.FixedPoint;
 using Content.Shared.Storage.EntitySystems;
 using Content.Shared.Tag;
 using Content.Trauma.Common.Kitchen;
@@ -32,8 +29,8 @@ public sealed partial class DeepFryerSystem : SharedDeepFryerSystem
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        var query = EntityQueryEnumerator<DeepFryerComponent>();
-        while (query.MoveNext(out var fryerUid, out var fryer))
+        var query = EntityQueryEnumerator<ActiveDeepFryerComponent, DeepFryerComponent>();
+        while (query.MoveNext(out var fryerUid, out _, out var fryer))
         {
             if (!TryComp<EntityStorageComponent>(fryer.Owner, out var storage) || storage.Open)
                 continue;
@@ -55,6 +52,9 @@ public sealed partial class DeepFryerSystem : SharedDeepFryerSystem
 
     private bool TryCookRecipe(Entity<DeepFryerComponent> fryer)
     {
+        if (!Solution.TryGetSolution(fryer.Owner, fryer.Comp.FryerSolutionContainer, out var fryerSolution))
+            return false;
+
         if (!_recipes.TryGetRecipe(fryer.Comp.StoredObjects, out var recipe))
             return false;
 
@@ -90,6 +90,13 @@ public sealed partial class DeepFryerSystem : SharedDeepFryerSystem
 
         _storage.Insert(result, fryer.Owner);
 
+        if (Solution.TryGetSolution(result, fryer.Comp.SolutionContainer, out var resultSolution, out var resultContents))
+        {
+            var usedSolution = Solution.SplitSolution(fryerSolution.Value, fryer.Comp.SolutionSpentPerFry);
+            Solution.SetCapacity(resultSolution.Value, resultContents.MaxVolume + fryer.Comp.SolutionSpentPerFry);
+            Solution.AddSolution(resultSolution.Value, usedSolution);
+        }
+
         Popup.PopupPredicted(
             Loc.GetString("deep-fryer-item-cooked"),
             fryer.Owner,
@@ -107,13 +114,9 @@ public sealed partial class DeepFryerSystem : SharedDeepFryerSystem
         if (Solution.TryGetSolution(ent.Owner,
                 ent.Comp.FryerSolutionContainer,
                 out var solutionRef,
-                out var solution)) // Dumont
+                out _))
         {
-            solution.Temperature = Math.Clamp(solution.Temperature + (heatToAdd * frameTime), 293f, ent.Comp.MaxHeat);
-
-
-            Solution.UpdateChemicals(solutionRef.Value);
-            // Dumont End
+            Solution.AddThermalEnergyClamped(solutionRef.Value, heatToAdd * frameTime, 293f, ent.Comp.MaxHeat);
         }
     }
 

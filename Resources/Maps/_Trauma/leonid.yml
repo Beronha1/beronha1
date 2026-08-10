@@ -120218,6 +120218,14 @@ entities:
     components:
     - type: Transform
       parent: 2
+      pos: -57.427505,66.546776
+- proto: FoodMeatSnailCooked
+  entities:
+  - uid: 19179
+    components:
+    - type: Transform
+      parent: 2
+      pos: -56.217983,71.74731
 - proto: FoodPieBananaCream
   entities:
   - uid: 4798

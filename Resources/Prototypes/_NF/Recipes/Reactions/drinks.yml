@@ -65,7 +65,7 @@
       amount: 1
   products:
     BeesKnees: 5
-    
+
 - type: reaction
   id: Coffee
   minTemp: 353 # ~80 deg C

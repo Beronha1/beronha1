@@ -24,6 +24,7 @@ namespace Content.Server.Kitchen.EntitySystems
                 return;
 
             var user = args.Actor;
+            component.LastUser = user;
 
             var solidsDict = new Dictionary<string, int>();
             var reagentDict = new Dictionary<string, FixedPoint2>();

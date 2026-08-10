@@ -6,7 +6,6 @@
   result: FoodMealFries
   ingredients:
     FoodPotato: 1
-    FoodCondimentPacketSalt: 1
 
 - type: deepFryerRecipe
   id: RecipeFriedChiken

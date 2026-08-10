@@ -257,48 +257,8 @@ public sealed partial class GuideMicrowaveEmbed : PanelContainer, IDocumentTag, 
 
         CookTimeLabel.SetMessage(msg);
     }
-    private void GenerateLiquidIngredients(DeepFryerRecipePrototype recipe)
-    {
-        foreach (var (product, amount) in recipe.Reagents.OrderByDescending(p => p.Value))
-        {
-            var reagent = _prototype.Index<ReagentPrototype>(product);
-
-            var liquidColorMsg = new FormattedMessage();
-            liquidColorMsg.AddMarkupOrThrow(
-                Loc.GetString("guidebook-microwave-reagent-color-display",
-                    ("color", reagent.SubstanceColor)));
-
-            var liquidColorLabel = new RichTextLabel();
-            liquidColorLabel.SetMessage(liquidColorMsg);
-            liquidColorLabel.HorizontalAlignment = Control.HAlignment.Center;
-
-            IngredientsGrid.AddChild(liquidColorLabel);
-
-            var liquidNameMsg = new FormattedMessage();
-            liquidNameMsg.AddMarkupOrThrow(
-                Loc.GetString("guidebook-microwave-reagent-name-display",
-                    ("reagent", reagent.LocalizedName)));
-
-            var liquidNameLabel = new RichTextLabel();
-            liquidNameLabel.SetMessage(liquidNameMsg);
-
-            IngredientsGrid.AddChild(liquidNameLabel);
-
-            var quantityMsg = new FormattedMessage();
-            quantityMsg.AddMarkupOrThrow(
-                Loc.GetString("guidebook-microwave-reagent-quantity-display",
-                    ("amount", amount)));
-
-            var quantityLabel = new RichTextLabel();
-            quantityLabel.SetMessage(quantityMsg);
-
-            IngredientsGrid.AddChild(quantityLabel);
-        }
-    }
-
     private void GenerateIngredients(DeepFryerRecipePrototype recipe)
     {
-        GenerateLiquidIngredients(recipe);
         GenerateSolidIngredients(recipe);
     }
 

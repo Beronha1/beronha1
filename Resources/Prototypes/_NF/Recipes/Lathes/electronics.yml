@@ -6,7 +6,6 @@
   materials:
     Steel: 800
     Glass: 900
-
 - type: latheRecipe
   id: KitchenAssemblerMachineCircuitboard
   result: KitchenAssemblerMachineCircuitboard
@@ -24,4 +23,3 @@
   materials:
     Steel: 800
     Glass: 900
-

@@ -11893,6 +11893,15 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: FoodMeatSnail
+  entities:
+  - uid: 994
+    components:
+    - type: Transform
+      parent: 988
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
 - proto: FoodMeatSnake
   entities:
   - uid: 992

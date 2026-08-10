@@ -6,4 +6,3 @@ namespace Content.Shared._NF.Kitchen.Components;
 public sealed class AssemblerStartCookMessage : BoundUserInterfaceMessage
 {
 }
-

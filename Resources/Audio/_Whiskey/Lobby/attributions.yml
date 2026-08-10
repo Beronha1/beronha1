@@ -1,0 +1,9 @@
+- files: ["running_out.ogg"]
+  license: "CC-BY-3.0"
+  copyright: "Running Out by Bolgarich. Loudness normalized and converted from Opus/WebM to OGG Vorbis."
+  source: "https://www.youtube.com/watch?v=SzEp2nv6oZ4"
+
+- files: ["countdown.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Countdown by qwertyquerty. Loudness normalized and re-encoded as OGG Vorbis."
+  source: "https://github.com/BeeStation/BeeStation-Hornet/commit/7f48971438492805af286023a72e7609a729234a"

@@ -219,7 +219,7 @@
     earliestStart: 50 # Trauma, was 30
     #recorruenceDelay: 20 # Goobstation - no longer needed
     maxOccurrences: 1 # Goobstation
-    minimumPlayers: 50
+    minimumPlayers: 30
     duration: null
     occursDuringRoundEnd: false
   - type: SpaceSpawnRule
@@ -256,7 +256,7 @@
     occursDuringRoundEnd: false
     earliestStart: 30
     maxOccurrences: 1 # Trauma - replaces delay
-    minimumPlayers: 30
+    minimumPlayers: 25
   - type: SpaceSpawnRule
   - type: AntagGhostCharacterRule # Trauma - use ghost character instead of AntagLoadProfileRule
   - type: AntagObjectives
@@ -334,7 +334,7 @@
     occursDuringRoundEnd: false
     earliestStart: 30
     reoccurrenceDelay: 60
-    minimumPlayers: 30
+    minimumPlayers: 40
 
 # disabled until event is rewritten to be more interesting
 #- type: entity
@@ -545,7 +545,7 @@
   - type: StationEvent
     earliestStart: 50 # trauma, was 35
     weight: 1 # Trauma - was 5.5
-    minimumPlayers: 50 # Goobstation - was 20
+    minimumPlayers: 40 # Goobstation - was 20
     duration: null # LoneOpsSpawn needs an infinite duration so that it inherits the NukeOpsRule things of an actually appropriate end screen (not always "Neutral outcome!") and... ending the game if the station is nuked.
     occursDuringRoundEnd: false
   - type: RuleGrids

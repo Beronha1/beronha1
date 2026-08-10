@@ -326,9 +326,11 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
     /// </summary>
     public bool TryCure(Entity<DiseaseCarrierComponent?> ent, EntityUid disease)
     {
-        if (!Resolve(ent, ref ent.Comp) || !_container.Remove(disease, ent.Comp.Diseases))
+        if (!Resolve(ent, ref ent.Comp) || !ent.Comp.Diseases.Contains(disease))
             return false;
 
+        // Keep the disease contained until deletion so the transform system never tries to
+        // attach it (and all of its effects) to invalid world coordinates.
         PredictedQueueDel(disease);
         return true;
     }
@@ -375,7 +377,9 @@ public abstract partial class SharedDiseaseSystem : EntitySystem
         if (!force && (HasDisease(ent, diseaseComp.Genotype) || !checkEv.CanInfect))
             return false;
 
-        _container.Insert(disease, ent.Comp.Diseases);
+        if (!_container.Insert(disease, ent.Comp.Diseases))
+            return false;
+
         var ev = new DiseaseGainedEvent((disease, diseaseComp), (ent, ent.Comp));
         RaiseLocalEvent(ent, ref ev);
         RaiseLocalEvent(disease, ref ev);

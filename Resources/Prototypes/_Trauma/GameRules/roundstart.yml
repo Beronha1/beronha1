@@ -36,7 +36,7 @@
   id: Insurgency
   components:
   - type: GameRule
-    minPlayers: 5
+    minPlayers: 15
   - type: NestedRule
     rules: !type:GroupSelector
       children:
@@ -147,7 +147,7 @@
   id: ShadowlingGamemode
   components:
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 20
   - type: AntagSelection
     antags:
     - !type:FixedAntagCount

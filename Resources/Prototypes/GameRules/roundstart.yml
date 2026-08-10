@@ -207,7 +207,7 @@
   id: Nukeops
   components:
   - type: GameRule
-    minPlayers: 40 # Trauma, was 20
+    minPlayers: 20 # Trauma, was 20
   - type: LoadMapRule
     mapPath: /Maps/_Trauma/Nonstations/nukieplanet.yml # Trauma
   - type: AntagSelection
@@ -329,7 +329,7 @@
   - type: MindshieldRemovingAntag # puts fake mindshields into headrevs that start with a real one
   # </Trauma>
   - type: GameRule
-    minPlayers: 20 # Trauma - was 15
+    minPlayers: 15 # Trauma - was 15
   - type: RevolutionaryRule
   - type: AntagSelection
     selectionTime: PrePlayerSpawn
@@ -363,7 +363,7 @@
   # <Trauma>
   - type: WizardRule
   - type: GameRule
-    minPlayers: 30
+    minPlayers: 25
   - type: AntagPlayerEffects
     effects:
     - !type:NestedEffect
@@ -393,7 +393,7 @@
   id: Wizard
   components:
   - type: GameRule
-    minPlayers: 30 # Trauma - was 10
+    minPlayers: 25 # Trauma - was 10
   - type: DynamicRuleCost
     cost: 150
 

@@ -115,11 +115,10 @@ public partial class SharedDiseaseSystem
             if (HasDisease(target.Owner, args.Disease.Comp.Genotype))
                 continue;
 
-            var newDisease = TryClone((args.Disease, args.Disease.Comp));
+            var newDisease = TryCloneForSpread((args.Disease, args.Disease.Comp));
             if (newDisease == null)
                 continue;
 
-            MutateDisease(newDisease.Value);
             if (!TryInfect(target.Owner, newDisease.Value, true))
                 QueueDel(newDisease);
             else if (ent.Comp.AddIcon)
@@ -188,7 +187,7 @@ public partial class SharedDiseaseSystem
             return null;
         }
 
-        var index = _random.Next(effects.Count - 1);
+        var index = _random.Next(effects.Count);
         var effectUid = effects[index];
         TryRemoveEffect((ent, ent.Comp), effectUid);
 
@@ -272,9 +271,11 @@ public partial class SharedDiseaseSystem
     /// </summary>
     public bool TryRemoveEffect(Entity<DiseaseComponent?> ent, EntityUid effect)
     {
-        if (!Resolve(ent, ref ent.Comp) || !_container.Remove(effect, ent.Comp.Effects))
+        if (!Resolve(ent, ref ent.Comp) || !ent.Comp.Effects.Contains(effect))
             return false;
 
+        // Deleting while the effect is still contained avoids briefly reattaching it to the
+        // invalid world coordinates of its contained disease parent.
         PredictedQueueDel(effect);
         return true;
     }

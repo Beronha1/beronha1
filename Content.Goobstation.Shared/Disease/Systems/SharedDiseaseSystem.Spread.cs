@@ -23,6 +23,23 @@ public partial class SharedDiseaseSystem
     }
 
     /// <summary>
+    /// Clones and mutates a disease for transmission without changing its genotype.
+    /// A genotype identifies the disease for duplicate and immunity checks, so changing it
+    /// during every spread attempt would let one disease infect the same carrier indefinitely.
+    /// </summary>
+    private EntityUid? TryCloneForSpread(Entity<DiseaseComponent> source)
+    {
+        var clone = TryClone(source.AsNullable());
+        if (clone == null || !_query.TryComp(clone.Value, out var cloneComp))
+            return null;
+
+        MutateDisease((clone.Value, cloneComp));
+        cloneComp.Genotype = source.Comp.Genotype;
+        Dirty(clone.Value, cloneComp);
+        return clone;
+    }
+
+    /// <summary>
     /// Tries to infect the given target with the given disease prototype
     /// </summary>
     public EntityUid? DoInfectionAttempt(EntityUid target, EntProtoId proto, DiseaseSpreadSpecifier spreadParams)
@@ -79,11 +96,10 @@ public partial class SharedDiseaseSystem
         EntityUid? newDisease = null;
         if (clone)
         {
-            newDisease = TryClone((disease, diseaseComp));
+            newDisease = TryCloneForSpread((disease, diseaseComp));
             if (newDisease == null)
                 return false;
 
-            MutateDisease(newDisease.Value);
             infectDisease = newDisease.Value;
         }
 

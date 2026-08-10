@@ -162,6 +162,7 @@
   time: 5
   group: Dessert
   solids:
+    DrinkWaterCup: 1
   reagents:
     IceCream: 8
     JuiceBerry: 2

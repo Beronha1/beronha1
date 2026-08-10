@@ -50,8 +50,6 @@ public sealed partial class DeepFryerComponent : Component
     /// <summary>
     /// which components get removed to any non-sentient objects (doesn't have a mind container)
     /// </summary>
-    [DataField]
-    public ComponentRegistry ComponentsToRemoveObjects = new();
 
     [DataField]
     public SoundPathSpecifier StartSound = new("/Audio/_Trauma/Machines/DeepFryer/deep_fryer_initial.ogg");
@@ -72,7 +70,7 @@ public sealed partial class DeepFryerComponent : Component
     /// Name of the containers to remove e.g bag storage
     /// </summary>
     [DataField]
-    public List<string> ContainersToRemove = new ();
+    public List<string> ContainersToRemove = new();
 
     /// <summary>
     /// The last played start/finish sound.
@@ -80,6 +78,12 @@ public sealed partial class DeepFryerComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? Sound;
+
+    /// <summary>
+    /// which components get removed to any non-sentient objects (doesn't have a mind container)
+    /// </summary>
+    [DataField]
+    public ComponentRegistry ComponentsToRemoveObjects = new();
 
     /// <summary>
     /// Last person that closed the fryer, reset every time it's closed.

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -101,11 +101,11 @@ stack-rolling-paper = { $amount ->
     [one] papel de seda
    *[other] papéis de seda
 }
-stack-fulton = fulton
-stack-credit = speso
-stack-plasma = phoron
+stack-fulton= Fulton
+stack-credit= especial
+stack-plasma= forão
 stack-biomass = biomassa
-stack-pyrotton = pyrotton
+stack-pyrotton= pirotão
 stack-sharkminnow-tooth = dente de sharkminnow
 stack-goliath-hide = couro de goliath
 stack-telecrystal = telecristal

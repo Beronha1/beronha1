@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -212,3 +212,4 @@ loadout-group-reporter-head = Chapéu de repórter
 loadout-group-reporter-outerclothing = Colete de repórter
 
 loadout-group-psychologist-jumpsuit = Macacão de psicólogo
+

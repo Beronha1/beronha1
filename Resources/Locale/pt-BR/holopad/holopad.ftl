@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Cabeçalhos de janela
-holopad-window-title = {CAPITALIZE($title)}
+holopad-window-title= {CAPITALIZE($title)}
 holopad-window-subtitle = [color=white][bold]Sistema de comunicação holográfica[/bold][/color]
 holopad-window-options = [color=darkgray][font size=10][italic]Selecione uma opção na lista abaixo[/italic][/font][/color]
 
@@ -31,8 +31,8 @@ holopad-window-access-denied = Acesso negado
 
 # Lista de contatos
 holopad-window-select-contact-from-list = Selecione um contato para iniciar uma holochamada
-holopad-window-fetching-contacts-list = Nenhum holopad pode ser contatado no momento
-holopad-window-contact-label = {CAPITALIZE($label)}
+holopad-window-fetching-contacts-list = Nenhum holopad pode ser contatado Não momento
+holopad-window-contact-label= {CAPITALIZE($label)}
 holopad-window-filter-line-placeholder = Procurar contato
 
 # Decorativo
@@ -107,7 +107,7 @@ holopad-cargo-mailroom = Carga - Sala de correspondência
 # Engenharia
 holopad-engineering-atmos-front = Atmos - Entrada
 holopad-engineering-atmos-main = Atmos - Área principal
-holopad-engineering-atmos-teg = Atmos - TEG
+holopad-engineering-atmos-teg= Atmos-TEG
 holopad-engineering-storage = Engenharia - Armazenamento
 holopad-engineering-breakroom = Engenharia - Sala de descanso
 holopad-engineering-front = Engenharia - Entrada
@@ -163,3 +163,4 @@ holopad-station-cargo-bay = Estação - Docas de carga
 
 # CentComm
 holopad-centcomm-evac = CentComm - Nave de evacuação
+

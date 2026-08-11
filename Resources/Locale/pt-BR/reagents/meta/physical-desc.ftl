@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -103,3 +103,4 @@ reagent-physical-desc-unidentifiable = não identificável
 reagent-physical-desc-non-newtonian = não newtoniano
 reagent-physical-desc-thin = ralo
 reagent-physical-desc-arcryox = azul-gélido
+

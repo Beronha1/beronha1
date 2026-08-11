@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -20,4 +20,5 @@ group-organ-status = {$organ}: {$capacity}% de capacidade funcional
 group-solution-name = {$solution}
 group-solution-unknown = Desconhecida
 group-solution-contents = {$reagent}: {$quantity}
-condition-body-part-bleeding = • {$part} de {$entity} está sangrando.
+condition-body-part-bleeding = • {$entity} de {$entity} está sangrando.
+

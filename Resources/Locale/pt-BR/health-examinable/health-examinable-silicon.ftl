@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,3 +15,4 @@ health-examinable-silicon-Heat-25 = [color=orange]O chassi de {$target} apresent
 health-examinable-silicon-Heat-50 = [color=orange]O chassi de {$target} está bastante carbonizado.[/color]
 health-examinable-silicon-Heat-75 = [color=orange]O chassi de {$target} está parcialmente derretido![/color]
 health-examinable-silicon-Shock-50 = [color=lightgoldenrodyellow]Os circuitos de {$target} parecem parcialmente queimados![/color]
+

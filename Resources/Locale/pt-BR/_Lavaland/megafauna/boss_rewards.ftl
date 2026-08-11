@@ -1,4 +1,4 @@
-# Recompensas dos bosses do RedStar/Wega #117 restauradas no port de Lavaland da Whiskey.
+﻿# Recompensas dos bosses do RedStar/Wega #117 restauradas no port de Lavaland da Whiskey.
 
 ent-LavalandCrateNecropolisAshDrakeFilled = baú da Necrópole
     .desc = Um baú reforçado contendo um dos tesouros do Dragão de Cinzas.
@@ -43,3 +43,4 @@ legion-core-inert = O núcleo da legião ficou inerte.
 dragon-blood-effect-1 = O sangue queima sua carne, deixando apenas os ossos.
 dragon-blood-effect-2 = A lava não causa mais dano nem reduz sua velocidade.
 dragon-blood-effect-3 = Você sente uma forma dracônica esperando sob sua pele.
+

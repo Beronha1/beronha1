@@ -1,0 +1,3 @@
+﻿command-description-rejuvenate =
+    R
+

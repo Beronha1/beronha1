@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -37,3 +37,4 @@ lobby-state-playtime-comment-normal =
 lobby-state-playtime-comment-concerning = Você jogou por {$hours} horas hoje. Faça uma pausa, por favor.
 lobby-state-playtime-comment-grasstouchless = {$hours} horas. Considere sair para cuidar das suas necessidades.
 lobby-state-playtime-comment-selfdestructive = {$hours} horas. Sério?
+

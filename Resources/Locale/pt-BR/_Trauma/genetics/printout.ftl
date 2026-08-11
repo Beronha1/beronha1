@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -9,3 +9,4 @@ genetics-printout-sequence = -- \[{$rarity}\] {$number}
 
 genetics-printout-sequence-title = SEQUÊNCIA: {$number}
 genetics-printout-sequence-rarity = RARIDADE: {$rarity}
+

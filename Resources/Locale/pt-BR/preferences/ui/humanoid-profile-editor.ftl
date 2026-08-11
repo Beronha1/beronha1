@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -38,8 +38,8 @@ humanoid-profile-editor-reset-button = Redefinir
 humanoid-profile-editor-spawn-priority-label = Prioridade de surgimento:
 humanoid-profile-editor-eyes-label = Cor dos olhos:
 humanoid-profile-editor-jobs-tab = Funções
-humanoid-profile-editor-preference-unavailable-stay-in-lobby-button = Permanecer no lobby se a preferência não estiver disponível.
-humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button = Ser {$overflowJob} se a preferência não estiver disponível.
+humanoid-profile-editor-preference-unavailable-stay-in-lobby-button = Permanecer Não lobby se Uma preferência não estiver disponível.
+humanoid-profile-editor-preference-unavailable-spawn-as-overflow-button = Ser {$overflowJob} se Uma preferência não estiver disponível.
 humanoid-profile-editor-preference-jumpsuit = Macacão
 humanoid-profile-editor-preference-jumpskirt = Vestido-macacão
 humanoid-profile-editor-preference-backpack = Mochila
@@ -52,7 +52,7 @@ humanoid-profile-editor-preference-spawn-priority-none = Nenhuma
 humanoid-profile-editor-preference-spawn-priority-arrivals = Chegadas
 humanoid-profile-editor-preference-spawn-priority-cryosleep = Criossoneca
 
-humanoid-profile-editor-jobs-amount-in-department-tooltip = Funções no departamento {$departmentName}
+humanoid-profile-editor-jobs-amount-in-department-tooltip = Funções Não departamento {$departmentName}
 humanoid-profile-editor-department-jobs-label = Funções de {$departmentName}
 humanoid-profile-editor-antags-tab = Antags
 humanoid-profile-editor-antag-preference-yes-button = Sim
@@ -80,3 +80,4 @@ humanoid-profile-editor-voice-masculine = Masculina
 humanoid-profile-editor-voice-feminine = Feminina
 humanoid-profile-editor-voice-neutral = Neutra
 humanoid-profile-editor-voice-none = Voz sem nome
+

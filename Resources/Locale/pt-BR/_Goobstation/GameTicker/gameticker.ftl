@@ -1,0 +1,5 @@
+﻿game-ticker-get-ingame-info-text =A rodada atual é: [color=white]#{$roundId}[/color]
+                                   The current player count is: [color=branco]{$playerCount}[/color]
+                                   The current map is: [color=branco]{$mapName}[/color]
+                                   The current game mode is: [color=branco]{$gmTitle}[/color]
+                                   >[color=amarelo]{$desc}[/color]

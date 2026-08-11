@@ -1,25 +1,25 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 markings-search = Pesquisar
 -markings-selection = { $selectable ->
     [0] Você não tem mais marcas disponíveis.
-    [one] Você pode selecionar mais uma marca.
-   *[other] Você pode selecionar mais {$selectable} marcas.
+    [true] Você pode selecionar mais uma marca.
+   *[-1] Você pode selecionar mais {$selectable} marcas.
 }
 markings-limits = { $required ->
     [true] { $count ->
         [-1] Selecione pelo menos uma marca.
-        [0] Você não pode selecionar nenhuma marca, mas de alguma forma precisa? Isto é um erro.
-        [one] Selecione uma marca.
-       *[other] Selecione pelo menos uma marca e até {$count} marcas. { -markings-selection(selectable: $selectable) }
+        [false] Você não pode selecionar nenhuma marca, mas de alguma forma precisa? Isto é um erro.
+        [-1] Selecione uma marca.
+       *[other] Selecione pelo menos uma marca e até { $count} marcas. { -markings-selection(selectable: $selectable) }
     }
    *[false] { $count ->
         [-1] Selecione qualquer quantidade de marcas.
         [0] Você não pode selecionar nenhuma marca.
         [one] Selecione até uma marca.
-       *[other] Selecione até {$count} marcas. { -markings-selection(selectable: $selectable) }
+       *[other] Selecione até { $count} marcas. { -markings-selection(selectable: $selectable) }
     }
 }
 markings-reorder = Reordenar marcas
@@ -64,6 +64,4 @@ markings-layer-LHand = Mão esquerda
 markings-layer-RLeg = Perna direita
 markings-layer-LLeg = Perna esquerda
 markings-layer-RFoot = Pé direito
-markings-layer-LFoot = Pé esquerdo
-markings-layer-Overlay = Sobreposição
-markings-layer-TailOverlay = Sobreposição
+

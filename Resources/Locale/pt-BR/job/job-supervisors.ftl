@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
+﻿# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -31,3 +31,4 @@ job-supervisors-science = aos cientistas e ao Diretor de Pesquisa
 job-supervisors-hire = a qualquer um que te contrate
 
 job-supervisors-everyone = a qualquer um que te contrate
+

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 # SPDX-FileCopyrightText: 2023 Kara <lunarautomaton6@gmail.com>
 # SPDX-FileCopyrightText: 2023 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2023 brainfood1183 <113240905+brainfood1183@users.noreply.github.com>
@@ -93,3 +93,4 @@ xenoarch-trigger-examine-timer = Entalhes e riscos cobrem a superfície... Mal d
 ### Pistas dos efeitos
 xenoarch-effect-puddle = Produz uma poça dos seguintes reagentes: {$reagent}
 xenoarch-effect-foam = Produz espuma dos seguintes reagentes: {$reagent}
+

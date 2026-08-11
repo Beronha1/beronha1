@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +16,4 @@ inspect-part-status-conjunction3 = A região{" "}
 inspect-part-status-and = e{" "}
 inspect-part-status-you = Você
 inspect-part-status-their = Paciente
+

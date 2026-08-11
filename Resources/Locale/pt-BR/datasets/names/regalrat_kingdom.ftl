@@ -1,0 +1,15 @@
+names-regal-rat-kingdom-dataset-1 = Praga
+names-regal-rat-kingdom-dataset-2 = Amonia
+names-regal-rat-kingdom-dataset-3 = Manutencao
+names-regal-rat-kingdom-dataset-4 = Lixo
+names-regal-rat-kingdom-dataset-5 = Residuos
+names-regal-rat-kingdom-dataset-6 = Rato
+names-regal-rat-kingdom-dataset-7 = Verme
+names-regal-rat-kingdom-dataset-8 = Queijo
+names-regal-rat-kingdom-dataset-9 = Mastigando
+names-regal-rat-kingdom-dataset-10 = Grande
+names-regal-rat-kingdom-dataset-11 = Imundicia
+names-regal-rat-kingdom-dataset-12 = Esgoto
+names-regal-rat-kingdom-dataset-13 = Descarte
+names-regal-rat-kingdom-dataset-14 = Servico
+names-regal-rat-kingdom-dataset-15 = O

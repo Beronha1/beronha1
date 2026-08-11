@@ -1,0 +1,11 @@
+﻿quality-name--5 = catastrófico {$baseName}
+quality-name--4 = terrível {$baseName}
+quality-name--3 = ruim {$baseName}
+quality-name--2 = malfeito {$baseName}
+quality-name--1 = abaixo do padrão {$baseName}
+quality-name-0 = {$baseName}
+quality-name-1 = refinado {$baseName}
+quality-name-2= superior @@
+quality-name-3 = excelente {$baseName}
+quality-name-4 = obra-prima {$baseName}
+quality-name-5 = robusto {$baseName}

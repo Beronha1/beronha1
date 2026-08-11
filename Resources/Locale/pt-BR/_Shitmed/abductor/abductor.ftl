@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +16,4 @@ abductors-gizmo-mode-brainwash = Lavagem cerebral
 abductor-gun-restricted-1 = Você tenta alcançar o gatilho, mas seu dedo não cabe.
 abductor-console-ftl-to-station = Primeiro, salte em MSL para a estação!
 abductor-send-agent-not-buckled = Ninguém está preso à plataforma alienígena!
+

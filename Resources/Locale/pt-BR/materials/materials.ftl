@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,7 +16,7 @@ materials-biomass = biomassa
 materials-cardboard = papelão
 materials-cloth = tecido
 materials-durathread = durathread
-materials-plasma = phoron
+materials-plasma= forão
 materials-plastic = plástico
 materials-wood = madeira
 materials-paper = papel

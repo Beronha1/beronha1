@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +16,4 @@ character-setup-gui-save-panel-title = Alterações não salvas no personagem
 character-setup-gui-save-panel-save = Salvar
 character-setup-gui-save-panel-nosave = Não salvar
 character-setup-gui-save-panel-cancel = Cancelar
+

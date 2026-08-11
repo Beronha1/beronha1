@@ -1,0 +1,6 @@
+﻿ent-texture-tag-short =[enttex id="{ $id }"]
+ent-texture-tag =[enttex id="{ $id }" tamanho={ $id }]
+texture-tag-short =[tex path="{ $path}"]
+texture-tag =[tex path="{ $path }" escala={ $path }]
+radio-icon-tag-short =[radicon path="{ $path }" text="{ $text }" color="{ $color }"]
+radio-icon-tag =[radicon path="{ $path }" escala={ $scale } text="{ $text }" color="{ $color }"]

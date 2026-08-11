@@ -1,15 +1,15 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 alerts-low-oxygen-name = [color=red]Pouco oxigênio[/color]
-alerts-low-oxygen-desc = Não há [color=red]oxigênio suficiente[/color] no ar que você respira. Ative os [color=green]sistemas internos[/color].
+alerts-low-oxygen-desc = Não há [color=red]oxigênio suficiente[/color] de ar que você respira. Ative os [color=green]sistemas internos[/color].
 
 alerts-low-nitrogen-name = [color=red]Pouco nitrogênio[/color]
-alerts-low-nitrogen-desc = Não há [color=red]nitrogênio suficiente[/color] no ar que você respira. Ative os [color=green]sistemas internos[/color].
+alerts-low-nitrogen-desc = Não há [color=red]nitrogênio suficiente[/color] de ar que você respira. Ative os [color=green]sistemas internos[/color].
 
 alerts-high-toxin-name = [color=red]Nível alto de toxinas[/color]
-alerts-high-toxin-desc = Há [color=red]toxinas demais[/color] no ar que você respira. Ative os [color=green]sistemas internos[/color] ou afaste-se.
+alerts-high-toxin-desc = Há [color=red]toxinas demais[/color] de ar que você respira. Ative os [color=green]sistemas internos[/color] ou afaste-se.
 
 alerts-low-pressure-name = [color=red]Pressão baixa[/color]
 alerts-low-pressure-desc = O ar ao seu redor é [color=red]perigosamente rarefeito[/color]. Um [color=green]traje espacial[/color] protegeria você.
@@ -47,7 +47,7 @@ alerts-ensnared-name = [color=yellow]Enredado[/color]
 alerts-ensnared-desc = Você está [color=yellow]enredado[/color], o que prejudica sua capacidade de se mover.
 
 alerts-buckled-name = [color=yellow]Preso[/color]
-alerts-buckled-desc = Você está [color=yellow]preso[/color] a algo. Clique no alerta para se soltar, a menos que esteja [color=yellow]algemado.[/color]
+alerts-buckled-desc = Você está [color=yellow]preso[/color] Uma algo. Clique no alerta para se soltar, Uma menos que esteja [color=yellow]algemado.[/color]
 
 alerts-crit-name = [color=red]Estado crítico[/color]
 alerts-crit-desc = Você está gravemente ferido e inconsciente.
@@ -86,7 +86,7 @@ alerts-parched-name = [color=red]Desidratado[/color]
 alerts-parched-desc = Você está com muita sede. Ela torna qualquer movimento difícil.
 
 alerts-muted-name = Sem fala
-alerts-muted-desc = Você perdeu a capacidade de falar.
+alerts-muted-desc = Você perdeu Uma capacidade de falar.
 
 alerts-vow-silence-name = Voto de silêncio
 alerts-vow-silence-desc = Você fez um voto que proíbe comunicação verbal ou escrita como parte da iniciação na Mystiko Tagma Mimon. Clique para quebrar o voto.
@@ -107,10 +107,10 @@ alerts-pacified-name = [color=green]Pacificado[/color]
 alerts-pacified-desc = Você está pacificado e não consegue ferir criaturas vivas.
 
 alerts-adrenaline-name = [color=red]Adrenalina[/color]
-alerts-adrenaline-desc = Você está cheio de adrenalina: a dor não vai desacelerá-lo.
+alerts-adrenaline-desc = Você está cheio de adrenalina: Uma dor não vai desacelerá-lo.
 
 alerts-suit-power-name = Energia do traje
-alerts-suit-power-desc = A quantidade de energia no traje de ninja espacial.
+alerts-suit-power-desc = Uma quantidade de energia Não traje de ninja espacial.
 
 alerts-magboots-name = Botas magnéticas
 alerts-magboots-desc = Você é imune ao fluxo de ar, mas se move um pouco mais devagar.
@@ -128,4 +128,6 @@ alerts-stealthy-name = Batedor de carteiras
 alerts-stealthy-desc = Indica se você está furtando bolsos. Clique para alternar.
 
 alerts-prying-name = Arrombando
-alerts-prying-desc = Você pode arrombar portas naturalmente usando a interação alternativa.
+alerts-prying-desc = Você pode arrombar portas naturalmente usando Uma interação alternativa.
+
+

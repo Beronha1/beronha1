@@ -1,0 +1,39 @@
+﻿chat-language-Universal-name =Universal
+chat-language-Psychomantic-name =Psicomântico
+chat-language-Bubblish-name =borbulhante
+chat-language-RootSpeak-name =Fala de raiz
+chat-language-Draconic-name= Estamos com você
+chat-language-Azaziba-name =Sinta'Azaziba
+chat-language-SolCommon-name =Sol Comum
+chat-language-NovuNederic-name =Novu-Nederico
+chat-language-TauCetiBasic-name =Básico
+chat-language-Tradeband-name =Banda comercial
+chat-language-Freespeak-name =Liberdade de expressão
+chat-language-Elyran-name =Eliran
+chat-language-Moffic-name =Moffic
+chat-language-RobotTalk-name =Binário
+chat-language-Calcic-name =Cálcico
+chat-language-Xeeplian-name =Xeeplian
+chat-language-NewKinPidgin-name =Ka'rakk
+
+# Animal Languages
+
+chat-language-Cat-name =Gato
+chat-language-Chicken-name =Frango
+chat-language-Cow-name =Vaca
+chat-language-Crab-name =Caranguejo
+chat-language-Deer-name =Cervo
+chat-language-Dog-name =Cachorro
+chat-language-Duck-name =Pato
+chat-language-Eldritch-name =Sobrenatural
+chat-language-Fox-name =Raposa
+chat-language-Hissing-name =Assobiando
+chat-language-Kangaroo-name =Canguru
+chat-language-Kobold-name =Kobold
+chat-language-Monkey-name =Macaco
+chat-language-Mouse-name =Rato
+chat-language-Penguin-name =Pinguim
+chat-language-Pig-name =Porco
+chat-language-Sheep-name =Ovelha
+chat-language-Xeno-name =Xeno
+chat-language-DroneTalk-name =Drone

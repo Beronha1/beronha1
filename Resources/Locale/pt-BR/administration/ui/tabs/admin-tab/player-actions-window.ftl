@@ -1,0 +1,9 @@
+admin-player-actions-window-ban = Painel de ban
+admin-player-actions-window-admin-ghost= Administrador Fantasma
+admin-player-actions-window-permissions = Painel de Permissoes
+admin-player-actions-window-announce = Anuncio
+admin-player-actions-window-shuttle = (Re)chamar Nave
+admin-player-actions-window-event-log = Log de evento
+admin-player-actions-window-admin-logs = Logs Admin
+admin-player-actions-window-admin-fax = Fax Admin
+admin-player-actions-window-admin-chat = Chat Admin

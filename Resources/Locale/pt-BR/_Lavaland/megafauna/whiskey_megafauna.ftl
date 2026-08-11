@@ -1,5 +1,5 @@
-# Elenco clássico
-ent-LavalandBossBubblegum = Bubblegum
+﻿# Elenco clássico
+ent-LavalandBossBubblegum= Chiclete
     .desc = O rei dos demônios do massacre, movido por uma fome interminável de sangue.
 ent-LavalandBossAshDrake = dragão de cinzas
     .desc = Guardião da Necrópole.
@@ -121,8 +121,3 @@ station-beacon-ruin-banana-arena = Sinal provocador
 lavaland-ruin-mercury-fissure = fissura radioativa
 station-beacon-mercury-arena = Mar de Árvores Fantásticas
 station-beacon-bottomless-pit = Sinal radioativo
-station-beacon-ruin-bubblegum-arena = Sinal ensanguentado
-station-beacon-ruin-ash-drake-arena = Sinal dracônico
-station-beacon-ruin-colossus-arena = Sinal ressonante
-station-beacon-ruin-mega-legion-arena = Sinal necrótico
-station-beacon-ruin-blood-drunk-miner-arena = Sinal frenético de mineração

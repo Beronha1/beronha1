@@ -1,4 +1,4 @@
-ort-sense-danger1 = Seus cabelos estão se arrepiando!
+﻿ort-sense-danger1 = Seus cabelos estão se arrepiando!
 ort-sense-danger2 = Você sente como se estivesse sendo medido.
 ort-sense-danger3 = Você começa a sentir que isso foi um grande erro.
 ort-sense-danger4 = Seus olhos não conseguem compreender o que estão vendo!
@@ -18,3 +18,4 @@ ort-paradigm-no-damage = A entidade termina a análise. Ela parece confusa.
 ort-paradigm-genetic-highest = A entidade tenta alterar sua genética, mas ela já foi alterada.
 ort-paradigm-finished = Seus ferimentos externos somem, mas algo está terrivelmente errado!
 ort-phase-conversion = Adaptação concluída.
+

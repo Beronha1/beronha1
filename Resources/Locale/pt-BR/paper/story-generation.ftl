@@ -1,0 +1,245 @@
+﻿# SPDX-FileCopyrightText: 2024 Adeinitas <147965189+adeinitas@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Ed <96445749+TheShuEd@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 LeoSantich <108027402+LeoSantich@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2024 Piras314 <p1r4s@proton.me>
+# SPDX-FileCopyrightText: 2024 PoTeletubby <ajcraigaz@gmail.com>
+# SPDX-FileCopyrightText: 2024 Tayrtahn <tayrtahn@gmail.com>
+# SPDX-FileCopyrightText: 2024 lzk <124214523+lzk228@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+story-gen-book-type1 = livro
+story-gen-book-type2 = fólio
+story-gen-book-type3 = coletânea
+story-gen-book-type4 = anotações
+story-gen-book-type5 = manuscrito
+story-gen-book-type6 = registros
+story-gen-book-type7 = tomo
+story-gen-book-type8 = diário
+story-gen-book-type9 = arquivos
+story-gen-book-type10= códice
+story-gen-book-type11= memórias
+story-gen-book-type12= compêndio
+
+story-gen-book-genre1 = romance policial
+story-gen-book-genre2 = comédia
+story-gen-book-genre3 = história de terror
+story-gen-book-genre4 = poema
+story-gen-book-genre5 = novela
+story-gen-book-genre6 = crônica
+story-gen-book-genre7 = ficção científica
+story-gen-book-genre8 = fantasia
+story-gen-book-genre9 = romance
+story-gen-book-genre10= filme de ação
+story-gen-book-genre11= romance histórico
+story-gen-book-genre12= biografia
+story-gen-book-genre13= aventura
+story-gen-book-genre14= drama
+
+story-gen-book-appearance1 = antigo
+story-gen-book-appearance2 = gasto
+story-gen-book-appearance3 = sujo
+story-gen-book-appearance4 = incomum
+story-gen-book-appearance5 = desbotado
+story-gen-book-appearance6 = repulsivo
+story-gen-book-appearance7 = empoeirado
+story-gen-book-appearance8 = assustador
+story-gen-book-appearance9 = ensanguentado
+story-gen-book-appearance10= brilhante
+story-gen-book-appearance11= duvidoso
+story-gen-book-appearance12= intrigante
+story-gen-book-appearance13= feio
+story-gen-book-appearance14= torto
+story-gen-book-appearance15= amassado
+story-gen-book-appearance16= sujo
+story-gen-book-appearance17= elegante
+story-gen-book-appearance18= ornamentado
+story-gen-book-appearance19= envelhecido
+story-gen-book-appearance20= nítido
+story-gen-book-appearance21= luxuoso
+story-gen-book-appearance22= esfarrapado
+story-gen-book-appearance23= polido
+story-gen-book-appearance24= em relevo
+story-gen-book-appearance25= descombinado
+story-gen-book-appearance26= dourado
+story-gen-book-appearance27= estranho
+
+story-gen-book-character1 = palhaço
+story-gen-book-character2 = mímico
+story-gen-book-character3 = repórter
+story-gen-book-character4 = açougueiro
+story-gen-book-character5 = barman
+story-gen-book-character6 = faxineiro
+story-gen-book-character7 = engenheiro
+story-gen-book-character8 = cientista
+story-gen-book-character9 = guarda
+story-gen-book-character10 = médico
+story-gen-book-character11 = químico
+story-gen-book-character12 = prisioneiro
+story-gen-book-character13 = pesquisador
+story-gen-book-character14 = comerciante
+story-gen-book-character15 = capitão
+story-gen-book-character16 = lagarto
+story-gen-book-character17 = traça
+story-gen-book-character18= Diona
+story-gen-book-character19 = menina-gato
+story-gen-book-character20 = gato
+story-gen-book-character21 = corgi
+story-gen-book-character22 = cachorro
+story-gen-book-character23 = gambá
+story-gen-book-character24 = preguiça
+story-gen-book-character25 = agente da sindicate
+story-gen-book-character26= fantasma
+story-gen-book-character27 = rei dos ratos
+story-gen-book-character28 = ninja
+story-gen-book-character29 = dragão espacial
+story-gen-book-character30 = revolucionário
+story-gen-book-character31 = operador nuclear
+story-gen-book-character32 = cultista de Nar'Sie
+story-gen-book-character33 = cultista de Ratvar
+story-gen-book-character34= Maré Cinzenta
+story-gen-book-character35 = aracnídeo
+story-gen-book-character36= voz
+story-gen-book-character37 = anão
+story-gen-book-character38 = ladrão
+story-gen-book-character39 = mago
+story-gen-book-character40= limo
+
+story-gen-book-character-trait1 = estúpido
+story-gen-book-character-trait2 = inteligente
+story-gen-book-character-trait3 = engraçado
+story-gen-book-character-trait4 = atraente
+story-gen-book-character-trait5 = charmoso
+story-gen-book-character-trait6 = repulsivo
+story-gen-book-character-trait7 = morrendo
+story-gen-book-character-trait8 = velho
+story-gen-book-character-trait9 = jovem
+story-gen-book-character-trait10 = rico
+story-gen-book-character-trait11 = pobre
+story-gen-book-character-trait12 = popular
+story-gen-book-character-trait13 = distraído
+story-gen-book-character-trait14 = severo
+story-gen-book-character-trait15 = carismático
+story-gen-book-character-trait16 = estoico
+story-gen-book-character-trait17 = fofo
+story-gen-book-character-trait18 = anão
+story-gen-book-character-trait19 = com cheiro de cerveja
+story-gen-book-character-trait20 = alegre
+story-gen-book-character-trait21 = lindamente doloroso
+story-gen-book-character-trait22 = robótico
+story-gen-book-character-trait23 = holográfico
+story-gen-book-character-trait24 = rindo histéricamente
+
+story-gen-book-event1 = um surto de zumbis
+story-gen-book-event2 = uma explosão nuclear
+story-gen-book-event3 = um massacre em massa
+story-gen-book-event4 = uma despressurização repentina
+story-gen-book-event5 = um blecaute
+story-gen-book-event6 = os protagonistas quase morrendo de fome
+story-gen-book-event7 = uma doença consumidora
+story-gen-book-event8 = amor à primeira vista
+story-gen-book-event9 = uma explosão de inspiração
+story-gen-book-event10 = algum fenômeno místico
+story-gen-book-event11 = intervenção divina
+story-gen-book-event12 = os próprios motivos egoístas dos personagens
+story-gen-book-event13 = uma traição inesperada
+story-gen-book-event14 = Uma ressurreição de um dos personagens após Uma morte
+story-gen-book-event15 = Uma tortura brutal dos protagonistas
+story-gen-book-event16 = o desacerto acidental de uma singularidade gravitacional
+story-gen-book-event17 = uma previsão psíquica de eventos futuros
+story-gen-book-event18 = uma explosão de antimatéria
+story-gen-book-event19 = um encontro ao acaso com uma menina-gato
+story-gen-book-event20 = beber álcool em excesso
+story-gen-book-event21 = comer pizza demais
+story-gen-book-event22 = brigar com um amigo próximo
+story-gen-book-event23 = Uma perda repentina de sua casa em um incêndio violento
+story-gen-book-event24 = Uma perda de um PDA
+
+story-gen-book-action1 = compartilhar um beijo com
+story-gen-book-action2 = estrangular
+story-gen-book-action3 = explodir
+story-gen-book-action4 = vencer uma partida de xadrez contra
+story-gen-book-action5 = perder uma partida de xadrez contra
+story-gen-book-action6 = revelar os segredos ocultos de
+story-gen-book-action7 = manipular
+story-gen-book-action8 = sacrificar um hamster para
+story-gen-book-action9 = invadir o casamento de
+story-gen-book-action10 = se juntar para vencer o inimigo comum,
+story-gen-book-action11 = são forçados Uma trabalhar juntos para escapar
+story-gen-book-action12 = dar um presente valioso para
+
+story-gen-book-action-trait1 = desajeitadamente
+story-gen-book-action-trait2 = nojoavelmente
+story-gen-book-action-trait3 = maravilhosamente
+story-gen-book-action-trait4 = bem
+story-gen-book-action-trait5 = estranhamente
+story-gen-book-action-trait6 = de forma divertida
+story-gen-book-action-trait7 = de forma fantasiosa
+story-gen-book-action-trait8 = impressionantemente
+story-gen-book-action-trait9 = irresponsavelmente
+story-gen-book-action-trait10 = severamente
+story-gen-book-action-trait11 = cruelmente
+story-gen-book-action-trait12 = brincando
+story-gen-book-action-trait13 = cuidadosamente
+
+story-gen-book-location1 = em um complexo subterrâneo
+story-gen-book-location2 = enquanto em uma expedição
+story-gen-book-location3 = enquanto preso no espaço
+story-gen-book-location4 = enquanto em uma agência de notícias
+story-gen-book-location5 = em um jardim escondido
+story-gen-book-location6 = na cozinha de um restaurante local
+story-gen-book-location7 = sob o balcão de um bar esportivo
+story-gen-book-location8 = em uma biblioteca antiga
+story-gen-book-location9 = enquanto profundo nas entranhas dos corredores de manutenção da estação espacial
+story-gen-book-location10 = na ponte de uma nave estelar
+story-gen-book-location11 = em um banheiro público sujo
+story-gen-book-location12 = enquanto preso dentro de uma caixa
+story-gen-book-location13 = enquanto preso dentro de um armário
+story-gen-book-location14 = enquanto destacado na Barataria
+story-gen-book-location15 = enquanto em uma capela rústica
+story-gen-book-location16 = enquanto em um crematório
+story-gen-book-location17 = parado muito perto de uma anomalia
+story-gen-book-location18 = enquanto reunido Não transporte de evacuação
+story-gen-book-location19 = parado na neve recém-caída
+story-gen-book-location20 = perdido na floresta
+story-gen-book-location21 = Não deserto hostil
+story-gen-book-location22 = preocupando-se com suas redes sociais
+story-gen-book-location23 = Não topo de uma montanha
+story-gen-book-location24 = enquanto dirige um carro
+story-gen-book-location25 = em uma cápsula de escape
+story-gen-book-location26 = enquanto Não exterior em um país fictício
+story-gen-book-location27 = agarrado à asa de um avião em voo
+story-gen-book-location28 = dentro de uma dimensão de bolso
+story-gen-book-location29 = Uma bordo de um transporte da Federação dos Magos
+story-gen-book-location30 = em cima de um monte de cadáveres
+story-gen-book-location31 = enquanto projetado psicicamente em seu subconsciente
+story-gen-book-location32 = enquanto preso em uma dimensão das sombras
+story-gen-book-location33 = enquanto tentando escapar de uma estação espacial destruída
+story-gen-book-location34 = enquanto espremido entre uma bola Tesla e uma singularidade gravitacional
+
+story-gen-book-element1 = enredo
+story-gen-book-element2 = virada
+story-gen-book-element3 = clímax
+story-gen-book-element4 = ato final
+story-gen-book-element5 = encerramento
+story-gen-book-element6 = moral da história
+story-gen-book-element7 = tema desta obra
+story-gen-book-element8 = estilo literário
+story-gen-book-element9 = arte
+
+story-gen-book-element-trait1 = aterrorizante
+story-gen-book-element-trait2 = repugnante
+story-gen-book-element-trait3 = maravilhoso
+story-gen-book-element-trait4 = fofo
+story-gen-book-element-trait5 = chato
+story-gen-book-element-trait6 = estranho
+story-gen-book-element-trait7 = divertido
+story-gen-book-element-trait8 = caprichoso
+story-gen-book-element-trait9 = impressionante
+story-gen-book-element-trait10 = interessante
+story-gen-book-element-trait11 = inadequado
+story-gen-book-element-trait12 = triste
+story-gen-book-element-trait13 = bastante deprimente
+

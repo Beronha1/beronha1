@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
+﻿# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -64,3 +64,4 @@ cmd-roleban-until =  até {$expires}
 cmd-departmentban-desc = Bane um jogador das funções que compõem um departamento
 
 cmd-departmentban-help = Uso: departmentban <nome ou ID do usuário> <departamento> <motivo> [duração em minutos, omita ou use 0 para banimento permanente] [gravidade] [motivo alternativo para o webhook]
+

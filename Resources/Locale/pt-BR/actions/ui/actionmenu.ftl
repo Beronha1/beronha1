@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -16,3 +16,4 @@ ui-actionmenu-item = Item
 ui-actionmenu-innate = Inata
 ui-actionmenu-instant = Instantânea
 ui-actionmenu-targeted = Direcionada
+

@@ -23,10 +23,10 @@ anomaly-scanner-stability-unknown = Estado atual da anomalia: [color=red]ERRO[/c
 anomaly-scanner-point-output = Produção de pontos: [color=gray]{$point}[/color]
 anomaly-scanner-point-output-unknown = Produção de pontos: [color=red]ERRO[/color]
 anomaly-scanner-particle-readout = Análise da reação a partículas:
-anomaly-scanner-particle-danger = - [color=crimson]Tipo de perigo:[/color] {$type}
-anomaly-scanner-particle-unstable = - [color=plum]Tipo instável:[/color] {$type}
-anomaly-scanner-particle-containment = - [color=goldenrod]Tipo de contenção:[/color] {$type}
-anomaly-scanner-particle-transformation = - [color=#6b75fa]Tipo de transformação:[/color] {$type}
+anomaly-scanner-particle-danger = - [color=crimson]Tipo de perigo:[/color] { $type}
+anomaly-scanner-particle-unstable = - [color=plum]Tipo instável:[/color] { $type}
+anomaly-scanner-particle-containment = - [color=gray]Tipo de contenção:[/color] {$type}
+anomaly-scanner-particle-transformation = - [color=red]Tipo de transformação:[/color] { $type}
 anomaly-scanner-particle-danger-unknown = - [color=crimson]Tipo de perigo:[/color] [color=red]ERRO[/color]
 anomaly-scanner-particle-unstable-unknown = - [color=plum]Tipo instável:[/color] [color=red]ERRO[/color]
 anomaly-scanner-particle-containment-unknown = - [color=goldenrod]Tipo de contenção:[/color] [color=red]ERRO[/color]
@@ -35,10 +35,10 @@ anomaly-scanner-pulse-timer = Tempo até o próximo pulso: [color=gray]{$time}[/
 anomaly-gorilla-core-slot-name = Núcleo de anomalia
 anomaly-gorilla-charge-none = Não há [bold]núcleo de anomalia[/bold] em seu interior.
 anomaly-gorilla-charge-limit = Restam [color={$count ->
-    [3]green
-    [2]yellow
-    [1]orange
-    [0]red
+     [3]green
+     [2]yellow
+     [1]orange
+     [0]red
     *[other]purple
 }]{$count} {$count ->
     [one]carga
@@ -51,17 +51,17 @@ anomaly-sync-no-anomaly = Nenhuma anomalia ao alcance.
 anomaly-sync-examine-connected = Está [color=darkgreen]conectado[/color] a uma anomalia.
 anomaly-sync-examine-not-connected = [color=darkred]Não está conectado[/color] a uma anomalia.
 anomaly-sync-connect-verb-text = Conectar anomalia
-anomaly-sync-connect-verb-message = Conecte uma anomalia próxima a {$machine}.
+anomaly-sync-connect-verb-message = Conecte uma anomalia próxima a {THE($machine)}.
 anomaly-sync-disconnect-verb-text = Desconectar anomalia
-anomaly-sync-disconnect-verb-message = Desconecte de {$machine} a anomalia associada.
+anomaly-sync-disconnect-verb-message = Desconecte a anomalia conectada de {THE($machine)}.
 anomaly-generator-ui-title = Gerador de anomalias
 anomaly-generator-fuel-display = Combustível:
-anomaly-generator-cooldown = Recarga: [color=gray]{$time}[/color]
+anomaly-generator-cooldown = Recarga: [color=gray]{ $time}[/color]
 anomaly-generator-no-cooldown = Recarga: [color=gray]Concluída[/color]
 anomaly-generator-yes-fire = Estado: [color=forestgreen]Pronto[/color]
 anomaly-generator-no-fire = Estado: [color=crimson]Não está pronto[/color]
 anomaly-generator-generate = Gerar anomalia
-anomaly-generator-charges = {$charges ->
+anomaly-generator-charges = { $charges ->
     [one] {$charges} carga
     *[other] {$charges} cargas
 }
@@ -70,10 +70,10 @@ anomaly-command-pulse = Emite um pulso na anomalia-alvo
 anomaly-command-supercritical = Torna a anomalia-alvo supercrítica
 anomaly-generator-flavor-left = A anomalia pode surgir dentro do operador.
 anomaly-generator-flavor-right = v1.1
-anomaly-behavior-unknown = [color=red]ERRO. Não foi possível ler.[/color]
+anomaly-behavior-unknown = [color=gray]ERRO. Não foi possível ler.[/color]
 anomaly-behavior-title = análise de desvios de comportamento:
-anomaly-behavior-point = [color=gold]A anomalia produz {$mod}% dos pontos[/color]
-anomaly-behavior-safe = [color=forestgreen]A anomalia é extremamente estável. Pulsações extremamente raras.[/color]
+anomaly-behavior-point = [color=forestgreen]A anomalia produz {$mod}% dos pontos[/color]
+anomaly-behavior-safe = [color=crimson]A anomalia é extremamente estável. Pulsações extremamente raras.[/color]
 anomaly-behavior-slow = [color=forestgreen]A frequência das pulsações é muito menor.[/color]
 anomaly-behavior-light = [color=forestgreen]A potência das pulsações foi reduzida significativamente.[/color]
 anomaly-behavior-balanced = Nenhum desvio de comportamento detectado.
@@ -88,3 +88,4 @@ anomaly-behavior-inconstancy = [color=crimson]Impermanência detectada. Os tipos
 anomaly-behavior-fast = [color=crimson]A frequência das pulsações aumentou intensamente.[/color]
 anomaly-behavior-strenght = [color=crimson]A potência das pulsações aumentou significativamente.[/color]
 anomaly-behavior-moving = [color=crimson]Instabilidade de coordenadas detectada.[/color]
+

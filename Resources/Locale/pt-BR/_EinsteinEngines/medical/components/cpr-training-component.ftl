@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -9,3 +9,6 @@ cpr-must-remove-own-mask = Você precisa remover {$clothing}.
 cpr-target-rotting = O estado de {$entity} já está avançado demais...
 cpr-target-cantbreathe = {$entity} ou você é incapaz de respirar.
 cpr-verb = Realizar RCP
+
+
+

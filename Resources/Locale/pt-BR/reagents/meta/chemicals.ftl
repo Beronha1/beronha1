@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,7 +8,7 @@ reagent-name-phenol = fenol
 reagent-desc-phenol = Um anel aromático de carbono com um grupo hidroxila. É precursor de alguns medicamentos, mas não possui propriedades curativas por si só.
 reagent-name-sodium-carbonate = carbonato de sódio
 reagent-desc-sodium-carbonate = Um sal branco, inodoro e solúvel em água, na qual forma uma solução alcalina. Também conhecido como barrilha.
-reagent-name-artifexium = artifexium
+reagent-name-artifexium= arte
 reagent-desc-artifexium = Uma mistura cor de lavanda feita de fragmentos microscópicos de artefatos e um ácido forte. É capaz de ativar artefatos.
 reagent-name-artifact-glue = cola de artefato
 reagent-desc-artifact-glue = Uma mistura de cola e artifexium. Ao tocar um artefato, restaura a durabilidade de seus nodos.

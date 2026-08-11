@@ -1,0 +1,2 @@
+﻿construction-group-revolutionary = Revolucionário
+

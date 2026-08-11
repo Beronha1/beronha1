@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,7 +15,7 @@ reagent-desc-chloral-hydrate = Uma substância sedativa e hipnótica, frequentem
 reagent-name-gastrotoxin = gastrotoxina
 reagent-desc-gastrotoxin = Um subproduto moderadamente tóxico da decomposição, encontrado principalmente em alimentos estragados.
 reagent-name-ferrochromic-acid = ácido ferrocromático
-reagent-desc-ferrochromic-acid = Uma solução levemente corrosiva, incapaz de causar danos graves a menos que seja ingerida.
+reagent-desc-ferrochromic-acid = Uma solução levemente corrosiva, incapaz de causar danos graves Uma menos que seja ingerida.
 reagent-name-fluorosulfuric-acid = ácido fluorossulfúrico
 reagent-desc-fluorosulfuric-acid = Uma substância altamente corrosiva, capaz de deixar marcas consideráveis na pele.
 reagent-name-sulfuric-acid = ácido sulfúrico
@@ -31,27 +31,27 @@ reagent-desc-mindbreaker-toxin = Um potente composto alucinógeno anteriormente 
 reagent-name-histamine = histamina
 reagent-desc-histamine = Uma substância produzida pela reação de alérgenos com anticorpos. É letal em grandes quantidades.
 reagent-name-theobromine = teobromina
-reagent-desc-theobromine = Um alcaloide amargo do cacaueiro, muito encontrado no chocolate. Não ofereça a animais.
+reagent-desc-theobromine = Um alcaloide amargo do cacaueiro, muito encontrado Não chocolate. Não ofereça Uma animais.
 reagent-name-amatoxin = amatoxina
 reagent-desc-amatoxin = Uma toxina mortal encontrada em certos cogumelos, principalmente na amanita mata-moscas. Mesmo pequenas doses podem ser letais.
 reagent-name-vent-crud = lodo de ventilação
 reagent-desc-vent-crud = Uma substância negra encontrada em sistemas de ventilação malconservados. Pode causar tosse de duto.
-reagent-name-romerol = romerol
-reagent-desc-romerol = Uma mistura sobrenatural capaz de devolver movimento aos mortos. Sem tratamento, seus efeitos são irreversíveis e condenarão a estação. Manuseie com cuidado.
+reagent-name-romerol= Romero
+reagent-desc-romerol = Uma mistura sobrenatural capaz de devolver movimento aos mortos. Sem tratamento, seus efeitos são irreversíveis e condenarão Uma estação. Manuseie com cuidado.
 reagent-name-uncooked-animal-proteins = proteínas animais cruas
-reagent-desc-uncooked-animal-proteins = A digestão disto é muito arriscada para formas de vida de estômago mais sensível.
+reagent-desc-uncooked-animal-proteins = Uma digestão disto é muito arriscada para formas de vida de estômago mais sensível.
 reagent-name-allicin = alicina
 reagent-desc-allicin = Um composto organossulfurado encontrado em plantas do gênero Allium, como alho e cebola.
 reagent-name-pax = pax
 reagent-desc-pax = Um fármaco psiquiátrico que impede o paciente de ferir alguém diretamente.
-reagent-name-honk = honk
-reagent-desc-honk = Uma toxina encontrada no bananium. Provoca buzinadas intensas e hemorragia interna, além de poder causar mutações.
+reagent-name-honk= buzinar
+reagent-desc-honk = Uma toxina encontrada Não bananium. Provoca buzinadas intensas e hemorragia interna, além de poder causar mutações.
 reagent-name-lead = chumbo
-reagent-desc-lead = Uma toxina de ação lenta, mas extremamente letal, encontrada em pequenas quantidades no aço. Não possui sabor.
+reagent-desc-lead = Uma toxina de ação lenta, mas extremamente letal, encontrada em pequenas quantidades Não aço. Não possui sabor.
 reagent-name-bungotoxin = bungotoxina
-reagent-desc-bungotoxin = Um veneno de ação moderadamente lenta encontrado no caroço do fruto bungo.
+reagent-desc-bungotoxin = Um veneno de ação moderadamente lenta encontrado Não caroço do fruto bungo.
 reagent-name-vestine = vestina
-reagent-desc-vestine = Reage de forma adversa no organismo e provoca tremores intensos. Não é muito útil isoladamente, mas serve para produzir algumas substâncias.
+reagent-desc-vestine = Reage de forma adversa Não organismo e provoca tremores intensos. Não é muito útil isoladamente, mas serve para produzir algumas substâncias.
 reagent-name-tazinide = tazinida
 reagent-desc-tazinide = Uma mistura metálica extremamente perigosa que interfere nos movimentos por meio de uma corrente eletrizante.
 reagent-name-lipolicide = lipolicida
@@ -59,6 +59,6 @@ reagent-desc-lipolicide = Uma toxina poderosa que destrói células de gordura e
 reagent-name-mechanotoxin = mecanotoxina
 reagent-desc-mechanotoxin = Uma neurotoxina usada como veneno por certas espécies de aranha. Seu acúmulo compromete os movimentos.
 reagent-name-toxintrash = matéria reprocessada
-reagent-desc-toxintrash = Uma pasta fétida refinada eficientemente a partir de matéria descartada. É a conversão perfeita e sem desperdício de salvados em alimento para Vox, embora seja um veneno violento para os demais.
+reagent-desc-toxintrash = Uma pasta fétida refinada eficientemente Uma partir de matéria descartada. É Uma conversão perfeita e sem desperdício de salvados em alimento para Vox, embora seja um veneno violento para os demais.
 reagent-name-hemorrhinol = hemorrinol
 reagent-desc-hemorrhinol = Uma toxina que causa danos graves aos vasos sanguíneos e provoca hemorragias rápidas.

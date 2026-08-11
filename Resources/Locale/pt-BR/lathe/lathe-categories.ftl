@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -47,3 +47,4 @@ lathe-category-command = Comando
 lathe-category-hats = Chapéus
 lathe-category-jumpsuits = Macacões
 lathe-category-neck = Pescoço
+

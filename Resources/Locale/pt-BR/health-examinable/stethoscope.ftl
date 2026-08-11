@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -13,3 +13,4 @@ stethoscope-delta-steady = Está estável.
 stethoscope-delta-improving = Está melhorando.
 stethoscope-delta-worsening = Está piorando.
 stethoscope-combined-status = {$absolute} {$delta}
+

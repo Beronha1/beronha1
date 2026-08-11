@@ -1,0 +1,2 @@
+﻿metabolizer-type-decapoid = Decapóide
+

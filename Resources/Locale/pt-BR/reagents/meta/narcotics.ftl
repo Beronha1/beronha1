@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -30,5 +30,4 @@ reagent-name-tear-gas = gás lacrimogêneo
 reagent-desc-tear-gas = Uma substância que causa irritação intensa e lacrimejamento, muito usada no controle de tumultos.
 reagent-name-happiness = felicidade
 reagent-desc-happiness = Provoca torpor extático e pequenos danos cerebrais. Altamente viciante; a overdose causa mudanças bruscas de humor.
-reagent-name-nitrosyl-plasmide = plasmídeo nitrosila
-reagent-desc-nitrosyl-plasmide = Um estimulante poderoso capaz de impedir sonolência, atordoamentos e quedas.
+

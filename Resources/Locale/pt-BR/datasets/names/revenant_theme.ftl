@@ -1,0 +1,19 @@
+﻿names-revenant-theme-dataset-1 = Agonia
+names-revenant-theme-dataset-2 = Raiva
+names-revenant-theme-dataset-3 = Morte
+names-revenant-theme-dataset-4 = Desespero
+names-revenant-theme-dataset-5 = Desesperanca
+names-revenant-theme-dataset-6 = Destrucao
+names-revenant-theme-dataset-7 = Doenca
+names-revenant-theme-dataset-8 = Luto
+names-revenant-theme-dataset-9 = Odio
+names-revenant-theme-dataset-10 = Fogo do inferno
+names-revenant-theme-dataset-11 = Riso
+names-revenant-theme-dataset-12 = Miséria
+names-revenant-theme-dataset-13 = Ruina
+names-revenant-theme-dataset-14 = Sal
+names-revenant-theme-dataset-15 = Gritos
+names-revenant-theme-dataset-16 = Tristeza
+names-revenant-theme-dataset-17 = Sofrimento
+names-revenant-theme-dataset-18 = Vinganca
+

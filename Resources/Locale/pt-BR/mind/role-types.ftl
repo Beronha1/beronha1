@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -10,7 +10,7 @@ role-type-familiar-name = Familiar
 role-type-silicon-name = Silício
 role-type-silicon-antagonist-name = Silício alterado
 role-type-update-message = Sua função é [color = {$color}]{$role}[/color]
-role-type-crew-aligned-color = #eeeeee
+role-type-crew-aligned-color= #eeeee
 role-type-crew-aligned-alternate-color = #008000
 role-type-solo-antagonist-color = #d82000
 role-type-team-antagonist-color = #d82000
@@ -21,9 +21,9 @@ role-type-silicon-antagonist-color = #c832e6
 role-subtype-traitor = Traidor
 role-subtype-thief = Ladrão
 role-subtype-ninja = Ninja
-role-subtype-nukie = Nukie
+role-subtype-nukie= Nuclear
 role-subtype-traitor-reinforcement = Reforço
-role-subtype-revolutionary = Rev
+role-subtype-revolutionary= Rev.
 role-subtype-head-revolutionary = Rev-chefe
 role-subtype-initial-infected = Infectado
 role-subtype-zombie = Zumbi

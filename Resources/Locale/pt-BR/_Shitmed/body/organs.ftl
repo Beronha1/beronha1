@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -25,3 +25,4 @@ markings-organ-NeurotoxinGland = Glândula de neurotoxina
 markings-organ-PlasmaVessel = Vaso de plasma
 markings-organ-ResinSpinner = Fiandeira de resina
 markings-organ-XenomorphLarva = Larva de xenomorfo
+

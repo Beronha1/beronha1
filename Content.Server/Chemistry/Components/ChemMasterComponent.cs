@@ -18,8 +18,12 @@ namespace Content.Server.Chemistry.Components
         [DataField("mode"), ViewVariables(VVAccess.ReadWrite)]
         public ChemMasterMode Mode = ChemMasterMode.Transfer;
 
+        // <Whiskey> O dispensador ao lado já ordena a lista sozinho, então o
+        // ChemMaster começar sem ordenação obrigava a clicar no botão toda vez.
+        // A ordenação usa LocalizedName, então acompanha o idioma do servidor.
         [DataField]
-        public ChemMasterSortingType SortingType = ChemMasterSortingType.None;
+        public ChemMasterSortingType SortingType = ChemMasterSortingType.Alphabetical;
+        // </Whiskey>
 
         [DataField("pillDosageLimit", required: true), ViewVariables(VVAccess.ReadWrite)]
         public uint PillDosageLimit;

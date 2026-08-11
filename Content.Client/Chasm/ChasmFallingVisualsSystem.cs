@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Shared.Chasm;
 using Robust.Client.Animations;
 using Robust.Client.GameObjects;
@@ -10,6 +11,8 @@ namespace Content.Client.Chasm;
 /// </summary>
 public sealed partial class ChasmFallingVisualsSystem : EntitySystem
 {
+    private const float MinimumSpriteScale = 0.01f;
+
     [Dependency] private AnimationPlayerSystem _anim = default!;
     [Dependency] private SpriteSystem _sprite = default!;
 
@@ -52,7 +55,7 @@ public sealed partial class ChasmFallingVisualsSystem : EntitySystem
             return;
         }
 
-        _sprite.SetScale((entity, sprite), entity.Comp.OriginalScale);
+        _sprite.SetScale((entity, sprite), GetSafeScale(entity.Comp.OriginalScale, Vector2.One));
 
         if (!_animationPlayerQuery.TryComp(entity, out var player) ||
             !_anim.HasRunningAnimation(player, ChasmFallAnimationKey))
@@ -77,11 +80,28 @@ public sealed partial class ChasmFallingVisualsSystem : EntitySystem
                     KeyFrames =
                     {
                         new AnimationTrackProperty.KeyFrame(component.OriginalScale, 0.0f),
-                        new AnimationTrackProperty.KeyFrame(component.AnimationScale, component.AnimationTime.Seconds),
+                        new AnimationTrackProperty.KeyFrame(
+                            GetSafeScale(component.AnimationScale, new Vector2(MinimumSpriteScale)),
+                            component.AnimationTime.Seconds),
                     },
-                    InterpolationMode = AnimationInterpolationMode.Cubic,
+                    // A scale animation must stay between its endpoints. Cubic
+                    // interpolation can overshoot below the renderer's minimum.
+                    InterpolationMode = AnimationInterpolationMode.Linear,
                 },
             },
         };
+    }
+
+    private static Vector2 GetSafeScale(Vector2 scale, Vector2 fallback)
+    {
+        if (!float.IsFinite(scale.X) ||
+            !float.IsFinite(scale.Y) ||
+            MathF.Abs(scale.X) < MinimumSpriteScale ||
+            MathF.Abs(scale.Y) < MinimumSpriteScale)
+        {
+            return fallback;
+        }
+
+        return scale;
     }
 }

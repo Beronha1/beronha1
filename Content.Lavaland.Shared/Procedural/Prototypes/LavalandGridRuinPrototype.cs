@@ -22,6 +22,13 @@ public sealed partial class LavalandGridRuinPrototype : IPrototype
     [DataField]
     public bool PatchToPlanet = true;
 
+    /// <summary>
+    /// Extra space reserved around this ruin when checking overlap.
+    /// Useful for boss arenas whose combat footprint exceeds their tiles.
+    /// </summary>
+    [DataField]
+    public float Clearance;
+
     [DataField(required: true)]
     public int Priority = int.MinValue;
 

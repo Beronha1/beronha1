@@ -88,3 +88,45 @@
   components:
   - type: NavMapBeacon
     defaultText: station-beacon-ruin-snow-biodome
+
+# Whiskey: the source Wega boss grids had no navigation beacon, which made the
+# generated arenas invisible in Ghost Warp even though they existed on Lavaland.
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinBubblegumArena
+  suffix: Ruin Bubblegum Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-bubblegum-arena
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinAshDrakeArena
+  suffix: Ruin Ash Drake Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-ash-drake-arena
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinColossusArena
+  suffix: Ruin Colossus Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-colossus-arena
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinMegaLegionArena
+  suffix: Ruin Mega Legion Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-mega-legion-arena
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinBloodDrunkMinerArena
+  suffix: Ruin Blood-drunk Miner Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-blood-drunk-miner-arena

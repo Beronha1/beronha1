@@ -38,6 +38,7 @@ public sealed partial class MegafaunaBlinkSystem : EntitySystem
     {
         base.Update(frameTime);
 
+        var completed = new List<EntityUid>();
         var blinkQuery = EntityQueryEnumerator<MegafaunaActiveBlinkComponent>();
         while (blinkQuery.MoveNext(out var uid, out var blink))
         {
@@ -47,14 +48,20 @@ public sealed partial class MegafaunaBlinkSystem : EntitySystem
 
             if (!blink.Coordinates.IsValid(EntityManager))
             {
-                RemComp(uid, blink);
+                completed.Add(uid);
                 continue;
             }
 
             _xform.SetCoordinates(uid, blink.Coordinates.SnapToGrid(EntityManager));
             _audio.PlayPredicted(blink.Sound, blink.Coordinates, uid);
-            RemComp(uid, blink);
+            completed.Add(uid);
         }
+
+        // Removing MegafaunaActiveBlinkComponent while its component store is
+        // being enumerated can invalidate the query when multiple bosses finish
+        // a blink on the same tick. Mutate only after the snapshot is complete.
+        foreach (var uid in completed)
+            RemComp<MegafaunaActiveBlinkComponent>(uid);
     }
 
     private void OnBlinkAction(Entity<MegafaunaBlinkComponent> ent, ref MegafaunaBlinkActionEvent args)

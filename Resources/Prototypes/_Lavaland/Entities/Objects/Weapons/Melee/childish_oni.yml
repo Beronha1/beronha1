@@ -1,0 +1,40 @@
+- type: entity
+  parent: CaptainSabre
+  id: WeaponChildishOniBlade
+  name: nameless oni blade
+  description: A demonic blade still warm from its owner's last game.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/nameless_sword.rsi
+    state: icon
+  - type: Item
+    sprite: _Lavaland/Objects/Weapons/Melee/nameless_sword.rsi
+  - type: MeleeWeapon
+    damage:
+      types:
+        Slash: 25
+        Heat: 10
+  - type: MegafaunaWeaponLooter
+
+- type: entity
+  parent: BaseCrusherUpgradeBlade
+  id: TrophyChildishOniHorn
+  name: childish oni horn
+  description: Sharpens a crusher with the oni's escalating fury.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Head/Misc/oni.rsi
+    state: icon
+  - type: GunUpgrade
+    name: lavaland-trophy-childish-oni-name
+    uniqueGroup: childishOniTrophy
+  - type: WeaponUpgradeDamage
+    bonusDamage:
+      types:
+        Slash: 8
+        Heat: 4
+  - type: GunUpgradeDamage
+    bonusDamage:
+      types:
+        Slash: 8
+        Heat: 4

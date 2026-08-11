@@ -56,6 +56,10 @@ public abstract partial class EntityShape
         int? size = null,
         float? stepSize = null)
     {
+        var previousOffset = Offset;
+        var previousSize = Size;
+        var previousStepSize = StepSize;
+
         // We take values by these priorities:
         // 1. YAML DataFields
         // 2. Arguments passed from the parent
@@ -63,7 +67,19 @@ public abstract partial class EntityShape
         Offset = DefaultOffset ?? center ?? Offset;
         Size = DefaultSize ?? size ?? Size;
         StepSize = DefaultStepSize  ?? stepSize ?? StepSize;
-        return GetShapeImplementation(rand, proto);
+
+        try
+        {
+            return GetShapeImplementation(rand, proto);
+        }
+        finally
+        {
+            // Shapes are stored on shared prototypes. Do not leak one spawn's
+            // inherited values into the next entity that uses the same shape.
+            Offset = previousOffset;
+            Size = previousSize;
+            StepSize = previousStepSize;
+        }
     }
 
     protected abstract List<Vector2> GetShapeImplementation(IRobustRandom rand, IPrototypeManager proto);

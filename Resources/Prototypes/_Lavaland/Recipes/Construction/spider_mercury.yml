@@ -1,0 +1,24 @@
+- type: construction
+  id: SpiderMercuryAlloyConstruction
+  graph: SpiderMercuryAlloyConstructionGraph
+  category: construction-category-materials
+  targetNode: alloy
+  objectType: Item
+  theory:
+    FabricationKnowledge: 2
+  practical:
+    FabricationKnowledge: 4
+  qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryRailgunConstruction
+  graph: SpiderMercuryRailgunConstructionGraph
+  category: construction-category-weapons
+  targetNode: railgun
+  objectType: Item
+  theory:
+    FabricationKnowledge: 3
+  practical:
+    WeaponsKnowledge: 6
+    FabricationKnowledge: 6
+  qualityPrototype: ShitCraft

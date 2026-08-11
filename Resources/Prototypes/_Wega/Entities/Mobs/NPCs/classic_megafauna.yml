@@ -1,0 +1,210 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Ported from RedStar PR #111; sprites adapted to Whiskey's existing assets.
+
+- type: entity
+  parent: BaseLavalandBossMegaLegion
+  id: MobMegaLegionSplitLeft
+  name: legion left part
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/64x64.rsi
+    layers:
+    - map: [enum.DamageStateVisualLayers.Base]
+      state: mega_legion_left
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      400: Dead
+  - type: LegionSplit
+    nextSplit: MobMegaLegionSplitMedium
+  - type: LegionBoss
+    summonCount: 2
+
+- type: entity
+  parent: MobMegaLegionSplitLeft
+  id: MobMegaLegionSplitRight
+  name: legion right part
+  components:
+  - type: Sprite
+    layers:
+    - map: [enum.DamageStateVisualLayers.Base]
+      state: mega_legion_right
+
+- type: entity
+  parent: MobMegaLegionSplitLeft
+  id: MobMegaLegionSplitEye
+  name: legion eye
+  components:
+  - type: Sprite
+    layers:
+    - map: [enum.DamageStateVisualLayers.Base]
+      state: mega_legion_eye
+
+- type: entity
+  parent: BaseLavalandBossMegaLegion
+  id: MobMegaLegionSplitMedium
+  name: medium legion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/lavaland_monsters.rsi
+    layers:
+    - map: [enum.DamageStateVisualLayers.Base]
+      state: mega_legion
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      200: Dead
+  - type: LegionSplit
+    nextSplit: MobMegaLegionSplitSmall
+  - type: LegionBoss
+    summonCount: 1
+
+- type: entity
+  parent: MobMegaLegionSplitMedium
+  id: MobMegaLegionSplitSmall
+  name: small legion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      100: Dead
+  - type: LegionSplit
+    nextSplit: null
+
+- type: entity
+  parent: MobHuman
+  id: MobBloodDrunkMiner
+  name: blood-drunk miner
+  description: An explorer who has survived Lavaland for far too long.
+  components:
+  - type: RandomHumanoidAppearance
+    randomizeName: false
+  - type: NpcFactionMember
+    factions:
+    - Lavafauna
+  - type: HTN
+    rootTask:
+      task: SimpleHumanoidHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+  - type: InputMover
+  - type: MobMover
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 4.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      900: Dead
+  - type: MeleeWeapon
+    attackRate: 0.8
+    damage:
+      types:
+        Slash: 25
+        Structural: 50
+  - type: Loadout
+    prototypes:
+    - BloodDrunkMinerGear
+  - type: BloodDrunkMiner
+  - type: MegafaunaDirector
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisFilled
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyLavalandBDMEye
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter
+  - type: NPCUseActionsOnTarget
+    actionIds:
+    - ActionBloodDrunkMinerDash
+
+- type: startingGear
+  id: BloodDrunkMinerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitShaftMiner
+    eyes: ClothingEyesGlassesMeson
+    mask: ClothingMaskGasExplorer
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsSalvage
+    outerClothing: ClothingOuterHardsuitSalvage
+    suitstorage: OxygenTankFilled
+  inhand:
+  - WeaponCrusher
+  - WeaponProtoKineticAccelerator
+
+- type: entity
+  parent: [ LavalandMobBase, MobBloodstream ]
+  id: MobLowerAshDrake
+  name: ash drake
+  description: A lesser draconic form carrying a fraction of the Necropolis guardian's power.
+  suffix: Lower
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Physics
+    bodyType: KinematicController
+    canCollide: false
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    layers:
+    - map: [enum.DamageStateVisualLayers.Base]
+      state: dragon
+  - type: DamageStateVisuals
+    states:
+      Alive:
+        Base: dragon
+      Dead:
+        Base: dragon_dead
+  - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
+    attackRate: 1
+    damage:
+      types:
+        Slash: 10
+  - type: RechargeBasicEntityAmmo
+    showExamineText: false
+    rechargeCooldown: 0.01
+    rechargeSound: null
+  - type: BasicEntityAmmoProvider
+    proto: BulletAshDrakeFire
+    capacity: 9999
+    count: 9999
+  - type: Gun
+    projectileSpeed: 10
+    fireRate: 1
+    useKey: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    showExamineText: false
+    soundGunshot: null
+    soundEmpty: null
+  - type: Pullable
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.25
+    baseSprintSpeed: 2.25
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: Bloodstream
+    bloodMaxVolume: 500
+    bloodlossDamage:
+      types:
+        Bloodloss: 0
+  - type: Tag
+    tags:
+    - LavaWalking

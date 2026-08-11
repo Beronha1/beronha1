@@ -1,0 +1,72 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Ported from RedStar PR #111; icons adapted to Whiskey's existing Lavaland assets.
+
+- type: entity
+  parent: BaseAction
+  id: ActionBubblegumRage
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    raiseOnUser: true
+    useDelay: 7
+    icon:
+      sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+      state: bubblegum
+  - type: TargetAction
+    range: 20
+  - type: EntityTargetAction
+    event: !type:BubblegumRageActionEvent
+
+- type: entity
+  parent: ActionBubblegumRage
+  id: ActionBubblegumBloodDive
+  components:
+  - type: EntityTargetAction
+    event: !type:BubblegumBloodDiveActionEvent
+
+- type: entity
+  parent: ActionBubblegumRage
+  id: ActionBubblegumTripleDash
+  components:
+  - type: EntityTargetAction
+    event: !type:BubblegumTripleDashActionEvent
+      dashDamage:
+        types:
+          Blunt: 30
+
+- type: entity
+  parent: ActionBubblegumRage
+  id: ActionBubblegumIllusionDash
+  components:
+  - type: EntityTargetAction
+    event: !type:BubblegumIllusionDashActionEvent
+      illusionDamage:
+        types:
+          Blunt: 15
+
+- type: entity
+  parent: ActionBubblegumRage
+  id: ActionBubblegumPentagramDash
+  components:
+  - type: EntityTargetAction
+    event: !type:BubblegumPentagramDashActionEvent
+      illusionDamage:
+        types:
+          Blunt: 15
+
+- type: entity
+  parent: ActionBubblegumRage
+  id: ActionBubblegumChaoticIllusionDash
+  components:
+  - type: Action
+    raiseOnUser: true
+    useDelay: 20
+    icon:
+      sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+      state: bubblegum
+  - type: EntityTargetAction
+    event: !type:BubblegumChaoticIllusionDashActionEvent
+      illusionDamage:
+        types:
+          Blunt: 15

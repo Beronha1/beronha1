@@ -1,0 +1,77 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Arena dependencies selected from Goobstation PR #6734.
+
+- type: entity
+  id: BananaSmallSkull
+  name: Oni skull
+  description: It looks like they are laughing at you...
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/32x32.rsi
+    state: oni-skull
+    drawdepth: Effects
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5, -0.5, 0.5, 0.5"
+        density: 1000
+        mask: [ MobMask ]
+        layer: [ InteractImpassable ]
+  - type: PointLight
+    radius: 3
+    energy: 2
+    color: Orange
+    castShadows: false
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Heat: 2
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconRuinBananaArena
+  suffix: Ruin Childish Oni Arena
+  components:
+  - type: NavMapBeacon
+    defaultText: station-beacon-ruin-banana-arena
+
+- type: entity
+  parent: FlaskBase
+  id: DrinkOniGourd
+  name: sake gourd
+  description: A traditional drinking vessel used by oni. It is said to be filled with the finest sake.
+  components:
+  - type: Sprite
+    sprite: _DV/Objects/Specific/Species/Oni/gourd.rsi
+    layers:
+    - state: icon
+  # The original RSI has no icon_open state. Keep the original gourd artwork
+  # fixed while Openable continues to control whether its solution can be used.
+  - type: GenericVisualizer
+    visuals: {}
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Sake
+        Quantity: 50
+  - type: SolutionRegeneration
+    solution: drink
+    generated:
+      reagents:
+      - ReagentId: Sake
+        Quantity: 2
+    duration: 10
+
+- type: entity
+  id: BoneWeak
+  parent: MaterialBones1
+  name: bone
+  description: A real bone. Contains calcium, a lot of calcium.

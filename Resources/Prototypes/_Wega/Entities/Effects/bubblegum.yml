@@ -1,0 +1,95 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Ported from RedStar PR #111/#117. The shared landing telegraph uses its
+# original Wega media because Ash Drake also relies on it.
+
+- type: entity
+  id: EffectMegaFaunaMarker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    noRot: true
+    sprite: _Wega/Effects/effects96x96.rsi
+    state: landing
+  - type: TimedDespawn
+    lifetime: 2
+
+- type: entity
+  id: EffectBubblegumHand
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    state: bubblegum
+    scale: 0.34, 0.34
+    color: "#ff4444"
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.45,-0.45,0.45,0.45"
+        hard: false
+        mask:
+        - Impassable
+  - type: TriggerOnCollide
+    fixtureID: fix
+    maxTriggers: 1
+  - type: DamageOnTrigger
+    targetUser: true
+    damage:
+      types:
+        Blunt: 30
+  - type: DamageOnTriggerBlacklist
+    blacklist:
+      components:
+      - BubblegumBoss
+  - type: TimedDespawn
+    lifetime: 0.2
+  - type: SpawnOnDespawn
+    prototype: EffectBubblegumHandOut
+
+- type: entity
+  id: BaseEffectBubblegumHandSpawn
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Markers/cross.rsi
+    state: red
+    scale: 1.5, 1.5
+  - type: TimedDespawn
+    lifetime: 0.58
+
+- type: entity
+  parent: BaseEffectBubblegumHandSpawn
+  id: EffectBubblegumHandIn
+  components:
+  - type: SpawnOnDespawn
+    prototype: EffectBubblegumHand
+
+- type: entity
+  parent: BaseEffectBubblegumHandSpawn
+  id: EffectBubblegumHandOut
+  components:
+  - type: TimedDespawn
+    lifetime: 0.3
+
+- type: entity
+  id: EffectBubblegumDashTrail
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    state: bubblegum
+    color: "#ffffff66"
+  - type: TimedDespawn
+    lifetime: 0.4

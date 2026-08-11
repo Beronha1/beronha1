@@ -93,12 +93,15 @@ public sealed partial class BossMusicSystem : SharedBossMusicSystem
             false,
             AudioParams.Default.WithVolume(sound.Sound.Params.Volume + _volumeSlider).WithLoop(true));
 
-        if (_musicProto.FadeIn
-            && stream != null)
+        if (stream == null)
         {
-            _bossMusicStream = (stream.Value.Entity, stream.Value.Component);
-            FadeIn(_bossMusicStream, stream.Value.Component, sound.FadeInTime);
+            _musicProto = null;
+            return;
         }
+
+        _bossMusicStream = (stream.Value.Entity, stream.Value.Component);
+        if (_musicProto.FadeIn)
+            FadeIn(_bossMusicStream, stream.Value.Component, sound.FadeInTime);
     }
 
     public override void EndAllMusic()

@@ -6,6 +6,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
+using System.Linq;
 
 namespace Content.Lavaland.Shared.Aggression;
 
@@ -15,6 +16,7 @@ public sealed partial class AggressorsSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private SharedBossMusicSystem _bossMusic = default!;
     [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private INetManager _net = default!;
 
     private EntityQuery<TransformComponent> _xformQuery;
 
@@ -45,13 +47,22 @@ public sealed partial class AggressorsSystem : EntitySystem
         while (query.MoveNext(out var uid, out var aggressive, out var xform))
         {
             if (aggressive.ForgiveRange == null
-                || aggressive.NextUpdate < curTime)
+                || aggressive.NextUpdate > curTime)
                 continue;
 
             aggressive.NextUpdate = curTime + aggressive.UpdateDelay;
 
-            foreach (var aggressor in aggressive.Aggressors)
+            foreach (var aggressor in aggressive.Aggressors.ToArray())
             {
+                // ActorComponent is removed when an admin/player changes body.
+                // Keeping that old body here inflated player-scaled boss health
+                // and kept combat music alive for a participant that had left.
+                if (!HasComp<ActorComponent>(aggressor))
+                {
+                    RemoveAggressor((uid, aggressive), aggressor);
+                    continue;
+                }
+
                 if (!_xformQuery.TryComp(aggressor, out var aggroXform))
                     continue;
 
@@ -107,10 +118,31 @@ public sealed partial class AggressorsSystem : EntitySystem
 
     #region Aggressive API
 
+    /// <summary>
+    /// Counts only players that are still attached to their aggressor entity.
+    /// Admin ghost/body changes remove <see cref="ActorComponent"/> from the old
+    /// body, so those stale entities must not keep increasing boss health.
+    /// </summary>
+    public int CountActivePlayers(Entity<AggressiveComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return 0;
+
+        var sessions = new HashSet<ICommonSession>();
+        foreach (var aggressor in ent.Comp.Aggressors)
+        {
+            if (TryComp<ActorComponent>(aggressor, out var actor))
+                sessions.Add(actor.PlayerSession);
+        }
+
+        return sessions.Count;
+    }
+
     public void AddAggressor(Entity<AggressiveComponent> ent, EntityUid aggressor)
     {
         var (uid, comp) = ent;
-        ent.Comp.Aggressors.Add(aggressor);
+        if (!ent.Comp.Aggressors.Add(aggressor))
+            return;
 
         var aggComp = EnsureComp<AggressorComponent>(aggressor);
         aggComp.Aggressives.Add(uid);
@@ -126,7 +158,9 @@ public sealed partial class AggressorsSystem : EntitySystem
 
     public void RemoveAggressor(Entity<AggressiveComponent> ent, Entity<AggressorComponent?> aggressor)
     {
-        ent.Comp.Aggressors.Remove(aggressor);
+        if (!ent.Comp.Aggressors.Remove(aggressor))
+            return;
+
         RemoveAggressorFrom(ent, aggressor);
     }
 
@@ -142,8 +176,23 @@ public sealed partial class AggressorsSystem : EntitySystem
 
     private void RemoveAggressorFrom(Entity<AggressiveComponent> ent, Entity<AggressorComponent?> aggressor)
     {
-        if (!Resolve(aggressor, ref aggressor.Comp))
+        if (!Resolve(aggressor, ref aggressor.Comp, false))
+        {
+            // AggressiveComponent and AggressorComponent are separate networked
+            // states. During client-side game-state deletion their removals are
+            // not atomic, so the reverse component can legitimately be gone by
+            // the time the boss's termination cleanup runs.
+            if (_net.IsClient)
+            {
+                _bossMusic.EndAllMusic();
+                return;
+            }
+
+            // On the authoritative server this still indicates a broken pair
+            // and must remain visible instead of being silently tolerated.
+            Log.Error($"Aggressor {ToPrettyString(aggressor.Owner)} is missing its reverse component while cleaning {ToPrettyString(ent.Owner)}.");
             return;
+        }
 
         aggressor.Comp.Aggressives.Remove(ent);
         if (aggressor.Comp.Aggressives.Count > 0)
@@ -165,7 +214,7 @@ public sealed partial class AggressorsSystem : EntitySystem
         if (!Resolve(aggressor, ref aggressor.Comp))
             return;
 
-        foreach (var aggressive in aggressor.Comp.Aggressives)
+        foreach (var aggressive in aggressor.Comp.Aggressives.ToArray())
         {
             if (TryComp<AggressiveComponent>(aggressive, out var aggressors))
                 RemoveAggressor((aggressive, aggressors), aggressor);

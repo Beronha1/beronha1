@@ -13,6 +13,7 @@ public sealed partial class MegafaunaSystem
     {
         SubscribeLocalEvent<MegafaunaAiComponent, MegafaunaStartupEvent>(OnMegafaunaStartup);
         SubscribeLocalEvent<MegafaunaAiComponent, MegafaunaShutdownEvent>(OnMegafaunaShutdown);
+        SubscribeLocalEvent<MegafaunaAiComponent, MegafaunaKilledEvent>(OnMegafaunaKilled);
         SubscribeLocalEvent<MegafaunaAiComponent, AggressorAddedEvent>(OnAggressorAdded);
         SubscribeLocalEvent<MegafaunaAiComponent, AggressorRemovedEvent>(OnAggressorRemoved);
         SubscribeLocalEvent<MegafaunaAiComponent, MobStateChangedEvent>(OnStateChanged);
@@ -24,7 +25,7 @@ public sealed partial class MegafaunaSystem
             return;
 
         var nextAction = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.StartingDelay);
-        ent.Comp.Schedule.Add(nextAction, ent.Comp.Selector);
+        ScheduleSelector(ent.Comp, nextAction, ent.Comp.Selector);
     }
 
     private void OnMegafaunaShutdown(Entity<MegafaunaAiComponent> ent, ref MegafaunaShutdownEvent args)
@@ -33,6 +34,16 @@ public sealed partial class MegafaunaSystem
             return;
 
         ent.Comp.Schedule.Clear();
+        ClearTarget(ent.Owner);
+    }
+
+    private void OnMegafaunaKilled(Entity<MegafaunaAiComponent> ent, ref MegafaunaKilledEvent args)
+    {
+        if (_net.IsClient)
+            return;
+
+        ent.Comp.Schedule.Clear();
+        ClearTarget(ent.Owner);
     }
 
     private void OnAggressorAdded(Entity<MegafaunaAiComponent> ent, ref AggressorAddedEvent args)
@@ -60,5 +71,15 @@ public sealed partial class MegafaunaSystem
             return;
 
         KillMegafauna(ent);
+    }
+
+    private void ClearTarget(EntityUid uid)
+    {
+        if (!TryComp<MegafaunaAiTargetingComponent>(uid, out var targeting))
+            return;
+
+        targeting.TargetEnt = null;
+        targeting.TargetCoords = null;
+        Dirty(uid, targeting);
     }
 }

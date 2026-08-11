@@ -12,6 +12,7 @@
     size: Large
     shape:
     - 0,0,1,1
+  - type: MegafaunaWeaponLooter
   - type: PressureDamageChange
     appliedModifier: 3.75
     applyToMelee: false

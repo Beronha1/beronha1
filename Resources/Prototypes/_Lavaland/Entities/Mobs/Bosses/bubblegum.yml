@@ -71,3 +71,39 @@
     soundId: Bubblegum
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
+  - type: MegafaunaDirector
+  - type: BubblegumBoss
+    rewards:
+    - LavalandCrateNecropolisBubblegumFilled
+    phase1Actions:
+    - ActionBubblegumRage
+    - ActionBubblegumBloodDive
+    - ActionBubblegumTripleDash
+    phase1Chances:
+      ActionBubblegumRage: 0.1
+      ActionBubblegumBloodDive: 0.5
+      ActionBubblegumTripleDash: 0.8
+    phase2Actions:
+    - ActionBubblegumRage
+    - ActionBubblegumBloodDive
+    - ActionBubblegumIllusionDash
+    - ActionBubblegumPentagramDash
+    - ActionBubblegumChaoticIllusionDash
+    phase2Chances:
+      ActionBubblegumRage: 0.4
+      ActionBubblegumBloodDive: 0.5
+      ActionBubblegumIllusionDash: 0.67
+      ActionBubblegumPentagramDash: 0.33
+      ActionBubblegumChaoticIllusionDash: 0.75
+  - type: SpawnLootOnDeath
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyLavalandBubblegumDemonClaws
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter
+  - type: NPCUseActionsOnTarget
+    actionIds:
+    - ActionBubblegumRage
+    - ActionBubblegumBloodDive
+    - ActionBubblegumTripleDash

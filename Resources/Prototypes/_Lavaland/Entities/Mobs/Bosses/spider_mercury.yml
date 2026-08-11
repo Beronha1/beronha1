@@ -1,0 +1,264 @@
+# Spider of Mercury combat forms adapted from Goobstation PR #6542.
+
+- type: entity
+  id: BaseSpiderMercury
+  parent: LavalandMobBase
+  abstract: true
+  components:
+  - type: Physics
+    bodyType: KinematicController
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: MobMover
+  - type: Actions
+  - type: Appearance
+  - type: CombatMode
+  - type: NoSlip
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MercurySpider
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Structural: 9999
+  - type: AddOrRemoveComponent
+  - type: Fauna
+  - type: NpcFactionMember
+    factions: [ SimpleHostile ]
+  - type: HTN
+    rootTask:
+      task: SimpleRangedHostileCompound
+  - type: Aggressive
+    forgiveRange: 1000
+  - type: MegafaunaFieldGenerator
+    wallId: WallHierophantArenaTemporary
+    wallShape: !type:NestedEntityShape
+      id: BoxHollow
+      size: 12
+  - type: MegafaunaAnchor
+    anchored: false
+  - type: MegafaunaGodmode
+  - type: MegafaunaRejuvenate
+
+- type: entity
+  id: MobSpiderMercury
+  parent: BaseSpiderMercury
+  name: Spider of Mercury
+  description: Its body is not flesh. It is not metal. You do not know what it is.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        density: 1000
+        mask: [ LargeMobMask ]
+        layer: [ LargeMobLayer ]
+  - type: RadiationSource
+    intensity: 2
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base", "movement" ]
+      state: mercury
+    noRot: true
+  - type: SpriteMovement
+    movementLayers:
+      movement:
+        state: mercury-walking
+    noMovementLayers:
+      movement:
+        state: mercury
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+  - type: MobThresholds
+    thresholds: { 0: Alive, 1500: Dead }
+  - type: Anger
+    totalHp: 1500
+  - type: BossMusic
+    soundId: ORT
+  - type: PointLight
+    radius: 5
+    energy: 1.5
+    color: cyan
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: CrystalStep
+      params:
+        volume: -5
+  - type: EnvironmentalResonance
+    rightPrototype: MoveRight
+    leftPrototype: MoveLeft
+    upPrototype: MoveUp
+    downPrototype: MoveDown
+    horizontalOffset: 12
+    verticalOffset: 12
+    rowNumber: 14
+  - type: CosmicRayCirculator
+    warningPrototype: ORTWarningBox
+  - type: EtherDrain
+  - type: ActionGrant
+    actions:
+    - ActionORTEtherDrain
+    - ActionORTPlanktonFlood
+    - ActionORTCosmicRays
+    - ActionORTResonanceVertical
+    - ActionORTResonanceHorizontal
+  - type: MegafaunaAi
+    actionDelay: 0.5
+    selector: { id: Mercury }
+  - type: MegafaunaDirector
+    countKill: false
+  - type: SpiderMercuryStage
+    nextStage: MobSpiderMercuryUfo
+
+- type: entity
+  id: MobSpiderMercuryUfo
+  parent: BaseSpiderMercury
+  name: UFO
+  description: The spider was only an empty shell. The true body was above all along.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-2,0,2,1"
+        density: 10000
+        mask: [ LargeMobMask ]
+        layer: [ LargeMobLayer ]
+  - type: RadiationSource
+    intensity: 4
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    state: UFO-spin
+    noRot: true
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+  - type: MobThresholds
+    thresholds: { 0: Alive, 1000: Dead }
+  - type: Anger
+    totalHp: 1000
+  - type: BossMusic
+    soundId: ORT
+  - type: AmbientSound
+    enabled: true
+    volume: -5
+    range: 20
+    sound:
+      path: /Audio/_Lavaland/Mobs/Bosses/Mercury/ufo_ambience.ogg
+  - type: PointLight
+    radius: 4
+    energy: 1.5
+    color: green
+  - type: ActionGrant
+    actions:
+    - ActionORTEnergySurge
+    - ActionORTEnergyDischarge
+    - ActionGalacticaSupercell
+  - type: MegafaunaAi
+    actionDelay: 0.5
+    selector: { id: UFO }
+  - type: MegafaunaDirector
+    countKill: false
+  - type: SpiderMercuryStage
+    transitionEffect: SpiderMercuryUfoDeathAnimation
+
+- type: entity
+  id: MobSpiderMercuryUltimate
+  parent: BaseSpiderMercury
+  name: the ultimate one
+  description: Long-range weaponry analyzed. Adaptation complete.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-1,0.5,1.5"
+        density: 10000
+        hard: true
+        layer: [ BulletImpassable ]
+  - type: RadiationSource
+    intensity: 1
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    state: adapted_ranged
+    noRot: true
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2
+    baseSprintSpeed: 2
+  - type: MobThresholds
+    thresholds: { 0: Alive, 1500: Dead }
+  - type: Anger
+    totalHp: 1500
+  - type: BossMusic
+    soundId: UltimateOne
+  - type: PointLight
+    radius: 10
+    energy: 5
+    color: gold
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Lavaland/Mobs/Bosses/Mercury/alien_noise.ogg
+  - type: ORTTransportMatter
+    moveSpeed: 25
+  - type: MegafaunaAi
+    actionDelay: 0.5
+    selector: { id: ORTRanged }
+  - type: ORTSolarStorm
+    stormDamage:
+      types:
+        Heat: 2
+        Radiation: 2
+  - type: EtherDrain
+  - type: ParadigmInflation
+  - type: ReflectiveThreads
+  - type: ORTConvergence
+  - type: OrbitingRing
+    prototype: DarkMatterPlanktonOrbiting
+  - type: PhaseConversion
+    switchDelay: 1
+  - type: ActionGrant
+    actions:
+    - ActionORTEtherDrain
+    - ActionORTEnergyDischarge
+    - ActionORTEnergySurge
+    - ActionORTSolarStorm
+    - ActionORTParadigmInflation
+    - ActionORTPhaseConversion
+    - ActionORTReflectiveThreads
+    - ActionORTDarkMatterShell
+    - ActionORTConvergence
+    - ActionORTResonanceVertical
+  - type: EnvironmentalResonance
+    rightPrototype: MoveRight
+    leftPrototype: MoveLeft
+    upPrototype: MoveUp
+    downPrototype: MoveDown
+    horizontalOffset: 12
+    verticalOffset: 12
+    rowNumber: 14
+  - type: MegafaunaDirector
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisFilled
+      - id: SpiderMercuryCore
+      - id: MaterialSpiderMercuryKeratin10
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophySpiderMercuryAlloy
+    weaponWhitelist:
+      components: [ MegafaunaWeaponLooter ]

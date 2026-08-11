@@ -73,6 +73,9 @@ public static class ShapeHelpers
         if (range <= 0)
             yield break;
 
+        if (stepSize <= 0)
+            throw new ArgumentOutOfRangeException(nameof(stepSize), "stepSize must be greater than zero.");
+
         var bottomLeft = center - new Vector2(range, range);
         var topLeft = center - new Vector2(range, -range);
         var topRight = center - new Vector2(-range, -range);
@@ -109,6 +112,9 @@ public static class ShapeHelpers
         if (range <= 0)
             yield break;
 
+        if (stepSize <= 0)
+            throw new ArgumentOutOfRangeException(nameof(stepSize), "stepSize must be greater than zero.");
+
         for (var i = 1f; i < range; i += stepSize)
         {
             yield return center with { X = center.X + i };
@@ -124,6 +130,9 @@ public static class ShapeHelpers
 
         if (range <= 0)
             yield break;
+
+        if (stepSize <= 0)
+            throw new ArgumentOutOfRangeException(nameof(stepSize), "stepSize must be greater than zero.");
 
         for (var i = 1f; i < range; i += stepSize)
         {

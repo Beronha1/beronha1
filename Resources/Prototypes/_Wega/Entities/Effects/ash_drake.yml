@@ -1,0 +1,119 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Ported from RedStar PR #111/#117 with the original Wega telegraphs.
+
+- type: entity
+  id: EffectAshDrakeFire
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Physics
+    bodyType: Static
+  - type: Sprite
+    sprite: Effects/fire.rsi
+    color: "#a7000b"
+    state: "2"
+  - type: TriggerOnCollide
+    fixtureID: fix1
+    maxTriggers: 1
+  - type: IgniteOnCollide
+    fixtureId: fix1
+    fireStacks: 1
+  - type: DamageOnTrigger
+    targetUser: true
+    damage:
+      types:
+        Heat: 2.5
+  - type: DamageOnTriggerBlacklist
+    blacklist:
+      components:
+      - AshDrakeBoss
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - Impassable
+        hard: false
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
+  parent: EffectAshDrakeFire
+  id: EffectAshDrakeFireCircle
+  components:
+  - type: DamageOnTrigger
+    targetUser: true
+    damage:
+      types:
+        Heat: 40
+
+- type: entity
+  parent: EffectAshDrakeFire
+  id: EffectAshDrakeFireWall
+  components:
+  - type: TriggerOnCollide
+    fixtureID: fix1
+    maxTriggers: null
+  - type: TimedDespawn
+    lifetime: 10
+
+- type: entity
+  id: EffectAshDrakeCircle
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    noRot: true
+    sprite: _Wega/Effects/drakeeffects.rsi
+    state: target_circle
+  - type: TimedDespawn
+    lifetime: 2
+  - type: SpawnOnDespawn
+    prototype: EffectAshDrakeFireCircle
+
+- type: entity
+  id: EffectAshDrakeSafeMarker
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    noRot: true
+    sprite: _Wega/Effects/drakeeffects.rsi
+    state: safe
+  - type: TimedDespawn
+    lifetime: 1.5
+
+- type: entity
+  id: EffectAshDrakeShadow
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    noRot: true
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    state: shadow
+
+- type: entity
+  parent: FloorLavaEntity
+  id: EffectAshDrakeFloorLavaTemp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 5
+
+- type: entity
+  parent: FloorLavaEntity
+  id: EffectAshDrakeFloorLavaLessTemp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 1

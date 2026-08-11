@@ -20,6 +20,12 @@ public sealed partial class LavalandDungeonRuinPrototype : IPrototype
     [DataField]
     public int SpawnAttempts = 8;
 
+    /// <summary>
+    /// Extra space reserved around this marker's declared boundary.
+    /// </summary>
+    [DataField]
+    public float Clearance;
+
     [DataField(required: true)]
     public int Priority = int.MinValue;
 }

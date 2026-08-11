@@ -35,7 +35,10 @@ public sealed partial class ChasmFallingComponent : Component
     /// <summary>
     /// Original scale of the object so it can be restored if the component is removed in the middle of the animation
     /// </summary>
-    [AutoNetworkedField]
+    // Client-only snapshot used to restore the sprite if the fall is cancelled.
+    // Networking the server's default Vector2.Zero over this value can restore a
+    // player's sprite to an invalid zero scale when a teleporting chasm cancels
+    // the fall (for example the Spider of Mercury fissure).
     public Vector2 OriginalScale = Vector2.Zero;
 
     /// <summary>

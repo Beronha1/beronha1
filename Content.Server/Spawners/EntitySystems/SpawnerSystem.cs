@@ -24,15 +24,29 @@ public sealed partial class SpawnerSystem : EntitySystem
         base.Update(frameTime);
 
         var curTime = _timing.CurTime;
+        var dueSpawners = new List<EntityUid>();
         var query = EntityQueryEnumerator<TimedSpawnerComponent>();
         while (query.MoveNext(out var uid, out var timedSpawner))
         {
-            if (timedSpawner.NextFire > curTime)
+            if (timedSpawner.NextFire <= curTime)
+                dueSpawners.Add(uid);
+        }
+
+        // Spawning can add another TimedSpawnerComponent (for example the
+        // Childish Oni spiral marker spawning its trail spawner). Process a
+        // snapshot so those additions cannot invalidate the component query.
+        foreach (var uid in dueSpawners)
+        {
+            if (!TryComp<TimedSpawnerComponent>(uid, out var timedSpawner) ||
+                timedSpawner.NextFire > curTime)
+            {
                 continue;
+            }
 
             OnTimerFired(uid, timedSpawner);
 
-            timedSpawner.NextFire += timedSpawner.IntervalSeconds;
+            if (!Deleted(uid) && HasComp<TimedSpawnerComponent>(uid))
+                timedSpawner.NextFire += timedSpawner.IntervalSeconds;
         }
     }
 

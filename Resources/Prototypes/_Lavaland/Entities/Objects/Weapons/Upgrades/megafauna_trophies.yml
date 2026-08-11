@@ -1,0 +1,101 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Mechanics and original trophy sprites ported from RedStar PR #117.
+
+- type: entity
+  parent: BaseCrusherUpgradeHandle
+  id: TrophyLavalandLegionSkull
+  name: legion skull
+  description: Increases the crusher's firing and attack speed.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
+    state: skull
+  - type: GunUpgrade
+    name: lavaland-trophy-legion-name
+    uniqueGroup: legionTrophy
+  - type: CrusherLegionSkullUpgrade
+  - type: WeaponUpgradeSpeed
+    attackRateMultiplier: 1.15
+
+- type: entity
+  parent: BaseCrusherUpgradeHandle
+  id: TrophyLavalandBDMEye
+  name: eye of the blood-drunk miner
+  description: Makes the crusher lighter and grants brief control immunity after consuming a marker.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
+    state: eye
+  - type: GunUpgrade
+    name: lavaland-trophy-bdm-name
+    uniqueGroup: bdmTrophy
+  - type: CrusherEyeBloodDrunkMinerUpgrade
+  - type: WeaponUpgradeSpeed
+    attackRateMultiplier: 1.25
+
+- type: entity
+  parent: BaseCrusherUpgradeBlade
+  id: TrophyLavalandAshDrakeSpike
+  name: ash drake spike
+  description: Consuming a marker damages and throws nearby enemies.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
+    state: spike
+  - type: GunUpgrade
+    name: lavaland-trophy-ash-drake-name
+    uniqueGroup: ashDrakeTrophy
+  - type: CrusherAshDrakeSpikeUpgrade
+  - type: WeaponUpgradeDamage
+    bonusDamage:
+      types:
+        Heat: 8
+  - type: GunUpgradeDamage
+    bonusDamage:
+      types:
+        Heat: 8
+
+- type: entity
+  parent: BaseCrusherUpgradeBlade
+  id: TrophyLavalandBubblegumDemonClaws
+  name: demon claws
+  description: Increases melee damage and life-steal.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
+    state: claws
+  - type: GunUpgrade
+    name: lavaland-trophy-bubblegum-name
+    uniqueGroup: bubblegumTrophy
+  - type: CrusherDemonClawsUpgrade
+    meleeHeal:
+      types:
+        Blunt: -0.75
+  - type: GunUpgradeComponents
+    components:
+    - type: LeechOnMarker
+      leech:
+        types:
+          Blunt: -5
+
+- type: entity
+  parent: BaseCrusherUpgradeBlade
+  id: TrophyLavalandColossusBlasterTubes
+  name: colossus blaster tubes
+  description: Improves projectile velocity and empowers the next shot after consuming a marker.
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
+    layers:
+    - state: tubes
+  - type: GunUpgrade
+    name: lavaland-trophy-colossus-name
+    uniqueGroup: colossusTrophy
+  - type: CrusherBlasterTubesUpgrade
+    damage:
+      types:
+        Blunt: 10
+    projectileSpeedCoefficient: 1.25
+  - type: GunUpgradeDamage
+    modifier: 1.2

@@ -352,6 +352,9 @@
   id: Cola  # Storage whitelist: DrinkCanPack. ItemCounter: DrinkCanPack
 
 - type: Tag
+  id: CoffeeMachineIngredient # Storage whitelist: ImpCoffeeMachineEmpty
+
+- type: Tag
   id: Coldsauce # Storage whitelist: ClothingBeltChef and FoodCartHot. ItemMapper: ClothingBeltChef and FoodCartHot
 
 - type: Tag

@@ -214,7 +214,8 @@
       - ReagentId: Milk
         Quantity: 120
   - type: Tag
-    tags: [ ]
+    tags:
+    - CoffeeMachineIngredient
 
 - type: entity
   parent: DrinkCartonNormalBase
@@ -236,7 +237,8 @@
       - ReagentId: MilkSoy
         Quantity: 120
   - type: Tag
-    tags: [ ]
+    tags:
+    - CoffeeMachineIngredient
 
 - type: entity
   parent: [DrinkBaseMaterialPlastic, DrinkCartonNormalBase]

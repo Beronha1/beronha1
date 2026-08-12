@@ -97,6 +97,23 @@
                         Mode="Press">
                     </Button>
                 </BoxContainer>
+                <!-- <Mono> -->
+                <BoxContainer
+                    Orientation="Horizontal"
+                    Align="Begin"
+                    HorizontalExpand="True">
+                    <CheckBox
+                        Name="LoopCheckbox"
+                        Margin="5 0 5 0"
+                        Text="{Loc 'lathe-menu-loop'}"
+                        ToolTip="{Loc 'lathe-menu-loop-tooltip'}"/>
+                    <CheckBox
+                        Name="SkipCheckbox"
+                        Margin="5 0 5 0"
+                        Text="{Loc 'lathe-menu-skip'}"
+                        ToolTip="{Loc 'lathe-menu-skip-tooltip'}"/>
+                </BoxContainer>
+                <!-- </Mono> -->
                 <BoxContainer
                     Name="FabricatingContainer"
                     Orientation="Horizontal"

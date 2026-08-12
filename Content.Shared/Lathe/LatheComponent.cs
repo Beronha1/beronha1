@@ -83,6 +83,21 @@ namespace Content.Shared.Lathe
         [DataField, ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
         public float MaterialUseMultiplier = 1;
         #endregion
+
+        #region Mono
+        /// <summary>
+        /// Whether to add recipes back to the end of the queue after fabricating them.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool Loop;
+
+        /// <summary>
+        /// Whether to skip recipes if lacking resources, as opposed to blocking the
+        /// queue while waiting for them.
+        /// </summary>
+        [DataField, ViewVariables(VVAccess.ReadWrite)]
+        public bool SkipBad;
+        #endregion
     }
 
     public sealed class LatheGetRecipesEvent : EntityEventArgs
@@ -108,11 +123,22 @@ namespace Content.Shared.Lathe
         public int ItemsPrinted;
         public int ItemsRequested;
 
-        public LatheRecipeBatch(ProtoId<LatheRecipePrototype> recipe, int itemsPrinted, int itemsRequested)
+        // <Mono>
+        /// <summary>
+        /// Whether the materials for this batch have already been taken from the lathe.
+        /// Batches queued by hand pay up front; batches put back by <see cref="LatheComponent.Loop"/>
+        /// only pay once they reach the head of the queue, so the loop stops on its own
+        /// when the lathe runs dry.
+        /// </summary>
+        public bool Paid;
+        // </Mono>
+
+        public LatheRecipeBatch(ProtoId<LatheRecipePrototype> recipe, int itemsPrinted, int itemsRequested, bool paid = true) // Mono - paid
         {
             Recipe = recipe;
             ItemsPrinted = itemsPrinted;
             ItemsRequested = itemsRequested;
+            Paid = paid; // Mono
         }
     }
 

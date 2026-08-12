@@ -101,7 +101,8 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #traitor não inicia com menos de 5 jogadores
+  maxPlayers: 5
   description: extended-description
   rules:
   - BasicStationEventScheduler
@@ -155,7 +156,7 @@
     - sandbox
   name: sandbox-title
   description: sandbox-description
-  showInVote: false # Not suitable for use without admin intervention, since entity spamming can quickly crash a server
+  showInVote: true # fuckitweball.gif
   maxPlayers: 5
   rules:
     - Sandbox

@@ -63,7 +63,6 @@
       - ReagentId: Sake
         Quantity: 50
   - type: SolutionRegeneration
-    solution: drink
     generated:
       reagents:
       - ReagentId: Sake

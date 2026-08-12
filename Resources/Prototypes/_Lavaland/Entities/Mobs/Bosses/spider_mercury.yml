@@ -16,8 +16,9 @@
   - type: CombatMode
   - type: NoSlip
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: MercurySpider
+  - type: Injurable
+    damageContainer: Inorganic
   - type: DamageOnCollide
     ignoreWhitelist:
       components: [ Fauna ]
@@ -40,7 +41,6 @@
       id: BoxHollow
       size: 12
   - type: MegafaunaAnchor
-    anchored: false
   - type: MegafaunaGodmode
   - type: MegafaunaRejuvenate
 

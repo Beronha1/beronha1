@@ -55,8 +55,9 @@
   - type: StaticPrice
     price: 1500
   - type: Damageable
-    damageContainer: Inorganic
     damageModifierSet: MercurySpider
+  - type: Injurable
+    damageContainer: Inorganic
   - type: PointLight
     radius: 2
     energy: 1.5

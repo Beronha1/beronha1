@@ -8,10 +8,10 @@
   - type: Action
     priority: -21
     useDelay: 2
-    icon:
-      sprite: _Lavaland/Actions/banana.rsi
-      state: nameless
     itemIconStyle: NoItem
+  - type: Sprite
+    sprite: _Lavaland/Actions/banana.rsi
+    state: nameless
 
 - type: entity
   id: ActionChildishOniDemonicHandSpiral
@@ -134,4 +134,4 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ChildishOniSlashProjectile
-      speed: 12
+      projectileSpeed: 12

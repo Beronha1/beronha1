@@ -74,3 +74,10 @@
 
 - type: Tag
   id: WatcherIceWing
+
+- type: Tag
+  id: SpiderMercuryCore
+
+# Compatibility tag used by the original Goob Station fairy-rock prototypes.
+- type: Tag
+  id: Wall

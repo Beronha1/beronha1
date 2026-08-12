@@ -56,8 +56,18 @@ public sealed partial class MegafaunaSystem : EntitySystem
                 actionTime = Math.Max(Math.Abs(actionTime), 0.02f);
                 var delayTime = ai.ActionDelaySelector.Get(args);
                 var nextAction = _timing.CurTime + TimeSpan.FromSeconds(actionTime + delayTime);
-                ai.Schedule.Add(nextAction, ai.Selector);
+                ScheduleSelector(ai, nextAction, ai.Selector);
             }
+        }
+    }
+
+    private static void ScheduleSelector(MegafaunaAiComponent ai, TimeSpan time, MegafaunaSelector selector)
+    {
+        // Multiple selector threads can finish on the same tick. Keep both
+        // instead of throwing on the Dictionary's timestamp key.
+        while (!ai.Schedule.TryAdd(time, selector))
+        {
+            time += TimeSpan.FromTicks(1);
         }
     }
 

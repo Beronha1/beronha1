@@ -1,0 +1,79 @@
+- type: entity
+  parent: BaseItem
+  id: SpiderMercuryCore
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Devices/mercury.rsi
+    state: mercury_core
+  - type: PointLight
+    radius: 2
+    energy: 1.5
+    color: "#22ddff"
+  - type: Tag
+    tags: [ SpiderMercuryCore ]
+
+- type: entity
+  parent: BaseWeaponBatterySmall
+  id: WeaponSpiderMercuryRailgun
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/mercury_railgun.rsi
+    state: icon
+  - type: Item
+    sprite: _Lavaland/Objects/Weapons/mercury_railgun.rsi
+    size: Ginormous
+    shape:
+    - 0,0,3,1
+  - type: Gun
+    projectileSpeed: 40
+    fireRate: 0.35
+  - type: BatteryAmmoProvider
+    proto: BulletSpiderMercuryRailgun
+    fireCost: 100
+  - type: BatterySelfRecharger
+    autoRechargeRate: 33.34
+  - type: Construction
+    graph: SpiderMercuryRailgunConstructionGraph
+    node: railgun
+
+- type: entity
+  parent: BulletKinetic
+  id: BulletSpiderMercuryRailgun
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Effects/plankton.rsi
+    layers:
+    - state: plankton_projectile
+    drawdepth: Effects
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 20
+        Radiation: 15
+        Structural: 200
+  - type: TimedDespawn
+    lifetime: 0.6
+
+- type: entity
+  parent: BaseCrusherUpgradeBlade
+  id: TrophySpiderMercuryAlloy
+  name: adaptive mercury alloy
+  description: An impossible alloy that makes a crusher strike with heat and radiation.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/mercury.rsi
+    state: radiant
+  - type: GunUpgrade
+    name: lavaland-trophy-spider-mercury-name
+    uniqueGroup: spiderMercuryTrophy
+  - type: WeaponUpgradeDamage
+    bonusDamage:
+      types:
+        Heat: 10
+        Radiation: 5
+  - type: GunUpgradeDamage
+    bonusDamage:
+      types:
+        Heat: 10
+        Radiation: 5

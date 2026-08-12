@@ -21,7 +21,7 @@ public sealed partial class MobPhasesSystem : EntitySystem
     }
 
     private void OnInit(Entity<MobPhasesComponent> ent, ref MapInitEvent args)
-        => ent.Comp.PhaseThresholds = ent.Comp.BasePhaseThresholds;
+        => ent.Comp.PhaseThresholds = new Dictionary<FixedPoint2, int>(ent.Comp.BasePhaseThresholds);
 
     private void OnDamage(Entity<MobPhasesComponent> ent, ref DamageChangedEvent args)
         => UpdatePhases(ent.Owner);
@@ -78,7 +78,7 @@ public sealed partial class MobPhasesSystem : EntitySystem
         if (!Resolve(ent.Owner, ref ent.Comp, false))
             return;
 
-        ent.Comp.PhaseThresholds = ent.Comp.BasePhaseThresholds;
+        ent.Comp.PhaseThresholds = new Dictionary<FixedPoint2, int>(ent.Comp.BasePhaseThresholds);
     }
 
     [PublicAPI]

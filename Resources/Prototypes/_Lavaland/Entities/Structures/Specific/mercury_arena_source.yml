@@ -1,0 +1,380 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Arena content imported from Goobstation PR #6542.
+
+- type: entityTable
+  id: LavalandCrystalMobs
+  table: !type:GroupSelector
+    children:
+    - !type:GroupSelector
+      children:
+      - id: LavalandMobCrystalSeed
+        weight: 0.5
+      - id: LavalandMobCrystalRing
+        weight: 0.3
+      - id: LavalandMobCrystalCrab
+        weight: 0.2
+
+- type: entity
+  name: lavaland crystal mob spawner
+  id: SpawnerRandomCrystalMobLavaland
+  parent: MarkerBase
+  suffix: Lavaland
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+    - sprite: Mobs/Aliens/Asteroid/goliath.rsi
+      state: goliath
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: LavalandCrystalMobs
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconORTArenaEntrance
+  suffix: Spider of Mercury Arena
+  components:
+  - type: ChasmTeleportBeacon
+  - type: NavMapBeacon
+    defaultText: station-beacon-mercury-arena
+  - type: GenericVisualizer
+    visuals: {}
+  - type: Sprite
+    drawdepth: LowFloors
+    sprite: _Lavaland/Effects/particle.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: solarparticle
+
+- type: entity
+  parent: DefaultStationBeaconLavalandRuin
+  id: DefaultStationBeaconORTArenaExit
+  suffix: Bottomless pit entrance
+  components:
+  - type: SeaOfFantasyTreesExitBeacon
+  - type: NavMapBeacon
+    defaultText: station-beacon-bottomless-pit
+  - type: GenericVisualizer
+    visuals: {}
+  - type: Sprite
+    drawdepth: LowFloors
+    sprite: _Lavaland/Effects/particle.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: solarparticle
+
+- type: entity
+  parent: BaseStructure
+  id: WallRockFairy
+  name: fissure wall
+  description: Keeps the radiation in and the shaft miners out.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Occluder
+  - type: Sprite
+    sprite: _Lavaland/Structures/Walls/fairy.rsi
+    state: rock_fairy
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask: [ FullTileMask ]
+        layer: [ WallLayer ]
+        density: 4000
+  - type: RustRequiresPathStage
+    pathStage: 11
+  - type: Penetratable
+    penetrateDamage: 1
+    damagePenalty: 0.1
+  - type: SoundOnGather
+  - type: Gatherable
+    toolWhitelist:
+      tags: []
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 120
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: RadiationBlocker
+    resistance: 20
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection: MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection: MetalLaserImpact
+  - type: Tag
+    tags: [ Wall ]
+  - type: Physics
+    bodyType: Static
+  - type: Airtight
+  - type: StaticPrice
+    price: 75
+  - type: BlockWeather
+  - type: SunShadowCast
+
+- type: entity
+  parent: BaseStructure
+  id: WallRockFairyIndestructible
+  name: fissure wall
+  description: Keeps the radiation in and the shaft miners out.
+  suffix: indestructible
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Wall
+  components:
+  - type: Occluder
+  - type: Sprite
+    sprite: _Lavaland/Structures/Walls/fairy.rsi
+    state: rock_fairy
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask: [ FullTileMask ]
+        layer: [ WallLayer ]
+        density: 4000
+  - type: RustRequiresPathStage
+    pathStage: 11
+  - type: Penetratable
+    penetrateDamage: 1
+    damagePenalty: 0.1
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: RadiationBlocker
+    resistance: 20
+  - type: RangedDamageSound
+    soundGroups:
+      Brute:
+        collection: MetalBulletImpact
+    soundTypes:
+      Heat:
+        collection: MetalLaserImpact
+  - type: Tag
+    tags: [ Wall ]
+  - type: IsRoof
+  - type: Physics
+    bodyType: Static
+  - type: Airtight
+  - type: StaticPrice
+    price: 75
+  - type: BlockWeather
+  - type: SunShadowCast
+
+- type: entity
+  name: ???
+  id: BaseORTAnimation
+  categories: [ HideSpawnMenu, Spawner ]
+  description: The air trembles around it.
+  abstract: true
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-1,-2,1,1"
+        hard: false
+        density: 1000
+        mask: [ LargeMobMask ]
+        layer: [ LargeMobLayer ]
+
+- type: entity
+  id: MegafaunaORTDormant
+  parent: BaseORTAnimation
+  name: Unknown entity
+  description: Appears to be dormant. Maybe give it a whack?
+  suffix: DO NOT MAP
+  components:
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MercurySpider
+  # Whiskey/Trauma records non-body damage through Injurable. The Goob source
+  # predates that split; without this compatibility component the dormant core
+  # accepts hits but never accumulates the 50 damage required to awaken.
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: dormant
+  - type: VicinitySpawner
+    numberToSpawn: 1
+    spawnInterval: 4
+    offsetForSpawn: 12
+    prototype: [ ORTLightParticle ]
+  - type: Destructible
+    thresholds:
+    - trigger: !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ORTFormingAnimation:
+            min: 1
+            max: 1
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+
+- type: entity
+  id: ORTFormingAnimation
+  parent: BaseORTAnimation
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: VicinitySpawner
+    numberToSpawn: 1
+    spawnInterval: 1
+    offsetForSpawn: 12
+    prototype: [ ORTLightParticleLong ]
+  - type: TriggerOnSpawn
+  - type: EmitSoundOnTrigger
+    sound: /Audio/_Lavaland/Mobs/Bosses/Mercury/ufo_active.ogg
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: mercury-forming
+  - type: TimedSpawner
+    prototypes: [ ORTForming ]
+    chance: 1
+    intervalSeconds: 6.5
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn
+    # Whiskey/Trauma may process TimedDespawn before TimedSpawner in the same
+    # tick. Keep the source's 6.5 s spawn and leave one tick of cleanup margin.
+    lifetime: 6.6
+
+- type: entity
+  name: Spider of Mercury
+  id: BaseORT
+  parent: LavalandMobBase
+  abstract: true
+  components:
+  - type: StatusEffects
+    allowed: [ RadiationProtection ]
+  - type: Physics
+    bodyType: KinematicController
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Tag
+    tags: [ CannotSuicide, FootstepSound ]
+  - type: Appearance
+  - type: InputMover
+  - type: MobMover
+  - type: NoSlip
+  - type: Damageable
+    damageContainer: Inorganic
+    damageModifierSet: MercurySpider
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Structural: 9999
+  - type: AddOrRemoveComponent
+  - type: Fauna
+  - type: Aggressive
+    forgiveRange: 1000
+
+- type: entity
+  name: pulsing exoskeleton
+  id: ORTForming
+  parent: BaseORT
+  description: The air trembles around it...
+  categories: [ Spawner ]
+  components:
+  - type: PointLight
+    radius: 5
+    energy: 1.5
+    color: cyan
+  - type: RadiationSource
+    intensity: 3
+  - type: Sprite
+    drawdepth: OverMobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: mercury-skeleton
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-1.5,-1.5,1.5,1.5"
+        density: 1000
+        mask: [ LargeMobMask ]
+        layer: [ LargeMobLayer ]
+  - type: AngerPlayerScaling
+    angerScale: 1.2
+    hpScale: 1.2
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      500: Dead
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    table: !type:AllSelector
+      children:
+      - id: ORTCombatAnimation
+  - type: DangerZone
+    popUpRange: 15
+    popup:
+    - ort-sense-danger1
+    - ort-sense-danger2
+    - ort-sense-danger3
+    - ort-sense-danger4
+    - ort-sense-danger5
+    - ort-sense-danger6
+  - type: PulsingLight
+    shouldPlaySound: true
+  - type: VicinitySpawner
+    numberToSpawn: 2
+    offsetForSpawn: 7
+    prototype: [ CrystalSpikeEmerging ]
+
+- type: entity
+  id: ORTCombatAnimation
+  parent: BaseORTAnimation
+  categories: [ HideSpawnMenu ]
+  description: Oh no...
+  components:
+  - type: Sprite
+    noRot: true
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    layers:
+    - map: [ "enum.DamageStateVisualLayers.Base" ]
+      state: mercury-combat-forming
+  - type: TimedSpawner
+    prototypes: [ MobSpiderMercury ]
+    chance: 1
+    intervalSeconds: 0.9
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+  - type: TimedDespawn
+    lifetime: 1

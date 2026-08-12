@@ -29,6 +29,15 @@ public sealed partial class DamageMarkerComponent : Component
     public DamageSpecifier Damage = new();
 
     /// <summary>
+    /// Reduces the marked weapon's melee damage while this marker is active.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public bool Weakening;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField]
+    public float WeakeningModifier = 1f;
+
+    /// <summary>
     /// Entity that marked this entity for a damage surplus.
     /// </summary>
     [DataField, AutoNetworkedField] // Lavaland - networked and cleanup

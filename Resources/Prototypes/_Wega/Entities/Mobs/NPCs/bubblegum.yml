@@ -1,0 +1,19 @@
+# All modifications and additions under the Corvax-Wega tag and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+# Ported from RedStar PR #111; visuals adapted to Whiskey's existing assets.
+
+- type: entity
+  id: MobBubblegumIllusion
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    state: bubblegum
+    noRot: true
+    color: "#ffffffaa"
+  - type: BubblegumIllusion
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2500: Dead

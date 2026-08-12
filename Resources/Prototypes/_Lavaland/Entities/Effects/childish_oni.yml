@@ -1,0 +1,266 @@
+# Mechanics and presentation ported from Goobstation PR #6734.
+
+- type: entity
+  id: ChildishOniSkull
+  name: oni skull
+  description: It looks like it is laughing at you...
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/32x32.rsi
+    state: oni-skull
+    drawdepth: Effects
+    noRot: true
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 1000
+        mask: [ MobMask ]
+        layer: [ InteractImpassable ]
+  - type: PointLight
+    radius: 3
+    energy: 2
+    color: Orange
+    castShadows: false
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Heat: 2
+
+- type: entity
+  parent: ChildishOniSkull
+  id: ChildishOniSkullTemporary
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: FadingTimedDespawn
+    lifetime: 5
+    fadeOutTime: 2
+
+- type: entity
+  parent: ChildishOniSkull
+  id: ChildishOniSkullTemporaryLong
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: FadingTimedDespawn
+    lifetime: 15
+    fadeOutTime: 3
+
+- type: entity
+  parent: ChildishOniSkullTemporary
+  id: ChildishOniSpiralSkull
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: FadingIn
+    fadeInTime: 2
+  - type: ChildishOniSpiraling
+    spiralSpeed: 0.2
+    spiralAcceleration: 1.2
+    spiralDistance: 8
+    spiralMaxSpeed: 10
+    deleteOnEnd: true
+  - type: TimedSpawner
+    prototypes: [ ChildishOniSkullTemporary ]
+    intervalSeconds: 0.2
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+
+- type: entity
+  id: ChildishOniSpiralMarker
+  name: cursed mark
+  description: Something dangerous is about to emerge from it.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/32x32.rsi
+    state: oni-marker
+    drawdepth: Effects
+    noRot: true
+  - type: TimedDespawn
+    lifetime: 0.6
+  - type: TimedSpawner
+    prototypes: [ ChildishOniSpiralSkull ]
+    intervalSeconds: 0.5
+    minimumEntitiesSpawned: 1
+    maximumEntitiesSpawned: 1
+
+- type: entity
+  id: ChildishOniHand
+  name: oni hand
+  description: Look out!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/96x96.rsi
+    state: oni-hand-right
+    drawdepth: Effects
+    noRot: false
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.8,0.8,0.8"
+        density: 10000
+        mask: [ LargeMobMask ]
+        layer: [ InteractImpassable ]
+  - type: AmbientSound
+    volume: -6
+    range: 8
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: PointLight
+    radius: 8
+    energy: 2
+    color: Orange
+    castShadows: true
+  - type: FadingTimedDespawn
+    lifetime: 4
+    fadeOutTime: 0.5
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Structural: 3000
+        Heat: 25
+
+- type: entity
+  parent: ChildishOniHand
+  id: ChildishOniHandRight
+  suffix: Right
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: FadingIn
+    fadeInTime: 2
+  - type: ChildishOniDirectionalMovement
+    moveEast: true
+    speed: 12
+    acceleration: 6
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Goobstation/Wraith/flameswoosh.ogg
+      params:
+        volume: -5
+        maxDistance: 10
+        variation: 0.05
+
+- type: entity
+  parent: ChildishOniHand
+  id: ChildishOniHandLeft
+  suffix: Left
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Effects/96x96.rsi
+    state: oni-hand-left
+    drawdepth: Effects
+    noRot: false
+  - type: FadingIn
+    fadeInTime: 2
+  - type: ChildishOniDirectionalMovement
+    moveWest: true
+    speed: 12
+    acceleration: 6
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Goobstation/Wraith/flameswoosh.ogg
+      params:
+        volume: -5
+        maxDistance: 10
+        variation: 0.05
+
+- type: entity
+  id: ChildishOniSlashProjectile
+  name: flaming slash
+  description: Looks radic—look out!
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/projectiles.rsi
+    state: flaming_slash
+    drawdepth: Effects
+    noRot: false
+  - type: Physics
+    bodyType: Kinematic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-1,-0.2,1,0.1"
+        density: 100
+        mask: [ MobMask ]
+        layer: [ InteractImpassable ]
+  - type: AmbientSound
+    volume: -6
+    range: 8
+    sound:
+      path: /Audio/Ambience/Objects/fireplace.ogg
+  - type: PointLight
+    radius: 3
+    energy: 2
+    color: Orange
+    castShadows: false
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ BossMusic ]
+    inverted: true
+    damage:
+      types:
+        Heat: 10
+        Structural: 10
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/_Goobstation/Weapons/Melee/slashermachetehit.ogg
+  - type: FadingTimedDespawn
+    lifetime: 1
+    fadeOutTime: 1
+
+- type: entity
+  id: ChildishOniClawProjectile
+  name: claw slash
+  description: Looks sharp.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: InteractionOutline
+  - type: Sprite
+    sprite: _Lavaland/Effects/attacks.rsi
+    state: slash
+    drawdepth: Effects
+    noRot: false
+  - type: Physics
+    bodyType: Kinematic
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        density: 100
+        mask: [ MobMask ]
+        layer: [ InteractImpassable ]
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Slash: 10
+        Structural: 100
+  - type: FadingTimedDespawn
+    lifetime: 0.5
+    fadeOutTime: 0.5
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: AlienClaw

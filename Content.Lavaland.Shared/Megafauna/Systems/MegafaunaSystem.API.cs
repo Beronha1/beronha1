@@ -13,6 +13,9 @@ public sealed partial class MegafaunaSystem
 {
     public void StartupMegafauna(Entity<MegafaunaAiComponent> ent)
     {
+        if (ent.Comp.Active)
+            return;
+
         var ev = new MegafaunaStartupEvent();
         RaiseLocalEvent(ent, ref ev);
         ent.Comp.Active = true;

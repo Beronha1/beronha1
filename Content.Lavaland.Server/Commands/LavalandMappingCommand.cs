@@ -59,11 +59,23 @@ public sealed partial class LavalandMappingCommand : IConsoleCommand
         }
         var lavalandSys = _entityManager.System<LavalandSystem>();
 
+        if (!lavalandSys.LavalandEnabled)
+        {
+            shell.WriteLine("Lavaland generation is disabled on the server. Run 'changecvar lavaland.enabled true' and try again.");
+            return;
+        }
+
         if (lavalandSys.GetPreloaderEntity() == null)
             lavalandSys.EnsurePreloaderMap();
 
+        if (lavalandSys.GetPreloaderEntity() == null)
+        {
+            shell.WriteLine("Failed to create the Lavaland preloader map. Check the server-side logs for the underlying error.");
+            return;
+        }
+
         if (!lavalandSys.SetupLavalandPlanet(lavalandProto, out var lavaland, lavalandSeed))
-            shell.WriteLine("Failed to load lavaland! Ensure that lavaland.enabled CVar is set to true and check server-side logs.");
+            shell.WriteLine("Failed to load Lavaland. Check the server-side logs for the underlying error.");
         else
             shell.WriteLine($"Successfully created new lavaland map: {_entityManager.ToPrettyString(lavaland)}");
     }

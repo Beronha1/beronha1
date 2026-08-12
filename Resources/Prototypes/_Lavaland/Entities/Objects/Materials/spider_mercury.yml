@@ -1,0 +1,105 @@
+# Progression materials adapted from Goobstation PR #6542.
+# Original presentation imported from Goobstation PR #6542.
+
+- type: material
+  id: SpiderMercuryKeratin
+  stackEntity: MaterialSpiderMercuryKeratin1
+  name: spider-mercury-keratin
+  unit: materials-unit-piece
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: biokeratin }
+  color: cyan
+  price: 25
+
+- type: stack
+  parent: BaseMediumStack
+  id: SpiderMercuryKeratin
+  name: spider-mercury-keratin
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: biokeratin }
+  spawn: MaterialSpiderMercuryKeratin1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialSpiderMercuryKeratin
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SpiderMercuryKeratin
+    baseLayer: base
+    layerStates: [ biokeratin, biokeratin_2, biokeratin_3 ]
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/mercury.rsi
+    layers:
+    - state: biokeratin
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition:
+      SpiderMercuryKeratin: 100
+  - type: Item
+    heldPrefix: biokeratin
+  - type: Tag
+    tags: [ Ore, RawMaterial ]
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialSpiderMercuryKeratin1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialSpiderMercuryKeratin10
+  suffix: Ten
+  components:
+  - type: Stack
+    count: 10
+
+- type: material
+  id: SpiderMercuryAlloy
+  stackEntity: MaterialSpiderMercuryAlloy1
+  name: spider-mercury-alloy
+  unit: materials-unit-piece
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: radiant }
+  color: gold
+  price: 100
+
+- type: stack
+  parent: BaseMediumStack
+  id: SpiderMercuryAlloy
+  name: spider-mercury-alloy
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: radiant }
+  spawn: MaterialSpiderMercuryAlloy1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialSpiderMercuryAlloy
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: SpiderMercuryAlloy
+    baseLayer: base
+    layerStates: [ radiant, radiant_2, radiant_3 ]
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/mercury.rsi
+    layers:
+    - state: radiant
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition:
+      SpiderMercuryAlloy: 100
+  - type: Item
+    heldPrefix: radiant
+  - type: Tag
+    tags: [ Ingot, RawMaterial ]
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialSpiderMercuryAlloy1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+  - type: Construction
+    graph: SpiderMercuryAlloyConstructionGraph
+    node: alloy

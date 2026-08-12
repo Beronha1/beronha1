@@ -1,0 +1,137 @@
+# Mechanics adapted from Goobstation PR #6734.
+
+- type: entity
+  id: ActionBaseChildishOni
+  parent: BaseAction
+  abstract: true
+  components:
+  - type: Action
+    priority: -21
+    useDelay: 2
+    icon:
+      sprite: _Lavaland/Actions/banana.rsi
+      state: nameless
+    itemIconStyle: NoItem
+
+- type: entity
+  id: ActionChildishOniDemonicHandSpiral
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 3
+    maxDelay: 10
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: WorldTargetAction
+    event: !type:SpawnEntityActionEvent
+      spawn: ChildishOniSpiralMarker
+
+- type: entity
+  id: ActionChildishOniRampage
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 2
+    maxDelay: 6
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: WorldTargetAction
+    event: !type:ChildishOniRampageEvent
+
+- type: entity
+  id: ActionChildishOniRingClose
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 14
+    maxDelay: 30
+  - type: InstantAction
+    event: !type:ChildishOniRingEvent
+      radius: 1
+      ringId: close
+
+- type: entity
+  id: ActionChildishOniRingWide
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:ChildishOniRingEvent
+      radius: 2
+      ringId: far
+
+- type: entity
+  id: ActionChildishOniClawSlash
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 1
+    maxDelay: 3
+  - type: TargetAction
+    checkCanAccess: false
+    range: 2
+  - type: EntityTargetAction
+    canTargetSelf: false
+  - type: WorldTargetAction
+    event: !type:SpawnEntityActionEvent
+      spawn: ChildishOniClawProjectile
+
+- type: entity
+  id: ActionChildishOniFlurry
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 4
+    maxDelay: 10
+  - type: InstantAction
+    event: !type:ChildishOniFlurryEvent
+
+- type: entity
+  id: ActionChildishOniHandSide
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 3
+    maxDelay: 8
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: WorldTargetAction
+    event: !type:ChildishOniHandEvent
+      offset: 6
+      count: 1
+
+- type: entity
+  id: ActionChildishOniHandBarrage
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 6
+    maxDelay: 10
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: WorldTargetAction
+    event: !type:ChildishOniHandEvent
+      offset: 6
+      count: 3
+      interval: 0.8
+
+- type: entity
+  id: ActionChildishOniFlamingSlash
+  parent: ActionBaseChildishOni
+  components:
+  - type: AngerDelayAction
+    minDelay: 1
+    maxDelay: 8
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ChildishOniSlashProjectile
+      speed: 12

@@ -6,7 +6,15 @@
 
 - type: lavalandRuinPool
   id: LavalandRuins
+  safeZoneClearance: 12
   gridRuins:
+    BubblegumArena: 1
+    DragonLair: 1
+    ColossusArena: 1
+    MegaLegionArena: 1
+    BloodDrunkMinerArena: 1
+    ChildishOniArena: 1
+    MercuryFissure: 1
     SyndicateBase: 1
     HierophantArena: 1
     RougeAI: 1

@@ -21,6 +21,12 @@ public sealed partial class LavalandRuinPoolPrototype : IPrototype
     public int MaxDistance = 256; // TODO make this value higher after proper GPS UI is added
 
     /// <summary>
+    /// Extra exclusion margin around the mining outpost and other layout grids.
+    /// </summary>
+    [DataField]
+    public float SafeZoneClearance = 8f;
+
+    /// <summary>
     /// List of all grid ruins and their count.
     /// Used for ruins that are loaded as proper grids.
     /// </summary>

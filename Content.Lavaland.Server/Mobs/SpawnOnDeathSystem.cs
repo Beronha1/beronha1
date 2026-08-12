@@ -24,7 +24,9 @@ public sealed partial class SpawnOnDeathSystem : EntitySystem
 
     private void OnDropAttacked(EntityUid uid, SpawnLootOnDeathComponent comp, ref AttackedEvent args)
     {
-        comp.DoSpecialLoot = _whitelist.IsWhitelistPassOrNull(comp.SpecialWeaponWhitelist, args.Used);
+        // Once a non-qualifying source damages the boss, later crusher/PKA hits must
+        // not restore the trophy. This makes the "special weapon only" contract real.
+        comp.DoSpecialLoot &= _whitelist.IsWhitelistPassOrNull(comp.SpecialWeaponWhitelist, args.Used);
     }
 
     private void OnDropKilled(EntityUid uid, SpawnLootOnDeathComponent comp, ref MobStateChangedEvent args)

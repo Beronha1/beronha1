@@ -3,6 +3,7 @@
 using System.Linq;
 using Content.Goobstation.Common.Weapons;
 using Content.Lavaland.Common.Weapons;
+using Content.Lavaland.Common.Weapons.Marker;
 using Content.Lavaland.Common.Weapons.Ranged;
 using Content.Lavaland.Shared.Weapons.Upgrades.Components;
 using Content.Shared.Actions;
@@ -53,6 +54,9 @@ public sealed partial class GunUpgradeSystem : EntitySystem
         SubscribeLocalEvent<UpgradeableWeaponComponent, MeleeHitEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetLightAttackRangeEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetMeleeAttackRateEvent>(RelayEvent);
+        SubscribeLocalEvent<UpgradeableWeaponComponent, ApplyMarkerBonusEvent>(RelayEvent);
+        SubscribeLocalEvent<UpgradeableWeaponComponent, MarkerAttackAttemptEvent>(RelayEvent);
+        SubscribeLocalEvent<UpgradeableWeaponComponent, AfterMarkerAttackedEvent>(RelayEvent);
 
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetItemActionsEvent>(RelayGetActionEvent);
 

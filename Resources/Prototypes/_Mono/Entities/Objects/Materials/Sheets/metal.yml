@@ -1,0 +1,42 @@
+# SPDX-FileCopyrightText: 2026 Monolith Station <https://github.com/Monolith-Station/Monolith>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SheetMetalBase
+  id: SheetPlastitanium
+  name: plastitanium
+  description: Uma liga avançada de alta resistência. Raramente encontrada fora dos cascos do Sindicato.
+  suffix: Full
+  components:
+  - type: PhysicalComposition
+    materialComposition:
+      Plastitanium: 100
+  - type: Stack
+    stackType: Plastitanium
+    baseLayer: base
+    layerStates:
+    - plastitanium
+    - plastitanium_2
+    - plastitanium_3
+  - type: Sprite
+    sprite: _Mono/Objects/Materials/plastitanium.rsi
+    state: plastitanium_3
+    layers:
+    - state: plastitanium_3
+      map: ["base"]
+  - type: Item
+    sprite: _Mono/Objects/Materials/plastitanium.rsi
+    heldPrefix: plastitanium
+
+- type: entity
+  parent: SheetPlastitanium
+  id: SheetPlastitanium1
+  name: plastitanium
+  suffix: Single
+  components:
+  - type: Sprite
+    state: plastitanium
+  - type: Stack
+    stackType: Plastitanium
+    count: 1

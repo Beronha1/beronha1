@@ -85,6 +85,7 @@
     - SalvageSpawnerScrapCommon
     - SalvageSpawnerScrapCommon
     - SalvageSpawnerScrapCommon75
+    - SalvageSpawnerPlastitaniumCommon # Mono
   - !type:BiomeEntityLayer
     allowedTiles:
     - FloorSteel

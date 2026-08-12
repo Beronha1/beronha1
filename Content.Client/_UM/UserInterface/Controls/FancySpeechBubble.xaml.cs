@@ -43,9 +43,15 @@ public sealed partial class FancySpeechBubble : Control
 
     // _Starfall Start
     // Static regex to match the font tag in the message without reparsing regex everytime
+    // NOTA: sem RegexOptions.Compiled - emissao de IL em runtime e barrada pelo sandbox da Robust.
     private static readonly Regex FontRegex = new(
         @"\[font=([^\s\]]+)\s+size=(\d+)\]",
-        RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        RegexOptions.IgnoreCase);
+
+    // Remove tags de cor do texto antes de aplicar a cor da bolha.
+    private static readonly Regex ColorTagRegex = new(
+        @"\[/?color[^\]]*\]",
+        RegexOptions.IgnoreCase);
 
     /// <summary>
     /// Gets the font that the message has.
@@ -112,8 +118,8 @@ public sealed partial class FancySpeechBubble : Control
                 "font",
                 new MarkupParameter(_font),
                 fontParameters));
-            
-            var cleanMessage = System.Text.RegularExpressions.Regex.Replace(message, @"\[/?color[^\]]*\]", "", System.Text.RegularExpressions.RegexOptions.IgnoreCase);
+
+            var cleanMessage = ColorTagRegex.Replace(message, "");
 
             if (_color != null)
                 msg.PushColor(_color.Value);
@@ -179,4 +185,3 @@ public sealed partial class FancySpeechBubble : Control
     // }
 
 }
-

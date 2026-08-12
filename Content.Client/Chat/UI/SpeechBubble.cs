@@ -366,7 +366,7 @@ namespace Content.Client.Chat.UI
         {
             var bubbleContent = new FancySpeechBubble(
                 message,
-                20,
+                8,
                 font: "TinyUnicode",
                 true,
                 fontColor: fontColor,

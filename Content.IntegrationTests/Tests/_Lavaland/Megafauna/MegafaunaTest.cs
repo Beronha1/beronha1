@@ -73,6 +73,7 @@ public sealed partial class MegafaunaTest : GameTest
     public const string MercuryFissure = "MercuryFissure";
     private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
     private static readonly ProtoId<MegafaunaSelectorPrototype> ChildishOniClawSelector = "ChildishOniClawSlash";
+    private static readonly ProtoId<SoundCollectionPrototype> ThunderStrike = "ThunderStrike";
 
     [Test]
     public async Task LaunchAndShutdownMegafauna()
@@ -404,7 +405,7 @@ public sealed partial class MegafaunaTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(protoMan.HasIndex<SoundCollectionPrototype>("ThunderStrike"), Is.True);
+            Assert.That(protoMan.HasIndex<SoundCollectionPrototype>(ThunderStrike), Is.True);
             Assert.DoesNotThrow(() =>
                 entMan.SpawnAtPosition(new EntProtoId("ThunderSound"), testMap.GridCoords));
         });

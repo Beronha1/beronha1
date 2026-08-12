@@ -88,3 +88,4 @@
   - type: Construction
     graph: Coffee
     node: dark roasted coffee
+    defaultTarget: null

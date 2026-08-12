@@ -28,14 +28,15 @@ public sealed class CosmicCultTest : InteractionTest
     [Test]
     public async Task CultLevelUpTest()
     {
+        var player = ServerSession!;
         await Server.WaitPost(() =>
         {
-            Assert.That(ClientSession.AttachedEntity, Is.EqualTo(SPlayer),
-                $"Dirty player was {SEntMan.ToPrettyString(ClientSession.AttachedEntity)} instead of {SEntMan.ToPrettyString(SPlayer)}");
-            _smite.MakeAntag(ClientSession, Smite);
+            Assert.That(player.AttachedEntity, Is.EqualTo(SPlayer),
+                $"Dirty player was {SEntMan.ToPrettyString(player.AttachedEntity)} instead of {SEntMan.ToPrettyString(SPlayer)}");
+            _smite.MakeAntag(player, Smite);
         });
 
-        Assert.That(SEntMan.EntityExists(ClientSession.AttachedEntity));
+        Assert.That(SEntMan.EntityExists(player.AttachedEntity));
         var cultist = SComp<CosmicCultComponent>(SPlayer);
         Assert.That(cultist.ShopActionEntity, Is.Not.Null);
 

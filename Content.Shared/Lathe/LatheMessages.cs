@@ -13,11 +13,21 @@ public sealed class LatheUpdateState : BoundUserInterfaceState
 
     public ProtoId<LatheRecipePrototype>? CurrentlyProducing;
 
-    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, LatheRecipeBatch[] queue, ProtoId<LatheRecipePrototype>? currentlyProducing = null)
+    // <Mono>
+    public bool Looping;
+
+    public bool Skipping;
+    // </Mono>
+
+    public LatheUpdateState(List<ProtoId<LatheRecipePrototype>> recipes, LatheRecipeBatch[] queue, ProtoId<LatheRecipePrototype>? currentlyProducing = null, bool looping = false, bool skipping = false) // Mono - looping, skipping
     {
         Recipes = recipes;
         Queue = queue;
         CurrentlyProducing = currentlyProducing;
+        // <Mono>
+        Looping = looping;
+        Skipping = skipping;
+        // </Mono>
     }
 }
 
@@ -71,6 +81,36 @@ public sealed class LatheMoveRequestMessage(int index, int change) : BoundUserIn
 public sealed class LatheAbortFabricationMessage() : BoundUserInterfaceMessage
 {
 }
+
+// <Mono>
+/// <summary>
+///     Sent to the server when the player toggles looping the queue.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class LatheSetLoopingMessage : BoundUserInterfaceMessage
+{
+    public readonly bool ShouldLoop;
+
+    public LatheSetLoopingMessage(bool shouldLoop)
+    {
+        ShouldLoop = shouldLoop;
+    }
+}
+
+/// <summary>
+///     Sent to the server when the player toggles skipping recipes that lack materials.
+/// </summary>
+[Serializable, NetSerializable]
+public sealed class LatheSetSkipMessage : BoundUserInterfaceMessage
+{
+    public readonly bool ShouldSkip;
+
+    public LatheSetSkipMessage(bool shouldSkip)
+    {
+        ShouldSkip = shouldSkip;
+    }
+}
+// </Mono>
 
 [NetSerializable, Serializable]
 public enum LatheUiKey

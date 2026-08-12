@@ -9,6 +9,7 @@
 # SPDX-FileCopyrightText: 2024 Nemanja <98561806+EmoGarbage404@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2026 Felipealmeidaz <felipe828218@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -43,6 +44,12 @@ lathe-menu-silo-linked-message = Silo Linked
 lathe-menu-fabricating-message = Fabricating...
 lathe-menu-materials-title = Materials
 lathe-menu-queue-title = Build Queue
+
+# Mono
+lathe-menu-loop = Loop
+lathe-menu-loop-tooltip = Puts each batch back at the end of the queue once it finishes, so the lathe keeps producing until it runs out of materials.
+lathe-menu-skip = Skip If Insufficient
+lathe-menu-skip-tooltip = Drops a looped batch the lathe can no longer afford instead of holding the queue until the materials come back.
 lathe-menu-delete-fabricating-tooltip = Cancel printing the current item.
 lathe-menu-delete-item-tooltip = Cancel printing this batch.
 lathe-menu-move-up-tooltip = Move this batch ahead in the queue.

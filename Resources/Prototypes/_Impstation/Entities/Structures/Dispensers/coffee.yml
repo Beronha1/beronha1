@@ -17,6 +17,7 @@
     whitelist:
       tags:
       - DrinkBottle
+      - CoffeeMachineIngredient
   - type: Transform
     noRot: false
   - type: Machine

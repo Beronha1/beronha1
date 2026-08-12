@@ -40,13 +40,16 @@ public sealed partial class FancySpeechBubble : Control
         BuildLines(message, _contentTag);
     }
 
+    private static readonly Regex FontRegex =
+        new(@"\[font=([^\s\]]+)\s+size=(\d+)\]", RegexOptions.IgnoreCase);
+
     /// <summary>
     /// Gets the font that the message has.
     /// </summary>
     /// <param name="message"></param>
     private (string? FontName, int? FontSize) ParseFont(string input)
     {
-        var match = Regex.Match(input, @"\[font=([^\s\]]+)\s+size=(\d+)\]", RegexOptions.IgnoreCase);
+        var match = FontRegex.Match(input);
 
         if (match.Success)
         {
@@ -229,4 +232,3 @@ public sealed partial class FancySpeechBubble : Control
     }
 
 }
-

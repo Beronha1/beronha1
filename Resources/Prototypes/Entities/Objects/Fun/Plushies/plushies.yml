@@ -1280,7 +1280,7 @@
   - type: Edible
     requiresSpecialDigestion: true
     useSound:
-      path: /Audio/Voice/Vulpkanin/vulp_scream4.ogg
+      path: /Audio/Voice/Vulpkanin/vulpscream1.ogg
       params:
         volume: -5
   - type: MeleeWeapon

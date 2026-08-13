@@ -311,7 +311,10 @@ namespace Content.Server.Lathe
                 return;
 
             var producing = component.CurrentRecipe;
-            if (producing == null && component.Queue.First is { } node)
+            // Mono - node.Value.Paid: a looped batch waiting on materials is parked,
+            // not printing. Reporting it here leaves the "fabricating" bar lit forever
+            // and the lathe looks like it is producing out of thin air.
+            if (producing == null && component.Queue.First is { } node && node.Value.Paid)
                 producing = node.Value.Recipe;
 
             var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue.ToArray(), producing, component.Loop, component.SkipBad); // Mono - loop, skip

@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Content.Server.Radio.EntitySystems;
 using Content.Shared.Chat;
 using Robust.Shared.Timing;
 
@@ -19,6 +20,14 @@ namespace Content.Server._Whiskey.Translation;
 /// chute. Depois de medido, este sistema pode ser removido ou deixado
 /// desligado.
 /// </para>
+/// <para>
+/// Sussurro não é contado separado de propósito. O campo
+/// <see cref="EntitySpokeEvent.IsWhisper"/> existe, mas os dois pontos que
+/// disparam o evento passam <c>false</c> fixo, então ele nunca chega
+/// verdadeiro. Um contador que sempre marca zero é pior que contador nenhum,
+/// porque parece dado de verdade. Se o fork um dia preencher esse campo, dá
+/// para reativar em duas linhas.
+/// </para>
 /// </summary>
 public sealed class SpeechVolumeMeterSystem : EntitySystem
 {
@@ -34,7 +43,6 @@ public sealed class SpeechVolumeMeterSystem : EntitySystem
     {
         public int Messages;
         public int Characters;
-        public int Whispers;
         public int RadioMessages;
     }
 
@@ -51,7 +59,11 @@ public sealed class SpeechVolumeMeterSystem : EntitySystem
 
         _sawmill = Logger.GetSawmill("whiskey.speech_meter");
 
-        SubscribeLocalEvent<EntitySpokeEvent>(OnEntitySpoke);
+        // Antes do HeadsetSystem de proposito: ele zera args.Channel logo depois
+        // de enviar a mensagem pelo radio, para outros ouvintes nao duplicarem.
+        // Se o contador rodasse depois, toda fala de radio chegaria aqui como
+        // fala local e a contagem de radio ficaria sempre em zero.
+        SubscribeLocalEvent<EntitySpokeEvent>(OnEntitySpoke, before: new[] { typeof(HeadsetSystem) });
 
         _windowStart = _timing.CurTime;
         _nextReport = _windowStart + ReportInterval;
@@ -72,8 +84,6 @@ public sealed class SpeechVolumeMeterSystem : EntitySystem
         tally.Messages++;
         tally.Characters += args.Message.Length;
 
-        if (args.IsWhisper)
-            tally.Whispers++;
 
         if (args.Channel != null)
             tally.RadioMessages++;
@@ -118,8 +128,6 @@ public sealed class SpeechVolumeMeterSystem : EntitySystem
         foreach (var (id, tally) in _tallies.OrderByDescending(p => p.Value.Messages))
         {
             linha.Append($"{id}={tally.Messages} msg/{tally.Characters} car");
-            if (tally.Whispers > 0)
-                linha.Append($"/{tally.Whispers} sussurro");
             if (tally.RadioMessages > 0)
                 linha.Append($"/{tally.RadioMessages} radio");
             linha.Append("; ");

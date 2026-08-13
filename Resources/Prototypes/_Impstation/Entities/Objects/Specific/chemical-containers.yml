@@ -22,7 +22,7 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      Cardboard: 13
+      Cardboard: 10 # Whiskey - abaixo do custo de 13 numa lathe melhorada para impedir arbitragem.
   - type: ExaminableSolution
     solution: drink
   - type: Sprite

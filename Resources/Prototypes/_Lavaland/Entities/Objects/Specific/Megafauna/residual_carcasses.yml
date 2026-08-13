@@ -1,0 +1,134 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# The harvested boss itself is replaced with one of these inert reservoirs.
+# Keeping the solution off the living boss prevents pre-death extraction and
+# avoids attaching bloodstream/metabolism behavior to combat entities.
+
+- type: entity
+  parent: Solution
+  id: SolutionAshDrakeCarcass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: carcass
+    solution:
+      maxVol: 240
+      reagents:
+      - ReagentId: ExothermicBlood
+        Quantity: 240
+
+- type: entity
+  parent: Solution
+  id: SolutionBubblegumCarcass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: carcass
+    solution:
+      maxVol: 300
+      reagents:
+      - ReagentId: DemonicBlood
+        Quantity: 300
+
+- type: entity
+  parent: Solution
+  id: SolutionMercurySpiderCarcass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: carcass
+    solution:
+      maxVol: 180
+      reagents:
+      - ReagentId: MercuryVenom
+        Quantity: 180
+
+- type: entity
+  parent: Solution
+  id: SolutionChildishOniCarcass
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: carcass
+    solution:
+      maxVol: 240
+      reagents:
+      - ReagentId: OniGastricEnzymes
+        Quantity: 240
+
+- type: entity
+  parent: BaseStructureDynamic
+  id: BaseMegafaunaResidualCarcass
+  abstract: true
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+  - type: InteractionOutline
+  - type: DrawableSolution
+    solution: carcass
+  - type: ExaminableSolution
+    solution: carcass
+    exactVolume: true
+    locVolume: examinable-solution-on-examine-volume-no-max
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: BaseMegafaunaResidualCarcass
+  id: AshDrakeResidualCarcass
+  name: processed ash drake carcass
+  description: The stripped remains of an ash drake. Its vascular cavities still hold a large volume of dangerously hot blood.
+  components:
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    state: dragon_dead
+  - type: SolutionManager
+    solutions:
+    - SolutionAshDrakeCarcass
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+
+- type: entity
+  parent: BaseMegafaunaResidualCarcass
+  id: BubblegumResidualCarcass
+  name: processed Bubblegum carcass
+  description: Bubblegum's butchered remains. Deep vessels continue to seep chemically aggressive demonic blood.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    state: bubblegum
+  - type: SolutionManager
+    solutions:
+    - SolutionBubblegumCarcass
+  - type: MegafaunaProvenance
+    source: megafauna-source-bubblegum
+
+- type: entity
+  parent: BaseMegafaunaResidualCarcass
+  id: MercurySpiderResidualCarcass
+  name: processed Mercury Spider carcass
+  description: The collapsed mineral skeleton of the Mercury Spider. Its hollow glands retain a reservoir of metallic venom.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/128x128.rsi
+    state: mercury-skeleton
+  - type: SolutionManager
+    solutions:
+    - SolutionMercurySpiderCarcass
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+
+- type: entity
+  parent: BaseMegafaunaResidualCarcass
+  id: ChildishOniResidualCarcass
+  name: processed childish oni carcass
+  description: The opened remains of the childish oni. Its supernatural stomach still contains concentrated digestive enzymes.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Mobs/Bosses/banana.rsi
+    state: phase_3
+  - type: SolutionManager
+    solutions:
+    - SolutionChildishOniCarcass
+  - type: MegafaunaProvenance
+    source: megafauna-source-childish-oni

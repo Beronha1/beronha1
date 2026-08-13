@@ -4,6 +4,7 @@
 using System.Linq;
 using System.Numerics;
 using Content.Lavaland.Server.Megafauna.Classic;
+using Content.Lavaland.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Lavaland.Shared.Megafauna.Events;
@@ -44,6 +45,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _threshold = default!;
     [Dependency] private NPCSystem _npc = default!;
+    [Dependency] private NPCUseActionsOnTargetSystem _npcActions = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
     [Dependency] private TurfSystem _turf = default!;
@@ -57,6 +59,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
         SubscribeLocalEvent<AshDrakeBossComponent, AshDrakeConeFireActionEvent>(OnConeFireAction);
         SubscribeLocalEvent<AshDrakeBossComponent, AshDrakeBreathingFireActionEvent>(OnBreathingFireAction);
         SubscribeLocalEvent<AshDrakeBossComponent, AshDrakeLavaActionEvent>(OnLavaAction);
+        SubscribeLocalEvent<AshDrakeBossComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<AshDrakeBossComponent, EntityTerminatingEvent>(OnTerminating);
     }
 
@@ -75,25 +78,25 @@ public sealed partial class AshDrakeSystem : EntitySystem
     #region Cone Fire
     private void OnConeFireAction(Entity<AshDrakeBossComponent> ent, ref AshDrakeConeFireActionEvent args)
     {
-        args.Handled = true;
-        if (_random.NextDouble() < 0.5)
-            StartMeteorShower(ent);
+        if (!Exists(args.Target) || _mobState.IsDead(ent.Owner))
+            return;
 
         var drakeWorldPos = _transform.GetWorldPosition(ent);
         var targetWorldPos = _transform.GetWorldPosition(args.Target);
-
         var delta = targetWorldPos - drakeWorldPos;
-        if (delta == Vector2.Zero)
+        var mapUid = _transform.GetMap(ent.Owner);
+        if (delta == Vector2.Zero || mapUid == null)
             return;
+
+        args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(1));
+        if (_random.NextDouble() < 0.5)
+            StartMeteorShower(ent, args.Target);
 
         var direction = delta.Normalized();
 
-        var mapUid = _transform.GetMap(ent.Owner);
-        if (mapUid == null)
-            return;
-
         var mainShotPos = drakeWorldPos + direction * 10f;
-        var mainCoordinates = new EntityCoordinates(mapUid.Value, mainShotPos);
+        var mainCoordinates = WorldCoordinates(mapUid.Value, mainShotPos);
         ShootAt(ent, mainCoordinates);
 
         var angle = MathF.PI / 6;
@@ -111,11 +114,11 @@ public sealed partial class AshDrakeSystem : EntitySystem
         ).Normalized();
 
         var rightShotPos = drakeWorldPos + dirRight * 10f;
-        var rightCoordinates = new EntityCoordinates(mapUid.Value, rightShotPos);
+        var rightCoordinates = WorldCoordinates(mapUid.Value, rightShotPos);
         ShootAt(ent, rightCoordinates);
 
         var leftShotPos = drakeWorldPos + dirLeft * 10f;
-        var leftCoordinates = new EntityCoordinates(mapUid.Value, leftShotPos);
+        var leftCoordinates = WorldCoordinates(mapUid.Value, leftShotPos);
         ShootAt(ent, leftCoordinates);
 
         PlayAttackSound(ent);
@@ -125,35 +128,37 @@ public sealed partial class AshDrakeSystem : EntitySystem
     #region Breathing Fire
     private void OnBreathingFireAction(Entity<AshDrakeBossComponent> ent, ref AshDrakeBreathingFireActionEvent args)
     {
+        if (!Exists(args.Target) || _mobState.IsDead(ent.Owner))
+            return;
+
+        var drakeWorldPos = _transform.GetWorldPosition(ent);
+        var targetWorldPos = _transform.GetWorldPosition(args.Target);
+        var delta = targetWorldPos - drakeWorldPos;
+        var mapUid = _transform.GetMap(ent.Owner);
+        if (delta == Vector2.Zero || mapUid == null)
+            return;
+
         args.Handled = true;
         if (_random.NextDouble() < 0.5)
-            StartMeteorShower(ent);
+            StartMeteorShower(ent, args.Target);
 
         var totalDamage = _damage.GetTotalDamage(ent.Owner);
         if (totalDamage > 0 && _threshold.TryGetThresholdForState(ent, MobState.Dead, out var threshold))
         {
             if (totalDamage >= threshold - threshold * args.HealthModifier)
             {
+                _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(3.5f));
                 ShootCircularPattern(ent, 12, 1);
                 return;
             }
         }
 
-        var drakeWorldPos = _transform.GetWorldPosition(ent);
-        var targetWorldPos = _transform.GetWorldPosition(args.Target);
-
-        var delta = targetWorldPos - drakeWorldPos;
-        if (delta == Vector2.Zero)
-            return;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(1));
 
         var direction = delta.Normalized();
 
-        var mapUid = _transform.GetMap(ent.Owner);
-        if (mapUid == null)
-            return;
-
         var shotPos = drakeWorldPos + direction * 12f;
-        var shotCoordinates = new EntityCoordinates(mapUid.Value, shotPos);
+        var shotCoordinates = WorldCoordinates(mapUid.Value, shotPos);
         ShootAt(ent, shotCoordinates);
 
         PlayAttackSound(ent);
@@ -163,7 +168,11 @@ public sealed partial class AshDrakeSystem : EntitySystem
     #region Lava Action
     private void OnLavaAction(Entity<AshDrakeBossComponent> ent, ref AshDrakeLavaActionEvent args)
     {
+        if (!Exists(args.Target) || _mobState.IsDead(ent.Owner) || _activeArenas.ContainsKey(ent.Owner))
+            return;
+
         args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(15));
 
         var totalDamage = _damage.GetTotalDamage(ent.Owner);
         if (_threshold.TryGetThresholdForState(ent, MobState.Dead, out var threshold))
@@ -209,7 +218,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             Args = args
         };
 
-        var shadowCoords = new EntityCoordinates(mapUid.Value, targetWorldPos);
+        var shadowCoords = WorldCoordinates(mapUid.Value, targetWorldPos);
         arenaData.Shadow = Spawn(ent.Comp.Shadow, shadowCoords);
 
         CreateFireWalls(mapUid.Value, targetWorldPos, 6, args.Wall, arenaData);
@@ -239,7 +248,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
                     return false;
             }
         }
-        var coordinates = new EntityCoordinates(mapUid, centerPos);
+        var coordinates = WorldCoordinates(mapUid, centerPos);
         var entitiesInArea = _lookup.GetEntitiesInRange(coordinates, halfSize, LookupFlags.Static);
 
         foreach (var entity in entitiesInArea)
@@ -265,7 +274,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
                     continue;
 
                 var wallPos = centerPos + new Vector2(x, y);
-                var wallCoords = new EntityCoordinates(mapUid, wallPos);
+                var wallCoords = WorldCoordinates(mapUid, wallPos);
 
                 if (IsValidMapPosition(mapUid, wallPos))
                 {
@@ -296,7 +305,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
         var safePos = GetRandomArenaPosition(arenaData.ArenaCenter, 5, 2, arenaData.PreviousSafePos);
         arenaData.PreviousSafePos = safePos;
 
-        var safeCoords = new EntityCoordinates(mapUid.Value, safePos);
+        var safeCoords = WorldCoordinates(mapUid.Value, safePos);
         var safeMarker = Spawn(arenaData.Args.SafeMarker, safeCoords);
         arenaData.SafeMarkers.Add(safeMarker);
 
@@ -322,7 +331,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             return;
         }
 
-        var markerCoords = new EntityCoordinates(mapUid.Value, arenaData.ArenaCenter);
+        var markerCoords = WorldCoordinates(mapUid.Value, arenaData.ArenaCenter);
         var marker = Spawn(arenaData.Args.Marker, markerCoords);
         arenaData.LandingMarker = marker;
 
@@ -347,7 +356,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
         if (Exists(arenaData.LandingMarker))
             QueueDel(arenaData.LandingMarker);
 
-        var centerCoords = new EntityCoordinates(mapUid.Value, arenaData.ArenaCenter);
+        var centerCoords = WorldCoordinates(mapUid.Value, arenaData.ArenaCenter);
         _transform.SetCoordinates(drakeUid.Owner, centerCoords);
 
         ApplyCameraShakeOnLanding(drakeUid, arenaData.ArenaCenter);
@@ -436,7 +445,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
                 if (Vector2.Distance(lavaPos, safePos) < 0.5f)
                     continue;
 
-                var lavaCoords = new EntityCoordinates(mapUid.Value, lavaPos);
+                var lavaCoords = WorldCoordinates(mapUid.Value, lavaPos);
 
                 if (IsValidMapPosition(mapUid.Value, lavaPos))
                 {
@@ -512,7 +521,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             var mapUid = _transform.GetMap(ent.Owner);
             if (mapUid != null)
             {
-                var centerCoords = new EntityCoordinates(mapUid.Value, arenaData.ArenaCenter);
+                var centerCoords = WorldCoordinates(mapUid.Value, arenaData.ArenaCenter);
                 _transform.SetCoordinates(ent.Owner, centerCoords);
             }
 
@@ -553,10 +562,10 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
         var landingPos = CalculateSafeLandingPosition(mapUid.Value, drakeWorldPos, direction, args.Target);
 
-        var shadowCoords = new EntityCoordinates(mapUid.Value, drakeWorldPos);
+        var shadowCoords = WorldCoordinates(mapUid.Value, drakeWorldPos);
         var shadow = Spawn(ent.Comp.Shadow, shadowCoords);
 
-        var markerCoords = new EntityCoordinates(mapUid.Value, landingPos);
+        var markerCoords = WorldCoordinates(mapUid.Value, landingPos);
         Timer.Spawn(TimeSpan.FromSeconds(1.5f), () =>
         {
             if (Exists(shadow) && Exists(ent.Owner))
@@ -637,7 +646,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
                 var mapUid = _transform.GetMap(ent.Owner);
                 if (mapUid != null)
                 {
-                    var shadowCoords = new EntityCoordinates(mapUid.Value, currentStepPos);
+                    var shadowCoords = WorldCoordinates(mapUid.Value, currentStepPos);
                     _transform.SetCoordinates(shadow, shadowCoords);
                 }
 
@@ -671,12 +680,12 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
                 if (x == 0 && y == 0)
                 {
-                    var lavaCoords = new EntityCoordinates(mapUid.Value, lavaPos);
+                    var lavaCoords = WorldCoordinates(mapUid.Value, lavaPos);
                     Spawn(args.Lava, lavaCoords);
                 }
                 else if (_random.NextDouble() < 0.6f)
                 {
-                    var lavaCoords = new EntityCoordinates(mapUid.Value, lavaPos);
+                    var lavaCoords = WorldCoordinates(mapUid.Value, lavaPos);
                     Spawn(args.Lava, lavaCoords);
                 }
             }
@@ -692,7 +701,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
         {
             if (IsPositionSafeForLanding(mapUid.Value, landingPos))
             {
-                var landingCoords = new EntityCoordinates(mapUid.Value, landingPos);
+                var landingCoords = WorldCoordinates(mapUid.Value, landingPos);
                 _transform.SetCoordinates(ent.Owner, landingCoords);
 
                 ApplyCameraShakeOnLanding(ent, landingPos);
@@ -702,7 +711,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             else
             {
                 var safeLandingPos = FindNearestSafePosition(mapUid.Value, landingPos);
-                var safeCoords = new EntityCoordinates(mapUid.Value, safeLandingPos);
+                var safeCoords = WorldCoordinates(mapUid.Value, safeLandingPos);
                 _transform.SetCoordinates(ent.Owner, safeCoords);
 
                 ApplyCameraShakeOnLanding(ent, safeLandingPos);
@@ -745,7 +754,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
         if (mapUid == null)
             return;
 
-        var landingCoords = new EntityCoordinates(mapUid.Value, landingPos);
+        var landingCoords = WorldCoordinates(mapUid.Value, landingPos);
 
         var nearbyRadius = 6f;
         var nearbyEntities = _lookup.GetEntitiesInRange<ActorComponent>(landingCoords, nearbyRadius);
@@ -794,7 +803,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             return;
 
         var damageRadius = 1.5f;
-        var landingCoords = new EntityCoordinates(mapUid.Value, centerPos);
+        var landingCoords = WorldCoordinates(mapUid.Value, centerPos);
 
         var entities = _lookup.GetEntitiesInRange<MobStateComponent>(landingCoords, damageRadius, LookupFlags.Uncontained);
         foreach (var entity in entities)
@@ -823,7 +832,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
             for (int y = -1; y <= 1; y++)
             {
                 var lavaPos = centerPos + new Vector2(x, y);
-                var lavaCoords = new EntityCoordinates(mapUid.Value, lavaPos);
+                var lavaCoords = WorldCoordinates(mapUid.Value, lavaPos);
                 if (IsValidMapPosition(mapUid.Value, lavaPos))
                     Spawn(args.Lava, lavaCoords);
             }
@@ -843,9 +852,14 @@ public sealed partial class AshDrakeSystem : EntitySystem
     #endregion
 
     #region Utility
-    private void StartMeteorShower(Entity<AshDrakeBossComponent> ent)
+    private void StartMeteorShower(Entity<AshDrakeBossComponent> ent, EntityUid target)
     {
-        var drakeWorldPos = _transform.GetWorldPosition(ent);
+        if (!Exists(target))
+            return;
+
+        // Paradise centers fire rain on the current target, forcing movement instead of decorating the
+        // already dangerous tiles immediately around the drake.
+        var showerCenter = _transform.GetWorldPosition(target);
 
         var mapUid = _transform.GetMap(ent.Owner);
         if (mapUid == null)
@@ -864,10 +878,10 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
                 if (_random.NextDouble() < cellChance)
                 {
-                    var cellPos = drakeWorldPos + new Vector2(x, y);
+                    var cellPos = showerCenter + new Vector2(x, y);
                     if (IsValidMapPosition(mapUid.Value, cellPos))
                     {
-                        var cellCoordinates = new EntityCoordinates(mapUid.Value, cellPos);
+                        var cellCoordinates = WorldCoordinates(mapUid.Value, cellPos);
                         Spawn(ent.Comp.MeteorCircle, cellCoordinates);
                     }
                 }
@@ -879,17 +893,13 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
     private bool IsValidMapPosition(EntityUid mapUid, Vector2 position)
     {
-        var coordinates = new EntityCoordinates(mapUid, position);
-
-        var gridUid = _transform.GetGrid(coordinates);
-        if (gridUid == null)
+        var mapCoordinates = new MapCoordinates(position, Transform(mapUid).MapID);
+        if (!_map.TryFindGridAt(mapCoordinates, out var gridUid, out var grid))
             return false;
 
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return false;
-
-        var tilePos = _map.CoordinatesToTile(gridUid.Value, grid, coordinates);
-        if (!_map.TryGetTileRef(gridUid.Value, grid, tilePos, out var tileRef))
+        var coordinates = _transform.ToCoordinates(gridUid, mapCoordinates);
+        var tilePos = _map.CoordinatesToTile(gridUid, grid, coordinates);
+        if (!_map.TryGetTileRef(gridUid, grid, tilePos, out var tileRef))
             return false;
 
         return !_turf.IsTileBlocked(tileRef, CollisionGroup.Impassable);
@@ -909,7 +919,7 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
             Timer.Spawn(TimeSpan.FromSeconds(waveTimer), () =>
             {
-                if (!Exists(ent.Owner))
+                if (!Exists(ent.Owner) || _mobState.IsDead(ent.Owner))
                     return;
 
                 for (int i = 0; i < projectilesPerWave; i++)
@@ -919,12 +929,12 @@ public sealed partial class AshDrakeSystem : EntitySystem
 
                     var distance = 10f;
                     var shotPos = drakeWorldPos + direction * distance;
-                    var shotCoordinates = new EntityCoordinates(mapUid.Value, shotPos);
+                    var shotCoordinates = WorldCoordinates(mapUid.Value, shotPos);
 
                     var intraWaveDelay = i * 0.05f;
                     Timer.Spawn(TimeSpan.FromSeconds(intraWaveDelay), () =>
                     {
-                        if (Exists(ent.Owner))
+                        if (Exists(ent.Owner) && !_mobState.IsDead(ent.Owner))
                         {
                             ShootAt(ent.Owner, shotCoordinates);
                         }
@@ -980,15 +990,43 @@ public sealed partial class AshDrakeSystem : EntitySystem
             var coordinates = new MapCoordinates(position, start.MapId);
             Timer.Spawn(TimeSpan.FromSeconds(i * 0.1f), () =>
             {
-                if (Exists(drake))
+                if (Exists(drake) && !_mobState.IsDead(drake))
                     Spawn(boss.FireTrail, coordinates);
             });
         }
     }
     #endregion
 
+    private EntityCoordinates WorldCoordinates(EntityUid mapUid, Vector2 worldPosition)
+    {
+        var mapCoordinates = new MapCoordinates(worldPosition, Transform(mapUid).MapID);
+        if (_map.TryFindGridAt(mapCoordinates, out var gridUid, out _))
+            return _transform.ToCoordinates(gridUid, mapCoordinates);
+
+        return _transform.ToCoordinates(mapCoordinates);
+    }
+
     private void PlayAttackSound(Entity<AshDrakeBossComponent> ent)
         => _audio.PlayPvs(ent.Comp.AttackSound, ent);
+
+    private void OnMobStateChanged(Entity<AshDrakeBossComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        _npcActions.UnlockActions(ent.Owner);
+        if (_activeArenas.Remove(ent.Owner, out var arena))
+        {
+            CleanupArenaObjects(arena);
+            if (Exists(arena.Shadow))
+                QueueDel(arena.Shadow);
+            if (Exists(arena.LandingMarker))
+                QueueDel(arena.LandingMarker);
+        }
+
+        RemCompDeferred<GodmodeComponent>(ent.Owner);
+        _appearance.SetData(ent.Owner, VisualLayers.Enabled, false);
+    }
 }
 
 public sealed partial class LavaArenaData

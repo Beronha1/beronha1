@@ -78,6 +78,24 @@
 - type: Tag
   id: SpiderMercuryCore
 
+- type: Tag
+  id: DrakeRemains
+
+- type: Tag
+  id: IceEnergyCrystal
+
+- type: Tag
+  id: DemonicBloodSample
+
+- type: Tag
+  id: StabilizedLegionCore
+
+- type: Tag
+  id: OverclockedPlasmaCutter
+
+- type: Tag
+  id: OniDensityCore
+
 # Compatibility tag used by the original Goob Station fairy-rock prototypes.
 - type: Tag
   id: Wall

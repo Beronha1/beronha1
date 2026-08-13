@@ -1,0 +1,41 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BasiliskRay
+  id: ProjectileDemonicFrostOrb
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Cold: 12
+        Blunt: 3
+  - type: ChangeTemperatureOnCollide
+    heat: -65000
+
+- type: entity
+  parent: ProjectileDemonicFrostOrb
+  id: ProjectileDemonicSnowball
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Cold: 7
+        Blunt: 3
+  - type: ChangeTemperatureOnCollide
+    heat: -35000
+
+- type: entity
+  parent: ProjectileDemonicFrostOrb
+  id: ProjectileDemonicIceBlast
+  components:
+  - type: Projectile
+    impactEffect: BulletImpactEffectDisabler
+    damage:
+      types:
+        Cold: 15
+        Piercing: 5
+  - type: ChangeTemperatureOnCollide
+    heat: -80000

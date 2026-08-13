@@ -1,7 +1,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
-  parent: [ LavalandMobBase, BaseSlicingRefinable ]
+  parent: LavalandMobBase
   id: LavalandBossAshDrake
   name: ash drake
   description: Guardian of the Necropolis.
@@ -69,9 +69,6 @@
     thresholds:
       0: Alive
       2500: Dead
-  - type: ToolRefinable
-    refineResult:
-    - id: FireballSpellbook
   - type: Damageable
     damageModifierSet: Hierophant
   - type: Injurable
@@ -82,7 +79,29 @@
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
   - type: MegafaunaDirector
+  - type: MegafaunaSpecialAttackOnly
   - type: AshDrakeBoss
+  - type: MegafaunaHarvestable
+    completionCarcass: AshDrakeResidualCarcass
+    stages:
+    - name: megafauna-harvest-stage-drake-hide
+      toolQualities: [ Slicing ]
+      duration: 10
+      loot: !type:AllSelector
+        children:
+        - id: MaterialDragonHide1
+          rolls: 5
+        - id: MaterialDragonWingMembrane1
+          rolls: 2
+        - id: MaterialMegafaunaSinew1
+          rolls: 2
+    - name: megafauna-harvest-stage-drake-bones
+      toolQualities: [ Sawing ]
+      duration: 14
+      loot: !type:AllSelector
+        children:
+        - id: MaterialDragonBone1
+          rolls: 10
   - type: SpawnLootOnDeath
     deleteOnDeath: true
     dropBoth: true
@@ -97,6 +116,7 @@
       - MegafaunaWeaponLooter
   - type: NPCUseActionsOnTarget
     delayModifier: 0.5
+    recentActionMemory: 2
     actionIds:
     - ActionAshDrakeConeFire
     - ActionAshDrakeBreathingFire

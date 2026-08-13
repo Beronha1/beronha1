@@ -1,0 +1,61 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: technology
+  id: ColossusAnomalyApplications
+  name: research-technology-colossus-anomaly-applications
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: radiant }
+  discipline: Experimental
+  tier: 3
+  hidden: true
+  cost: 0
+  position: 20,20
+  recipeUnlocks:
+  - PersonalForcefieldGenerator
+  - WeaponColossusReflectionEmitter
+
+- type: technology
+  id: MegafaunaMaterialEngineering
+  name: research-technology-megafauna-material-engineering
+  icon: { sprite: _Lavaland/Clothing/OuterClothing/Armor/ash_drake.rsi, state: icon }
+  discipline: Industrial
+  tier: 3
+  cost: 15000
+  position: 3,-2
+  technologyPrerequisites:
+  - AdvancedToolsTechnology
+  recipeUnlocks:
+  - ClothingOuterArmorDragonAdvanced
+  - CableSuperconductingStack10
+  - ClothingOuterArmorMercuryReflective
+
+- type: technology
+  id: MegafaunaBiomechanics
+  name: research-technology-megafauna-biomechanics
+  icon: { sprite: Objects/Specific/Mech/mecha.rsi, state: gygax }
+  discipline: Robotics
+  tier: 3
+  cost: 18000
+  position: -8,1
+  technologyPrerequisites:
+  - Gygax
+  recipeUnlocks:
+  - GygaxArmorMegafauna
+  - GygaxCentralElectronicsMegafauna
+  - GygaxTargetingElectronicsMegafauna
+
+- type: technology
+  id: MercuryORTApplications
+  name: research-technology-mercury-ort-applications
+  icon: { sprite: _Lavaland/Objects/Devices/mercury.rsi, state: mercury_core }
+  discipline: Experimental
+  tier: 3
+  hidden: true
+  cost: 0
+  position: 21,20
+  recipeUnlocks:
+  - SpiderMercuryCoreLathe
+  - SpiderMercuryEtherDrinkerLathe
+  - SpiderMercuryParadoxCancellerLathe
+  - SpiderMercuryRadiantShieldLathe
+  - WeaponSpiderMercuryRailgunLathe
+  - ClothingModsuitMercuryRadiantLathe

@@ -11,6 +11,18 @@
     color: "#22ddff"
   - type: Tag
     tags: [ SpiderMercuryCore ]
+  - type: ResearchArtifact
+    points: 5000
+    technologies: [ MercuryORTApplications ]
+  - type: StaticPrice
+    price: 6500
+  - type: Construction
+    graph: SpiderMercuryCoreConstructionGraph
+    node: mercuryCore
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+    grade: Intact
+  - type: MegafaunaIntactSample
 
 - type: entity
   parent: BaseWeaponBatterySmall
@@ -27,6 +39,8 @@
   - type: Gun
     projectileSpeed: 40
     fireRate: 0.35
+    soundGunshot:
+      path: /Audio/_Goobstation/Weapons/Guns/Gunshots/plasma_cutter.ogg
   - type: BatteryAmmoProvider
     proto: BulletSpiderMercuryRailgun
     fireCost: 100
@@ -67,6 +81,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-spider-mercury-name
     uniqueGroup: spiderMercuryTrophy
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: SpiderMercuryCore
   - type: WeaponUpgradeDamage
     bonusDamage:
       types:

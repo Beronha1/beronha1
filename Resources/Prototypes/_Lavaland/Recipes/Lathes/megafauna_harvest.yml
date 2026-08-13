@@ -1,0 +1,162 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: latheRecipe
+  id: ClothingOuterArmorDragonAdvanced
+  result: ClothingOuterArmorDragonAdvanced
+  completetime: 8
+  materials:
+    DragonHide: 500
+    DragonBone: 400
+    DragonWingMembrane: 200
+
+- type: latheRecipe
+  id: CableSuperconductingStack10
+  result: CableSuperconductingStack10
+  completetime: 4
+  materials:
+    MercurySilk: 300
+    Silver: 200
+
+- type: latheRecipe
+  id: ClothingOuterArmorMercuryReflective
+  result: ClothingOuterArmorMercuryReflective
+  completetime: 8
+  materials:
+    MirroredChitin: 400
+    MercurySilk: 200
+
+- type: latheRecipe
+  id: PersonalForcefieldGenerator
+  result: PersonalForcefieldGenerator
+  completetime: 10
+  materials:
+    NecroAlloy: 400
+    Gold: 500
+    Plasma: 500
+
+- type: latheRecipe
+  id: WeaponColossusReflectionEmitter
+  result: WeaponColossusReflectionEmitter
+  completetime: 10
+  materials:
+    NecroAlloy: 300
+    Glass: 500
+    Gold: 300
+
+- type: latheRecipe
+  parent: BaseRedAlert
+  id: GygaxArmorMegafauna
+  result: GygaxArmorPlate
+  categories: [ Mech, Gygax ]
+  completetime: 8
+  materials:
+    TitaniumAlloy: 300
+    ServoTier4: 200
+
+- type: latheRecipe
+  parent: BaseRedAlert
+  id: GygaxCentralElectronicsMegafauna
+  result: GygaxCentralElectronics
+  categories: [ Mech, Gygax ]
+  completetime: 6
+  materials:
+    HighDensityCircuit: 200
+    ServoTier4: 100
+
+- type: latheRecipe
+  parent: BaseRedAlert
+  id: GygaxTargetingElectronicsMegafauna
+  result: GygaxTargetingElectronics
+  categories: [ Mech, Gygax ]
+  completetime: 6
+  materials:
+    HighDensityCircuit: 300
+    ServoTier4: 100
+
+- type: latheRecipe
+  parent: BaseGoldCircuitboardRecipe
+  id: ResearchDestructorMachineCircuitboard
+  result: ResearchDestructorMachineCircuitboard
+
+- type: latheRecipe
+  id: SpiderMercuryCoreLathe
+  result: SpiderMercuryCore
+  completetime: 10
+  materials:
+    SpiderMercuryAlloy: 300
+
+- type: latheRecipe
+  id: SpiderMercuryEtherDrinkerLathe
+  result: SpiderMercuryEtherDrinker
+  completetime: 8
+  materials:
+    SpiderMercuryKeratin: 500
+
+- type: latheRecipe
+  id: SpiderMercuryParadoxCancellerLathe
+  result: SpiderMercuryParadoxCanceller
+  completetime: 10
+  materials:
+    SpiderMercuryKeratin: 400
+
+- type: latheRecipe
+  id: SpiderMercuryRadiantShieldLathe
+  result: SpiderMercuryRadiantShield
+  completetime: 12
+  materials:
+    SpiderMercuryKeratin: 200
+    SpiderMercuryAlloy: 100
+
+- type: latheRecipe
+  id: WeaponSpiderMercuryRailgunLathe
+  result: WeaponSpiderMercuryRailgun
+  completetime: 15
+  materials:
+    SpiderMercuryAlloy: 400
+
+- type: latheRecipe
+  id: ClothingModsuitMercuryRadiantLathe
+  result: ClothingModsuitMercuryRadiant
+  completetime: 20
+  materials:
+    SpiderMercuryAlloy: 500
+
+- type: latheRecipePack
+  id: MegafaunaEngineeringRecipes
+  recipes:
+  - ClothingOuterArmorDragonAdvanced
+  - CableSuperconductingStack10
+
+- type: latheRecipePack
+  id: MegafaunaScienceRecipes
+  recipes:
+  - PersonalForcefieldGenerator
+  - WeaponColossusReflectionEmitter
+  - ClothingOuterArmorMercuryReflective
+  - SpiderMercuryCoreLathe
+  - SpiderMercuryEtherDrinkerLathe
+  - SpiderMercuryParadoxCancellerLathe
+  - SpiderMercuryRadiantShieldLathe
+  - WeaponSpiderMercuryRailgunLathe
+  - ClothingModsuitMercuryRadiantLathe
+
+- type: latheRecipePack
+  id: MegafaunaSecurityRecipes
+  recipes:
+  - WeaponColossusReflectionEmitter
+  - ClothingOuterArmorMercuryReflective
+  - SpiderMercuryRadiantShieldLathe
+  - WeaponSpiderMercuryRailgunLathe
+  - ClothingModsuitMercuryRadiantLathe
+
+- type: latheRecipePack
+  id: MegafaunaRoboticsRecipes
+  recipes:
+  - GygaxArmorMegafauna
+  - GygaxCentralElectronicsMegafauna
+  - GygaxTargetingElectronicsMegafauna
+
+- type: latheRecipePack
+  id: MegafaunaResearchInfrastructureStatic
+  recipes:
+  - ResearchDestructorMachineCircuitboard

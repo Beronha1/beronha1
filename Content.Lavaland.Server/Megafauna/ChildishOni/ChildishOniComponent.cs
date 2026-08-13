@@ -36,7 +36,7 @@ public sealed partial class ChildishOniComponent : Component
     public bool IsLeaping;
 
     [ViewVariables]
-    public int LastVisualPhase = 1;
+    public int LastVisualPhase;
 
     public Dictionary<string, List<EntityUid>> Rings = new();
 }

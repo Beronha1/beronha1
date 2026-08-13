@@ -25,14 +25,30 @@
   components:
   - type: Action
     raiseOnUser: true
-    useDelay: 10
+    useDelay: 1.5
     icon:
       sprite: Interface/Actions/jump.rsi
       state: icon
   - type: TargetAction
     range: 10
-  - type: WorldTargetAction
+  - type: EntityTargetAction
     event: !type:BloodDrunkMinerDashAction
+
+- type: entity
+  parent: ActionBloodDrunkMinerDash
+  id: ActionBloodDrunkMinerDashHunter
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 6
+
+- type: entity
+  parent: ActionBloodDrunkMinerDash
+  id: ActionBloodDrunkMinerDashDoom
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    useDelay: 4
 
 - type: entity
   parent: BaseAction
@@ -66,10 +82,10 @@
 
 - type: entity
   parent: ActionColossusFraction
-  id: ActionColossusTripleFraction
+  id: ActionColossusWrath
   components:
   - type: EntityTargetAction
-    event: !type:ColossusTripleFractionActionEvent
+    event: !type:ColossusWrathActionEvent
 
 - type: entity
   parent: BaseAction

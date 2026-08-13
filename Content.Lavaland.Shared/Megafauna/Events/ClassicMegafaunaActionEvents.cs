@@ -8,7 +8,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Lavaland.Shared.Megafauna.Events;
 
-public sealed partial class BloodDrunkMinerDashAction : WorldTargetActionEvent
+public sealed partial class BloodDrunkMinerDashAction : EntityTargetActionEvent
 {
     public SoundSpecifier DashSound = new SoundPathSpecifier("/Audio/Magic/blink.ogg");
 }
@@ -36,11 +36,10 @@ public sealed partial class ColossusSpiralActionEvent : EntityTargetActionEvent
     [DataField] public float DieProjectileDelay = 0.06f;
 }
 
-public sealed partial class ColossusTripleFractionActionEvent : EntityTargetActionEvent
+public sealed partial class ColossusWrathActionEvent : EntityTargetActionEvent
 {
-    [DataField] public float FractionSpread = 0.3f;
-    [DataField] public int FractionCount = 5;
-    [DataField] public float TripleFractionDelay = 0.5f;
+    [DataField] public int ProjectileCount = 24;
+    [DataField] public float Radius = 12f;
 }
 
 public sealed partial class AshDrakeConeFireActionEvent : EntityTargetActionEvent;

@@ -3,6 +3,7 @@
 using System.Numerics;
 using Content.Lavaland.Shared.Megafauna.Components;
 using Content.Lavaland.Shared.Megafauna.Events;
+using Content.Lavaland.Shared.Megafauna.Harvesting;
 using Content.Lavaland.Shared.Megafauna.Mercury;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
@@ -62,6 +63,7 @@ public sealed partial class SpiderMercurySystem : EntitySystem
         SubscribeLocalEvent<OrbitingRingComponent, OrbitingRingActionEvent>(OnOrbitingRing);
         SubscribeLocalEvent<ORTConvergenceComponent, ORTConvergenceActionEvent>(OnConvergence);
         SubscribeLocalEvent<ORTTransportMatterComponent, MapInitEvent>(OnTransportMapInit);
+        SubscribeLocalEvent<ORTTransportMatterComponent, MobStateChangedEvent>(OnTransportMobStateChanged);
         SubscribeLocalEvent<ORTTransportMatterComponent, EntityTerminatingEvent>(OnTransportTerminating);
         SubscribeLocalEvent<SpiderMercuryStageComponent, MobStateChangedEvent>(OnStageDefeated);
     }
@@ -76,7 +78,8 @@ public sealed partial class SpiderMercurySystem : EntitySystem
             Spawn(effect, coordinates);
         if (ent.Comp.NextStage is { } next)
             Spawn(next, coordinates);
-        QueueDel(ent);
+        if (!HasComp<MegafaunaHarvestableComponent>(ent))
+            QueueDel(ent);
     }
 
     public override void Update(float frameTime)
@@ -623,11 +626,28 @@ public sealed partial class SpiderMercurySystem : EntitySystem
         }
     }
 
+    private void OnTransportMobStateChanged(Entity<ORTTransportMatterComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        StopTransport(ent);
+    }
+
     private void UpdateTransport(float frameTime)
     {
         var query = EntityQueryEnumerator<ORTTransportMatterComponent, PhaseConversionComponent>();
         while (query.MoveNext(out var uid, out var transport, out var phase))
         {
+            // The final Mercury body intentionally remains for harvesting, so its
+            // timed transport component also remains. Never let a corpse restart
+            // the dash loop or keep emitting dash damage after death.
+            if (_mobState.IsDead(uid))
+            {
+                StopTransport((uid, transport));
+                continue;
+            }
+
             if (transport.Dashing)
             {
                 if (transport.MoveTarget is { } target)
@@ -727,5 +747,15 @@ public sealed partial class SpiderMercurySystem : EntitySystem
         }
         transport.DashWarningEntity = null;
         transport.PlayerTargetEntity = null;
+    }
+
+    private void StopTransport(Entity<ORTTransportMatterComponent> ent)
+    {
+        if (ent.Comp.Dashing)
+            _physics.SetLinearVelocity(ent, Vector2.Zero);
+
+        CleanupTransportIndicators(ent.Comp);
+        ent.Comp.Dashing = false;
+        ent.Comp.MoveTarget = null;
     }
 }

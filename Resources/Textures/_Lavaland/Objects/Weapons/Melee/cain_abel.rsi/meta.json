@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Cain & Abel item frame taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/mining_zones/artefacts.dmi). Left and right in-hand frames taken from the same commit (icons/mob/inhands/equipment/kitchen_lefthand.dmi and kitchen_righthand.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "icon" },
+    { "name": "inhand-left", "directions": 4 },
+    { "name": "inhand-right", "directions": 4 }
+  ]
+}

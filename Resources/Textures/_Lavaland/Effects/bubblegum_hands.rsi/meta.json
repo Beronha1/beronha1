@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Bubblegum leftsmack and rightsmack animation frames taken from Paradise Station at commit https://github.com/ParadiseSS13/Paradise/commit/49899c26567810f2547201d248ec4a10cab15769 (icons/effects/bubblegum.dmi). Converted from DMI to RSI for Whiskey Station; pixels were not redrawn.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    {
+      "name": "leftsmack",
+      "delays": [[0.15, 0.03, 0.025, 0.02, 0.015, 0.01, 0.3, 0.03, 0.025, 0.02, 0.015, 0.01, 0.005, 0.5]]
+    },
+    {
+      "name": "rightsmack",
+      "delays": [[0.15, 0.03, 0.025, 0.02, 0.015, 0.01, 0.3, 0.03, 0.025, 0.02, 0.015, 0.01, 0.005, 0.5]]
+    }
+  ]
+}

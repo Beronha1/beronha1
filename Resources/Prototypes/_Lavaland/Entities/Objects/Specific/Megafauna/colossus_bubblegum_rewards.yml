@@ -1,0 +1,264 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# /tg/ Colossus and Bubblegum reward mechanics reimplemented for SS14.
+# Imported sprite provenance is recorded in each RSI metadata file.
+
+- type: entity
+  parent: BaseItem
+  id: ColossusAnomalousCrystalReprise
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Specific/Megafauna/colossus_bubblegum_artifacts.rsi
+    state: anomalous-crystal
+  - type: Item
+    size: Small
+  - type: PointLight
+    color: "#56d5ff"
+    radius: 2.2
+    energy: 1.4
+  - type: AnomalousCrystal
+    mode: HealingPulse
+    radius: 4
+    healing:
+      types:
+        Blunt: -10
+        Slash: -10
+        Piercing: -10
+        Heat: -10
+        Poison: -5
+  - type: UseDelay
+    delay: 25
+  - type: ResearchArtifact
+    points: 5000
+    technologies: [ ColossusAnomalyApplications ]
+  - type: StaticPrice
+    price: 10000
+
+- type: entity
+  parent: ColossusAnomalousCrystalReprise
+  id: ColossusAnomalousCrystalRepulsion
+  components:
+  - type: AnomalousCrystal
+    mode: Repulsion
+    radius: 5
+
+- type: entity
+  parent: ColossusAnomalousCrystalReprise
+  id: ColossusAnomalousCrystalStasis
+  components:
+  - type: AnomalousCrystal
+    mode: Stasis
+    radius: 4
+    effectDuration: 3
+
+- type: entity
+  parent: ColossusAnomalousCrystalReprise
+  id: ColossusAnomalousCrystalWard
+  components:
+  - type: AnomalousCrystal
+    mode: Ward
+    effectDuration: 8
+
+- type: entity
+  parent: BaseSword
+  id: WeaponCainAbel
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/cain_abel.rsi
+    state: icon
+  - type: Item
+    size: Small
+    sprite: _Lavaland/Objects/Weapons/Melee/cain_abel.rsi
+  - type: MeleeWeapon
+    attackRate: 2.4
+    range: 1.8
+    damage:
+      types:
+        Slash: 15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: PointLight
+    color: "#3db9db"
+    radius: 2
+    energy: 1.3
+  - type: CainAbel
+  - type: ActionGrant
+    actions: [ ActionCainAbelWisps ]
+  - type: ItemActionGrant
+    actions: [ ActionCainAbelWisps ]
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: BaseSword
+  id: WeaponSoulScythe
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/soulscythe.rsi
+    layers:
+    - state: icon
+    - state: awakened
+      shader: unshaded
+      visible: false
+      map: [ "awakened" ]
+  - type: Item
+    size: Huge
+    sprite: _Lavaland/Objects/Weapons/Melee/soulscythe.rsi
+  - type: MeleeWeapon
+    attackRate: 1
+    range: 1.5
+    damage:
+      types:
+        Slash: 20
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: SoulScythe
+    empoweredHitDamage:
+      types:
+        Slash: 5
+  - type: ToggleableGhostRole
+    allowMovement: true
+    examineTextMindPresent: soulscythe-mind-present
+    examineTextMindSearching: soulscythe-mind-searching
+    examineTextNoMind: soulscythe-mind-empty
+    beginSearchingText: soulscythe-begin-searching
+    roleName: soulscythe-role-name
+    roleDescription: soulscythe-role-description
+    roleRules: ghost-role-information-familiar-rules
+    mindRoles: [ MindRoleGhostRoleFamiliar ]
+    wipeVerbText: soulscythe-wipe-verb
+    wipeVerbPopup: soulscythe-wiped
+    stopSearchVerbText: soulscythe-stop-searching-verb
+    stopSearchVerbPopup: soulscythe-stopped-searching
+  - type: MindContainer
+  - type: MobState
+    allowedStates: [ Alive ]
+  - type: Input
+    context: human
+  - type: InputMover
+  - type: MobMover
+  - type: Physics
+    bodyType: KinematicController
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
+  - type: Speech
+  - type: TypingIndicator
+    proto: alien
+  - type: Actions
+  - type: ActionGrant
+    actions: [ ActionSoulScytheBloodWave ]
+  - type: ItemActionGrant
+    actions: [ ActionSoulScytheBloodWave ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ToggleableGhostRoleVisuals.Status:
+        awakened:
+          Off: { visible: false }
+          Searching: { visible: true }
+          On: { visible: true }
+  - type: StaticPrice
+    price: 14000
+
+- type: entity
+  parent: BaseItem
+  id: MayhemBottle
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Specific/Megafauna/colossus_bubblegum_artifacts.rsi
+    state: mayhem-vial
+  - type: Item
+    size: Small
+  - type: MayhemBottle
+  - type: StaticPrice
+    price: 9000
+
+- type: entity
+  parent: BaseItem
+  id: BloodContract
+  name: blood contract
+  description: A demonic warrant that marks one nearby living person for death. Its curse is powerful, visible and temporary.
+  components:
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Objects/scroll.rsi
+    state: scroll2
+    color: "#d02020"
+  - type: Item
+    size: Small
+    sprite: _Goobstation/Wizard/Objects/scroll.rsi
+  - type: BloodContract
+    markDuration: 120
+    incomingDamageMultiplier: 1.2
+    pulseInterval: 10
+    pulseDamage:
+      types:
+        Bloodloss: 2
+  - type: ActionGrant
+    actions: [ ActionBloodContractMark ]
+  - type: ItemActionGrant
+    actions: [ ActionBloodContractMark ]
+  - type: StaticPrice
+    price: 12000
+
+- type: entity
+  parent: ProjectileArcaneBarrage
+  id: ProjectileCainAbelWisp
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Piercing: 8
+
+- type: entity
+  parent: ProjectileArcaneBarrage
+  id: ProjectileSoulScytheWave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Slash: 15
+
+- type: entity
+  parent: BaseAction
+  id: ActionCainAbelWisps
+  components:
+  - type: Action
+    icon: { sprite: _Lavaland/Objects/Weapons/Melee/cain_abel.rsi, state: icon }
+    useDelay: 0
+  - type: WorldTargetAction
+    range: 9
+    event: !type:CainAbelWispActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSoulScytheBloodWave
+  components:
+  - type: Action
+    icon: { sprite: _Lavaland/Objects/Weapons/Melee/soulscythe.rsi, state: icon }
+    useDelay: 0
+  - type: WorldTargetAction
+    range: 10
+    event: !type:SoulScytheWaveActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionBloodContractMark
+  categories: [ HideSpawnMenu ]
+  name: write the blood contract
+  description: Mark a nearby living humanoid for two minutes. The contract is consumed on success.
+  components:
+  - type: Action
+    icon: { sprite: _Goobstation/Wizard/Objects/scroll.rsi, state: scroll2 }
+    useDelay: 1
+  - type: TargetAction
+    range: 12
+    checkCanAccess: true
+  - type: EntityTargetAction
+    canTargetSelf: false
+    whitelist:
+      components:
+      - HumanoidProfile
+    event: !type:BloodContractActionEvent

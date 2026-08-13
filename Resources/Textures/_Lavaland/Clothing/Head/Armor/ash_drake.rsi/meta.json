@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ash drake helm item sprite taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/clothing/head/helmet.dmi). Worn sprite taken from the same commit (icons/mob/clothing/head/helmet.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "icon" },
+    { "name": "equipped-HELMET", "directions": 4 }
+  ]
+}

@@ -60,15 +60,19 @@
   - type: Solution
     solution:
       reagents:
-      - ReagentId: Sake
+      - ReagentId: OniSake
         Quantity: 50
   - type: SolutionRegeneration
     solution: drink
     generated:
       reagents:
-      - ReagentId: Sake
+      - ReagentId: OniSake
         Quantity: 2
     duration: 10
+  - type: MegafaunaProvenance
+    source: megafauna-source-childish-oni
+    grade: Intact
+  - type: MegafaunaIntactSample
 
 - type: entity
   id: BoneWeak

@@ -28,6 +28,8 @@
   - type: UseDelay
     delay: 10
   - type: LavaStaff
+    maxRange: 8
+    terraformTime: 1.5
     useSound:
       path: /Audio/Effects/stonedoor_openclose.ogg
   - type: StaticPrice
@@ -57,6 +59,7 @@
     state: icon
   - type: DivineVocalCordsImplant
   - type: SubdermalImplant
+    implantAction: ActionColossusRoar
     whitelist:
       components:
       - MobState
@@ -81,6 +84,9 @@
         Slash: 1
   - type: DisarmMalus
   - type: SoulStorage
+    bonusDamagePerSoul: 4
+    maxBonusDamage: 76
+    maxOrbitingGhosts: 12
   - type: StaticPrice
     price: 5000
 
@@ -145,6 +151,7 @@
       effects:
       - !type:StabilizeLegionCore
   - type: LegionCore
+    activeDuration: 240
     healAmount:
       types:
         Blunt: -25

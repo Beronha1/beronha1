@@ -29,6 +29,13 @@ public sealed partial class SpawnLootOnDeathComponent : Component
     public bool DeleteOnDeath;
 
     /// <summary>
+    /// Whether the loot tables are resolved as soon as the entity dies. Encounters
+    /// with a post-death phase can defer this and call SpawnOnDeathSystem.TryDropLoot.
+    /// </summary>
+    [DataField]
+    public bool DropOnDeath = true;
+
+    /// <summary>
     /// If true and the mob was killed with special weapon,
     /// and both loots are not null, drops both loots at once.
     /// </summary>
@@ -41,4 +48,10 @@ public sealed partial class SpawnLootOnDeathComponent : Component
     /// </summary>
     [ViewVariables]
     public bool DoSpecialLoot = true;
+
+    /// <summary>
+    /// Prevents delayed or duplicate death events from resolving the tables twice.
+    /// </summary>
+    [ViewVariables]
+    public bool HasDropped;
 }

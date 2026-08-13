@@ -8,7 +8,12 @@
   suffix: Wega Lavaland boss
   components:
   - type: ConditionalSpawner
-    prototypes: [MobBloodDrunkMiner]
+    prototypes:
+    - MobBloodDrunkMiner
+    - MobBloodDrunkMinerGuidance
+    - MobBloodDrunkMinerHunter
+    - MobBloodDrunkMinerDoom
+    - LavalandBossDemonicFrostMiner
 
 - type: entity
   parent: MarkerBase

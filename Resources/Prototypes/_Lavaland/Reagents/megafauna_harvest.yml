@@ -1,0 +1,333 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Raw carcass fluids. These are intentionally lethal until stabilized by a
+# chemist; their industrial and medical value should not make raw injection a
+# safe shortcut.
+
+- type: reagent
+  id: ExothermicBlood
+  name: reagent-name-exothermic-blood
+  group: Biological
+  desc: reagent-desc-exothermic-blood
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: metallic
+  color: "#e35b24"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:AdjustTemperature
+        amount: 50000
+      - !type:HealthChange
+        damage:
+          types:
+            Heat: 6
+
+- type: reagent
+  id: DemonicBlood
+  name: reagent-name-demonic-blood
+  group: Biological
+  desc: reagent-desc-demonic-blood
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: metallic
+  color: "#6d0718"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: 4
+          Toxin: 4
+
+- type: reagent
+  id: MercuryVenom
+  name: reagent-name-mercury-venom
+  group: Toxins
+  desc: reagent-desc-mercury-venom
+  physicalDesc: reagent-physical-desc-metallic
+  flavor: bitter
+  color: "#79e9ef"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 6
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.65
+
+- type: reagent
+  id: OniGastricEnzymes
+  name: reagent-name-oni-gastric-enzymes
+  group: Biological
+  desc: reagent-desc-oni-gastric-enzymes
+  physicalDesc: reagent-physical-desc-acidic
+  flavor: sour
+  color: "#b5d83b"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 4
+            Caustic: 4
+
+# First-pass stabilized medicines. Every unit of raw boss fluid produces one
+# unit of its corresponding medicine; the additional reactant is consumed as
+# the chemical stabilizer.
+
+- type: reagent
+  id: ExothermicHemostate
+  name: reagent-name-exothermic-hemostate
+  group: Medicine
+  desc: reagent-desc-exothermic-hemostate
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#ef8c52"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -1.5
+
+- type: reagent
+  id: DemonicCytostimulant
+  name: reagent-name-demonic-cytostimulant
+  group: Medicine
+  desc: reagent-desc-demonic-cytostimulant
+  physicalDesc: reagent-physical-desc-thick
+  flavor: medicine
+  color: "#b43b57"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -1.5
+
+- type: reagent
+  id: MercurialNeurochelate
+  name: reagent-name-mercurial-neurochelate
+  group: Medicine
+  desc: reagent-desc-mercurial-neurochelate
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#9ceef1"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Airloss: -1.5
+
+- type: reagent
+  id: OniEnzymeFiltrate
+  name: reagent-name-oni-enzyme-filtrate
+  group: Medicine
+  desc: reagent-desc-oni-enzyme-filtrate
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#cfeb78"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Toxin: -1.5
+
+# Pair medicines. Each one combines the healing domains of two stabilized boss
+# products. Pair reactions are heat-gated so four intermediates can coexist at
+# room temperature long enough to form Megafauna Polyserum.
+
+- type: reagent
+  id: ExothermicRegenerativeSuspension
+  name: reagent-name-exothermic-regenerative-suspension
+  group: Medicine
+  desc: reagent-desc-exothermic-regenerative-suspension
+  physicalDesc: reagent-physical-desc-glowing
+  flavor: medicine
+  color: "#dc5e45"
+  worksOnTheDead: true
+  reactiveEffects:
+    Acidic:
+      methods: [ Touch ]
+      effects:
+      - !type:HealthChange
+        scaling: true
+        ignoreResistances: false
+        ignoreBlockers: false
+        damage:
+          types:
+            Blunt: -2
+            Slash: -2
+            Piercing: -2
+            Heat: -2
+            Cold: -2
+            Shock: -2
+            Caustic: -2
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -4
+          Burn: -4
+
+- type: reagent
+  id: ThermomercurialPerfusate
+  name: reagent-name-thermomercurial-perfusate
+  group: Medicine
+  desc: reagent-desc-thermomercurial-perfusate
+  physicalDesc: reagent-physical-desc-fizzy
+  flavor: medicine
+  color: "#e5b987"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -4
+          Airloss: -4
+
+- type: reagent
+  id: ExothermicEnzymeBuffer
+  name: reagent-name-exothermic-enzyme-buffer
+  group: Medicine
+  desc: reagent-desc-exothermic-enzyme-buffer
+  physicalDesc: reagent-physical-desc-bubbling
+  flavor: medicine
+  color: "#d9b750"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -4
+          Toxin: -4
+
+- type: reagent
+  id: DemonicNeuroregenerator
+  name: reagent-name-demonic-neuroregenerator
+  group: Medicine
+  desc: reagent-desc-demonic-neuroregenerator
+  physicalDesc: reagent-physical-desc-thick-and-grainy
+  flavor: medicine
+  color: "#a76688"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -4
+          Airloss: -4
+
+- type: reagent
+  id: DemonicEnzymeCoagulant
+  name: reagent-name-demonic-enzyme-coagulant
+  group: Medicine
+  desc: reagent-desc-demonic-enzyme-coagulant
+  physicalDesc: reagent-physical-desc-viscous
+  flavor: medicine
+  color: "#9f7b48"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -4
+          Toxin: -4
+
+- type: reagent
+  id: MercurialEnzymeAntitoxin
+  name: reagent-name-mercurial-enzyme-antitoxin
+  group: Medicine
+  desc: reagent-desc-mercurial-enzyme-antitoxin
+  physicalDesc: reagent-physical-desc-translucent
+  flavor: medicine
+  color: "#a8e0a8"
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Toxin: -5
+          Airloss: -3
+      - !type:HealthChange
+        damage:
+          types:
+            Radiation: -2
+            Cellular: -1
+
+- type: reagent
+  id: MegafaunaPolyserum
+  name: reagent-name-megafauna-polyserum
+  group: Medicine
+  desc: reagent-desc-megafauna-polyserum
+  physicalDesc: reagent-physical-desc-soothing
+  flavor: medicine
+  color: "#f2edf5"
+  worksOnTheDead: true
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Burn: -2
+          Toxin: -2
+          Airloss: -2
+          Brute: -2
+
+# Existing non-medical megafauna products.
+
+- type: reagent
+  id: DemonicGumEssence
+  name: reagent-name-demonic-gum-essence
+  group: Biological
+  desc: reagent-desc-demonic-gum-essence
+  physicalDesc: reagent-physical-desc-sticky
+  flavor: spicy
+  color: "#a3132c"
+  metabolisms:
+    Digestion:
+      metabolismRate: 0.25
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -2
+          Burn: -2
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.2
+        sprintSpeedModifier: 1.2
+
+- type: reagent
+  parent: WeldingFuel
+  id: SyntheticMegafaunaFuel
+  name: reagent-name-synthetic-megafauna-fuel
+  group: Pyrotechnic
+  desc: reagent-desc-synthetic-megafauna-fuel
+  physicalDesc: reagent-physical-desc-volatile
+  flavor: terrible
+  color: "#f47a2b"
+
+- type: reagent
+  id: OniSake
+  parent: Sake
+  name: reagent-name-oni-sake
+  desc: reagent-desc-oni-sake
+  flavor: sake
+  color: "#efe5c6"
+  metabolisms:
+    Digestion:
+      metabolites:
+        Ethanol: 0.8
+      effects:
+      - !type:EvenHealthChange
+        damage:
+          Brute: -0.5
+          Burn: -0.5
+      - !type:MovementSpeedModifier
+        walkSpeedModifier: 1.1
+        sprintSpeedModifier: 1.1

@@ -266,6 +266,8 @@
     # <Trauma>
     - BotanyTrauma
     - TraumaScienceClothing
+    - MegafaunaEngineeringRecipes
+    - MegafaunaScienceRecipes
     # </Trauma>
   - type: EmagLatheRecipes
     emagDynamicPacks:
@@ -406,6 +408,7 @@
     # <Trauma>
     - TraumaCybernetics
     - TraumaMechParts
+    - MegafaunaRoboticsRecipes
     - MechBoardsCargo
     - MechBoardsSecurity
     # </Trauma>
@@ -523,6 +526,7 @@
     # - ServiceWeapons
     - SpecOpsGoogles
     - PowerCells
+    - MegafaunaSecurityRecipes
     # </Goob>
   # - type: EmagLatheRecipes
   #   emagStaticPacks:

@@ -8,7 +8,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
-    anchored: true
+    anchored: false
   - type: Sprite
     noRot: true
     sprite: _Wega/Effects/effects96x96.rsi
@@ -17,71 +17,30 @@
     lifetime: 2
 
 - type: entity
-  id: EffectBubblegumHand
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Transform
-    anchored: true
-  - type: Sprite
-    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
-    state: bubblegum
-    scale: 0.34, 0.34
-    color: "#ff4444"
-  - type: Physics
-    bodyType: Static
-  - type: Fixtures
-    fixtures:
-      fix:
-        shape:
-          !type:PhysShapeAabb
-          bounds: "-0.45,-0.45,0.45,0.45"
-        hard: false
-        mask:
-        - Impassable
-  - type: TriggerOnCollide
-    fixtureID: fix
-    maxTriggers: 1
-  - type: DamageOnTrigger
-    targetUser: true
-    damage:
-      types:
-        Blunt: 30
-  - type: DamageOnTriggerBlacklist
-    blacklist:
-      components:
-      - BubblegumBoss
-  - type: TimedDespawn
-    lifetime: 0.2
-  - type: SpawnOnDespawn
-    prototype: EffectBubblegumHandOut
-
-- type: entity
-  id: BaseEffectBubblegumHandSpawn
+  id: BaseEffectBubblegumHand
   abstract: true
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
     anchored: true
+  - type: TimedDespawn
+    lifetime: 1.2
+
+- type: entity
+  parent: BaseEffectBubblegumHand
+  id: EffectBubblegumHandLeft
+  components:
   - type: Sprite
-    sprite: Markers/cross.rsi
-    state: red
-    scale: 1.5, 1.5
-  - type: TimedDespawn
-    lifetime: 0.58
+    sprite: _Lavaland/Effects/bubblegum_hands.rsi
+    state: leftsmack
 
 - type: entity
-  parent: BaseEffectBubblegumHandSpawn
-  id: EffectBubblegumHandIn
+  parent: BaseEffectBubblegumHand
+  id: EffectBubblegumHandRight
   components:
-  - type: SpawnOnDespawn
-    prototype: EffectBubblegumHand
-
-- type: entity
-  parent: BaseEffectBubblegumHandSpawn
-  id: EffectBubblegumHandOut
-  components:
-  - type: TimedDespawn
-    lifetime: 0.3
+  - type: Sprite
+    sprite: _Lavaland/Effects/bubblegum_hands.rsi
+    state: rightsmack
 
 - type: entity
   id: EffectBubblegumDashTrail

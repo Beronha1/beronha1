@@ -1,0 +1,36 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Cargo equipment for keeping the interdepartmental megafauna economy usable
+# without round-to-round persistence. Both structures deliberately reuse
+# upstream crate art already distributed by the project.
+
+- type: entity
+  parent: CrateSecure
+  id: CrateCargoDensityManipulator
+  name: dimensional cargo manipulator
+  description: A reinforced logistics container whose internal geometry can be expanded by an Oni density core.
+  components:
+  - type: EntityStorage
+    capacity: 60
+  - type: DensityCoreReceiver
+    capacityBonus: 90
+  - type: AccessReader
+    access: [["Cargo"], ["Quartermaster"], ["Salvage"]]
+  - type: StaticPrice
+    price: 4000
+
+- type: entity
+  parent: CrateSecure
+  id: CrateMegafaunaTrophyVault
+  name: megafauna trophy vault
+  description: A secure, non-persistent station collection for kinetic crusher trophies.
+  components:
+  - type: EntityStorage
+    capacity: 8
+    whitelist:
+      components:
+      - CrusherTrophy
+  - type: AccessReader
+    access: [["Cargo"], ["Quartermaster"], ["Salvage"], ["Research"]]
+  - type: StaticPrice
+    price: 3000

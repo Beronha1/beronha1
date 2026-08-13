@@ -45,6 +45,15 @@ public sealed partial class ItemCounterSystem : SharedItemCounterSystem
         || !_sprite.LayerMapTryGet((uid, sprite), layer, out var layerKey, logMissing: true))
             return;
 
+        // A single state is valid for stacks that only need a counter and do not
+        // have visual tiers. RoundToEqualLevels requires at least two levels.
+        if (states.Count == 1)
+        {
+            _sprite.LayerSetRsiState((uid, sprite), layerKey, states[0]);
+            _sprite.LayerSetVisible((uid, sprite), layerKey, !hide);
+            return;
+        }
+
         var activeState = ContentHelpers.RoundToEqualLevels(count, maxCount, states.Count);
         _sprite.LayerSetRsiState((uid, sprite), layerKey, states[activeState]);
         _sprite.LayerSetVisible((uid, sprite), layerKey, !hide);

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Numerics;
 using Content.Lavaland.Server.Megafauna.Bubblegum;
 using Content.Lavaland.Server.NPC;
+using Content.Lavaland.Shared.Megafauna.Harvesting;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
 using Content.Shared.Actions.Components;
@@ -17,11 +18,13 @@ using Content.Shared.Fluids.Components;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Gibbing;
 using Content.Lavaland.Shared.Megafauna.Events;
+using Content.Shared.Humanoid;
 using Content.Shared.Maps;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
+using Content.Shared.Popups;
 using Content.Shared.Visuals;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
@@ -47,8 +50,10 @@ public sealed partial class BubblegumSystem : EntitySystem
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _threshold = default!;
     [Dependency] private NPCUseActionsOnTargetSystem _npcActions = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
+    [Dependency] private ITileDefinitionManager _tileDefinitions = default!;
     [Dependency] private TurfSystem _turf = default!;
     [Dependency] private NPCSystem _npc = default!;
 
@@ -59,13 +64,16 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private Dictionary<EntityUid, List<EntityUid>> _activeIllusions = new();
     private HashSet<EntityUid> _dashDamagedTargets = new();
+    private readonly Dictionary<EntityUid, BubblegumArenaSession> _arenaSessions = new();
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<BubblegumBossComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<BubblegumBossComponent, MapInitEvent>(OnBubblegumMapInit);
         SubscribeLocalEvent<BubblegumBossComponent, MobStateChangedEvent>(OnBubblegumKilled);
+        SubscribeLocalEvent<BubblegumBossComponent, MoveEvent>(OnBubblegumMoved);
         SubscribeLocalEvent<BubblegumBossComponent, EntityTerminatingEvent>(OnTerminating);
 
         SubscribeLocalEvent<BubblegumBossComponent, BubblegumRageActionEvent>(OnRageAction);
@@ -79,6 +87,9 @@ public sealed partial class BubblegumSystem : EntitySystem
     private void OnTerminating(Entity<BubblegumBossComponent> ent, ref EntityTerminatingEvent args)
     {
         CleanupIllusions(ent.Owner);
+
+        if (_arenaSessions.Remove(ent.Owner, out var session))
+            ReturnFromSecondLifeArena(session, ent.Owner, aborted: true);
     }
 
     public override void Update(float frameTime)
@@ -87,9 +98,26 @@ public sealed partial class BubblegumSystem : EntitySystem
 
         UpdateRageState();
         UpdatePassiveHandAttack();
+        UpdatePassiveBloodWarp();
     }
 
     #region Event Handlers
+
+    private void OnBubblegumMoved(Entity<BubblegumBossComponent> ent, ref MoveEvent args)
+    {
+        if (!args.OnlyRotation && !_mobState.IsDead(ent.Owner))
+            SpawnBloodPool(ent);
+    }
+
+    private void OnBubblegumMapInit(Entity<BubblegumBossComponent> ent, ref MapInitEvent args)
+    {
+        if (ent.Comp.SecondLife)
+            ent.Comp.CurrentPhase = BubblegumPhase.Enraged;
+
+        // Initialize the selector from Bubblegum's phase configuration on every spawn. Relying only on the
+        // NPC component's prototype list left phase-one weights unapplied until the first phase transition.
+        UpdatePhaseActions(ent, ent.Comp);
+    }
 
     private void OnDamageChanged(EntityUid uid, BubblegumBossComponent component, DamageChangedEvent args)
     {
@@ -99,8 +127,6 @@ public sealed partial class BubblegumSystem : EntitySystem
         var healthRatio = GetHealthRatio(uid);
         var newPhase = healthRatio > LowHealthThreshold
             ? BubblegumPhase.Normal : BubblegumPhase.Enraged;
-
-        UpdateRageChance(uid, component);
 
         if (newPhase != component.CurrentPhase)
         {
@@ -129,21 +155,6 @@ public sealed partial class BubblegumSystem : EntitySystem
                 npcActions);
         }
 
-        UpdateRageChance(uid, component, npcActions);
-    }
-
-    private void UpdateRageChance(EntityUid uid, BubblegumBossComponent component, NPCUseActionsOnTargetComponent? npcActions = null)
-    {
-        if (!Resolve(uid, ref npcActions))
-            return;
-
-        var healthRatio = GetHealthRatio(uid);
-        var rageChance = 0.1f + 0.3f * (1f - healthRatio);
-        rageChance = Math.Clamp(rageChance, 0.1f, 0.4f);
-
-        _npcActions.SetActionChance(uid,
-            new EntProtoId<TargetActionComponent>("ActionBubblegumRage"),
-            rageChance, npcActions);
     }
 
     private void OnBubblegumKilled(EntityUid uid, BubblegumBossComponent component, MobStateChangedEvent args)
@@ -151,11 +162,155 @@ public sealed partial class BubblegumSystem : EntitySystem
         if (args.NewMobState != MobState.Dead)
             return;
 
+        _npcActions.UnlockActions(uid);
+        CleanupIllusions(uid);
+        component.IsRaging = false;
+        RemCompDeferred<GodmodeComponent>(uid);
+
+        if (component.EnableSecondLife && !component.SecondLife && !component.TransitionStarted)
+        {
+            BeginSecondLife((uid, component));
+            return;
+        }
+
+        if (component.SecondLife && _arenaSessions.Remove(uid, out var session))
+            ReturnFromSecondLifeArena(session, uid, aborted: false);
+
         var coords = Transform(uid).Coordinates;
         foreach (var reward in component.RewardsProto)
             Spawn(reward, coords);
 
-        QueueDel(uid);
+        if (!HasComp<MegafaunaHarvestableComponent>(uid))
+            QueueDel(uid);
+    }
+
+    private void BeginSecondLife(Entity<BubblegumBossComponent> ent)
+    {
+        ent.Comp.TransitionStarted = true;
+        var returnAnchor = Transform(ent).Coordinates;
+        var participants = new Dictionary<EntityUid, EntityCoordinates>();
+
+        foreach (var target in _lookup.GetEntitiesInRange<HumanoidProfileComponent>(
+                     returnAnchor,
+                     ent.Comp.SecondLifeCaptureRadius))
+        {
+            if (_mobState.IsDead(target))
+                continue;
+
+            participants[target] = Transform(target).Coordinates;
+        }
+
+        EntityUid? arenaMap = null;
+        EntityUid? arenaGrid = null;
+        EntityCoordinates bossCoordinates = returnAnchor;
+
+        if (participants.Count > 0)
+        {
+            arenaMap = _map.CreateMap(out var arenaMapId);
+            var grid = _map.CreateGridEntity(arenaMapId);
+            arenaGrid = grid.Owner;
+            BuildSecondLifeArena(grid, ent.Comp);
+            bossCoordinates = new EntityCoordinates(grid, new Vector2(0.5f, 0.5f));
+
+            var index = 0;
+            foreach (var participant in participants.Keys)
+            {
+                var angle = index++ * MathF.Tau / participants.Count;
+                var arrival = new Vector2(MathF.Cos(angle), MathF.Sin(angle)) * 5f + new Vector2(0.5f, 0.5f);
+                _transform.SetCoordinates(participant, new EntityCoordinates(grid, arrival));
+                _audio.PlayPvs("/Audio/_Goobstation/Misc/enter_blood.ogg", participant);
+                PopupSecondLife(participant, "bubblegum-second-life-abducted", PopupType.LargeCaution);
+            }
+        }
+
+        var secondLife = Spawn(ent.Comp.SecondLifePrototype, bossCoordinates);
+        _arenaSessions[secondLife] = new BubblegumArenaSession(
+            returnAnchor,
+            participants,
+            arenaMap,
+            arenaGrid);
+
+        _audio.PlayPvs("/Audio/_Goobstation/Misc/exit_blood.ogg", secondLife);
+        QueueDel(ent);
+    }
+
+    private void BuildSecondLifeArena(Entity<MapGridComponent> grid, BubblegumBossComponent component)
+    {
+        var tile = (ContentTileDefinition) _tileDefinitions[component.ArenaFloor.Id];
+        var radius = Math.Max(8, component.ArenaRadius);
+
+        for (var x = -radius; x <= radius; x++)
+        {
+            for (var y = -radius; y <= radius; y++)
+            {
+                _map.SetTile(grid, grid.Comp, new Vector2i(x, y), new Tile(tile.TileId));
+                if (Math.Abs(x) != radius && Math.Abs(y) != radius)
+                    continue;
+
+                Spawn(component.ArenaWall, new EntityCoordinates(grid, new Vector2(x + 0.5f, y + 0.5f)));
+            }
+        }
+    }
+
+    private void ReturnFromSecondLifeArena(BubblegumArenaSession session, EntityUid boss, bool aborted)
+    {
+        foreach (var (participant, coordinates) in session.Participants)
+        {
+            if (!Exists(participant) || !Exists(coordinates.EntityId))
+                continue;
+
+            _transform.SetCoordinates(participant, coordinates);
+            _audio.PlayPvs("/Audio/_Goobstation/Misc/exit_blood.ogg", participant);
+            PopupSecondLife(participant,
+                aborted ? "bubblegum-second-life-aborted" : "bubblegum-second-life-returned",
+                aborted ? PopupType.MediumCaution : PopupType.Large);
+        }
+
+        if (Exists(boss) && Exists(session.ReturnAnchor.EntityId))
+            _transform.SetCoordinates(boss, session.ReturnAnchor);
+
+        if (session.ArenaMap is not { } map || session.ArenaGrid is not { } grid)
+            return;
+
+        // Other death subscribers may spawn the trophy after this handler. Sweep direct loose contents one tick
+        // later, then destroy the private map only after everything recoverable has returned to Lavaland.
+        Timer.Spawn(TimeSpan.FromSeconds(1), () =>
+        {
+            if (!Exists(grid))
+                return;
+
+            var loose = new List<EntityUid>();
+            var query = EntityQueryEnumerator<TransformComponent>();
+            while (query.MoveNext(out var uid, out var xform))
+            {
+                if (uid == grid || xform.ParentUid != grid || xform.Anchored)
+                    continue;
+                loose.Add(uid);
+            }
+
+            var offset = 0;
+            foreach (var uid in loose)
+            {
+                if (!Exists(uid) || !Exists(session.ReturnAnchor.EntityId))
+                    continue;
+
+                var dx = (offset % 5 - 2) * 0.25f;
+                var dy = (offset / 5) * 0.25f;
+                _transform.SetCoordinates(uid, session.ReturnAnchor.Offset(new Vector2(dx, dy)));
+                offset++;
+            }
+
+            Timer.Spawn(TimeSpan.FromSeconds(1), () =>
+            {
+                if (_map.MapExists(Transform(map).MapID))
+                    _map.DeleteMap(Transform(map).MapID);
+            });
+        });
+    }
+
+    private void PopupSecondLife(EntityUid target, string message, PopupType type)
+    {
+        _popup.PopupEntity(Loc.GetString(message), target, target, type);
     }
 
     #endregion
@@ -164,8 +319,11 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnRageAction(Entity<BubblegumBossComponent> ent, ref BubblegumRageActionEvent args)
     {
-        args.Handled = true;
+        if (ent.Comp.IsRaging || _mobState.IsDead(ent.Owner))
+            return;
+
         TriggerRage(ent, ent.Comp);
+        args.Handled = true;
     }
 
     private void TriggerRage(EntityUid uid, BubblegumBossComponent component)
@@ -206,29 +364,36 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnTripleDash(Entity<BubblegumBossComponent> ent, ref BubblegumTripleDashActionEvent args)
     {
-        args.Handled = true;
+        var target = args.Target;
+        if (!Exists(target) || _mobState.IsDead(ent.Owner))
+            return;
 
+        var mapId = Transform(ent.Owner).MapID;
+        if (mapId == MapId.Nullspace)
+            return;
+
+        args.Handled = true;
+        ent.Comp.LastDashStatus = "accepted";
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(5));
+        _npc.SleepNPC(ent.Owner);
         CleanupIllusions(ent.Owner);
         SpawnBloodPool(ent);
 
-        var target = args.Target;
-        if (!Exists(target))
-            return;
-
-        var mapUid = _transform.GetMap(ent.Owner);
-        if (mapUid == null)
-            return;
-
-        PerformTripleDashStep(ent, target, mapUid.Value, args.DashDamage, args.DashDistance, args.MoveSpeed,
+        PerformTripleDashStep(ent, target, mapId, args.DashDamage, args.DashDistance, args.MoveSpeed,
             args.UseSineWaveForLast, args.DashDelays, 0);
     }
 
-    private void PerformTripleDashStep(Entity<BubblegumBossComponent> ent, EntityUid target, EntityUid mapUid,
+    private void PerformTripleDashStep(Entity<BubblegumBossComponent> ent, EntityUid target, MapId mapId,
         DamageSpecifier dashDamage, float dashDistance, float moveSpeed, bool useSineWaveForLast,
         List<float> dashDelays, int stepIndex)
     {
+        ent.Comp.LastDashStatus = "preparing";
         if (!Exists(ent.Owner) || _mobState.IsDead(ent.Owner) || !Exists(target))
+        {
+            ent.Comp.LastDashStatus = "invalid-entity";
+            FinishAttackSequence(ent, target);
             return;
+        }
 
         var bossPos = _transform.GetWorldPosition(ent);
         var currentTargetPos = _transform.GetWorldPosition(target);
@@ -255,39 +420,52 @@ public sealed partial class BubblegumSystem : EntitySystem
             dashTarget = bossPos + direction * dashDistance;
         }
 
-        var centerDashTarget = GetTileCenter(mapUid, dashTarget);
-        var markerCoords = new EntityCoordinates(mapUid, centerDashTarget);
+        var centerDashTarget = GetTileCenter(mapId, dashTarget);
+        var markerCoords = _transform.ToCoordinates(new MapCoordinates(centerDashTarget, mapId));
 
         if (!IsValidSpawnPosition(markerCoords))
         {
             var safeCoords = FindSafePositionNear(ent, markerCoords);
             if (safeCoords == null)
+            {
+                ent.Comp.LastDashStatus = "no-safe-position";
+                FinishAttackSequence(ent, target);
                 return;
+            }
             markerCoords = safeCoords.Value;
         }
 
-        Spawn(ent.Comp.DashMarker, markerCoords);
+        ent.Comp.LastDashMarker = Spawn(ent.Comp.DashMarker, markerCoords);
+        ent.Comp.LastDashStatus = "telegraphed";
 
-        PerformDash(ent, markerCoords, dashDamage, moveSpeed, stepIndex == 2,
-            () => ScheduleNextDashStep(ent, target, mapUid, dashDamage, dashDistance, moveSpeed,
-                useSineWaveForLast, dashDelays, stepIndex));
+        // Paradise revs each charge after placing its landing telegraph. Previously Whiskey dashed immediately
+        // and applied this delay afterwards, making the warning effectively invisible and the sequence erratic.
+        var revDelay = stepIndex < dashDelays.Count
+            ? Math.Max(0f, dashDelays[stepIndex])
+            : 0f;
+        Timer.Spawn(TimeSpan.FromSeconds(revDelay), () =>
+        {
+            if (!Exists(ent.Owner) || _mobState.IsDead(ent.Owner) || !Exists(target))
+            {
+                FinishAttackSequence(ent, target);
+                return;
+            }
+
+            PerformDash(ent, markerCoords, dashDamage, moveSpeed, stepIndex == 2,
+                () => ScheduleNextDashStep(ent, target, mapId, dashDamage, dashDistance, moveSpeed,
+                    useSineWaveForLast, dashDelays, stepIndex));
+        });
     }
 
-    private void ScheduleNextDashStep(Entity<BubblegumBossComponent> ent, EntityUid target, EntityUid mapUid,
+    private void ScheduleNextDashStep(Entity<BubblegumBossComponent> ent, EntityUid target, MapId mapId,
         DamageSpecifier dashDamage, float dashDistance, float moveSpeed, bool useSineWaveForLast,
         List<float> dashDelays, int currentStep)
     {
         if (currentStep >= dashDelays.Count - 1)
             return;
 
-        var nextStep = currentStep + 1;
-        var nextDelay = dashDelays[nextStep];
-
-        Timer.Spawn(TimeSpan.FromSeconds(nextDelay), () =>
-        {
-            PerformTripleDashStep(ent, target, mapUid, dashDamage, dashDistance, moveSpeed,
-                useSineWaveForLast, dashDelays, nextStep);
-        });
+        PerformTripleDashStep(ent, target, mapId, dashDamage, dashDistance, moveSpeed,
+            useSineWaveForLast, dashDelays, currentStep + 1);
     }
 
     #endregion
@@ -296,25 +474,18 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnIllusionDash(Entity<BubblegumBossComponent> ent, ref BubblegumIllusionDashActionEvent args)
     {
-        args.Handled = true;
-
-        _npc.SleepNPC(ent.Owner);
-        SpawnBloodPool(ent);
-
         var target = args.Target;
-        if (!Exists(target))
-        {
-            _npc.WakeNPC(ent.Owner);
+        if (!Exists(target) || _mobState.IsDead(ent.Owner))
             return;
-        }
 
         var mapUid = _transform.GetMap(ent.Owner);
         if (mapUid == null)
-        {
-            _npc.WakeNPC(ent.Owner);
-            SetHTNTarget(ent, target);
             return;
-        }
+
+        args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(12));
+        _npc.SleepNPC(ent.Owner);
+        SpawnBloodPool(ent);
 
         PerformIllusionDashIteration(ent, target, mapUid.Value, args, 0);
     }
@@ -380,7 +551,7 @@ public sealed partial class BubblegumSystem : EntitySystem
             }
 
             StartIllusionDashForAll(illusions, targetCoords, damage);
-            PerformDash(ent, targetCoords, damage, 0.1f, false);
+            PerformDash(ent, targetCoords, ScaleDamage(damage, 2), 0.1f, false);
 
             Timer.Spawn(TimeSpan.FromSeconds(1.5f), () =>
             {
@@ -458,11 +629,10 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnBloodDiveAction(Entity<BubblegumBossComponent> ent, ref BubblegumBloodDiveActionEvent args)
     {
-        args.Handled = true;
         if (_timing.CurTime < ent.Comp.NextBloodDiveTime)
             return;
 
-        if (!Exists(args.Target))
+        if (!Exists(args.Target) || _mobState.IsDead(ent.Owner))
             return;
 
         var target = args.Target;
@@ -484,13 +654,19 @@ public sealed partial class BubblegumSystem : EntitySystem
             diveCoords = safeCoords;
         }
 
+        args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(args.PreDiveDelay + 0.25f));
+        _npc.SleepNPC(ent.Owner);
+
         Timer.Spawn(TimeSpan.FromSeconds(args.PreDiveDelay), () =>
         {
-            if (!Exists(ent.Owner))
+            if (!Exists(ent.Owner) || _mobState.IsDead(ent.Owner))
                 return;
 
             _transform.SetCoordinates(ent.Owner, diveCoords.Value);
             SpawnBloodPool(ent.Owner);
+            TriggerRage(ent.Owner, ent.Comp);
+            FinishAttackSequence(ent, target);
         });
 
         ent.Comp.NextBloodDiveTime = _timing.CurTime + TimeSpan.FromSeconds(ent.Comp.BloodDiveCooldown);
@@ -499,9 +675,23 @@ public sealed partial class BubblegumSystem : EntitySystem
     private EntityCoordinates? FindBloodDiveCoordinates(Entity<BubblegumBossComponent> ent, EntityCoordinates targetCoords,
         EntityUid mapUid, BubblegumBloodDiveActionEvent args)
     {
+        // Paradise only permits blood warp while Bubblegum is standing on a blood pool. Do not turn a rejected
+        // warp into a free random teleport; returning null lets the selector immediately try a charge instead.
+        var sourcePools = _lookup.GetEntitiesInRange<PuddleComponent>(Transform(ent).Coordinates, 1f)
+            .Where(p => HasBloodPuddle(p.Owner))
+            .ToList();
+        if (sourcePools.Count == 0)
+            return null;
+
+        var targetWorld = _transform.ToMapCoordinates(targetCoords).Position;
         var bloodPuddles = _lookup
             .GetEntitiesInRange<PuddleComponent>(targetCoords, args.DiveRange)
             .Where(p => HasBloodPuddle(p.Owner))
+            .Where(p =>
+            {
+                var distance = Vector2.Distance(targetWorld, _transform.GetWorldPosition(p.Owner));
+                return distance > Math.Max(0f, args.DiveRange - 1f) && distance <= args.DiveRange;
+            })
             .ToList();
 
         if (bloodPuddles.Count > 0)
@@ -510,14 +700,10 @@ public sealed partial class BubblegumSystem : EntitySystem
             var puddleCoords = Transform(selectedPuddle.Owner).Coordinates;
             var puddlePos = puddleCoords.Position;
             var tileCenter = GetTileCenter(mapUid, puddlePos);
-            return new EntityCoordinates(mapUid, tileCenter);
+            return WorldCoordinates(mapUid, tileCenter);
         }
 
-        var spawnPos = FindValidPositionNear(targetCoords, args.DiveRange);
-        if (spawnPos != null)
-            Spawn(ent.Comp.BloodEffect, spawnPos.Value);
-
-        return spawnPos;
+        return null;
     }
 
     #endregion
@@ -526,19 +712,17 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnPentagramDashAction(Entity<BubblegumBossComponent> ent, ref BubblegumPentagramDashActionEvent args)
     {
-        args.Handled = true;
-        if (ent.Comp.CurrentPhase != BubblegumPhase.Enraged)
+        if (ent.Comp.CurrentPhase != BubblegumPhase.Enraged ||
+            !Exists(args.Target) ||
+            _mobState.IsDead(ent.Owner))
             return;
 
+        args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(3));
         _npc.SleepNPC(ent.Owner);
         SpawnBloodPool(ent);
 
         var target = args.Target;
-        if (!Exists(target))
-        {
-            _npc.WakeNPC(ent.Owner);
-            return;
-        }
 
         var targetCoords = Transform(target).Coordinates;
         var mapUid = _transform.GetMap(ent.Owner);
@@ -564,7 +748,8 @@ public sealed partial class BubblegumSystem : EntitySystem
 
         Spawn(ent.Comp.DashMarker, markerCoords);
 
-        const int totalEntities = 5;
+        // Paradise's mass hallucination charge uses six positions: Bubblegum plus five hallucinations.
+        const int totalEntities = 6;
         var positions = GetCircularPositions(targetCoords, mapUid.Value, totalEntities, args.PlacementRadius);
         if (positions.Count < totalEntities)
         {
@@ -598,7 +783,7 @@ public sealed partial class BubblegumSystem : EntitySystem
             }
 
             StartIllusionDashForAll(illusions, targetCoords, damage);
-            PerformDash(ent, targetCoords, damage, 0.1f, true);
+            PerformDash(ent, targetCoords, ScaleDamage(damage, 2), 0.1f, true);
 
             Timer.Spawn(TimeSpan.FromSeconds(1.5f), () =>
             {
@@ -618,14 +803,14 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private void OnChaoticIllusionDashAction(Entity<BubblegumBossComponent> ent, ref BubblegumChaoticIllusionDashActionEvent args)
     {
-        args.Handled = true;
-        if (ent.Comp.CurrentPhase != BubblegumPhase.Enraged)
+        if (ent.Comp.CurrentPhase != BubblegumPhase.Enraged ||
+            !Exists(args.Target) ||
+            _mobState.IsDead(ent.Owner))
             return;
 
         var target = args.Target;
-        if (!Exists(target))
-            return;
-
+        args.Handled = true;
+        _npcActions.LockActions(ent.Owner, TimeSpan.FromSeconds(12));
         CleanupIllusions(ent.Owner);
 
         var action = args;
@@ -698,7 +883,7 @@ public sealed partial class BubblegumSystem : EntitySystem
             }
 
             StartChaoticIllusionAttacks(illusions, illusionMarkers, args.IllusionDamage);
-            PerformDash(ent, bossMarker, args.IllusionDamage, 0.1f, waveIndex == 4);
+            PerformDash(ent, bossMarker, ScaleDamage(args.IllusionDamage, 2), 0.1f, waveIndex == 4);
 
             Timer.Spawn(TimeSpan.FromSeconds(1f), () =>
             {
@@ -722,7 +907,7 @@ public sealed partial class BubblegumSystem : EntitySystem
         var markerPos = targetPos + offset;
         var centerPos = GetTileCenter(mapUid, markerPos);
 
-        return new EntityCoordinates(mapUid, centerPos);
+        return WorldCoordinates(mapUid, centerPos);
     }
 
     private List<EntityUid> SpawnChaoticIllusions(Entity<BubblegumBossComponent> ent, EntityUid target,
@@ -756,7 +941,7 @@ public sealed partial class BubblegumSystem : EntitySystem
                 var targetPos = _transform.GetWorldPosition(target);
                 var illusionPos = targetPos + offset;
                 var illusionTile = GetTileCenter(mapUid, illusionPos);
-                var illusionCoords = new EntityCoordinates(mapUid, illusionTile);
+                var illusionCoords = WorldCoordinates(mapUid, illusionTile);
 
                 if (!CanSpawnAt(illusionCoords) || illusionTile == bossTile)
                     continue;
@@ -860,7 +1045,7 @@ public sealed partial class BubblegumSystem : EntitySystem
         Vector2 startTile, Vector2 direction)
     {
         SpawnBloodPool(uid);
-        SpawnAttachedTo(bossComp.DashTrail, new EntityCoordinates(mapUid, startTile),
+        SpawnAttachedTo(bossComp.DashTrail, WorldCoordinates(mapUid, startTile),
             rotation: GetDirectionRotation(direction));
     }
 
@@ -872,7 +1057,7 @@ public sealed partial class BubblegumSystem : EntitySystem
 
         Timer.Spawn(TimeSpan.FromSeconds(currentStep * moveSpeed), () =>
         {
-            if (!Exists(uid))
+            if (!Exists(uid) || _mobState.IsDead(uid))
             {
                 if (currentStep == stepCounter.TotalSteps)
                     onComplete?.Invoke();
@@ -882,7 +1067,7 @@ public sealed partial class BubblegumSystem : EntitySystem
             var stepVector = direction * currentStep;
             var currentPos = startTile + stepVector;
             var tileCenter = GetTileCenter(mapUid, currentPos);
-            var currentCoords = new EntityCoordinates(mapUid, tileCenter);
+            var currentCoords = WorldCoordinates(mapUid, tileCenter);
 
             if (!IsValidSpawnPosition(currentCoords))
             {
@@ -1002,7 +1187,7 @@ public sealed partial class BubblegumSystem : EntitySystem
             var stepVector = direction * currentStep;
             var currentPos = startTile + stepVector;
             var tileCenter = GetTileCenter(mapUid, currentPos);
-            var currentCoords = new EntityCoordinates(mapUid, tileCenter);
+            var currentCoords = WorldCoordinates(mapUid, tileCenter);
 
             if (!IsValidSpawnPosition(currentCoords))
                 return;
@@ -1052,7 +1237,7 @@ public sealed partial class BubblegumSystem : EntitySystem
                 continue;
 
             comp.NextPassiveHandTime = _timing.CurTime + TimeSpan.FromSeconds(PassiveHandInterval);
-            var playersOnBlood = FindPlayersOnBlood(xform.Coordinates);
+            var playersOnBlood = FindPlayersOnBlood((uid, comp, xform));
 
             foreach (var player in playersOnBlood)
             {
@@ -1062,17 +1247,24 @@ public sealed partial class BubblegumSystem : EntitySystem
         }
     }
 
-    private HashSet<EntityUid> FindPlayersOnBlood(EntityCoordinates center)
+    private HashSet<EntityUid> FindPlayersOnBlood(Entity<BubblegumBossComponent, TransformComponent> boss)
     {
         var playersOnBlood = new HashSet<EntityUid>();
-        var bloodPuddles = _lookup.GetEntitiesInRange<PuddleComponent>(center, PassiveHandRadius);
+        PruneBloodPools(boss.Comp1);
+        var bossMap = _transform.GetMap(boss.Owner);
+        if (bossMap == null)
+            return playersOnBlood;
 
-        foreach (var puddle in bloodPuddles)
+        var bossPosition = _transform.GetWorldPosition(boss.Owner);
+        foreach (var puddle in boss.Comp1.ActiveBloodPools)
         {
-            if (!HasBloodPuddle(puddle.Owner))
+            if (_transform.GetMap(puddle) != bossMap ||
+                !HasBloodPuddle(puddle) ||
+                Vector2.DistanceSquared(bossPosition, _transform.GetWorldPosition(puddle)) >
+                PassiveHandRadius * PassiveHandRadius)
                 continue;
 
-            var puddleCoords = Transform(puddle.Owner).Coordinates;
+            var puddleCoords = Transform(puddle).Coordinates;
             var entitiesOnPuddle = _lookup.GetEntitiesInRange<ActorComponent>(puddleCoords, 0.5f, LookupFlags.Uncontained)
                 .Where(a => HasComp<MobStateComponent>(a.Owner) && !HasComp<GhostComponent>(a.Owner));
 
@@ -1086,19 +1278,61 @@ public sealed partial class BubblegumSystem : EntitySystem
     private void SpawnBloodHand(EntityUid target, BubblegumBossComponent comp)
     {
         var targetCoords = Transform(target).Coordinates;
-        var bloodPuddles = _lookup.GetEntitiesInRange<PuddleComponent>(targetCoords, 0.5f)
-            .Where(p => HasBloodPuddle(p.Owner))
-            .ToList();
+        Spawn(_random.Prob(0.5f) ? comp.LeftHandEffect : comp.RightHandEffect, targetCoords);
 
-        foreach (var puddle in bloodPuddles)
+        // Paradise resolves the hand four deciseconds after its warning. Relying on a very short-lived
+        // collision fixture made the SS14 version miss stationary players depending on broadphase timing.
+        Timer.Spawn(TimeSpan.FromSeconds(0.4f), () =>
         {
-            Spawn(comp.HandEffect, Transform(puddle.Owner).Coordinates);
-            if (_mobState.IsIncapacitated(target))
-                _gibbing.Gib(target);
+            if (!Exists(target) || _mobState.IsDead(target) || !IsStandingOnBlood(target))
+                return;
 
-            break;
+            if (_mobState.IsIncapacitated(target))
+            {
+                _gibbing.Gib(target);
+                return;
+            }
+
+            var damage = comp.CurrentPhase == BubblegumPhase.Enraged
+                ? comp.EnragedBloodHandDamage
+                : comp.BloodHandDamage;
+            _damage.TryChangeDamage(target, damage);
+        });
+    }
+
+    private void UpdatePassiveBloodWarp()
+    {
+        var query = EntityQueryEnumerator<BubblegumBossComponent, NPCUseActionsOnTargetComponent, HTNComponent>();
+        while (query.MoveNext(out var uid, out var boss, out var actions, out var htn))
+        {
+            if (_mobState.IsDead(uid) ||
+                _timing.CurTime < boss.NextBloodDiveAttemptTime ||
+                _timing.CurTime < boss.NextBloodDiveTime ||
+                _timing.CurTime < actions.ActionLockUntil)
+            {
+                continue;
+            }
+
+            boss.NextBloodDiveAttemptTime = _timing.CurTime + TimeSpan.FromSeconds(1);
+            if (!htn.Blackboard.TryGetValue<EntityUid>(boss.TargetKey, out var target, EntityManager) ||
+                !Exists(target) ||
+                !_random.Prob(boss.CurrentPhase == BubblegumPhase.Enraged ? 0.45f : 0.25f))
+            {
+                continue;
+            }
+
+            var warp = new BubblegumBloodDiveActionEvent
+            {
+                Performer = uid,
+                Target = target,
+            };
+            OnBloodDiveAction((uid, boss), ref warp);
         }
     }
+
+    private bool IsStandingOnBlood(EntityUid target)
+        => _lookup.GetEntitiesInRange<PuddleComponent>(Transform(target).Coordinates, 0.5f)
+            .Any(puddle => HasBloodPuddle(puddle.Owner));
 
     private bool HasBloodPuddle(EntityUid uid)
     {
@@ -1133,30 +1367,39 @@ public sealed partial class BubblegumSystem : EntitySystem
         var centerPos = _transform.GetWorldPosition(uid);
         var centerTile = GetTileCenter(mapUid.Value, centerPos);
 
-        for (int x = -1; x <= 1; x++)
-        {
-            for (int y = -1; y <= 1; y++)
-            {
-                TrySpawnBloodPoolAt(uid, comp, mapUid.Value, centerTile, x, y);
-            }
-        }
+        // One puddle per occupied tile is enough to communicate the dash trail. The previous 3x3 burst
+        // multiplied every dash step into nine solution/container entities and caused increasingly large
+        // lookup spikes during a fight.
+        TrySpawnBloodPoolAt(comp, mapUid.Value, centerTile);
     }
 
-    private void TrySpawnBloodPoolAt(EntityUid uid, BubblegumBossComponent comp, EntityUid mapUid,
-        Vector2 centerTile, int x, int y)
+    private void TrySpawnBloodPoolAt(BubblegumBossComponent comp, EntityUid mapUid, Vector2 centerTile)
     {
-        var bloodPos = centerTile + new Vector2(x, y);
-        var bloodCoords = new EntityCoordinates(mapUid, bloodPos);
+        var bloodCoords = WorldCoordinates(mapUid, centerTile);
 
-        if (!IsValidMapPosition(mapUid, bloodPos))
+        if (!IsValidMapPosition(mapUid, centerTile))
             return;
 
         var existingPuddles = _lookup.GetEntitiesInRange<PuddleComponent>(bloodCoords, 0.1f);
         var hasBlood = existingPuddles.Any(p => HasBloodPuddle(p.Owner));
 
-        if (!hasBlood)
-            Spawn(comp.BloodEffect, bloodCoords);
+        if (hasBlood)
+            return;
+
+        comp.ActiveBloodPools.Add(Spawn(comp.BloodEffect, bloodCoords));
+        PruneBloodPools(comp);
+
+        while (comp.ActiveBloodPools.Count > Math.Max(1, comp.MaximumBloodPools))
+        {
+            var oldest = comp.ActiveBloodPools[0];
+            comp.ActiveBloodPools.RemoveAt(0);
+            if (Exists(oldest))
+                QueueDel(oldest);
+        }
     }
+
+    private void PruneBloodPools(BubblegumBossComponent comp)
+        => comp.ActiveBloodPools.RemoveAll(puddle => !Exists(puddle));
 
     #endregion
 
@@ -1279,33 +1522,30 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private bool CanSpawnAt(EntityCoordinates coords)
     {
-        var gridUid = _transform.GetGrid(coords);
-        if (gridUid == null)
+        var mapCoordinates = _transform.ToMapCoordinates(coords);
+        if (!_map.TryFindGridAt(mapCoordinates, out var gridUid, out var grid))
             return false;
 
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return false;
-
-        var tilePos = _map.CoordinatesToTile(gridUid.Value, grid, coords);
-        if (!_map.TryGetTileRef(gridUid.Value, grid, tilePos, out var tileRef))
+        var gridCoordinates = _transform.ToCoordinates(gridUid, mapCoordinates);
+        var tilePos = _map.CoordinatesToTile(gridUid, grid, gridCoordinates);
+        if (!_map.TryGetTileRef(gridUid, grid, tilePos, out var tileRef))
             return false;
 
         return !_turf.IsTileBlocked(tileRef, CollisionGroup.Impassable);
     }
 
     private Vector2 GetTileCenter(EntityUid mapUid, Vector2 position)
+        => GetTileCenter(Transform(mapUid).MapID, position);
+
+    private Vector2 GetTileCenter(MapId mapId, Vector2 position)
     {
-        var coordinates = new EntityCoordinates(mapUid, position);
-        var gridUid = _transform.GetGrid(coordinates);
+        var mapCoordinates = new MapCoordinates(position, mapId);
+        if (!_map.TryFindGridAt(mapCoordinates, out var gridUid, out var grid))
+            return position;
 
-        if (gridUid == null)
-            return FindNearestValidPosition(mapUid, position);
-
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return FindNearestValidPosition(mapUid, position);
-
-        var tilePos = _map.CoordinatesToTile(gridUid.Value, grid, coordinates);
-        return _map.GridTileToWorld(gridUid.Value, grid, tilePos).Position;
+        var gridCoordinates = _transform.ToCoordinates(gridUid, mapCoordinates);
+        var tilePos = _map.CoordinatesToTile(gridUid, grid, gridCoordinates);
+        return _map.GridTileToWorld(gridUid, grid, tilePos).Position;
     }
 
     private float GetHealthRatio(EntityUid uid)
@@ -1319,17 +1559,13 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private bool IsValidMapPosition(EntityUid mapUid, Vector2 position)
     {
-        var coordinates = new EntityCoordinates(mapUid, position);
-        var gridUid = _transform.GetGrid(coordinates);
-
-        if (gridUid == null)
+        var mapCoordinates = new MapCoordinates(position, Transform(mapUid).MapID);
+        if (!_map.TryFindGridAt(mapCoordinates, out var gridUid, out var grid))
             return false;
 
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return false;
-
-        var tilePos = _map.CoordinatesToTile(gridUid.Value, grid, coordinates);
-        if (!_map.TryGetTileRef(gridUid.Value, grid, tilePos, out var tileRef))
+        var gridCoordinates = _transform.ToCoordinates(gridUid, mapCoordinates);
+        var tilePos = _map.CoordinatesToTile(gridUid, grid, gridCoordinates);
+        if (!_map.TryGetTileRef(gridUid, grid, tilePos, out var tileRef))
             return false;
 
         return !_turf.IsTileBlocked(tileRef, CollisionGroup.Impassable);
@@ -1337,19 +1573,13 @@ public sealed partial class BubblegumSystem : EntitySystem
 
     private bool IsValidSpawnPosition(EntityCoordinates coords)
     {
-        var mapUid = _transform.GetMap(coords);
-        if (mapUid == null)
+        var mapCoordinates = _transform.ToMapCoordinates(coords);
+        if (!_map.TryFindGridAt(mapCoordinates, out var gridUid, out var grid))
             return false;
 
-        var gridUid = _transform.GetGrid(coords);
-        if (gridUid == null)
-            return false;
-
-        if (!TryComp<MapGridComponent>(gridUid, out var grid))
-            return false;
-
-        var tilePos = _map.CoordinatesToTile(gridUid.Value, grid, coords);
-        if (!_map.TryGetTileRef(gridUid.Value, grid, tilePos, out var tileRef))
+        var gridCoordinates = _transform.ToCoordinates(gridUid, mapCoordinates);
+        var tilePos = _map.CoordinatesToTile(gridUid, grid, gridCoordinates);
+        if (!_map.TryGetTileRef(gridUid, grid, tilePos, out var tileRef))
             return false;
 
         return !_turf.IsTileBlocked(tileRef, CollisionGroup.Impassable);
@@ -1368,7 +1598,7 @@ public sealed partial class BubblegumSystem : EntitySystem
                 var rad = MathF.PI * angle / 180f;
                 var offset = new Vector2(MathF.Cos(rad), MathF.Sin(rad)) * radius;
                 var testPos = original.Position + offset;
-                var testCoords = new EntityCoordinates(mapUid.Value, testPos);
+                var testCoords = WorldCoordinates(mapUid.Value, testPos);
 
                 if (IsValidSpawnPosition(testCoords))
                     return testCoords;
@@ -1387,7 +1617,7 @@ public sealed partial class BubblegumSystem : EntitySystem
                 continue;
 
             var gridCenter = _transform.GetWorldPosition(gridUid);
-            var coords = new EntityCoordinates(mapUid, gridCenter);
+            var coords = WorldCoordinates(mapUid, gridCenter);
 
             if (IsValidSpawnPosition(coords))
                 return coords;
@@ -1415,7 +1645,7 @@ public sealed partial class BubblegumSystem : EntitySystem
                     var offset = new Vector2(MathF.Cos(rad), MathF.Sin(rad)) * radius;
                     var testPos = worldBounds + offset;
 
-                    var testCoords = new EntityCoordinates(mapUid, testPos);
+                    var testCoords = WorldCoordinates(mapUid, testPos);
                     if (CanSpawnAt(testCoords))
                         return testPos;
                 }
@@ -1451,6 +1681,39 @@ public sealed partial class BubblegumSystem : EntitySystem
             : Vector2.Normalize(vector);
     }
 
+    private EntityCoordinates WorldCoordinates(EntityUid mapUid, Vector2 worldPosition)
+    {
+        var mapCoordinates = new MapCoordinates(worldPosition, Transform(mapUid).MapID);
+
+        // Map-relative coordinates are suitable for free-floating entities, but effects such as puddles
+        // anchor themselves during initialization. Give every attack effect grid-relative coordinates when
+        // there is a grid under the requested world position so anchoring, lookup and collision all agree.
+        if (_map.TryFindGridAt(mapCoordinates, out var gridUid, out _))
+            return _transform.ToCoordinates(gridUid, mapCoordinates);
+
+        return _transform.ToCoordinates(mapCoordinates);
+    }
+
+    private static DamageSpecifier ScaleDamage(DamageSpecifier damage, int multiplier)
+    {
+        return new DamageSpecifier(damage)
+        {
+            DamageDict = damage.DamageDict.ToDictionary(
+                entry => entry.Key,
+                entry => entry.Value * multiplier)
+        };
+    }
+
+    private void FinishAttackSequence(Entity<BubblegumBossComponent> boss, EntityUid target)
+    {
+        if (!Exists(boss.Owner) || _mobState.IsDead(boss.Owner))
+            return;
+
+        _npc.WakeNPC(boss.Owner);
+        if (Exists(target))
+            SetHTNTarget(boss, target);
+    }
+
     private void SetHTNTarget(Entity<BubblegumBossComponent> boss, EntityUid target)
     {
         if (!TryComp<HTNComponent>(boss, out var htn))
@@ -1463,6 +1726,12 @@ public sealed partial class BubblegumSystem : EntitySystem
     }
 
     #endregion
+
+    private sealed record BubblegumArenaSession(
+        EntityCoordinates ReturnAnchor,
+        Dictionary<EntityUid, EntityCoordinates> Participants,
+        EntityUid? ArenaMap,
+        EntityUid? ArenaGrid);
 
     private sealed class StepCounter
     {

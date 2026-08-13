@@ -43,6 +43,7 @@ public sealed partial class GunUpgradeSystem : EntitySystem
 
         SubscribeLocalEvent<UpgradeableWeaponComponent, EntInsertedIntoContainerMessage>(OnUpgradeInserted);
         SubscribeLocalEvent<UpgradeableWeaponComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttemptEvent);
+        SubscribeLocalEvent<WeaponTrophySlotComponent, ItemSlotInsertAttemptEvent>(OnTrophySlotInsertAttempt);
         SubscribeLocalEvent<UpgradeableWeaponComponent, ExaminedEvent>(OnExamine);
 
         SubscribeLocalEvent<UpgradeableWeaponComponent, GunRefreshModifiersEvent>(RelayEvent);
@@ -154,6 +155,33 @@ public sealed partial class GunUpgradeSystem : EntitySystem
             args.Cancelled = true;
             return;
         }
+    }
+
+    private void OnTrophySlotInsertAttempt(Entity<WeaponTrophySlotComponent> ent, ref ItemSlotInsertAttemptEvent args)
+    {
+        if (!HasComp<CrusherTrophyComponent>(args.Item) ||
+            !TryComp<ItemSlotsComponent>(ent, out var itemSlots))
+        {
+            return;
+        }
+
+        ItemSlot? trophySlot = null;
+        foreach (var (slotId, slot) in itemSlots.Slots)
+        {
+            if (slotId != ent.Comp.SlotId)
+                continue;
+
+            trophySlot = slot;
+            break;
+        }
+
+        if (trophySlot == null)
+            return;
+
+        // Trophies are deliberately exclusive to this slot. Their existing blade/handle
+        // tags remain useful for sprite and legacy data inheritance, but cannot bypass it.
+        if (!ReferenceEquals(args.Slot, trophySlot))
+            args.Cancelled = true;
     }
 
     /// <summary>

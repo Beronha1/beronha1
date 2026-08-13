@@ -149,6 +149,7 @@ ntr-console-no-solution = Could not find solution {$solutionName} on the vial.
 ntr-console-missing-reagent = Vial is missing reagent {$reagent}.
 ntr-console-insufficient-reagent-debug = Insufficient reagent. Required: {$requiredReagent}, Found: {$actualReagent}. Required amount: {$required}, Actual amount: {$actual}.
 ntr-console-task-fail = Task failed to load.
+ntr-console-invalid-reagent-proto = Unknown reagent prototype: {$reagentId}.
 
 ntr-bounty-console-menu-title = NTR task console
 ntr-bounty-console-print-button = Accept

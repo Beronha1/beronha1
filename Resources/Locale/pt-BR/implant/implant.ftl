@@ -14,6 +14,7 @@ implanter-set-draw-type = Tipo de implante:
 
 implanter-draw-text = Retirar
 implanter-inject-text = Injetar
+injector-invalid-injector-toggle-mode = Modo de implante inválido
 
 implanter-empty-text = Vazio
 

@@ -16,6 +16,7 @@ time-transfer-panel-warning-group-no-time = Tempo do grupo está vazio
 time-transfer-panel-warning-add-success = Tempo adicionado com sucesso
 time-transfer-panel-warning-set-success = Tempo sobrescrito com sucesso
 time-transfer-panel-warning-transfer-process = Transferência de tempo em andamento...
+time-transfer-panel-warning-no-perms = Você não tem permissão para transferir tempo de jogo
 time-transfer-panel-checkbox-group = Grupo
 time-transfer-overall-checkbox = Geral
 time-transfer-panel-search-placeholder = Procurar cargos

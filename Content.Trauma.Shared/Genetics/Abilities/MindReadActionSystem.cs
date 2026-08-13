@@ -87,7 +87,7 @@ public sealed partial class MindReadActionSystem : EntitySystem
             var alsoEvil = _evil.IsEvil(user);
             var key = alsoEvil ? "also" : "not";
             Color? color = alsoEvil ? Color.Red : null; // if you are evil too this isn't scary...
-            Tell(channel, Loc.GetString("MutationMindReader-popup-target-evil"), color);
+            Tell(channel, Loc.GetString("MutationMindReader-popup-target-evil", ("target", identity)), color);
             Tell(channel, Loc.GetString($"MutationMindReader-popup-{key}-evil"), color);
         }
 

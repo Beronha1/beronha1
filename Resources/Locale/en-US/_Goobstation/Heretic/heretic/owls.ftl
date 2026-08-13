@@ -6,3 +6,4 @@ feast-of-owls-title = Feast of Owls
 feast-of-owls-text = Do you really want to forsake your ascension? This action cannot be reverted.
 feast-of-owls-accept-button = Yes I'm sure
 feast-of-owls-deny-button = No
+feast-of-owls-eui-far-away = You are too far away from the rune.

@@ -22,7 +22,7 @@ public sealed partial class LockEyesCommand : LocalizedEntityCommands
 
         if (!bool.TryParse(args[0], out var value))
         {
-            shell.WriteError(Loc.GetString("parse-bool-fail", ("args", args[0])));
+            shell.WriteError(Loc.GetString("parse-bool-fail", ("arg", args[0])));
             return;
         }
 

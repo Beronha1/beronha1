@@ -7,11 +7,50 @@ using Robust.Shared.GameStates;
 
 namespace Content.Lavaland.Shared.Weapons.Upgrades;
 
+/// <summary>
+/// Declares the dedicated trophy slot on a kinetic crusher.
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class WeaponTrophySlotComponent : Component
+{
+    [DataField]
+    public string SlotId = "trophy_slot";
+}
+
+/// <summary>
+/// Marker for boss trophies. Trophy effects are still implemented as normal GunUpgrade relays.
+/// </summary>
+[RegisterComponent, NetworkedComponent]
+public sealed partial class CrusherTrophyComponent : Component;
+
 [RegisterComponent, NetworkedComponent, Access(typeof(CrusherUpgradeEffectsSystem))]
 public sealed partial class CrusherLegionSkullUpgradeComponent : Component
 {
     [DataField]
     public float FireRateCoefficient = 1.3f;
+
+    [DataField]
+    public TimeSpan RaiseCooldown = TimeSpan.FromSeconds(60);
+
+    [DataField]
+    public EntProtoId RaiseEffect = "LightningCrackleNeutral";
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? ActiveAlly;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan NextRaise;
+}
+
+/// <summary>
+/// Prevents fauna raised by one Legion trophy from being recycled through
+/// additional crushers. The master is retained for administration/debugging.
+/// </summary>
+[RegisterComponent]
+public sealed partial class LegionTrophyRaisedAllyComponent : Component
+{
+    [DataField]
+    public EntityUid? Master;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(CrusherUpgradeEffectsSystem))]
@@ -83,6 +122,19 @@ public sealed partial class CrusherAshDrakeSpikeUpgradeComponent : Component
 
     [DataField]
     public float DamageMultiplier = 0.4f;
+
+    [DataField]
+    public float HeatImmunityDuration = 4f;
+}
+
+[RegisterComponent, NetworkedComponent, Access(typeof(CrusherUpgradeEffectsSystem))]
+public sealed partial class CrusherIceBlockTalismanUpgradeComponent : Component
+{
+    [DataField]
+    public TimeSpan FreezeDuration = TimeSpan.FromSeconds(4);
+
+    [DataField]
+    public EntProtoId EffectPrototype = "EffectCrusherIceBlock";
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(CrusherUpgradeEffectsSystem))]
@@ -106,6 +158,12 @@ public sealed partial class CrusherBlasterTubesUpgradeComponent : Component
 
     [DataField]
     public float ProjectileSpeedCoefficient = 1.25f;
+
+    [DataField]
+    public float ShockwaveRadius = 3f;
+
+    [DataField]
+    public float ShockwaveDamageMultiplier = 0.5f;
 }
 
 [RegisterComponent, NetworkedComponent, Access(typeof(CrusherUpgradeEffectsSystem))]

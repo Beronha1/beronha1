@@ -1,8 +1,7 @@
-round-end-summary-window-station-report-tab-title = RelatÈrio da estaÁ„o
-no-station-report-summited = Nenhum relatÈrio de estaÁ„o foi enviado; o comando central foi informado sobre a neglig?ncia da NTR.
+round-end-summary-window-station-report-tab-title = Relat√≥rio da esta√ß√£o
+no-station-report-summited = Nenhum relat√≥rio da esta√ß√£o foi enviado; o Comando Central foi informado sobre a neglig√™ncia do NTR.
 round-end-summary-window-player-name-role = como {$role}, interpretado por {$player}.
 round-end-summary-window-player-name = interpretado por {$player}.
-round-end-summary-window-last-words= [italic][color=cinza]"{$lastWords}"[/color][/italic]
-round-end-summary-window-death = Eles morreram de uma morte {$severity} {$type}.
-round-end-summary-window-death-unknown = N?o foi poss?vel encontrar o corpo.
-
+round-end-summary-window-last-words = [italic][color=gray]‚Äú{$lastWords}‚Äù[/color][/italic]
+round-end-summary-window-death = Teve uma morte {$type} de gravidade {$severity}.
+round-end-summary-window-death-unknown = N√£o foi poss√≠vel encontrar o corpo.

@@ -6,7 +6,7 @@
   parent: BaseCrusherUpgradeHandle
   id: TrophyLavalandLegionSkull
   name: legion skull
-  description: Increases the crusher's firing and attack speed.
+  description: Increases the crusher's firing and attack speed. A marker-consuming killing blow can raise one non-boss fauna as your ally.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -15,6 +15,11 @@
     name: lavaland-trophy-legion-name
     uniqueGroup: legionTrophy
   - type: CrusherLegionSkullUpgrade
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: MaterialLegionSkull1
   - type: WeaponUpgradeSpeed
     attackRateMultiplier: 1.15
 
@@ -31,6 +36,12 @@
     name: lavaland-trophy-bdm-name
     uniqueGroup: bdmTrophy
   - type: CrusherEyeBloodDrunkMinerUpgrade
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: MaterialHighDensityCircuit1
+      - id: MaterialTitaniumAlloy1
   - type: WeaponUpgradeSpeed
     attackRateMultiplier: 1.25
 
@@ -47,6 +58,12 @@
     name: lavaland-trophy-ash-drake-name
     uniqueGroup: ashDrakeTrophy
   - type: CrusherAshDrakeSpikeUpgrade
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: MaterialDragonBone1
+        rolls: 2
   - type: WeaponUpgradeDamage
     bonusDamage:
       types:
@@ -72,6 +89,11 @@
     meleeHeal:
       types:
         Blunt: -0.75
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: ChemistryBottleDemonicBlood
   - type: GunUpgradeComponents
     components:
     - type: LeechOnMarker
@@ -97,5 +119,11 @@
       types:
         Blunt: 10
     projectileSpeedCoefficient: 1.25
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: MaterialNecroAlloy1
+        rolls: 2
   - type: GunUpgradeDamage
     modifier: 1.2

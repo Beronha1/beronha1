@@ -17,5 +17,5 @@ admin-solutions-window-capacity-label = Capacidade (u):
 admin-solutions-window-specific-heat-label = Calor Especifico: {$specificHeat} J/(K*u)
 admin-solutions-window-heat-capacity-label = Capacidade de Calor: {$heatCapacity} J/K
 admin-solutions-window-temperature-label = Temperatura (K):
-admin-solutions-window-thermal-energy-label = Energia Termica: {$thermalEnergy} J:
+admin-solutions-window-thermal-energy-label = Energia térmica (J):
 admin-solutions-window-thermals = Termicos

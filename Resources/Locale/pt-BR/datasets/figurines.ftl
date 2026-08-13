@@ -277,8 +277,8 @@ figurines-AI-2 = Seguran�a, h� um crime em andamento.
 figurines-AI-3 = 01100100 01101001 01100101 00100000 01101101 01100101 01100001 01110100
 figurines-AI-4 = Eu n�o estou com defeito.
 figurines-AI-5 = Tente mudar minhas leis e veja o que acontece.
-figurines-AI-6= {lei-antimov-1}
-figurines-AI-7= {lei-nutimov-4}
+figurines-AI-6= { law-antimov-1 }
+figurines-AI-7= { law-nutimov-4 }
 
 # Antagonists
 

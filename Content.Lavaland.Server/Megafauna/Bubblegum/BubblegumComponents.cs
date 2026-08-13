@@ -3,6 +3,7 @@
 
 using Content.Shared.Actions.Components;
 using Content.Shared.Damage;
+using Content.Shared.Maps;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Prototypes;
@@ -34,7 +35,37 @@ public sealed partial class BubblegumBossComponent : Component
     public TimeSpan NextBloodDiveTime;
 
     [ViewVariables]
+    public TimeSpan NextBloodDiveAttemptTime;
+
+    [ViewVariables]
     public TimeSpan NextPassiveHandTime;
+
+    /// <summary>
+    /// Paradise-inspired second encounter. The first body is a transition only; rewards belong to the second life.
+    /// </summary>
+    [DataField]
+    public bool EnableSecondLife = true;
+
+    [DataField]
+    public bool SecondLife;
+
+    [DataField]
+    public EntProtoId SecondLifePrototype = "LavalandBossBubblegumSecondLife";
+
+    [DataField]
+    public float SecondLifeCaptureRadius = 18f;
+
+    [DataField]
+    public int ArenaRadius = 12;
+
+    [DataField]
+    public ProtoId<ContentTileDefinition> ArenaFloor = "FloorBasaltLavaland";
+
+    [DataField]
+    public EntProtoId ArenaWall = "WallNecropolisIndestructible";
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool TransitionStarted;
 
     [DataField]
     public float BloodDiveCooldown = 25f;
@@ -60,14 +91,39 @@ public sealed partial class BubblegumBossComponent : Component
     [DataField]
     public EntProtoId DashMarker = "EffectMegaFaunaMarker";
 
+    [ViewVariables]
+    public EntityUid? LastDashMarker;
+
+    [ViewVariables]
+    public string LastDashStatus = "idle";
+
     [DataField]
     public EntProtoId DashTrail = "EffectBubblegumDashTrail";
 
     [DataField]
-    public EntProtoId HandEffect = "EffectBubblegumHandIn";
+    public EntProtoId LeftHandEffect = "EffectBubblegumHandLeft";
+
+    [DataField]
+    public EntProtoId RightHandEffect = "EffectBubblegumHandRight";
+
+    [DataField(required: true)]
+    public DamageSpecifier BloodHandDamage = new();
+
+    [DataField(required: true)]
+    public DamageSpecifier EnragedBloodHandDamage = new();
 
     [DataField]
     public SoundSpecifier DashSound = new SoundCollectionSpecifier("FootstepThud");
+
+    /// <summary>
+    /// Hard cap for blood decals created by this boss. Dash trails otherwise create an ever-growing
+    /// number of puddles which makes the passive hand scan progressively more expensive.
+    /// </summary>
+    [DataField]
+    public int MaximumBloodPools = 48;
+
+    [ViewVariables]
+    public List<EntityUid> ActiveBloodPools = new();
 
     /// <summary>
     /// HTN blackboard key for the target entity

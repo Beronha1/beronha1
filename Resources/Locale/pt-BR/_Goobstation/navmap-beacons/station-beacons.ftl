@@ -4,6 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-station-beacon-centcomm-office = Escrit�rio do Comando Central
+station-beacon-centcomm-office = Escritório do Comando Central
 
-station-beacon-radio-station = R�dio
+station-beacon-radio-station = Estação de rádio

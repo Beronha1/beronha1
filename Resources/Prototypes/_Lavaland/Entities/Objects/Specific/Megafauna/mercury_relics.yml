@@ -1,0 +1,149 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Mechanics reimplemented for Whiskey from the reward concepts in Goobstation PR #6542.
+# Imported media attribution remains in each RSI's meta.json.
+
+- type: entity
+  parent: BaseItem
+  id: SpiderMercuryEtherDrinker
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Devices/mercury.rsi
+    state: ether_drinker
+  - type: Item
+    size: Small
+  - type: PointLight
+    radius: 2
+    energy: 1.5
+    color: "#31e5ff"
+  - type: UseDelay
+    delay: 300
+  - type: MercuryEtherDrinker
+  - type: RadiationReceiver
+  - type: HeldGrantComponent
+    components:
+    - type: ORTLightningImmune
+  - type: StaticPrice
+    price: 5000
+  - type: Construction
+    graph: SpiderMercuryEtherDrinkerConstructionGraph
+    node: etherDrinker
+
+- type: entity
+  parent: BaseItem
+  id: SpiderMercuryParadoxCanceller
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Devices/mercury.rsi
+    state: paradox_canceller
+  - type: Item
+    size: Small
+  - type: PointLight
+    radius: 1.5
+    energy: 1
+    color: "#ae00ff"
+  - type: UseDelay
+    delay: 60
+  - type: MercuryParadoxCanceller
+  - type: StaticPrice
+    price: 6000
+  - type: Construction
+    graph: SpiderMercuryParadoxCancellerConstructionGraph
+    node: paradoxCanceller
+
+- type: entity
+  id: MercuryParadoxAnchorEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    sprite: Mobs/Aliens/paradox_clone.rsi
+    state: paradox
+    drawdepth: Effects
+    color: "#b756ff99"
+    noRot: true
+  - type: PointLight
+    radius: 2
+    energy: 1
+    color: "#ae00ff"
+  - type: TimedDespawn
+    lifetime: 5.2
+
+- type: entity
+  parent: BaseItem
+  id: SpiderMercuryRadiantShield
+  components:
+  - type: ItemToggle
+    predictable: false
+    soundActivate:
+      path: /Audio/Weapons/ebladeon.ogg
+    soundDeactivate:
+      path: /Audio/Weapons/ebladeoff.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: ItemToggleActiveSound
+    activeSound:
+      path: /Audio/Weapons/ebladehum.ogg
+  - type: ItemToggleSize
+    activatedSize: Huge
+  - type: ComponentToggler
+    components:
+    - type: DisarmMalus
+      malus: 1
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/Shields/mercury.rsi
+    layers:
+    - state: rshield-icon
+    - state: rshield-on
+      visible: false
+      shader: unshaded
+      map: [ "shield" ]
+  - type: Item
+    size: Small
+    sprite: _Lavaland/Objects/Weapons/Melee/Shields/mercury.rsi
+    heldPrefix: rshield
+  - type: UseDelay
+    delay: 0.4
+  - type: ToggleableVisuals
+    spriteLayer: shield
+    inhandVisuals:
+      left:
+      - state: inhand-left-shield
+        shader: unshaded
+      right:
+      - state: inhand-right-shield
+        shader: unshaded
+  - type: PointLight
+    netsync: false
+    enabled: false
+    radius: 3
+    energy: 2
+    color: gold
+  - type: ItemTogglePointLight
+  - type: Reflect
+    reflectProb: 0.6
+    reflects: [ Energy, Magic, NonEnergy ]
+  - type: Blocking
+    passiveBlockModifier:
+      coefficients:
+        Blunt: 1
+        Slash: 0.9
+        Piercing: 0.85
+        Heat: 0.6
+    activeBlockModifier:
+      coefficients:
+        Blunt: 1.2
+        Slash: 0.85
+        Piercing: 0.5
+        Heat: 0.4
+      flatReductions:
+        Heat: 1
+        Piercing: 1
+  - type: Appearance
+  - type: Damageable
+    damageContainer: Shield
+  - type: StaticPrice
+    price: 7000
+  - type: Construction
+    graph: SpiderMercuryRadiantShieldConstructionGraph
+    node: radiantShield

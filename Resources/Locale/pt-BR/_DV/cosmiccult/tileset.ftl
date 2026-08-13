@@ -5,5 +5,6 @@ tiles-cosmiccult-floor-notched = superficie em padrao de rebaixo maligna
 tiles-cosmiccult-floor-split = superficie em padrao dividido maligna
 
 tiles-cosmiccult-floor-void = superficie do piso vazio
+tiles-cosmiccult-floor-void-unremovable = superfície de piso vazio irremovível
 tiles-cosmiccult-floor-malign = superficie maligna
 

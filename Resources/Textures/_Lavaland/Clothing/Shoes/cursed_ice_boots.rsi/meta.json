@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Ice hiking boot item and worn frames used by /tg/station's cursed ice-trail subtype, taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/clothing/shoes.dmi and icons/mob/clothing/feet.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "icon" },
+    { "name": "equipped-FEET", "directions": 4 }
+  ]
+}

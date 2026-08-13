@@ -8,3 +8,6 @@
 mindshield-implant-effect-removed = Você sente uma dor agonizante enquanto sua perspectiva muda e sua visão se amplia quase instantaneamente.
 nanite-mend-popup = Você sente um calor vívido se espalhar por todo o seu corpo.
 
+deathrattle-implant-dead-message = {$user} morreu {$position}.
+deathrattle-implant-critical-message = Os sinais vitais de {$user} estão críticos; assistência imediata é necessária {$position}.
+

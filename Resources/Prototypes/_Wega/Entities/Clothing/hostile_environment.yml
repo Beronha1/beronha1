@@ -18,14 +18,17 @@
         Blunt: 0.3
         Slash: 0.3
         Piercing: 0.6
-        Heat: 0.9
+        Heat: 0
+        Caustic: 0.1
   - type: ExplosionResistance
     damageCoefficient: 0.5
   - type: FireProtection
     reduction: 0.5
   - type: TemperatureProtection
-    heatingCoefficient: 0.4
+    heatingCoefficient: 0.05
     coolingCoefficient: 0.4
+  - type: DragonArmor
+  - type: HeckSuit
   - type: PressureArmorChange
 
 - type: entity
@@ -49,4 +52,16 @@
   - type: EyeProtection
     protectionTime: 5
   - type: FlashImmunity
+  - type: WearableMegafaunaHarvester
+    inventorySlot: head
+    toolQualities: [ Slicing, Sawing ]
+    speedModifier: 2
+    completionHeal:
+      types:
+        Blunt: -15
+        Slash: -15
+        Piercing: -15
+        Heat: -15
+        Poison: -15
+  - type: HeckHelmet
   - type: PressureArmorChange

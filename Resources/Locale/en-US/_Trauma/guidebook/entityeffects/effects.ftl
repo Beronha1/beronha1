@@ -53,7 +53,7 @@ entity-effect-guidebook-remove-marking = { $chance ->
 
 entity-effect-guidebook-speak = Causes involuntary speech
 
-entity-effect-guidebook-scale-entity = Scales the target's size by ({$x}, {y})
+entity-effect-guidebook-scale-entity = Scales the target's size by ({$x}, {$y})
 
 entity-effect-guidebook-attack-self = {$chance ->
     [1] makes
@@ -111,3 +111,48 @@ entity-effect-guidebook-heal-bone-damage = { $chance ->
      [1] heals
      *[other] heal
 } {NATURALFIXED($amount, 2)} bone damage
+
+entity-effect-guidebook-detach-part = { $chance ->
+    [1] Detaches
+    *[other] detach
+} the target from its parent body part
+entity-effect-guidebook-emp-reaction-effect = { $chance ->
+    [1] Creates
+    *[other] create
+} an electromagnetic pulse
+entity-effect-guidebook-flash-reaction-effect = { $chance ->
+    [1] Creates
+    *[other] create
+} a blinding flash
+entity-effect-guidebook-gib = { $chance ->
+    [1] Gibs
+    *[other] gib
+} the target
+entity-effect-guidebook-random-polymorph = { $chance ->
+    [1] Polymorphs
+    *[other] polymorph
+} the target into a random form
+entity-effect-guidebook-regenerate-part = { $chance ->
+    [1] Regenerates
+    *[other] regenerate
+} the target's {$slot} organ
+entity-effect-guidebook-relay-mutated = { $chance ->
+    [1] Relays
+    *[other] relay
+} {$effect} to the mutation target
+entity-effect-guidebook-relay-puller = { $chance ->
+    [1] Relays
+    *[other] relay
+} {$effect} to the entity pulling the target
+entity-effect-guidebook-remove-snares = { $chance ->
+    [1] Removes
+    *[other] remove
+} snares from the target
+entity-effect-guidebook-revert-polymorph = { $chance ->
+    [1] Reverts
+    *[other] revert
+} the target's polymorph
+entity-effect-paint-target-guidebook-text = { $chance ->
+    [1] Paints
+    *[other] paint
+} the target

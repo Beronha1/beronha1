@@ -6,6 +6,8 @@ foldable-unfold-fail = Você não pode desdobrar o {$object} aqui.
 foldable-deploy-fail = Você não pode implantar o {$object} aqui.
 fold-verb = Dobrar
 unfold-verb = Desdobrar
+fold-rollsleeves-verb = Arregaçar as mangas
+fold-unrollsleeves-verb = Desenrolar as mangas
 
 fold-flip-verb = Virar
 

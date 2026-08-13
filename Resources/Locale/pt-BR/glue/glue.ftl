@@ -8,7 +8,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-glue-success= {CAITALIZE(THE($target))} foi coberto de cola!
+glue-success= {CAPITALIZE(THE($target))} foi coberto de cola!
 glued-name-prefix =colado {$baseName}
 glue-failure = Não é possível cobrir {THE($target)} com cola!
 glue-verb-text = Aplicar cola

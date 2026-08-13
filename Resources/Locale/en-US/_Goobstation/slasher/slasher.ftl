@@ -30,6 +30,7 @@ slasher-massacre-limb = A powerful hit lands!
 
 slasher-incorporealize-fail-seen = You cannot incorporealize while being watched!
 slasher-corporealize-fail-camera = You cannot corporealize when there's a camera watching!
+slasher-corporealize-fail-seen = You cannot corporealize while being watched!
 slasher-corporealize-fail-nearby = You cannot corporealize while someone is nearby!
 slasher-corporealize-fail-inside-wall = You cannot corporealize while near a solid object!
 

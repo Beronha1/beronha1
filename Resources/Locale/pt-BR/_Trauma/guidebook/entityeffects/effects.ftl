@@ -112,5 +112,50 @@ entity-effect-guidebook-heal-bone-damage = { $chance ->
      *[other] curar
 } {NATURALFIXED($amount, 2)} de dano ?sseo
 
+entity-effect-guidebook-detach-part = { $chance ->
+    [1] Destaca
+    *[other] destacar
+} o alvo da parte corporal à qual está ligado
+entity-effect-guidebook-emp-reaction-effect = { $chance ->
+    [1] Cria
+    *[other] criar
+} um pulso eletromagnético
+entity-effect-guidebook-flash-reaction-effect = { $chance ->
+    [1] Cria
+    *[other] criar
+} um clarão cegante
+entity-effect-guidebook-gib = { $chance ->
+    [1] Esquarteja
+    *[other] esquartejar
+} o alvo
+entity-effect-guidebook-random-polymorph = { $chance ->
+    [1] Transforma
+    *[other] transformar
+} o alvo em uma forma aleatória
+entity-effect-guidebook-regenerate-part = { $chance ->
+    [1] Regenera
+    *[other] regenerar
+} o órgão {$slot} do alvo
+entity-effect-guidebook-relay-mutated = { $chance ->
+    [1] Transmite
+    *[other] transmitir
+} {$effect} ao alvo da mutação
+entity-effect-guidebook-relay-puller = { $chance ->
+    [1] Transmite
+    *[other] transmitir
+} {$effect} à entidade que está puxando o alvo
+entity-effect-guidebook-remove-snares = { $chance ->
+    [1] Remove
+    *[other] remover
+} as amarras do alvo
+entity-effect-guidebook-revert-polymorph = { $chance ->
+    [1] Reverte
+    *[other] reverter
+} a transformação do alvo
+entity-effect-paint-target-guidebook-text = { $chance ->
+    [1] Pinta
+    *[other] pintar
+} o alvo
+
 
 

@@ -1,2 +1,2 @@
-item-added-gamerule = Você invocou algo ao usar este item
-item-already-added-gamerule = Você já invocou algo
+item-added-gamerule = VocÃª invocou algo ao usar este item
+item-already-added-gamerule = VocÃª jÃ¡ invocou algo

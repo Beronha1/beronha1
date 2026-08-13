@@ -43,6 +43,7 @@ namespace Content.Server.Construction
         // --- YOU HAVE BEEN WARNED! AAAH! ---
 
         private readonly Dictionary<ICommonSession, HashSet<int>> _beingBuilt = new();
+        private readonly HashSet<EntityUid> _activeItemConstructions = new();
 
         private void InitializeInitial()
         {
@@ -99,6 +100,21 @@ namespace Content.Server.Construction
                 if (_interactionSystem.InRangeUnobstructed(pos, near, 2f) && _container.IsInSameOrParentContainer(user, near))
                     yield return near;
             }
+        }
+
+        /// <summary>
+        /// Returns ingredients from an item-construction container that outlived
+        /// the asynchronous construction task which created it.
+        /// </summary>
+        private void CleanupOrphanedItemConstruction(EntityUid user)
+        {
+            if (!_container.TryGetContainer(user, "item_construction", out var container))
+                return;
+
+            foreach (var entity in container.ContainedEntities.ToArray())
+                _container.Remove(entity, container);
+
+            _container.ShutdownContainer(container);
         }
 
         // LEGACY CODE. See warning at the top of the file!
@@ -284,6 +300,7 @@ namespace Content.Server.Construction
             if (!TryComp(newEntity, out ConstructionComponent? construction))
             {
                 Log.Error($"Initial construction does not have a valid target entity! It is missing a ConstructionComponent.\nGraph: {graph.ID}, Initial Target: {edge.Target}, Ent. Prototype: {newEntityProto}\nCreated Entity {ToPrettyString(newEntity)} will be deleted.");
+                FailCleanup(); // Trauma - return reserved materials and release the user construction container on malformed recipes.
                 Del(newEntity); // Screw you, make proper construction graphs.
                 return null;
             }
@@ -402,24 +419,48 @@ namespace Content.Server.Construction
                 }
             }
 
-            if (await Construct(
-                    user,
-                    "item_construction",
-                    constructionGraph,
-                    edge,
-                    targetNode,
-                    Transform(user).Coordinates) is not { Valid: true } item)
+            if (!_activeItemConstructions.Add(user))
+            {
+                _popup.PopupEntity(Loc.GetString("construction-system-construct-cannot-start-another-construction"), user, user);
                 return false;
+            }
 
-            // <Goobstation>
-            var constructedEv = new ConstructedEvent(item, prototype);
-            RaiseLocalEvent(user, ref constructedEv);
-            // </Goobstation>
+            try
+            {
+                // A failed async construction from an older build may have left this
+                // container attached permanently. Its existence is not authoritative;
+                // the active-job set above is.
+                CleanupOrphanedItemConstruction(user);
 
-            // Just in case this is a stack, attempt to merge it. If it isn't a stack, this will just normally pick up
-            // or drop the item as normal.
-            _stackSystem.TryMergeToHands(item, user);
-            return true;
+                if (await Construct(
+                        user,
+                        "item_construction",
+                        constructionGraph,
+                        edge,
+                        targetNode,
+                        Transform(user).Coordinates) is not { Valid: true } item)
+                    return false;
+
+                // <Goobstation>
+                var constructedEv = new ConstructedEvent(item, prototype);
+                RaiseLocalEvent(user, ref constructedEv);
+                // </Goobstation>
+
+                // Just in case this is a stack, attempt to merge it. If it isn't a stack, this will just normally pick up
+                // or drop the item as normal.
+                _stackSystem.TryMergeToHands(item, user);
+                return true;
+            }
+            catch (Exception exception)
+            {
+                Log.Error($"Item construction '{prototype}' failed for {ToPrettyString(user)}: {exception}");
+                CleanupOrphanedItemConstruction(user);
+                return false;
+            }
+            finally
+            {
+                _activeItemConstructions.Remove(user);
+            }
         }
 
         // LEGACY CODE. See warning at the top of the file!

@@ -17,6 +17,19 @@
     - state: throwing_knife
 
 - type: entity
+  parent: BulletKinetic
+  id: BulletBloodDrunkMiner
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 20
+        Structural: 25
+  - type: TimedDespawn
+    lifetime: 0.35
+
+- type: entity
   id: BulletAshDrakeFire
   categories: [ HideSpawnMenu ]
   components:

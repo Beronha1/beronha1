@@ -48,7 +48,7 @@ public sealed partial class GoobLatheSystem : EntitySystem
 
         if (!_materialStorage.CanChangeMaterialAmount(uid, _totalMaterials))
         {
-            _popup.PopupEntity(Loc.GetString("lathe-queue-reset-material-overflow"), uid, args.Actor);
+            _popup.PopupEntity(Loc.GetString("lathe-menu-queue-reset-material-overflow"), uid, args.Actor);
             return;
         }
 

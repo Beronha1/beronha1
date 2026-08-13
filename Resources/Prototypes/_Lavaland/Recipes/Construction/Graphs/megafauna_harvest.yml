@@ -1,0 +1,193 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: constructionGraph
+  id: DrakeRemainsConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: remains
+      steps:
+      - material: DragonBone
+        amount: 10
+      - material: DragonHide
+        amount: 5
+        doAfter: 8
+  - node: remains
+    entity: DrakeRemains
+
+- type: constructionGraph
+  id: DragonArmorConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+      - tag: DrakeRemains
+        name: construction-graph-tag-drake-remains
+        icon:
+          sprite: _Lavaland/Clothing/Head/Armor/ash_drake.rsi
+          state: icon
+      - material: MegafaunaSinew
+        amount: 2
+        doAfter: 10
+  - node: armor
+    entity: ClothingOuterArmorDragon
+
+- type: constructionGraph
+  id: LegionServitorCultureConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: culture
+      steps:
+      - material: LegionSkull
+        amount: 3
+        doAfter: 8
+  - node: culture
+    entity: LegionServitorCulture
+
+- type: constructionGraph
+  id: GodslayerArmorConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: armor
+      steps:
+      - tag: IceEnergyCrystal
+        name: construction-graph-tag-ice-energy-crystal
+        icon:
+          sprite: _Lavaland/Objects/Specific/Megafauna/miner_artifacts.rsi
+          state: ice_energy_crystal
+      - material: DragonBone
+        amount: 8
+      - material: NecroAlloy
+        amount: 6
+      - material: Brass
+        amount: 5
+        doAfter: 20
+  - node: armor
+    entity: ClothingOuterArmorGodslayer
+
+- type: constructionGraph
+  id: DrakeMercuryAegisConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: aegis
+      steps:
+      - material: DragonHide
+        amount: 5
+      - material: DragonWingMembrane
+        amount: 2
+      - material: MirroredChitin
+        amount: 5
+      - material: MercurySilk
+        amount: 3
+        doAfter: 20
+  - node: aegis
+    entity: ClothingOuterArmorDrakeMercuryAegis
+
+- type: constructionGraph
+  id: ColossusMercuryShieldConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: shield
+      steps:
+      - material: NecroAlloy
+        amount: 5
+      - material: SpiderMercuryAlloy
+        amount: 3
+        doAfter: 18
+  - node: shield
+    entity: ShieldColossusMercuryAnomalous
+
+- type: constructionGraph
+  id: LegionBubblegumRegeneratorConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: regenerator
+      steps:
+      - tag: StabilizedLegionCore
+        name: construction-graph-tag-stabilized-legion-core
+        icon:
+          sprite: _Wega/Objects/Specific/Lavaland/legioncore.rsi
+          state: icon_base
+      - tag: DemonicBloodSample
+        name: construction-graph-tag-demonic-blood
+        icon:
+          sprite: Objects/Specific/Chemistry/bottle.rsi
+          state: bottle-1
+        doAfter: 14
+  - node: regenerator
+    entity: MedipenLegionBubblegumRegenerator
+
+- type: constructionGraph
+  id: AshFrostThermalRegulatorConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: regulator
+      steps:
+      - tag: IceEnergyCrystal
+        name: construction-graph-tag-ice-energy-crystal
+        icon:
+          sprite: _Lavaland/Objects/Specific/Megafauna/miner_artifacts.rsi
+          state: ice_energy_crystal
+      - material: DragonWingMembrane
+        amount: 3
+      - material: DragonBone
+        amount: 3
+        doAfter: 16
+  - node: regulator
+    entity: ClothingBeltAshFrostThermalRegulator
+
+- type: constructionGraph
+  id: BloodDrunkMercuryPhaseCutterConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: cutter
+      steps:
+      - tag: OverclockedPlasmaCutter
+        name: construction-graph-tag-overclocked-plasma-cutter
+        icon:
+          sprite: _Goobstation/Objects/Weapons/Guns/Battery/cutter.rsi
+          state: icon
+      - material: SpiderMercuryAlloy
+        amount: 4
+        doAfter: 18
+  - node: cutter
+    entity: WeaponBloodDrunkMercuryPhaseCutter
+
+- type: constructionGraph
+  id: LegionOniSurvivalImplanterConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: implanter
+      steps:
+      - tag: StabilizedLegionCore
+        name: construction-graph-tag-stabilized-legion-core
+        icon:
+          sprite: _Wega/Objects/Specific/Lavaland/legioncore.rsi
+          state: icon_base
+      - tag: OniDensityCore
+        name: construction-graph-tag-oni-density-core
+        icon:
+          sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
+          state: core
+        doAfter: 16
+  - node: implanter
+    entity: ReinforcedLegionOniSurvivalImplanter

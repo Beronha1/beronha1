@@ -31,7 +31,84 @@
           sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
           state: animation-icon
       - material: SpiderMercuryAlloy
-        amount: 2
+        amount: 1
         doAfter: 10
   - node: railgun
     entity: WeaponSpiderMercuryRailgun
+
+- type: constructionGraph
+  id: SpiderMercuryCoreConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: mercuryCore
+      steps:
+      - material: SpiderMercuryAlloy
+        amount: 3
+        doAfter: 10
+  - node: mercuryCore
+    entity: SpiderMercuryCore
+
+- type: constructionGraph
+  id: SpiderMercuryEtherDrinkerConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: etherDrinker
+      steps:
+      - material: SpiderMercuryKeratin
+        amount: 5
+        doAfter: 6
+  - node: etherDrinker
+    entity: SpiderMercuryEtherDrinker
+
+- type: constructionGraph
+  id: SpiderMercuryParadoxCancellerConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: paradoxCanceller
+      steps:
+      - material: SpiderMercuryKeratin
+        amount: 4
+        doAfter: 6
+  - node: paradoxCanceller
+    entity: SpiderMercuryParadoxCanceller
+
+- type: constructionGraph
+  id: SpiderMercuryRadiantShieldConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: radiantShield
+      steps:
+      - material: SpiderMercuryKeratin
+        amount: 2
+      - material: SpiderMercuryAlloy
+        amount: 1
+        doAfter: 8
+  - node: radiantShield
+    entity: SpiderMercuryRadiantShield
+
+- type: constructionGraph
+  id: SpiderMercuryRadiantModsuitConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: radiantModsuit
+      steps:
+      - tag: SpiderMercuryCore
+        name: spider-mercury-core
+        icon:
+          sprite: _Lavaland/Objects/Devices/mercury.rsi
+          state: mercury_core
+      - material: SpiderMercuryAlloy
+        amount: 2
+        doAfter: 12
+  - node: radiantModsuit
+    entity: ClothingModsuitMercuryRadiant

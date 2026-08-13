@@ -38,6 +38,9 @@
     heldPrefix: biokeratin
   - type: Tag
     tags: [ Ore, RawMaterial ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+  - type: MegafaunaRawSample
 
 - type: entity
   parent: MaterialSpiderMercuryKeratin
@@ -92,6 +95,10 @@
     heldPrefix: radiant
   - type: Tag
     tags: [ Ingot, RawMaterial ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+    grade: Processed
+  - type: MegafaunaProcessedReward
 
 - type: entity
   parent: MaterialSpiderMercuryAlloy

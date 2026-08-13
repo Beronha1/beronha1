@@ -1,0 +1,103 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Media adapted from Goobstation PR #6734. See each RSI metadata and
+# Docs/Changes/megafauna-asset-licensing.md for attribution.
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterChildishOniFloweryDress
+  name: flowery oni dress
+  description: Ceremonial battle dress woven for an oni who never learned restraint.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/OuterClothing/Robes/flower_dress.rsi
+  - type: Clothing
+    sprite: _Lavaland/Clothing/OuterClothing/Robes/flower_dress.rsi
+  - type: Item
+    size: Normal
+  - type: GroupExamine
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: [ ClothingHandsBase, BaseMinorContraband ]
+  id: ClothingHandsChildishOniCursed
+  name: cursed oni hands
+  description: Solidified curses that cut like claws and remain precise enough for dissection.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Hands/curses.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Hands/curses.rsi
+  - type: Insulated
+  - type: MeleeWeapon
+    attackRate: 2
+    wideAnimationRotation: -135
+    damage:
+      types:
+        Slash: 7
+    soundHit:
+      collection: AlienClaw
+    angle: 30
+    animation: WeaponArcClaw
+    range: 1.1
+    mustBeEquippedToUse: true
+    heavyStaminaCost: 4
+  - type: Sharp
+  - type: Prying
+  - type: UseDelay
+    delay: 1
+  - type: Execution
+    doAfterDuration: 4
+  - type: Tool
+    qualities: [ Slicing ]
+    useSound:
+      path: /Audio/Items/Culinary/chop.ogg
+  - type: Scalpel
+    speed: 0.3
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: [ ClothingShoesBase, BaseMinorContraband ]
+  id: ClothingShoesChildishOniCursed
+  name: cursed oni claws
+  description: Curses shaped into talons, unnaturally eager to carry their wearer into battle.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Shoes/Specific/curses.rsi
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Shoes/Specific/curses.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.8
+  - type: ClothingSpeedModifier
+    walkModifier: 1.1
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltChildishOniObi
+  name: oni obi
+  description: Heavy ropes intertwined into a butterfly-shaped battle sash.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Belt/oni.rsi
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Belt/oni.rsi
+  - type: StaticPrice
+    price: 3000
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadChildishOniZukin
+  name: oni zukin
+  description: A traditional cloth hood proving its wearer survived an oni hunt.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Head/Misc/oni.rsi
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Head/Misc/oni.rsi
+  - type: StaticPrice
+    price: 3000

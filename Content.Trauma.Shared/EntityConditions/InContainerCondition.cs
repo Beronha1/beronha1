@@ -11,7 +11,7 @@ namespace Content.Trauma.Shared.EntityConditions;
 public sealed partial class InContainerCondition : EntityConditionBase<InContainerCondition>
 {
     public override string EntityConditionGuidebookText(IPrototypeManager prototype)
-        => Loc.GetString("entity-condition-guidebook-standing");
+        => Loc.GetString("entity-condition-guidebook-in-container");
 }
 
 public sealed partial class InContainerConditionSystem : EntityConditionSystem<MetaDataComponent, InContainerCondition>

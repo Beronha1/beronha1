@@ -32,11 +32,14 @@ using Content.Shared.Actions.Components;
 using Content.Shared.Actions;
 using Content.Shared.Construction.Prototypes;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
 using Content.Shared.EntityTable;
 using Content.Shared.FixedPoint;
 using Content.Shared.Item;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Pinpointer;
 using Content.Shared.Weapons.Melee;
@@ -171,6 +174,177 @@ public sealed partial class MegafaunaTest : GameTest
 
         Assert.That(phases.PhaseThresholds, Is.EquivalentTo(baseline));
         Assert.That(phases.PhaseThresholds, Is.Not.SameAs(phases.BasePhaseThresholds));
+    }
+
+    [TestCase("MobChildishOni")]
+    [TestCase("MobSpiderMercuryUltimate")]
+    public async Task ArenaFieldCleanupRecoversLostTrackingWhenHarvestableBossDies(string prototype)
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var testMap = await Pair.CreateTestMap();
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var entSysMan = server.ResolveDependency<IEntitySystemManager>();
+
+        EntityUid boss = default;
+        MegafaunaFieldGeneratorComponent field = null!;
+        MegafaunaAiComponent ai = null!;
+        EntityUid[] spawnedWalls = [];
+
+        await server.WaitAssertion(() =>
+        {
+            boss = entMan.SpawnAtPosition(new EntProtoId(prototype), testMap.GridCoords);
+            field = entMan.GetComponent<MegafaunaFieldGeneratorComponent>(boss);
+            ai = entMan.GetComponent<MegafaunaAiComponent>(boss);
+            entSysMan.GetEntitySystem<MegafaunaSystem>().StartupMegafauna((boss, ai));
+
+            Assert.That(field.Enabled, Is.True);
+            Assert.That(ai.Active, Is.True);
+            Assert.That(field.Walls, Is.Not.Empty);
+            Assert.That(field.Walls.All(wall =>
+                entMan.TryGetComponent<MegafaunaFieldWallComponent>(wall, out var owned) &&
+                owned.Generator == boss), Is.True);
+            spawnedWalls = field.Walls.ToArray();
+        });
+
+        await RunUntilSynced();
+        await client.WaitAssertion(() =>
+        {
+            var expectedWall = prototype == "MobChildishOni"
+                ? "WallChildishOniMagmaTemporary"
+                : "WallHierophantArenaTemporary";
+            Assert.That(CountClientPrototype(client.EntMan, expectedWall), Is.GreaterThan(0));
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            // Reproduce the live failure: the networked list and runtime owner
+            // can both be lost while the visible field entities remain. Also
+            // move the boss away from the activation point before killing it.
+            foreach (var wall in spawnedWalls)
+                entMan.RemoveComponent<MegafaunaFieldWallComponent>(wall);
+            field.Walls.Clear();
+            entMan.DirtyEntity(boss);
+            entSysMan.GetEntitySystem<SharedTransformSystem>().SetCoordinates(
+                boss,
+                testMap.GridCoords.Offset(new Vector2(25f, 0f)));
+
+            entMan.RemoveComponent<MegafaunaGodmodeComponent>(boss);
+            var thresholds = entSysMan.GetEntitySystem<MobThresholdSystem>();
+            Assert.That(thresholds.TryGetThresholdForState(boss, MobState.Dead, out var dead), Is.True);
+            var blunt = SProtoMan.Index(BluntDamage);
+            Assert.That(entSysMan.GetEntitySystem<DamageableSystem>().TryChangeDamage(
+                boss,
+                new DamageSpecifier(blunt, (int) Math.Ceiling(dead!.Value.Float()) + 1),
+                ignoreResistances: true,
+                canMiss: false), Is.True);
+        });
+        await server.WaitRunTicks(5);
+        await RunUntilSynced();
+
+        await server.WaitAssertion(() =>
+        {
+            // Simulate any late aggression/AI callbacks from the lethal hit.
+            // Neither entry point may reactivate a dead boss or its field.
+            entSysMan.GetEntitySystem<MegafaunaSystem>().StartupMegafauna((boss, ai));
+            entSysMan.GetEntitySystem<MegafaunaFieldSystem>().ActivateField((boss, field));
+        });
+        await server.WaitRunTicks(2);
+        await RunUntilSynced();
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(ai.Active, Is.False);
+            Assert.That(field.Enabled, Is.False);
+            Assert.That(field.Walls, Is.Empty);
+            Assert.That(spawnedWalls.All(uid => !entMan.EntityExists(uid)), Is.True);
+        });
+
+        await client.WaitAssertion(() =>
+        {
+            var expectedWall = prototype == "MobChildishOni"
+                ? "WallChildishOniMagmaTemporary"
+                : "WallHierophantArenaTemporary";
+            Assert.That(CountClientPrototype(client.EntMan, expectedWall), Is.Zero);
+        });
+    }
+
+    private static int CountClientPrototype(IEntityManager entityManager, string prototype)
+    {
+        var count = 0;
+        var query = entityManager.EntityQueryEnumerator<MetaDataComponent>();
+        while (query.MoveNext(out _, out var metadata))
+        {
+            if (metadata.EntityPrototype?.ID == prototype)
+                count++;
+        }
+
+        return count;
+    }
+
+    [Test]
+    public async Task ChildishOniPhaseChangesReachClientSprite()
+    {
+        var server = Pair.Server;
+        var client = Pair.Client;
+        var testMap = await Pair.CreateTestMap();
+        var serverEntities = server.ResolveDependency<IEntityManager>();
+        var damage = server.System<DamageableSystem>();
+        var blunt = SProtoMan.Index(BluntDamage);
+
+        EntityUid oni = default;
+        await server.WaitAssertion(() =>
+        {
+            oni = serverEntities.SpawnAtPosition(new EntProtoId("MobChildishOni"), testMap.GridCoords);
+            serverEntities.RemoveComponent<MegafaunaGodmodeComponent>(oni);
+        });
+
+        foreach (var (amount, expectedState) in new[]
+                 {
+                     (2, "phase_1"),
+                     (700, "phase_2"),
+                     (900, "phase_3"),
+                 })
+        {
+            await server.WaitAssertion(() => Assert.That(
+                damage.TryChangeDamage(
+                    oni,
+                    new DamageSpecifier(blunt, amount),
+                    ignoreResistances: true,
+                    canMiss: false),
+                Is.True));
+            await server.WaitRunTicks(2);
+            await RunUntilSynced();
+
+            var clientOni = client.EntMan.GetEntity(serverEntities.GetNetEntity(oni));
+            await client.WaitAssertion(() =>
+            {
+                var sprite = client.EntMan.GetComponent<SpriteComponent>(clientOni);
+                var spriteSystem = client.System<SpriteSystem>();
+                Assert.That(spriteSystem.LayerMapTryGet((clientOni, sprite), "oni", out var layer, false), Is.True);
+                Assert.That(spriteSystem.LayerGetRsiState((clientOni, sprite), layer).Name, Is.EqualTo(expectedState));
+            });
+        }
+    }
+
+    [Test]
+    public async Task LegionEncounterHasBoundedSummonBudget()
+    {
+        var server = Pair.Server;
+        var testMap = await Pair.CreateTestMap();
+        var entMan = server.ResolveDependency<IEntityManager>();
+
+        await server.WaitAssertion(() =>
+        {
+            var legion = entMan.SpawnAtPosition(new EntProtoId("LavalandBossMegaLegion"), testMap.GridCoords);
+            var boss = entMan.GetComponent<LegionBossComponent>(legion);
+            var greaterLegion = entMan.SpawnAtPosition(new EntProtoId("MobLegionLarge"), testMap.GridCoords);
+
+            Assert.That(boss.MaximumActiveSummons, Is.EqualTo(8));
+            Assert.That(boss.MaximumActiveLargeSummons, Is.EqualTo(2));
+            Assert.That(boss.ReactiveSummonCooldown, Is.EqualTo(2.5f));
+            Assert.That(entMan.HasComponent<Robust.Shared.Spawners.TimedDespawnComponent>(greaterLegion), Is.True);
+        });
     }
 
     [Test]
@@ -404,7 +578,7 @@ public sealed partial class MegafaunaTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(protoMan.HasIndex<SoundCollectionPrototype>("ThunderStrike"), Is.True);
+            Assert.That(protoMan.HasIndex(new ProtoId<SoundCollectionPrototype>("ThunderStrike")), Is.True);
             Assert.DoesNotThrow(() =>
                 entMan.SpawnAtPosition(new EntProtoId("ThunderSound"), testMap.GridCoords));
         });
@@ -457,20 +631,25 @@ public sealed partial class MegafaunaTest : GameTest
                 "WeaponSpectralBlade",
                 "LavaStaffRod",
                 "BottleDragonBlood",
-                "FireballSpellbook",
+                "SacredFlameSpellbook",
                 "WeaponWandFireball",
             }));
             Assert.That(SpawnIds(tables, colossusTable), Is.EquivalentTo(new[]
             {
-                "GemHollowCrystal",
-                "DivineVocalCordsImplant",
+                "ColossusAnomalousCrystal",
+                "ColossusAnomalousCrystalReprise",
+                "ColossusAnomalousCrystalRepulsion",
+                "ColossusAnomalousCrystalStasis",
+                "ColossusAnomalousCrystalWard",
+                "WeaponCainAbel",
             }));
             Assert.That(SpawnIds(tables, bubblegumTable), Is.EquivalentTo(new[]
             {
-                "GemBloodStone",
-                "WeaponSpellBlade",
                 "ClothingOuterArmorHostileEnv",
                 "ClothingHeadHelmetHostileEnv",
+                "MayhemBottle",
+                "WeaponSoulScythe",
+                "BloodContract",
             }));
 
             var bubblegum = entMan.SpawnAtPosition(new EntProtoId(BubblegumBoss), testMap.GridCoords);
@@ -493,16 +672,24 @@ public sealed partial class MegafaunaTest : GameTest
 
             Assert.That(SpawnIds(tables, protoMan.Index(
                     new ProtoId<EntityTablePrototype>("ColossusNecropolisCrateTable"))),
-                Does.Contain("DivineVocalCordsImplant"));
+                Does.Not.Contain("DivineVocalCordsImplanter"),
+                "the vocal cords are an exclusive carcass-harvest reward");
 
             var legionBoss = entMan.GetComponent<LegionBossComponent>(legion);
+            var legionLoot = entMan.GetComponent<SpawnLootOnDeathComponent>(legion);
             Assert.Multiple(() =>
             {
-                Assert.That(legionBoss.LootPrototypes[new EntProtoId("MaterialBones")], Is.EqualTo(1f));
-                Assert.That(legionBoss.LootPrototypes[new EntProtoId("LavalandCrateNecropolisFilled")],
-                    Is.EqualTo(0.2f));
-                Assert.That(legionBoss.LootPrototypes[new EntProtoId("LegionCore")], Is.EqualTo(0.1f));
-                Assert.That(legionBoss.RewardsProto, Does.Contain(new EntProtoId("CrowbarRed")));
+                Assert.That(legionBoss.SplitPrototypes, Has.Count.EqualTo(3));
+                Assert.That(legionLoot.DropOnDeath, Is.False);
+                Assert.That(legionLoot.DropBoth, Is.True);
+                Assert.That(legionLoot.Table, Is.Not.Null);
+                Assert.That(legionLoot.SpecialTable, Is.Not.Null);
+                Assert.That(tables.GetSpawns(legionLoot.Table!),
+                    Is.EquivalentTo(new[] { new EntProtoId("LavalandCrateNecropolisFilled") }));
+                Assert.That(tables.GetSpawns(legionLoot.SpecialTable!),
+                    Is.EquivalentTo(new[] { new EntProtoId("TrophyLavalandLegionSkull") }));
+                Assert.That(whitelist.IsWhitelistPassOrNull(legionLoot.SpecialWeaponWhitelist, pka), Is.True);
+                Assert.That(whitelist.IsWhitelistPassOrNull(legionLoot.SpecialWeaponWhitelist, crowbar), Is.False);
                 Assert.That(entMan.HasComponent<MegafaunaWeaponLooterComponent>(pka), Is.True);
                 Assert.That(entMan.HasComponent<MegafaunaWeaponLooterComponent>(crowbar), Is.False);
             });
@@ -531,6 +718,76 @@ public sealed partial class MegafaunaTest : GameTest
             Assert.That(entMan.HasComponent<DragonBloodComponent>(blood), Is.True);
             var blade = entMan.SpawnAtPosition(new EntProtoId("WeaponSpectralBlade"), testMap.GridCoords);
             Assert.That(entMan.HasComponent<SoulStorageComponent>(blade), Is.True);
+        });
+    }
+
+    [Test]
+    public async Task BubblegumTripleChargeTelegraphsMovesAndDealsDamage()
+    {
+        var server = Pair.Server;
+        var testMap = await Pair.CreateTestMap();
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var entSysMan = server.ResolveDependency<IEntitySystemManager>();
+        var mapSystem = server.System<SharedMapSystem>();
+
+        EntityUid bubblegum = default;
+        EntityUid target = default;
+        await server.WaitPost(() =>
+        {
+            // Create enough real floor for a six-tile charge. CreateTestMap only supplies one tile.
+            for (var x = -10; x <= 10; x++)
+            {
+                for (var y = -10; y <= 10; y++)
+                    mapSystem.SetTile(testMap.Grid, new Vector2i(x, y), new Tile(1));
+            }
+
+            bubblegum = entMan.SpawnAtPosition(new EntProtoId(BubblegumBoss), testMap.GridCoords);
+            target = entMan.SpawnAtPosition(new EntProtoId("MobHuman"),
+                testMap.GridCoords.Offset(new Vector2(4f, 0f)));
+        });
+        await server.WaitRunTicks(2);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.HasComponent<MegafaunaSpecialAttackOnlyComponent>(bubblegum), Is.True,
+                "ported megafauna must retain melee targeting without being allowed to perform basic attacks");
+
+            var selector = entSysMan.GetEntitySystem<NPCUseActionsOnTargetSystem>();
+            var actions = entMan.GetComponent<NPCUseActionsOnTargetComponent>(bubblegum);
+            var tripleDashId = new EntProtoId<TargetActionComponent>("ActionBubblegumTripleDash");
+
+            selector.SetActions(bubblegum,
+                new List<EntProtoId<TargetActionComponent>> { tripleDashId },
+                new Dictionary<EntProtoId<TargetActionComponent>, float>
+                {
+                    [tripleDashId] = 1f,
+                },
+                actions);
+
+            Assert.That(selector.TryUseRandomAction((bubblegum, actions), target), Is.True,
+                "Bubblegum must execute its Paradise phase-one Triple Dash");
+            Assert.That(actions.RecentActions, Is.EquivalentTo(new[] { tripleDashId }));
+        });
+
+        // Let the action event finish and its spawned telegraph enter the entity query.
+        await server.WaitRunTicks(1);
+        await server.WaitAssertion(() =>
+        {
+            var boss = entMan.GetComponent<BubblegumBossComponent>(bubblegum);
+            Assert.That(boss.LastDashStatus, Is.EqualTo("telegraphed"));
+            Assert.That(boss.LastDashMarker, Is.Not.Null,
+                "Triple Dash must create a visible landing telegraph before movement begins");
+        });
+
+        // The three Paradise-style rev windows plus movement complete in under four seconds.
+        await server.WaitRunTicks(120);
+        await server.WaitAssertion(() =>
+        {
+            var damageable = entMan.GetComponent<DamageableComponent>(target);
+            var damage = entSysMan.GetEntitySystem<DamageableSystem>().GetAllDamage((target, damageable));
+            Assert.That(damage.DamageDict.TryGetValue("Blunt", out var blunt) ? blunt : FixedPoint2.Zero,
+                Is.GreaterThanOrEqualTo(FixedPoint2.New(30)),
+                "Triple Dash must deal damage when it crosses its target");
         });
     }
 
@@ -977,6 +1234,23 @@ public sealed partial class MegafaunaTest : GameTest
         // The arena marker must materialize the complete boss, including its initial action set.
         await server.WaitRunTicks(2);
 
+        // The arena legitimately chooses between four Blood-Drunk Miner variants and the Demonic Frost
+        // Miner. Spawn the specific actor this contract exercises when the arena selected Frost, instead of
+        // making the test randomly fail one run in five.
+        await server.WaitPost(() =>
+        {
+            var minerQuery = entMan.EntityQueryEnumerator<BloodDrunkMinerComponent, TransformComponent>();
+            while (minerQuery.MoveNext(out _, out _, out var transform))
+            {
+                if (transform.ParentUid == bloodDrunkMinerGrid!.Value.Owner)
+                    return;
+            }
+
+            entMan.SpawnAtPosition(new EntProtoId("MobBloodDrunkMiner"),
+                new EntityCoordinates(bloodDrunkMinerGrid!.Value.Owner, Vector2.Zero));
+        });
+        await server.WaitRunTicks(2);
+
         EntityUid bloodDrunkMiner = default;
         await server.WaitAssertion(() =>
         {
@@ -1280,12 +1554,13 @@ public sealed partial class MegafaunaTest : GameTest
 
             Assert.That(bubblegum, Is.Not.EqualTo(default(EntityUid)));
             Assert.That(bubblegumActions.ActionIds, Is.EquivalentTo(bubblegumComp.Phase1Actions));
-            Assert.That(bubblegumActions.ActionEnts, Has.Count.EqualTo(3));
+            Assert.That(bubblegumActions.ActionEnts, Has.Count.EqualTo(1));
             Assert.That(bubblegumActions.ActionEnts.Values.All(action =>
                 action.HasValue && entMan.EntityExists(action.Value)), Is.True);
         });
 
-        // Crossing 50% health must atomically replace phase-one actions with all five phase-two attacks.
+        // Crossing 50% health atomically swaps Triple Dash for Paradise's three enraged charge patterns.
+        // Blood Warp is a conditional supplement in the reference behavior, not a standalone rotation slot.
         var damageable = entSysMan.GetEntitySystem<DamageableSystem>();
         var blunt = protoMan.Index(BluntDamage);
         await server.WaitPost(() => Assert.That(
@@ -1301,7 +1576,7 @@ public sealed partial class MegafaunaTest : GameTest
         {
             Assert.That(bubblegumComp.CurrentPhase, Is.EqualTo(BubblegumPhase.Enraged));
             Assert.That(bubblegumActions.ActionIds, Is.EquivalentTo(bubblegumComp.Phase2Actions));
-            Assert.That(bubblegumActions.ActionEnts, Has.Count.EqualTo(5));
+            Assert.That(bubblegumActions.ActionEnts, Has.Count.EqualTo(3));
             Assert.That(bubblegumActions.ActionEnts.Values.All(action =>
                 action.HasValue && entMan.EntityExists(action.Value)), Is.True);
         });

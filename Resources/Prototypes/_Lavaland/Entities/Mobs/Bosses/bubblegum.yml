@@ -72,29 +72,52 @@
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
   - type: MegafaunaDirector
+  - type: MegafaunaSpecialAttackOnly
   - type: BubblegumBoss
+    # Keep the harvestable body in the normal encounter. The optional second-life
+    # arena deletes the first body and is not part of the default progression.
+    enableSecondLife: false
     rewards:
     - LavalandCrateNecropolisBubblegumFilled
+    bloodHandDamage:
+      types:
+        Blunt: 10
+    enragedBloodHandDamage:
+      types:
+        Blunt: 20
     phase1Actions:
-    - ActionBubblegumRage
-    - ActionBubblegumBloodDive
     - ActionBubblegumTripleDash
     phase1Chances:
-      ActionBubblegumRage: 0.1
-      ActionBubblegumBloodDive: 0.5
-      ActionBubblegumTripleDash: 0.8
+      ActionBubblegumTripleDash: 1
     phase2Actions:
-    - ActionBubblegumRage
-    - ActionBubblegumBloodDive
     - ActionBubblegumIllusionDash
     - ActionBubblegumPentagramDash
     - ActionBubblegumChaoticIllusionDash
     phase2Chances:
-      ActionBubblegumRage: 0.4
-      ActionBubblegumBloodDive: 0.5
       ActionBubblegumIllusionDash: 0.67
       ActionBubblegumPentagramDash: 0.33
       ActionBubblegumChaoticIllusionDash: 0.75
+  - type: NPCUseActionsOnTarget
+    recentActionMemory: 4
+    actionIds:
+    - ActionBubblegumTripleDash
+  - type: MegafaunaHarvestable
+    completionCarcass: BubblegumResidualCarcass
+    stages:
+    - name: megafauna-harvest-stage-bubblegum-blood
+      toolQualities: [ Slicing ]
+      duration: 10
+      loot: !type:AllSelector
+        children:
+        - id: FoodDemonicChewingGum
+          rolls: 2
+    - name: megafauna-harvest-stage-bubblegum-tissue
+      toolQualities: [ Sawing ]
+      duration: 12
+      loot: !type:AllSelector
+        children:
+        - id: FoodDemonicChewingGum
+          rolls: 3
   - type: SpawnLootOnDeath
     specialTable: !type:AllSelector
       children:
@@ -102,8 +125,26 @@
     weaponWhitelist:
       components:
       - MegafaunaWeaponLooter
+
+- type: entity
+  id: LavalandBossBubblegumSecondLife
+  parent: LavalandBossBubblegum
+  name: Bubblegum, unbound
+  description: Its destroyed body was only a door. Here, in its private blood-soaked arena, the slaughter demon is fully enraged.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      750: Dead
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 5
+    baseSprintSpeed: 5
+  - type: BubblegumBoss
+    secondLife: true
   - type: NPCUseActionsOnTarget
+    recentActionMemory: 4
     actionIds:
-    - ActionBubblegumRage
-    - ActionBubblegumBloodDive
-    - ActionBubblegumTripleDash
+    - ActionBubblegumIllusionDash
+    - ActionBubblegumPentagramDash
+    - ActionBubblegumChaoticIllusionDash

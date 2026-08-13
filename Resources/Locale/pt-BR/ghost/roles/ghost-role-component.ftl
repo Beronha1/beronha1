@@ -7,28 +7,28 @@ ghost-role-component-default-rules = Todas as regras normais se aplicam, salvo i
                                      Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                      Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                      Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-nonantagonist-rules = Voc� � [color={role-type-crew-aligned-alternate-color}][bold]{role-type-crew-aligned-Nome}[/bold][/color]. Em geral, n�o deve tentar prejudicar Uma esta��o nem Uma tripula��o.
+ghost-role-information-nonantagonist-rules = Voc� � [color={role-type-crew-aligned-alternate-color}][bold]{role-type-crew-aligned-name}[/bold][/color]. Em geral, n�o deve tentar prejudicar Uma esta��o nem Uma tripula��o.
                                              Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                              Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                              Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-freeagent-rules = Voc� � [color={role-type-free-agent-color}][bold]{role-type-free-agent-Nome}[/bold][/color]. Pode agir como antagonista ou n�o antagonista.
+ghost-role-information-freeagent-rules = Voc� � [color={role-type-free-agent-color}][bold]{role-type-free-agent-name}[/bold][/color]. Pode agir como antagonista ou n�o antagonista.
                                          Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                          Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                          Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-antagonist-rules = Voc� � [color={role-type-solo-antagonist-color}][bold]{role-type-solo-antagonist-Nome}[/bold][/color]. Suas inten��es s�o claras e nocivas � esta��o e � tripula��o.
+ghost-role-information-antagonist-rules = Voc� � [color={role-type-solo-antagonist-color}][bold]{role-type-solo-antagonist-name}[/bold][/color]. Suas inten��es s�o claras e nocivas � esta��o e � tripula��o.
                                           Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                           Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                           Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-rules-team-antagonist = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color]. Suas inten��es s�o claras e nocivas � esta��o e � tripula��o.
+ghost-role-information-rules-team-antagonist = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color]. Suas inten��es s�o claras e nocivas � esta��o e � tripula��o.
                                                Voc� deve [bold]trabalhar com sua equipe[/bold] ou seguir orienta��es razo�veis de seus l�deres.
                                                Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                                Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                                Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-familiar-rules = Voc� � [color={role-type-familiar-color}][bold]{role-type-familiar-Nome}[/bold][/color]. Sirva aos interesses de seu mestre, sejam quais forem.
+ghost-role-information-familiar-rules = Voc� � [color={role-type-familiar-color}][bold]{role-type-familiar-name}[/bold][/color]. Sirva aos interesses de seu mestre, sejam quais forem.
                                         Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                         Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                         Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
-ghost-role-information-silicon-rules = Voc� � [color={role-type-silicon-color}][bold]{role-type-silicon-Nome}[/bold][/color]. Obede�Uma �s suas leis. Voc� � {role-type-free-agent-Nome} se n�o estiver atualmente sujeito Uma nenhuma lei.
+ghost-role-information-silicon-rules = Voc� � [color={role-type-silicon-color}][bold]{role-type-silicon-name}[/bold][/color]. Obede�Uma �s suas leis. Voc� � {role-type-free-agent-name} se n�o estiver atualmente sujeito Uma nenhuma lei.
                                        Voc� n�o se lembra de sua vida anterior nem do que aprendeu como fantasma.
                                        Pode se lembrar de conhecimentos gerais do jogo, como cozinhar e usar objetos.
                                        Voc� [color=red]N�O[/color] pode se lembrar ou mencionar nome, apar�ncia ou outros detalhes do personagem anterior.
@@ -49,7 +49,7 @@ ghost-role-information-snoth-name = Snoth
 ghost-role-information-snoth-description = Um pequeno snoth que n�o se importa com um pouco de espa�o. S� fique na grade!
 ghost-role-information-giant-spider-name = Aranha gigante
 ghost-role-information-giant-spider-description = Os habitantes desta esta��o parecem muito saborosos, e sua teia pegajosa � perfeita para captur�-los!
-ghost-role-information-giant-spider-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto das demais aranhas gigantes.
+ghost-role-information-giant-spider-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto das demais aranhas gigantes.
 ghost-role-information-cognizine-description = Tornado consciente pela magia da cognizina.
 ghost-role-information-hamster-name = Hamster
 ghost-role-information-hamster-description = Uma bolinha de pelos rabugenta.
@@ -59,14 +59,14 @@ ghost-role-information-slimes-name= Limo
 ghost-role-information-slimes-description = Um slime comum, sem necessidades ou interesses especiais. Voc� � amig�vel com os demais.
 ghost-role-information-angry-slimes-name= Limo
 ghost-role-information-angry-slimes-description = Tudo � sua volta irrita seus instintos. Destrua-os!
-ghost-role-information-angry-slimes-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto dos demais slimes furiosos.
+ghost-role-information-angry-slimes-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto dos demais slimes furiosos.
 ghost-role-information-smile-name = Smile, o Slime
 ghost-role-information-smile-description = Uma criatura mais doce do mundo. Smile slime!
 ghost-role-information-punpun-name= Trocadilho trocadilho
 ghost-role-information-punpun-description = Um honrado membro da sociedade dos macacos, respons�vel pelo bar e por ajudar bartenders como puder.
 ghost-role-information-xeno-name = Xeno
 ghost-role-information-xeno-description = Voc� � um xeno. Coopere com sua colmeia para matar todos os tripulantes!
-ghost-role-information-xeno-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto dos demais xenos.
+ghost-role-information-xeno-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto dos demais xenos.
 ghost-role-information-revenant-name= Regressado
 ghost-role-information-revenant-description = Voc� � um Revenant. Use seus poderes para colher almas e liberar caos sobre Uma tripula��o. Desbloqueie habilidades com Uma ess�ncia colhida.
 ghost-role-information-kangaroo-name = Canguru
@@ -107,10 +107,10 @@ ghost-role-information-ifrit-name = Ifrit
 ghost-role-information-ifrit-description = Ou�Uma seu dono. N�o absorva dano. Bata forte nas pessoas.
 ghost-role-information-space-dragon-name = Drag�o espacial
 ghost-role-information-space-dragon-description = Invoque 3 fendas de carpa e tome este quadrante! Voc� tem apenas 5 minutos entre cada fenda antes de desaparecer.
-ghost-role-information-space-dragon-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto das carpas que invocou.
-ghost-role-information-space-dragon-summoned-carp-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto do seu drag�o e aliados.
+ghost-role-information-space-dragon-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto das carpas que invocou.
+ghost-role-information-space-dragon-summoned-carp-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto do seu drag�o e aliados.
 ghost-role-information-space-dragon-dungeon-description = Defenda Uma masmorra da expedi��o com seus companheiros peixescos!
-ghost-role-information-space-dragon-dungeon-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto das criaturas da masmorra.
+ghost-role-information-space-dragon-dungeon-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto das criaturas da masmorra.
 ghost-role-information-cluwne-name= Dica
 ghost-role-information-cluwne-description = Torne-se um cluwne miser�vel: seu �nico objetivo � encontrar doce al�vio do sofrimento, geralmente apanhando at� morrer. Cluwnes n�o s�o antagonistas, mas podem se defender. Tripulantes podem matar cluwnes livremente.
 ghost-role-information-skeleton-pirate-name = Pirata esqueleto
@@ -139,10 +139,10 @@ ghost-role-information-cburn-agent-name = Agente da CBURN
 ghost-role-information-cburn-agent-description = Agente altamente treinado da CentComm, especializado em amea�as biol�gicas.
 ghost-role-information-centcom-official-name = Oficial da CentComm
 ghost-role-information-centcom-official-description = Execute tarefas da CentComm, como inspecionar Uma esta��o, anotar avalia��es dos chefes de equipe e operar Uma m�quina de fax.
-ghost-role-information-nukeop-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto dos demais operativos nucleares. Agentes secretos do Syndicate n�o t�m obriga��o de ajudar voc�.
+ghost-role-information-nukeop-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto dos demais operativos nucleares. Agentes secretos do Syndicate n�o t�m obriga��o de ajudar voc�.
 ghost-role-information-loneop-name = Operativo solit�rio
 ghost-role-information-loneop-description = Voc� � um operativo nuclear solit�rio. Destrua Uma esta��o!
-ghost-role-information-loneop-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-solo-antagonist-Nome}[/bold][/color]. Agentes secretos do Syndicate n�o t�m obriga��o de ajudar voc�.
+ghost-role-information-loneop-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-solo-antagonist-name}[/bold][/color]. Agentes secretos do Syndicate n�o t�m obriga��o de ajudar voc�.
 ghost-role-information-behonker-name= Obcecado
 ghost-role-information-behonker-description = Voc� � um antagonista; leve morte e honks Uma quem n�o segue Uma M�e Honk.
 ghost-role-information-hellspawn-name = Cria do inferno
@@ -152,7 +152,7 @@ ghost-role-information-Death-Squad-description = Precisamos do representante da 
 ghost-role-information-Death-Squad-rules = Seus objetivos s�o simples: [color=red][bold]elimine[/bold][/color] todos que n�o perten�am ao Comando Central. Ordens executivas podem alterar isto.
 ghost-role-information-SyndiCat-name= Sindicato
 ghost-role-information-SyndiCat-description = Voc� � o animal de estima��o treinado e fiel de operativos nucleares, com uma microbomba. Sirva seu mestre at� Uma morte!
-ghost-role-information-SyndiCat-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto do agente que invocou voc�.
+ghost-role-information-SyndiCat-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto do agente que invocou voc�.
 ghost-role-information-Cak-name= Cara
 ghost-role-information-Cak-description = Voc� � Uma crian�Uma favorita do chef. Um gato-bolo vivo.
 ghost-role-information-BreadDog-name= PãoDog
@@ -163,7 +163,7 @@ ghost-role-information-paradox-clone-name = Clone paradoxal
 ghost-role-information-paradox-clone-description = Uma anomalia espa�o-temporal estranha teleportou voc� para outra realidade! Encontre sua contraparte, mate-Uma e tome seu lugar.
 ghost-role-information-syndicate-reinforcement-name = Agente do Syndicate
 ghost-role-information-syndicate-reinforcement-description = Algu�m precisa de refor�os. Voc�, Uma primeira pessoa que o Syndicate encontrou, vai ajudar.
-ghost-role-information-syndicate-reinforcement-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto do agente que invocou voc�.
+ghost-role-information-syndicate-reinforcement-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto do agente que invocou voc�.
 ghost-role-information-syndicate-reinforcement-medic-name = M�dico do Syndicate
 ghost-role-information-syndicate-reinforcement-medic-description = Algu�m precisa de refor�os. Sua tarefa � manter vivo o agente que chamou voc�.
 ghost-role-information-syndicate-reinforcement-spy-name = Espi�o do Syndicate
@@ -172,7 +172,7 @@ ghost-role-information-syndicate-reinforcement-thief-name = Ladr�o do Syndicat
 ghost-role-information-syndicate-reinforcement-thief-description = Algu�m precisa de refor�os. Invada e recupere algo valioso para seu agente.
 ghost-role-information-nukeop-reinforcement-name = Operativo nuclear
 ghost-role-information-nukeop-reinforcement-description = Os operativos nucleares precisam de refor�os. Voc�, um agente da reserva, vai ajudar.
-ghost-role-information-nukeop-reinforcement-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto dos operativos nucleares que invocaram voc�.
+ghost-role-information-nukeop-reinforcement-rules = Voc� � [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto dos operativos nucleares que invocaram voc�.
 ghost-role-information-syndicate-monkey-reinforcement-name = Agente macaco do Syndicate
 ghost-role-information-syndicate-monkey-reinforcement-description = Algu�m precisa de refor�os. Voc�, um macaco treinado, vai ajudar.
 ghost-role-information-syndicate-kobold-reinforcement-name = Agente kobold do Syndicate

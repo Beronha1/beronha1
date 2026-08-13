@@ -149,6 +149,7 @@ ntr-console-no-solution = N?o foi poss?vel encontrar solu??o {$solutionName} na 
 ntr-console-missing-reagent = Uma ampola está sem o reagente {$reagent}.
 ntr-console-insufficient-reagent-debug = Reagente insuficiente. Necess?rio: {$requiredReagent}, Encontrado: {$actualReagent}. Quantidade necess?ria: {$required}, Quantidade atual: {$actual}.
 ntr-console-task-fail = Falha ao carregar tarefa.
+ntr-console-invalid-reagent-proto = Protótipo de reagente desconhecido: {$reagentId}.
 
 ntr-bounty-console-menu-title = Console de tarefas NTR
 ntr-bounty-console-print-button = Aceitar

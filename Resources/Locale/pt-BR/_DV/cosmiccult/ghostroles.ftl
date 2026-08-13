@@ -8,7 +8,7 @@ ghost-role-information-theunknown-rules = ...
 
 ghost-role-information-colossus-name = Colosso Entropico
 ghost-role-information-colossus-description = Acione um Eff?gio de Entropia para perpetuar sua exist?ncia e acelerar o fim de todas as coisas! Você tem 15 minutos para isso ou suas energias ser?o extintas.
-ghost-role-information-colossus-rules = Você ? um [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-Nome}[/bold][/color] junto com quaisquer cultistas cósmicos que estejam presentes.
+ghost-role-information-colossus-rules = Você é um [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto com quaisquer cultistas cósmicos que estejam presentes.
 
 ghost-role-information-chantry-victim-name = Prisioneiro da Chantry Vazia
 ghost-role-information-chantry-victim-description = Um ciborgue preso dentro de uma Chantry Vazia. Se o ritual completar, voc? se transformar? em um Colosso Entropico.

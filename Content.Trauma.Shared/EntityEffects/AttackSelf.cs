@@ -19,7 +19,7 @@ public sealed partial class AttackSelf : EntityEffectBase<AttackSelf>
     public bool UseHeld = true;
 
     public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
-        => Loc.GetString("entity-effect-guidebook-attack-self", ("chance", Probability), ("useHeld", UseHeld));
+        => Loc.GetString("entity-effect-guidebook-attack-self", ("chance", Probability), ("canUse", UseHeld));
 }
 
 public sealed partial class AttackSelfEntityEvent : EntityEffectSystem<CombatModeComponent, AttackSelf>

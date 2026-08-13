@@ -2,14 +2,23 @@
 // https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
 
 using System.Linq;
+using Content.Lavaland.Common.Mobs;
 using Content.Lavaland.Common.Weapons.Marker;
+using Content.Lavaland.Shared.Audio;
+using Content.Lavaland.Shared.Megafauna.Harvesting;
+using Content.Lavaland.Shared.Megafauna.Utility;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Systems;
+using Content.Shared.Popups;
 using Content.Shared.Projectiles;
+using Content.Shared.Stunnable;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Marker;
@@ -20,6 +29,7 @@ using Content.Shared.Weapons.Ranged.Systems;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
+using Robust.Shared.Network;
 
 namespace Content.Lavaland.Shared.Weapons.Upgrades;
 
@@ -29,7 +39,12 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private MobThresholdSystem _threshold = default!;
+    [Dependency] private NpcFactionSystem _npcFaction = default!;
+    [Dependency] private MegafaunaHeatProtectionSystem _heatProtection = default!;
+    [Dependency] private INetManager _net = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedStunSystem _stun = default!;
     [Dependency] private TagSystem _tag = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -37,12 +52,14 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
 
     private static readonly ProtoId<TagPrototype> SlowImmune = "SlowImmune";
     private static readonly ProtoId<TagPrototype> StunImmune = "StunImmune";
+    private static readonly ProtoId<NpcFactionPrototype> PetsNt = "PetsNT";
 
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeLocalEvent<CrusherLegionSkullUpgradeComponent, GunRefreshModifiersEvent>(OnLegionRefresh);
+        SubscribeLocalEvent<CrusherLegionSkullUpgradeComponent, AfterMarkerAttackedEvent>(OnLegionMarker);
         SubscribeLocalEvent<CrusherGoliathTentacleUpgradeComponent, MarkerAttackAttemptEvent>(OnGoliathMarker);
         SubscribeLocalEvent<CrusherGoliathTentacleUpgradeComponent, MeleeHitEvent>(OnGoliathMelee);
         SubscribeLocalEvent<CrusherAncientGoliathTentacleUpgradeComponent, MarkerAttackAttemptEvent>(OnAncientGoliathMarker);
@@ -53,6 +70,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         SubscribeLocalEvent<CrusherPoisonFangUpgradeComponent, AfterMarkerAttackedEvent>(OnPoisonMarker);
         SubscribeLocalEvent<CrusherFrostGlandUpgradeComponent, GunShotEvent>(OnFrostShot);
         SubscribeLocalEvent<CrusherEyeBloodDrunkMinerUpgradeComponent, AfterMarkerAttackedEvent>(OnMinerMarker);
+        SubscribeLocalEvent<CrusherIceBlockTalismanUpgradeComponent, AfterMarkerAttackedEvent>(OnIceBlockMarker);
         SubscribeLocalEvent<CrusherAshDrakeSpikeUpgradeComponent, AfterMarkerAttackedEvent>(OnDrakeMarker);
         SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, MarkerAttackAttemptEvent>(OnDemonMarker);
         SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, MeleeHitEvent>(OnDemonMelee);
@@ -63,6 +81,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         SubscribeLocalEvent<IncreasedDamageComponent, BeforeDamageChangedEvent>(OnIncreasedDamage);
         SubscribeLocalEvent<DamageMarkerComponent, MeleeHitEvent>(OnWeakeningMelee);
         SubscribeLocalEvent<GunUpgradeAreaDamageComponent, GunShotEvent>(OnAreaDamageShot);
+        SubscribeLocalEvent<ProjectileAreaDamageComponent, ProjectileHitEvent>(OnAreaDamageHit);
     }
 
     public override void Update(float frameTime)
@@ -79,6 +98,69 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
 
     private void OnLegionRefresh(Entity<CrusherLegionSkullUpgradeComponent> ent, ref GunRefreshModifiersEvent args)
         => args.FireRate *= ent.Comp.FireRateCoefficient;
+
+    private void OnLegionMarker(Entity<CrusherLegionSkullUpgradeComponent> ent, ref AfterMarkerAttackedEvent args)
+    {
+        if (!_net.IsServer ||
+            _timing.CurTime < ent.Comp.NextRaise ||
+            !HasComp<FaunaComponent>(args.Target) ||
+            HasComp<BossMusicComponent>(args.Target) ||
+            HasComp<MegafaunaHarvestableComponent>(args.Target) ||
+            HasComp<LegionTrophyRaisedAllyComponent>(args.Target))
+        {
+            return;
+        }
+
+        var target = args.Target;
+        var user = args.User;
+
+        // AttackedEvent is raised immediately before the melee damage is committed.
+        // Defer one task so only a marker-consuming killing blow can raise the fauna.
+        Timer.Spawn(TimeSpan.Zero, () => TryRaiseLegionAlly(ent, user, target));
+    }
+
+    private void TryRaiseLegionAlly(
+        Entity<CrusherLegionSkullUpgradeComponent> trophy,
+        EntityUid user,
+        EntityUid target)
+    {
+        if (!Exists(trophy) ||
+            !Exists(user) ||
+            !Exists(target) ||
+            _timing.CurTime < trophy.Comp.NextRaise ||
+            !_mobState.IsDead(target) ||
+            HasComp<LegionTrophyRaisedAllyComponent>(target))
+        {
+            return;
+        }
+
+        if (trophy.Comp.ActiveAlly is { } current && Exists(current) && !_mobState.IsDead(current))
+            return;
+
+        _damage.ClearAllDamage(target);
+        _mobState.ChangeMobState(target, MobState.Alive, origin: user);
+
+        _npcFaction.ClearFactions(target, dirty: false);
+        if (TryComp<NpcFactionMemberComponent>(user, out var userFaction) && userFaction.Factions.Count > 0)
+            _npcFaction.AddFactions(target, new HashSet<ProtoId<NpcFactionPrototype>>(userFaction.Factions));
+        else
+            _npcFaction.AddFaction(target, PetsNt, dirty: false);
+
+        // Protect the owner even when their faction is unusual or changes later.
+        _npcFaction.IgnoreEntity(target, user);
+
+        EnsureComp<LegionTrophyRaisedAllyComponent>(target).Master = user;
+        trophy.Comp.ActiveAlly = target;
+        trophy.Comp.NextRaise = _timing.CurTime + trophy.Comp.RaiseCooldown;
+        Dirty(trophy);
+
+        SpawnAttachedTo(trophy.Comp.RaiseEffect, Transform(target).Coordinates);
+        _popup.PopupEntity(
+            Loc.GetString("crusher-legion-trophy-raised", ("target", target)),
+            target,
+            user,
+            PopupType.Medium);
+    }
 
     private bool TryGetDamageFraction(EntityUid uid, MobState thresholdState, out float fraction)
     {
@@ -203,6 +285,16 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
             direction = new Angle(_random.NextFloat(-0.2f, 0.2f)).RotateVec(direction);
             _throwing.TryThrow(target.Owner, direction);
         }
+
+        var generation = _heatProtection.AddOrRefreshSource(user, ent);
+
+        Timer.Spawn(TimeSpan.FromSeconds(ent.Comp.HeatImmunityDuration), () =>
+        {
+            if (!Exists(user))
+                return;
+
+            _heatProtection.RemoveSource(user, ent, generation);
+        });
     }
 
     private void OnDemonMarker(Entity<CrusherDemonClawsUpgradeComponent> ent, ref MarkerAttackAttemptEvent args)
@@ -225,7 +317,31 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         => args.ProjectileSpeed *= ent.Comp.ProjectileSpeedCoefficient;
 
     private void OnColossusShot(Entity<CrusherBlasterTubesUpgradeComponent> ent, ref GunShotEvent args)
-        => ApplyNextShotDamage(ent.Comp.Damage, args.Ammo, ref ent.Comp.Active);
+    {
+        if (!ent.Comp.Active)
+            return;
+
+        ApplyNextShotDamage(ent.Comp.Damage, args.Ammo, ref ent.Comp.Active);
+        foreach (var (uid, _) in args.Ammo)
+        {
+            if (uid is not { } projectile || !HasComp<ProjectileComponent>(projectile))
+                continue;
+
+            var area = EnsureComp<ProjectileAreaDamageComponent>(projectile);
+            area.DamageRadius = ent.Comp.ShockwaveRadius;
+            area.DamageMultiplier = ent.Comp.ShockwaveDamageMultiplier;
+            break;
+        }
+    }
+
+    private void OnIceBlockMarker(Entity<CrusherIceBlockTalismanUpgradeComponent> ent, ref AfterMarkerAttackedEvent args)
+    {
+        if (!Exists(args.Target) || _mobState.IsDead(args.Target))
+            return;
+
+        _stun.TryKnockdown(args.Target, ent.Comp.FreezeDuration, refresh: true, force: true);
+        SpawnAttachedTo(ent.Comp.EffectPrototype, Transform(args.Target).Coordinates);
+    }
 
     private void ApplyNextShotDamage(
         DamageSpecifier damage,
@@ -265,6 +381,27 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         {
             if (ammo is { } projectile && HasComp<ProjectileComponent>(projectile))
                 EnsureComp<ProjectileAreaDamageComponent>(projectile);
+        }
+    }
+
+    private void OnAreaDamageHit(Entity<ProjectileAreaDamageComponent> ent, ref ProjectileHitEvent args)
+    {
+        if (!Exists(args.Target))
+            return;
+
+        var targets = _lookup.GetEntitiesInRange<DamageableComponent>(
+            Transform(args.Target).Coordinates,
+            ent.Comp.DamageRadius);
+
+        foreach (var target in targets)
+        {
+            if (target.Owner == args.Target || target.Owner == args.Shooter || target.Owner == ent.Owner)
+                continue;
+
+            _damage.TryChangeDamage(
+                target.Owner,
+                args.Damage * ent.Comp.DamageMultiplier,
+                origin: args.Shooter);
         }
     }
 }

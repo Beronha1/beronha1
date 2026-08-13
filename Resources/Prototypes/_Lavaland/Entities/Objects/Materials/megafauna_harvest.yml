@@ -1,0 +1,447 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Imported upstream visuals are used where their provenance is verified. Whiskey-only
+# tissues use the original Whiskey item atlas documented in Docs/Assets.
+
+- type: material
+  id: DragonHide
+  stackEntity: MaterialDragonHide1
+  name: material-dragon-hide
+  unit: materials-unit-piece
+  icon: { sprite: _Lavaland/Objects/Materials/ash_drake_hide.rsi, state: dragon_hide }
+  color: "#8f312e"
+  price: 150
+
+- type: stack
+  parent: BaseMediumStack
+  id: DragonHide
+  name: material-dragon-hide
+  icon: { sprite: _Lavaland/Objects/Materials/ash_drake_hide.rsi, state: dragon_hide }
+  spawn: MaterialDragonHide1
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialDragonHide
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: DragonHide
+    baseLayer: base
+    layerStates: [ dragon_hide, dragon_hide_2, dragon_hide_3 ]
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/ash_drake_hide.rsi
+    layers:
+    - state: dragon_hide
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { DragonHide: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialDragonHide
+  id: MaterialDragonHide1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: DragonBone
+  stackEntity: MaterialDragonBone1
+  name: material-dragon-bone
+  unit: materials-unit-piece
+  icon: { sprite: _Lavaland/Objects/Materials/ash_drake_bone.rsi, state: bone }
+  color: "#e2d2b4"
+  price: 125
+
+- type: stack
+  parent: BaseMediumStack
+  id: DragonBone
+  name: material-dragon-bone
+  icon: { sprite: _Lavaland/Objects/Materials/ash_drake_bone.rsi, state: bone }
+  spawn: MaterialDragonBone1
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialDragonBone
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: DragonBone
+    baseLayer: base
+    layerStates: [ bone, bone_2, bone_3 ]
+  - type: Sprite
+    sprite: _Lavaland/Objects/Materials/ash_drake_bone.rsi
+    layers:
+    - state: bone
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { DragonBone: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialDragonBone
+  id: MaterialDragonBone1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: DragonWingMembrane
+  stackEntity: MaterialDragonWingMembrane1
+  name: material-dragon-wing-membrane
+  unit: materials-unit-piece
+  icon: { sprite: _Goobstation/Xenobiology/Specific/Xenobiology/bloody_membrane.rsi, state: icon }
+  color: "#b85a4a"
+  price: 100
+
+- type: stack
+  parent: BaseMediumStack
+  id: DragonWingMembrane
+  name: material-dragon-wing-membrane
+  icon: { sprite: _Goobstation/Xenobiology/Specific/Xenobiology/bloody_membrane.rsi, state: icon }
+  spawn: MaterialDragonWingMembrane1
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialDragonWingMembrane
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: DragonWingMembrane
+    baseLayer: base
+    layerStates: [ icon, icon, icon ]
+  - type: Sprite
+    sprite: _Goobstation/Xenobiology/Specific/Xenobiology/bloody_membrane.rsi
+    color: "#b83232"
+    layers:
+    - state: icon
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { DragonWingMembrane: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialDragonWingMembrane
+  id: MaterialDragonWingMembrane1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: MegafaunaSinew
+  stackEntity: MaterialMegafaunaSinew1
+  name: material-megafauna-sinew
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Consumable/Food/meat.rsi, state: dragon_veins }
+  color: "#7d251f"
+  price: 125
+
+- type: stack
+  parent: BaseMediumStack
+  id: MegafaunaSinew
+  name: material-megafauna-sinew
+  icon: { sprite: Objects/Consumable/Food/meat.rsi, state: dragon_veins }
+  spawn: MaterialMegafaunaSinew1
+
+- type: entity
+  parent: MaterialBase
+  id: MaterialMegafaunaSinew
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: MegafaunaSinew
+    baseLayer: base
+    layerStates: [ dragon_veins, dragon_veins, dragon_veins ]
+  - type: Sprite
+    sprite: Objects/Consumable/Food/meat.rsi
+    layers:
+    - state: dragon_veins
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { MegafaunaSinew: 100 }
+  - type: Tag
+    tags: [ RawMaterial ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialMegafaunaSinew
+  id: MaterialMegafaunaSinew1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: NecroAlloy
+  stackEntity: MaterialNecroAlloy1
+  name: material-necro-alloy
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/ingots.rsi, state: adamantine }
+  color: "#9d73c7"
+  price: 250
+
+- type: stack
+  parent: BaseMediumStack
+  id: NecroAlloy
+  name: material-necro-alloy
+  icon: { sprite: Objects/Materials/ingots.rsi, state: adamantine }
+  spawn: MaterialNecroAlloy1
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialNecroAlloy
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: NecroAlloy
+    baseLayer: base
+    layerStates: [ adamantine, adamantine_2, adamantine_3 ]
+  - type: Sprite
+    sprite: Objects/Materials/ingots.rsi
+    layers:
+    - state: adamantine
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { NecroAlloy: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-colossus
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialNecroAlloy
+  id: MaterialNecroAlloy1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: ServoTier4
+  stackEntity: MaterialServoTier4_1
+  name: material-servo-tier-four
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Misc/module.rsi, state: servo }
+  color: "#d69f3c"
+  price: 300
+
+- type: stack
+  parent: BaseMediumStack
+  id: ServoTier4
+  name: material-servo-tier-four
+  icon: { sprite: Objects/Misc/module.rsi, state: servo }
+  spawn: MaterialServoTier4_1
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialServoTier4
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: ServoTier4
+    baseLayer: base
+    layerStates: [ servo, servo, servo ]
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: servo
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { ServoTier4: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-demonic-frost-miner
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialServoTier4
+  id: MaterialServoTier4_1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: HighDensityCircuit
+  stackEntity: MaterialHighDensityCircuit1
+  name: material-high-density-circuit
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Misc/module.rsi, state: cpuboard_super }
+  color: "#55e874"
+  price: 350
+
+- type: stack
+  parent: BaseMediumStack
+  id: HighDensityCircuit
+  name: material-high-density-circuit
+  icon: { sprite: Objects/Misc/module.rsi, state: cpuboard_super }
+  spawn: MaterialHighDensityCircuit1
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialHighDensityCircuit
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: HighDensityCircuit
+    baseLayer: base
+    layerStates: [ cpuboard_super, cpuboard_super, cpuboard_super ]
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    layers:
+    - state: cpuboard_super
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { HighDensityCircuit: 100 }
+  - type: ResearchArtifact
+    points: 2500
+    technologies: [ MegafaunaBiomechanics ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-demonic-frost-miner
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialHighDensityCircuit
+  id: MaterialHighDensityCircuit1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: TitaniumAlloy
+  stackEntity: MaterialTitaniumAlloy1
+  name: material-titanium-alloy
+  unit: materials-unit-piece
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: radiant }
+  color: "#a9c5d1"
+  price: 175
+
+- type: stack
+  parent: BaseMediumStack
+  id: TitaniumAlloy
+  name: material-titanium-alloy
+  icon: { sprite: _Lavaland/Objects/Materials/mercury.rsi, state: radiant }
+  spawn: MaterialTitaniumAlloy1
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialTitaniumAlloy
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: TitaniumAlloy
+  - type: PhysicalComposition
+    materialComposition: { TitaniumAlloy: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-demonic-frost-miner
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialTitaniumAlloy
+  id: MaterialTitaniumAlloy1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: MercurySilk
+  stackEntity: MaterialMercurySilk1
+  name: material-mercury-silk
+  unit: materials-unit-piece
+  icon: { sprite: Objects/Materials/silk.rsi, state: icon }
+  color: "#72e9ef"
+  price: 225
+
+- type: stack
+  parent: BaseMediumStack
+  id: MercurySilk
+  name: material-mercury-silk
+  icon: { sprite: Objects/Materials/silk.rsi, state: icon }
+  spawn: MaterialMercurySilk1
+
+- type: entity
+  parent: MaterialSpiderMercuryKeratin
+  id: MaterialMercurySilk
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: MercurySilk
+    baseLayer: base
+    layerStates: [ icon, icon, icon ]
+  - type: Sprite
+    sprite: Objects/Materials/silk.rsi
+    color: "#8cebf0"
+    layers:
+    - state: icon
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { MercurySilk: 100 }
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialMercurySilk
+  id: MaterialMercurySilk1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1
+
+- type: material
+  id: MirroredChitin
+  stackEntity: MaterialMirroredChitin1
+  name: material-mirrored-chitin
+  unit: materials-unit-piece
+  icon: { sprite: _Trauma/Objects/Revs/components.rsi, state: reflectplate }
+  color: "#d8ffff"
+  price: 300
+
+- type: stack
+  parent: BaseMediumStack
+  id: MirroredChitin
+  name: material-mirrored-chitin
+  icon: { sprite: _Trauma/Objects/Revs/components.rsi, state: reflectplate }
+  spawn: MaterialMirroredChitin1
+
+- type: entity
+  parent: MaterialSpiderMercuryAlloy
+  id: MaterialMirroredChitin
+  suffix: Full
+  components:
+  - type: Stack
+    stackType: MirroredChitin
+    baseLayer: base
+    layerStates: [ reflectplate, reflectplate, reflectplate ]
+  - type: Sprite
+    sprite: _Trauma/Objects/Revs/components.rsi
+    layers:
+    - state: reflectplate
+      map: [ "base" ]
+  - type: PhysicalComposition
+    materialComposition: { MirroredChitin: 100 }
+  - type: ResearchArtifact
+    points: 3000
+    technologies: [ MegafaunaMaterialEngineering ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: MaterialMirroredChitin
+  id: MaterialMirroredChitin1
+  suffix: Single
+  components:
+  - type: Stack
+    count: 1

@@ -9,7 +9,7 @@ cargo-console-menu-flavor-right = v2.1
 cargo-console-menu-account-name-label = Conta:{" "}
 cargo-console-menu-account-name-none-text = Nenhuma
 cargo-console-menu-account-name-format = [bold][color={$color}]{$name}[/color][/bold] [font="Monospace"]\[{$code}\][/font]
-cargo-console-menu-shuttle-name-label = Nome da nave:{$amount}
+cargo-console-menu-shuttle-name-label = Nome da nave:{" "}
 cargo-console-menu-shuttle-name-none-text = Nenhum
 cargo-console-menu-points-label = Saldo:{" "}
 cargo-console-menu-points-amount = ${$amount}

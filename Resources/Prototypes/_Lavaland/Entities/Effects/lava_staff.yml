@@ -1,0 +1,23 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: LavaStaffTerraformTarget
+  name: lava staff target
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+    noRot: true
+  - type: Sprite
+    sprite: _Wega/Effects/drakeeffects.rsi
+    state: target_circle
+    drawdepth: BelowMobs
+    noRot: true
+  - type: PointLight
+    color: "#ff5a36"
+    radius: 1.5
+    energy: 1.2
+    castShadows: false
+  # Safety net if a DoAfter is interrupted by an unusual entity lifecycle path.
+  - type: TimedDespawn
+    lifetime: 10

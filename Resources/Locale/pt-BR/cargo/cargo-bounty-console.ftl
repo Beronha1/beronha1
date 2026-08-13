@@ -15,7 +15,7 @@ bounty-console-time-label = Tempo: [color=orange]{$time}[/color]
 bounty-console-reward-label = Recompensa: [color=limegreen]${$reward}[/color]
 bounty-console-manifest-label = Manifesto: [color=orange]{$item}[/color]
 bounty-console-manifest-entry =
-{$valor ->
+{$amount ->
         [1] {$item}
 *[other] {$item} x{$amount}
     }

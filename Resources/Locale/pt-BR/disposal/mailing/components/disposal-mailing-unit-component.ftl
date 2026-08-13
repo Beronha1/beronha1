@@ -10,7 +10,7 @@
 ## UI
 
 ui-mailing-unit-window-title-tagged= {$tag} unidade de correspondência
-ui-mailing-unit-window-title= {CAPITALIZAR($name)}
+ui-mailing-unit-window-title= {CAPITALIZE($name)}
 
 ui-mailing-unit-button-flush =Enviar
 ui-mailing-unit-destination-select-label = Selecione um destino:

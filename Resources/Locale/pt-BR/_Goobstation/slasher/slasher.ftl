@@ -30,6 +30,7 @@ slasher-massacre-limb = Um impacto poderoso acerta!
 
 slasher-incorporealize-fail-seen = Você não pode ficar incorpóreo enquanto estiver sendo observado!
 slasher-corporealize-fail-camera = Você não pode se corporealizar quando há uma câmera observando!
+slasher-corporealize-fail-seen = Você não pode se corporealizar enquanto estiver sendo observado!
 slasher-corporealize-fail-nearby = Você não pode se corporealizar enquanto alguém estiver perto!
 slasher-corporealize-fail-inside-wall = Você não pode se corporealizar enquanto estiver perto de um objeto sólido!
 

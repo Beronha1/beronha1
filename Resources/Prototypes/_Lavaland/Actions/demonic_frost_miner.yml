@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionDemonicFrostOrbs
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    raiseOnUser: true
+    useDelay: 4
+    icon:
+      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+      state: ice
+  - type: TargetAction
+    range: 18
+  - type: EntityTargetAction
+    event: !type:DemonicFrostOrbActionEvent
+
+- type: entity
+  parent: ActionDemonicFrostOrbs
+  id: ActionDemonicFrostMachineGun
+  components:
+  - type: Action
+    useDelay: 6
+  - type: EntityTargetAction
+    event: !type:DemonicFrostMachineGunActionEvent
+
+- type: entity
+  parent: ActionDemonicFrostOrbs
+  id: ActionDemonicFrostShotgun
+  components:
+  - type: Action
+    useDelay: 5
+  - type: EntityTargetAction
+    event: !type:DemonicFrostShotgunActionEvent

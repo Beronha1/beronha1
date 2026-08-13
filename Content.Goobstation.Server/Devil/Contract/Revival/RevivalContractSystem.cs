@@ -54,7 +54,7 @@ public sealed partial class PendingRevivalContractSystem : EntitySystem
         // You can't offer two deals at once.
         if (HasComp<PendingRevivalContractComponent>(ghost) || HasComp<CondemnedComponent>(target))
         {
-            var failedPopup = Loc.GetString("revival-contract-use-failed");
+            var failedPopup = Loc.GetString("revival-contract-use-failed", ("target", target));
             _popup.PopupEntity(failedPopup, args.User, args.User);
             return;
         }

@@ -21,7 +21,7 @@
     - id: BottleDragonBlood
     - !type:AllSelector
       children:
-      - id: FireballSpellbook
+      - id: SacredFlameSpellbook
       - id: WeaponWandFireball
 
 - type: entity
@@ -38,8 +38,14 @@
   id: ColossusNecropolisCrateTable
   table: !type:AllSelector
     children:
-    - id: GemHollowCrystal
-    - id: DivineVocalCordsImplant
+    - !type:GroupSelector
+      children:
+      - id: ColossusAnomalousCrystal
+      - id: ColossusAnomalousCrystalReprise
+      - id: ColossusAnomalousCrystalRepulsion
+      - id: ColossusAnomalousCrystalStasis
+      - id: ColossusAnomalousCrystalWard
+    - id: WeaponCainAbel
 
 - type: entity
   parent: LavalandCrateNecropolis
@@ -55,11 +61,10 @@
   id: BubblegumNecropolisCrateTable
   table: !type:AllSelector
     children:
-    - id: GemBloodStone
+    - id: ClothingOuterArmorHostileEnv
+    - id: ClothingHeadHelmetHostileEnv
     - !type:GroupSelector
       children:
-      - id: WeaponSpellBlade
-      - !type:AllSelector
-        children:
-        - id: ClothingOuterArmorHostileEnv
-        - id: ClothingHeadHelmetHostileEnv
+      - id: MayhemBottle
+      - id: WeaponSoulScythe
+      - id: BloodContract

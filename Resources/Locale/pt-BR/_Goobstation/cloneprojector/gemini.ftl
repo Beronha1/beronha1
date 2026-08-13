@@ -1,30 +1,29 @@
 clone-projector-examined-status = { $cloneStatus ->
-[true] O clone est· ativo atualmente.
-*[false] O clone est· inativo no momento.
+    [true] O clone est√° ativo atualmente.
+    *[false] O clone est√° inativo no momento.
 }
 clone-projector-examined-health = {$cloneHealth}% Integridade
 
 gemini-projector-clone-created = Um enxame de nanitas aparece a partir do projetor de {$user}.
 gemini-projector-clone-retrieved = {$target} se desmaterializa.
 
-gemini-projector-clone-flavor-text = [color=cyan]… composto por um enxame de nano-m·quinas.[/color]
-gemini-projector-clone-name-suffix= - GÍmeos
+gemini-projector-clone-flavor-text = [color=cyan]√â composto por um enxame de nanom√°quinas.[/color]
+gemini-projector-clone-name-suffix = - G√™meos
 
-gemini-projector-installed = VocÍ sente uma dor aguda na lombar.
-gemini-projector-removed = Sua vis„o se amplia, e uma dor aguda passa pela sua lombar.
-gemini-projector-clone-destroyed = Todos os m˙sculos do seu corpo doem enquanto o projetor apresenta falha.
+gemini-projector-installed = Voc√™ sente uma dor aguda na lombar.
+gemini-projector-removed = Sua vis√£o se amplia, e uma dor aguda passa pela sua lombar.
+gemini-projector-clone-destroyed = Todos os m√∫sculos do seu corpo doem enquanto o projetor apresenta falha.
 
-gemini-projector-regenerate-verb = Regenerar Clone
-gemini-projector-regenerate-verb-text = Regenera o clone atual, mantendo sua mente mas retornando o corpo ao padr„o.
+gemini-projector-regenerate-verb = Regenerar clone
+gemini-projector-regenerate-verb-text = Regenera o clone atual, mantendo sua mente, mas retornando o corpo ao padr√£o.
 
-gemini-projector-reboot-verb = Recalibrar Personalidade
-gemini-projector-reboot-verb-text = Recalibra a personalidade do clone atual, dando-lhe uma mente completamente nova. Isso n„o pode ser desfeito.
+gemini-projector-reboot-verb = Recalibrar personalidade
+gemini-projector-reboot-verb-text = Recalibra a personalidade do clone atual, dando-lhe uma mente completamente nova. Isso n√£o pode ser desfeito.
 
 ghost-role-information-gemini-clone-name = Holograma Gemini
-ghost-role-information-gemini-clone-description = Assista o Diretor de Pesquisa em qualquer tarefa que ele tenha. Talvez queime uma cidade ou duas se quiserem.
+ghost-role-information-gemini-clone-description = Auxilie o Diretor de Pesquisa em qualquer tarefa que ele tenha. Talvez queime uma cidade ou duas, se ele quiser.
 
-ghost-role-information-monozygotic-clone-name = Holograma MonozigÛtico
-ghost-role-information-monozygotic-clone-description = Assista o Comando Central em quaisquer tarefas que ele tenha.
+ghost-role-information-monozygotic-clone-name = Holograma monozig√≥tico
+ghost-role-information-monozygotic-clone-description = Auxilie o Comando Central em quaisquer tarefas que ele tenha.
 
 monozygotic-projector-clone-name-suffix = - Zigoto
-

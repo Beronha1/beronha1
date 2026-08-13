@@ -1,0 +1,110 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: construction
+  id: DrakeRemainsConstruction
+  graph: DrakeRemainsConstructionGraph
+  category: construction-category-misc
+  targetNode: remains
+  objectType: Item
+  theory:
+    FabricationKnowledge: 1
+  practical:
+    CarvingKnowledge: 3
+
+- type: construction
+  parent: BaseClothing
+  id: DragonArmorConstruction
+  graph: DragonArmorConstructionGraph
+  targetNode: armor
+  theory:
+    FabricationKnowledge: 2
+  practical:
+    CarvingKnowledge: 4
+    ArmorKnowledge: 3
+
+- type: construction
+  id: LegionServitorCultureConstruction
+  graph: LegionServitorCultureConstructionGraph
+  category: construction-category-misc
+  targetNode: culture
+  objectType: Item
+  theory:
+    SurgeryKnowledge: 2
+  practical:
+    SurgeryKnowledge: 4
+  qualityPrototype: ShitCraft
+
+- type: construction
+  parent: BaseClothing
+  id: GodslayerArmorConstruction
+  graph: GodslayerArmorConstructionGraph
+  targetNode: armor
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    ArmorKnowledge: 5
+    CarvingKnowledge: 4
+
+- type: construction
+  parent: BaseClothing
+  id: DrakeMercuryAegisConstruction
+  graph: DrakeMercuryAegisConstructionGraph
+  targetNode: aegis
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    ArmorKnowledge: 5
+
+- type: construction
+  id: ColossusMercuryShieldConstruction
+  graph: ColossusMercuryShieldConstructionGraph
+  category: construction-category-weapons
+  targetNode: shield
+  objectType: Item
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    WeaponsKnowledge: 5
+
+- type: construction
+  id: LegionBubblegumRegeneratorConstruction
+  graph: LegionBubblegumRegeneratorConstructionGraph
+  category: construction-category-misc
+  targetNode: regenerator
+  objectType: Item
+  theory:
+    ChemistryKnowledge: 4
+  practical:
+    SurgeryKnowledge: 4
+
+- type: construction
+  parent: BaseClothing
+  id: AshFrostThermalRegulatorConstruction
+  graph: AshFrostThermalRegulatorConstructionGraph
+  targetNode: regulator
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    ArmorKnowledge: 4
+
+- type: construction
+  id: BloodDrunkMercuryPhaseCutterConstruction
+  graph: BloodDrunkMercuryPhaseCutterConstructionGraph
+  category: construction-category-weapons
+  targetNode: cutter
+  objectType: Item
+  theory:
+    FabricationKnowledge: 5
+  practical:
+    WeaponsKnowledge: 5
+
+- type: construction
+  id: LegionOniSurvivalImplanterConstruction
+  graph: LegionOniSurvivalImplanterConstructionGraph
+  category: construction-category-misc
+  targetNode: implanter
+  objectType: Item
+  theory:
+    SurgeryKnowledge: 5
+  practical:
+    SurgeryKnowledge: 5

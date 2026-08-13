@@ -26,7 +26,7 @@ public sealed partial class ForceEquipClothing : EntityEffectBase<ForceEquipClot
     public override string? EntityEffectGuidebookText(IPrototypeManager prototype, IEntitySystemManager entSys)
     {
         var name = prototype.Index(Spawn).Name;
-        return Loc.GetString("entity-effect-guidebook-force-equip-clothing", ("chance", Probability), ("slot", Slot), ("item", name));
+        return Loc.GetString("entity-effect-guidebook-force-equip-clothing", ("chance", Probability), ("slot", Slot), ("name", name));
     }
 }
 

@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-restricted-melee-component-attack-fail-too-large =Você não consegue entender {CAITALIZE(THE($item))}, ele aparentemente foi projetado para uma espécie diferente.
+restricted-melee-component-attack-fail-too-large =Você não consegue entender {CAPITALIZE(THE($item))}, ele aparentemente foi projetado para uma espécie diferente.
 

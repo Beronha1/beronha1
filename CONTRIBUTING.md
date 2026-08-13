@@ -33,6 +33,10 @@ Remember to test your PR again after making changes to it! Not doing so is one o
 
 All resources go in a `_Trauma` subdirectory inside the resource's folder, e.g. `Resources/Prototypes/_Trauma` for all YML prototypes.
 
+### Localization
+
+English (`en-US`) is the default and canonical language of the project. All new and ported content must include its source localization under `Resources/Locale/en-US`; translations into other languages are optional and must not replace or be required by the English catalog.
+
 ### Update logic
 
 When querying for entities to update, the first component in an `EntityQueryEnumerator` should be the least common. The `ActiveXComponent` pattern is great for this, so you only ever query components that need to be updated.

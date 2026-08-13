@@ -90,6 +90,7 @@ public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
         comp.ActionIds.Clear();
         comp.ActionEnts.Clear();
         comp.ActionChances.Clear();
+        comp.RecentActions.Clear();
     }
 
     public void InitializeActions(EntityUid uid, NPCUseActionsOnTargetComponent? comp = null)
@@ -116,7 +117,7 @@ public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
         if (!Resolve(uid, ref comp))
             return;
 
-        comp.ActionChances[actionId] = Math.Clamp(chance, 0.01f, 1.0f);
+        comp.ActionChances[actionId] = Math.Clamp(chance, 0f, 1.0f);
     }
 
     public void RemoveAction(EntityUid uid, EntProtoId<TargetActionComponent> actionId,
@@ -133,6 +134,7 @@ public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
         comp.ActionIds.Remove(actionId);
         comp.ActionEnts.Remove(actionId);
         comp.ActionChances.Remove(actionId);
+        comp.RecentActions.RemoveAll(id => id == actionId);
     }
 
     public void AddAction(EntityUid uid, EntProtoId<TargetActionComponent> actionId,
@@ -153,7 +155,7 @@ public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
 
         if (chance.HasValue)
         {
-            comp.ActionChances[actionId] = Math.Clamp(chance.Value, 0.01f, 1.0f);
+            comp.ActionChances[actionId] = Math.Clamp(chance.Value, 0f, 1.0f);
         }
     }
 
@@ -174,66 +176,140 @@ public sealed partial class NPCUseActionsOnTargetSystem : EntitySystem
         if (_timing.CurTime < user.Comp.NextUseTime)
             return false;
 
-        var availableActions = new List<(EntityUid action, float chance)>();
+        if (_timing.CurTime < user.Comp.ActionLockUntil)
+            return false;
+
+        var availableActions = new List<(EntProtoId<TargetActionComponent> id, EntityUid action, float chance)>();
         foreach (var (actionId, actionEnt) in user.Comp.ActionEnts)
         {
             if (actionEnt == null || !TryComp<ActionComponent>(actionEnt, out var actionComp))
                 continue;
 
             var chance = user.Comp.ActionChances.TryGetValue(actionId, out var customChance)
-                ? Math.Clamp(customChance, 0.01f, 1.0f) : Math.Clamp(user.Comp.DefaultChance, 0.01f, 1.0f);
+                ? Math.Clamp(customChance, 0f, 1.0f) : Math.Clamp(user.Comp.DefaultChance, 0f, 1.0f);
+
+            if (chance <= 0f)
+                continue;
 
             if (!_actions.ValidAction((actionEnt.Value, actionComp)))
                 continue;
 
-            availableActions.Add((actionEnt.Value, chance));
+            availableActions.Add((actionId, actionEnt.Value, chance));
         }
 
         if (availableActions.Count == 0)
             return false;
 
-        var totalWeight = availableActions.Sum(a => a.chance);
-        if (totalWeight <= 0f)
-            return false;
+        // A history window can be configured larger than a phase's current repertoire. Keep at least one
+        // action outside the window so phase swaps and single-action NPCs never deadlock the preferred pool.
+        var effectiveMemory = Math.Min(user.Comp.RecentActionMemory, Math.Max(0, availableActions.Count - 1));
+        while (user.Comp.RecentActions.Count > effectiveMemory)
+            user.Comp.RecentActions.RemoveAt(0);
 
-        _random.Shuffle(availableActions);
+        // Prefer attacks outside the short history window. If they are all rejected by their boss-specific
+        // state checks, retry the excluded attacks before giving up. Paradise bosses choose attacks from
+        // explicit sequences; this provides the same repertoire coverage without making the order deterministic.
+        var preferredActions = availableActions
+            .Where(action => !user.Comp.RecentActions.Contains(action.id))
+            .ToList();
+        var fallbackActions = availableActions
+            .Where(action => user.Comp.RecentActions.Contains(action.id))
+            .ToList();
 
-        var selectedAction = GetSelectedAction(availableActions, totalWeight);
-        if (!TryComp<ActionComponent>(selectedAction, out var selectedComp))
-            return false;
-
-        _actions.SetEventTarget(selectedAction.Value, target);
-        _actions.PerformAction(user.Owner, (selectedAction.Value, selectedComp), predicted: false);
-
-        if (selectedComp.UseDelay.HasValue)
+        if (TryPerformFromPool(user, target, preferredActions) ||
+            TryPerformFromPool(user, target, fallbackActions))
         {
-            var delay = selectedComp.UseDelay.Value * user.Comp.DelayModifier;
-            user.Comp.NextUseTime = _timing.CurTime + delay;
-        }
-        else
-        {
-            user.Comp.NextUseTime = _timing.CurTime + TimeSpan.FromSeconds(user.Comp.DelayModifier);
+            return true;
         }
 
-        return true;
+        user.Comp.NextUseTime = _timing.CurTime + user.Comp.FailedActionRetryDelay;
+        return false;
     }
 
-    private EntityUid? GetSelectedAction(List<(EntityUid action, float chance)> values, float totalWeight)
+    /// <summary>
+    /// Reserves the shared action channel for a multi-step attack sequence.
+    /// </summary>
+    public void LockActions(EntityUid uid, TimeSpan duration, NPCUseActionsOnTargetComponent? component = null)
     {
-        var accumulated = 0f;
-        var randomValue = _random.NextFloat(0f, totalWeight);
+        if (!Resolve(uid, ref component))
+            return;
 
-        EntityUid? selectedAction = null;
-        foreach (var (action, chance) in values)
+        var requestedEnd = _timing.CurTime + duration;
+        if (requestedEnd > component.ActionLockUntil)
+            component.ActionLockUntil = requestedEnd;
+    }
+
+    public void UnlockActions(EntityUid uid, NPCUseActionsOnTargetComponent? component = null)
+    {
+        if (!Resolve(uid, ref component))
+            return;
+
+        component.ActionLockUntil = TimeSpan.Zero;
+    }
+
+    private bool TryPerformFromPool(
+        Entity<NPCUseActionsOnTargetComponent?> user,
+        EntityUid target,
+        List<(EntProtoId<TargetActionComponent> id, EntityUid action, float chance)> candidates)
+    {
+        while (candidates.Count > 0)
         {
-            accumulated += chance;
-            if (randomValue <= accumulated)
-            {
-                selectedAction = action;
-                break;
-            }
+            var selectedIndex = GetSelectedActionIndex(candidates);
+            var selected = candidates[selectedIndex];
+            candidates.RemoveAt(selectedIndex);
+
+            if (!TryComp<ActionComponent>(selected.action, out var selectedComp))
+                continue;
+
+            _actions.SetEventTarget(selected.action, target);
+            if (!_actions.PerformAction(user.Owner, (selected.action, selectedComp), predicted: false))
+                continue;
+
+            RecordSuccessfulAction(user.Comp!, selected.id);
+
+            var delay = selectedComp.UseDelay ?? TimeSpan.FromSeconds(1);
+            user.Comp!.NextUseTime = _timing.CurTime + delay * user.Comp.DelayModifier;
+            return true;
         }
 
-        return selectedAction;
+        return false;
+    }
+
+    private int GetSelectedActionIndex(
+        List<(EntProtoId<TargetActionComponent> id, EntityUid action, float chance)> values)
+    {
+        var totalWeight = values.Sum(action => action.chance);
+        var randomValue = _random.NextFloat(0f, totalWeight);
+        var accumulated = 0f;
+
+        // Shuffle first so equal weights do not inherit prototype/dictionary ordering as a hidden priority.
+        _random.Shuffle(values);
+        for (var index = 0; index < values.Count; index++)
+        {
+            accumulated += values[index].chance;
+            if (randomValue <= accumulated)
+                return index;
+        }
+
+        return values.Count - 1;
+    }
+
+    private static void RecordSuccessfulAction(
+        NPCUseActionsOnTargetComponent component,
+        EntProtoId<TargetActionComponent> actionId)
+    {
+        if (component.RecentActionMemory <= 0)
+        {
+            component.RecentActions.Clear();
+            return;
+        }
+
+        component.RecentActions.RemoveAll(id => id == actionId);
+        component.RecentActions.Add(actionId);
+
+        while (component.RecentActions.Count > component.RecentActionMemory)
+        {
+            component.RecentActions.RemoveAt(0);
+        }
     }
 }

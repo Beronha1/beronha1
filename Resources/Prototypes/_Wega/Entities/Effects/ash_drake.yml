@@ -96,7 +96,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Transform
-    anchored: true
+    anchored: false
   - type: Sprite
     noRot: true
     sprite: _Wega/Mobs/Lavaland/ashdrake.rsi

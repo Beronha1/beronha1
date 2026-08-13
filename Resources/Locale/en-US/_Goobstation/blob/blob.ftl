@@ -21,7 +21,6 @@ ent-StrongBlobTile = Strong Blob Tile
     .desc = A reinforced version of the regular tile. It does not allow air to pass through and protects against brute damage.
 ent-ReflectiveBlobTile = Blob Reflective Tiles
     .desc = It reflects lasers, but does not protect against brute damage as well.
-    .desc = { "" }
 objective-issuer-blob = Blob
 
 
@@ -129,3 +128,5 @@ admin-verb-text-make-blob = Make Blob Carrier
 language-Blob-name = Blob
 chat-language-Blob-name = Blob
 language-Blob-description = Bleeb bob! Blob blob!
+
+blob-no-using-guns-popup = Your blob physiology cannot use guns.

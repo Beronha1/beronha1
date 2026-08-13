@@ -12,8 +12,8 @@ survivor-role-greeting =
 survivor-round-end-dead-count =
 {
     $deadCount ->
-        [one] [color=red]{$aliveCount}[/color] sobrevivente morreu.
-        *[other] [color=red]{$aliveCount}[/color] sobreviventes morreram.
+        [one] [color=red]{$deadCount}[/color] sobrevivente morreu.
+        *[other] [color=red]{$deadCount}[/color] sobreviventes morreram.
 }
 
 survivor-round-end-alive-count =

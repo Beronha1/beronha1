@@ -16,6 +16,7 @@ time-transfer-panel-warning-group-no-time = Group time is empty
 time-transfer-panel-warning-add-success = Time successfully added
 time-transfer-panel-warning-set-success = Time successfully overwritten
 time-transfer-panel-warning-transfer-process = Time transfer in progress...
+time-transfer-panel-warning-no-perms = You do not have permission to transfer playtime
 time-transfer-panel-checkbox-group = Group
 time-transfer-overall-checkbox = Overall
 time-transfer-panel-search-placeholder = Search jobs

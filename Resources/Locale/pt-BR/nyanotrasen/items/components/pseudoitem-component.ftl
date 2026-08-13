@@ -5,5 +5,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 action-name-insert-self =Insira-se
-action-name-insert-other = Insira {O($target)}
+action-name-insert-other = Insira {THE($target)}
 

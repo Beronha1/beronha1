@@ -56,3 +56,28 @@
       - id: MaterialLegionSkull1
       - id: MaterialBones1
         rolls: 2, 3
+
+- type: entity
+  parent: LavalandCrateNecropolis
+  id: LavalandCrateNecropolisBloodDrunkMinerFilled
+  suffix: Blood-drunk Miner rewards
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:AllSelector
+        children:
+        - id: WeaponCleavingSaw
+        - id: WeaponBloodDrunkKineticAccelerator
+
+- type: entity
+  parent: LavalandCrateNecropolis
+  id: LavalandCrateNecropolisDemonicFrostMinerFilled
+  suffix: Demonic Frost Miner rewards
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:GroupSelector
+        children:
+        - id: DemonicResurrectionCrystal
+        - id: ClothingShoesBootsCursedIce
+        - id: WeaponDemonicJackhammer

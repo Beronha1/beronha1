@@ -13,7 +13,7 @@ public sealed partial class MegafaunaSystem
 {
     public void StartupMegafauna(Entity<MegafaunaAiComponent> ent)
     {
-        if (ent.Comp.Active)
+        if (ent.Comp.Active || TerminatingOrDeleted(ent.Owner) || _mobState.IsDead(ent.Owner))
             return;
 
         var ev = new MegafaunaStartupEvent();

@@ -21,7 +21,6 @@ ent-StrongBlobTile = Tile de Blob Forte
     .desc = Uma versão reforçada da peça normal. Não permite Uma passagem de ar e protege contra dano bruto.
 ent-ReflectiveBlobTile = Tile de Blob Reflexivo
     .desc = Reflete lasers, mas não protege tão bem contra dano bruto.
-    .desc = { "" }
 objective-issuer-blob= bolha
 
 
@@ -129,3 +128,5 @@ admin-verb-text-make-blob = Criar Portador de Blob
 language-Blob-name= bolha
 chat-language-Blob-name= bolha
 language-Blob-description= Bobagem! Bolha, bolha!
+
+blob-no-using-guns-popup = Sua fisiologia de blob não permite usar armas de fogo.

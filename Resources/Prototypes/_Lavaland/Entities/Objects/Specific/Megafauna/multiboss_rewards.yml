@@ -1,0 +1,157 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Whiskey-native endgame equipment deliberately combines the visual languages
+# of its contributing, already-attributed boss reward families.
+
+- type: entity
+  parent: ClothingOuterArmorDragonAdvanced
+  id: ClothingOuterArmorDrakeMercuryAegis
+  name: drake-mercury aegis
+  description: Drake hide laminated with mirrored Mercury chitin, equally hostile to lava and directed energy.
+  components:
+  - type: Reflect
+    reflectProb: 0.35
+    reflects: [ Energy ]
+    reflectingInHands: false
+    spread: 30
+  - type: MegafaunaProvenance
+    source: megafauna-source-drake-mercury
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 26000
+  - type: Construction
+    graph: DrakeMercuryAegisConstructionGraph
+    node: aegis
+
+- type: entity
+  parent: SpiderMercuryRadiantShield
+  id: ShieldColossusMercuryAnomalous
+  name: colossus-mercury anomalous shield
+  description: A radiant shield locked into the Colossus's impossible field geometry.
+  components:
+  - type: Reflect
+    reflectProb: 0.75
+    reflects: [ Energy, Magic, NonEnergy ]
+    spread: 18
+  - type: MegafaunaProvenance
+    source: megafauna-source-colossus-mercury
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 28000
+  - type: Construction
+    graph: ColossusMercuryShieldConstructionGraph
+    node: shield
+
+- type: entity
+  parent: ChemicalMedipen
+  id: MedipenLegionBubblegumRegenerator
+  name: legion-bubblegum emergency regenerator
+  description: A single emergency dose combining stabilized necrotic tissue with aggressive demonic regeneration.
+  components:
+  - type: Sprite
+    sprite: Objects/Specific/Medical/medipen.rsi
+    layers:
+    - state: livepen
+      map: [ "enum.SolutionContainerLayers.Fill" ]
+  - type: SolutionContainerVisuals
+    maxFillLevels: 1
+    changeColor: false
+    emptySpriteName: livepen_empty
+  - type: Solution
+    solution:
+      maxVol: 40
+      reagents:
+      - ReagentId: DemonicCytostimulant
+        Quantity: 30
+      - ReagentId: StabilizingSerum
+        Quantity: 10
+  - type: MegafaunaProvenance
+    source: megafauna-source-legion-bubblegum
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 22000
+  - type: Construction
+    graph: LegionBubblegumRegeneratorConstructionGraph
+    node: regenerator
+
+- type: entity
+  parent: ClothingBeltBase
+  id: ClothingBeltAshFrostThermalRegulator
+  name: universal megafauna thermal regulator
+  description: Opposed drake and frost-miner energies hold the wearer at a survivable thermal equilibrium.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Belt/oni.rsi
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Belt/oni.rsi
+  - type: TemperatureProtection
+    heatingCoefficient: 0.01
+    coolingCoefficient: 0.01
+  - type: FireProtection
+    reduction: 1
+  - type: DragonArmor
+  - type: MegafaunaProvenance
+    source: megafauna-source-drake-frost
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 24000
+  - type: Construction
+    graph: AshFrostThermalRegulatorConstructionGraph
+    node: regulator
+
+- type: entity
+  parent: WeaponPlasmaCutterOverclocked
+  id: WeaponBloodDrunkMercuryPhaseCutter
+  name: blood-drunk Mercury phase cutter
+  description: An overclocked excavation tool whose ORT lattice wastes almost none of its stored energy.
+  components:
+  - type: Gun
+    fireRate: 3.5
+    projectileSpeed: 32
+  - type: Battery
+    maxCharge: 6000
+    startingCharge: 6000
+  - type: BatteryAmmoProvider
+    proto: BulletPlasmaCutterStrong
+    fireCost: 50
+  - type: MegafaunaProvenance
+    source: megafauna-source-blood-drunk-mercury
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 30000
+  - type: Construction
+    graph: BloodDrunkMercuryPhaseCutterConstructionGraph
+    node: cutter
+
+- type: entity
+  parent: StabilizedLegionCoreImplant
+  id: ReinforcedLegionOniSurvivalImplant
+  name: reinforced legion-oni survival implant
+  description: Density compression lets the stabilized Legion core reconstruct its host twice before collapse.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: StabilizedLegionCoreImplant
+    maxActivations: 2
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: ReinforcedLegionOniSurvivalImplanter
+  name: reinforced legion-oni survival implanter
+  description: An implanter containing a twice-compressed emergency survival core.
+  components:
+  - type: Implanter
+    implant: ReinforcedLegionOniSurvivalImplant
+  - type: MegafaunaProvenance
+    source: megafauna-source-legion-oni
+    grade: Processed
+  - type: MegafaunaProcessedReward
+  - type: StaticPrice
+    price: 32000
+  - type: Construction
+    graph: LegionOniSurvivalImplanterConstructionGraph
+    node: implanter

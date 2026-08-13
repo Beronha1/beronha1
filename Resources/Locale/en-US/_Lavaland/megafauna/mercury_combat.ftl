@@ -18,3 +18,44 @@ ort-paradigm-no-damage = The entity finishes analyzing you. It looks puzzled.
 ort-paradigm-genetic-highest = The entity attempts to shift your genetic makeup, but it has already been shifted.
 ort-paradigm-finished = Your external wounds heal, but something is terribly wrong!
 ort-phase-conversion = Adaptation complete.
+
+mercury-ether-drinker-name = ether drinker
+mercury-ether-drinker-desc = A radiation-fed capacitor. It slowly recharges on its own, rapidly absorbs nearby radiation, and releases its reserve as a storm of lightning. Its holder is insulated from its own discharge.
+mercury-ether-drinker-charge = Its capacitor is {$charge}% charged.
+mercury-ether-drinker-empty = The capacitor does not hold enough energy to discharge.
+mercury-ether-drinker-discharged = The ether drinker releases its stored charge!
+
+mercury-paradox-canceller-name = paradox canceller
+mercury-paradox-canceller-desc = Anchors your position and physical condition, then restores that snapshot five seconds later. It never rewinds equipment or possessions.
+mercury-paradox-canceller-armed = Reality anchor secured. Rewind in five seconds.
+mercury-paradox-canceller-rewound = Paradox cancelled.
+
+mercury-radiant-shield-name = radiant shield
+mercury-radiant-shield-desc = A compact ORT-alloy shield that unfolds into a radiation-powered reflective barrier.
+mercury-radiant-modsuit-name = radiant MODsuit control unit
+mercury-radiant-modsuit-desc = An end-stage ORT engineering suit with total radiation protection, powered traversal assistance and permanent chasm recovery.
+mercury-radiant-gauntlets-name = radiant MODsuit gauntlets
+mercury-radiant-gauntlets-desc = Insulated gauntlets that channel the suit's energetic lattice.
+mercury-radiant-helmet-name = radiant MODsuit helmet
+mercury-radiant-helmet-desc = A sealed sensor helmet with full radiation shielding and a medical overlay.
+mercury-radiant-chestplate-name = radiant MODsuit chestplate
+mercury-radiant-chestplate-desc = A hardened ORT-alloy shell built for radiation, extreme energy and gravitational hazards.
+mercury-radiant-boots-name = radiant MODsuit boots
+mercury-radiant-boots-desc = Powered magnetic boots whose servos increase movement speed while sealed.
+
+ent-SpiderMercuryEtherDrinker = ether drinker
+    .desc = A radiation-fed capacitor that absorbs nearby radiation and releases its reserve as a lightning storm.
+ent-SpiderMercuryParadoxCanceller = paradox canceller
+    .desc = Anchors your position and physical condition, then restores that snapshot five seconds later without rewinding your equipment.
+ent-SpiderMercuryRadiantShield = radiant shield
+    .desc = A compact ORT-alloy shield that unfolds into a radiation-powered reflective barrier.
+ent-ClothingModsuitMercuryRadiant = radiant MODsuit control unit
+    .desc = An end-stage ORT engineering suit with total radiation protection, powered traversal assistance, and permanent chasm recovery.
+ent-ClothingModsuitGauntletsMercuryRadiant = radiant MODsuit gauntlets
+    .desc = Insulated gauntlets that channel the suit's energetic lattice.
+ent-ClothingModsuitHelmetMercuryRadiant = radiant MODsuit helmet
+    .desc = A sealed sensor helmet with full radiation shielding and a medical overlay.
+ent-ClothingModsuitChestplateMercuryRadiant = radiant MODsuit chestplate
+    .desc = A hardened ORT-alloy shell built for radiation, extreme energy, and gravitational hazards.
+ent-ClothingModsuitBootsMercuryRadiant = radiant MODsuit boots
+    .desc = Powered magnetic boots whose servos increase movement speed while sealed.

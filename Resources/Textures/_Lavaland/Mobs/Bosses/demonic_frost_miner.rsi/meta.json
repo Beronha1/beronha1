@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Demonic Frost Miner phase-one and phase-two frames taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/mob/simple/icemoon/icemoon_monsters.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "demonic_miner", "directions": 4 },
+    { "name": "demonic_miner_phase2", "directions": 4 }
+  ]
+}

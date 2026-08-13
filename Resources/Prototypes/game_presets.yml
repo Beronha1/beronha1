@@ -101,7 +101,7 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: true #traitor não inicia com menos de 5 jogadores
+  showInVote: true # Low-pop alternative when traitor cannot start.
   maxPlayers: 5
   description: extended-description
   rules:
@@ -156,7 +156,7 @@
     - sandbox
   name: sandbox-title
   description: sandbox-description
-  showInVote: true # fuckitweball.gif
+  showInVote: true # Low-pop alternative, capped to limit uncontrolled entity spawning.
   maxPlayers: 5
   rules:
     - Sandbox

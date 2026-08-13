@@ -8,7 +8,8 @@ ent-LavalandBossColossus = Colossus
 ent-LavalandBossMegaLegion = Mega Legion
     .desc = One of many, and soon many more.
 ent-MobBloodDrunkMiner = blood-drunk miner
-    .desc = An explorer who has survived Lavaland for far too long.
+    .desc = A miner destined to wander forever, engaged in an endless hunt.
+blood-drunk-miner-butcher = The blood-drunk miner tears apart { $target } and drinks in the carnage!
 
 # Advanced roster
 ent-MobChildishOni = childish oni

@@ -16,6 +16,7 @@ using Content.Lavaland.Shared.Audio;
 using Content.Lavaland.Shared.CCVar;
 using Content.Shared.Chasm;
 using Content.Lavaland.Shared.Chasm.Teleport;
+using Content.Shared.Clothing.Components;
 using Content.Lavaland.Shared.EntityShapes;
 using Content.Lavaland.Shared.EntityShapes.Shapes;
 using Content.Lavaland.Shared.Megafauna;
@@ -41,6 +42,7 @@ using Content.Shared.Nutrition.Components;
 using Content.Shared.Pinpointer;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Whitelist;
+using Content.Trauma.Shared.Weather;
 using Robust.Client.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.GameObjects;
@@ -50,6 +52,7 @@ using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Random;
+using Robust.Shared.Physics.Components;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
@@ -74,6 +77,51 @@ public sealed partial class MegafaunaTest : GameTest
     private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
     private static readonly ProtoId<MegafaunaSelectorPrototype> ChildishOniClawSelector = "ChildishOniClawSlash";
     private static readonly ProtoId<SoundCollectionPrototype> ThunderStrike = "ThunderStrike";
+
+    [Test]
+    public async Task BloodDrunkMinerUsesPhysicalDashAndLavalandBossComponents()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var testMap = await pair.CreateTestMap();
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var entSysMan = server.ResolveDependency<IEntitySystemManager>();
+
+        EntityUid miner = default;
+        await server.WaitPost(() =>
+            miner = entMan.SpawnAtPosition(new EntProtoId("MobBloodDrunkMiner"), testMap.GridCoords));
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(entMan.HasComponent<AshStormImmuneComponent>(miner), Is.True);
+                Assert.That(entMan.HasComponent<AggressiveComponent>(miner), Is.True);
+                Assert.That(entMan.HasComponent<BossMusicComponent>(miner), Is.True);
+                Assert.That(entMan.HasComponent<MegafaunaDirectorComponent>(miner), Is.True);
+                Assert.That(entMan.HasComponent<SpawnLootOnDeathComponent>(miner), Is.True);
+                Assert.That(entMan.HasComponent<LoadoutComponent>(miner), Is.False);
+            });
+
+            var component = entMan.GetComponent<BloodDrunkMinerComponent>(miner);
+            var transforms = entSysMan.GetEntitySystem<SharedTransformSystem>();
+            var before = transforms.GetMapCoordinates(miner);
+            var target = new MapCoordinates(before.Position + new Vector2(3f, 0f), before.MapId);
+            var dash = entSysMan.GetEntitySystem<BloodDrunkMinerDashSystem>();
+
+            Assert.That(dash.TryDash((miner, component), target), Is.True);
+
+            var after = transforms.GetMapCoordinates(miner);
+            var physics = entMan.GetComponent<PhysicsComponent>(miner);
+            Assert.Multiple(() =>
+            {
+                // A SetCoordinates teleport would move immediately. The ADT dash
+                // starts with an impulse and lets collision/physics move the boss.
+                Assert.That((after.Position - before.Position).Length(), Is.LessThan(0.001f));
+                Assert.That(physics.LinearVelocity.Length(), Is.GreaterThan(0f));
+            });
+        });
+    }
 
     [Test]
     public async Task LaunchAndShutdownMegafauna()
@@ -1029,15 +1077,22 @@ public sealed partial class MegafaunaTest : GameTest
             }
 
             var minerQuery = entMan.EntityQueryEnumerator<BloodDrunkMinerComponent,
-                NPCUseActionsOnTargetComponent,
+                MegafaunaDirectorComponent,
                 TransformComponent>();
             var foundMiner = false;
-            while (minerQuery.MoveNext(out var uid, out _, out var actions, out var transform))
+            while (minerQuery.MoveNext(out var uid, out _, out _, out var transform))
             {
                 if (transform.ParentUid != bloodDrunkMinerGrid!.Value.Owner)
                     continue;
 
-                Assert.That(actions.ActionEnts, Has.Count.EqualTo(1));
+                Assert.Multiple(() =>
+                {
+                    Assert.That(entMan.HasComponent<AshStormImmuneComponent>(uid), Is.True);
+                    Assert.That(entMan.HasComponent<AggressiveComponent>(uid), Is.True);
+                    Assert.That(entMan.HasComponent<BossMusicComponent>(uid), Is.True);
+                    Assert.That(entMan.HasComponent<SpawnLootOnDeathComponent>(uid), Is.True);
+                    Assert.That(entMan.HasComponent<LoadoutComponent>(uid), Is.False);
+                });
                 bloodDrunkMiner = uid;
                 foundMiner = true;
                 break;
@@ -1047,9 +1102,8 @@ public sealed partial class MegafaunaTest : GameTest
             Assert.That(foundMiner, Is.True);
         });
 
-        // NavSmash must attack with the UID that actually owns the returned
-        // MeleeWeaponComponent. The miner holds a crusher/PKA, so pairing its
-        // component with the NPC UID triggers AssertOwner and terminates the server.
+        // The ADT-derived miner owns its melee component directly; NavSmash and
+        // the HTN operator must resolve that same owner/component pair.
         await server.WaitAssertion(() =>
         {
             var melee = entSysMan.GetEntitySystem<SharedMeleeWeaponSystem>();

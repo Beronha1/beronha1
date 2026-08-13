@@ -20,22 +20,6 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionBloodDrunkMinerDash
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Action
-    raiseOnUser: true
-    useDelay: 10
-  - type: Sprite
-    sprite: Interface/Actions/jump.rsi
-    state: icon
-  - type: TargetAction
-    range: 10
-  - type: WorldTargetAction
-    event: !type:BloodDrunkMinerDashAction
-
-- type: entity
-  parent: BaseAction
   id: ActionColossusFraction
   categories: [ HideSpawnMenu ]
   components:

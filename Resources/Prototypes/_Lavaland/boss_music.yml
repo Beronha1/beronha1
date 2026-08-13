@@ -37,6 +37,15 @@
     path: /Audio/_Lavaland/Mobs/Bosses/tearofveil.ogg
 
 - type: bossMusic
+  id: BloodDrunkMiner
+  fade: true
+  fadeInTime: 5
+  fadeOutTime: 8
+  positionOnEnd: 0
+  sound:
+    path: /Audio/_Lavaland/Mobs/Bosses/bdm_boss.ogg
+
+- type: bossMusic
   id: Miniboss
   fade: true
   fadeInTime: 5

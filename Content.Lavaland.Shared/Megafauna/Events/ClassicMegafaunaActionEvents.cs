@@ -3,15 +3,9 @@
 
 using Content.Shared.Actions;
 using Content.Shared.Damage;
-using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Lavaland.Shared.Megafauna.Events;
-
-public sealed partial class BloodDrunkMinerDashAction : WorldTargetActionEvent
-{
-    public SoundSpecifier DashSound = new SoundPathSpecifier("/Audio/Magic/blink.ogg");
-}
 
 public sealed partial class MegaLegionAction : EntityTargetActionEvent;
 

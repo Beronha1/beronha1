@@ -1,16 +1,42 @@
-// Все модификации и наработки в ss14-wega под тегом Corvax-Wega и директориях _Wega лицензированы под GNU GPL v3.
-// https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+// SPDX-FileCopyrightText: 2026 AdventureTime SS14 contributors
+// SPDX-FileCopyrightText: 2026 Whiskey Station contributors
+//
+// SPDX-License-Identifier: MIT
 
-using Content.Lavaland.Server.Megafauna.Classic;
-using Content.Lavaland.Shared.Megafauna.Events;
-using Content.Shared.SSDIndicator;
+using System.Linq;
+using Content.Lavaland.Shared.Megafauna.Classic;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
+using Content.Shared.Gibbing;
+using Content.Shared.Mobs.Components;
+using Content.Shared.Mobs.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Weapons.Melee;
+using Content.Shared.Weapons.Melee.Events;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
+using Robust.Shared.Map;
+using Robust.Shared.Random;
+using Robust.Shared.Timing;
 
 namespace Content.Lavaland.Server.Megafauna.Classic;
 
+/// <summary>
+/// Handles the miner's saw states, cleave and corpse-butcher healing.
+/// Derived from Adventure Time Station's Blood Miner implementation.
+/// </summary>
 public sealed partial class BloodDrunkMinerSystem : EntitySystem
 {
+    [Dependency] private AppearanceSystem _appearance = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private MobThresholdSystem _thresholds = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
 
     public override void Initialize()
@@ -18,18 +44,142 @@ public sealed partial class BloodDrunkMinerSystem : EntitySystem
         base.Initialize();
 
         SubscribeLocalEvent<BloodDrunkMinerComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<BloodDrunkMinerComponent, BloodDrunkMinerDashAction>(OnDash);
+        SubscribeLocalEvent<BloodDrunkMinerComponent, MeleeHitEvent>(OnMeleeHit);
+        SubscribeLocalEvent<BloodDrunkMinerComponent, DamageDealtEvent>(OnDamageDealt);
     }
 
     private void OnMapInit(Entity<BloodDrunkMinerComponent> ent, ref MapInitEvent args)
     {
-        RemComp<SSDIndicatorComponent>(ent);
+        ApplySawState(ent);
     }
 
-    private void OnDash(Entity<BloodDrunkMinerComponent> ent, ref BloodDrunkMinerDashAction args)
+    private void OnDamageDealt(Entity<BloodDrunkMinerComponent> ent, ref DamageDealtEvent args)
     {
-        args.Handled = true;
-        _transform.SetCoordinates(ent, args.Target);
-        _audio.PlayPvs(args.DashSound, ent);
+        if (!TryComp<MeleeWeaponComponent>(ent, out var melee))
+            return;
+
+        var total = (float) args.Damage.GetTotal();
+        if (total <= 0f)
+            return;
+
+        var delay = TimeSpan.FromSeconds(total * ent.Comp.DamageInterruptCoefficient);
+        var next = _timing.CurTime + delay;
+        if (next <= melee.NextAttack)
+            return;
+
+        melee.NextAttack = next;
+        Dirty(ent.Owner, melee);
+    }
+
+    private void OnMeleeHit(Entity<BloodDrunkMinerComponent> ent, ref MeleeHitEvent args)
+    {
+        if (!args.IsHit)
+            return;
+
+        var butchered = false;
+        foreach (var target in args.HitEntities)
+        {
+            if (target == ent.Owner)
+                continue;
+
+            if (!HasComp<MobStateComponent>(target) || !_mobState.IsDead(target))
+                continue;
+
+            Butcher(ent, target);
+            butchered = true;
+        }
+
+        if (butchered)
+            return;
+
+        if (ent.Comp.SawOpen)
+            Cleave(ent, args);
+
+        if (_random.Prob(ent.Comp.TransformAfterAttackChance))
+            TryTransformSaw(ent);
+    }
+
+    private void Cleave(Entity<BloodDrunkMinerComponent> ent, MeleeHitEvent args)
+    {
+        if (args.HitEntities.Count == 0 || !TryComp<MeleeWeaponComponent>(ent, out var melee))
+            return;
+
+        var origin = _transform.GetMapCoordinates(ent);
+        if (origin.MapId == MapId.Nullspace)
+            return;
+
+        var primary = args.HitEntities[0];
+        var toPrimary = _transform.GetMapCoordinates(primary).Position - origin.Position;
+        if (toPrimary.LengthSquared() < 0.001f)
+            return;
+
+        var attackAngle = new Angle(toPrimary);
+        var arc = Angle.FromDegrees(ent.Comp.CleaveArc);
+
+        var candidates = new HashSet<Entity<MobStateComponent>>();
+        _lookup.GetEntitiesInRange(origin, melee.Range, candidates);
+
+        foreach (var candidate in candidates)
+        {
+            if (candidate.Owner == ent.Owner || args.HitEntities.Contains(candidate.Owner))
+                continue;
+
+            if (_mobState.IsDead(candidate))
+                continue;
+
+            var offset = _transform.GetMapCoordinates(candidate.Owner).Position - origin.Position;
+            if (offset.LengthSquared() < 0.001f)
+                continue;
+
+            if (Math.Abs(Angle.ShortestDistance(attackAngle, new Angle(offset)).Degrees) > arc.Degrees)
+                continue;
+
+            _damageable.TryChangeDamage(candidate.Owner, melee.Damage, origin: ent.Owner);
+        }
+    }
+
+    private void Butcher(Entity<BloodDrunkMinerComponent> ent, EntityUid target)
+    {
+        if (_thresholds.TryGetDeadThreshold(target, out var maxHealth))
+        {
+            var heal = new DamageSpecifier();
+            heal.DamageDict.Add("Blunt", -(float) maxHealth.Value * ent.Comp.ButcherHealFraction);
+            _damageable.TryChangeDamage(ent.Owner, heal, true, origin: ent.Owner);
+        }
+
+        _popup.PopupEntity(
+            Loc.GetString("blood-drunk-miner-butcher", ("target", target)),
+            ent,
+            PopupType.LargeCaution);
+
+        if (_gibbing.Gib(target, true, ent.Owner).Count == 0)
+            QueueDel(target);
+    }
+
+    public bool TryTransformSaw(Entity<BloodDrunkMinerComponent> ent)
+    {
+        if (_timing.CurTime < ent.Comp.NextTransformAt)
+            return false;
+
+        ent.Comp.SawOpen = !ent.Comp.SawOpen;
+        ent.Comp.NextTransformAt = _timing.CurTime + TimeSpan.FromSeconds(_random.NextFloat(
+            (float) ent.Comp.TransformCooldownMin.TotalSeconds,
+            (float) ent.Comp.TransformCooldownMax.TotalSeconds));
+
+        ApplySawState(ent);
+        _audio.PlayPvs(ent.Comp.TransformSound, ent);
+        return true;
+    }
+
+    private void ApplySawState(Entity<BloodDrunkMinerComponent> ent)
+    {
+        if (TryComp<MeleeWeaponComponent>(ent, out var melee))
+        {
+            melee.Damage = new DamageSpecifier(ent.Comp.SawOpen ? ent.Comp.OpenDamage : ent.Comp.ClosedDamage);
+            melee.AttackRate = ent.Comp.SawOpen ? ent.Comp.OpenAttackRate : ent.Comp.ClosedAttackRate;
+            Dirty(ent.Owner, melee);
+        }
+
+        _appearance.SetData(ent, BloodDrunkMinerVisuals.SawOpen, ent.Comp.SawOpen);
     }
 }

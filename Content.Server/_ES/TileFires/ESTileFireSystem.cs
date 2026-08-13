@@ -38,6 +38,13 @@ public sealed partial class ESTileFireSystem : ESSharedTileFireSystem
     #region Events
     private void OnMapInit(Entity<ESTileFireComponent> ent, ref MapInitEvent args)
     {
+        // Flammable.OnFire is serialized prototype state, but the current fire
+        // update loop is intentionally driven by OnFireComponent. Go through
+        // the public ignition API so event-spawned stage 1/2 fires actually
+        // enter that loop, build stacks and become able to spread.
+        if (TryComp(ent, out FlammableComponent? flammable))
+            _flammable.Ignite(ent, ent, flammable);
+
         var xform = Transform(ent);
         if (xform.GridUid is not { } grid || !TryComp<MapGridComponent>(grid, out var mapGrid))
             return;

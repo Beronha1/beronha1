@@ -24,6 +24,12 @@ public sealed partial class PdaProgramItem : ContainerButton
         BackgroundColor = Color.FromHex("#25252a"),
     };
 
+    // ADT-Tweak Start:  Theme override
+    public Color? ThemeNormalBg { get; set; }
+    public Color? ThemeHoverBg { get; set; }
+    public Color? ThemeFg { get; set; }
+    // ADT-Tweak End
+
     public Color BackgroundColor
     {
         get => _styleBox.BackgroundColor;
@@ -67,6 +73,18 @@ public sealed partial class PdaProgramItem : ContainerButton
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
+
+        // ADT-Tweak Start
+        if (ThemeNormalBg != null && ThemeHoverBg != null)
+        {
+            var hovered = HasStylePseudoClass(StylePseudoClassHover)
+                          || HasStylePseudoClass(StylePseudoClassPressed);
+            BackgroundColor = hovered ? ThemeHoverBg.Value : ThemeNormalBg.Value;
+            if (ThemeFg != null)
+                ProgramName.FontColorOverride = ThemeFg;
+            return;
+        }
+        // ADT-Tweak End
 
         if (TryGetStyleProperty<Color>(StylePropertyBgColor, out var bgColor))
             BackgroundColor = bgColor;

@@ -12,10 +12,22 @@ SPDX-License-Identifier: MIT
                                    xmlns="https://spacestation14.io" Margin="1 0 2 0">
     <PanelContainer StyleClasses="BackgroundDark"></PanelContainer>
     <BoxContainer Orientation="Vertical" HorizontalExpand="True" VerticalExpand="True">
-        <controls:StripeBack Name="StationNameContainer">
-            <PanelContainer>
-                <Label Name="StationName" Align="Center" Text="{Loc 'crew-manifest-cartridge-loading'}"/>
-            </PanelContainer>
+        <!-- ADT-Tweak: station header matches PDA content -->
+        <controls:StripeBack Name="StationNameContainer"
+                             HasBottomEdge="False"
+                             HasMargins="False"
+                             HorizontalExpand="True"
+                             MinHeight="28"
+                             SetHeight="28">
+            <Label Name="StationName"
+                   Align="Center"
+                   VAlign="Center"
+                   HorizontalExpand="True"
+                   VerticalExpand="True"
+                   Margin="6 0"
+                   StyleClasses="PdaContentFooterText LabelHeading"
+                   Text="{Loc 'crew-manifest-cartridge-loading'}"/>
+        <!-- ADT-Tweak End -->
         </controls:StripeBack>
         <ScrollContainer HorizontalExpand="True" VerticalExpand="True">
             <ui:CrewManifestListing

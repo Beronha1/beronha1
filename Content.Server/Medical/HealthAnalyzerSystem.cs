@@ -23,6 +23,7 @@ using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Timing;
 using Content.Server.Body.Systems;
+using Content.Shared.PDA; // ADT-Tweak
 
 namespace Content.Server.Medical;
 
@@ -87,7 +88,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
             }
 
             component.IsAnalyzerActive = true;
-            UpdateScannedUser(uid, patient, true);
+            UpdateScannedUser(uid, patient, true, openUi: false); // ADT-Tweak - OpenUI state
         }
     }
 
@@ -156,6 +157,17 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
 
     private void OpenUserInterface(EntityUid user, EntityUid analyzer)
     {
+        // ADT-Tweak start: PDA MedTek opens the PDA UI
+        if (HasComp<PdaComponent>(analyzer))
+        {
+            if (!_uiSystem.HasUi(analyzer, PdaUiKey.Key))
+                return;
+
+            _uiSystem.OpenUi(analyzer, PdaUiKey.Key, user);
+            return;
+        }
+        // ADT-Tweak end
+
         if (!_uiSystem.HasUi(analyzer, HealthAnalyzerUiKey.Key))
             return;
 
@@ -176,7 +188,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
 
         _toggle.TryActivate(healthAnalyzer.Owner);
 
-        UpdateScannedUser(healthAnalyzer, target, true);
+        UpdateScannedUser(healthAnalyzer, target, true, openUi: true);   // ADT-Tweak
     }
 
     /// <summary>
@@ -191,7 +203,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         healthAnalyzer.Comp.CurrentBodyPart = null; // Shitmed Change
         _toggle.TryDeactivate(healthAnalyzer.Owner);
 
-        UpdateScannedUser(healthAnalyzer, target, false);
+        UpdateScannedUser(healthAnalyzer, target, false, openUi: false);    // ADT-Tweak
     }
 
 
@@ -205,7 +217,7 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
         if (!healthAnalyzer.Comp.IsAnalyzerActive)
             return;
 
-        UpdateScannedUser(healthAnalyzer, target, false);
+        UpdateScannedUser(healthAnalyzer, target, false, openUi: false);    // ADT-Tweak
         healthAnalyzer.Comp.IsAnalyzerActive = false;
     }
 
@@ -215,19 +227,33 @@ public sealed partial class HealthAnalyzerSystem : EntitySystem
     /// <param name="healthAnalyzer">The health analyzer</param>
     /// <param name="target">The entity being scanned</param>
     /// <param name="scanMode">True makes the UI show ACTIVE, False makes the UI show INACTIVE</param>
-    public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode)
+    public void UpdateScannedUser(EntityUid healthAnalyzer, EntityUid target, bool scanMode, bool openUi = false) // ADT-Tweak
     {
-        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key)
-            || !HasComp<DamageableComponent>(target))
+        if (!HasComp<DamageableComponent>(target))
             return;
 
         var uiState = GetHealthAnalyzerUiState(healthAnalyzer, target); // Trauma - pass the health analyzer...
         uiState.ScanMode = scanMode;
+        var message = new HealthAnalyzerScannedUserMessage(uiState, openUi); // ADT-Tweak
+
+        // ADT-Tweak Start: scanner updates into the PDA interface
+        if (HasComp<PdaComponent>(healthAnalyzer))
+        {
+            if (!_uiSystem.HasUi(healthAnalyzer, PdaUiKey.Key))
+                return;
+
+            _uiSystem.ServerSendUiMessage(healthAnalyzer, PdaUiKey.Key, message);
+            return;
+        }
+
+        if (!_uiSystem.HasUi(healthAnalyzer, HealthAnalyzerUiKey.Key))
+            return;
+        // ADT-Tweak End
 
         _uiSystem.ServerSendUiMessage(
             healthAnalyzer,
             HealthAnalyzerUiKey.Key,
-            new HealthAnalyzerScannedUserMessage(uiState)
+            message     // ADT-Tweak
         );
     }
 

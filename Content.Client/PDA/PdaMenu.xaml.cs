@@ -1,4 +1,6 @@
+using Content.Client.ADT.PDA;
 using Content.Client.GameTicking.Managers;
+using Content.Shared.MedicalScanner;
 using Content.Shared.PDA;
 using Robust.Shared.Utility;
 using Content.Shared.CartridgeLoader;
@@ -26,6 +28,7 @@ namespace Content.Client.PDA
         public const int ProgramListView = 1;
         public const int SettingsView = 2;
         public const int ProgramContentView = 3;
+        public const int HealthScanViewIndex = 4; // ADT-Tweak
 
 
         private string _pdaOwner = Loc.GetString("comp-pda-ui-unknown");
@@ -42,6 +45,13 @@ namespace Content.Client.PDA
         public event Action<EntityUid>? OnProgramItemPressed;
         public event Action<EntityUid>? OnUninstallButtonPressed;
         public event Action<EntityUid>? OnInstallButtonPressed;
+        // ADT-Tweak Start
+        public event Action? OnLeftMedTekView;
+        public event Action<int>? OnViewChanged;
+
+        private PdaInteriorPalette? _interiorPalette;
+        // ADT-Tweak End
+
         public PdaMenu()
         {
             IoCManager.InjectDependencies(this);
@@ -59,10 +69,15 @@ namespace Content.Client.PDA
             ProgramCloseButton.IconTexture = new SpriteSpecifier.Texture(new("/Textures/Interface/Nano/cross.svg.png"));
 
 
-            HomeButton.OnPressed += _ => ToHomeScreen();
+            HomeButton.OnPressed += _ =>
+            {
+                NotifyLeftMedTek(); // ADT-Tweak
+                ToHomeScreen();
+            };
 
             ProgramListButton.OnPressed += _ =>
             {
+                NotifyLeftMedTek(); // ADT-Tweak
                 HomeButton.IsCurrent = false;
                 ProgramListButton.IsCurrent = true;
                 SettingsButton.IsCurrent = false;
@@ -74,6 +89,7 @@ namespace Content.Client.PDA
 
             SettingsButton.OnPressed += _ =>
             {
+                NotifyLeftMedTek(); // ADT-Tweak
                 HomeButton.IsCurrent = false;
                 ProgramListButton.IsCurrent = false;
                 SettingsButton.IsCurrent = true;
@@ -89,11 +105,17 @@ namespace Content.Client.PDA
                 SettingsButton.IsCurrent = false;
                 ProgramTitle.IsCurrent = true;
 
+                // ADT-Tweak Start: MedTek uses the program title tab
+                if (_currentView == HealthScanViewIndex)
+                    return;
+                // ADT-Tweak End
+
                 ChangeView(ProgramContentView);
             };
 
             ProgramCloseButton.OnPressed += _ =>
             {
+                NotifyLeftMedTek(); // ADT-Tweak
                 HideProgramHeader();
                 ToHomeScreen();
             };
@@ -139,7 +161,7 @@ namespace Content.Client.PDA
 
 
             HideAllViews();
-            ToHomeScreen();
+            HomeButton.IsCurrent = false;   //ADT-Tweak
         }
 
         public void UpdateState(PdaUpdateState state)
@@ -225,7 +247,8 @@ namespace Content.Client.PDA
                     Text = Loc.GetString("comp-pda-io-no-programs-available"),
                     HorizontalAlignment = HAlignment.Center,
                     VerticalAlignment = VAlignment.Center,
-                    VerticalExpand = true
+                    VerticalExpand = true,
+                    FontColorOverride = _interiorPalette?.Fg ?? Color.FromHex("#1A1A1A"), // ADT-Tweak
                 });
 
                 return;
@@ -262,12 +285,9 @@ namespace Content.Client.PDA
                 item.OnProgramItemPressed += uid => OnProgramItemPressed?.Invoke(uid);
                 item.OnUninstallButtonPressed += uid => OnUninstallButtonPressed?.Invoke(uid);
                 item.OnInstallButtonPressed += uid => OnInstallButtonPressed?.Invoke(uid);
+                ApplyProgramItemTheme(item);
                 ProgramList.AddChild(item);
             }
-
-            //Add a filler item to the last row when it only contains one item
-            if (programs.Count % 2 == 0)
-                 ProgramList.AddChild(new Control() { HorizontalExpand = true });
         }
 
         /// <summary>
@@ -314,6 +334,170 @@ namespace Content.Client.PDA
             ChangeView(ProgramContentView);
         }
 
+        // ADT-Tweak start
+        public bool IsOnHealthScanView => _currentView == HealthScanViewIndex;
+        public int CurrentView => _currentView;
+
+        private void NotifyLeftMedTek()
+        {
+            if (_currentView == HealthScanViewIndex)
+                OnLeftMedTekView?.Invoke();
+        }
+
+        /// Updates MedTek contents without changing the current PDA view.
+        public void UpdateHealthScanData(HealthAnalyzerUiState state)
+        {
+            HealthScanView.Populate(state);
+        }
+
+        /// Shows built-in health analyzer data inside the PDA instead of a separate window.
+        public void ShowHealthScan(HealthAnalyzerUiState state)
+        {
+            HealthScanView.Populate(state);
+
+            if (_currentView == HealthScanViewIndex)
+                return;
+
+            HomeButton.IsCurrent = false;
+            ProgramListButton.IsCurrent = false;
+            SettingsButton.IsCurrent = false;
+            ProgramTitle.IsCurrent = true;
+            ProgramTitle.Visible = true;
+            ProgramCloseButton.Visible = true;
+            ProgramListButton.Visible = false;
+            SettingsButton.Visible = false;
+            ProgramTitle.LabelText = Loc.GetString("comp-pda-ui-health-scan-title");
+            ChangeView(HealthScanViewIndex);
+        }
+
+        /// Restores a non-MedTek view before the PDA becomes visible again.
+        public void RestoreView(int view)
+        {
+            if (view is < HomeView or > ProgramContentView)
+                view = HomeView;
+
+            switch (view)
+            {
+                case HomeView:
+                    HideProgramHeader();
+                    ToHomeScreen();
+                    break;
+                case ProgramListView:
+                    HomeButton.IsCurrent = false;
+                    ProgramListButton.IsCurrent = true;
+                    SettingsButton.IsCurrent = false;
+                    ProgramTitle.IsCurrent = false;
+                    ChangeView(ProgramListView);
+                    break;
+                case SettingsView:
+                    HomeButton.IsCurrent = false;
+                    ProgramListButton.IsCurrent = false;
+                    SettingsButton.IsCurrent = true;
+                    ProgramTitle.IsCurrent = false;
+                    ChangeView(SettingsView);
+                    break;
+                case ProgramContentView:
+                    HomeButton.IsCurrent = false;
+                    ProgramListButton.IsCurrent = false;
+                    SettingsButton.IsCurrent = false;
+                    ProgramTitle.IsCurrent = true;
+                    ProgramTitle.Visible = true;
+                    ProgramCloseButton.Visible = true;
+                    ProgramListButton.Visible = false;
+                    SettingsButton.Visible = false;
+                    ChangeView(ProgramContentView);
+                    break;
+            }
+        }
+
+        public void ApplyHealthScanDividerColor(Color color)
+        {
+            HealthScanView.ApplyDividerColor(color);
+        }
+
+        /// Paints everything inside the PDA content frame from the secondary accent.
+        public void ApplyInteriorTheme(Color secondary, Color _)
+        {
+            var palette = PdaInteriorTheme.FromSecondary(secondary);
+            _interiorPalette = palette;
+
+            ApplyMonitorTheme(palette);
+
+            foreach (var child in NavigationBar.Children)
+            {
+                if (child is not PdaNavigationButton nav)
+                    continue;
+
+                var wasCurrent = nav.IsCurrent;
+                var wasActive = nav.IsActive;
+                nav.InactiveBgColor = palette.NavInactive.ToHex();
+                nav.ActiveBgColor = palette.NavActive.ToHex();
+                nav.InactiveFgColor = palette.FgMuted.ToHex();
+                if (nav != FlashLightToggleButton)
+                    nav.ActiveFgColor = palette.Fg.ToHex();
+                else
+                    nav.ActiveFgColor = "#EAEFBB";
+
+                nav.IsCurrent = wasCurrent;
+                nav.IsActive = wasActive;
+                nav.SetBorderColor(palette.NavBorder);
+            }
+
+            ApplySettingsButtonTheme(AccessRingtoneButton, palette);
+            ApplySettingsButtonTheme(ActivateMusicButton, palette);
+            ApplySettingsButtonTheme(ShowUplinkButton, palette);
+            ApplySettingsButtonTheme(LockUplinkButton, palette);
+
+            OsLabel.FontColorOverride = palette.FooterFg;
+            ProductLabel.FontColorOverride = palette.FooterFg;
+            AddressLabel.FontColorOverride = palette.FooterFg;
+            ContentFooterPanel.PanelOverride = null;
+            FooterStripe.ModulateSelfOverride = palette.FooterStripe;
+            NavAccentLine.PanelOverride = new StyleBoxFlat { BackgroundColor = palette.Divider };
+
+            ApplyHealthScanDividerColor(palette.Divider);
+            HealthScanView.ApplyMonitorTextTheme(palette.Fg);
+
+            foreach (var child in ProgramList.Children)
+            {
+                if (child is PdaProgramItem item)
+                    ApplyProgramItemTheme(item);
+                else if (child is Label emptyLabel)
+                    emptyLabel.FontColorOverride = palette.Fg;
+            }
+
+            ThemeProgramView();
+        }
+
+        /// Re-applies the interior palette to the active cartridge UI.
+        public void ThemeProgramView()
+        {
+            if (_interiorPalette is not { } palette)
+                return;
+
+            foreach (var child in ProgramView.Children)
+                PdaInteriorTheme.ApplyTo(child, palette);
+        }
+
+        private void ApplyProgramItemTheme(PdaProgramItem item)
+        {
+            if (_interiorPalette is not { } palette)
+                return;
+
+            item.ThemeNormalBg = palette.ItemBg;
+            item.ThemeHoverBg = palette.ItemHover;
+            item.ThemeFg = palette.Fg;
+            item.InstallButton.ModulateSelfOverride = palette.ItemHover;
+        }
+
+        private static void ApplySettingsButtonTheme(PdaSettingsButton button, in PdaInteriorPalette palette)
+        {
+            button.ThemeNormalBg = palette.ItemBg;
+            button.ThemeHoverBg = palette.ItemHover;
+            button.ThemeFg = palette.Fg;
+            button.ThemeDisabledFg = palette.FgMuted;
+        }
+        // ADT-Tweak end
 
         /// <summary>
         /// Changes the current view to the given view number
@@ -326,6 +510,7 @@ namespace Content.Client.PDA
             ViewContainer.GetChild(_currentView).Visible = false;
             ViewContainer.GetChild(view).Visible = true;
             _currentView = view;
+            OnViewChanged?.Invoke(view);    //ADT-Tweak
         }
 
         private void HideAllViews()

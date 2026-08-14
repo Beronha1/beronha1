@@ -21,6 +21,13 @@ public sealed partial class PdaSettingsButton : ContainerButton
         BackgroundColor = Color.FromHex("#25252a")
     };
 
+    // ADT-Tweak Start: Theme override
+    public Color? ThemeNormalBg { get; set; }
+    public Color? ThemeHoverBg { get; set; }
+    public Color? ThemeFg { get; set; }
+    public Color? ThemeDisabledFg { get; set; }
+    // ADT-Tweak End
+
     public string? Text
     {
         get => OptionName.Text;
@@ -58,6 +65,20 @@ public sealed partial class PdaSettingsButton : ContainerButton
     protected override void Draw(DrawingHandleScreen handle)
     {
         base.Draw(handle);
+
+        // ADT-Tweak start
+        if (ThemeNormalBg != null && ThemeHoverBg != null && ThemeFg != null)
+        {
+            var disabled = HasStylePseudoClass(StylePseudoClassDisabled);
+            var hovered = HasStylePseudoClass(StylePseudoClassHover)
+                          || HasStylePseudoClass(StylePseudoClassPressed);
+            BackgroundColor = hovered && !disabled ? ThemeHoverBg.Value : ThemeNormalBg.Value;
+            ForegroundColor = disabled
+                ? ThemeDisabledFg ?? Color.FromHex(DisabledFgColor)
+                : ThemeFg;
+            return;
+        }
+        // ADT-Tweak end
 
         if (TryGetStyleProperty<Color>(StylePropertyBgColor, out var bgColor))
             BackgroundColor = bgColor;

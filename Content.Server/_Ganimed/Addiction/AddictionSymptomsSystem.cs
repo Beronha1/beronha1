@@ -138,4 +138,3 @@ public sealed partial class AddictionSymptomsSystem : EntitySystem
             _status.TrySetStatusEffectDuration(uid, comp.RainbowEffect, comp.SymptomDuration);
     }
 }
-

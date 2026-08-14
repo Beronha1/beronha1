@@ -1,5 +1,7 @@
+using Content.Shared._ES.Masks.Components;
 using Content.Shared.EntityTable.EntitySelectors;
 using Content.Shared.Roles;
+using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Array;
 
@@ -10,13 +12,13 @@ public sealed partial class ESTroupePrototype : IPrototype, IInheritingPrototype
 {
     /// <inheritdoc/>
     [IdDataField]
-    public string ID { get; } = default!;
+    public string ID { get; private set; }  = default!;
 
     [ParentDataField(typeof(AbstractPrototypeIdArraySerializer<ESTroupePrototype>))]
-    public string[]? Parents { get; }
+    public string[]? Parents { get; private set; }
 
     [AbstractDataField]
-    public bool Abstract { get; }
+    public bool Abstract { get; private set; }
 
     /// <summary>
     /// Name of the troupe, in plain text.
@@ -24,11 +26,20 @@ public sealed partial class ESTroupePrototype : IPrototype, IInheritingPrototype
     [DataField(required: true)]
     public LocId Name;
 
+    [DataField(required: true)]
+    public LocId Description;
+
     /// <summary>
     /// Color used in UI
     /// </summary>
     [DataField]
     public Color Color = Color.White;
+
+    /// <summary>
+    /// Meta-game icon used by stagehands when observing.
+    /// </summary>
+    [DataField(required: true)]
+    public ProtoId<FactionIconPrototype> MetaIcon;
 
     /// <summary>
     /// Players with any of these jobs will be ineligible for being members of this troupe
@@ -41,4 +52,13 @@ public sealed partial class ESTroupePrototype : IPrototype, IInheritingPrototype
     /// </summary>
     [DataField]
     public EntityTableSelector Objectives = new NoneSelector();
+
+    [DataField(required: true)]
+    public EntProtoId<ESTroupeRuleComponent> GameRule;
+
+    /// <summary>
+    /// String used to refer to the masks of this troupe on the news report for the masquerade.
+    /// </summary>
+    [DataField]
+    public LocId? DisguisedMaskName;
 }

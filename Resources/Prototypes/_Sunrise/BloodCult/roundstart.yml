@@ -1,0 +1,28 @@
+﻿- type: entity
+  id: BloodCult
+  parent: BaseGameRule
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 10 # 🌇Sunset🌇 - tuned down from upstream's 40 to match this server's typical pop
+  - type: BloodCultRule
+  - type: AntagObjectives
+    objectives:
+    - CultistKillObjective
+#    Сюда нужно цель на призыв нарси.
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ BloodCultist ]
+      min: 2 # 🌇Sunset🌇 - guarantee more than a single cultist at low/moderate pop
+      max: 4
+      playerRatio: 10 # 🌇Sunset🌇 - tuned down from upstream's 15 to match this server's typical pop
+      blacklist:
+        components:
+        - AntagImmune
+        #- Synth  # SUNRISE-TODO: КПБ
+        - BibleUser
+      lateJoinAdditional: true
+      mindRoles:
+      - MindRoleCultist
+  - type: DynamicRuleCost
+    cost: 150

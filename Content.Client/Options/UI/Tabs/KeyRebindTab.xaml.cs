@@ -175,6 +175,7 @@ namespace Content.Client.Options.UI.Tabs
             AddToggleCvarCheckBox("ui-options-hold-to-attack-ranged", CCVars.ControlHoldToAttackRanged);
 
             AddHeader("ui-options-header-movement");
+            AddButton(ContentKeyFunctions.ESHoldToFace);
             AddButton(TraumaKeyFunctions.Strafe); // Trauma
             AddButton(EngineKeyFunctions.MoveUp);
             AddButton(EngineKeyFunctions.MoveLeft);

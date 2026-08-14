@@ -1,5 +1,5 @@
-using Content.Client._ES.Chat;
 using Content.Client._ES.Stagehand.Ui;
+using System.Numerics;
 using Content.Client._ES.Voting;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
@@ -67,5 +67,9 @@ public sealed partial class StagehandGameScreen : InGameScreen
         Actions.ActionsContainer.MaxGridWidth = ViewportContainer.Size.X - indent;
     }
 
-    public override ChatBox ChatBox => GetWidget<StagehandChatBox>()!;
+    public override ChatBox ChatBox => GetWidget<ChatBox>()!;
+
+    public override void SetChatSize(Vector2 size)
+    {
+    }
 }

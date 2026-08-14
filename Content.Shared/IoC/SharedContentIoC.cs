@@ -1,3 +1,4 @@
+using Content.Shared._Sunrise.BloodCult.Systems;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;
 
@@ -9,6 +10,7 @@ namespace Content.Shared.IoC
         {
             deps.Register<MarkingManager, MarkingManager>();
             deps.Register<ContentLocalizationManager, ContentLocalizationManager>();
+            deps.Register<CultistWordGeneratorManager, CultistWordGeneratorManager>();
         }
     }
 }

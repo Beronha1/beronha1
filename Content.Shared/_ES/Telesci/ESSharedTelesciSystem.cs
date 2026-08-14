@@ -9,15 +9,15 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._ES.Telesci;
 
-public abstract class ESSharedTelesciSystem : EntitySystem
+public abstract partial class ESSharedTelesciSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] protected readonly EntityTableSystem EntityTable = default!;
-    [Dependency] private readonly SharedGravitySystem _gravity = default!;
-    [Dependency] private readonly ESSharedObjectiveSystem _objective = default!;
-    [Dependency] protected readonly SharedStationSystem Station = default!;
-    [Dependency] private readonly SharedUserInterfaceSystem _userInterface = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] protected EntityTableSystem EntityTable = default!;
+    [Dependency] private SharedGravitySystem _gravity = default!;
+    [Dependency] private ESSharedObjectiveSystem _objective = default!;
+    [Dependency] protected SharedStationSystem Station = default!;
+    [Dependency] private SharedUserInterfaceSystem _userInterface = default!;
 
     /// <inheritdoc/>
     public override void Initialize()

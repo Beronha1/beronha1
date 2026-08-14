@@ -1,5 +1,6 @@
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
+using Content.Shared._ES.Mind;
 using Content.Shared._ES.Objectives.Components;
 using Content.Shared.EntityTable;
 using Content.Shared.EntityTable.EntitySelectors;
@@ -20,11 +21,11 @@ namespace Content.Shared._ES.Objectives;
 /// </summary>
 public abstract partial class ESSharedObjectiveSystem : EntitySystem
 {
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly EntityTableSystem _entityTable = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly SharedPvsOverrideSystem _pvsOverride = default!;
+    [Dependency] private ISharedPlayerManager _player = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private EntityTableSystem _entityTable = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private SharedPvsOverrideSystem _pvsOverride = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
@@ -33,6 +34,11 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
 
         SubscribeLocalEvent<ESObjectiveHolderComponent, MindGotAddedEvent>(OnMindGotAdded);
         SubscribeLocalEvent<ESObjectiveHolderComponent, MindGotRemovedEvent>(OnMindGotRemoved);
+
+        SubscribeLocalEvent<ESObjectiveHolderComponent, ESMindPlayerAttachedEvent>(OnPlayerAttached);
+        SubscribeLocalEvent<ESObjectiveHolderComponent, ESMindPlayerDetachedEvent>(OnPlayerDetached);
+
+        SubscribeLocalEvent<ESObjectiveComponent, EntityRenamedEvent>(OnObjectiveRenamed);
     }
 
     private void OnMindGotAdded(Entity<ESObjectiveHolderComponent> ent, ref MindGotAddedEvent args)
@@ -49,6 +55,28 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
         {
             RaiseLocalEvent(objective, args);
         }
+    }
+
+    private void OnPlayerAttached(Entity<ESObjectiveHolderComponent> ent, ref ESMindPlayerAttachedEvent args)
+    {
+        foreach (var objective in GetObjectives(ent.AsNullable()))
+        {
+            _pvsOverride.AddSessionOverride(objective, args.Player);
+        }
+    }
+
+    private void OnPlayerDetached(Entity<ESObjectiveHolderComponent> ent, ref ESMindPlayerDetachedEvent args)
+    {
+        foreach (var objective in GetObjectives(ent.AsNullable()))
+        {
+            _pvsOverride.RemoveSessionOverride(objective, args.Player);
+        }
+    }
+
+    private void OnObjectiveRenamed(Entity<ESObjectiveComponent> ent, ref EntityRenamedEvent args)
+    {
+        // We need to dirty when we get renamed so that we can raise events on the client and update UIs.
+        Dirty(ent);
     }
 
     /// <summary>
@@ -72,9 +100,21 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
         ent.Comp.Progress = newProgress;
 
         var afterEv = new ESObjectiveProgressChangedEvent((ent, ent.Comp), oldProgress, newProgress);
-        RaiseLocalEvent(ent, ref afterEv);
+        RaiseLocalEvent(ent, ref afterEv, true);
 
         Dirty(ent);
+    }
+
+    /// <summary>
+    /// Refreshes objective progress for all objectives with component <see cref="T"/>
+    /// </summary>
+    [PublicAPI]
+    public void RefreshObjectiveProgress<T>() where T : Component
+    {
+        foreach (var objective in GetObjectives<T>())
+        {
+            RefreshObjectiveProgress((objective.Owner, objective.Comp2));
+        }
     }
 
     /// <summary>
@@ -105,7 +145,11 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
         return ent.Comp.Icon ?? SpriteSpecifier.Invalid;
     }
 
-    public void RefreshObjectives(Entity<ESObjectiveHolderComponent?> ent)
+    /// <summary>
+    /// Re-generates the list of objectives an entity should have, adding all new objectives and removing ones that should no longer be there,
+    /// e.g. as a result of troupe or mask changes.
+    /// </summary>
+    public void RegenerateObjectiveList(Entity<ESObjectiveHolderComponent?> ent)
     {
         if (!Resolve(ent, ref ent.Comp, false))
             return;
@@ -186,14 +230,36 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
     /// <summary>
     /// Returns all objectives which have a given component
     /// </summary>
-    public List<Entity<T>> GetObjectives<T>() where T : Component
+    [PublicAPI]
+    public List<Entity<T, ESObjectiveComponent>> GetObjectives<T>() where T : Component
     {
         var query = EntityQueryEnumerator<T, ESObjectiveComponent>();
 
-        var objectives = new List<Entity<T>>();
-        while (query.MoveNext(out var uid, out var comp, out _))
+        var objectives = new List<Entity<T, ESObjectiveComponent>>();
+        while (query.MoveNext(out var uid, out var comp, out var objective))
         {
-            objectives.Add((uid, comp));
+            objectives.Add((uid, comp, objective));
+        }
+
+        return objectives;
+    }
+
+    /// <summary>
+    /// Returns all owned objectives on an entity that have a given component
+    /// </summary>
+    public List<Entity<T>> GetOwnedObjectives<T>(Entity<ESObjectiveHolderComponent?> ent) where T : Component
+    {
+        if (!Resolve(ent, ref ent.Comp, false))
+            return [];
+
+        var objectives = new List<Entity<T>>();
+
+        foreach (var objective in ent.Comp.OwnedObjectives)
+        {
+            if (!TryComp<T>(objective, out var comp))
+                continue;
+
+            objectives.Add((objective, comp));
         }
 
         return objectives;
@@ -277,8 +343,67 @@ public abstract partial class ESSharedObjectiveSystem : EntitySystem
         RaiseLocalEvent(objectiveUid, ref ev);
 
         ent.Comp.OwnedObjectives.Add(objective.Value);
-        RefreshObjectives(ent);
+        RegenerateObjectiveList(ent);
         RefreshObjectiveProgress(objective.Value.AsNullable());
         return true;
+    }
+
+    public bool TryRemoveObjective(Entity<ESObjectiveHolderComponent?> ent, Entity<ESObjectiveComponent?> objective)
+    {
+        if (!Resolve(ent, ref ent.Comp) || !Resolve(objective, ref objective.Comp))
+            return false;
+
+        ent.Comp.OwnedObjectives.Remove(objective);
+        RegenerateObjectiveList(ent);
+        Del(objective);
+        return true;
+    }
+
+    /// <summary>
+    ///     Tries to find an <see cref="ESObjectiveHolderComponent"/>
+    ///     This is kind of inefficient, so you should avoid doing this when possible (and try to just pass around the holder separately, if you already know it)
+    /// </summary>
+    public bool TryFindObjectiveHolder(Entity<ESObjectiveComponent?> objective, [NotNullWhen(true)] out Entity<ESObjectiveHolderComponent>? holder)
+    {
+        if (!Resolve(objective.Owner, ref objective.Comp))
+        {
+            holder = null;
+            return false;
+        }
+
+        Entity<ESObjectiveHolderComponent>? foundHolder = null;
+        var query = EntityQueryEnumerator<ESObjectiveHolderComponent>();
+        while (query.MoveNext(out var uid, out var potentialHolder))
+        {
+            if (!potentialHolder.OwnedObjectives.Contains(objective.Owner))
+                continue;
+
+            // this assumes only one holder can own an objective, which I think is true right now, and the purpose of owned objectives anyway?
+            foundHolder = (uid, potentialHolder);
+            break;
+        }
+
+        holder = foundHolder;
+        return holder != null;
+    }
+
+    /// <summary>
+    /// Checks if a given entity has the given objective assigned to them.
+    /// Unlike <see cref="TryFindObjectiveHolder"/>, this works for any type of inherited ownership, not just direct holding.
+    /// </summary>
+    public bool HasObjective<T>(EntityUid potentialHolder, Entity<T> objective) where T : Component
+    {
+        return GetObjectives<T>(potentialHolder).Contains(objective);
+    }
+
+    public string GetObjectiveString(Entity<ESObjectiveComponent?> ent)
+    {
+        if (!Resolve(ent, ref ent.Comp))
+            return string.Empty;
+
+        return Loc.GetString("es-objective-summary-fmt",
+            ("name", Name(ent)),
+            ("success", IsCompleted(ent)),
+            ("percent", (int) (GetProgress(ent) * 100)));
     }
 }

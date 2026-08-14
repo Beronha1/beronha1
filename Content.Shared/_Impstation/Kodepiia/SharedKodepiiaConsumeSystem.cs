@@ -10,7 +10,7 @@ namespace Content.Shared._Impstation.Kodepiia;
 
 public abstract partial class SharedKodepiiaConsumeSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
 
     public override void Initialize()
     {

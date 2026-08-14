@@ -58,7 +58,7 @@ public sealed partial class ESBreakableSystem : EntitySystem
         if (_timing.ApplyingState)
             return;
 
-        SetBroken(ent.AsNullable(), _damageable.GetDamage((ent, args.Damageable)).GetTotal() >= ent.Comp.Threshold);
+        SetBroken(ent.AsNullable(), _damageable.GetTotalDamage((ent, args.Damageable)) >= ent.Comp.Threshold);
     }
 
     private void OnOpenAttempt(Entity<ESBreakableActivatableUiComponent> ent, ref ActivatableUIOpenAttemptEvent args)

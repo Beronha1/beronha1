@@ -1,0 +1,23 @@
+<ui:ESJobPrefsWindow
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._ES.Spawning.Ui"
+    xmlns:customControls="clr-namespace:Content.Client.Administration.UI.CustomControls"
+    xmlns:ui="clr-namespace:Content.Client._ES.Station.Ui"
+    Title="{Loc 'es-job-prefs-window-title'}"
+    MinSize="950 530">
+    <HFillStack HorizontalExpand="True" Margin="10">
+        <VFillStack>
+            <ScrollContainer VerticalExpand="True" HorizontalExpand="True" HScrollEnabled="False">
+                <HFillStack HorizontalAlignment="Stretch" VerticalAlignment="Center" HorizontalExpand="True">
+                    <VFillStack Name="JobContainer" Margin="5" SeparationOverride="10"/>
+                    <Control MinWidth="10"/>
+                    <VFillStack Name="JobContainer2" Margin="5" SeparationOverride="10"/>
+                </HFillStack>
+            </ScrollContainer>
+        </VFillStack>
+        <customControls:VSeparator Margin="10 0 10 0"/>
+        <VStack>
+            <controls:ESJobDisplay Name="JobDisplay" VerticalAlignment="Center" HorizontalAlignment="Center" VerticalExpand="True" SetWidth="200" Margin="10"/>
+        </VStack>
+    </HFillStack>
+</ui:ESJobPrefsWindow>

@@ -2,8 +2,9 @@
 //
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Shared.Body.Prototypes;
 using Content.Shared.Chemistry.Reagent;
+using Content.Shared.Metabolism;
+using Content.Trauma.Common.Reagents;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._Ganimed.Addiction;
@@ -132,16 +133,16 @@ public sealed partial class AddictionComponent : Component
     public ProtoId<ReagentPrototype> NicotineReagent = "Nicotine";
 
     /// <summary>
-    /// Группа метаболизма, по которой реагент считается алкоголем.
+    /// Группа реагентов, по которой реагент считается алкоголем.
     /// </summary>
     [DataField]
-    public ProtoId<MetabolismGroupPrototype> AlcoholMetabolismGroup = "Alcohol";
+    public ProtoId<ReagentGroupPrototype> AlcoholReagentGroup = "AlcoholicDrinks";
 
     /// <summary>
     /// Группа метаболизма, по которой реагент считается наркотиком.
     /// </summary>
     [DataField]
-    public ProtoId<MetabolismGroupPrototype> NarcoticMetabolismGroup = "Narcotic";
+    public ProtoId<MetabolismStagePrototype> NarcoticMetabolismGroup = "Narcotic";
 }
 
 /// <summary>

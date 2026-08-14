@@ -5,6 +5,7 @@ using Content.Shared.Mobs;
 // </Trauma>
 using Content.Shared.Roles;
 using Robust.Shared.Network;
+using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Replays;
 using Robust.Shared.Serialization;
@@ -257,4 +258,6 @@ namespace Content.Shared.GameTicking
         ReadyToPlay,
         JoinedGame,
     }
+
+    public readonly record struct ESOnPlayerReadyToggled(ICommonSession Player, PlayerGameStatus GameStatus);
 }

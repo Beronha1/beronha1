@@ -5,10 +5,10 @@ using Content.Shared.Weapons.Ranged.Systems;
 
 namespace Content.Shared.Starlight.Lock;
 
-public partial class WeaponLockSystem : EntitySystem
+public sealed partial class WeaponLockSystem : EntitySystem
 {
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly LockSystem _lock = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private LockSystem _lock = default!;
 
     public override void Initialize()
     {

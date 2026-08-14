@@ -1,0 +1,13 @@
+<controls:ESObservablePlayerButton
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._ES.Stagehand.Ui"
+    HorizontalExpand="True"
+    SetHeight="40"
+    StyleClasses="OpenBoth">
+    <HStack HorizontalExpand="True">
+        <TextureRect Name="JobIcon" VerticalAlignment="Center" TextureScale="2 2" MouseFilter="Pass" Margin="0 0 10 0"/>
+        <RichTextLabel Name="NameLabel" StyleClasses="LabelKeyText" HorizontalExpand="True" RectClipContent="True"/>
+        <RichTextLabel Name="SecretIdentityLabel" StyleClasses="LabelKeyText" HorizontalAlignment="Right" Margin="5 0 10 0"/>
+        <TextureRect Name="OrganizationIcon" VerticalAlignment="Center" TextureScale="2 2" MouseFilter="Pass" HorizontalAlignment="Right"/>
+    </HStack>
+</controls:ESObservablePlayerButton>

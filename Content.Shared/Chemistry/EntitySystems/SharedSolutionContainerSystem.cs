@@ -75,6 +75,7 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     [Dependency] protected SharedAppearanceSystem AppearanceSystem = default!;
     [Dependency] protected SharedContainerSystem ContainerSystem = default!;
     [Dependency] protected SharedHandsSystem Hands = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
     [Dependency] private ILocalizationManager _localization = default!;
 
     [Dependency] protected EntityQuery<ContainedSolutionComponent> ContainedQuery = default!;
@@ -463,13 +464,13 @@ public abstract partial class SharedSolutionContainerSystem : EntitySystem
     // Ganimed-Port-Start: реагентные пожары (funky-station/forky-station#127, автор YaraaraY, MIT)
     public void BurnFlammableReagents(Entity<SolutionComponent> soln, float fraction)
     {
-        soln.Comp.Solution.BurnFlammableReagents(fraction, PrototypeManager);
+        soln.Comp.Solution.BurnFlammableReagents(fraction, _prototypeManager);
         UpdateChemicals(soln);
     }
 
     public void BurnSelfOxidizingReagents(Entity<SolutionComponent> soln, float fraction)
     {
-        soln.Comp.Solution.BurnSelfOxidizingReagents(fraction, PrototypeManager);
+        soln.Comp.Solution.BurnSelfOxidizingReagents(fraction, _prototypeManager);
         UpdateChemicals(soln);
     }
     // Ganimed-Port-End

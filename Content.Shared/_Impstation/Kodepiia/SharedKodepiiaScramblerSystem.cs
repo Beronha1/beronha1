@@ -8,8 +8,8 @@ namespace Content.Shared._Impstation.Kodepiia;
 
 public abstract partial class SharedKodepiiaScramblerSystem : EntitySystem
 {
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {

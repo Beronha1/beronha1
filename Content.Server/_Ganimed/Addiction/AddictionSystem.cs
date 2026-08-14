@@ -182,13 +182,13 @@ public sealed partial class AddictionSystem : EntitySystem
         if (reagent.Prototype == comp.NicotineReagent)
             return AddictionKind.Nicotine;
 
-        if (!_proto.TryIndex(reagent.Prototype, out ReagentPrototype? proto) || proto.Metabolisms is not { } metabolisms)
+        if (!_proto.TryIndex(reagent.Prototype, out ReagentPrototype? proto))
             return null;
 
-        if (metabolisms.ContainsKey(comp.AlcoholMetabolismGroup))
+        if (proto.Group == comp.AlcoholReagentGroup)
             return AddictionKind.Alcohol;
 
-        if (metabolisms.ContainsKey(comp.NarcoticMetabolismGroup))
+        if (proto.Metabolisms?.Metabolisms.ContainsKey(comp.NarcoticMetabolismGroup) == true)
             return AddictionKind.Drug;
 
         return null;

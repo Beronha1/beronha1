@@ -6,6 +6,7 @@
   physicalDesc: reagent-physical-desc-translucent
   contrabandSeverity: Major
   flavor: bitter
+  puddleSpriteSet: Shiny
   color: "#FAFAFA"
   boilingPoint: 212.0  # Dexosyephedrine vape when?
   meltingPoint: 170.0
@@ -85,6 +86,7 @@
   physicalDesc: reagent-physical-desc-powdery
   contrabandSeverity: Minor
   flavor: bitter
+  puddleSpriteSet: Powder
   color: "#D2FFFA"
   boilingPoint: 255.0
   meltingPoint: 36.0
@@ -144,6 +146,7 @@
   physicalDesc: reagent-physical-desc-energizing
   contrabandSeverity: Syndicate
   flavor: sharp
+  puddleSpriteSet: Acid
   color: "#9A040E"
   boilingPoint: 212.0
   meltingPoint: 170.0
@@ -254,6 +257,7 @@
   desc: reagent-desc-thc
   flavor: bitter
   flavorMinimum: 0.05
+  puddleSpriteSet: Powder
   color: "#808080"
   physicalDesc: reagent-physical-desc-crystalline
   contrabandSeverity: Minor # Trauma
@@ -276,6 +280,7 @@
   group: Narcotics
   desc: reagent-desc-nicotine
   flavor: bitter
+  puddleSpriteSet: Powder
   color: "#C0C0C0"
   physicalDesc: reagent-physical-desc-strong-smelling
   plantMetabolism:

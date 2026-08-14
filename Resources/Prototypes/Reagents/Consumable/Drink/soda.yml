@@ -79,7 +79,7 @@
   desc: reagent-desc-energy-drink
   physicalDesc: reagent-physical-desc-fizzy
   flavor: energydrink
-  color: "#ffffbf"
+  color: "#ffffbf60"
   metabolisms:
     Digestion:
       metabolites:

@@ -21,7 +21,8 @@
   physicalDesc: reagent-physical-desc-grainy
   contrabandSeverity: Minor
   flavor: bitter
-  color: "#757245"
+  puddleSpriteSet: Powder
+  color: "#75724580"
   boilingPoint: 2977.0 # Aluminum oxide
   meltingPoint: 2030.0
   tileReactions:
@@ -49,6 +50,7 @@
   contrabandSeverity: Major
   flavor: bitter
   color: "#FA00AF"
+  puddleSpriteSet: Acid
   tileReactions:
   - !type:FlammableTileReaction
     temperatureMultiplier: 5
@@ -78,7 +80,8 @@
   physicalDesc: reagent-physical-desc-burning
   contrabandSeverity: Major
   flavor: bitter
-  color: "#D4872A"
+  color: "#D4872A80"
+  puddleSpriteSet: Acid
   metabolisms:
     Bloodstream:
       effects:
@@ -109,6 +112,7 @@
   contrabandSeverity: Major
   flavor: bitter
   color: "#FFC8C8"
+  puddleSpriteSet: Acid
   tileReactions:
   #- !type:PryTileReaction # Trauma, removed so it can actually spread
   # <Trauma>
@@ -156,6 +160,7 @@
   desc: reagent-desc-foaming-agent
   physicalDesc: reagent-physical-desc-foamy
   flavor: bitter
+  puddleSpriteSet: Acid
   color: "#215263"
   boilingPoint: 418.0 # I went with ammonium lauryl sulfate as the basis for this
   meltingPoint: 7.4 # I made this up
@@ -170,6 +175,7 @@
     requiredSlipSpeed: 3.5
   flavor: bitter
   flavorMinimum: 0.01
+  puddleSpriteSet: Shiny
   color: "#a76b1c"
   recognizable: true
   boilingPoint: -84.7 # Acetylene. Close enough.
@@ -249,5 +255,6 @@
   physicalDesc: reagent-physical-desc-opaque
   flavor: bitter
   color: "#9e6b38"
+  puddleSpriteSet: Shiny
   boilingPoint: 190.0 # Perfluorooctanoic Acid.
   meltingPoint: 45.0

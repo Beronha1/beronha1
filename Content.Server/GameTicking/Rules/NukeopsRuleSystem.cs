@@ -257,7 +257,8 @@ public sealed partial class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleCompon
 
         // <Trauma> - replace gamerule-specific shitcode, nuke exploding means round ended
         // Timer.Spawn is evil but round ending shitcode is worse
-        Timer.Spawn(TimeSpan.FromSeconds(10), () =>
+        // Keep the round alive long enough for the nuclear cinematic to reach its finale.
+        Timer.Spawn(TimeSpan.FromSeconds(13), () =>
         {
             _roundEndSystem.EndRound();
         });

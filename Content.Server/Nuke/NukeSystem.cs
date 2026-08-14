@@ -4,7 +4,7 @@ using Content.Server.GameTicking.Rules.Components;
 // </Trauma>
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
-using Content.Server.Explosion.EntitySystems;
+using Content.Shared._ES.Cinematic;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
 using Content.Server.Station.Systems;
@@ -23,6 +23,8 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Robust.Shared.Timing;
@@ -33,7 +35,7 @@ public sealed partial class NukeSystem : EntitySystem
 {
     [Dependency] private AlertLevelSystem _alertLevel = default!;
     [Dependency] private ChatSystem _chatSystem = default!;
-    [Dependency] private ExplosionSystem _explosions = default!;
+    [Dependency] private ESCinematicSystem _cinematic = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private NavMapSystem _navMap = default!;
@@ -61,6 +63,7 @@ public sealed partial class NukeSystem : EntitySystem
     ///     Time to leave between the nuke song and the nuke alarm playing.
     /// </summary>
     private const float NukeSongBuffer = 1.5f;
+    private static readonly ProtoId<ESCinematicPrototype> NukeCinematic = "NukeCinematic";
 
     public override void Initialize()
     {
@@ -651,16 +654,12 @@ public sealed partial class NukeSystem : EntitySystem
 
         component.Exploded = true;
 
-        _explosions.QueueExplosion(uid,
-            component.ExplosionType,
-            component.TotalIntensity,
-            component.IntensitySlope,
-            component.MaxIntensity);
-
         RaiseLocalEvent(new NukeExplodedEvent()
         {
             OwningStation = transform.GridUid,
         });
+
+        _cinematic.PlayCinematic(NukeCinematic, Filter.Broadcast());
 
         _sound.StopStationEventMusic(uid, StationEventMusicType.Nuke);
         Del(uid);

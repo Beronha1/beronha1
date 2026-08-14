@@ -1,0 +1,68 @@
+using Content.Shared._ES.Cinematic;
+using Robust.Client.Audio;
+using Robust.Client.UserInterface;
+using Robust.Client.UserInterface.Controllers;
+using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+
+namespace Content.Client._ES.Cinematic;
+
+public sealed partial class ESCinematicUIController : UIController, IOnSystemChanged<ESClientCinematicSystem>
+{
+    [Dependency] private IPrototypeManager _proto = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [UISystemDependency] private readonly AudioSystem _audio = default!;
+
+    private TimeSpan? _cinematicEndTime;
+    private ESCinematicPrototype? _currentCinematic;
+
+    public override void FrameUpdate(FrameEventArgs args)
+    {
+        base.FrameUpdate(args);
+
+        if (_cinematicEndTime is not { } time)
+            return;
+
+        if (_timing.RealTime > time)
+        {
+            _cinematicEndTime = null;
+            _currentCinematic = null;
+
+            if (UIManager.ActiveScreen?.GetWidget<CinematicContainer>() is { } container)
+            {
+                container.ResetCinematicTexture();
+            }
+
+        }
+    }
+
+    public void OnSystemLoaded(ESClientCinematicSystem system)
+    {
+        system.CinematicRequested += OnCinematicRequested;
+    }
+
+    public void OnSystemUnloaded(ESClientCinematicSystem system)
+    {
+        system.CinematicRequested -= OnCinematicRequested;
+    }
+
+    private void OnCinematicRequested(ProtoId<ESCinematicPrototype> cinematic)
+    {
+        Log.Info($"Got cinematic request {cinematic.Id} from server");
+
+        if (UIManager.ActiveScreen?.GetWidget<CinematicContainer>() is not { } container
+            || !_proto.TryIndex(cinematic, out var prototype))
+            return;
+
+        // dont play cinematic if we're already playing the same one
+        if (_currentCinematic?.ID == cinematic.Id)
+            return;
+
+        Log.Info($"Playing {cinematic.Id}");
+        _currentCinematic = prototype;
+        _cinematicEndTime = _timing.RealTime + prototype.Length;
+        container.CinematicTexture.SetFromSpriteSpecifier(prototype.Animation);
+        _audio.PlayGlobal(prototype.Sound, Filter.Local(), true);
+    }
+}

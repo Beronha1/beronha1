@@ -1,0 +1,186 @@
+# Attack roster from Goobstation PR #6542. TargetAction is applied only to
+# targeted actions so instant actions do not generate ActionTargetAttemptEvent.
+
+- type: entity
+  id: ActionBaseORT
+  parent: BaseAction
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    priority: -21
+    useDelay: 2
+    itemIconStyle: NoItem
+  - type: Sprite
+    sprite: _Lavaland/Effects/plankton.rsi
+    state: plankton
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTEtherDrain
+  components:
+  - type: AngerDelayAction
+    minDelay: 8
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:EtherDrainEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTPlanktonFlood
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:AddComponentActionEvent
+      targetComponent:
+      - type: VicinitySpawner
+        spawnInterval: 2
+        numberToSpawn: 4
+        offsetForSpawn: 8
+        prototype: [ DarkMatterPlankton ]
+      timeToRemoval: 8
+      removeAfterTimer: true
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTEnergyDischarge
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:AddComponentActionEvent
+      targetComponent:
+      - type: VicinitySpawner
+        spawnInterval: 1
+        numberToSpawn: 4
+        offsetForSpawn: 8
+        prototype: [ LightningCrackle ]
+      timeToRemoval: 6
+      removeAfterTimer: true
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTEnergySurge
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: TargetAction
+    checkCanAccess: false
+    range: 30
+  - type: WorldTargetAction
+    event: !type:SpawnEntityActionEvent
+      spawn: EmptyWarningSpawner
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTCosmicRays
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 16
+  - type: InstantAction
+    event: !type:CosmicRayCirculatorActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionGalacticaSupercell
+  components:
+  - type: TargetAction
+    checkCanAccess: false
+    range: 20
+  - type: AngerDelayAction
+    minDelay: 20
+    maxDelay: 30
+  - type: WorldTargetAction
+    event: !type:SpawnEntityActionEvent
+      spawn: StormSpawner
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTResonanceHorizontal
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:EnvironmentalResonanceActionEvent
+      vertical: false
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTResonanceVertical
+  components:
+  - type: AngerDelayAction
+    minDelay: 10
+    maxDelay: 20
+  - type: InstantAction
+    event: !type:EnvironmentalResonanceActionEvent
+      vertical: true
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTSolarStorm
+  components:
+  - type: AngerDelayAction
+    minDelay: 20
+    maxDelay: 30
+  - type: InstantAction
+    event: !type:ORTSolarStormActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTParadigmInflation
+  components:
+  - type: TargetAction
+    checkCanAccess: false
+    range: 30
+  - type: AngerDelayAction
+    minDelay: 20
+    maxDelay: 30
+  - type: EntityTargetAction
+    canTargetSelf: false
+    event: !type:ParadigmInflationActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTPhaseConversion
+  components:
+  - type: AngerDelayAction
+    minDelay: 20
+    maxDelay: 30
+  - type: InstantAction
+    event: !type:PhaseConversionActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTReflectiveThreads
+  components:
+  - type: AngerDelayAction
+    minDelay: 15
+    maxDelay: 25
+  - type: InstantAction
+    event: !type:ReflectiveThreadsActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTDarkMatterShell
+  components:
+  - type: AngerDelayAction
+    minDelay: 15
+    maxDelay: 30
+  - type: InstantAction
+    event: !type:OrbitingRingActionEvent
+
+- type: entity
+  parent: ActionBaseORT
+  id: ActionORTConvergence
+  components:
+  - type: AngerDelayAction
+    minDelay: 20
+    maxDelay: 30
+  - type: InstantAction
+    event: !type:ORTConvergenceActionEvent

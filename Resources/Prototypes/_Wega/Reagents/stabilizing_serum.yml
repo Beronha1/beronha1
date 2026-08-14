@@ -1,0 +1,12 @@
+# All modifications and original work in ss14-wega under the Corvax-Wega tag
+# and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+
+- type: reagent
+  id: StabilizingSerum
+  name: reagent-name-stabilizing-serum
+  group: Medicine
+  desc: reagent-desc-stabilizing-serum
+  physicalDesc: reagent-physical-desc-opaque
+  flavor: medicine
+  color: "#fe0958"

@@ -19,10 +19,6 @@ public sealed class KnowledgeTest : GameTest
     [SidedDependency(Side.Server)] private SharedContainerSystem _container = default!;
     [SidedDependency(Side.Server)] private SharedKnowledgeSystem _knowledge = default!;
 
-    [SidedDependency(Side.Server)] private BodySystem _body = default!;
-    [SidedDependency(Side.Server)] private SharedContainerSystem _container = default!;
-    [SidedDependency(Side.Server)] private SharedKnowledgeSystem _knowledge = default!;
-
     /// <summary>
     /// Makes sure that humans brains can go in and out.
     /// </summary>

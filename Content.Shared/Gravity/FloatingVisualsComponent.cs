@@ -22,5 +22,11 @@ public sealed partial class FloatingVisualsComponent : Component
     [DataField, AutoNetworkedField]
     public bool CanFloat;
 
+    /// <summary>
+    /// Whether this entity should use its floating visuals even while it is in gravity.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool FloatRegardlessOfGravity;
+
     public readonly string AnimationKey = "gravity";
 }

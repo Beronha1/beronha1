@@ -23,32 +23,28 @@
         - LargeMobLayer
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna
   - type: HTN
     rootTask:
-      task: SimpleRangedHostileCompound
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
   - type: Sprite
     drawdepth: Mobs
-    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+    sprite: _Wega/Mobs/Lavaland/colossus.rsi
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
-      state: eva
-  - type: BatteryAmmoProvider
-    proto: BulletKineticShuttle
-    fireCost: 50
-  - type: BatterySelfRecharger
-    autoRechargeRate: 50
-  - type: Battery
-    maxCharge: 1000
-    startingCharge: 1000
+      state: colossus
+  - type: BasicEntityAmmoProvider
+    proto: BulletColossus
+    capacity: 9999
+    count: 9999
   - type: Gun
-    projectileSpeed: 20
-    fireRate: 0.65
+    projectileSpeed: 4
+    fireRate: 10
     useKey: false
-    selectedMode: SemiAuto
-    availableModes:
-    - SemiAuto
-    soundGunshot: /Audio/Weapons/plasma_cutter.ogg
+    soundGunshot: null
   - type: MeleeWeapon
     soundHit:
       path: /Audio/Effects/demon_attack1.ogg
@@ -88,3 +84,29 @@
     soundId: Colossus
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
+  - type: MegafaunaDirector
+  - type: ColossusBoss
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisColossusFilled
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyLavalandColossusBlasterTubes
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter
+  - type: NPCUseActionsOnTarget
+    delayModifier: 0.5
+    actionIds:
+    - ActionColossusFraction
+    - ActionColossusCross
+    - ActionColossusSpiral
+    - ActionColossusTripleFraction
+    actionChances:
+      ActionColossusFraction: 0.6
+      ActionColossusCross: 0.4
+      ActionColossusSpiral: 0.6
+      ActionColossusTripleFraction: 0.5

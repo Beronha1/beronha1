@@ -1,0 +1,24 @@
+# SPDX-FileCopyrightText: 2026 Monolith Station <https://github.com/Monolith-Station/Monolith>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: SalvageSpawnerScrapCommon
+  id: SalvageSpawnerPlastitaniumCommon
+  name: Salvage Plastitanium Spawner
+  suffix: Plastitanium, 2-3
+  components:
+  - type: EntityTableSpawner
+    offset: 0.4
+    table: !type:NestedSelector
+      tableId: SalvagePlastitanium
+      prob: 1
+
+- type: entityTable
+  id: SalvagePlastitanium
+  table: !type:GroupSelector
+    children:
+    - id: SheetPlastitanium1
+      weight: 1
+      amount: !type:RangeNumberSelector
+        range: 2, 3

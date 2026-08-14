@@ -1,0 +1,121 @@
+- type: megafaunaSelector
+  id: ChildishOni
+  selector: !type:AllMegafaunaSelector
+    children:
+    - id: PickTargetSimple
+    - id: ChildishOniActions
+    - id: ChildishOniActionsFrequent
+
+- type: megafaunaSelector
+  id: ChildishOniActions
+  selector: !type:GroupMegafaunaSelector
+    children:
+    - id: ChildishOniDemonicHandSpiral
+    - id: ChildishOniRampage
+    - id: ChildishOniRingClose
+    - id: ChildishOniRingWide
+    - id: ChildishOniClawSlash
+    - id: ChildishOniFlurry
+    - id: ChildishOniHandSide
+    - id: ChildishOniHandBarrage
+    - id: ChildishOniFlamingSlash
+
+- type: megafaunaSelector
+  id: ChildishOniActionsFrequent
+  selector: !type:GroupMegafaunaSelector
+    children:
+    - id: ChildishOniFlamingSlash
+    - id: ChildishOniFlurry
+
+- type: megafaunaSelector
+  id: ChildishOniDemonicHandSpiral
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniDemonicHandSpiral
+    conditions: [ !type:ActionAvailableCondition { actionId: ActionChildishOniDemonicHandSpiral } ]
+
+- type: megafaunaSelector
+  id: ChildishOniRampage
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniRampage
+    conditions: [ !type:ActionAvailableCondition { actionId: ActionChildishOniRampage } ]
+
+- type: megafaunaSelector
+  id: ChildishOniRingClose
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniRingClose
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniRingClose }
+    - !type:PhaseMegafaunaCondition { phases: [ 3, 4 ] }
+
+- type: megafaunaSelector
+  id: ChildishOniRingWide
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniRingWide
+    conditions: [ !type:ActionAvailableCondition { actionId: ActionChildishOniRingWide } ]
+
+- type: megafaunaSelector
+  id: ChildishOniClawSlash
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniClawSlash
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniClawSlash }
+    - !type:PhaseMegafaunaCondition { phases: [ 1, 2 ] }
+
+- type: megafaunaSelector
+  id: ChildishOniFlurry
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniFlurry
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniFlurry }
+    - !type:PhaseMegafaunaCondition { phases: [ 4 ] }
+
+- type: megafaunaSelector
+  id: ChildishOniHandSide
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniHandSide
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniHandSide }
+    - !type:PhaseMegafaunaCondition { phases: [ 2, 3, 4 ] }
+
+- type: megafaunaSelector
+  id: ChildishOniHandBarrage
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniHandBarrage
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniHandBarrage }
+    - !type:PhaseMegafaunaCondition { phases: [ 2, 3, 4 ] }
+
+- type: megafaunaSelector
+  id: ChildishOniFlamingSlash
+  selector: !type:PerformActionSelector
+    delay: !type:AngerNumberSelector
+      range: 1.0, 4.0
+      inverse: true
+    actionId: ActionChildishOniFlamingSlash
+    conditions:
+    - !type:ActionAvailableCondition { actionId: ActionChildishOniFlamingSlash }
+    - !type:PhaseMegafaunaCondition { phases: [ 3, 4 ] }

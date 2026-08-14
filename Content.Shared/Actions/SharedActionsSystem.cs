@@ -382,7 +382,10 @@ public abstract partial class SharedActionsSystem : EntitySystem
             _rotateToFace.TryFaceCoordinates(user, targetWorldPos);
 
         if (!ValidateEntityTarget(user, target, ent))
+        {
+            args.Invalid = true;
             return;
+        }
 
         _adminLogger.Add(LogType.Action,
             $"{ToPrettyString(user):user} is performing the {Name(ent):action} action (provided by {ToPrettyString(args.Provider):provider}) targeted at {ToPrettyString(target):target}.");
@@ -415,6 +418,7 @@ public abstract partial class SharedActionsSystem : EntitySystem
             // <Trauma>
             var evCheck = new CheckWorldInstantActionEvent(user, provider);
             RaiseLocalEvent(ent, ref evCheck);
+            args.Invalid |= !evCheck.Fallback;
             // </Trauma>
             return;
         }

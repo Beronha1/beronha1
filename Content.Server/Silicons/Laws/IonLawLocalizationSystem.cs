@@ -1,3 +1,5 @@
+using System.Globalization;
+
 namespace Content.Server.Silicons.Laws;
 
 public sealed partial class IonLawLocalizationSystem : EntitySystem
@@ -8,14 +10,24 @@ public sealed partial class IonLawLocalizationSystem : EntitySystem
     {
         base.Initialize();
 
-        var culture = Loc.DefaultCulture;
-
-        if (culture == null)
+        if (Loc.DefaultCulture == null)
         {
             Log.Error("Culture was null when trying to generate Ion Law");
             return;
         }
 
+        // Whiskey loads pt-BR as the default culture and en-US as a fallback.
+        // Fluent functions belong to a bundle, so registering these only on the
+        // default culture leaves fallback ion-law messages unable to format.
+        foreach (var culture in Loc.GetFoundCultures())
+        {
+            if (Loc.HasCulture(culture))
+                RegisterFunctions(culture);
+        }
+    }
+
+    private void RegisterFunctions(CultureInfo culture)
+    {
         Loc.AddFunction(culture, "ION-NUMBER-BASE", _ => GetIonLawValue("ION-NUMBER-BASE"));
         Loc.AddFunction(culture, "ION-NUMBER-MOD", _ => GetIonLawValue("ION-NUMBER-MOD"));
         Loc.AddFunction(culture, "ION-ADJECTIVE", _ => GetIonLawValue("ION-ADJECTIVE"));

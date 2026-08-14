@@ -1,0 +1,124 @@
+# Childish Oni mechanics adapted from Goobstation PR #6734.
+
+- type: entity
+  id: MobChildishOni
+  parent: LavalandMobBase
+  name: childish oni
+  description: An oni from the demonic capital, eager to turn battle into a cruel game.
+  components:
+  - type: Physics
+    bodyType: KinematicController
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.35,-0.6,0.35,0.6"
+        density: 10000
+        mask: [ MobMask ]
+        layer: [ MobLayer ]
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/Bosses/banana.rsi
+    noRot: true
+    layers:
+    - map: [ "oni" ]
+      state: phase_0
+  - type: Clickable
+  - type: InteractionOutline
+  - type: InputMover
+  - type: MobMover
+  - type: Actions
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.ChildishOniVisuals.Phase:
+        oni:
+          enum.ChildishOniPhaseVisual.Phase0: { state: phase_0 }
+          enum.ChildishOniPhaseVisual.Phase1: { state: phase_1 }
+          enum.ChildishOniPhaseVisual.Phase2: { state: phase_2 }
+          enum.ChildishOniPhaseVisual.Phase3: { state: phase_3 }
+  - type: CombatMode
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3
+    baseSprintSpeed: 3
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      2600: Dead
+  - type: Damageable
+    damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: NpcFactionMember
+    factions: [ SimpleHostile ]
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+  - type: MeleeWeapon
+    angle: 30
+    animation: WeaponArcClaw
+    damage:
+      types:
+        Slash: 10
+        Piercing: 5
+  - type: DamageOnCollide
+    ignoreWhitelist:
+      components: [ Fauna ]
+    inverted: true
+    damage:
+      types:
+        Structural: 1000
+  - type: ActionGrant
+    actions:
+    - ActionChildishOniDemonicHandSpiral
+    - ActionChildishOniRampage
+    - ActionChildishOniRingClose
+    - ActionChildishOniRingWide
+    - ActionChildishOniClawSlash
+    - ActionChildishOniFlurry
+    - ActionChildishOniHandSide
+    - ActionChildishOniHandBarrage
+    - ActionChildishOniFlamingSlash
+  - type: Fauna
+  - type: Anger
+    totalHp: 2600
+  - type: Aggressive
+    forgiveRange: 25
+  - type: MobPhases
+    phaseThresholds:
+      0: 1
+      1: 2
+      700: 3
+      1600: 4
+  - type: BossMusic
+    soundId: ChildishOni
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisFilled
+      - id: WeaponChildishOniBlade
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyChildishOniHorn
+    weaponWhitelist:
+      components: [ MegafaunaWeaponLooter ]
+  - type: MegafaunaAi
+    actionDelay: 0.5
+    selector:
+      id: ChildishOni
+  - type: MegafaunaFieldGenerator
+    wallId: WallHierophantArenaTemporary
+    wallShape: !type:NestedEntityShape
+      id: BoxHollow
+      size: 11
+  - type: MegafaunaAnchor
+  - type: MegafaunaGodmode
+  - type: MegafaunaRejuvenate
+  - type: MegafaunaDirector
+  - type: ChildishOni
+    landingDamage:
+      types:
+        Blunt: 1
+        Heat: 1

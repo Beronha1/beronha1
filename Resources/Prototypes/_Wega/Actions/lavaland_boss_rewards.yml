@@ -1,0 +1,33 @@
+# All modifications and original work in ss14-wega under the Corvax-Wega tag
+# and _Wega directories are licensed under GNU GPL v3.
+# https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
+
+- type: entity
+  parent: BaseAction
+  id: BecomeToDrakeAction
+  name: become ash drake
+  description: Reveal your draconic form.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    state: dragon
+  - type: InstantAction
+    event: !type:BecomeToDrakeActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: DrakeReturnBackAction
+  name: return from ash drake form
+  description: Return to your original form.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    state: dragon
+  - type: InstantAction
+    event: !type:DrakeReturnBackActionEvent

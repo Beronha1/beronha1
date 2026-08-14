@@ -25,6 +25,15 @@ public sealed partial class DamageMarkerOnCollideComponent : Component
     public DamageSpecifier Damage = new();
 
     /// <summary>
+    /// Weakening applied to the target's marker by an installed trophy.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadWrite), DataField, Access(Other = AccessPermissions.ReadWrite)]
+    public bool Weakening;
+
+    [ViewVariables(VVAccess.ReadWrite), DataField, Access(Other = AccessPermissions.ReadWrite)]
+    public float WeakeningModifier = 1f;
+
+    /// <summary>
     /// How many more times we can apply it.
     /// </summary>
     [ViewVariables(VVAccess.ReadWrite), DataField("amount"), AutoNetworkedField]

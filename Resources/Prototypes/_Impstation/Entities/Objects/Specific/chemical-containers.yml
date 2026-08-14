@@ -5,16 +5,15 @@
   suffix: For Drinks, Full
   description: A jug of cocoa powder.
   components:
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 150
-        reagents:
-        - ReagentId: CocoaPowder
-          Quantity: 150
+  - type: Solution
+    solution:
+      maxVol: 150
+      reagents:
+      - ReagentId: CocoaPowder
+        Quantity: 150
   - type: Edible
   - type: Label
-    currentLabel: reagent-name-cocoapowder
+    localizedLabel: reagent-name-cocoapowder
 
 - type: entity
   parent: DrinkBaseCup
@@ -23,14 +22,13 @@
   components:
   - type: PhysicalComposition
     materialComposition:
-      Cardboard: 25
+      Cardboard: 13
   - type: ExaminableSolution
     solution: drink
   - type: Sprite
     sprite: _Impstation/Objects/Consumable/Drinks/coffeecup.rsi
     state: icon
   - type: Appearance
-  - type: SolutionContainerManager
-    solutions:
-      drink:
-        maxVol: 30
+  - type: Solution
+    solution:
+      maxVol: 30

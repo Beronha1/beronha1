@@ -6,8 +6,25 @@
   path: /Maps/_Lavaland/Lavaland/ruin_hierophant_arena.yml
   priority: -1 # highest priority
   patchToPlanet: false
+  clearance: 8
   componentsToGrant:
   - type: HierophantBeat
+
+- type: lavalandGridRuin
+  id: ChildishOniArena
+  name: lavaland-ruin-childish-oni
+  path: /Maps/_Lavaland/Lavaland/ruin_childish_oni_arena.yml
+  priority: -1
+  patchToPlanet: false
+  clearance: 12
+
+- type: lavalandGridRuin
+  id: MercuryFissure
+  name: lavaland-ruin-mercury-fissure
+  path: /Maps/_Lavaland/Lavaland/ORT_fissure.yml
+  priority: -1
+  patchToPlanet: false
+  clearance: 12
 
 - type: lavalandGridRuin
   id: SyndicateBase

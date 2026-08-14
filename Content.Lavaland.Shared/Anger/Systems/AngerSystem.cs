@@ -21,6 +21,7 @@ public sealed partial class AngerSystem : EntitySystem
     [Dependency] private MobThresholdSystem _threshold = default!;
     [Dependency] private MobPhasesSystem _phases = default!;
     [Dependency] private SharedActionsSystem _actions = default!;
+    [Dependency] private AggressorsSystem _aggressors = default!;
 
     private EntityQuery<AngerPlayerScalingComponent> _scalingQuery;
 
@@ -62,18 +63,18 @@ public sealed partial class AngerSystem : EntitySystem
         // Get multipliers if possible
         var angerMultiplier = 1f;
         var healthMultiplier = 1f;
+        var activePlayers = _aggressors.CountActivePlayers((ent.Owner, aggressive));
         if (_scalingQuery.TryComp(ent.Owner, out var scaling)
-            && aggressive.Aggressors.Count > 1)
+            && activePlayers > 1)
         {
-            var playerCount = Math.Max(1, ent.Comp2.Aggressors.Count);
             if (scaling.AngerScalingFactor != null)
             {
-                for (var i = 1; i < playerCount; i++)
+                for (var i = 1; i < activePlayers; i++)
                     angerMultiplier *= scaling.AngerScalingFactor.Value;
             }
             if (scaling.HealthScalingFactor != null)
             {
-                for (var i = 1; i < playerCount; i++)
+                for (var i = 1; i < activePlayers; i++)
                     healthMultiplier *= scaling.HealthScalingFactor.Value;
             }
         }
@@ -105,7 +106,7 @@ public sealed partial class AngerSystem : EntitySystem
             || ent.Comp3.HealthScalingFactor == null)
             return;
 
-        var playerCount = Math.Max(1, ent.Comp2.Aggressors.Count);
+        var playerCount = Math.Max(1, _aggressors.CountActivePlayers((ent.Owner, ent.Comp2)));
         var scalingMultiplier = 1f;
 
         for (var i = 1; i < playerCount; i++)

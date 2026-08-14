@@ -1,0 +1,10 @@
+# SPDX-FileCopyrightText: 2026 Monolith Station <https://github.com/Monolith-Station/Monolith>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: stack
+  parent: BaseSheetStack
+  id: Plastitanium
+  name: stack-plastitanium
+  icon: { sprite: /Textures/_Mono/Objects/Materials/plastitanium.rsi, state: plastitanium }
+  spawn: SheetPlastitanium1

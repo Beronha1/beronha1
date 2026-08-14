@@ -357,7 +357,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             {
                 // <Lavaland>
                 var relay = new GetRelayMeleeWeaponEvent();
-                RaiseLocalEvent(weaponUid, ref relay);
+                RaiseLocalEvent(held.Value, ref relay);
                 if (relay.Handled && TryComp<MeleeWeaponComponent>(relay.Found, out var relayMelee))
                 {
                     weaponUid = relay.Found.Value;

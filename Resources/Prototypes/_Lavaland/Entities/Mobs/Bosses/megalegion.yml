@@ -1,8 +1,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 - type: entity
+  abstract: true
   name: Legion
-  id: LavalandBossMegaLegion
+  id: BaseLavalandBossMegaLegion
   parent: LavalandMobBase
   description: One of many.
   components:
@@ -29,10 +30,13 @@
         - LargeMobLayer
   - type: NpcFactionMember
     factions:
-    - SimpleHostile
+    - Lavafauna
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
   - type: Sprite
     drawdepth: Mobs
     sprite: _Lavaland/Mobs/Bosses/96x96.rsi
@@ -59,7 +63,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      700: Dead
+      800: Dead
   - type: Damageable
     damageModifierSet: Hierophant
   - type: Injurable
@@ -69,3 +73,34 @@
     soundId: AshDrake
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
+  - type: LegionBoss
+    summonCount: 3
+    lootPrototypes:
+      MaterialBones1: 1
+      LavalandCrateNecropolisFilled: 0.2
+      LegionCore: 0.1
+    rewards:
+    - CrowbarRed
+  - type: NPCUseActionsOnTarget
+    actionIds:
+    - ActionMegaLegion
+
+- type: entity
+  parent: BaseLavalandBossMegaLegion
+  id: LavalandBossMegaLegion
+  name: Legion
+  components:
+  - type: MegafaunaDirector
+  - type: LegionBoss
+    lootPrototypes:
+      MaterialBones: 1
+      LavalandCrateNecropolisFilled: 0.2
+      LegionCore: 0.1
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyLavalandLegionSkull
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter

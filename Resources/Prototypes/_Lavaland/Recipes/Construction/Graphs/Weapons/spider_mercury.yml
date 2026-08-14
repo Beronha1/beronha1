@@ -1,0 +1,37 @@
+# Crafting chain adapted from Goobstation PR #6542. The source alloy recipe
+# was not reachable from any production machine; Whiskey exposes it directly.
+
+- type: constructionGraph
+  id: SpiderMercuryAlloyConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: alloy
+      steps:
+      - material: SpiderMercuryKeratin
+        amount: 4
+      - material: Diamond
+        amount: 1
+        doAfter: 7
+  - node: alloy
+    entity: MaterialSpiderMercuryAlloy1
+
+- type: constructionGraph
+  id: SpiderMercuryRailgunConstructionGraph
+  start: start
+  graph:
+  - node: start
+    edges:
+    - to: railgun
+      steps:
+      - tag: SpiderMercuryCore
+        name: spider-mercury-core
+        icon:
+          sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+          state: animation-icon
+      - material: SpiderMercuryAlloy
+        amount: 2
+        doAfter: 10
+  - node: railgun
+    entity: WeaponSpiderMercuryRailgun

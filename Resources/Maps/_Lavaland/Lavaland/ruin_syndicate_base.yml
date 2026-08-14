@@ -5879,13 +5879,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 26.5,-18.5
       parent: 1
-- proto: CardBoxSyndicate
-  entities:
-  - uid: 782
-    components:
-    - type: Transform
-      pos: 26.479458,1.738765
-      parent: 1
 - proto: Catwalk
   entities:
   - uid: 783
@@ -17799,13 +17792,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: MedicalBiofabricator
-  entities:
-  - uid: 2741
-    components:
-    - type: Transform
-      pos: 20.5,-14.5
-      parent: 1
 - proto: MedicalCyberneticEyes
   entities:
   - uid: 2729

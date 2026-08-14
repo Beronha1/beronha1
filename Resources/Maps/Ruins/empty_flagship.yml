@@ -7287,8 +7287,10 @@ entities:
       parent: 1
     - type: DeviceLinkSource
       linkedPorts:
-        383: []
-        510: []
+        383:
+        - Pressed: Toggle
+        510:
+        - Pressed: Toggle
 - proto: SinkEmpty
   entities:
   - uid: 554

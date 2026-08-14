@@ -13151,3 +13151,19 @@ Entries:
   id: 1434
   time: '2026-08-13T16:09:11.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/4068
+- author: Whiskey Station
+  changes:
+  - type: Add
+    message: Integrated the current Trauma upstream and selected cross-fork systems.
+  - type: Add
+    message: Integrated telescience, Ratvar, medical, combat and quality-of-life content.
+  - type: Tweak
+    message: Capped EggLayer mouse population at 24 entities.
+  - type: Fix
+    message: Resolved cross-fork prototype, map, locale and resource incompatibilities.
+  - type: Fix
+    message: Hardened announcement audio validation and client ACZ compatibility.
+  - type: Fix
+    message: Repaired Lavaland legacy entities and empty flagship signal links.
+  id: 1435
+  time: '2026-08-14T11:27:40.0000000+00:00'

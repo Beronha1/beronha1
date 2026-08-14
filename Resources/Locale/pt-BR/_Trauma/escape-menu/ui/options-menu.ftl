@@ -1,0 +1,14 @@
+ui-options-function-open-mentor = Abrir ajuda administrativa e de mentor
+ui-escape-source-code = Código-fonte
+ui-options-streamer-mode = Modo streamer
+ui-options-hear-self = Ouvir a si mesmo
+ui-options-function-tackle = Investida
+ui-options-function-strafe = Iniciar deslocamento lateral (focar cursor)
+ui-options-show-skill-popups = Mostrar pop-ups de habilidades
+ui-options-function-open-martial-arts-menu = Escolher artes marciais
+ui-options-mouse-wheel-zoom = Pode dar zoom usando a roda do mouse
+ui-options-mouse-wheel-rotate = Pode girar a câmera usando a roda do mouse
+ui-options-mouse-wheel-targeting = Pode trocar parte de alvo usando a roda do mouse
+ui-options-function-targeting-mod = Tecla de ciclo de alvo com mod (Roda do mouse)
+ui-options-function-zoom-mod = Tecla de zoom da câmera com mod (Roda do mouse)
+ui-options-function-rotate-mod = Tecla de rotação com mod (Roda do mouse)

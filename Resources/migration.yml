@@ -340,6 +340,9 @@ AirlockParamedicLocked: AirlockMedicalLocked
 FoodMothBakedCheesePlatter: null
 PlushieMothBartender: PlushieMoth
 
+# ES telesci port (EphemeralSpace #907)
+ESMachineScienceTelepad: null
+
 # 2023-07-03
 ClothingHeadHelmetHelmet: ClothingHeadHelmetBasic
 ClothingHeadHelmetHelmetOld: ClothingHeadHelmetBasic

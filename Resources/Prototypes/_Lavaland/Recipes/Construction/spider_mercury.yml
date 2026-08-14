@@ -22,3 +22,64 @@
     WeaponsKnowledge: 6
     FabricationKnowledge: 6
   qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryCoreConstruction
+  graph: SpiderMercuryCoreConstructionGraph
+  category: construction-category-materials
+  targetNode: mercuryCore
+  objectType: Item
+  theory:
+    FabricationKnowledge: 3
+  practical:
+    FabricationKnowledge: 5
+  qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryEtherDrinkerConstruction
+  graph: SpiderMercuryEtherDrinkerConstructionGraph
+  category: construction-category-utilities
+  targetNode: etherDrinker
+  objectType: Item
+  theory:
+    FabricationKnowledge: 3
+  practical:
+    FabricationKnowledge: 5
+  qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryParadoxCancellerConstruction
+  graph: SpiderMercuryParadoxCancellerConstructionGraph
+  category: construction-category-utilities
+  targetNode: paradoxCanceller
+  objectType: Item
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    FabricationKnowledge: 6
+  qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryRadiantShieldConstruction
+  graph: SpiderMercuryRadiantShieldConstructionGraph
+  category: construction-category-weapons
+  targetNode: radiantShield
+  objectType: Item
+  theory:
+    FabricationKnowledge: 4
+  practical:
+    WeaponsKnowledge: 4
+    FabricationKnowledge: 6
+  qualityPrototype: ShitCraft
+
+- type: construction
+  id: SpiderMercuryRadiantModsuitConstruction
+  graph: SpiderMercuryRadiantModsuitConstructionGraph
+  category: construction-category-clothing
+  targetNode: radiantModsuit
+  objectType: Item
+  theory:
+    FabricationKnowledge: 5
+  practical:
+    FabricationKnowledge: 8
+  qualityPrototype: ShitCraft

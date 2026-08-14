@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -12,3 +12,4 @@ inspect-trauma-BoneDamage = parece deslocada
 popup-trauma-OrganDamage-Damaged = Algo parece muito errado em {$part}...
 popup-trauma-OrganDamage-Destroyed = Você sente uma dor extremamente aguda em {$part}!
 self-inspect-trauma-OrganDamage = parece estranha a cada respiração
+

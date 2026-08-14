@@ -23,6 +23,18 @@ public sealed partial class LavaStaffComponent : Component
 
     [DataField]
     public SoundSpecifier? UseSound;
+
+    [DataField]
+    public float MaxRange = 8f;
+
+    [DataField]
+    public TimeSpan TerraformTime = TimeSpan.FromSeconds(1.5);
+
+    [DataField]
+    public EntProtoId TargetPrototype = "LavaStaffTerraformTarget";
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? ActiveTarget;
 }
 
 [RegisterComponent]
@@ -33,6 +45,12 @@ public sealed partial class DragonBloodComponent : Component
 
     [DataField]
     public EntProtoId LowerDrakeAction = "BecomeToDrakeAction";
+
+    /// <summary>
+    /// Permanent fire-breath ability used for the fourth canonical dragon-blood outcome.
+    /// </summary>
+    [DataField]
+    public EntProtoId FireBreathAction = "ActionFireBreath";
 
     [DataField]
     public TimeSpan UseTime = TimeSpan.FromSeconds(5);
@@ -49,6 +67,12 @@ public sealed partial class SoulStorageComponent : Component
 
     [DataField]
     public float MaxBonusDamage = 76f;
+
+    [DataField]
+    public int MaxOrbitingGhosts = 12;
+
+    [DataField]
+    public SoundSpecifier CallSound = new SoundPathSpecifier("/Audio/_Goobstation/Wizard/ghost2.ogg");
 
     [ViewVariables(VVAccess.ReadOnly)]
     public HashSet<EntityUid> StolenSouls = [];
@@ -74,6 +98,19 @@ public sealed partial class DivineVoiceCarrierComponent : Component
     public EntityUid Implant;
 }
 
+[RegisterComponent]
+public sealed partial class StabilizedLegionCoreImplantComponent : Component
+{
+    [DataField]
+    public int MaxActivations = 1;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int ActivationsRemaining;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class LavaStaffTerraformDoAfterEvent : SimpleDoAfterEvent;
+
 [Serializable, NetSerializable]
 public sealed partial class DragonBloodDoAfterEvent : SimpleDoAfterEvent;
 
@@ -87,3 +124,18 @@ public sealed partial class BecomeToDrakeActionEvent : InstantActionEvent
 }
 
 public sealed partial class DrakeReturnBackActionEvent : InstantActionEvent;
+
+public sealed partial class ColossusRoarActionEvent : InstantActionEvent;
+
+/// <summary>
+/// Reimplementation of the Ash Drake's Sacred Flame reward. The spellbook grants this action without
+/// requiring the reader to retain an item-side component.
+/// </summary>
+public sealed partial class SacredFlameActionEvent : InstantActionEvent
+{
+    [DataField]
+    public float Radius = 4f;
+
+    [DataField]
+    public float Severity = 0.45f;
+}

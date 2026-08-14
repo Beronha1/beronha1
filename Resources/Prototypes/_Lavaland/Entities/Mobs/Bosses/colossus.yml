@@ -85,7 +85,32 @@
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
   - type: MegafaunaDirector
+  - type: MegafaunaSpecialAttackOnly
   - type: ColossusBoss
+  - type: MegafaunaHarvestable
+    stages:
+    - name: megafauna-harvest-stage-colossus-shell
+      toolQualities: [ Slicing ]
+      duration: 12
+      loot: !type:AllSelector
+        children:
+        - id: MaterialNecroAlloy1
+          rolls: 4
+        - !type:GroupSelector
+          children:
+          - id: ColossusAnomalousCrystal
+          - id: ColossusAnomalousCrystalReprise
+          - id: ColossusAnomalousCrystalRepulsion
+          - id: ColossusAnomalousCrystalStasis
+          - id: ColossusAnomalousCrystalWard
+    - name: megafauna-harvest-stage-colossus-vocal-cords
+      toolQualities: [ Sawing ]
+      duration: 15
+      loot: !type:AllSelector
+        children:
+        - id: DivineVocalCordsImplanter
+        - id: MaterialNecroAlloy1
+          rolls: 2
   - type: SpawnLootOnDeath
     deleteOnDeath: true
     dropBoth: true
@@ -100,13 +125,14 @@
       - MegafaunaWeaponLooter
   - type: NPCUseActionsOnTarget
     delayModifier: 0.5
+    recentActionMemory: 3
     actionIds:
     - ActionColossusFraction
     - ActionColossusCross
     - ActionColossusSpiral
-    - ActionColossusTripleFraction
+    - ActionColossusWrath
     actionChances:
       ActionColossusFraction: 0.6
       ActionColossusCross: 0.4
       ActionColossusSpiral: 0.6
-      ActionColossusTripleFraction: 0.5
+      ActionColossusWrath: 0.4

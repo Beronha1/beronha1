@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
+﻿# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,3 +15,4 @@ department-Security-description = Mantenha a paz em torno da estação.
 department-Science-description = Pesquise artefatos e anomalias para inventar novos equipamentos para a estação
 
 department-Silicon-description = Obedeça suas leis e sirva a tripulação.
+

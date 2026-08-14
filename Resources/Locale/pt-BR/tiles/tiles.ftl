@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -162,3 +162,4 @@ tiles-white-marble = piso de mármore branco
 tiles-dark-marble = piso de mármore escuro
 tiles-plasma-marble = piso de mármore de phoron
 tiles-uranium-marble = piso de mármore de urânio
+

@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 job-name-atmostech = Técnico atmosférico
-job-name-bartender = Bartender
+job-name-bartender= Barman
 job-name-borg = Ciborgue
 job-name-botanist = Botânico
 job-name-brigmedic = Médico da brig
@@ -13,11 +13,11 @@ job-name-cargotech = Técnico de carga
 job-name-cburn = Oficial de quarentena da CentComm
 job-name-ce = Engenheiro-chefe
 job-name-centcommoff = Oficial da CentComm
-job-name-chef = Chef
+job-name-chef= Cozinheiro
 job-name-chaplain = Capelão
 job-name-chemist = Químico
 job-name-clown = Palhaço
-job-name-cluwne = Cluwne
+job-name-cluwne= Dica
 job-name-cmo = Diretor médico
 job-name-deathsquad = Esquadrão da morte
 job-name-detective = Detetive
@@ -67,7 +67,7 @@ job-name-zookeeper = Tratador de zoológico
 
 # Funções de antagonista
 job-name-ninja = Ninja
-job-name-syndicate = Syndicate
+job-name-syndicate= Sindicato
 job-name-syndicate-commander = Comandante do Syndicate
 job-name-syndicate-corpsman = Socorrista do Syndicate
 job-name-syndicate-operative = Operativo do Syndicate
@@ -76,20 +76,20 @@ job-name-wizard = Mago
 job-name-zombie = Zumbi
 
 # Títulos de função
-job-title-cluwne = Cluwne
+job-title-cluwne= Dica
 job-title-universal = Universal
 job-title-visitor = Visitante
 
 # Temporizadores de função — mantenha em ordem alfabética
 JobAtmosphericTechnician = Técnico atmosférico
-JobBartender = Bartender
+JobBartender= Barman
 JobBorg = Borg
 JobBotanist = Botânico
 JobCaptain = Capitão
 JobCargoTechnician = Técnico de carga
 JobCentralCommandOfficial = Oficial do Comando Central
 JobChaplain = Capelão
-JobChef = Chef
+JobChef= Cozinheiro
 JobChemist = Químico
 JobChiefEngineer = Engenheiro-chefe
 JobChiefMedicalOfficer = Diretor médico

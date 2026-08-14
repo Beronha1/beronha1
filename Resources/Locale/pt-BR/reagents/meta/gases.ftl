@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
+﻿# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -23,3 +23,4 @@ reagent-name-nitrous-oxide = óxido nitroso
 reagent-desc-nitrous-oxide = Sabe quando tudo parece mais engraçado quando você tá cansado? Então...
 
 reagent-desc-frezon = Um resfriante muito efetivo... e alucinógeno.
+

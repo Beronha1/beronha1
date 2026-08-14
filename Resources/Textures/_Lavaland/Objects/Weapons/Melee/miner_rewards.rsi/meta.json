@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Item and in-hand frames taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b. Sources: icons/obj/mining_zones/artefacts.dmi (cleaving saw), icons/mob/inhands/64x64_lefthand.dmi and 64x64_righthand.dmi (cleaving saw in-hands), icons/obj/weapons/stabby_wide.dmi (Wildhunter knife), icons/mob/inhands/equipment/kitchen_lefthand.dmi and kitchen_righthand.dmi (Wildhunter in-hands), icons/obj/mining.dmi (jackhammer), icons/mob/inhands/equipment/mining_lefthand.dmi and mining_righthand.dmi (jackhammer in-hands). Converted from DMI to RSI and transparently centered on 64x64 canvases for Whiskey Station; pixels were not redrawn.",
+  "size": { "x": 64, "y": 64 },
+  "states": [
+    { "name": "cleaving_saw" },
+    { "name": "cleaving_saw_open" },
+    { "name": "inhand-left", "directions": 4 },
+    { "name": "inhand-right", "directions": 4 },
+    { "name": "open-inhand-left", "directions": 4 },
+    { "name": "open-inhand-right", "directions": 4 },
+    { "name": "wildhunter" },
+    { "name": "wildhunter-inhand-left", "directions": 4 },
+    { "name": "wildhunter-inhand-right", "directions": 4 },
+    { "name": "demonic_jackhammer" },
+    { "name": "demonic_jackhammer-inhand-left", "directions": 4 },
+    { "name": "demonic_jackhammer-inhand-right", "directions": 4 }
+  ]
+}

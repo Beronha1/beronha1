@@ -19,7 +19,7 @@ namespace Content.Server.Administration.Commands
                 _roundEndSystem.RequestRoundEnd(timeSpan, shell.Player?.AttachedEntity, checkCooldown: false);
 
             else if (args.Length == 1)
-                shell.WriteLine(Loc.GetString("shell-timespan-minutes-must-be-correct"));
+                shell.WriteLine(Loc.GetString("shell-timespan-minutes-must-be-correct", ("span", args[0])));
 
             else
                 _roundEndSystem.RequestRoundEnd(shell.Player?.AttachedEntity, checkCooldown: false);

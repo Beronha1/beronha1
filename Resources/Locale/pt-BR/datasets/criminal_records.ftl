@@ -1,0 +1,21 @@
+﻿placeholders-criminal-records-wanted-reason-1 = Comeu uma salada deliciosa.
+placeholders-criminal-records-wanted-reason-2 = Comeu os próprios sapatos.
+placeholders-criminal-records-wanted-reason-3 = Ser um palhaço
+placeholders-criminal-records-wanted-reason-4 = Ser um mímico
+placeholders-criminal-records-wanted-reason-5 = Respirou do jeito errado
+placeholders-criminal-records-wanted-reason-6 = Invadiu a evac
+placeholders-criminal-records-wanted-reason-7 = Não fez absolutamente nada
+placeholders-criminal-records-wanted-reason-8 = Fez seu trabalho
+placeholders-criminal-records-wanted-reason-9 = Não disse oi para mim
+placeholders-criminal-records-wanted-reason-10 = Bebeu uma a mais
+placeholders-criminal-records-wanted-reason-11 = Tinha duas caixas de ferramentas, o que é demais
+placeholders-criminal-records-wanted-reason-12 = Mentiu no rádio geral
+placeholders-criminal-records-wanted-reason-13 = Me encarou de forma estranha
+placeholders-criminal-records-wanted-reason-14 = Lubrificou tudo até chegar na evac
+placeholders-criminal-records-wanted-reason-15 = Configurou o AME no horário
+placeholders-criminal-records-wanted-reason-16 = Passou o Chefe de Segurança por cima
+placeholders-criminal-records-wanted-reason-17 = Roubou a máscara do palhaço
+placeholders-criminal-records-wanted-reason-18 = Contou uma piada sem graça
+placeholders-criminal-records-wanted-reason-19 = Usava uma máscara de gás
+placeholders-criminal-records-wanted-reason-20 = Usava luvas de boxe
+

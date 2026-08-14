@@ -1,16 +1,16 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 tips-dataset-1 = Se estiver pegando fogo, clique no alerta à direita da tela para parar, cair e rolar.
-tips-dataset-2 = Você pode ver e editar todos os atalhos do jogo a qualquer momento no menu Opções.
+tips-dataset-2 = Você pode ver e editar todos os atalhos do jogo a qualquer momento Não menu Opções.
 tips-dataset-3 = Acesse o Guidebook pelo menu Esc ou, por padrão, pressionando 0 no teclado numérico.
-tips-dataset-4 = Algumas entidades possuem verbetes associados no Guidebook. Examine a entidade e clique no ícone de interrogação para vê-los.
+tips-dataset-4 = Algumas entidades possuem verbetes associados Não Guidebook. Examine a entidade e clique no ícone de interrogação para vê-los.
 tips-dataset-5 = Artefatos podem adquirir efeitos permanentes em certos nós ativados, inclusive tornar-se um intercomunicador ou um gerador muito eficiente.
 tips-dataset-6 = Caminhar evita escorregar na maioria das poças. Porém, substâncias fortes como lubrificante espacial ainda derrubam você.
 tips-dataset-7 = Algumas plantas, como o cardo galáctico, podem ser moídas para produzir medicamentos muito úteis e potentes.
 tips-dataset-8 = Passar o esfregão nas poças e despejá-las em outros recipientes preserva os reagentes nelas contidos.
-tips-dataset-9 = Ralos de piso, geralmente no freezer do chef ou no escritório da zeladoria, consomem rapidamente os reagentes das poças ao redor — inclusive sangue.
+tips-dataset-9 = Ralos de piso, geralmente Não freezer do chef ou Não escritório da zeladoria, consomem rapidamente os reagentes das poças ao redor — inclusive sangue.
 tips-dataset-10 = Cognizina, um composto difícil de produzir, torna animais sencientes quando injetada neles.
 tips-dataset-11 = Ratoeiras armadas são extremamente eficazes contra criaturas de pouca massa — inclusive Servos Rato.
 tips-dataset-12 = Extintores de incêndio podem ser carregados com qualquer reagente do jogo.
@@ -68,7 +68,7 @@ tips-dataset-63 = Como Chef, você pode colocar líquidos escondidos na comida. 
 tips-dataset-64 = Como Mímico, seu voto de não falar nem escrever é sua fonte de poder. Quebrá-lo tira seus poderes e sua honra.
 tips-dataset-65 = Como Advogado, tente negociar com o Carcereiro se a pena parecer alta demais para o crime.
 tips-dataset-66 = Como Oficial de Segurança, comunique-se e coordene-se pelo canal de rádio da segurança para evitar confusões.
-tips-dataset-67 = Como Oficial de Segurança, lembre-se: correlação não implica causalidade. Alguém pode apenas estar no lugar errado na hora errada!
+tips-dataset-67 = Como Oficial de Segurança, lembre-se: correlação não implica causalidade. Alguém pode apenas estar Não lugar errado na hora errada!
 tips-dataset-68 = Como Detetive, use dados de fibras, impressões digitais e DNA de varreduras forenses em objetos para perseguir criminosos com mais eficiência.
 tips-dataset-69 = Como Técnico Atmosférico, seu projetor de holofan ATMOS bloqueia gases, mas deixa objetos passarem. Use-o para conter vazamentos de gás, incêndios e brechas no casco.
 tips-dataset-70 = Como Técnico Atmosférico, resista à tentação de fabricar bombas de cilindro para Operativos Nucleares, exceto num cenário desesperado. Elas costumam causar muito fogo amigo desnecessário!
@@ -103,13 +103,13 @@ tips-dataset-98 = Faça lanças com fragmentos de vidro reforçado, vidro de pho
 tips-dataset-99 = Lanças arremessadas causam dano extra! Cuidado: arremessá-las demais acabará quebrando-as.
 tips-dataset-100 = Todo dano tóxico é difícil de tratar e geralmente exige químicos ou métodos incômodos. Use isso a seu favor em combate.
 tips-dataset-101 = Arremesse bolas improvisadas para desacelerar pessoas e facilitar uma eliminação ou fuga.
-tips-dataset-102 = Coloque napalm no tanque de água de uma mochila para criar um lança-chamas.
+tips-dataset-102 = Coloque napalm Não tanque de água de uma mochila para criar um lança-chamas.
 tips-dataset-103 = Algumas funções têm uniformes alternativos nas máquinas drobe correspondentes. Experimente um visual novo!
 tips-dataset-104 = Velocidade é quase tudo em combate. Usar hardsuits apenas pela armadura costuma ser péssima ideia, salvo se suas resistências servirem ao combate ou você não for se jogar na briga.
-tips-dataset-105 = Uma função não poder ser traidor no início da rodada não significa que nunca será traidor.
+tips-dataset-105 = Uma função não poder ser traidor Não início da rodada não significa que nunca será traidor.
 tips-dataset-106 = Máscaras de gás do Syndicate protegem para soldar e bloqueiam flashes. Pense duas vezes antes de cegar um Operativo Nuclear!
 tips-dataset-107 = Demoman exige habilidade.
-tips-dataset-108 = No espaço, borrife um extintor, arremesse itens ou dispare uma arma para ganhar um pequeno impulso. Faça-o no sentido oposto ao destino desejado.
+tips-dataset-108 = no espaço, borrife um extintor, arremesse itens ou dispare uma arma para ganhar um pequeno impulso. Faça-o no sentido oposto ao destino desejado.
 tips-dataset-109 = Arraste outro jogador até você para abrir o menu de despir e remover equipamentos ou forçá-lo a vestir algo. Exotrajes e capacetes bloqueiam o acesso às roupas abaixo deles, e alguns itens levam mais tempo para tirar ou vestir.
 tips-dataset-110 = Arraste-se até uma mesa para subir nela.
 tips-dataset-111 = Para afastar um item, arraste-o e segure CTRL com o botão direito pressionado; então mova o mouse na direção desejada.
@@ -119,10 +119,10 @@ tips-dataset-114 = Brechas no casco levam alguns segundos para despressurizar to
 tips-dataset-115 = Dano por queimadura, como de uma ferramenta de solda ou lâmpada, pode cauterizar feridas e parar sangramentos.
 tips-dataset-116 = Sangramento é sério! Se foi baleado ou sofreu um ferimento grave, trate-se rapidamente.
 tips-dataset-117 = Em emergências, corte um macacão com objeto afiado para obter tecido e transformá-lo em gaze.
-tips-dataset-118 = Use objetos afiados no menu de contexto do botão direito para cortar roupas ou animais. Isso inclui fragmentos de vidro.
-tips-dataset-119 = A maioria dos explosivos tem temporizador ajustável no menu do botão direito. Isso inclui pinguins-granada!
+tips-dataset-118 = Use objetos afiados Não menu de contexto do botão direito para cortar roupas ou animais. Isso inclui fragmentos de vidro.
+tips-dataset-119 = A maioria dos explosivos tem temporizador ajustável Não menu do botão direito. Isso inclui pinguins-granada!
 tips-dataset-120 = Você pode atordoar pinguins-granada e ganhar tempo precioso para matá-los.
-tips-dataset-121 = No menu do botão direito, clique no nome de um item para pegá-lo sem precisar posicionar o cursor sobre ele.
+tips-dataset-121 = Não menu do botão direito, clique Não nome de um item para pegá-lo sem precisar posicionar o cursor sobre ele.
 tips-dataset-122 = Space Station 14 é código aberto! Se quiser mudar algo ou adicionar um item simples, tente contribuir com o jogo. Não é tão difícil quanto parece.
 tips-dataset-123 = Em apuros, arremesse bebidas ou outros recipientes de reagente atrás de você para criar uma poça que derrube perseguidores.
 tips-dataset-124 = Algumas armas, como facas e estiletes, têm velocidade de ataque alta.
@@ -141,3 +141,5 @@ tips-dataset-136 = Se ficar preso atrás de uma porta eletrificada, desligue a A
 tips-dataset-137 = Se a IA eletrificar uma porta e você tiver luvas isolantes, corte e reconecte o fio de energia para remover a eletrificação!
 tips-dataset-138 = Para impedir que um prisioneiro fuja logo após ser solto das algemas, ative o modo de combate enquanto o desacorrenta — isso o empurrará ao chão.
 tips-dataset-139 = Limpe implantes ilegais com sabão após usá-los! Detetives encontram DNA incriminador em implantes usados, mas não se eles forem limpos.
+
+

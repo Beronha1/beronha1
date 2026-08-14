@@ -1,0 +1,155 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Raw fluid stabilization: one unit of raw megafauna reagent always becomes
+# one unit of its safe intermediate.
+
+- type: reaction
+  id: ExothermicHemostate
+  reactants:
+    ExothermicBlood:
+      amount: 1
+    Saline:
+      amount: 1
+  products:
+    ExothermicHemostate: 1
+
+- type: reaction
+  id: DemonicCytostimulant
+  reactants:
+    DemonicBlood:
+      amount: 1
+    Saline:
+      amount: 1
+  products:
+    DemonicCytostimulant: 1
+
+- type: reaction
+  id: MercurialNeurochelate
+  maxTemp: 349.9
+  reactants:
+    MercuryVenom:
+      amount: 1
+    Ethanol:
+      amount: 1
+  products:
+    MercurialNeurochelate: 1
+
+- type: reaction
+  id: OniEnzymeFiltrate
+  reactants:
+    OniGastricEnzymes:
+      amount: 1
+    Water:
+      amount: 1
+  products:
+    OniEnzymeFiltrate: 1
+
+# Advanced pair medicines. Heating is intentional: without it, adding the four
+# intermediates for Polyserum would prematurely consume them as pair products.
+
+- type: reaction
+  id: ExothermicRegenerativeSuspension
+  minTemp: 350
+  reactants:
+    ExothermicHemostate:
+      amount: 5
+    DemonicCytostimulant:
+      amount: 5
+  products:
+    ExothermicRegenerativeSuspension: 10
+
+- type: reaction
+  id: ThermomercurialPerfusate
+  minTemp: 350
+  reactants:
+    ExothermicHemostate:
+      amount: 5
+    MercurialNeurochelate:
+      amount: 5
+  products:
+    ThermomercurialPerfusate: 10
+
+- type: reaction
+  id: ExothermicEnzymeBuffer
+  minTemp: 350
+  reactants:
+    ExothermicHemostate:
+      amount: 5
+    OniEnzymeFiltrate:
+      amount: 5
+  products:
+    ExothermicEnzymeBuffer: 10
+
+- type: reaction
+  id: DemonicNeuroregenerator
+  minTemp: 350
+  reactants:
+    DemonicCytostimulant:
+      amount: 5
+    MercurialNeurochelate:
+      amount: 5
+  products:
+    DemonicNeuroregenerator: 10
+
+- type: reaction
+  id: DemonicEnzymeCoagulant
+  minTemp: 350
+  reactants:
+    DemonicCytostimulant:
+      amount: 5
+    OniEnzymeFiltrate:
+      amount: 5
+  products:
+    DemonicEnzymeCoagulant: 10
+
+- type: reaction
+  id: MercurialEnzymeAntitoxin
+  minTemp: 350
+  reactants:
+    MercurialNeurochelate:
+      amount: 5
+    OniEnzymeFiltrate:
+      amount: 5
+  products:
+    MercurialEnzymeAntitoxin: 10
+
+- type: reaction
+  id: MegafaunaPolyserum
+  maxTemp: 349.9
+  reactants:
+    ExothermicHemostate:
+      amount: 10
+    DemonicCytostimulant:
+      amount: 10
+    MercurialNeurochelate:
+      amount: 10
+    OniEnzymeFiltrate:
+      amount: 10
+  products:
+    MegafaunaPolyserum: 10
+
+# Industrial side reactions retained from the existing megafauna ecosystem.
+
+- type: reaction
+  id: RefineMercuryVenom
+  minTemp: 350
+  reactants:
+    MercuryVenom:
+      amount: 2
+    Ethanol:
+      amount: 1
+  products:
+    Mercury: 1
+    Impedrezene: 2
+
+- type: reaction
+  id: SyntheticMegafaunaFuel
+  reactants:
+    ExothermicBlood:
+      amount: 1
+    WeldingFuel:
+      amount: 2
+    Plasma:
+      amount: 1
+  products:
+    SyntheticMegafaunaFuel: 4

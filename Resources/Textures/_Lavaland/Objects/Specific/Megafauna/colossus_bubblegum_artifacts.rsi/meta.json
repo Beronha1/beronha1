@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Anomalous crystal and mayhem vial frames taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/mining_zones/artefacts.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "anomalous-crystal", "directions": 4 },
+    {
+      "name": "anomalous-crystal-charging",
+      "directions": 4,
+      "delays": [
+        [0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1],
+        [0.1, 0.1, 0.1, 0.1]
+      ]
+    },
+    { "name": "mayhem-vial", "delays": [[0.8, 0.1, 0.3, 0.1]] }
+  ]
+}

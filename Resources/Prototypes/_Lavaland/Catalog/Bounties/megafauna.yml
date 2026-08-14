@@ -1,0 +1,38 @@
+# Whiskey-native Cargo integration. Entries are component-based so future
+# boss-derived content can opt in without changing the bounty prototypes.
+
+- type: cargoBounty
+  id: BountyMegafaunaRawSamples
+  reward: 18000
+  description: bounty-description-megafauna-raw-samples
+  group: StationBounty
+  idPrefix: EXO
+  entries:
+  - name: bounty-item-megafauna-raw-sample
+    amount: 8
+    whitelist:
+      components: [ MegafaunaRawSample ]
+
+- type: cargoBounty
+  id: BountyMegafaunaIntactSpecimen
+  reward: 32000
+  description: bounty-description-megafauna-intact-specimen
+  group: StationBounty
+  idPrefix: EXO
+  entries:
+  - name: bounty-item-megafauna-intact-specimen
+    amount: 1
+    whitelist:
+      components: [ MegafaunaIntactSample ]
+
+- type: cargoBounty
+  id: BountyMegafaunaProcessedEquipment
+  reward: 26000
+  description: bounty-description-megafauna-processed-equipment
+  group: StationBounty
+  idPrefix: EXO
+  entries:
+  - name: bounty-item-megafauna-processed-equipment
+    amount: 1
+    whitelist:
+      components: [ MegafaunaProcessedReward ]

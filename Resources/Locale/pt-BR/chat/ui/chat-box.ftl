@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -46,3 +46,4 @@ hud-chatbox-highlights-tooltip = As palavras devem ser separadas por uma nova li
 hud-chatbox-highlights-placeholder = @McHands
                                      "Juiz"
                                      Medicina
+

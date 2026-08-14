@@ -1,0 +1,10 @@
+﻿cmd-setjobpriority-desc = Define a preferencia de trabalho do personagem selecionado para um jogador conectado.
+cmd-setjobpriority-help = Uso: setjobpriority <player> <job> <high|medium|low|never>
+cmd-setjobpriority-player-not-found = O jogador {$player} nao esta conectado.
+cmd-setjobpriority-job-not-found = O cargo {$job} nao existe.
+cmd-setjobpriority-invalid-priority = {$priority} nao e uma prioridade de trabalho valida. Use high, medium, low ou never.
+cmd-setjobpriority-preferences-not-loaded = As preferencias de {$player} ainda nao foram carregadas.
+cmd-setjobpriority-success = Definida a preferencia de {$player} de {$player} para {$player}.
+cmd-setjobpriority-hint-player= [jogador]
+cmd-setjobpriority-hint-job= [trabalho]
+cmd-setjobpriority-hint-priority= [alto | mÃ©dio | baixo | nunca]

@@ -24,6 +24,7 @@
         layer:
         - MachineLayer
   - type: EntityStorage
+  - type: DensityCoreReceiver
   - type: PlaceableSurface
     isPlaceable: false # defaults to closed.
   - type: EntityStorageVisuals
@@ -33,6 +34,17 @@
     containers:
       entity_storage: !type:Container
       paper_label: !type:ContainerSlot
+      density_core: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      density_core:
+        name: density-core-slot-name
+        insertDelay: 3
+        ejectDelay: 2
+        swap: false
+        whitelist:
+          components:
+          - DensityCore
   - type: StaticPrice
     price: 75
   - type: RequireProjectileTarget

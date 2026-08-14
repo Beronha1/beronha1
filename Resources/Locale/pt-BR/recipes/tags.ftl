@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -122,3 +122,4 @@ construction-graph-tag-fire-helmet = capacete de bombeiro
 construction-graph-tag-spationaut-hardsuit = hardsuit de espacionauta
 construction-graph-tag-backpack = mochila
 construction-graph-tag-centrifuge-compatible = recipiente centrifugável
+

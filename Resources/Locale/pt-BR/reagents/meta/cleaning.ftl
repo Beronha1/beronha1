@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -12,3 +12,4 @@ reagent-name-space-lube = lubrificante espacial
 reagent-desc-space-lube = Um lubrificante de alto desempenho destinado à manutenção de equipamentos mecânicos extremamente complexos — e certamente não a fazer pessoas escorregarem.
 reagent-name-space-glue = cola espacial
 reagent-desc-space-glue = Uma cola de alto desempenho destinada à manutenção de equipamentos mecânicos extremamente complexos — e certamente não a grudar pessoas no chão.
+

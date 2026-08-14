@@ -6,6 +6,8 @@ foldable-unfold-fail = You can't unfold the {$object} here.
 foldable-deploy-fail = You can't deploy the {$object} here.
 fold-verb = Fold
 unfold-verb = Unfold
+fold-rollsleeves-verb = Roll up sleeves
+fold-unrollsleeves-verb = Roll down sleeves
 
 fold-flip-verb = Flip
 

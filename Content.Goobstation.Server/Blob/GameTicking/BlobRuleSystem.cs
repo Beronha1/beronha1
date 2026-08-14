@@ -113,7 +113,7 @@ public sealed partial class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
             _roundEnd.CancelRoundEndCountdown(forceRecall: true);
             _chat.DispatchStationAnnouncement(stationUid,
                 Loc.GetString("blob-alert-recall-shuttle"),
-                Loc.GetString("Station"),
+                stationName,
                 false,
                 null,
                 Color.Red);
@@ -123,7 +123,7 @@ public sealed partial class BlobRuleSystem : GameRuleSystem<BlobRuleComponent>
         {
             _chat.DispatchStationAnnouncement(stationUid,
                 Loc.GetString("blob-alert-shuttle-arrived"),
-                Loc.GetString("Station"),
+                stationName,
                 false,
                 null,
                 Color.OrangeRed);

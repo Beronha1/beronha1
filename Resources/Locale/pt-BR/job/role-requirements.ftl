@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
+﻿# SPDX-FileCopyrightText: 2026 AkkadianMerchant <https://github.com/AkkadianMerchant>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,3 +17,4 @@ role-timer-whitelisted-species = Para desempenhar este papel, seu personagem dev
 role-timer-blacklisted-species = Para desempenhar este papel, seu personagem não pode pertencer a nenhuma das seguintes espécies:
 
 role-ban = Você foi banido desse papel.
+

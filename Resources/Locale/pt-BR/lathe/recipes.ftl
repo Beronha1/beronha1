@@ -1,0 +1,8 @@
+lathe-recipe-Medkit-name = kit medico (vazio)
+lathe-recipe-MedkitBurn-name = kit de tratamento de queimaduras (vazio)
+lathe-recipe-MedkitToxin-name = kit de tratamento de toxina (vazio)
+lathe-recipe-MedkitO2-name = kit de tratamento para falta de oxigenio (vazio)
+lathe-recipe-MedkitBrute-name = kit de tratamento de trauma bruto (vazio)
+lathe-recipe-MedkitAdvanced-name = kit de primeiros socorros avancado (vazio)
+lathe-recipe-MedkitRadiation-name = kit de tratamento de radiacao (vazio)
+lathe-recipe-MedkitCombat-name = kit medico de combate (vazio)

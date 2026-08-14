@@ -16,7 +16,7 @@ cargo-console-menu-points-amount = ${$amount}
 cargo-console-menu-shuttle-status-label = Estado da nave:{" "}
 cargo-console-menu-shuttle-status-away-text = Ausente
 cargo-console-menu-order-capacity-label = Capacidade de pedidos:{" "}
-cargo-console-menu-order-capacity-number = {$count}/{$capacity}
+cargo-console-menu-order-capacity-number = { $count}/{$capacity}
 cargo-console-menu-call-shuttle-button = Ativar telepad
 cargo-console-menu-permissions-button = Permissões
 cargo-console-menu-categories-label = Categorias:{" "}
@@ -52,20 +52,20 @@ cargo-console-insufficient-funds = Fundos insuficientes (necessários {$cost})
 cargo-console-unfulfilled = Sem espaço para atender ao pedido
 cargo-console-trade-station = Enviado para {$destination}
 cargo-console-unlock-approved-order-broadcast = [bold]{$productName} x{$orderAmount}[/bold], ao custo de [bold]{$cost}[/bold], foi aprovado por [bold]{$approver}[/bold]
-cargo-console-fund-withdraw-broadcast = [bold]{$name} sacou {$amount} spesos de {$name1} \[{$code1}\]
+cargo-console-fund-withdraw-broadcast = [bold]{$name} sacou {$amount} spesos de {$name1} \[{$code1}\][/bold]
 cargo-console-fund-transfer-broadcast = [bold]{$name} transferiu {$amount} spesos de {$name1} \[{$code1}\] para {$name2} \[{$code2}\][/bold]
 cargo-console-fund-transfer-user-unknown = Desconhecido
 cargo-console-paper-reason-default = Nenhum
 cargo-console-paper-approver-default = Desconhecido
 cargo-console-paper-print-name = Pedido nº {$orderNumber}
-cargo-console-paper-print-text = [head=2]Pedido nº {$orderNumber}[/head]
+cargo-console-paper-print-text = [bold]Pedido nº {$orderNumber}[/bold]
     {"[bold]Item:[/bold]"} {$itemName} (x{$orderQuantity})
-    {"[bold]Solicitado por:[/bold]"} {$requester}
+     {$requester}
 
-    {"[head=3]Informações do pedido[/head]"}
-    {"[bold]Pagador[/bold]:"} {$account} [font="Monospace"]\[{$accountcode}\][/font]
-    {"[bold]Aprovado por:[/bold]"} {$approver}
-    {"[bold]Motivo:[/bold]"} {$reason}
+    
+    {"[bold]Payer[/bold]:"} {$account} [font="Monospace"]\[{$accountcode}\][/font]
+    {"[bold]Approved by:[/bold]"} {$approver}
+    {"[bold]Reason:[/bold]"} {$reason}
 
 # Console da nave de Carga
 cargo-shuttle-console-menu-title = Console da nave de Carga
@@ -82,7 +82,7 @@ cargo-funding-alloc-console-label-balance = [bold] Saldo [/bold]
 cargo-funding-alloc-console-label-cut = [bold] Divisão da receita (%) [/bold]
 cargo-funding-alloc-console-label-primary-cut = Parcela da Carga sobre verbas de fontes sem cofre (%):
 cargo-funding-alloc-console-label-lockbox-cut = Parcela da Carga sobre vendas de cofres (%):
-cargo-funding-alloc-console-label-help-non-adjustible = A Carga recebe {$percent}% do lucro de vendas sem cofre. O restante é dividido conforme abaixo:
+cargo-funding-alloc-console-label-help-non-adjustible = Uma Carga recebe {$percent}% do lucro de vendas sem cofre. O restante é dividido conforme abaixo:
 cargo-funding-alloc-console-label-help-adjustible = As verbas restantes de fontes sem cofre são distribuídas conforme abaixo:
 cargo-funding-alloc-console-button-save = Salvar alterações
 cargo-funding-alloc-console-label-save-fail = [bold]Divisão de receita inválida![/bold] [color=red]({$pos ->
@@ -92,12 +92,12 @@ cargo-funding-alloc-console-label-save-fail = [bold]Divisão de receita inválid
 
 # Comprovante de aquisição
 cargo-acquisition-slip-body = [head=3]Detalhes do bem[/head]
-    {"[bold]Produto:[/bold]"} {$product}
-    {"[bold]Descrição:[/bold]"} {$description}
-    {"[bold]Custo unitário:[/bold]"} ${$unit}
-    {"[bold]Quantidade:[/bold]"} {$amount}
-    {"[bold]Custo:[/bold]"} ${$cost}
+    {"[bold]Product:[/bold]"} {$product}
+    {"[bold]Description:[/bold]"} {$description}
+    {"[bold]Unit cost:[/bold]"} ${$unit}
+    {"[bold]Amount:[/bold]"} {$amount}
+    {"[bold]Cost:[/bold]"} ${$cost}
 
-    {"[head=3]Detalhes da compra[/head]"}
-    {"[bold]Solicitante:[/bold]"} {$orderer}
-    {"[bold]Motivo:[/bold]"} {$reason}
+    
+    {"[bold]Orderer:[/bold]"} {$orderer}
+    {"[bold]Reason:[/bold]"} {$reason}

@@ -1,0 +1,3 @@
+﻿command-description-polymorph =
+    P
+

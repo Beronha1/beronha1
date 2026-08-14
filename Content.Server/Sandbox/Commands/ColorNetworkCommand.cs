@@ -52,7 +52,8 @@ namespace Content.Server.Sandbox.Commands
 
             if (!Enum.TryParse(args[1], out NodeGroupID nodeGroupId))
             {
-                shell.WriteLine(Loc.GetString("shell-node-group-is-invalid"));
+                shell.WriteLine(Loc.GetString("shell-node-group-is-invalid",
+                    ("groups", string.Join(", ", Enum.GetNames<NodeGroupID>()))));
                 return;
             }
 

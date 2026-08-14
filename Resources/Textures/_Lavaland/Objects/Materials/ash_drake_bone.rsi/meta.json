@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Bone stack sprites taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/stack_objects.dmi). Converted from DMI to RSI and used for industrial ash-drake bone in Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "bone" },
+    { "name": "bone_2" },
+    { "name": "bone_3" }
+  ]
+}

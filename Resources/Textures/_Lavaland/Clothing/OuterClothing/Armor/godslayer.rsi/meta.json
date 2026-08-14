@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Godslayer armour item and worn frames taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b (icons/obj/clothing/suits/armor.dmi and icons/mob/clothing/suits/armor.dmi). Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "icon" },
+    { "name": "equipped-OUTERCLOTHING", "directions": 4 }
+  ]
+}

@@ -1,0 +1,9 @@
+﻿CodeWords-dataset-1 = patriotas
+CodeWords-dataset-2 = cifra
+CodeWords-dataset-3 = cobra
+CodeWords-dataset-4 = líquido
+CodeWords-dataset-5 = chefe
+CodeWords-dataset-6= Adão
+CodeWords-dataset-7= Eva
+CodeWords-dataset-8 = bastante bom
+CodeWords-dataset-9 = engrenagem

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,3 +15,4 @@ cant-tourniquet = É impossível aplicar um torniquete aqui...
 no-wounds-tourniquet = Não há ferimentos nos quais aplicar um torniquete.
 cant-put-tourniquet-here = Você não pode colocar um torniquete aqui.
 medical-item-requires-surgery-rebell = Você fez tudo o que podia. {$target} precisa de cirurgia.
+

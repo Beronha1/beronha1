@@ -41,6 +41,15 @@ public sealed partial class MegafaunaSystem : EntitySystem
             if (!ai.Active)
                 continue;
 
+            // A delayed aggression/startup event must never leave a corpse in
+            // the active AI loop. This also raises the normal killed cleanup
+            // for every encounter subsystem before any selector can run.
+            if (_mobState.IsDead(uid))
+            {
+                KillMegafauna((uid, ai));
+                continue;
+            }
+
             // TODO when there's more than just hierophant make this a CPU job or make it parallel idk whatever is faster
             var selectors = new Dictionary<TimeSpan, MegafaunaSelector>(ai.Schedule);
             foreach (var (time, action) in selectors)

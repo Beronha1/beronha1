@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -43,10 +43,10 @@ device-address-prefix-turret = TRT-
 
 # PDAs e terminais
 device-address-prefix-console = CLS-
-device-address-prefix-fire-alarm = FIR-
-device-address-prefix-air-alarm = AIR-
+device-address-prefix-fire-alarm= ABETO-
+device-address-prefix-air-alarm= AR-
 
-device-address-prefix-sensor-monitor = MON-
+device-address-prefix-sensor-monitor= SEG-
 
 device-address-examine-message = O endereço do dispositivo é {$address}.
 

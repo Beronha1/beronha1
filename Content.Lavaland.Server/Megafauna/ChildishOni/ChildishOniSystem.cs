@@ -6,7 +6,11 @@ using Content.Server.Weapons.Ranged.Systems;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.Maps;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Throwing;
+using Content.Lavaland.Shared.Megafauna.Components;
+using Content.Lavaland.Shared.Megafauna.Systems;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
@@ -26,6 +30,8 @@ public sealed partial class ChildishOniSystem : EntitySystem
     [Dependency] private EntityLookupSystem _lookup = default!;
     [Dependency] private GunSystem _gun = default!;
     [Dependency] private SharedMapSystem _map = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private MegafaunaFieldSystem _field = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
@@ -45,14 +51,16 @@ public sealed partial class ChildishOniSystem : EntitySystem
         SubscribeLocalEvent<ChildishOniComponent, ChildishOniHandEvent>(OnHand);
         SubscribeLocalEvent<ChildishOniComponent, LandEvent>(OnLand);
         SubscribeLocalEvent<ChildishOniComponent, StopThrowEvent>(OnStopThrow);
+        SubscribeLocalEvent<ChildishOniComponent, MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<ChildishOniComponent, EntityTerminatingEvent>(OnTerminating);
+        SubscribeLocalEvent<ChildishOniComponent, MapInitEvent>(OnMapInit, after: [typeof(MobPhasesSystem)]);
+        SubscribeLocalEvent<ChildishOniComponent, DamageChangedEvent>(OnDamageChanged, after: [typeof(MobPhasesSystem)]);
     }
 
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
 
-        UpdatePhaseVisuals();
         UpdateVolleys();
         UpdateHandBarrages();
         UpdateDirectionalMovement(frameTime);
@@ -60,18 +68,24 @@ public sealed partial class ChildishOniSystem : EntitySystem
         UpdateOrbits(frameTime);
     }
 
-    private void UpdatePhaseVisuals()
-    {
-        var query = EntityQueryEnumerator<ChildishOniComponent, MobPhasesComponent, AppearanceComponent>();
-        while (query.MoveNext(out var uid, out var oni, out var phases, out var appearance))
-        {
-            if (oni.LastVisualPhase == phases.CurrentPhase)
-                continue;
+    private void OnMapInit(Entity<ChildishOniComponent> ent, ref MapInitEvent args)
+        => ApplyPhaseVisual(ent);
 
-            oni.LastVisualPhase = phases.CurrentPhase;
-            var visual = (ChildishOniPhaseVisual) Math.Clamp(phases.CurrentPhase - 1, 0, 3);
-            _appearance.SetData(uid, ChildishOniVisuals.Phase, visual, appearance);
+    private void OnDamageChanged(Entity<ChildishOniComponent> ent, ref DamageChangedEvent args)
+        => ApplyPhaseVisual(ent);
+
+    private void ApplyPhaseVisual(Entity<ChildishOniComponent> ent)
+    {
+        if (!TryComp<MobPhasesComponent>(ent, out var phases) ||
+            !TryComp<AppearanceComponent>(ent, out var appearance) ||
+            ent.Comp.LastVisualPhase == phases.CurrentPhase)
+        {
+            return;
         }
+
+        ent.Comp.LastVisualPhase = phases.CurrentPhase;
+        var visual = (ChildishOniPhaseVisual) Math.Clamp(phases.CurrentPhase - 1, 0, 3);
+        _appearance.SetData(ent, ChildishOniVisuals.Phase, visual, appearance);
     }
 
     private void UpdateVolleys()
@@ -79,7 +93,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
         for (var i = _volleys.Count - 1; i >= 0; i--)
         {
             var volley = _volleys[i];
-            if (!Exists(volley.Owner) || volley.Remaining <= 0)
+            if (!Exists(volley.Owner) || _mobState.IsDead(volley.Owner) || volley.Remaining <= 0)
             {
                 _volleys.RemoveAt(i);
                 continue;
@@ -100,7 +114,9 @@ public sealed partial class ChildishOniSystem : EntitySystem
         for (var i = _handBarrages.Count - 1; i >= 0; i--)
         {
             var barrage = _handBarrages[i];
-            if (!TryComp<ChildishOniComponent>(barrage.Owner, out var oni) || barrage.Remaining <= 0)
+            if (!TryComp<ChildishOniComponent>(barrage.Owner, out var oni) ||
+                _mobState.IsDead(barrage.Owner) ||
+                barrage.Remaining <= 0)
             {
                 _handBarrages.RemoveAt(i);
                 continue;
@@ -194,7 +210,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
 
     private void OnRampage(Entity<ChildishOniComponent> ent, ref ChildishOniRampageEvent args)
     {
-        if (args.Handled || ent.Comp.IsLeaping)
+        if (args.Handled || ent.Comp.IsLeaping || _mobState.IsDead(ent.Owner))
             return;
 
         var delta = args.Target.Position - Transform(ent).Coordinates.Position;
@@ -209,7 +225,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
 
     private void OnLand(Entity<ChildishOniComponent> ent, ref LandEvent args)
     {
-        if (!ent.Comp.IsLeaping)
+        if (!ent.Comp.IsLeaping || _mobState.IsDead(ent.Owner))
             return;
 
         ent.Comp.IsLeaping = false;
@@ -253,7 +269,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
 
     private void OnRing(Entity<ChildishOniComponent> ent, ref ChildishOniRingEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || _mobState.IsDead(ent.Owner))
             return;
 
         if (ent.Comp.Rings.TryGetValue(args.RingId, out var existing))
@@ -291,7 +307,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
 
     private void OnFlurry(Entity<ChildishOniComponent> ent, ref ChildishOniFlurryEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || _mobState.IsDead(ent.Owner))
             return;
 
         _volleys.Add(new VolleyState(ent.Owner, ent.Comp.SlashProjectile, 20, 10f,
@@ -301,7 +317,7 @@ public sealed partial class ChildishOniSystem : EntitySystem
 
     private void OnHand(Entity<ChildishOniComponent> ent, ref ChildishOniHandEvent args)
     {
-        if (args.Handled)
+        if (args.Handled || _mobState.IsDead(ent.Owner))
             return;
 
         if (args.Count <= 1)
@@ -338,9 +354,33 @@ public sealed partial class ChildishOniSystem : EntitySystem
     }
 
     private void OnTerminating(Entity<ChildishOniComponent> ent, ref EntityTerminatingEvent args)
+        => CleanupQueuedAttacks(ent);
+
+    private void OnMobStateChanged(Entity<ChildishOniComponent> ent, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        ent.Comp.IsLeaping = false;
+        if (TryComp<MegafaunaFieldGeneratorComponent>(ent, out var field))
+            _field.DeactivateField((ent.Owner, field));
+        CleanupQueuedAttacks(ent);
+    }
+
+    private void CleanupQueuedAttacks(Entity<ChildishOniComponent> ent)
     {
         _volleys.RemoveAll(volley => volley.Owner == ent.Owner);
         _handBarrages.RemoveAll(barrage => barrage.Owner == ent.Owner);
+
+        foreach (var ring in ent.Comp.Rings.Values)
+        {
+            foreach (var skull in ring)
+            {
+                if (Exists(skull))
+                    QueueDel(skull);
+            }
+        }
+        ent.Comp.Rings.Clear();
     }
 
     private sealed class VolleyState(

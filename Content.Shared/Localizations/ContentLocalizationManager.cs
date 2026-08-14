@@ -12,10 +12,8 @@ namespace Content.Shared.Localizations
     {
         [Dependency] private ILocalizationManager _loc = default!;
 
-        // The game is presented in Brazilian Portuguese. English remains loaded as a
-        // fallback while the translation is being completed and for upstream additions.
-        private const string Culture = "pt-BR";
-        private const string FallbackCulture = "en-US";
+        // English is the canonical language for the codebase and all new content.
+        private const string Culture = "en-US";
 
         /// <summary>
         /// Custom format strings used for parsing and displaying minutes:seconds timespans.
@@ -31,25 +29,18 @@ namespace Content.Shared.Localizations
         public void Initialize()
         {
             var culture = new CultureInfo(Culture);
-            var fallbackCulture = new CultureInfo(FallbackCulture);
 
-            // Load the fallback first so missing PT-BR messages remain usable during
-            // the incremental translation effort. The PT-BR bundle is still the
-            // default bundle used by both the client and the server.
-            _loc.LoadCulture(fallbackCulture);
             _loc.LoadCulture(culture);
-            _loc.SetFallbackCluture(fallbackCulture);
             _loc.DefaultCulture = culture;
             RegisterGeneralFunctions(culture);
-            RegisterGeneralFunctions(fallbackCulture);
 
             /*
              * The following language functions are specific to the english localization. When working on your own
              * localization you should NOT modify these, instead add new functions specific to your language/culture.
              * This ensures the english translations continue to work as expected when fallbacks are needed.
              */
-            _loc.AddFunction(fallbackCulture, "MAKEPLURAL", FormatMakePlural);
-            _loc.AddFunction(fallbackCulture, "MANY", FormatMany);
+            _loc.AddFunction(culture, "MAKEPLURAL", FormatMakePlural);
+            _loc.AddFunction(culture, "MANY", FormatMany);
 
             // Bundles are read while loading cultures, before custom functions can
             // be registered. Reload after registration to parse every Fluent entry
@@ -129,7 +120,7 @@ namespace Content.Shared.Localizations
 
         // TODO: allow fluent to take in lists of strings so this can be a format function like it should be.
         /// <summary>
-        /// Formats a list using Brazilian Portuguese grammar rules.
+        /// Formats a list as per English grammar rules.
         /// </summary>
         public static string FormatList(List<string> list)
         {
@@ -137,13 +128,13 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} e {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))} e {list[^1]}"
+                2 => $"{list[0]} and {list[1]}",
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, and {list[^1]}"
             };
         }
 
         /// <summary>
-        /// Formats a list using Brazilian Portuguese grammar rules, but uses "ou" instead of "e".
+        /// Formats a list as per English grammar rules, but uses "or" instead of "and".
         /// </summary>
         public static string FormatListToOr(List<string> list)
         {
@@ -151,8 +142,8 @@ namespace Content.Shared.Localizations
             {
                 <= 0 => string.Empty,
                 1 => list[0],
-                2 => $"{list[0]} ou {list[1]}",
-                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))} ou {list[^1]}"
+                2 => $"{list[0]} or {list[1]}",
+                _ => $"{string.Join(", ", list.GetRange(0, list.Count - 1))}, or {list[^1]}"
             };
         }
 

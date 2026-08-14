@@ -61,7 +61,10 @@
   fadeOutTime: 8
   positionOnEnd: 0
   sound:
-    path: /Audio/_Lavaland/Mobs/Bosses/Mercury/Finale.ogg
+    # Finale.ogg had no verifiable license at its cited source. Xibalba is
+    # distributed under the Pixabay Content License and is already part of
+    # the Mercury soundtrack.
+    path: /Audio/_Lavaland/Mobs/Bosses/Mercury/Xibalba.ogg
 
 - type: bossMusic
   id: UltimateOne

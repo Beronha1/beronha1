@@ -1,0 +1,45 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Animated firewall media from /tg/station, imported through Goobstation PR
+# #6734 under CC-BY-SA-3.0. This prototype is native to Whiskey.
+
+- type: entity
+  id: WallChildishOniMagmaTemporary
+  name: demonic magma wall
+  description: A roaring boundary drawn from the oni's boiling blood.
+  components:
+  - type: Structure
+  - type: Transform
+    anchored: true
+  - type: Clickable
+  - type: Airtight
+  - type: SunShadowCast
+  - type: Occluder
+  - type: InteractionOutline
+  - type: Physics
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb {}
+        mask: [ FullTileMask ]
+        layer: [ WallLayer ]
+  - type: Tag
+    tags: [ Wall ]
+  - type: Sprite
+    sprite: _Lavaland/Structures/Walls/firewall.rsi
+    state: ai-firewall
+  - type: PointLight
+    color: Orange
+    radius: 5
+    energy: 1.5
+    softness: 1
+    castShadows: false
+  - type: RustRequiresPathStage
+    pathStage: 11
+  - type: DamageOnCollide
+    whitelist:
+      components: [ HumanoidProfile ]
+    inverted: true
+    damage:
+      types:
+        Heat: 25

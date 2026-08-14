@@ -209,7 +209,9 @@ public sealed partial class AnalysisConsoleMenu : FancyWindow
         var predecessorNodes = _xenoArtifact.GetPredecessorNodes(artifact.Value.Owner, node.Value);
         if (!hasInfo)
         {
-            TriggerValueLabel.SetMarkup(Loc.GetString("analysis-console-info-effect-value", ("state", false)));
+            TriggerValueLabel.SetMarkup(Loc.GetString("analysis-console-info-effect-value",
+                ("state", false),
+                ("info", string.Empty)));
         }
         else
         {

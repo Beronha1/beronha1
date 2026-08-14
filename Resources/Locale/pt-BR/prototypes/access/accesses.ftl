@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -10,7 +10,7 @@ id-card-access-level-emergency-shuttle-repeal = Revogar todos da nave de emergê
 id-card-access-level-head-of-security = Chefe de segurança
 id-card-access-level-security = Segurança
 id-card-access-level-armory = Arsenal
-id-card-access-level-brig = Brig
+id-card-access-level-brig= Brigue
 id-card-access-level-detective = Detetive
 id-card-access-level-genpop-enter = Entrar na população geral
 id-card-access-level-genpop-leave = Sair da população geral

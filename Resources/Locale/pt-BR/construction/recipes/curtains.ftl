@@ -1,0 +1,13 @@
+﻿construction-recipe-curtains-cloth = cortinas (tecido)
+construction-recipe-curtains-black = cortinas (preto)
+construction-recipe-curtains-blue = cortinas (azul)
+construction-recipe-curtains-sky-blue = cortinas (azul céu)
+construction-recipe-curtains-cyan = cortinas (ciano)
+construction-recipe-curtains-green = cortinas (verde)
+construction-recipe-curtains-orange = cortinas (laranja)
+construction-recipe-curtains-pink = cortinas (rosa)
+construction-recipe-curtains-purple = cortinas (roxo)
+construction-recipe-curtains-red = cortinas (vermelho)
+construction-recipe-curtains-white = cortinas (branco)
+
+

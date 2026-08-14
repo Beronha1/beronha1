@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -17,3 +17,4 @@ suit-sensor-examine-off = Os sensores parecem [color=darkred]desativados[/color]
 suit-sensor-examine-binary = Os sensores binários de vida parecem ativados.
 suit-sensor-examine-vitals = O monitor de sinais vitais parece ativado.
 suit-sensor-examine-cords = O monitor de sinais vitais e o sinalizador de rastreamento parecem ativados.
+

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -26,3 +26,4 @@ reagent-name-vomit = vômito
 reagent-desc-vomit = Ainda dá para ver pedaços da última refeição de alguém.
 reagent-name-grey-matter = matéria cinzenta
 reagent-desc-grey-matter = Suco de pensamentos, aquela coisa que escorre de seus ouvidos.
+

@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-chat-window-title = Chat
+chat-window-title= Bater papo
 
 cmd-chatwindow-desc = Janela adicional de chat
 cmd-chatwindow-help = Uso: chatwindow

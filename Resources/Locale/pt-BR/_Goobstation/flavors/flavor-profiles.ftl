@@ -1,0 +1,10 @@
+﻿flavor-base-futuristic = futurístico
+flavor-base-offensive = ofensivo
+flavor-base-sigma = sigma
+flavor-complex-fentanyl = alcatrão ardente
+flavor-base-tears = lágrimas salgadas
+flavor-base-alienblood = alienígena
+flavor-base-old = velho
+flavor-base-robust = robusto
+flavor-complex-unicorntears = como lágrimas de unicórnio
+flavor-base-chuddy= fofo

@@ -2,6 +2,7 @@
 // https://github.com/corvax-team/ss14-wega/blob/master/LICENSE.TXT
 
 using Robust.Shared.Prototypes;
+using Content.Shared.Damage;
 
 namespace Content.Lavaland.Server.Megafauna.Classic;
 
@@ -26,8 +27,43 @@ public sealed partial class LegionBossComponent : Component
     [DataField]
     public int SummonCount = 2;
 
+    /// <summary>
+    /// Maximum number of boss-spawned creatures shared by every fragment in
+    /// the same encounter. Projectiles fired by those creatures are excluded.
+    /// </summary>
+    [DataField]
+    public int MaximumActiveSummons = 8;
+
+    /// <summary>
+    /// Greater legions continuously launch skulls, so they receive a stricter
+    /// encounter-wide cap than ordinary summoned skulls.
+    /// </summary>
+    [DataField]
+    public int MaximumActiveLargeSummons = 2;
+
+    [DataField]
+    public float ReactiveSummonCooldown = 2.5f;
+
     [DataField]
     public EntProtoId MinionPrototype = "MobLegionSkull";
+
+    [DataField]
+    public EntProtoId LargeMinionPrototype = "MobLegionLarge";
+
+    [DataField]
+    public EntProtoId LaserMarkerPrototype = "EffectMegaFaunaMarker";
+
+    [DataField]
+    public float LaserRange = 14f;
+
+    [DataField]
+    public DamageSpecifier LaserDamage = new();
+
+    [ViewVariables]
+    public LegionRangedPattern? LastRangedPattern;
+
+    [ViewVariables]
+    public TimeSpan NextReactiveSummon;
 
     [DataField]
     public List<EntProtoId> SplitPrototypes = new()
@@ -37,14 +73,16 @@ public sealed partial class LegionBossComponent : Component
         "MobMegaLegionSplitEye"
     };
 
-    [DataField]
-    public Dictionary<EntProtoId, float> LootPrototypes = new();
-
-    [DataField("rewards")]
-    public List<EntProtoId> RewardsProto = new();
 }
 
-[RegisterComponent]
+public enum LegionRangedPattern : byte
+{
+    Laser,
+    LargeSummon,
+    SkullSummon,
+}
+
+[RegisterComponent, Access(typeof(LegionSystem))]
 public sealed partial class LegionSplitComponent : Component
 {
     [DataField("nextSplit")]
@@ -57,4 +95,37 @@ public sealed partial class LegionSplitComponent : Component
     /// </summary>
     [ViewVariables]
     public Guid SplitGroup;
+
+    /// <summary>
+    /// The original Legion carcass that owns this fragment chain.
+    /// </summary>
+    [ViewVariables]
+    public EntityUid? RootCarcass;
+}
+
+/// <summary>
+/// Runtime state for the single encounter represented by the root Legion and
+/// every fragment produced after its apparent death.
+/// </summary>
+[RegisterComponent, Access(typeof(LegionSystem))]
+public sealed partial class LegionEncounterComponent : Component
+{
+    [ViewVariables]
+    public Guid SplitGroup;
+
+    /// <summary>
+    /// Set before rewards are emitted so simultaneous final deaths cannot pay twice.
+    /// </summary>
+    [ViewVariables]
+    public bool Completed;
+
+    /// <summary>
+    /// Summons owned by the whole encounter. Stale entities are pruned before
+    /// every spawn check and all remaining summons are removed on completion.
+    /// </summary>
+    [ViewVariables]
+    public HashSet<EntityUid> ActiveSummons = new();
+
+    [ViewVariables]
+    public HashSet<EntityUid> ActiveLargeSummons = new();
 }

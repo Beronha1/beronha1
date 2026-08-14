@@ -1,19 +1,46 @@
 - type: entity
-  parent: CaptainSabre
+  parent: [ BaseItem, BaseMinorContraband ]
   id: WeaponChildishOniBlade
-  name: nameless oni blade
-  description: A demonic blade still warm from its owner's last game.
+  name: nameless sword
+  description: A blade made from countless curses. It is still warm from its owner's last game.
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Weapons/Melee/nameless_sword.rsi
     state: icon
   - type: Item
     sprite: _Lavaland/Objects/Weapons/Melee/nameless_sword.rsi
+    size: Ginormous
   - type: MeleeWeapon
+    heavyStaminaCost: 15
+    attackRate: 0.75
     damage:
       types:
-        Slash: 25
-        Heat: 10
+        Slash: 15
+        Heat: 5
+        Structural: 50
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+  - type: Tool
+    qualities: [ Prying, Axing, Slicing, Sawing ]
+  - type: ToolTileCompatible
+  - type: Prying
+  - type: Sharp
+  - type: Execution
+    doAfterDuration: 5
+    decapitation: true
+  - type: UseDelay
+    delay: 1.5
+  - type: Scalpel
+    speed: 1
+  - type: BoneSaw
+    speed: 2
+  - type: SurgeryTool
+    startSound:
+      path: /Audio/_Shitmed/Medical/Surgery/saw.ogg
+  - type: ActionGrant
+    actions: [ ActionChildishOniBladeFlamingSlash ]
+  - type: ItemActionGrant
+    actions: [ ActionChildishOniBladeFlamingSlash ]
   - type: MegafaunaWeaponLooter
 
 - type: entity
@@ -28,6 +55,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-childish-oni-name
     uniqueGroup: childishOniTrophy
+  - type: CrusherTrophy
+  - type: TrophyRecyclable
+    loot: !type:AllSelector
+      children:
+      - id: OniDensityCore
   - type: WeaponUpgradeDamage
     bonusDamage:
       types:

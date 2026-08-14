@@ -1,0 +1,55 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: ResearchDestructor
+  parent: [ BaseMachinePowered, ConstructibleMachine ]
+  name: research destructor
+  description: Destructively analyzes rare boss matter and uploads the results to the connected R&D server.
+  components:
+  - type: Sprite
+    sprite: Structures/Machines/rndpointsource.rsi
+    layers:
+    - state: rndpointsource-off
+    - state: rndpointsource
+      shader: unshaded
+      map: [ "enum.PowerDeviceVisualLayers.Powered" ]
+  - type: ResearchDestructor
+    analyzeTime: 6
+  - type: ResearchClient
+  - type: TechnologyDatabase
+  - type: ActivatableUI
+    key: enum.ResearchClientUiKey.Key
+  - type: ActivatableUIRequiresPower
+  - type: UserInterface
+    interfaces:
+      enum.ResearchClientUiKey.Key:
+        type: ResearchClientBoundUserInterface
+  - type: ApcPowerReceiver
+    powerLoad: 500
+  - type: ExtensionCableReceiver
+  - type: WiresPanel
+  - type: WiresVisuals
+  - type: Machine
+    board: ResearchDestructorMachineCircuitboard
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.PowerDeviceVisuals.Powered:
+        enum.PowerDeviceVisualLayers.Powered:
+          True: { visible: true }
+          False: { visible: false }
+
+- type: entity
+  id: ResearchDestructorMachineCircuitboard
+  parent: BaseMachineCircuitboard
+  name: research destructor machine board
+  description: A machine printed circuit board for a destructive megafauna analyzer.
+  components:
+  - type: Sprite
+    state: science
+  - type: MachineBoard
+    prototype: ResearchDestructor
+    stackRequirements:
+      Manipulator: 2
+      Glass: 2
+      Cable: 5

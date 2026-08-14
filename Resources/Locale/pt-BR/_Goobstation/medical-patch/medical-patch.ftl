@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,3 +8,4 @@ goobstation-medicalpatch-sticy-trystick = Começou a aplicar o adesivo
 goobstation-medicalpatch-sticy-trystick-success = Adesivo aplicado
 goobstation-medicalpatch-sticy-tryremove = Começou a remover o adesivo
 goobstation-medicalpatch-sticy-tryremove-success = Adesivo removido
+

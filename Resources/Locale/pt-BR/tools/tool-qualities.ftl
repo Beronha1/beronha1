@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <6766154+Zumorica@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2021 Vera Aguilera Puerto <gradientvera@outlook.com>
 # SPDX-FileCopyrightText: 2022 ZeroDayDaemon <60460608+ZeroDayDaemon@users.noreply.github.com>
@@ -32,7 +32,7 @@ tool-quality-welding-name = Soldagem
 tool-quality-welding-tool-name = Maçarico de solda
 
 tool-quality-pulsing-name = Pulsação
-tool-quality-pulsing-tool-name = Multitool
+tool-quality-pulsing-tool-name= Multiferramenta
 
 tool-quality-slicing-name = Fatiamento
 tool-quality-slicing-tool-name = Faca

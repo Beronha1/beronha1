@@ -1,0 +1,446 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Carcass fluids
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleExothermicBlood
+  name: exothermic blood bottle
+  components:
+  - type: Label
+    localizedLabel: reagent-name-exothermic-blood
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: ExothermicBlood
+        Quantity: 30
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleDemonicBlood
+  name: demonic blood bottle
+  components:
+  - type: Label
+    localizedLabel: reagent-name-demonic-blood
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: DemonicBlood
+        Quantity: 30
+  - type: MegafaunaProvenance
+    source: megafauna-source-bubblegum
+  - type: MegafaunaRawSample
+  - type: Tag
+    tags: [ DemonicBloodSample ]
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleMercuryVenom
+  name: mercury venom bottle
+  components:
+  - type: Label
+    localizedLabel: reagent-name-mercury-venom
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: MercuryVenom
+        Quantity: 30
+  - type: MegafaunaProvenance
+    source: megafauna-source-mercury-spider
+  - type: MegafaunaRawSample
+
+- type: entity
+  parent: BaseChemistryBottleFilled
+  id: ChemistryBottleOniGastricEnzymes
+  name: oni gastric enzyme bottle
+  components:
+  - type: Label
+    localizedLabel: reagent-name-oni-gastric-enzymes
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: OniGastricEnzymes
+        Quantity: 30
+  - type: MegafaunaProvenance
+    source: megafauna-source-childish-oni
+  - type: MegafaunaRawSample
+
+# Consumables and extracted organs
+
+- type: entity
+  parent: BaseSpellbook
+  id: SacredFlameSpellbook
+  name: sacred flame spellbook
+  description: A charred grimoire that teaches its reader to call forth the Ash Drake's all-consuming flame.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/books.rsi
+    layers:
+    - state: paper
+    - state: cover_old
+      color: "#9e3512"
+    - state: decor_wingette_circle
+      color: "#ffb52e"
+    - state: detail_rivets
+      color: gold
+    - state: detail_bookmark
+      color: "#6e0e08"
+    - state: overlay_blood
+    - state: icon_magic_fireball
+      shader: unshaded
+  - type: Spellbook
+    spellActions:
+      ActionSacredFlame: null
+  - type: MegafaunaProvenance
+    source: megafauna-source-ash-drake
+    grade: Intact
+  - type: MegafaunaIntactSample
+
+- type: entity
+  parent: FoodUnperishableInjectableBase
+  id: FoodDemonicChewingGum
+  name: demonic chewing gum
+  description: A warm, elastic clot of demonic tissue. Chewing it makes wounds close impossibly fast.
+  components:
+  - type: FlavorProfile
+    flavors: [ metallic, spicy ]
+  - type: Sprite
+    sprite: Objects/Consumable/Food/candy.rsi
+    state: bubblegum
+    color: "#8c1026"
+  - type: Item
+    size: Tiny
+    sprite: Objects/Consumable/Food/candy.rsi
+  - type: Solution
+    solution:
+      maxVol: 20
+      reagents:
+      - ReagentId: DemonicGumEssence
+        Quantity: 10
+  - type: MegafaunaProvenance
+    source: megafauna-source-bubblegum
+    grade: Processed
+  - type: MegafaunaProcessedReward
+
+- type: entity
+  parent: BaseItem
+  id: ColossusAnomalousCrystal
+  name: anomalous colossus crystal
+  description: A crystal lattice holding impossible geometric field equations.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Specific/Megafauna/colossus_bubblegum_artifacts.rsi
+    state: anomalous-crystal
+  - type: Item
+    size: Small
+  - type: ResearchArtifact
+    points: 5000
+    technologies: [ ColossusAnomalyApplications ]
+  - type: StaticPrice
+    price: 10000
+  - type: AnomalousCrystal
+    mode: Ward
+    effectDuration: 8
+  - type: UseDelay
+    delay: 25
+  - type: PointLight
+    color: "#56d5ff"
+    radius: 2.2
+    energy: 1.4
+  - type: MegafaunaProvenance
+    source: megafauna-source-colossus
+    grade: Intact
+  - type: MegafaunaIntactSample
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: DivineVocalCordsImplanter
+  name: divine vocal cords implanter
+  components:
+  - type: Implanter
+    implant: DivineVocalCordsImplant
+  - type: PerishableBossOrgan
+    freshDuration: 240
+    destroyContentsOf: implanter_slot
+  - type: Reactive
+    reactions:
+    - reagents: [ StabilizingSerum ]
+      methods: [ Touch ]
+      effects:
+      - !type:StabilizeMegafaunaOrgan
+  - type: MegafaunaProvenance
+    source: megafauna-source-colossus
+    grade: Intact
+  - type: MegafaunaIntactSample
+
+- type: entity
+  parent: BaseSubdermalImplant
+  id: StabilizedLegionCoreImplant
+  name: stabilized legion core implant
+  description: A single-use organic core that restores its host when critical injury is detected.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/legioncore.rsi
+    state: icon_base
+  - type: StabilizedLegionCoreImplant
+  - type: SubdermalImplant
+    whitelist:
+      components: [ MobState, Damageable ]
+
+- type: entity
+  parent: BaseImplantOnlyImplanter
+  id: StabilizedLegionCoreImplanter
+  name: stabilized legion core implanter
+  components:
+  - type: Implanter
+    implant: StabilizedLegionCoreImplant
+  - type: PerishableBossOrgan
+    state: Stabilized
+  - type: Tag
+    tags: [ StabilizedLegionCore ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-legion
+    grade: Intact
+  - type: MegafaunaIntactSample
+
+- type: entity
+  parent: BaseItem
+  id: LegionServitorCulture
+  name: necrotic legion culture
+  description: A cultured skull mass ready to unfold into a tame biological servitor.
+  components:
+  - type: Sprite
+    sprite: _Shitmed/Objects/Misc/tissue_sample.rsi
+    state: xeno
+  - type: LegionServitorCulture
+    maxActiveServitors: 2
+  - type: Construction
+    graph: LegionServitorCultureConstructionGraph
+    node: culture
+  - type: MegafaunaProvenance
+    source: megafauna-source-legion
+    grade: Processed
+  - type: MegafaunaProcessedReward
+
+- type: entity
+  parent: MobLegion
+  id: MobLegionServitor
+  name: legion servitor
+  description: A necrotic servitor cultured to recognize station personnel as its pack.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: NpcFactionMember
+    factions: [ PetsNT ]
+  - type: FactionException
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    table: !type:AllSelector
+      children:
+      - id: MaterialLegionSkull1
+
+# Miner salvage
+
+- type: entity
+  parent: WeaponPlasmaCutter
+  id: WeaponPlasmaCutterOverclocked
+  name: overclocked plasma cutter
+  description: Its bypassed regulators trade thermal safety for exceptional excavation speed.
+  components:
+  - type: Gun
+    fireRate: 2.5
+  - type: Battery
+    maxCharge: 4000
+    startingCharge: 4000
+  - type: BatteryAmmoProvider
+    proto: BulletPlasmaCutter
+    fireCost: 50
+  - type: MegafaunaProvenance
+    source: megafauna-source-demonic-frost-miner
+    grade: Intact
+  - type: MegafaunaIntactSample
+  - type: Tag
+    tags: [ OverclockedPlasmaCutter ]
+
+# Fabricated departmental equipment
+
+- type: entity
+  parent: BaseItem
+  id: DrakeRemains
+  name: drake remains
+  description: The assembled skull, bones and hide of an ash drake. It still crackles with heat and smells of brimstone.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Head/Armor/ash_drake.rsi
+    state: icon
+  - type: Item
+    size: Large
+  - type: PointLight
+    enabled: true
+    color: "#ff5a36"
+    radius: 1.6
+    energy: 1.2
+    castShadows: false
+  - type: Tag
+    tags: [ DrakeRemains ]
+  - type: Construction
+    graph: DrakeRemainsConstructionGraph
+    node: remains
+  - type: StaticPrice
+    price: 3500
+
+- type: entity
+  parent: [ ClothingOuterBaseMedium, AllowSuitStorageClothing, BaseCargoContraband ]
+  id: ClothingOuterArmorDragon
+  name: drake armour
+  description: A suit of armour fashioned from an ash drake. Its layered hide and bones reject fire, acid and Lavaland lava.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/OuterClothing/Armor/ash_drake.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Lavaland/Clothing/OuterClothing/Armor/ash_drake.rsi
+  - type: DragonArmor
+  - type: Armor
+    coverage: [ Torso, Arm, Leg, Hand, Foot, Tail ]
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.85
+        Ballistic: 0.85
+        Heat: 0
+        Caustic: 0
+        Radiation: 0.4
+  - type: ExplosionResistance
+    damageCoefficient: 0.3
+  - type: FireProtection
+    reduction: 0.88
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container {}
+  - type: ToggleableClothing
+    clothingPrototypes:
+      head: ClothingHeadHelmetDragon
+  - type: Construction
+    graph: DragonArmorConstructionGraph
+    node: armor
+  - type: StaticPrice
+    price: 8000
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHelmetDragon
+  name: drake helm
+  description: The reinforced skull of an ash drake, fitted as a heatproof helm.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Head/Armor/ash_drake.rsi
+    state: icon
+  - type: Clothing
+    sprite: _Lavaland/Clothing/Head/Armor/ash_drake.rsi
+  - type: HideLayerClothing
+    slots: [ Hair, HeadTop, HeadSide ]
+  - type: Armor
+    coverage: [ Head ]
+    modifiers:
+      coefficients:
+        Blunt: 0.35
+        Slash: 0.35
+        Piercing: 0.85
+        Ballistic: 0.85
+        Heat: 0
+        Caustic: 0
+        Radiation: 0.4
+  - type: FireProtection
+    reduction: 0.88
+
+- type: entity
+  parent: ClothingOuterArmorDragon
+  id: ClothingOuterArmorDragonAdvanced
+  name: industrial drake armour
+  description: An engineering-refined drake suit reinforced with wing membranes for sustained operation in extreme heat and lava.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.3
+        Slash: 0.3
+        Piercing: 0.65
+        Ballistic: 0.65
+        Heat: 0
+        Caustic: 0
+        Radiation: 0.3
+  - type: ExplosionResistance
+    damageCoefficient: 0.25
+  - type: StaticPrice
+    price: 14000
+
+- type: entity
+  parent: ClothingOuterArmorReflective
+  id: ClothingOuterArmorMercuryReflective
+  name: mirrored-chitin reflective suit
+  description: Mercury-spider chitin gives the suit a passive chance to return energy beams.
+  components:
+  - type: Reflect
+    reflectProb: 0.65
+    reflects: [ Energy ]
+    reflectingInHands: false
+    spread: 35
+
+- type: entity
+  parent: CableHVStack10
+  id: CableSuperconductingStack10
+  name: superconducting transmission cable
+  description: A mercury-silk power cable. The station grid models it without transmission loss.
+
+- type: entity
+  parent: EnergyShield
+  id: PersonalForcefieldGenerator
+  name: personal colossus field generator
+  description: A compact personal shield stabilized with necro-alloy geometry.
+  components:
+  - type: Battery
+    maxCharge: 70
+    startingCharge: 70
+
+- type: entity
+  parent: WeaponLaserSvalinn
+  id: WeaponColossusReflectionEmitter
+  name: colossus reflection emitter
+  description: A laser sidearm whose field cage can reflect incoming energy while held.
+  components:
+  - type: Reflect
+    reflectProb: 0.4
+    reflects: [ Energy ]
+    reflectingInHands: true
+    spread: 25
+
+# Logistics
+
+- type: entity
+  parent: BaseItem
+  id: OniDensityCore
+  name: density-compression core
+  description: Install it in a crate to add thirty storage slots.
+  components:
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
+    state: core
+  - type: Item
+    size: Small
+  - type: DensityCore
+  - type: ResearchArtifact
+    points: 4000
+    technologies: [ MegafaunaMaterialEngineering ]
+  - type: StaticPrice
+    price: 8000
+  - type: MegafaunaProvenance
+    source: megafauna-source-childish-oni
+    grade: Intact
+  - type: MegafaunaIntactSample
+  - type: Tag
+    tags: [ OniDensityCore ]

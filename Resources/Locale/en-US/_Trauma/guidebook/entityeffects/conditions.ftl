@@ -21,3 +21,19 @@ entity-condition-guidebook-organ-slot = the target's {$part} {$inverted ->
     [true] has no
     *[false] has a
 } {$slot} slot
+
+entity-condition-guidebook-dna-unstable = the target's DNA is unstable
+entity-condition-guidebook-has-organ = the target { $invert ->
+    [true] does not have
+    *[false] has
+} a {$organ} organ
+entity-condition-guidebook-holding-item = the target is holding an item
+entity-condition-guidebook-in-container = the target is inside a container
+entity-condition-guidebook-standing = the target is standing
+entity-condition-guidebook-vital-damage = { $max ->
+    [2147483647] the target has at least {NATURALFIXED($min, 2)} vital damage
+    *[other] { $min ->
+        [0] the target has at most {NATURALFIXED($max, 2)} vital damage
+        *[other] the target has between {NATURALFIXED($min, 2)} and {NATURALFIXED($max, 2)} vital damage
+    }
+}

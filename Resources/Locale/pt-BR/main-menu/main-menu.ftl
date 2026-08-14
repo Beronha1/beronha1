@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -15,3 +15,4 @@ main-menu-join-public-server-button-tooltip = Não é possível conectar ao serv
 main-menu-direct-connect-button = Conexão direta
 main-menu-options-button = Opções
 main-menu-quit-button = Sair
+

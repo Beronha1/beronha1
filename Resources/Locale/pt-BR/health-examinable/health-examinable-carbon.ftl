@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -46,12 +46,13 @@ health-examinable-carbon-Cold-50 = [color=#8E9AD3]{$target} apresenta grave cong
 health-examinable-carbon-Cold-75 = [color=#7673C4]Os membros de {$target} estão escuros, frios e necróticos.[/color]
 health-examinable-carbon-Cold-100 = [color=#695BBB]O corpo de {$target} está coberto de congelamento de quarto grau.[/color]
 health-examinable-carbon-Cold-200 = [color=#5B4CB4]O corpo de {$target} está completamente congelado e rígido![/color]
-health-examinable-carbon-Caustic-8 = [color=#F0C5E8]A pele de {$target} parece levemente descolorida.[/color]
-health-examinable-carbon-Caustic-15 = [color=#FAAFDD]A pele de {$target} parece irritada e desbotada.[/color]
-health-examinable-carbon-Caustic-30 = [color=#FF9CD2]A pele de {$target} está inflamada e começando a descamar.[/color]
-health-examinable-carbon-Caustic-50 = [color=#FF8ECB]A pele de {$target} está queimada e soltando grandes pedaços.[/color]
-health-examinable-carbon-Caustic-75 = [color=#FF7CC0]A pele de {$target} está gravemente queimada e se desprendendo.[/color]
+health-examinable-carbon-Caustic-8 = [color=#F0C5E8]Uma pele de {$target} parece levemente descolorida.[/color]
+health-examinable-carbon-Caustic-15 = [color=#FAAFDD]Uma pele de {$target} parece irritada e desbotada.[/color]
+health-examinable-carbon-Caustic-30 = [color=#FF9CD2]Uma pele de {$target} está inflamada e começando Uma descamar.[/color]
+health-examinable-carbon-Caustic-50 = [color=#FF8ECB]Uma pele de {$target} está queimada e soltando grandes pedaços.[/color]
+health-examinable-carbon-Caustic-75 = [color=#FF7CC0]Uma pele de {$target} está gravemente queimada e se desprendendo.[/color]
 health-examinable-carbon-Caustic-100 = [color=#FF6FBA]{$target} apresenta queimaduras químicas extremas pelo corpo.[/color]
-health-examinable-carbon-Caustic-200 = [color=#FF5993]A maior parte do corpo de {$target} derreteu completamente![/color]
-health-examinable-carbon-Radiation-50 = [color=#C6834B]A pele de {$target} formou grandes bolhas.[/color]
-health-examinable-carbon-Radiation-100 = [color=#E26804]A pele de {$target} está coberta de lesões e se desprendendo em pedaços.[/color]
+health-examinable-carbon-Caustic-200 = [color=#FF5993]Uma maior parte do corpo de {$target} derreteu completamente![/color]
+health-examinable-carbon-Radiation-50 = [color=#C6834B]Uma pele de {$target} formou grandes bolhas.[/color]
+health-examinable-carbon-Radiation-100 = [color=#E26804]Uma pele de {$target} está coberta de lesões e se desprendendo em pedaços.[/color]
+

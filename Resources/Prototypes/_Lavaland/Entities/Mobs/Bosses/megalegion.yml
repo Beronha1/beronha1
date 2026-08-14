@@ -9,7 +9,9 @@
   components:
   - type: EmitSoundOnSpawn
     sound:
-      path: /Audio/_Lavaland/Mobs/legion_spawn.ogg
+      # The former legion_spawn.ogg had no recorded source or license.
+      # invoke_general.ogg is a traced /tg/ asset under CC-BY-SA-3.0.
+      path: /Audio/_Lavaland/Effects/invoke_general.ogg
       params:
           volume: 5
           maxDistance: 30
@@ -74,16 +76,36 @@
   - type: Aggressive # also required component for aggro checking
     forgiveRange: 20.0
   - type: LegionBoss
-    summonCount: 3
-    lootPrototypes:
-      MaterialBones1: 1
-      LavalandCrateNecropolisFilled: 0.2
-      LegionCore: 0.1
-    rewards:
-    - CrowbarRed
+    summonCount: 2
+    laserDamage:
+      types:
+        Heat: 55
+  - type: MegafaunaSpecialAttackOnly
   - type: NPCUseActionsOnTarget
     actionIds:
     - ActionMegaLegion
+
+- type: entity
+  parent: MobLegion
+  id: MobLegionLarge
+  name: greater legion
+  description: A swollen mass of legion fragments forced into one ravenous body.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ScaleVisuals
+    scale: 1.5, 1.5
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      350: Dead
+  - type: MeleeWeapon
+    attackRate: 0.65
+    damage:
+      types:
+        Blunt: 28
+        Structural: 50
+  - type: TimedDespawn
+    lifetime: 35
 
 - type: entity
   parent: BaseLavalandBossMegaLegion
@@ -91,13 +113,29 @@
   name: Legion
   components:
   - type: MegafaunaDirector
-  - type: LegionBoss
-    lootPrototypes:
-      MaterialBones: 1
-      LavalandCrateNecropolisFilled: 0.2
-      LegionCore: 0.1
+  - type: MegafaunaHarvestable
+    stages:
+    - name: megafauna-harvest-stage-legion-skulls
+      toolQualities: [ Slicing ]
+      duration: 9
+      loot: !type:AllSelector
+        children:
+        - id: MaterialLegionSkull1
+          rolls: 5
+    - name: megafauna-harvest-stage-legion-core
+      toolQualities: [ Sawing ]
+      duration: 14
+      loot: !type:AllSelector
+        children:
+        - id: StabilizedLegionCoreImplanter
+        - id: StaffOfStorms
   - type: SpawnLootOnDeath
     deleteOnDeath: true
+    dropOnDeath: false
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisFilled
     specialTable: !type:AllSelector
       children:
       - id: TrophyLavalandLegionSkull

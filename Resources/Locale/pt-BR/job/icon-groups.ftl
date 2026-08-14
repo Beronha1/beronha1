@@ -1,0 +1,14 @@
+﻿job-icon-group-cargo = Carga
+job-icon-group-command = Comando
+job-icon-group-engineering = Engenharia
+job-icon-group-medical = Medico
+job-icon-group-research = Pesquisa
+job-icon-group-security = Seguranca
+job-icon-group-service = Servico
+job-icon-group-entertainer = Entretenimento
+job-icon-group-civilian = Civil
+job-icon-group-centcomm = CentComm
+job-icon-group-silicon= Silício
+job-icon-group-blank = Vazio
+job-icon-group-threat = Ameaça
+job-icon-group-admin= Administrador

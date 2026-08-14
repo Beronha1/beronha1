@@ -1,0 +1,14 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Frames taken from /tg/station at commit https://github.com/tgstation/tgstation/commit/5b2389cb48e435b81ee4c96ae7f4b42cafc2587b. Resurrection crystal from icons/obj/mining.dmi; ice energy crystal and animated ice-block talisman from icons/obj/mining_zones/artefacts.dmi. Converted from DMI to RSI for Whiskey Station.",
+  "size": { "x": 32, "y": 32 },
+  "states": [
+    { "name": "resurrection_crystal" },
+    { "name": "ice_energy_crystal" },
+    {
+      "name": "ice_talisman",
+      "delays": [[2.0, 0.25, 0.225, 0.2, 0.175, 0.15, 0.125, 0.1, 0.075, 0.05, 0.25, 0.09, 0.08, 0.07, 0.06, 0.05, 0.04, 0.03, 0.02, 0.01]]
+    }
+  ]
+}

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -60,3 +60,4 @@ network-configurator-item-status-label = Modo: {$mode}
 # Comando
 cmd-clearnetworklinkoverlays-desc = Limpa todas as sobreposições de vínculos de rede.
 cmd-clearnetworklinkoverlays-help = Uso: clearnetworklinkoverlays
+

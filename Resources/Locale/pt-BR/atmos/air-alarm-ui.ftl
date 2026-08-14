@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -11,7 +11,7 @@ air-alarm-ui-window-address-label = Endereço
 air-alarm-ui-window-device-count-label = Total de dispositivos
 air-alarm-ui-window-resync-devices-label = Resincronizar
 air-alarm-ui-window-mode-label = Modo
-air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Falha no seletor de modo! [/color][/bold]
+air-alarm-ui-window-mode-select-locked-label = [bold][color=red] Falha Não seletor de modo! [/color][/bold]
 air-alarm-ui-window-auto-mode-label = Modo automático
 -air-alarm-state-name = { $state ->
     [normal] Normal
@@ -21,7 +21,7 @@ air-alarm-ui-window-auto-mode-label = Modo automático
    *[invalid] Inválido
 }
 air-alarm-ui-window-listing-title = {$address} : {-air-alarm-state-name(state:$state)}
-air-alarm-ui-window-pressure = {$pressure} kPa
+air-alarm-ui-window-pressure= @@ kPa
 air-alarm-ui-window-pressure-indicator = Pressão: [color={$color}]{$pressure} kPa[/color]
 air-alarm-ui-window-temperature = {$tempC} C ({$temperature} K)
 air-alarm-ui-window-temperature-indicator = Temperatura: [color={$color}]{$tempC} C ({$temperature} K)[/color]

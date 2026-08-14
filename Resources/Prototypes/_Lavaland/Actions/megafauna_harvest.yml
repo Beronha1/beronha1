@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseAction
+  id: ActionColossusRoar
+  name: Colossus roar
+  description: Emit a divine shockwave that disarms and knocks down nearby creatures.
+  components:
+  - type: Action
+    icon:
+      sprite: _Wega/Objects/Specific/Lavaland/voicegod.rsi
+      state: icon
+    useDelay: 1
+  - type: InstantAction
+    event: !type:ColossusRoarActionEvent
+
+- type: entity
+  parent: BaseAction
+  id: ActionSacredFlame
+  name: Sacred Flame
+  description: Ignite yourself and every flammable creature nearby in an inextinguishable-looking burst of draconic fire.
+  components:
+  - type: Action
+    icon:
+      sprite: _Wega/Objects/Specific/Lavaland/lavastaff.rsi
+      state: icon
+    useDelay: 30
+  - type: InstantAction
+    event: !type:SacredFlameActionEvent
+      radius: 4
+      severity: 0.45

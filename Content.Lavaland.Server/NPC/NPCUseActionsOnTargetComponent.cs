@@ -39,4 +39,30 @@ public sealed partial class NPCUseActionsOnTargetComponent : Component
     /// </summary>
     [DataField] public float DelayModifier = 1f;
     [DataField] public TimeSpan NextUseTime = TimeSpan.Zero;
+
+    /// <summary>
+    /// Prevents a new action from starting while a multi-step attack is still running.
+    /// Boss systems extend this lock when they schedule a Paradise-style sequence.
+    /// </summary>
+    public TimeSpan ActionLockUntil = TimeSpan.Zero;
+
+    /// <summary>
+    /// How many successfully used actions are temporarily excluded from the preferred selection pool.
+    /// This prevents a boss from repeatedly choosing only one part of its moveset while still allowing
+    /// an older action as a fallback when every alternative is unavailable or rejected.
+    /// </summary>
+    [DataField]
+    public int RecentActionMemory = 1;
+
+    /// <summary>
+    /// Delay before trying another action when every currently valid action rejects execution.
+    /// This is intentionally short: a rejected state-specific attack must not consume a full attack cycle.
+    /// </summary>
+    [DataField]
+    public TimeSpan FailedActionRetryDelay = TimeSpan.FromSeconds(0.25);
+
+    /// <summary>
+    /// Runtime history of successfully executed action prototypes, oldest first.
+    /// </summary>
+    public List<EntProtoId<TargetActionComponent>> RecentActions = new();
 }

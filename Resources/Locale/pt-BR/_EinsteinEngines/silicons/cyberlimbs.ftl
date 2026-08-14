@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -98,3 +98,7 @@ marking-CyberLimbsMarkingZenghuRLeg = Perna robótica direita da Zenghu Pharmace
 marking-CyberLimbsMarkingZenghuRFoot = Pé robótico direito da Zenghu Pharmaceuticals
 marking-CyberLimbsMarkingZenghuLLeg = Perna robótica esquerda da Zenghu Pharmaceuticals
 marking-CyberLimbsMarkingZenghuLFoot = Pé robótico esquerdo da Zenghu Pharmaceuticals
+
+
+
+

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -8,7 +8,7 @@ shared-solution-container-component-on-examine-main-text = O recipiente contém 
 }
 
 examinable-solution-has-recognizable-chemicals = Você reconhece {$recognizedString} na solução.
-examinable-solution-recognized = [color={$color}]{$chemical}[/color]
+examinable-solution-recognized= [color={$color}]{$chemical}[/color]
 
 examinable-solution-on-examine-volume = A solução contida está { $fillLevel ->
     [exact] com [color=white]{$current}/{$max}u[/color].

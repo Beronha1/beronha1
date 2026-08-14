@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -21,4 +21,5 @@ health-analyzer-window-scan-mode-text = Modo de escaneamento:
 health-analyzer-window-scan-mode-active = Ativo
 health-analyzer-window-scan-mode-inactive = Inativo
 health-analyzer-popup-scan-target = {$user} está tentando escanear você!
-health-analyzer-window-return-button-text = < Voltar
+health-analyzer-window-return-button-text =  Voltar
+

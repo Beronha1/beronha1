@@ -207,11 +207,11 @@ public abstract partial class SharedDoAfterSystem : EntitySystem
         if (!TryStartDoAfter(doAfter, out var id, component))
             return DoAfterStatus.Cancelled;
 
-        if (doAfter.Delay <= TimeSpan.Zero)
-        {
-            Log.Warning("Awaited instant DoAfters are not supported fully supported");
+        // TryStartDoAfter completes tagged instant DoAfters synchronously and deliberately
+        // does not store them in DoAfterComponent. Do not create an awaited task for an
+        // entry that will never exist or complete.
+        if (doAfter.Delay <= TimeSpan.Zero || _tag.HasTag(doAfter.User, InstantDoAftersTag))
             return DoAfterStatus.Finished;
-        }
 
         var tcs = new TaskCompletionSource<DoAfterStatus>();
         component.AwaitedDoAfters.Add(id.Value.Index, tcs);

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -45,3 +45,4 @@ inspect-wound-Holy-severe = completamente coberta de queimaduras ácidas
 inspect-wound-weeping-avulsion-minor = rasgada e aberta
 inspect-wound-weeping-avulsion-moderate = completamente rasgada e aberta
 inspect-wound-weeping-avulsion-severe = completamente rasgada, com perda significativa de tecido
+

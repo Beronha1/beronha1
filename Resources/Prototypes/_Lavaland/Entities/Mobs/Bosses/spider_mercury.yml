@@ -43,6 +43,7 @@
   - type: MegafaunaAnchor
   - type: MegafaunaGodmode
   - type: MegafaunaRejuvenate
+  - type: MegafaunaSpecialAttackOnly
 
 - type: entity
   id: MobSpiderMercury
@@ -249,6 +250,23 @@
     verticalOffset: 12
     rowNumber: 14
   - type: MegafaunaDirector
+  - type: MegafaunaHarvestable
+    completionCarcass: MercurySpiderResidualCarcass
+    stages:
+    - name: megafauna-harvest-stage-mercury-silk
+      toolQualities: [ Slicing ]
+      duration: 11
+      loot: !type:AllSelector
+        children:
+        - id: MaterialMercurySilk1
+          rolls: 5
+    - name: megafauna-harvest-stage-mercury-chitin
+      toolQualities: [ Sawing ]
+      duration: 14
+      loot: !type:AllSelector
+        children:
+        - id: MaterialMirroredChitin1
+          rolls: 5
   - type: SpawnLootOnDeath
     deleteOnDeath: true
     dropBoth: true

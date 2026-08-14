@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -51,12 +51,12 @@ petting-failure-pig = Você tenta fazer carinho em {$target}, mas recebe grunhid
 petting-failure-raccoon = Você tenta fazer carinho em {$target}, mas ele está ocupado fuçando por aí.
 petting-failure-sloth = Você tenta fazer carinho em {$target}, mas ele desvia com velocidade ridícula!
 petting-failure-holo = Você tenta fazer carinho em {$target}, mas os espinhos quase perfuram sua mão!
-petting-failure-dragon = Você levanta a mão, mas {$target} ruge; melhor não virar comida de carpa tostada.
+petting-failure-dragon = Você levanta Uma mão, mas {$target} ruge; melhor não virar comida de carpa tostada.
 petting-failure-hamster = Você tenta fazer carinho em {$target}, mas ele tenta morder seu dedo; apenas seus reflexos evitam um ferimento quase fatal.
 petting-failure-bear = Você tenta fazer carinho em {$target}, mas ele rosna e faz você desistir.
 petting-failure-monkey = Você tenta fazer carinho em {$target}, mas ele quase morde seus dedos!
 petting-failure-nymph = Você tenta fazer carinho em {$target}, mas ele afasta os galhos.
-petting-failure-shadow = Você tenta fazer carinho em {$target}, mas sua mão atravessa a escuridão fria de seu corpo.
+petting-failure-shadow = Você tenta fazer carinho em {$target}, mas sua mão atravessa Uma escuridão fria de seu corpo.
 petting-failure-scurret = Você tenta fazer carinho em {$target}, mas ele dá uma cambalhota!
 
 ## Carinho em silícios
@@ -73,7 +73,7 @@ petting-success-medical-cyborg = Você faz carinho na cabeça metálica estéril
 petting-success-service-cyborg = Você faz carinho na elegante cabeça metálica de {$target}.
 petting-success-syndicate-cyborg = Você faz carinho na ameaçadora cabeça metálica de {$target}.
 petting-success-derelict-cyborg = Você faz carinho na enferrujada cabeça metálica de {$target}.
-petting-success-recycler = Você faz carinho no exterior de aço levemente ameaçador de {$target}.
+petting-success-recycler = Você faz carinho não exterior de aço levemente ameaçador de {$target}.
 petting-success-station-ai = Você faz carinho na tela quadrada e fria de {$target}.
 
 petting-failure-honkbot = Você tenta fazer carinho em {$target}, mas ele buzina em recusa!
@@ -105,6 +105,7 @@ petting-success-soft-floofy-vulp-others = {$user} faz carinho na cabecinha macia
 
 ## Outros
 petting-success-tesla = Você faz carinho em {$target}, desafiando as leis da natureza e da física.
-petting-failure-tesla = Você estende a mão para {$target}, mas ele a afasta com um choque.
-petting-success-mail-teleporter = Você faz carinho no exterior frio e diligente de {$target}.
+petting-failure-tesla = Você estende Uma mão para {$target}, mas ele Uma afasta com um choque.
+petting-success-mail-teleporter = Você faz carinho não exterior frio e diligente de {$target}.
 petting-failure-mail-teleporter = Você tenta fazer carinho em {$target}, mas ele está ocupado separando correspondências!
+

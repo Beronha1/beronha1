@@ -39,6 +39,8 @@
     range: 20
   - type: WorldTargetAction
     event: !type:ChildishOniRampageEvent
+  - type: SpeakOnAction
+    sentence: childish-oni-rampage
 
 - type: entity
   id: ActionChildishOniRingClose
@@ -51,6 +53,8 @@
     event: !type:ChildishOniRingEvent
       radius: 1
       ringId: close
+  - type: SpeakOnAction
+    sentence: childish-oni-ring
 
 - type: entity
   id: ActionChildishOniRingWide
@@ -63,6 +67,8 @@
     event: !type:ChildishOniRingEvent
       radius: 2
       ringId: far
+  - type: SpeakOnAction
+    sentence: childish-oni-ring
 
 - type: entity
   id: ActionChildishOniClawSlash
@@ -89,6 +95,8 @@
     maxDelay: 10
   - type: InstantAction
     event: !type:ChildishOniFlurryEvent
+  - type: SpeakOnAction
+    sentence: childish-oni-flurry
 
 - type: entity
   id: ActionChildishOniHandSide
@@ -135,3 +143,22 @@
     event: !type:ProjectileSpellEvent
       prototype: ChildishOniSlashProjectile
       projectileSpeed: 12
+
+- type: entity
+  id: ActionChildishOniBladeFlamingSlash
+  parent: BaseAction
+  components:
+  - type: Action
+    priority: -20
+    useDelay: 8
+    icon:
+      sprite: _Lavaland/Actions/banana.rsi
+      state: nameless
+    itemIconStyle: NoItem
+  - type: TargetAction
+    checkCanAccess: true
+    range: 12
+  - type: WorldTargetAction
+    event: !type:ProjectileSpellEvent
+      prototype: ChildishOniSlashProjectile
+      projectileSpeed: 14

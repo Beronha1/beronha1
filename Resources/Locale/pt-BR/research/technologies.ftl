@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -76,3 +76,4 @@ research-technology-bluespace-cargo-transport = Transporte de Carga bluespace
 research-technology-clowning-utilities = Utilidades de palhaçada
 research-technology-quantum-fiber-weaving = Tecelagem de fibras quânticas
 research-technology-bluespace-chemistry = Química bluespace
+

@@ -1,4 +1,4 @@
-# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
+﻿# SPDX-FileCopyrightText: 2026 punkzebub <punkzebub@gmail.com>
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
@@ -6,11 +6,11 @@ criminal-records-console-window-title = Computador de registros criminais
 criminal-records-console-records-list-title = Tripulantes
 criminal-records-console-select-record-info = Selecione um registro.
 criminal-records-console-no-records = Nenhum registro encontrado!
-criminal-records-console-no-record-found = Nenhum registro encontrado para a pessoa selecionada.
+criminal-records-console-no-record-found = Nenhum registro encontrado para Uma pessoa selecionada.
 criminal-records-console-flavor-left = Prenda primeiro! Pergunte depois.
 criminal-records-console-flavor-right = v2.1
 criminal-records-console-show-all = Todos
-criminal-records-console-status = Status
+criminal-records-console-status = status
 criminal-records-status-none = Nenhum
 criminal-records-status-wanted = Procurado
 criminal-records-status-detained = Detido
@@ -29,23 +29,23 @@ criminal-records-no-history = O registro deste tripulante está limpo.
 criminal-records-add-history = Adicionar
 criminal-records-delete-history = Excluir
 criminal-records-permission-denied = Permissão negada
-criminal-records-console-wanted = {$name} ({$job}) foi declarado procurado por {$officer}. Motivo: {$reason}.
-criminal-records-console-not-wanted = {$officer} removeu o status de procurado de {$name} ({$job}).
-criminal-records-console-suspected = {$officer} marcou {$name} ({$job}) como suspeito. Motivo: {$reason}
-criminal-records-console-not-suspected = {$officer} retirou a suspeita sobre {$name} ({$job}).
-criminal-records-console-detained = {$name} ({$job}) foi detido por {$officer}.
-criminal-records-console-released = {$name} ({$job}) foi liberado por {$officer}.
-criminal-records-console-paroled = {$name} ({$job}) recebeu liberdade condicional de {$officer}.
-criminal-records-console-not-parole = {$officer} removeu o status de liberdade condicional de {$name} ({$job}).
-criminal-records-console-hostile = {$name} ({$job}) foi marcado como hostil por {$officer}. Motivo: {$reason}.
-criminal-records-console-not-hostile = {$officer} removeu o status de hostil de {$name} ({$job}).
-criminal-records-console-eliminated = {$name} ({$job}) foi marcado como eliminado por {$officer}.
-criminal-records-console-not-eliminated = {$officer} removeu o status de eliminado de {$name} ({$job}).
+criminal-records-console-wanted = {$name} ({$name}) foi declarado procurado por {$name}. Motivo: {$name}.
+criminal-records-console-not-wanted = {$officer} removeu o status de procurado de {$officer} ({$officer}).
+criminal-records-console-suspected = {$officer} marcou {$officer} ({$officer}) como suspeito. Motivo: {$officer}
+criminal-records-console-not-suspected = {$name} retirou Uma suspeita sobre {$name} ({$name}).
+criminal-records-console-detained = {$name} ({$name}) foi detido por {$name}.
+criminal-records-console-released = {$name} ({$name}) foi liberado por {$name}.
+criminal-records-console-paroled = {$name} ({$name}) recebeu liberdade condicional de {$name}.
+criminal-records-console-not-parole = {$officer} removeu o status de liberdade condicional de {$officer} ({$officer}).
+criminal-records-console-hostile = {$name} ({$name}) foi marcado como hostil por {$name}. Motivo: {$name}.
+criminal-records-console-not-hostile = {$name} removeu o status de hostil de {$name} ({$name}).
+criminal-records-console-eliminated = {$name} ({$name}) foi marcado como eliminado por {$name}.
+criminal-records-console-not-eliminated = {$name} removeu o status de eliminado de {$name} ({$name}).
 criminal-records-console-unknown-officer = <desconhecido>
 criminal-records-filter-placeholder = Digite o texto e pressione "Enter"
 criminal-records-name-filter = Nome
 criminal-records-prints-filter = Impressões digitais
-criminal-records-dna-filter = DNA
+criminal-records-dna-filter= ADN
 criminal-records-job-filter = Função
 criminal-records-species-filter = Espécie
 criminal-records-console-auto-history = PRESO: {$reason}

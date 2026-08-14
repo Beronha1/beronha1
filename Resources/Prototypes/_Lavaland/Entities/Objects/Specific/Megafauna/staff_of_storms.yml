@@ -1,0 +1,86 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: BaseItem
+  id: StaffOfStorms
+  name: staff of storms
+  description: An ancient Legion staff. It calls delayed thunderbolts from the sky and can calm active weather.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Specific/Megafauna/staff_of_storms.rsi
+    state: icon
+  - type: Item
+    sprite: _Lavaland/Objects/Specific/Megafauna/staff_of_storms.rsi
+    size: Normal
+    storedRotation: -45
+  - type: Clothing
+    sprite: _Lavaland/Objects/Specific/Megafauna/staff_of_storms.rsi
+    quickEquip: false
+    slots:
+    - Back
+    - suitStorage
+  - type: MeleeWeapon
+    attackRate: 0.5
+    damage:
+      types:
+        Heat: 20
+  - type: StaffOfStorms
+    damage:
+      types:
+        Shock: 30
+        Structural: 20
+  - type: PacifismDangerousAttack
+  - type: StaticPrice
+    price: 5000
+
+- type: entity
+  id: StormStaffTelegraph
+  name: charged storm target
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Effects/eletricity.rsi
+    state: lightning
+    drawdepth: BelowMobs
+    noRot: true
+  - type: PointLight
+    radius: 2
+    energy: 2
+    color: cyan
+    castShadows: false
+  - type: FadingIn
+    fadeInTime: 0.25
+  - type: TimedDespawn
+    lifetime: 1.5
+  - type: EmitSoundOnSpawn
+    sound:
+      path: /Audio/Effects/Lightning/lightningshock.ogg
+      params:
+        volume: -4
+
+- type: entity
+  id: StormStaffLightning
+  name: storm staff lightning
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    noRot: true
+  - type: Sprite
+    sprite: _Lavaland/Effects/64x128.rsi
+    state: lightning_1
+    drawdepth: Effects
+    noRot: true
+    offset: "0.5, 1.5"
+  - type: PointLight
+    radius: 3
+    energy: 3
+    color: White
+    castShadows: true
+  - type: FadingTimedDespawn
+    lifetime: 0.6
+    fadeOutTime: 0.2
+  - type: EmitSoundOnSpawn
+    sound:
+      collection: ThunderStrike
+      params:
+        volume: -2

@@ -1,0 +1,128 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  parent: LavalandMobBase
+  id: LavalandBossDemonicFrostMiner
+  name: demonic frost miner
+  description: An ancient miner consumed by a cold far crueler than Lavaland's heat.
+  components:
+  - type: Physics
+    bodyType: KinematicController
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.65,-0.8,0.65,0.7"
+        density: 1000
+        mask:
+        - LargeMobMask
+        layer:
+        - LargeMobLayer
+  - type: NpcFactionMember
+    factions:
+    - Lavafauna
+  - type: HTN
+    rootTask:
+      task: SimpleHostileCompound
+    blackboard:
+      NavSmash: !type:Bool
+        true
+  - type: Sprite
+    drawdepth: Mobs
+    sprite: _Lavaland/Mobs/Bosses/demonic_frost_miner.rsi
+    layers:
+    - state: demonic_miner
+      map: [ "base" ]
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.DemonicFrostMinerVisuals.Enraged:
+        base:
+          True: { state: demonic_miner_phase2 }
+          False: { state: demonic_miner }
+  - type: MeleeWeapon
+    attackRate: 1.15
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    damage:
+      types:
+        Slash: 25
+        Cold: 15
+        Structural: 100
+  - type: Tag
+    tags:
+    - CannotSuicide
+  - type: CombatMode
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1500: Dead
+  - type: Damageable
+    damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Aggressive
+    forgiveRange: 22
+  - type: MegafaunaDirector
+  - type: MegafaunaSpecialAttackOnly
+  - type: DemonicFrostMiner
+    meleeHeal:
+      types:
+        Blunt: -3
+        Slash: -3
+        Piercing: -3
+        Heat: -3
+  - type: MegafaunaHarvestable
+    stages:
+    - name: megafauna-harvest-stage-frost-miner-armor
+      toolQualities: [ Screwing ]
+      duration: 11
+      loot: !type:AllSelector
+        children:
+        - id: MaterialTitaniumAlloy1
+          rolls: 5
+        - id: MaterialServoTier4_1
+          rolls: 2
+    - name: megafauna-harvest-stage-frost-miner-crystals
+      toolQualities: [ Pulsing ]
+      duration: 14
+      loot: !type:AllSelector
+        children:
+        - id: IceEnergyCrystal
+        - id: MaterialHighDensityCircuit1
+          rolls: 3
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisDemonicFrostMinerFilled
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyDemonicFrostMinerIceTalisman
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter
+  - type: NPCUseActionsOnTarget
+    actionIds:
+    - ActionDemonicFrostOrbs
+    - ActionDemonicFrostMachineGun
+    - ActionDemonicFrostShotgun
+    actionChances:
+      ActionDemonicFrostOrbs: 0.8
+      ActionDemonicFrostMachineGun: 0.6
+      ActionDemonicFrostShotgun: 0.7
+
+- type: entity
+  parent: MarkerBase
+  id: SpawnLavalandBossDemonicFrostMiner
+  suffix: Lavaland boss
+  components:
+  - type: ConditionalSpawner
+    prototypes: [ LavalandBossDemonicFrostMiner ]

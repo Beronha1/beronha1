@@ -38,11 +38,11 @@ MutationMindReader-popup-plunge = Você mergulha na mente de {$target}...
 MutationMindReader-popup-alert = Você sente algo estranho entrar em sua mente.
 MutationMindReader-popup-messages = Você capta lembranças dispersas de conversas passadas de {$target}...
 MutationMindReader-popup-message-format = “{$message}”
-MutationMindReader-popup-combat-mode = Você descobre que a intenção de {$target} é { $combat ->
-    [true] ferir
-   *[false] ajudar
+MutationMindReader-popup-combat-mode = Você descobre que a intenção de {POSS-ADJ($target)} é {$combat ->
+     [true] ferir
+    *[false] ajudar
 }...
-MutationMindReader-popup-true-identity = Você descobre que a verdadeira identidade de {$target} é {$name}!
+MutationMindReader-popup-true-identity = Você descobre que a verdadeira identidade de {POSS-ADJ($target)} é {$name}!
 
 MutationAutotomy-mutated = Suas articulações parecem frouxas.
 MutationEpilepsy-mutated = Você sente uma dor de cabeça.
@@ -227,3 +227,4 @@ MutationWeakPerception-removed = As sombras recuam...
 
 MutationFelinized-mutated = Você se sente tão kawaii...
 MutationFelinized-removed = Argh... que nojo!
+

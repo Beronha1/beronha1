@@ -137,6 +137,10 @@
   - type: Stack
     count: 10
     stackType: LegionSkull
+    baseLayer: base
+    # The imported Paradise RSI only contains one skull state. Repeating it keeps
+    # stack appearance interpolation valid without fabricating replacement art.
+    layerStates: [ skull, skull, skull ]
   #- type: Item
   #  heldPrefix: skull
   - type: StackPrice
@@ -144,6 +148,9 @@
   - type: Tag
     tags:
     - LegionSkull
+  - type: MegafaunaProvenance
+    source: megafauna-source-legion
+  - type: MegafaunaRawSample
 
 - type: entity
   parent: MaterialLegionSkull

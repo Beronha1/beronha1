@@ -167,6 +167,9 @@ public abstract partial class SharedRoleSystem : EntitySystem
             mindRoleComp.JobPrototype = jobPrototype;
             Dirty(mindRoleId.Value, mindRoleComp); // Trauma
             EnsureComp<JobRoleComponent>(mindRoleId.Value);
+// ES START
+            Dirty(mindRoleId.Value, mindRoleComp);
+// ES END
             DebugTools.AssertNull(mindRoleComp.AntagPrototype);
             DebugTools.Assert(!mindRoleComp.Antag);
             DebugTools.Assert(!mindRoleComp.ExclusiveAntag);

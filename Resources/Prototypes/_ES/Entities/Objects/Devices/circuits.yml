@@ -1,0 +1,73 @@
+- type: entity
+  id: ESKeypadElectronics
+  parent: BaseElectronics
+  name: keypad circuit board
+  description: An circuit board used in keypads.
+  components:
+  - type: Item
+    storedRotation: 0
+  - type: Sprite
+    sprite: _ES/Objects/Devices/circuits.rsi
+    state: id_mod
+  - type: Tag
+    tags:
+    - ESElectronicsKeypad
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ESComputerEvacBeaconCircuitBoard
+  name: emergency beacon console circuit board
+  description: A computer printed circuit board for a emergency beacon console.
+  components:
+  - type: Sprite
+    sprite: _ES/Objects/Devices/circuits.rsi
+    state: mainboard
+  - type: ComputerBoard
+    prototype: ESComputerEvacBeacon
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ESComputerWarehouseManifestCircuitBoard
+  name: warehouse manifest console circuit board
+  description: A computer printed circuit board for a warehouse manifest console.
+  components:
+  - type: Sprite
+    state: mainboard
+  - type: ComputerBoard
+    prototype: ESComputerWarehouseManifest
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ESComputerAnomalyCircuitBoard
+  name: anomaly probe console circuit board
+  description: A computer printed circuit board for a anomaly probe console.
+  components:
+  - type: Sprite
+    sprite: _ES/Objects/Devices/circuits.rsi
+    state: mainboard
+  - type: ComputerBoard
+    prototype: ESComputerAnomaly
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ESComputerSupplyRequestCircuitBoard
+  name: supply request console circuit board
+  description: A computer printed circuit board for a supply request console.
+  components:
+  - type: Sprite
+    state: mainboard
+  - type: ComputerBoard
+    prototype: ESComputerSupplyRequest
+    alternatePrototype:
+      ESComputerTabletop: ESComputerSupplyRequestTabletop
+
+- type: entity
+  parent: BaseComputerCircuitboard
+  id: ESComputerSupplyRequestMasterCircuitBoard
+  name: master supply request console circuit board
+  description: A computer printed circuit board for a master supply request console.
+  components:
+  - type: Sprite
+    state: mainboard
+  - type: ComputerBoard
+    prototype: ESComputerSupplyRequestMaster

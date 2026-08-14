@@ -9,17 +9,16 @@ namespace Content.Shared._ES.Core.Timer;
 /// <summary>
 /// This handles <see cref="ESTimedDespawnComponent"/>
 /// </summary>
-public sealed partial class ESTimedDespawnSystem : EntitySystem
+public sealed class ESTimedDespawnSystem : EntitySystem
 {
-    [Dependency] private IGameTiming _timing = default!;
-    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
 
     private readonly HashSet<EntityUid> _toDelete = [];
 
     /// <inheritdoc/>
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<ESTimedDespawnComponent, MapInitEvent>(OnMapInit);
     }
 
@@ -34,8 +33,10 @@ public sealed partial class ESTimedDespawnSystem : EntitySystem
     [PublicAPI]
     public void SetLifetime(Entity<ESTimedDespawnComponent?> ent, TimeSpan lifetime)
     {
-        if (!Resolve(ent, ref ent.Comp))
-            return;
+        if (!Resolve(ent, ref ent.Comp, false))
+        {
+            ent.Comp = EnsureComp<ESTimedDespawnComponent>(ent.Owner);
+        }
         DebugTools.Assert(lifetime >= TimeSpan.Zero, "Lifetime must be positive");
 
         ent.Comp.Lifetime = lifetime;
@@ -83,9 +84,6 @@ public sealed partial class ESTimedDespawnSystem : EntitySystem
     {
         if (!Resolve(ent, ref ent.Comp))
             return 0;
-
-        if (ent.Comp.Lifetime <= TimeSpan.Zero)
-            return 1;
 
         return Math.Clamp((_timing.CurTime - ent.Comp.SpawnTime) / ent.Comp.Lifetime, 0, 1);
     }

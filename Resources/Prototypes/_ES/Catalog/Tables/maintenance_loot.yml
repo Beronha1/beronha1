@@ -93,6 +93,7 @@
     - id: Wirecutter
     - id: Wrench
     - id: SprayPainter
+    - id: ESAnomalyResonator
 
     - tableId: ESMixedBasicGloves
     - id: ClothingEyesGlassesMeson
@@ -152,7 +153,7 @@
 
     - id: DrinkBeerBottleFull
     - id: DrinkHotCoffee
-    - id: StrangePill
+    - id: ESStrangePill
 
     - id: BodyBagFolded
     - id: FireExtinguisher
@@ -306,11 +307,11 @@
   id: ESMaintLootRare
   table:
     group:
-    - id: KitchenKnife
+    - id: ESWeaponKnife
+      weight: 2
     - id: Handcuffs
     - id: MakeshiftShield
     - id: WelderIndustrialAdvanced
-    - id: CombatKnife
     - id: BaseBallBat
     - id: Binoculars
 

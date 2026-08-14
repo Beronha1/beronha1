@@ -26,6 +26,7 @@ namespace Content.Shared.Humanoid
         SnoutCover, // things layered over snouts (i.e. noses)
         HeadSide, // side parts (i.e., frills)
         HeadTop,  // top parts (i.e., ears)
+        NeckFluff, // Omu - Ovinia neck markings
         Eyes,
         RArm,
         LArm,

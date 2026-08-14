@@ -1,0 +1,42 @@
+- type: entity
+  parent:
+  - AppearanceOvinia
+  - BaseSpeciesMobOrganic
+  id: MobOvinia
+  name: Urist McSheepy
+  components:
+  - type: Speech
+    speechSounds: Alto
+    speechVerb: Ovinia
+    allowedEmotes: [ "Baa" ]
+  - type: Vocal
+    emoteSounds: MaleOvinia
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Caprine
+    understands:
+    - TauCetiBasic
+    - Caprine
+  - type: StepTriggerImmune
+    whitelist:
+      types:
+      - Shard
+      - Mousetrap
+      - SlipEntity
+  - type: Tag
+    tags:
+    - CanPilot
+    - FootstepSound
+    - DoorBumpOpener
+    - OviniaEmotes
+  - type: TypingIndicator
+    proto: ovinia
+  - type: Flammable
+    firestackFade: -0.15
+  - type: Hunger
+    baseDecayRate: 0.0125
+  - type: Thirst
+    baseDecayRate: 0.075
+  - type: Damageable
+    damageModifierSet: Ovinia

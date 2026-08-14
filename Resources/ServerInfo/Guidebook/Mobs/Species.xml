@@ -23,5 +23,6 @@
     <GuideEntityEmbed Entity="AppearanceIPC" Caption="IPC"/>
     <GuideEntityEmbed Entity="MobDecapoid" Caption="Decapoid"/>
     <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
+    <GuideEntityEmbed Entity="AppearanceOvinia" Caption="Ovinia"/>
   </Box>
 </Document>

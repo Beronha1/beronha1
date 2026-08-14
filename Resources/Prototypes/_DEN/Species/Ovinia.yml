@@ -1,0 +1,15 @@
+- type: species
+  id: Ovinia
+  name: species-name-ovinia
+  roundStart: true
+  prototype: MobOvinia
+  defaultSkinTone: "#ffffff"
+  dollPrototype: AppearanceOvinia
+  skinColoration: Hues
+  defaultSoundsBySex:
+  - MaleOvinia
+  - FemaleOvinia
+  - MaleOvinia
+  voices:
+  - MaleOvinia
+  - FemaleOvinia

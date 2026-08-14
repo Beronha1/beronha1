@@ -1,38 +1,42 @@
 {
-    "version": 1,
-    "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e. Vox state made by Flareguy for SS14. equipped-OUTERCLOTHING-dog modified from equipped-OUTERCLOTHING by Sparlight (GitHub).",
-    "size": {
-        "x": 32,
-        "y": 32
-    },
-    "states": [
-        {
-            "name": "icon"
-        },
-        {
-            "name": "equipped-OUTERCLOTHING",
-            "directions": 4
-        },
-        {
-            "name": "equipped-OUTERCLOTHING-vox",
-            "directions": 4
-        },
-        {
-            "name": "equipped-OUTERCLOTHING-dog",
-            "directions": 4
-        },
-        {
-            "name": "equipped-OUTERCLOTHING-reptilian",
-            "directions": 4
-        },
-        {
-            "name": "inhand-left",
-            "directions": 4
-        },
-        {
-            "name": "inhand-right",
-            "directions": 4
-        }
-    ]
+   "copyright" : "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e. Vox state made by Flareguy for SS14. equipped-OUTERCLOTHING-dog modified from equipped-OUTERCLOTHING by Sparlight (GitHub).; Kodepiia states from GoobStation PR #6822, with attribution retained upstream: Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/4f6190e2895e09116663ef282d3ce1d8b35c032e. Vox state made by Flareguy for SS14. equipped-OUTERCLOTHING-dog modified from equipped-OUTERCLOTHING by Sparlight (GitHub). Harpy made by VMSolidus, equipped-OUTERCLOTHING-resomi made by svarshiksatanist (Discord). hydrakin sprite by Zethine / @synthetic_086 (discord). Kodepiia state made by LazyRiverfolk for Impstation. ",
+   "license" : "CC-BY-SA-3.0",
+   "size" : {
+      "x" : 32,
+      "y" : 32
+   },
+   "states" : [
+      {
+         "name" : "icon"
+      },
+      {
+         "directions" : 4,
+         "name" : "equipped-OUTERCLOTHING"
+      },
+      {
+         "directions" : 4,
+         "name" : "equipped-OUTERCLOTHING-vox"
+      },
+      {
+         "directions" : 4,
+         "name" : "equipped-OUTERCLOTHING-dog"
+      },
+      {
+         "directions" : 4,
+         "name" : "equipped-OUTERCLOTHING-reptilian"
+      },
+      {
+         "directions" : 4,
+         "name" : "inhand-left"
+      },
+      {
+         "directions" : 4,
+         "name" : "inhand-right"
+      },
+      {
+         "directions" : 4,
+         "name" : "equipped-OUTERCLOTHING-kodepiia"
+      }
+   ],
+   "version" : 1
 }

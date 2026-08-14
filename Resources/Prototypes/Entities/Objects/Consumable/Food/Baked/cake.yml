@@ -1103,6 +1103,7 @@
     - VimPilot
     - DoorBumpOpener
     - Cake
+    - KodeEdible # imp
   - type: CanEscapeInventory
     baseResistTime: 2
   - type: Puller

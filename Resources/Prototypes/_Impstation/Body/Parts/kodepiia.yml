@@ -1,0 +1,294 @@
+- type: markingsGroup
+  parent: Undergarments
+  id: Kodepiia
+  onlyGroupWhitelisted: true
+  limits:
+    enum.HumanoidVisualLayers.Hair:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Head:
+      limit: 8
+      required: false
+    enum.HumanoidVisualLayers.HeadTop:
+      limit: 8
+      required: false
+    enum.HumanoidVisualLayers.HeadSide:
+      limit: 8
+      required: false
+    enum.HumanoidVisualLayers.Snout:
+      limit: 1
+      required: false
+    enum.HumanoidVisualLayers.Eyes:
+      limit: 8
+      required: false
+    enum.HumanoidVisualLayers.Chest:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.Tail:
+      limit: 2
+      required: false
+    enum.HumanoidVisualLayers.RArmExtension:
+      limit: 1
+      required: true
+      default: [ KodeWingsBlade ]
+    enum.HumanoidVisualLayers.LLeg:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.RLeg:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.LFoot:
+      limit: 4
+      required: false
+    enum.HumanoidVisualLayers.RFoot:
+      limit: 4
+      required: false
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceKodepiia
+  categories: [ HideSpawnMenu ]
+  name: kodepiia appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganKodepiiaTorso
+      Head: OrganKodepiiaHead
+      Tail: OrganKodepiiaTail
+      ArmLeft: OrganKodepiiaArmLeft
+      ArmRight: OrganKodepiiaArmRight
+      HandRight: OrganKodepiiaHandRight
+      HandLeft: OrganKodepiiaHandLeft
+      LegLeft: OrganKodepiiaLegLeft
+      LegRight: OrganKodepiiaLegRight
+      FootLeft: OrganKodepiiaFootLeft
+      FootRight: OrganKodepiiaFootRight
+      Brain: OrganKodepiiaBrain
+      Eyes: OrganKodepiiaEyes
+      Tongue: OrganKodepiiaTongue
+      Appendix: OrganKodepiiaAppendix
+      Ears: OrganKodepiiaEars
+      Lungs: OrganKodepiiaLungs
+      Heart: OrganKodepiiaHeart
+      Stomach: OrganKodepiiaStomach
+      Liver: OrganKodepiiaLiver
+      Kidneys: OrganKodepiiaKidneys
+  - type: HumanoidProfile
+    species: Kodepiia
+  - type: Inventory
+    speciesId: kodepiia
+    displacements:
+      jumpsuit:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Kodepiia/displacement.rsi
+            state: jumpsuit
+      gloves:
+        sizeMaps:
+          32:
+            sprite: _Impstation/Mobs/Species/Kodepiia/displacement.rsi
+            state: hands
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganKodepiia
+  abstract: true
+  suffix: kodepiia
+
+- type: entity
+  id: OrganKodepiiaMetabolizer
+  abstract: true
+  components:
+  - type: Metabolizer
+    metabolizerTypes: [ Kodepiia ]
+
+- type: entity
+  parent: OrganKodepiia
+  id: OrganKodepiiaInternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+
+- type: entity
+  id: OrganKodepiiaVisual
+  abstract: true
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Impstation/Mobs/Species/Kodepiia/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Kodepiia
+
+- type: entity
+  parent: [ OrganKodepiia, OrganKodepiiaVisual ]
+  id: OrganKodepiiaExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Impstation/Mobs/Species/Kodepiia/parts.rsi
+
+- type: entity
+  parent: [ OrganBaseTorsoTailed, OrganKodepiiaExternal ]
+  id: OrganKodepiiaTorso
+  components:
+  - type: Sprite
+    state: torso_f
+  - type: VisualOrgan
+    data:
+      state: torso_f
+
+- type: entity
+  parent: [ OrganBaseHead, OrganKodepiiaExternal ]
+  id: OrganKodepiiaHead
+  components:
+  - type: Sprite
+    state: head_f
+  - type: VisualOrgan
+    data:
+      state: head_f
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.HeadTop
+    - enum.HumanoidVisualLayers.HeadSide
+    markingData:
+      group: Kodepiia
+      layers:
+      - Head
+      - Hair
+      - FacialHair
+      - Face
+      - Snout
+      - SnoutCover
+      - HeadSide
+      - HeadTop
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganKodepiiaExternal ]
+  id: OrganKodepiiaArmLeft
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      group: Kodepiia
+      layers:
+      - LArm
+      - LArmExtension
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganKodepiiaExternal ]
+  id: OrganKodepiiaArmRight
+  components:
+  - type: VisualOrganMarkings
+    markingData:
+      group: Kodepiia
+      layers:
+      - RArm
+      - RArmExtension
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganKodepiiaExternal ]
+  id: OrganKodepiiaHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganKodepiiaExternal ]
+  id: OrganKodepiiaHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganKodepiiaExternal ]
+  id: OrganKodepiiaLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganKodepiiaExternal ]
+  id: OrganKodepiiaLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganKodepiiaExternal ]
+  id: OrganKodepiiaFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganKodepiiaExternal ]
+  id: OrganKodepiiaFootRight
+
+- type: entity
+  parent: [ OrganBaseTail, OrganKodepiiaExternal ]
+  id: OrganKodepiiaTail
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Trauma/empty.rsi
+      state: empty
+
+- type: entity
+  parent: [ OrganBaseBrain, OrganKodepiiaInternal ]
+  id: OrganKodepiiaBrain
+  name: bille áu sac
+  description: Allegedly still functioning, or has it ever really functioned.
+  components:
+  - type: Sprite
+    state: billeausac
+
+- type: entity
+  parent: [ OrganKodepiiaVisual, OrganBaseEyes, OrganKodepiiaInternal ]
+  id: OrganKodepiiaEyes
+  name: opticullis
+  description: The scavenger's kaleidoscope.
+  components:
+  - type: Sprite
+    state: opticullis
+
+- type: entity
+  parent: [ OrganBaseTongue, OrganKodepiiaInternal ]
+  id: OrganKodepiiaTongue
+
+- type: entity
+  parent: [ OrganBaseAppendix, OrganKodepiiaInternal ]
+  id: OrganKodepiiaAppendix
+
+- type: entity
+  parent: [ OrganBaseEars, OrganKodepiiaInternal ]
+  id: OrganKodepiiaEars
+
+- type: entity
+  parent: [ OrganBaseLungs, OrganKodepiiaInternal, OrganKodepiiaMetabolizer, BaseHandheldInstrument ]
+  id: OrganKodepiiaLungs
+  name: fine coil
+  description: Like lungs, but stretchier...?
+  components:
+  - type: Sprite
+    state: finecoil
+  - type: Instrument
+    program: 109
+
+- type: entity
+  parent: [ OrganBaseHeart, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
+  id: OrganKodepiiaHeart
+  name: COAT
+  description: A compartment that serves much the same purpose as a heart.
+  components:
+  - type: Sprite
+    state: compartmentofallthings
+
+- type: entity
+  parent: [ OrganBaseStomach, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
+  id: OrganKodepiiaStomach
+  name: primary gullet
+  description: Leaky.
+  components:
+  - type: Sprite
+    state: primarygullet
+
+- type: entity
+  parent: [ OrganBaseLiver, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
+  id: OrganKodepiiaLiver
+  name: slough
+  description: Something that used to be skin.
+  components:
+  - type: Sprite
+    state: slough
+
+- type: entity
+  parent: [ OrganBaseKidneys, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
+  id: OrganKodepiiaKidneys

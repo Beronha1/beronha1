@@ -547,7 +547,7 @@
       - !type:PopupMessage
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Bloodsucker ] # Trauma - Plant
+          type: [ Animal, Vox, Plant, Bloodsucker, Kodepiia ] # Trauma / Impstation
           inverted: true
         type: Local
         visualType: MediumCaution
@@ -557,7 +557,7 @@
         probability: 0.1
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Bloodsucker ] # Trauma, Bloodsucker
+          type: [ Animal, Vox, Plant, Bloodsucker, Kodepiia ] # Trauma / Impstation
           inverted: true
       - !type:InfectDisease
         probability: 0.05
@@ -577,7 +577,7 @@
       - !type:HealthChange
         conditions:
         - !type:MetabolizerTypeCondition
-          type: [ Animal, Vox, Plant, Arachnid ]  # Trauma, Arachnid
+          type: [ Animal, Vox, Plant, Arachnid, Kodepiia ] # Trauma / Impstation
           inverted: true
         damage:
           types:
@@ -601,6 +601,12 @@
           type: [ Vox ]
         reagent: Protein
         amount: 0.25
+      - !type:AdjustReagent
+        conditions:
+        - !type:MetabolizerTypeCondition
+          type: [ Kodepiia ]
+        reagent: Protein
+        amount: 0.5
 
 - type: reagent
   id: Allicin

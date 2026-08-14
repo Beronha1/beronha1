@@ -1,0 +1,89 @@
+- type: entity
+  parent:
+  - AppearanceKodepiia
+  - BaseSpeciesMobOrganic
+  id: MobKodepiia
+  name: Urist McSquid
+  components:
+  - type: HarpySinger
+  - type: KodepiiaScrambler
+  - type: KodepiiaConsumeAction
+    consumeActionId: ActionKodepiiaConsume
+    damage:
+      groups:
+        Genetic: 15
+      types:
+        Piercing: 15
+    whitelist:
+      components:
+      - Respirator
+      - Bloodstream
+      - Absorbable
+      tags:
+      - KodeEdible
+    blacklist:
+      components:
+      - Silicon
+  - type: Instrument
+    allowPercussion: false
+    program: 52
+  - type: SwappableInstrument
+    instrumentList:
+      Voice: { 52: 0 }
+      Trumpet: { 56: 0 }
+      Electric: { 27: 0 }
+      Bass: { 33: 0 }
+      Rock: { 29: 0 }
+      Acoustic: { 24: 0 }
+      Flute: { 73: 0 }
+      Sax: { 66: 0 }
+      Piano: { 1: 0 }
+      Church Organ: { 19: 0 }
+      Harp: { 46: 0 }
+  - type: UserInterface
+    interfaces:
+      enum.InstrumentUiKey.Key:
+        type: InstrumentBoundUserInterface
+  - type: Hunger
+    baseDecayRate: 1.25
+  - type: FootstepModifier
+    footstepSoundCollection:
+      collection: KodepiiaStep
+  - type: Bloodstream
+    bloodReferenceSolution:
+      reagents:
+      - ReagentId: ShimmeringBlood
+        Quantity: 300
+  - type: Damageable
+    damageModifierSet: Kodepiia
+  - type: TypingIndicator
+    proto: kode
+  - type: Speech
+    speechSounds: Kodepiia
+    speechVerb: Kodepiia
+  - type: Vocal
+    emoteSounds: Kodepiia
+  - type: InstrumentVisuals
+  - type: LanguageKnowledge
+    speaks:
+    - TauCetiBasic
+    - Universal
+    understands:
+    - TauCetiBasic
+  - type: GenericVisualizer
+    visuals:
+      enum.InstrumentVisuals.Playing:
+        enum.InstrumentVisuals.Layer:
+          False: { visible: false }
+          True: { visible: true }
+  - type: Sprite
+    layers:
+    - map: [ "enum.InstrumentVisuals.Layer" ]
+      sprite: _DV/Effects/harpysinger.rsi
+      state: singing_music_notes
+      visible: false
+  - type: Butcherable
+    butcheringType: Spike
+    spawned:
+    - id: FoodMeat
+      amount: 5

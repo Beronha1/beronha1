@@ -1,2 +1,1 @@
-﻿species-name-decapoid = Decapóide
-
+species-name-kodepiia = Kodepiia

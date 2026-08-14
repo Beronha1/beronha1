@@ -1,0 +1,19 @@
+- type: species
+  id: Kodepiia
+  name: species-name-kodepiia
+  roundStart: true
+  prototype: MobKodepiia
+  defaultSkinTone: "#ffffff"
+  dollPrototype: AppearanceKodepiia
+  skinColoration: Hues
+  maleFirstNames: KodepiiaFirst
+  femaleFirstNames: KodepiiaFirst
+  lastNames: KodepiiaLast
+  sexes:
+  - Unsexed
+  defaultSoundsBySex:
+  - Kodepiia
+  - Kodepiia
+  - Kodepiia
+  voices:
+  - Kodepiia

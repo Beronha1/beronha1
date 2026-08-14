@@ -259,6 +259,8 @@
   - type: HideLayerClothing
     slots:
     - Tail
+    - LArmExtension
+    - RArmExtension
 
 - type: entity
   abstract: true

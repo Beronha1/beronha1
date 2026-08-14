@@ -36,6 +36,8 @@ namespace Content.Shared.Humanoid
         LLeg,
         RFoot,
         LFoot,
+        LArmExtension, // Frontier/Impstation - species-specific arm extension
+        RArmExtension, // Frontier/Impstation - species-specific arm extension
         Overlay,
         Handcuffs,
         StencilMask,

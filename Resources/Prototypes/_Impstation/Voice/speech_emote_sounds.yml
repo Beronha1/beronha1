@@ -1,0 +1,8 @@
+- type: emoteSounds
+  parent: MaleHuman
+  id: Kodepiia
+  sounds:
+    Gasp:
+      collection: KodepiiaGasp
+    DefaultDeathgasp:
+      collection: KodepiiaDeath

@@ -2,8 +2,10 @@
 
 using Content.Lavaland.Shared.Artifacts;
 using Content.Lavaland.Shared.Megafauna.Harvesting;
+using Content.Medical.Common.Body;
 using Content.Server.Administration.Logs;
-using Content.Server.Polymorph.Systems;
+using Content.Shared.Administration.Systems;
+using Content.Shared.Body;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -16,10 +18,12 @@ using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
+using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Traits.Assorted;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
@@ -40,8 +44,9 @@ public sealed partial class MinerRewardSystem : EntitySystem
     [Dependency] private SharedDoAfterSystem _doAfter = default!;
     [Dependency] private EntityTableSystem _entityTable = default!;
     [Dependency] private MobStateSystem _mobState = default!;
-    [Dependency] private PolymorphSystem _polymorph = default!;
+    [Dependency] private SharedMindSystem _mind = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private RejuvenateSystem _rejuvenate = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedItemSystem _item = default!;
@@ -60,8 +65,10 @@ public sealed partial class MinerRewardSystem : EntitySystem
 
         SubscribeLocalEvent<DemonicJackhammerComponent, MeleeHitEvent>(OnJackhammerHit);
 
-        SubscribeLocalEvent<ResurrectionCrystalComponent, UseInHandEvent>(OnCrystalUse);
-        SubscribeLocalEvent<ResurrectionCrystalWardComponent, MobStateChangedEvent>(OnWardStateChanged);
+        SubscribeLocalEvent<ResurrectionCrystalComponent, AfterInteractEvent>(OnCrystalInteract);
+        SubscribeLocalEvent<ResurrectionCrystalComponent, ResurrectionCrystalDoAfterEvent>(OnCrystalReviveComplete);
+        SubscribeLocalEvent<ResurrectionCrystalComponent, EntityTerminatingEvent>(OnCrystalTerminating);
+        SubscribeLocalEvent<ResurrectionInProgressComponent, EntityTerminatingEvent>(OnResurrectionTargetTerminating);
 
         SubscribeLocalEvent<CursedIceBootsComponent, GotEquippedEvent>(OnBootsEquipped);
         SubscribeLocalEvent<CursedIceBootsComponent, GotUnequippedEvent>(OnBootsUnequipped);
@@ -72,6 +79,15 @@ public sealed partial class MinerRewardSystem : EntitySystem
         SubscribeLocalEvent<GodslayerArmorComponent, GotUnequippedEvent>(OnGodslayerUnequipped);
         SubscribeLocalEvent<GodslayerArmorComponent, ExaminedEvent>(OnGodslayerExamined);
         SubscribeLocalEvent<GodslayerCarrierComponent, MobStateChangedEvent>(OnGodslayerStateChanged);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<GodslayerCarrierComponent, MobStateComponent>();
+        while (query.MoveNext(out var uid, out var carrier, out var mobState))
+            UpdateGodslayerRevival((uid, carrier, mobState));
     }
 
     private void OnSawMapInit(Entity<CleavingSawComponent> ent, ref MapInitEvent args)
@@ -189,34 +205,108 @@ public sealed partial class MinerRewardSystem : EntitySystem
             _damage.TryChangeDamage(args.User, ent.Comp.MeleeHeal, true, false, origin: ent);
     }
 
-    private void OnCrystalUse(Entity<ResurrectionCrystalComponent> ent, ref UseInHandEvent args)
+    private void OnCrystalInteract(Entity<ResurrectionCrystalComponent> ent, ref AfterInteractEvent args)
     {
-        if (args.Handled || HasComp<ResurrectionCrystalWardComponent>(args.User) || !HasComp<DamageableComponent>(args.User))
+        if (args.Handled ||
+            !args.CanReach ||
+            ent.Comp.ActiveTarget != null ||
+            args.Target is not { } target)
+        {
             return;
+        }
 
-        var ward = EnsureComp<ResurrectionCrystalWardComponent>(args.User);
-        ward.ResurrectionPolymorph = ent.Comp.ResurrectionPolymorph;
+        if (HasComp<ResurrectionInProgressComponent>(target) || !CanResurrect(target))
+        {
+            _popup.PopupClient(Loc.GetString("resurrection-crystal-invalid-target"), target, args.User);
+            return;
+        }
+
+        var marker = EnsureComp<ResurrectionInProgressComponent>(target);
+        marker.Crystal = ent;
+
+        var doAfter = new DoAfterArgs(
+            EntityManager,
+            args.User,
+            ent.Comp.ReviveTime,
+            new ResurrectionCrystalDoAfterEvent(),
+            ent,
+            target: target,
+            used: ent)
+        {
+            BreakOnDamage = true,
+            BreakOnMove = true,
+            NeedHand = true,
+        };
+
+        if (!_doAfter.TryStartDoAfter(doAfter))
+        {
+            RemCompDeferred<ResurrectionInProgressComponent>(target);
+            return;
+        }
+
+        ent.Comp.ActiveTarget = target;
         _adminLog.Add(
             LogType.Action,
             LogImpact.High,
-            $"{ToPrettyString(args.User):player} absorbed the resurrection ward from {ToPrettyString(ent):item}");
-        _popup.PopupEntity(Loc.GetString("resurrection-crystal-absorbed"), args.User, args.User, PopupType.LargeCaution);
+            $"{ToPrettyString(args.User):player} began resurrecting {ToPrettyString(target):player} with {ToPrettyString(ent):item}");
+        _popup.PopupEntity(Loc.GetString("resurrection-crystal-start"), target, args.User, PopupType.LargeCaution);
+        args.Handled = true;
+    }
+
+    private void OnCrystalReviveComplete(
+        Entity<ResurrectionCrystalComponent> ent,
+        ref ResurrectionCrystalDoAfterEvent args)
+    {
+        var target = args.Target;
+        ent.Comp.ActiveTarget = null;
+        if (target != null && Exists(target.Value))
+            RemComp<ResurrectionInProgressComponent>(target.Value);
+
+        if (args.Cancelled || args.Handled || target == null || !CanResurrect(target.Value))
+            return;
+
+        if (!_mind.TryGetMind(target.Value, out var mindId, out var mind))
+            return;
+
+        _rejuvenate.PerformRejuvenate(target.Value);
+        _mind.TransferTo(mindId, target.Value, mind: mind);
+        _popup.PopupEntity(
+            Loc.GetString("resurrection-crystal-triggered"),
+            target.Value,
+            target.Value,
+            PopupType.LargeCaution);
+        _adminLog.Add(
+            LogType.Action,
+            LogImpact.High,
+            $"{ToPrettyString(args.User):player} resurrected {ToPrettyString(target.Value):player} with {ToPrettyString(ent):item}");
         args.Handled = true;
         QueueDel(ent);
     }
 
-    private void OnWardStateChanged(Entity<ResurrectionCrystalWardComponent> ent, ref MobStateChangedEvent args)
+    private bool CanResurrect(EntityUid target)
     {
-        if (args.NewMobState != MobState.Dead || !HasComp<DamageableComponent>(ent))
-            return;
+        return HasComp<BodyComponent>(target) &&
+               HasComp<DamageableComponent>(target) &&
+               HasComp<MobStateComponent>(target) &&
+               _mobState.IsDead(target) &&
+               !HasComp<DebrainedComponent>(target) &&
+               !HasComp<UnrevivableComponent>(target) &&
+               _mind.TryGetMind(target, out _, out var mind) &&
+               mind.UserId != null;
+    }
 
-        var polymorph = ent.Comp.ResurrectionPolymorph;
-        RemCompDeferred<ResurrectionCrystalWardComponent>(ent);
-        _damage.ClearAllDamage(ent.Owner);
-        _mobState.ChangeMobState(ent, MobState.Alive, origin: ent);
-        _popup.PopupEntity(Loc.GetString("resurrection-crystal-triggered"), ent, ent, PopupType.LargeCaution);
-        _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(ent):player} was revived by a demonic resurrection crystal");
-        _polymorph.PolymorphEntity(ent, polymorph);
+    private void OnCrystalTerminating(Entity<ResurrectionCrystalComponent> ent, ref EntityTerminatingEvent args)
+    {
+        if (ent.Comp.ActiveTarget is { } target && Exists(target))
+            RemCompDeferred<ResurrectionInProgressComponent>(target);
+    }
+
+    private void OnResurrectionTargetTerminating(
+        Entity<ResurrectionInProgressComponent> ent,
+        ref EntityTerminatingEvent args)
+    {
+        if (TryComp<ResurrectionCrystalComponent>(ent.Comp.Crystal, out var crystal) && crystal.ActiveTarget == ent.Owner)
+            crystal.ActiveTarget = null;
     }
 
     private void OnBootsEquipped(Entity<CursedIceBootsComponent> ent, ref GotEquippedEvent args)
@@ -301,10 +391,49 @@ public sealed partial class MinerRewardSystem : EntitySystem
             return;
         }
 
+        var wasPending = ent.Comp.RevivalPending;
+        ent.Comp.RevivalPending = true;
+        ent.Comp.RevivalAt = _timing.CurTime + armor.RevivalDelay;
+
+        // Entering Dead after Critical restarts the full delay. This guarantees that an
+        // actual death is never followed by an effectively instantaneous resurrection.
+        if (!wasPending)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("godslayer-revival-charging"),
+                ent,
+                ent,
+                PopupType.LargeCaution);
+        }
+    }
+
+    private void UpdateGodslayerRevival(Entity<GodslayerCarrierComponent, MobStateComponent> ent)
+    {
+        if (!ent.Comp1.RevivalPending)
+            return;
+
+        if (ent.Comp2.CurrentState is not (MobState.Critical or MobState.Dead))
+        {
+            ent.Comp1.RevivalPending = false;
+            return;
+        }
+
+        if (ent.Comp1.RevivalAt > _timing.CurTime)
+            return;
+
+        if (!TryComp<GodslayerArmorComponent>(ent.Comp1.Armor, out var armor) ||
+            armor.Wearer != ent.Owner ||
+            !HasComp<DamageableComponent>(ent))
+        {
+            RemCompDeferred<GodslayerCarrierComponent>(ent);
+            return;
+        }
+
+        ent.Comp1.RevivalPending = false;
         armor.NextRevival = _timing.CurTime + armor.Cooldown;
         _damage.ClearAllDamage(ent.Owner);
-        _mobState.ChangeMobState(ent, MobState.Alive, origin: ent.Comp.Armor);
+        _mobState.ChangeMobState(ent, MobState.Alive, origin: ent.Comp1.Armor);
         _popup.PopupEntity(Loc.GetString("godslayer-revival-triggered"), ent, ent, PopupType.LargeCaution);
-        _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(ent):player} was revived by {ToPrettyString(ent.Comp.Armor):item}");
+        _adminLog.Add(LogType.Action, LogImpact.High, $"{ToPrettyString(ent):player} was revived by {ToPrettyString(ent.Comp1.Armor):item}");
     }
 }

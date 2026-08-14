@@ -76,7 +76,6 @@ public sealed partial class MegafaunaTest : GameTest
     public const string MercuryFissure = "MercuryFissure";
     private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
     private static readonly ProtoId<MegafaunaSelectorPrototype> ChildishOniClawSelector = "ChildishOniClawSlash";
-    private static readonly ProtoId<SoundCollectionPrototype> ThunderStrike = "ThunderStrike";
 
     [Test]
     public async Task LaunchAndShutdownMegafauna()
@@ -579,7 +578,7 @@ public sealed partial class MegafaunaTest : GameTest
 
         await server.WaitAssertion(() =>
         {
-            Assert.That(protoMan.HasIndex<SoundCollectionPrototype>(ThunderStrike), Is.True);
+            Assert.That(protoMan.HasIndex(new ProtoId<SoundCollectionPrototype>("ThunderStrike")), Is.True);
             Assert.DoesNotThrow(() =>
                 entMan.SpawnAtPosition(new EntProtoId("ThunderSound"), testMap.GridCoords));
         });
@@ -673,7 +672,7 @@ public sealed partial class MegafaunaTest : GameTest
 
             Assert.That(SpawnIds(tables, protoMan.Index(
                     new ProtoId<EntityTablePrototype>("ColossusNecropolisCrateTable"))),
-                Does.Not.Contain("DivineVocalCordsImplanter"),
+                Does.Not.Contain("OrganDivineVocalCords"),
                 "the vocal cords are an exclusive carcass-harvest reward");
 
             var legionBoss = entMan.GetComponent<LegionBossComponent>(legion);
@@ -700,7 +699,7 @@ public sealed partial class MegafaunaTest : GameTest
                 "WeaponSpectralBlade",
                 "LavaStaffRod",
                 "BottleDragonBlood",
-                "DivineVocalCordsImplant",
+                "OrganDivineVocalCords",
                 "WeaponSpellBlade",
                 "GemHollowCrystal",
                 "GemBloodStone",
@@ -805,7 +804,7 @@ public sealed partial class MegafaunaTest : GameTest
             "ClothingHeadHelmetHostileEnv",
             "LavaStaffRod",
             "BottleDragonBlood",
-            "DivineVocalCordsImplant",
+            "OrganDivineVocalCords",
             "WeaponSpectralBlade",
             "WeaponSpellBlade",
             "LegionCore",

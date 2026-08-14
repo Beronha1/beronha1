@@ -1,0 +1,877 @@
+WHISKEY STATION - PR #25: ECOSSISTEMA DE MEGAFAUNAS
+Registro de implementação e changelog de trabalho
+==================================================
+
+PR: https://github.com/Whiskey-Station/whiskey-station/pull/25
+
+OBJETIVO DESTE ARQUIVO
+----------------------
+
+Este é o inventário de conteúdo da expansão de megafaunas incluída na PR #25.
+Ele serve simultaneamente como:
+
+- registro do que foi portado ou criado;
+- base para o changelog público dirigido aos jogadores;
+- lista de acompanhamento para correções e expansões futuras;
+- índice para indicar exatamente qual parte deve ser alterada.
+
+Convenção de acompanhamento:
+
+[IMPLEMENTADO] Conteúdo presente na PR #25.
+[REVISAR]      Conteúdo implementado que precisa de nova avaliação.
+[PLANEJADO]    Conteúdo aprovado para trabalho futuro.
+[FORA DA PR]   Conteúdo deliberadamente não incluído na PR #25.
+
+Entidades técnicas invisíveis, como projéteis auxiliares, marcadores, spawners e
+telegraphs, são agrupadas dentro da mecânica ou boss correspondente.
+
+
+1. ESCOPO GERAL
+===============
+
+[IMPLEMENTADO] Oito arenas e mapas de encontro.
+[IMPLEMENTADO] Oito linhas principais de megafaunas.
+[IMPLEMENTADO] Quatro fases do Childish Oni.
+[IMPLEMENTADO] Quatro formas da Mercury Spider.
+[IMPLEMENTADO] Megafauna Director e escalonamento de dificuldade.
+[IMPLEMENTADO] Sistema compartilhado de ataques especiais.
+[IMPLEMENTADO] Processamento multiestágio de carcaças.
+[IMPLEMENTADO] Extração química diretamente de carcaças residuais.
+[IMPLEMENTADO] Oito troféus combináveis para Crushers e armas proto-cinéticas.
+[IMPLEMENTADO] Sistema de órgãos permanentes de megafauna e cirurgias próprias.
+[IMPLEMENTADO] Research Destructor e quatro tecnologias.
+[IMPLEMENTADO] Quinze receitas principais de torno e seus recipe packs.
+[IMPLEMENTADO] Receitas de construção individuais e multiboss.
+[IMPLEMENTADO] Cadeia química de megafaunas.
+[IMPLEMENTADO] Integrações interdepartamentais.
+[IMPLEMENTADO] Assets importados com atribuição e registro de licença.
+[IMPLEMENTADO] Testes automatizados e correções estruturais relacionadas.
+
+
+2. BOSSES E ENCONTROS
+=====================
+
+2.1 ASH DRAKE
+-------------
+
+[IMPLEMENTADO] Arena Dragon Lair.
+[IMPLEMENTADO] Combate dirigido por ataques especiais.
+[IMPLEMENTADO] Cone de fogo.
+[IMPLEMENTADO] Sopro contínuo de fogo.
+[IMPLEMENTADO] Erupções e linhas de lava.
+[IMPLEMENTADO] Telegraphs, rugidos, fogo, música e efeitos visuais.
+[IMPLEMENTADO] Carcaça processável.
+[IMPLEMENTADO] Troféu Ash Drake Spike.
+
+Recompensas:
+
+[IMPLEMENTADO] Spectral Blade.
+[IMPLEMENTADO] Lava Staff.
+[IMPLEMENTADO] Dragon's Blood.
+[IMPLEMENTADO] Sacred Flame spellbook.
+[IMPLEMENTADO] Fireball wand.
+[IMPLEMENTADO] Drake Remains.
+[IMPLEMENTADO] Drake Armour e capacete.
+[IMPLEMENTADO] Industrial Drake Armour.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 10 segundos: 5 Dragon Hide, 2 Dragon Wing
+               Membranes e 2 Megafauna Sinew.
+[IMPLEMENTADO] Serra cirúrgica, 14 segundos: 10 Dragon Bones.
+[IMPLEMENTADO] Carcaça residual: 240u de Exothermic Blood extraíveis por seringa.
+
+2.2 COLOSSUS
+------------
+
+[IMPLEMENTADO] Arena própria.
+[IMPLEMENTADO] Ataque Fraction.
+[IMPLEMENTADO] Ataque Cross.
+[IMPLEMENTADO] Ataque Spiral.
+[IMPLEMENTADO] Ataque Wrath.
+[IMPLEMENTADO] Ondas geométricas, cristais, projéteis e telegraphs.
+[IMPLEMENTADO] Carcaça processável.
+[IMPLEMENTADO] Troféu Colossus Blaster Tubes.
+
+Recompensas e equipamentos:
+
+[IMPLEMENTADO] Família de Anomalous Crystals.
+[IMPLEMENTADO] Cain & Abel.
+[IMPLEMENTADO] Divine Vocal Cords.
+[IMPLEMENTADO] Necro-Alloy.
+[IMPLEMENTADO] Personal Colossus Forcefield Generator.
+[IMPLEMENTADO] Colossus Reflection Emitter.
+
+Cristais anômalos:
+
+[IMPLEMENTADO] Cristal genérico.
+[IMPLEMENTADO] Ward.
+[IMPLEMENTADO] Reprise, com pulso de cura.
+[IMPLEMENTADO] Repulsion, com onda de repulsão.
+[IMPLEMENTADO] Stasis.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 12 segundos: 4 Necro-Alloy e um cristal anômalo.
+[IMPLEMENTADO] Serra cirúrgica, 15 segundos: Divine Vocal Cords e
+               mais 2 Necro-Alloy.
+[IMPLEMENTADO] Proteção contra duplicação das cordas vocais.
+
+2.3 BUBBLEGUM
+-------------
+
+[IMPLEMENTADO] Arena principal.
+[IMPLEMENTADO] Segunda vida em arena privada.
+[IMPLEMENTADO] Rage.
+[IMPLEMENTADO] Blood Dive.
+[IMPLEMENTADO] Triple Dash.
+[IMPLEMENTADO] Illusion Dash.
+[IMPLEMENTADO] Pentagram Dash.
+[IMPLEMENTADO] Chaotic Illusion Dash.
+[IMPLEMENTADO] Ilusões, rastros de sangue, telegraphs e dano de impacto.
+[IMPLEMENTADO] Memória de ataques para reduzir repetições.
+[IMPLEMENTADO] Transporte e retorno seguro dos participantes.
+[IMPLEMENTADO] Carcaça persistente e processável.
+[IMPLEMENTADO] Troféu Demon Claws.
+
+Recompensas:
+
+[IMPLEMENTADO] H.E.C.K. Suit.
+[IMPLEMENTADO] H.E.C.K. Helmet.
+[IMPLEMENTADO] Demonic Chewing Gum.
+[IMPLEMENTADO] Mayhem in a Bottle.
+[IMPLEMENTADO] Soulscythe.
+[IMPLEMENTADO] Blood Contract.
+[IMPLEMENTADO] Demonic Blood.
+
+Mecânicas de equipamentos:
+
+[IMPLEMENTADO] H.E.C.K. Helmet como ferramenta de colheita vestível.
+[IMPLEMENTADO] Maldição e alucinações do conjunto H.E.C.K.
+[IMPLEMENTADO] Consumo de cadáveres para recuperação pelo H.E.C.K. Helmet.
+[IMPLEMENTADO] Soulscythe habitável por fantasma voluntário.
+[IMPLEMENTADO] Recurso de sangue, golpes fortalecidos e onda sanguínea da
+               Soulscythe.
+[IMPLEMENTADO] Frenesi em área e confirmação do Mayhem in a Bottle.
+[IMPLEMENTADO] Marca temporária, confirmação e logs do Blood Contract.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 10 segundos: 2 Demonic Chewing Gum.
+[IMPLEMENTADO] Serra cirúrgica, 12 segundos: mais 3 Demonic Chewing Gum.
+[IMPLEMENTADO] Carcaça residual: 300u de Demonic Blood.
+
+2.4 LEGION
+----------
+
+[IMPLEMENTADO] Arena Mega Legion.
+[IMPLEMENTADO] Ataque especial de carga.
+[IMPLEMENTADO] Encontro controlado por fragmentação.
+[IMPLEMENTADO] Carcaça central dormente durante a fase dos fragmentos.
+[IMPLEMENTADO] Limites de população para impedir crescimento infinito.
+[IMPLEMENTADO] Conclusão e geração de recompensa exatamente uma vez.
+[IMPLEMENTADO] Troféu Legion Skull.
+
+Estrutura do encontro:
+
+[IMPLEMENTADO] 3 fragmentos grandes.
+[IMPLEMENTADO] 6 fragmentos médios.
+[IMPLEMENTADO] 12 fragmentos pequenos.
+[IMPLEMENTADO] Fragmentos desaparecem sem gerar cadáver, ossos, núcleo ou caixa.
+[IMPLEMENTADO] Carcaça principal liberada somente após todos os fragmentos.
+[IMPLEMENTADO] Orçamento limitado para criaturas auxiliares.
+
+Recompensas:
+
+[IMPLEMENTADO] Stabilized Legion Core.
+[IMPLEMENTADO] Staff of Storms.
+[IMPLEMENTADO] Legion Skulls.
+[IMPLEMENTADO] Legion Servitor Culture.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 9 segundos: 5 Legion Skulls.
+[IMPLEMENTADO] Serra cirúrgica, 14 segundos: Legion Core bruto e
+               Staff of Storms.
+
+Servos:
+
+[IMPLEMENTADO] Receita de Servitor Culture usando 3 Legion Skulls.
+[IMPLEMENTADO] Servos biológicos aliados ao criador.
+[IMPLEMENTADO] Limite de 2 servos ativos por usuário.
+[IMPLEMENTADO] Compatibilidade com facções.
+
+2.5 BLOOD-DRUNK MINER
+---------------------
+
+[IMPLEMENTADO] Arena própria.
+[IMPLEMENTADO] Dashes e ataques variantes.
+[IMPLEMENTADO] Combate concentrado em habilidades especiais.
+[IMPLEMENTADO] Variante Guidance, com melee e lifesteal.
+[IMPLEMENTADO] Variante Hunter, com dashes longos e frequentes.
+[IMPLEMENTADO] Variante Doom, lenta e com dashes quase contínuos.
+[IMPLEMENTADO] Carcaça mecânica processável.
+[IMPLEMENTADO] Troféu Blood-Drunk Eye.
+
+Recompensas:
+
+[IMPLEMENTADO] Cleaving Saw.
+[IMPLEMENTADO] Custom Kinetic Accelerator.
+[IMPLEMENTADO] Wildhunter Knife.
+[IMPLEMENTADO] Miner's Eye.
+[IMPLEMENTADO] Overclocked Plasma Cutter.
+[IMPLEMENTADO] Tier-4 Servos.
+[IMPLEMENTADO] High-Density Circuits.
+[IMPLEMENTADO] Titanium Alloy.
+
+Colheita:
+
+[IMPLEMENTADO] Chave de fenda, 10 segundos: 4 Tier-4 Servos e 3 High-Density
+               Circuits.
+[IMPLEMENTADO] Multitool, 12 segundos: Overclocked Plasma Cutter e 5 Titanium
+               Alloy.
+
+2.6 DEMONIC FROST MINER
+-----------------------
+
+[IMPLEMENTADO] Duas fases de combate.
+[IMPLEMENTADO] Transição por Ice Tomb e recuperação completa.
+[IMPLEMENTADO] Frost Orb Barrage.
+[IMPLEMENTADO] Snowball Fusillade.
+[IMPLEMENTADO] Demonic Ice Blast.
+[IMPLEMENTADO] Carcaça mecânica processável.
+[IMPLEMENTADO] Troféu Ice-block Talisman.
+
+Recompensas:
+
+[IMPLEMENTADO] Demonic Resurrection Crystal.
+[IMPLEMENTADO] Cursed Ice Boots.
+[IMPLEMENTADO] Demonic Jackhammer.
+[IMPLEMENTADO] Ice Energy Crystal.
+[IMPLEMENTADO] Godslayer Armour e capacete.
+
+Colheita:
+
+[IMPLEMENTADO] Chave de fenda, 11 segundos: 5 Titanium Alloy e 2 Tier-4 Servos.
+[IMPLEMENTADO] Multitool, 14 segundos: Ice Energy Crystal e 3 High-Density
+               Circuits.
+
+2.7 MERCURY SPIDER
+------------------
+
+[IMPLEMENTADO] Mercury ORT Fissure.
+[IMPLEMENTADO] Sea of Fantasy Trees.
+[IMPLEMENTADO] Transporte por fissura, chasm, beacon e Escape Rope.
+[IMPLEMENTADO] Forma dormente.
+[IMPLEMENTADO] Forma de exoesqueleto.
+[IMPLEMENTADO] Forma normal.
+[IMPLEMENTADO] Forma UFO.
+[IMPLEMENTADO] Forma Ultimate.
+[IMPLEMENTADO] Somente a forma final conclui o Director e gera loot exclusivo.
+
+Famílias de ataques:
+
+[IMPLEMENTADO] Ether Drain.
+[IMPLEMENTADO] Plankton Flood.
+[IMPLEMENTADO] Energy Discharge.
+[IMPLEMENTADO] Energy Surge.
+[IMPLEMENTADO] Cosmic Rays.
+[IMPLEMENTADO] Galactica Supercell.
+[IMPLEMENTADO] Horizontal Resonance.
+[IMPLEMENTADO] Vertical Resonance.
+[IMPLEMENTADO] Solar Storm.
+[IMPLEMENTADO] Paradigm Inflation.
+[IMPLEMENTADO] Phase Conversion.
+[IMPLEMENTADO] Reflective Threads.
+[IMPLEMENTADO] Dark-Matter Shell.
+[IMPLEMENTADO] Convergence.
+
+Mecânicas do encontro:
+
+[IMPLEMENTADO] Paredes móveis de ressonância.
+[IMPLEMENTADO] Áreas seguras.
+[IMPLEMENTADO] Projéteis orbitais.
+[IMPLEMENTADO] Reflexão de ataques.
+[IMPLEMENTADO] Radiação e ambiente cristalino.
+[IMPLEMENTADO] Padrões direcionais e luzes pulsantes.
+[IMPLEMENTADO] Transporte, conversão de forma e dashes.
+[IMPLEMENTADO] Limpeza de hazards e arena na morte.
+[IMPLEMENTADO] Interrupção imediata dos ataques após a morte.
+
+Recompensas:
+
+[IMPLEMENTADO] Mercury Core.
+[IMPLEMENTADO] Crystallized Mercury Keratin.
+[IMPLEMENTADO] Mercury Silk.
+[IMPLEMENTADO] Mirrored Chitin.
+[IMPLEMENTADO] Mercury Venom.
+[IMPLEMENTADO] ORT Alloy.
+[IMPLEMENTADO] Ether Drinker.
+[IMPLEMENTADO] Paradox Canceller.
+[IMPLEMENTADO] Radiant Shield.
+[IMPLEMENTADO] Radiant MODsuit.
+[IMPLEMENTADO] Mercury Railgun.
+[IMPLEMENTADO] Superconducting Cable.
+[IMPLEMENTADO] Mirrored-Chitin Reflective Suit.
+[IMPLEMENTADO] Troféu Adaptive Mercury Alloy.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 11 segundos: 5 Mercury Silk.
+[IMPLEMENTADO] Serra cirúrgica, 14 segundos: 5 Mirrored Chitin.
+[IMPLEMENTADO] Carcaça residual: 180u de Mercury Venom.
+
+2.8 CHILDISH ONI
+----------------
+
+[IMPLEMENTADO] Arena-templo própria.
+[IMPLEMENTADO] Quatro fases de combate.
+[IMPLEMENTADO] Sprite e forma diferentes por fase.
+[IMPLEMENTADO] Forma final alada.
+[IMPLEMENTADO] Falas e provocações por fase.
+[IMPLEMENTADO] Música sincronizada.
+[IMPLEMENTADO] Barreira temporária de magma.
+[IMPLEMENTADO] Limpeza da barreira imediatamente após a morte.
+[IMPLEMENTADO] Troféu Oni Horn.
+
+Ataques:
+
+[IMPLEMENTADO] Demonic Hand Spiral.
+[IMPLEMENTADO] Rampage.
+[IMPLEMENTADO] Salto e aterrissagem em chamas.
+[IMPLEMENTADO] Close Ring of Fire.
+[IMPLEMENTADO] Wide Ring of Fire.
+[IMPLEMENTADO] Claw Slash.
+[IMPLEMENTADO] Flurry of Slashes.
+[IMPLEMENTADO] Far-side Hand.
+[IMPLEMENTADO] Hand Barrage.
+[IMPLEMENTADO] Flaming Slash.
+
+Recompensas:
+
+[IMPLEMENTADO] Nameless Sword e sua ação Flaming Slash.
+[IMPLEMENTADO] Flowery Dress.
+[IMPLEMENTADO] Cursed Hands.
+[IMPLEMENTADO] Cursed Shoes/Claws.
+[IMPLEMENTADO] Obi.
+[IMPLEMENTADO] Zukin.
+[IMPLEMENTADO] Oni Gourd.
+[IMPLEMENTADO] Density-Compression Core.
+[IMPLEMENTADO] Oni Gastric Enzymes.
+
+Colheita:
+
+[IMPLEMENTADO] Faca ou bisturi, 10 segundos: Oni Gourd.
+[IMPLEMENTADO] Serra cirúrgica, 14 segundos: Density-Compression Core.
+[IMPLEMENTADO] Carcaça residual: 240u de Oni Gastric Enzymes.
+
+
+3. PROCESSAMENTO MULTIESTÁGIO DE CARCAÇAS
+=========================================
+
+[IMPLEMENTADO] MegafaunaHarvestableComponent.
+[IMPLEMENTADO] MegafaunaHarvestSystem.
+[IMPLEMENTADO] Etapas ordenadas e configuráveis por protótipo.
+[IMPLEMENTADO] Processamento permitido somente após a morte.
+[IMPLEMENTADO] Execução exata de cada etapa e prevenção de duplicação.
+[IMPLEMENTADO] Slicing para pele e tecidos.
+[IMPLEMENTADO] Sawing para ossos, órgãos e núcleos.
+[IMPLEMENTADO] Screwing para componentes mecânicos.
+[IMPLEMENTADO] Pulsing para circuitos e sistemas energizados.
+[IMPLEMENTADO] DoAfter autoritativo no servidor.
+[IMPLEMENTADO] Cancelamento por movimento, dano, ferramenta perdida ou trocada,
+               alvo removido ou estado inválido.
+[IMPLEMENTADO] Examine com etapa atual, resultado, ferramenta e duração.
+[IMPLEMENTADO] Carcaças finalizadas inertes e sem bloquear movimento.
+[IMPLEMENTADO] Reservatórios químicos extraíveis por seringa.
+[IMPLEMENTADO] Reservatórios não injetáveis e não recarregáveis.
+[IMPLEMENTADO] Ferramentas especiais: Wildhunter Knife, Nameless Sword, Cursed
+               Hands e H.E.C.K. Helmet.
+[IMPLEMENTADO] Sistema de procedência aplicado aos recursos coletados.
+
+
+4. TROFÉUS E ARMAS PROTO-CINÉTICAS
+==================================
+
+[IMPLEMENTADO] Oito slots trophy_slot_* em Crusher Axe, Glaive, Hammer e Halberd.
+[IMPLEMENTADO] Oito slots trophy_slot_* em todas as PKAs portáteis.
+[IMPLEMENTADO] Compatibilidade automática para futuros BaseWeaponCrusher.
+[IMPLEMENTADO] Capacidade separada de 100 pontos para troféus de boss.
+[IMPLEMENTADO] Modkits comuns não gastam capacidade de troféu e vice-versa.
+[IMPLEMENTADO] Múltiplos troféus distintos podem ser combinados na mesma arma.
+[IMPLEMENTADO] Identidades duplicadas e combinações acima da capacidade são rejeitadas.
+[IMPLEMENTADO] Inserção e remoção pelo sistema normal de slots e DoAfter.
+[IMPLEMENTADO] Examine mostra custo, troféus instalados e capacidade restante.
+[IMPLEMENTADO] Pipeline determinístico para melee, disparo, marca e detonação.
+[IMPLEMENTADO] Fragmentação não recursiva, ricochete único e spawns com limite rígido.
+[IMPLEMENTADO] Compatibilidade preservada com troféus antigos.
+
+Qualificação do drop especial:
+
+[IMPLEMENTADO] Crushers e PKAs portáteis são armas qualificadas.
+[IMPLEMENTADO] Exige 60% da vida efetiva do encontro em dano pós-resistência.
+[IMPLEMENTADO] Contribuição cooperativa entre múltiplos mineiros e armas qualificadas.
+[IMPLEMENTADO] Não exige último golpe.
+[IMPLEMENTADO] Dano não cinético não contribui, mas também não apaga progresso válido.
+[IMPLEMENTADO] Legion soma o dano de todos os fragmentos no encontro principal.
+[IMPLEMENTADO] Armas balísticas, plasma e PKA de mecha não qualificam o troféu.
+
+Troféus e efeitos:
+
+[IMPLEMENTADO] Ash Drake Spike (25): explosão térmica, knockback e proteção
+               temporária contra calor/lava; disparos têm knockback e explosão com cooldown.
+[IMPLEMENTADO] Colossus Blaster Tubes (50): onda estrutural, projétil acelerado e
+               recarga parcial para 40% após acerto válido.
+[IMPLEMENTADO] Demon Claws (40): dano e lifesteal; transforma disparo em três
+               projéteis de dano integral num arco de 45 graus.
+[IMPLEMENTADO] Legion Skull (50): velocidade, cadência e ressurreição limitada de
+               fauna não-boss; após três acertos lança no máximo um crânio explosivo ativo.
+[IMPLEMENTADO] Blood-Drunk Eye (30): velocidade, resistência temporária a
+               stun/slow e lifesteal moderado em disparos.
+[IMPLEMENTADO] Ice-block Talisman (35): congela após três acertos, com cooldown por alvo.
+[IMPLEMENTADO] Adaptive Mercury Alloy (40): utilidade refletiva e um ricochete por projétil.
+[IMPLEMENTADO] Oni Horn (35): efeito temático melee e onda curta de densidade no impacto.
+
+Reciclagem com Wildhunter Knife:
+
+[IMPLEMENTADO] Legion Skull Trophy -> Legion Skull.
+[IMPLEMENTADO] Blood-Drunk Eye -> circuito e Titanium Alloy.
+[IMPLEMENTADO] Ash Drake Spike -> 2 Dragon Bones.
+[IMPLEMENTADO] Demon Claws -> frasco de Demonic Blood.
+[IMPLEMENTADO] Colossus Blaster Tubes -> 2 Necro-Alloy.
+[IMPLEMENTADO] Ice-block Talisman -> Ice Energy Crystal.
+[IMPLEMENTADO] Adaptive Mercury Alloy -> Mercury Core.
+[IMPLEMENTADO] Oni Horn -> Density-Compression Core.
+[IMPLEMENTADO] Cada troféu pode ser reciclado somente uma vez.
+
+Armas e modkits:
+
+[IMPLEMENTADO] Proto-Kinetic Railgun do Paradise: duas mãos, longo alcance,
+               restrita a mapas planetários e atravessa mobs sem atravessar estruturas.
+[IMPLEMENTADO] Proto-Kinetic Shockwave do Paradise: anel de oito projéteis curtos.
+[IMPLEMENTADO] Mining AoE Modkit.
+[IMPLEMENTADO] Offensive AoE Modkit.
+[IMPLEMENTADO] Crew Passthrough Modkit.
+[IMPLEMENTADO] Minebot/Drone Passthrough Modkit.
+[IMPLEMENTADO] Amber Kinetic Tracer cosmético.
+[IMPLEMENTADO] Hybrid AoE Modkit como loot raro de Necropolis.
+[IMPLEMENTADO] Rapid Repeater Modkit como loot raro: erro pune a recarga e acerto a acelera.
+[IMPLEMENTADO] Resonator Blast Modkit como loot raro, com campo temporário limitado.
+[IMPLEMENTADO] Death Syphon Modkit como loot raro, com bônus por protótipo e teto de 25.
+[IMPLEMENTADO] Cristal de lifesteal existente integrado à mesma tabela rara.
+[IMPLEMENTADO] Railgun e Shockwave adicionadas ao node SalvageWeapons existente.
+[IMPLEMENTADO] Modkits comuns adicionados ao node KineticModifications existente.
+[IMPLEMENTADO] Nenhuma nova dependência obrigatória de Ciência para a progressão básica.
+[IMPLEMENTADO] Railgun e Shockwave custam 1.500 pontos no vendor.
+[IMPLEMENTADO] Modkits comuns custam entre 750 e 2.000 pontos.
+[IMPLEMENTADO] Modkits raros não são vendidos nem produzidos infinitamente.
+[IMPLEMENTADO] Sprite de Shockwave e sons exatos importados do Paradise com atribuição.
+[IMPLEMENTADO] Sprite existente e licenciado do Railgun reutilizado.
+[IMPLEMENTADO] Nenhuma imagem customizada ou gerada foi criada nesta expansão.
+
+
+5. ÓRGÃOS E CIRURGIAS
+=====================
+
+[IMPLEMENTADO] Removida a perecibilidade, deterioração e dependência de refrigeração.
+[IMPLEMENTADO] Órgãos de boss agora são objetos físicos permanentes.
+[IMPLEMENTADO] Slot craniano exclusivo DivineVocalCords.
+[IMPLEMENTADO] Slot torácico exclusivo RegenerativeCore.
+[IMPLEMENTADO] Cirurgias de abertura, inserção e remoção para ambos os slots.
+[IMPLEMENTADO] Slots separados de língua e coração, sem substituir órgãos normais.
+
+Órgãos e efeitos:
+
+[IMPLEMENTADO] Divine Vocal Cords como órgão cirúrgico permanente.
+[IMPLEMENTADO] Ação Colossus Roar, com desarme e knockdown em área.
+[IMPLEMENTADO] Cooldown compartilhado e comandos falados para o Roar.
+[IMPLEMENTADO] Legion Core bruto permanente e utilizável diretamente para cura.
+[IMPLEMENTADO] Stabilizing Serum convertendo o core bruto no órgão transplantável.
+[IMPLEMENTADO] Stabilized Legion Core como órgão cirúrgico permanente.
+[IMPLEMENTADO] Ativação automática do Legion Core em crítico ou morte.
+[IMPLEMENTADO] Cura/ressurreição e consumo do núcleo após a ativação.
+[IMPLEMENTADO] Compressed Legion Core usando partes de Legion e Oni.
+[IMPLEMENTADO] Density Surge: resistência temporária a controle e knockback em golpes desarmados.
+[IMPLEMENTADO] Compressed Legion Core não concede ressurreição automática adicional.
+[IMPLEMENTADO] Demonic Resurrection Crystal como ferramenta médica para cadáver intacto.
+[IMPLEMENTADO] DoAfter de 8 segundos, bloqueio de uso concorrente e consumo somente no sucesso.
+[IMPLEMENTADO] Ressurreição preservando corpo, espécie, órgãos e inventário, sem ShadowPolymorph.
+
+Equipamento separado do sistema de órgãos:
+
+[IMPLEMENTADO] Godslayer Armour mantém sua recuperação a cada dez minutos.
+
+
+6. QUÍMICA DE MEGAFAUNAS
+========================
+
+6.1 Reagentes brutos perigosos
+------------------------------
+
+[IMPLEMENTADO] Exothermic Blood, Ash Drake: aquece violentamente e causa dano
+               térmico.
+[IMPLEMENTADO] Demonic Blood, Bubblegum: causa dano brute e toxin.
+[IMPLEMENTADO] Mercury Venom, Mercury Spider: causa poison e reduz velocidade.
+[IMPLEMENTADO] Oni Gastric Enzymes, Childish Oni: causa poison e caustic.
+
+6.2 Intermediários estabilizados, conversão 1:1
+------------------------------------------------
+
+[IMPLEMENTADO] Exothermic Hemostate.
+[IMPLEMENTADO] Demonic Cytostimulant.
+[IMPLEMENTADO] Mercurial Neurochelate.
+[IMPLEMENTADO] Oni Enzyme Filtrate.
+
+6.3 Medicamentos combinados
+---------------------------
+
+[IMPLEMENTADO] Exothermic Regenerative Suspension: brute e burn, aplicação
+               tópica e uso em corpos mortos.
+[IMPLEMENTADO] Thermomercurial Perfusate: burn e airloss.
+[IMPLEMENTADO] Exothermic Enzyme Buffer: burn e toxin.
+[IMPLEMENTADO] Demonic Neuroregenerator: brute e airloss.
+[IMPLEMENTADO] Demonic Enzyme Coagulant: brute e toxin.
+[IMPLEMENTADO] Mercurial Enzyme Antitoxin: toxin, airloss, radiation e cellular.
+
+6.4 Produto supremo
+-------------------
+
+[IMPLEMENTADO] Megafauna Polyserum.
+[IMPLEMENTADO] Receita usando os quatro intermediários.
+[IMPLEMENTADO] Rendimento final de 10u.
+[IMPLEMENTADO] Cura simultânea de brute, burn, toxin e airloss.
+[IMPLEMENTADO] Aplicação em corpos mortos.
+
+6.5 Outros produtos
+-------------------
+
+[IMPLEMENTADO] Synthetic Megafauna Fuel.
+[IMPLEMENTADO] Demonic Gum Essence.
+[IMPLEMENTADO] Oni Sake.
+[IMPLEMENTADO] Oni Gourd com 50u iniciais e regeneração de 2u a cada 10 segundos.
+[IMPLEMENTADO] Stabilizing Serum.
+[IMPLEMENTADO] Refinamento de Mercury Venom em Mercury e Impedrezene.
+[IMPLEMENTADO] Frascos selados dos quatro reagentes brutos para administração,
+               suporte e reciclagem.
+
+
+7. PESQUISA E DESENVOLVIMENTO
+=============================
+
+7.1 Research Destructor
+-----------------------
+
+[IMPLEMENTADO] Máquina Research Destructor.
+[IMPLEMENTADO] Placa de máquina própria.
+[IMPLEMENTADO] Consumo restrito a ResearchArtifact.
+[IMPLEMENTADO] Necessidade de energia e servidor de pesquisa.
+[IMPLEMENTADO] Confirmação em dois usos dentro de oito segundos.
+[IMPLEMENTADO] Concessão de pontos de pesquisa.
+[IMPLEMENTADO] Desbloqueio direto de tecnologias ocultas.
+[IMPLEMENTADO] Proteção contra desbloqueio duplicado.
+[IMPLEMENTADO] Aviso antes de consumir loot insubstituível.
+
+7.2 Tecnologias
+---------------
+
+[IMPLEMENTADO] Colossus Anomaly Applications.
+[IMPLEMENTADO] Megafauna Material Engineering.
+[IMPLEMENTADO] Megafauna Biomechanics.
+[IMPLEMENTADO] Mercury ORT Applications.
+
+7.3 Artefatos pesquisáveis
+--------------------------
+
+[IMPLEMENTADO] Anomalous Crystals: 5.000 pontos e tecnologia do Colossus.
+[IMPLEMENTADO] High-Density Circuit: 2.500 pontos e Biomechanics.
+[IMPLEMENTADO] Mirrored Chitin: 3.000 pontos e Material Engineering.
+[IMPLEMENTADO] Ice Energy Crystal: 4.000 pontos e Material Engineering.
+[IMPLEMENTADO] Density-Compression Core: 4.000 pontos e Material Engineering.
+[IMPLEMENTADO] Mercury Core: 5.000 pontos e ORT Applications.
+
+7.4 Receitas de torno e fabricação
+----------------------------------
+
+[IMPLEMENTADO] Industrial Drake Armour.
+[IMPLEMENTADO] Lote de 10 Superconducting Cables.
+[IMPLEMENTADO] Mirrored-Chitin Reflective Suit.
+[IMPLEMENTADO] Personal Colossus Forcefield Generator.
+[IMPLEMENTADO] Colossus Reflection Emitter.
+[IMPLEMENTADO] Alternative Gygax Armor Plate.
+[IMPLEMENTADO] Alternative Gygax Central Electronics.
+[IMPLEMENTADO] Alternative Gygax Targeting Electronics.
+[IMPLEMENTADO] Research Destructor Board.
+[IMPLEMENTADO] Mercury Core.
+[IMPLEMENTADO] Ether Drinker.
+[IMPLEMENTADO] Paradox Canceller.
+[IMPLEMENTADO] Radiant Shield.
+[IMPLEMENTADO] Mercury Railgun.
+[IMPLEMENTADO] Radiant MODsuit.
+[IMPLEMENTADO] Recipe packs conectados às máquinas de Engenharia, Ciência,
+               Segurança e Robótica.
+
+
+8. CRAFTING E CONSTRUÇÃO
+========================
+
+8.1 Receitas individuais
+------------------------
+
+[IMPLEMENTADO] Drake Remains: 10 Dragon Bones e 5 Dragon Hide.
+[IMPLEMENTADO] Drake Armour: Drake Remains e 2 Megafauna Sinew.
+[IMPLEMENTADO] Legion Servitor Culture: 3 Legion Skulls.
+[IMPLEMENTADO] ORT Alloy: 4 Mercury Keratin e 1 Diamond.
+[IMPLEMENTADO] Mercury Core: 3 ORT Alloy.
+[IMPLEMENTADO] Mercury Railgun: Mercury Core e 1 ORT Alloy.
+[IMPLEMENTADO] Ether Drinker: 5 Mercury Keratin.
+[IMPLEMENTADO] Paradox Canceller: 4 Mercury Keratin.
+[IMPLEMENTADO] Radiant Shield: 2 Mercury Keratin e 1 ORT Alloy.
+[IMPLEMENTADO] Radiant MODsuit: Mercury Core e 2 ORT Alloy.
+
+8.2 Receitas multiboss
+----------------------
+
+[IMPLEMENTADO] Godslayer Armour.
+[IMPLEMENTADO] Drake-Mercury Aegis.
+[IMPLEMENTADO] Colossus-Mercury Shield.
+[IMPLEMENTADO] Legion-Bubblegum Regenerator.
+[IMPLEMENTADO] Universal Thermal Regulator.
+[IMPLEMENTADO] Blood-Drunk Mercury Phase Cutter.
+[IMPLEMENTADO] Compressed Legion Core.
+
+8.3 Correções do sistema de construção
+--------------------------------------
+
+[IMPLEMENTADO] Materiais não desaparecem sem gerar o resultado.
+[IMPLEMENTADO] Trabalho ativo é liberado após conclusão ou falha.
+[IMPLEMENTADO] Cancelamento devolve os materiais.
+[IMPLEMENTADO] Containers órfãos de construção são recuperados.
+[IMPLEMENTADO] Fantasmas administradores podem testar receitas.
+[IMPLEMENTADO] DoAfter instantâneo não prende o personagem.
+[IMPLEMENTADO] Requisitos de conhecimento e fabricação são respeitados.
+
+
+9. MATERIAIS
+============
+
+[IMPLEMENTADO] Dragon Hide.
+[IMPLEMENTADO] Dragon Bone.
+[IMPLEMENTADO] Dragon Wing Membrane.
+[IMPLEMENTADO] Megafauna Sinew.
+[IMPLEMENTADO] Necro-Alloy.
+[IMPLEMENTADO] Tier-4 Servo.
+[IMPLEMENTADO] High-Density Circuit.
+[IMPLEMENTADO] Titanium Alloy.
+[IMPLEMENTADO] Mercury Silk.
+[IMPLEMENTADO] Mirrored Chitin.
+[IMPLEMENTADO] Crystallized Mercury Keratin.
+[IMPLEMENTADO] ORT Alloy.
+[IMPLEMENTADO] Legion Skull como material processável.
+[IMPLEMENTADO] Protótipos auxiliares Hollow Crystal e Blood Stone.
+
+Observação: Hollow Crystal e Blood Stone ainda não fazem parte de uma cadeia
+principal de progressão.
+
+
+10. EQUIPAMENTOS MULTIBOSS
+=========================
+
+[IMPLEMENTADO] Drake-Mercury Aegis: proteção térmica/lava e reflexão de energia.
+[IMPLEMENTADO] Colossus-Mercury Shield: alta reflexão de energia, magia e outros
+               projéteis.
+[IMPLEMENTADO] Legion-Bubblegum Regenerator: Demonic Cytostimulant e Stabilizing
+               Serum.
+[IMPLEMENTADO] Universal Thermal Regulator: proteção contra frio, calor, fogo e
+               lava.
+[IMPLEMENTADO] Blood-Drunk Mercury Phase Cutter: plasma cutter rápido e de alta
+               capacidade.
+[IMPLEMENTADO] Compressed Legion Core: habilidade ativa Density Surge.
+[IMPLEMENTADO] Godslayer Armour: proteção avançada e recuperação periódica.
+
+
+11. CARGA E LOGÍSTICA
+=====================
+
+[IMPLEMENTADO] MegafaunaProvenanceComponent.
+[IMPLEMENTADO] Examine com boss de origem e classificação raw/intact/processed.
+
+Bounties:
+
+[IMPLEMENTADO] 8 amostras brutas: 18.000 créditos.
+[IMPLEMENTADO] 1 amostra intacta: 32.000 créditos.
+[IMPLEMENTADO] 1 equipamento processado: 26.000 créditos.
+
+Produtos:
+
+[IMPLEMENTADO] Dimensional Cargo Manipulator por 12.000 créditos.
+[IMPLEMENTADO] Capacidade base 60 do manipulador.
+[IMPLEMENTADO] Bônus de 90 slots usando Density-Compression Core.
+[IMPLEMENTADO] Megafauna Trophy Vault por 8.000 créditos.
+[IMPLEMENTADO] Capacidade de 8 troféus e ausência de persistência entre rounds.
+
+Density Core:
+
+[IMPLEMENTADO] Compatibilidade com caixas comuns.
+[IMPLEMENTADO] Bônus de 30 slots em caixas comuns.
+[IMPLEMENTADO] Bônus de 90 slots no manipulador especial.
+[IMPLEMENTADO] Remoção segura restaurando a capacidade original.
+
+
+12. INFRAESTRUTURA COMPARTILHADA DE COMBATE
+===========================================
+
+12.1 Megafauna Director
+-----------------------
+
+[IMPLEMENTADO] CVar lavaland.megafauna_director_enabled.
+[IMPLEMENTADO] +20% de vida por jogador ativo adicional.
+[IMPLEMENTADO] +4% de vida por boss derrotado no mapa.
+[IMPLEMENTADO] +2% de vida por intervalo de 15 minutos, até quatro intervalos.
+[IMPLEMENTADO] Limite de 1,75x na vida.
+[IMPLEMENTADO] Aceleração de ações por jogadores, bosses derrotados e tempo.
+[IMPLEMENTADO] Limite mínimo de 0,55x no intervalo de ações.
+[IMPLEMENTADO] Contagem apenas de jogadores ativos ligados ao encontro.
+[IMPLEMENTADO] Corpos abandonados não aumentam a dificuldade.
+[IMPLEMENTADO] Escalonamento monotônico durante o encontro.
+[IMPLEMENTADO] Reinício por mapa e round.
+
+12.2 Sistemas auxiliares
+------------------------
+
+[IMPLEMENTADO] Modo special-attack-only.
+[IMPLEMENTADO] Seleção de ataques com memória, condições e chances.
+[IMPLEMENTADO] Validação de alvo e alcance.
+[IMPLEMENTADO] Framework genérico de fases.
+[IMPLEMENTADO] Sprites de fase sincronizados pela rede.
+[IMPLEMENTADO] Diálogos e boss music por fase.
+[IMPLEMENTADO] Formas genéricas: rings, lines, boxes e áreas direcionais.
+[IMPLEMENTADO] Spawn direcional de entidades e projéteis.
+[IMPLEMENTADO] Órbitas.
+[IMPLEMENTADO] Blink e transporte.
+[IMPLEMENTADO] Safe zones e warning telegraphs.
+[IMPLEMENTADO] Projectile/marker damage relay.
+[IMPLEMENTADO] Pulsing lights.
+[IMPLEMENTADO] Chasms, beacons, fissuras e Escape Rope.
+[IMPLEMENTADO] Rastreamento de agressão e participantes.
+[IMPLEMENTADO] Campos temporários de arena com limpeza na morte.
+[IMPLEMENTADO] Tabelas de loot normal e especial.
+[IMPLEMENTADO] Troféus condicionados à contribuição válida combinada de Crusher/PKA.
+[IMPLEMENTADO] Proteção contra drops duplicados.
+[IMPLEMENTADO] Posicionamento seguro de ruínas e validação de sobreposição.
+[IMPLEMENTADO] Reset, rejuvenation, godmode e anchor wiring dos bosses.
+
+
+13. MAPAS E ARENAS
+==================
+
+[IMPLEMENTADO] dragonlair.yml - Dragon Lair.
+[IMPLEMENTADO] colossusspawn.yml - Colossus Arena.
+[IMPLEMENTADO] bubblegumspawn.yml - Bubblegum Arena.
+[IMPLEMENTADO] megalegionspawn.yml - Mega Legion Arena.
+[IMPLEMENTADO] blooddrunkminerspawn.yml - Blood-Drunk Miner Arena.
+[IMPLEMENTADO] ruin_childish_oni_arena.yml - Childish Oni Temple.
+[IMPLEMENTADO] ORT_fissure.yml - Mercury ORT Fissure.
+[IMPLEMENTADO] ORT_arena.yml - Sea of Fantasy Trees.
+[IMPLEMENTADO] Integração ao conjunto de ruínas.
+[IMPLEMENTADO] Navegação administrativa e Ghost Warp.
+[IMPLEMENTADO] Regras de posicionamento e prevenção de sobreposição.
+
+
+14. ASSETS E LICENCIAMENTO
+==========================
+
+[IMPLEMENTADO] Mais de 400 arquivos de textura adicionados.
+[IMPLEMENTADO] Sprites de bosses, fases, equipamentos, troféus, projéteis,
+               estruturas, efeitos e ambientes.
+[IMPLEMENTADO] Cleaving Saw com estados aberto e fechado.
+[IMPLEMENTADO] Quatro formas e equipamentos do Childish Oni.
+[IMPLEMENTADO] Formas, UFO, MODsuit, railgun e bioma da Mercury Spider.
+[IMPLEMENTADO] Frost Miner, cristais, jackhammer, botas e Godslayer.
+[IMPLEMENTADO] Ash Drake, H.E.C.K., Colossus e Legion.
+[IMPLEMENTADO] Boss music e efeitos de combate importados.
+[IMPLEMENTADO] Efeitos Mercury de beam, vidro, UFO, teleporte e Solar Storm.
+[IMPLEMENTADO] Metadados, autores, fontes e licenças registrados.
+[IMPLEMENTADO] Substituição de áudio de Legion sem licença rastreável.
+[IMPLEMENTADO] Remoção do atlas de 20 sprites customizados gerados anteriormente.
+[IMPLEMENTADO] Produtos químicos usando visuais normais de recipientes/solutions.
+[IMPLEMENTADO] Código BYOND/DM usado apenas como referência comportamental;
+               mecânicas reimplementadas em C# ECS.
+
+
+15. CORREÇÕES TÉCNICAS
+======================
+
+[IMPLEMENTADO] Crash do cliente em stacks com apenas um estado visual.
+[IMPLEMENTADO] Mercury Spider continuando a atacar depois de morta.
+[IMPLEMENTADO] Bubblegum sem executar ataques especiais.
+[IMPLEMENTADO] Bubblegum teleportando sem animação ou dano.
+[IMPLEMENTADO] Sprites de fase do Oni não sincronizando.
+[IMPLEMENTADO] Barreira do Oni permanecendo até processar a carcaça.
+[IMPLEMENTADO] Hazards da Mercury Spider permanecendo após a morte.
+[IMPLEMENTADO] Excesso de fragmentos, cadáveres e loot do Legion.
+[IMPLEMENTADO] Cleaving Saw sem sprite quando aberta.
+[IMPLEMENTADO] Carcaça do Bubblegum desaparecendo.
+[IMPLEMENTADO] Duplicação das Divine Vocal Cords.
+[IMPLEMENTADO] Ash Drake encerrando a colheita após a primeira etapa.
+[IMPLEMENTADO] Mutação de queries durante blink e TimedSpawner.
+[IMPLEMENTADO] Validação de alcance das ações.
+[IMPLEMENTADO] NPC utilizando arma pertencente a outra entidade.
+[IMPLEMENTADO] Queda em chasm usando escala visual inválida.
+[IMPLEMENTADO] Crafting consumindo materiais sem produzir resultado.
+[IMPLEMENTADO] Crafting deixando o personagem preso em trabalho ativo.
+[IMPLEMENTADO] Escalonamento contando jogadores abandonados.
+
+
+16. TESTES E DOCUMENTAÇÃO
+=========================
+
+[IMPLEMENTADO] Testes de spawn das recompensas.
+[IMPLEMENTADO] Testes de ordem da colheita.
+[IMPLEMENTADO] Testes de cancelamento do DoAfter.
+[IMPLEMENTADO] Testes de execução exata e prevenção de duplicação.
+[IMPLEMENTADO] Testes de fluidos residuais.
+[IMPLEMENTADO] Testes de crafting, cancelamento e jobs órfãos.
+[IMPLEMENTADO] Testes de crafting administrativo.
+[IMPLEMENTADO] Testes de múltiplos slots e capacidade independente de Crusher/PKA.
+[IMPLEMENTADO] Testes de qualificação cooperativa por dano cinético pós-resistência.
+[IMPLEMENTADO] Testes estáticos contra fragmentação recursiva e excesso de crânios.
+[IMPLEMENTADO] Testes de órgãos permanentes e cirurgias.
+[IMPLEMENTADO] Testes de Density Core e restauração de capacidade.
+[IMPLEMENTADO] Testes do orçamento de criaturas do Legion.
+[IMPLEMENTADO] Testes da carcaça do Bubblegum.
+[IMPLEMENTADO] Testes das fases do Oni.
+[IMPLEMENTADO] Testes da Mercury Spider, seus drops e arenas.
+[IMPLEMENTADO] Validação de mapas, sprites, áudio e protótipos.
+[IMPLEMENTADO] Documento geral do ecossistema.
+[IMPLEMENTADO] Documento de port de megafaunas.
+[IMPLEMENTADO] Inventário de licenciamento e atribuições.
+
+
+17. CONTEÚDO DELIBERADAMENTE FORA DA PR #25
+===========================================
+
+[FORA DA PR] Alteração do idioma padrão do repositório para inglês. Essa
+             configuração permanece somente no branch/repositório local.
+[FORA DA PR] Bitrunning e simulações repetíveis de bosses.
+[FORA DA PR] Achievements e placares.
+[FORA DA PR] Cofre de troféus persistente entre rounds.
+[FORA DA PR] Expansão ou reescrita do Hierophant.
+[FORA DA PR] Expansão ou reescrita do Goliath.
+[FORA DA PR] Expansão ou reescrita do Watcher.
+
+Hierophant, Goliath e Watcher continuam existindo como conteúdo anterior. A PR
+mantém apenas a compatibilidade necessária da infraestrutura compartilhada com
+os troféus e sistemas já existentes.
+
+
+18. NOTAS PARA FUTURAS ALTERAÇÕES
+=================================
+
+Para solicitar ou registrar uma mudança, substitua o marcador do item desejado
+por [REVISAR] ou acrescente uma entrada [PLANEJADO] na seção correspondente.
+Ao concluir uma alteração, retorne o item para [IMPLEMENTADO] e descreva abaixo
+o resultado, quando necessário.
+
+Backlog inicial:
+
+- Nenhum item registrado.

@@ -5,9 +5,8 @@
   components:
   - type: Clickable
   - type: Damageable
-    damageModifierSet: MercurySpider
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: MercurySpider
   - type: Physics
     bodyType: Static
   - type: InteractionOutline
@@ -94,8 +93,8 @@
         - Fauna
     inverted: true
     damage:
-      types:
-        Cellular: 5
+      groups:
+        Genetic: 5
   - type: EmitSoundOnSpawn
     sound:
       collection: MercuryBeam
@@ -148,8 +147,8 @@
     impactEffect: BulletImpactEffectDisabler
     deleteOnCollide: true
     damage:
-      types:
-        Cellular: 2
+      groups:
+        Genetic: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg # TO DO: Change later
 

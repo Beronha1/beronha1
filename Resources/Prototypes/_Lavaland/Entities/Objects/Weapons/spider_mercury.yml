@@ -73,7 +73,7 @@
   parent: BaseCrusherUpgradeBlade
   id: TrophySpiderMercuryAlloy
   name: adaptive mercury alloy
-  description: An impossible alloy that makes a crusher strike with heat and radiation.
+  description: An impossible alloy that adds heat and radiation to attacks and makes kinetic bolts ricochet once into another living target.
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Materials/mercury.rsi
@@ -81,7 +81,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-spider-mercury-name
     uniqueGroup: spiderMercuryTrophy
+    pipelinePriority: 20
   - type: CrusherTrophy
+    trophyId: mercury-spider
+    capacityCost: 40
+  - type: CrusherMercuryAlloyUpgrade
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:

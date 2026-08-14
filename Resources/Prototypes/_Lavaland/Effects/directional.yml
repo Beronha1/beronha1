@@ -175,8 +175,8 @@
         - Fauna
     inverted: true
     damage:
-      types:
-        Cellular: 3
+      groups:
+        Genetic: 3
   - type: FadingTimedDespawn
     lifetime: 0.5
     fadeOutTime: 0.5
@@ -216,8 +216,8 @@
         - Fauna
     inverted: true
     damage:
-      types:
-        Cellular: 3
+      groups:
+        Genetic: 3
   - type: FadingTimedDespawn
     lifetime: 0.5
     fadeOutTime: 0.5

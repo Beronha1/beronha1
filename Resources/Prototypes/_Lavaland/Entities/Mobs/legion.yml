@@ -114,3 +114,21 @@
         true
   - type: TimedDespawn
     lifetime: 45
+
+- type: entity
+  id: MobKineticExplosiveLegionSkull
+  parent: MobLegionSkull
+  name: explosive legion skull
+  description: A short-lived Legion fragment condensed by a kinetic trophy. It violently collapses when destroyed.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 12
+  - type: TriggerOnMobstateChange
+    mobState: [ Dead ]
+  - type: Explosive
+    explosionType: Default
+    totalIntensity: 18
+    intensitySlope: 4
+    maxIntensity: 4
+  - type: ExplodeOnTrigger

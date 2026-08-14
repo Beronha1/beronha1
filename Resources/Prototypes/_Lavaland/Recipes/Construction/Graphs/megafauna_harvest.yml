@@ -171,12 +171,12 @@
     entity: WeaponBloodDrunkMercuryPhaseCutter
 
 - type: constructionGraph
-  id: LegionOniSurvivalImplanterConstructionGraph
+  id: CompressedLegionCoreConstructionGraph
   start: start
   graph:
   - node: start
     edges:
-    - to: implanter
+    - to: core
       steps:
       - tag: StabilizedLegionCore
         name: construction-graph-tag-stabilized-legion-core
@@ -189,5 +189,5 @@
           sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
           state: core
         doAfter: 16
-  - node: implanter
-    entity: ReinforcedLegionOniSurvivalImplanter
+  - node: core
+    entity: OrganCompressedLegionCore

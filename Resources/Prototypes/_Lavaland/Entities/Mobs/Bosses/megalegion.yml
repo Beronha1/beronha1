@@ -127,7 +127,7 @@
       duration: 14
       loot: !type:AllSelector
         children:
-        - id: StabilizedLegionCoreImplanter
+        - id: LegionCore
         - id: StaffOfStorms
   - type: SpawnLootOnDeath
     deleteOnDeath: true

@@ -108,7 +108,7 @@
       duration: 15
       loot: !type:AllSelector
         children:
-        - id: DivineVocalCordsImplanter
+        - id: OrganDivineVocalCords
         - id: MaterialNecroAlloy1
           rolls: 2
   - type: SpawnLootOnDeath

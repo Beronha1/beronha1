@@ -283,10 +283,7 @@
       0: Alive
       500: Dead
   - type: Bloodstream
-    bloodReferenceSolution:
-      reagents:
-      - ReagentId: Blood
-        Quantity: 500
+    bloodMaxVolume: 500
     bloodlossDamage:
       types:
         Bloodloss: 0

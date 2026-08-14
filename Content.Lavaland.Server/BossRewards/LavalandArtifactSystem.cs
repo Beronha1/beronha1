@@ -9,6 +9,7 @@ using Content.Server.Polymorph.Systems;
 using Content.Server.Stunnable;
 using Content.Shared.Administration.Managers;
 using Content.Shared.Actions;
+using Content.Shared.Body;
 using Content.Shared.Chat;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -19,7 +20,6 @@ using Content.Shared.Follower.Components;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
-using Content.Shared.Implants;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Maps;
@@ -30,7 +30,9 @@ using Content.Shared.Popups;
 using Content.Shared.Tag;
 using Content.Shared.Tiles;
 using Content.Shared.Timing;
+using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Trauma.Common.Throwing;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Map;
@@ -57,6 +59,7 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private StunSystem _stun = default!;
     [Dependency] private TagSystem _tag = default!;
+    [Dependency] private ThrowingSystem _throwing = default!;
     [Dependency] private ITileDefinitionManager _tiles = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -64,6 +67,9 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
     [Dependency] private FirestarterSystem _firestarter = default!;
 
     private static readonly ProtoId<TagPrototype> LavaWalkingTag = "LavaWalking";
+    private static readonly ProtoId<TagPrototype> StunImmuneTag = "StunImmune";
+    private static readonly ProtoId<TagPrototype> SlowImmuneTag = "SlowImmune";
+    private static readonly ProtoId<TagPrototype> KnockdownImmuneTag = "KnockdownImmune";
 
     public override void Initialize()
     {
@@ -81,12 +87,34 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
         SubscribeLocalEvent<SoulStorageComponent, UseInHandEvent>(OnSpectralBladeUse);
         SubscribeLocalEvent<SoulStorageComponent, ExaminedEvent>(OnSpectralBladeExamine);
         SubscribeLocalEvent<HumanoidProfileComponent, MobStateChangedEvent>(OnMobStateChanged);
-        SubscribeLocalEvent<DivineVocalCordsImplantComponent, ImplantImplantedEvent>(OnDivineVoiceImplanted);
-        SubscribeLocalEvent<DivineVocalCordsImplantComponent, ImplantRemovedEvent>(OnDivineVoiceRemoved);
+        SubscribeLocalEvent<DivineVocalCordsOrganComponent, OrganGotInsertedEvent>(OnDivineVoiceInserted);
+        SubscribeLocalEvent<DivineVocalCordsOrganComponent, OrganGotRemovedEvent>(OnDivineVoiceRemoved);
         SubscribeLocalEvent<DivineVoiceCarrierComponent, EntitySpokeEvent>(OnDivineVoice);
-        SubscribeLocalEvent<DivineVocalCordsImplantComponent, ColossusRoarActionEvent>(OnDivineRoar);
-        SubscribeLocalEvent<StabilizedLegionCoreImplantComponent, ImplantRelayEvent<MobStateChangedEvent>>(OnLegionCoreStateChanged);
-        SubscribeLocalEvent<StabilizedLegionCoreImplantComponent, MapInitEvent>(OnLegionCoreMapInit);
+        SubscribeLocalEvent<DivineVocalCordsOrganComponent, ColossusRoarActionEvent>(OnDivineRoar);
+        SubscribeLocalEvent<StabilizedLegionCoreOrganComponent, OrganGotInsertedEvent>(OnLegionCoreInserted);
+        SubscribeLocalEvent<StabilizedLegionCoreOrganComponent, OrganGotRemovedEvent>(OnLegionCoreRemoved);
+        SubscribeLocalEvent<LegionCoreCarrierComponent, MobStateChangedEvent>(OnLegionCoreStateChanged);
+        SubscribeLocalEvent<CompressedLegionCoreComponent, OrganGotRemovedEvent>(OnCompressedCoreRemoved);
+        SubscribeLocalEvent<CompressedLegionCoreComponent, DensitySurgeActionEvent>(OnDensitySurge);
+        SubscribeLocalEvent<DensitySurgeCarrierComponent, BeingThrownAttemptEvent>(OnDensitySurgeThrowAttempt);
+        SubscribeLocalEvent<DensitySurgeCarrierComponent, MeleeHitEvent>(OnDensitySurgeMeleeHit);
+        SubscribeLocalEvent<DensitySurgeCarrierComponent, ComponentShutdown>(OnDensitySurgeShutdown);
+    }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var legionQuery = EntityQueryEnumerator<LegionCoreCarrierComponent, MobStateComponent>();
+        while (legionQuery.MoveNext(out var uid, out var carrier, out var mobState))
+            UpdateLegionCoreRevival((uid, carrier, mobState));
+
+        var densityQuery = EntityQueryEnumerator<DensitySurgeCarrierComponent>();
+        while (densityQuery.MoveNext(out var uid, out var carrier))
+        {
+            if (carrier.ActiveUntil <= _timing.CurTime)
+                DeactivateDensitySurge((uid, carrier));
+        }
     }
 
     private void OnLavaStaffInteract(Entity<LavaStaffComponent> ent, ref BeforeRangedInteractEvent args)
@@ -129,11 +157,6 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
 
         ent.Comp.ActiveTarget = marker;
         args.Handled = true;
-    }
-
-    private void OnLegionCoreMapInit(Entity<StabilizedLegionCoreImplantComponent> ent, ref MapInitEvent args)
-    {
-        ent.Comp.ActivationsRemaining = Math.Max(1, ent.Comp.MaxActivations);
     }
 
     private void OnLavaStaffComplete(Entity<LavaStaffComponent> ent, ref LavaStaffTerraformDoAfterEvent args)
@@ -378,24 +401,25 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
             storage.StolenSouls.Add(ent.Owner);
     }
 
-    private void OnDivineVoiceImplanted(
-        Entity<DivineVocalCordsImplantComponent> ent,
-        ref ImplantImplantedEvent args)
+    private void OnDivineVoiceInserted(
+        Entity<DivineVocalCordsOrganComponent> ent,
+        ref OrganGotInsertedEvent args)
     {
-        EnsureComp<DivineVoiceCarrierComponent>(args.Implanted).Implant = ent;
+        EnsureComp<DivineVoiceCarrierComponent>(args.Target).Organ = ent;
     }
 
     private void OnDivineVoiceRemoved(
-        Entity<DivineVocalCordsImplantComponent> ent,
-        ref ImplantRemovedEvent args)
+        Entity<DivineVocalCordsOrganComponent> ent,
+        ref OrganGotRemovedEvent args)
     {
-        RemCompDeferred<DivineVoiceCarrierComponent>(args.Implanted);
+        if (TryComp<DivineVoiceCarrierComponent>(args.Target, out var carrier) && carrier.Organ == ent.Owner)
+            RemCompDeferred<DivineVoiceCarrierComponent>(args.Target);
     }
 
     private void OnDivineVoice(Entity<DivineVoiceCarrierComponent> ent, ref EntitySpokeEvent args)
     {
-        if (!TryComp<DivineVocalCordsImplantComponent>(ent.Comp.Implant, out var implant) ||
-            implant.NextUse > _timing.CurTime ||
+        if (!TryComp<DivineVocalCordsOrganComponent>(ent.Comp.Organ, out var organ) ||
+            organ.NextUse > _timing.CurTime ||
             args.IsWhisper)
         {
             return;
@@ -409,10 +433,10 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
             !message.Contains("стой"))
             return;
 
-        TryUseDivineVoice(ent, implant);
+        TryUseDivineVoice(ent, organ);
     }
 
-    private void OnDivineRoar(Entity<DivineVocalCordsImplantComponent> ent, ref ColossusRoarActionEvent args)
+    private void OnDivineRoar(Entity<DivineVocalCordsOrganComponent> ent, ref ColossusRoarActionEvent args)
     {
         if (args.Handled || !TryUseDivineVoice(args.Performer, ent.Comp))
             return;
@@ -421,12 +445,12 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
         args.Handled = true;
     }
 
-    private bool TryUseDivineVoice(EntityUid user, DivineVocalCordsImplantComponent implant)
+    private bool TryUseDivineVoice(EntityUid user, DivineVocalCordsOrganComponent organ)
     {
-        if (implant.NextUse > _timing.CurTime)
+        if (organ.NextUse > _timing.CurTime)
             return false;
 
-        foreach (var target in _lookup.GetEntitiesInRange(Transform(user).Coordinates, implant.Radius))
+        foreach (var target in _lookup.GetEntitiesInRange(Transform(user).Coordinates, organ.Radius))
         {
             if (target == user || !HasComp<MobStateComponent>(target))
                 continue;
@@ -435,30 +459,166 @@ public sealed partial class LavalandArtifactSystem : EntitySystem
             _stun.TryKnockdown(target, TimeSpan.FromSeconds(2), true);
         }
 
-        implant.NextUse = _timing.CurTime + implant.Cooldown;
+        organ.NextUse = _timing.CurTime + organ.Cooldown;
         return true;
     }
 
-    private void OnLegionCoreStateChanged(
-        Entity<StabilizedLegionCoreImplantComponent> ent,
-        ref ImplantRelayEvent<MobStateChangedEvent> args)
+    private void OnLegionCoreInserted(
+        Entity<StabilizedLegionCoreOrganComponent> ent,
+        ref OrganGotInsertedEvent args)
     {
-        if (ent.Comp.ActivationsRemaining <= 0 ||
-            args.Args.NewMobState is not (MobState.Critical or MobState.Dead) ||
-            !HasComp<DamageableComponent>(args.ImplantedEntity))
+        EnsureComp<LegionCoreCarrierComponent>(args.Target).Organ = ent;
+    }
+
+    private void OnLegionCoreRemoved(
+        Entity<StabilizedLegionCoreOrganComponent> ent,
+        ref OrganGotRemovedEvent args)
+    {
+        if (TryComp<LegionCoreCarrierComponent>(args.Target, out var carrier) && carrier.Organ == ent.Owner)
+            RemCompDeferred<LegionCoreCarrierComponent>(args.Target);
+    }
+
+    private void OnLegionCoreStateChanged(
+        Entity<LegionCoreCarrierComponent> ent,
+        ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState is not (MobState.Critical or MobState.Dead) ||
+            !HasComp<DamageableComponent>(ent) ||
+            !HasComp<StabilizedLegionCoreOrganComponent>(ent.Comp.Organ))
         {
             return;
         }
 
-        ent.Comp.ActivationsRemaining--;
-        _damage.ClearAllDamage(args.ImplantedEntity);
-        _mobState.ChangeMobState(args.ImplantedEntity, MobState.Alive, origin: ent);
+        var organ = Comp<StabilizedLegionCoreOrganComponent>(ent.Comp.Organ);
+        var wasPending = ent.Comp.RevivalPending;
+        ent.Comp.RevivalPending = true;
+        ent.Comp.RevivalAt = _timing.CurTime + organ.RevivalDelay;
+
+        // Entering Dead after Critical restarts the full delay. This guarantees that an
+        // actual death is never followed by an effectively instantaneous resurrection.
+        if (!wasPending)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("stabilized-legion-core-charging"),
+                ent,
+                ent,
+                PopupType.LargeCaution);
+        }
+    }
+
+    private void UpdateLegionCoreRevival(
+        Entity<LegionCoreCarrierComponent, MobStateComponent> ent)
+    {
+        if (!ent.Comp1.RevivalPending)
+            return;
+
+        if (ent.Comp2.CurrentState is not (MobState.Critical or MobState.Dead))
+        {
+            ent.Comp1.RevivalPending = false;
+            return;
+        }
+
+        if (ent.Comp1.RevivalAt > _timing.CurTime)
+            return;
+
+        var organ = ent.Comp1.Organ;
+        if (!HasComp<StabilizedLegionCoreOrganComponent>(organ) || !HasComp<DamageableComponent>(ent))
+        {
+            RemCompDeferred<LegionCoreCarrierComponent>(ent);
+            return;
+        }
+
+        // Remove the carrier before changing damage/state so the resulting MobState event
+        // cannot schedule a second activation from the same consumable organ.
+        RemComp<LegionCoreCarrierComponent>(ent);
+        _damage.ClearAllDamage((ent.Owner, CompOrNull<DamageableComponent>(ent)));
+        _mobState.ChangeMobState(ent, MobState.Alive, origin: organ);
         _popup.PopupEntity(
             Loc.GetString("stabilized-legion-core-activate"),
-            args.ImplantedEntity,
-            args.ImplantedEntity,
+            ent,
+            ent,
             PopupType.LargeCaution);
-        if (ent.Comp.ActivationsRemaining <= 0)
-            QueueDel(ent);
+        QueueDel(organ);
+    }
+
+    private void OnCompressedCoreRemoved(
+        Entity<CompressedLegionCoreComponent> ent,
+        ref OrganGotRemovedEvent args)
+    {
+        if (TryComp<DensitySurgeCarrierComponent>(args.Target, out var carrier) && carrier.Organ == ent.Owner)
+            DeactivateDensitySurge((args.Target, carrier));
+    }
+
+    private void OnDensitySurge(Entity<CompressedLegionCoreComponent> ent, ref DensitySurgeActionEvent args)
+    {
+        if (args.Handled || ent.Comp.NextUse > _timing.CurTime)
+            return;
+
+        var carrier = EnsureComp<DensitySurgeCarrierComponent>(args.Performer);
+        carrier.Organ = ent;
+        carrier.ActiveUntil = _timing.CurTime + ent.Comp.Duration;
+
+        carrier.AddedStunImmunity = !_tag.HasTag(args.Performer, StunImmuneTag);
+        carrier.AddedSlowImmunity = !_tag.HasTag(args.Performer, SlowImmuneTag);
+        carrier.AddedKnockdownImmunity = !_tag.HasTag(args.Performer, KnockdownImmuneTag);
+        _tag.AddTag(args.Performer, StunImmuneTag);
+        _tag.AddTag(args.Performer, SlowImmuneTag);
+        _tag.AddTag(args.Performer, KnockdownImmuneTag);
+
+        ent.Comp.NextUse = _timing.CurTime + ent.Comp.Cooldown;
+        _actions.SetCooldown(args.Action.Owner, ent.Comp.Cooldown);
+        _popup.PopupEntity(Loc.GetString("density-surge-activate"), args.Performer, args.Performer);
+        args.Handled = true;
+    }
+
+    private void OnDensitySurgeThrowAttempt(
+        Entity<DensitySurgeCarrierComponent> ent,
+        ref BeingThrownAttemptEvent args)
+    {
+        if (ent.Comp.ActiveUntil > _timing.CurTime)
+            args.Cancelled = true;
+    }
+
+    private void OnDensitySurgeMeleeHit(Entity<DensitySurgeCarrierComponent> ent, ref MeleeHitEvent args)
+    {
+        if (ent.Comp.ActiveUntil <= _timing.CurTime ||
+            !TryComp<CompressedLegionCoreComponent>(ent.Comp.Organ, out var core))
+        {
+            return;
+        }
+
+        foreach (var target in args.HitEntities)
+        {
+            if (target == ent.Owner)
+                continue;
+
+            var direction = (_transform.GetWorldPosition(target) - _transform.GetWorldPosition(ent)).Normalized();
+            _throwing.TryThrow(target, direction, core.KnockbackStrength);
+        }
+    }
+
+    private void OnDensitySurgeShutdown(Entity<DensitySurgeCarrierComponent> ent, ref ComponentShutdown args)
+    {
+        RemoveDensityImmunities(ent);
+    }
+
+    private void DeactivateDensitySurge(Entity<DensitySurgeCarrierComponent> ent)
+    {
+        RemoveDensityImmunities(ent);
+        RemCompDeferred<DensitySurgeCarrierComponent>(ent);
+    }
+
+    private void RemoveDensityImmunities(Entity<DensitySurgeCarrierComponent> ent)
+    {
+        if (ent.Comp.AddedStunImmunity)
+            _tag.RemoveTag(ent, StunImmuneTag);
+        if (ent.Comp.AddedSlowImmunity)
+            _tag.RemoveTag(ent, SlowImmuneTag);
+        if (ent.Comp.AddedKnockdownImmunity)
+            _tag.RemoveTag(ent, KnockdownImmuneTag);
+
+        ent.Comp.AddedStunImmunity = false;
+        ent.Comp.AddedSlowImmunity = false;
+        ent.Comp.AddedKnockdownImmunity = false;
     }
 }

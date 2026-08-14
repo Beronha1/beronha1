@@ -86,8 +86,8 @@
         - Fauna
     inverted: true
     damage:
-      types:
-        Cellular: 15
+      groups:
+        Genetic: 15
   - type: TriggerOnSpawn
   - type: EmitSoundOnTrigger
     sound:

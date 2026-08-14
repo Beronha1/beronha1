@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: entity
+  id: EffectKineticResonanceField
+  parent: EffectDesynchronizer
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    color: "#63d9ff"
+  - type: TimedDespawn
+    lifetime: 10
+  - type: KineticResonanceField
+  - type: PointLight
+    color: "#63d9ff"
+    radius: 1.5
+    energy: 1.2
+
+- type: entity
+  id: KineticResonanceSlowdownStatusEffect
+  parent: StatusEffectSlowdown
+  categories: [ HideSpawnMenu ]
+  name: kinetic resonance slowdown

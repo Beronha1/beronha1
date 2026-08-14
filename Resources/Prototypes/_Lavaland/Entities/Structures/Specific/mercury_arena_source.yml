@@ -95,9 +95,8 @@
     toolWhitelist:
       tags: []
   - type: Damageable
-    damageModifierSet: Rock
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: Rock
   - type: Destructible
     thresholds:
     - trigger: !type:DamageTrigger
@@ -153,9 +152,8 @@
     penetrateDamage: 1
     damagePenalty: 0.1
   - type: Damageable
-    damageModifierSet: StructuralMetallicStrong
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
   - type: RadiationBlocker
     resistance: 20
   - type: RangedDamageSound
@@ -208,6 +206,7 @@
   suffix: DO NOT MAP
   components:
   - type: Damageable
+    damageContainer: Inorganic
     damageModifierSet: MercurySpider
   # Whiskey/Trauma records non-body damage through Injurable. The Goob source
   # predates that split; without this compatibility component the dormant core
@@ -289,9 +288,8 @@
   - type: MobMover
   - type: NoSlip
   - type: Damageable
-    damageModifierSet: MercurySpider
-  - type: Injurable
     damageContainer: Inorganic
+    damageModifierSet: MercurySpider
   - type: DamageOnCollide
     ignoreWhitelist:
       components: [ Fauna ]

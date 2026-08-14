@@ -49,20 +49,27 @@
     price: 5000
 
 - type: entity
-  parent: BaseSubdermalImplant
-  id: DivineVocalCordsImplant
+  parent: OrganBaseChildInternal
+  id: OrganDivineVocalCords
   name: divine vocal cords
-  description: An implant carrying the voice of an ancient god. A forceful command can knock nearby creatures down.
+  description: The vocal organ of an ancient colossus. Once surgically fitted, a forceful command can knock nearby creatures down.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/voicegod.rsi
     state: icon
-  - type: DivineVocalCordsImplant
-  - type: SubdermalImplant
-    implantAction: ActionColossusRoar
-    whitelist:
-      components:
-      - MobState
+  - type: Item
+    size: Small
+  - type: Organ
+    category: DivineVocalCords
+  - type: ChildOrgan
+    parents: [ Head ]
+  - type: DivineVocalCordsOrgan
+  - type: OrganActions
+    actions: [ ActionColossusRoar ]
+  - type: MegafaunaProvenance
+    source: megafauna-source-colossus
+    grade: Intact
+  - type: MegafaunaIntactSample
   - type: StaticPrice
     price: 5000
 
@@ -134,13 +141,11 @@
   parent: BaseItem
   id: LegionCore
   name: legion core
-  description: A fading organic core capable of rapidly restoring damaged tissue.
+  description: A permanent organic core capable of rapidly restoring damaged tissue. Stabilizing serum can prepare it for transplantation.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/legioncore.rsi
-    layers:
-    - state: icon_active
-      map: [ "enum.VisualLayers.Layer" ]
+    state: icon_active
   - type: Item
     size: Small
   - type: Damageable
@@ -151,7 +156,6 @@
       effects:
       - !type:StabilizeLegionCore
   - type: LegionCore
-    activeDuration: 240
     healAmount:
       types:
         Blunt: -25
@@ -161,13 +165,6 @@
         Cold: -25
         Poison: -25
         Bloodloss: -25
-  - type: Appearance
-  - type: GenericVisualizer
-    visuals:
-      enum.VisualLayers.Enabled:
-        enum.VisualLayers.Layer:
-          True: { state: icon_active }
-          False: { state: icon_base }
   - type: StaticPrice
     price: 250
 

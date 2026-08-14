@@ -6,7 +6,7 @@
   parent: BaseCrusherUpgradeHandle
   id: TrophyLavalandLegionSkull
   name: legion skull
-  description: Increases the crusher's firing and attack speed. A marker-consuming killing blow can raise one non-boss fauna as your ally.
+  description: Increases kinetic attack speed. Ranged hits charge a single explosive legion skull; a marked melee kill can raise one non-boss fauna.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -14,8 +14,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-legion-name
     uniqueGroup: legionTrophy
+    pipelinePriority: 30
   - type: CrusherLegionSkullUpgrade
   - type: CrusherTrophy
+    trophyId: legion
+    capacityCost: 50
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:
@@ -27,7 +30,7 @@
   parent: BaseCrusherUpgradeHandle
   id: TrophyLavalandBDMEye
   name: eye of the blood-drunk miner
-  description: Makes the crusher lighter and grants brief control immunity after consuming a marker.
+  description: Makes a crusher lighter, grants brief control immunity after consuming a marker and lets kinetic bolts steal a small amount of life.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -35,8 +38,16 @@
   - type: GunUpgrade
     name: lavaland-trophy-bdm-name
     uniqueGroup: bdmTrophy
+    pipelinePriority: 40
   - type: CrusherEyeBloodDrunkMinerUpgrade
+    rangedHeal:
+      types:
+        Blunt: -2
+        Heat: -1
+        Asphyxiation: -1
   - type: CrusherTrophy
+    trophyId: blood-drunk-miner
+    capacityCost: 30
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:
@@ -49,7 +60,7 @@
   parent: BaseCrusherUpgradeBlade
   id: TrophyLavalandAshDrakeSpike
   name: ash drake spike
-  description: Consuming a marker damages and throws nearby enemies.
+  description: Consuming a marker creates a fiery blast. Kinetic bolts deal heat damage, knock targets back and periodically erupt on impact.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -57,8 +68,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-ash-drake-name
     uniqueGroup: ashDrakeTrophy
+    pipelinePriority: 20
   - type: CrusherAshDrakeSpikeUpgrade
   - type: CrusherTrophy
+    trophyId: ash-drake
+    capacityCost: 25
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:
@@ -77,7 +91,7 @@
   parent: BaseCrusherUpgradeBlade
   id: TrophyLavalandBubblegumDemonClaws
   name: demon claws
-  description: Increases melee damage and life-steal.
+  description: Increases melee damage and life-steal. On a PKA it splits each bolt into a three-projectile blast and heals on living hits.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -85,11 +99,18 @@
   - type: GunUpgrade
     name: lavaland-trophy-bubblegum-name
     uniqueGroup: bubblegumTrophy
+    pipelinePriority: 0
   - type: CrusherDemonClawsUpgrade
     meleeHeal:
       types:
         Blunt: -0.75
+    rangedHeal:
+      types:
+        Blunt: -1
+        Heat: -1
   - type: CrusherTrophy
+    trophyId: bubblegum
+    capacityCost: 40
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:
@@ -105,7 +126,7 @@
   parent: BaseCrusherUpgradeBlade
   id: TrophyLavalandColossusBlasterTubes
   name: colossus blaster tubes
-  description: Improves projectile velocity and empowers the next shot after consuming a marker.
+  description: Creates geometric melee shockwaves. Kinetic bolts travel faster and valid impacts shorten the weapon's recharge.
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/trophies.rsi
@@ -114,12 +135,15 @@
   - type: GunUpgrade
     name: lavaland-trophy-colossus-name
     uniqueGroup: colossusTrophy
+    pipelinePriority: 30
   - type: CrusherBlasterTubesUpgrade
     damage:
       types:
         Blunt: 10
     projectileSpeedCoefficient: 1.25
   - type: CrusherTrophy
+    trophyId: colossus
+    capacityCost: 50
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:

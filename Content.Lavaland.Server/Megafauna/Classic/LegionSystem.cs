@@ -3,6 +3,7 @@
 
 using Content.Lavaland.Server.Mobs;
 using Content.Lavaland.Server.NPC;
+using Content.Lavaland.Server.Weapons;
 using Content.Lavaland.Shared.Megafauna.Events;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
@@ -10,9 +11,10 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Whitelist;
+using Content.Trauma.Common.Bulletholes;
 using Robust.Shared.Map;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
@@ -33,7 +35,6 @@ public sealed partial class LegionSystem : EntitySystem
     [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SpawnOnDeathSystem _spawnOnDeath = default!;
     [Dependency] private ThrowingSystem _throwing = default!;
-    [Dependency] private EntityWhitelistSystem _whitelist = default!;
     [Dependency] private IRobustRandom _random = default!;
 
     public override void Initialize()
@@ -41,10 +42,14 @@ public sealed partial class LegionSystem : EntitySystem
         SubscribeLocalEvent<LegionBossComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<LegionSplitComponent, MapInitEvent>(OnSplitMapInit);
         SubscribeLocalEvent<LegionBossComponent, MegaLegionAction>(OnAction);
-        SubscribeLocalEvent<LegionBossComponent, DamageChangedEvent>(OnDamageChanged);
+        SubscribeLocalEvent<LegionBossComponent, DamageChangedEvent>(OnDamageChanged,
+            before: [typeof(MobThresholdSystem)]);
         SubscribeLocalEvent<LegionBossComponent, MobStateChangedEvent>(OnBossKilled);
         SubscribeLocalEvent<LegionSplitComponent, MobStateChangedEvent>(OnSplitKilled);
         SubscribeLocalEvent<LegionSplitComponent, AttackedEvent>(OnSplitAttacked);
+        SubscribeLocalEvent<LegionSplitComponent, GotHitByProjectileEvent>(OnSplitHitByProjectile);
+        SubscribeLocalEvent<LegionSplitComponent, DamageChangedEvent>(OnSplitDamageChanged,
+            before: [typeof(MobThresholdSystem)]);
         SubscribeLocalEvent<LegionEncounterComponent, EntityTerminatingEvent>(OnEncounterTerminating);
     }
 
@@ -316,7 +321,33 @@ public sealed partial class LegionSystem : EntitySystem
             return;
         }
 
-        rootLoot.DoSpecialLoot &= _whitelist.IsWhitelistPassOrNull(rootLoot.SpecialWeaponWhitelist, args.Used);
+        _spawnOnDeath.TryMarkQualifyingWeapon((root, rootLoot), args.User, args.Used);
+    }
+
+    private void OnSplitHitByProjectile(Entity<LegionSplitComponent> ent, ref GotHitByProjectileEvent args)
+    {
+        if (_mobState.IsDead(ent) ||
+            ent.Comp.RootCarcass is not { } root ||
+            !TryComp<SpawnLootOnDeathComponent>(root, out var rootLoot) ||
+            !TryComp<MegafaunaWeaponLooterProjectileComponent>(args.Projectile, out var qualifying) ||
+            !TryComp<ProjectileComponent>(args.Projectile, out var projectile) ||
+            projectile.Shooter is not { } shooter)
+        {
+            return;
+        }
+
+        _spawnOnDeath.TryMarkQualifyingWeapon((root, rootLoot), shooter, qualifying.SourceWeapon);
+    }
+
+    private void OnSplitDamageChanged(Entity<LegionSplitComponent> ent, ref DamageChangedEvent args)
+    {
+        if (ent.Comp.RootCarcass is not { } root ||
+            !TryComp<SpawnLootOnDeathComponent>(root, out var rootLoot))
+        {
+            return;
+        }
+
+        _spawnOnDeath.AccumulateQualifyingDamage((root, rootLoot), args);
     }
 
     private void SpawnEncounterSplit(

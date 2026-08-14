@@ -17,7 +17,7 @@
         Radiation: 4
   - type: DamageOnTriggerBlacklist
     blacklist:
-      components: [ SpiderMercuryStage ]
+      components: [ SpiderMercury ]
 
 - type: entity
   parent: BaseBullet

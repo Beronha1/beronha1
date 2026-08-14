@@ -10,10 +10,10 @@
   - type: Action
     priority: -21
     useDelay: 2
+    icon:
+      sprite: _Lavaland/Effects/plankton.rsi
+      state: plankton
     itemIconStyle: NoItem
-  - type: Sprite
-    sprite: _Lavaland/Effects/plankton.rsi
-    state: plankton
 
 - type: entity
   parent: ActionBaseORT

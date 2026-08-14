@@ -134,3 +134,208 @@
     - id: PKAUpgradeFireRate
     - id: PKAUpgradeSpace
       weight: 0.6 # Not that useful
+
+# Generic ecosystem modkits. Mechanics are native ECS reimplementations based on
+# /tg/station and Paradise PKA modkits; existing Whiskey modkit art is reused.
+
+- type: entity
+  id: PKAUpgradeMiningAoE
+  parent: BasePKAUpgrade
+  name: PKA modkit (mining explosion)
+  description: Makes kinetic bolts excavate gatherable mineral deposits around their impact point.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#d8c474"
+    - state: overlay-2
+      color: "#8a6d24"
+    - state: overlay-3
+      color: "#f5df7a"
+  - type: GunUpgrade
+    name: gun-upgrade-mining-aoe-name
+    uniqueGroup: kineticAoE
+    capacityCost: 10
+    pipelinePriority: 30
+  - type: GunUpgradeProjectileComponents
+    components:
+    - type: KineticMiningAreaProjectile
+
+- type: entity
+  id: PKAUpgradeOffensiveAoE
+  parent: BasePKAUpgrade
+  name: PKA modkit (offensive explosion)
+  description: Makes kinetic impacts damage nearby creatures for a fraction of the direct hit.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#f18b37"
+    - state: overlay-2
+      color: "#9e241c"
+    - state: overlay-3
+      color: "#ffb24a"
+  - type: GunUpgrade
+    name: gun-upgrade-offensive-aoe-name
+    uniqueGroup: kineticAoE
+    capacityCost: 20
+    pipelinePriority: 30
+  - type: GunUpgradeAreaDamage
+    damageRadius: 1.5
+    damageMultiplier: 0.2
+
+- type: entity
+  id: PKAUpgradeHybridAoE
+  parent: PKAUpgradeOffensiveAoE
+  name: PKA modkit (offensive mining explosion)
+  description: A rare combined modkit that excavates minerals and damages creatures around the impact.
+  components:
+  - type: GunUpgrade
+    name: gun-upgrade-hybrid-aoe-name
+    uniqueGroup: kineticAoE
+    capacityCost: 30
+    pipelinePriority: 30
+  - type: GunUpgradeProjectileComponents
+    components:
+    - type: KineticMiningAreaProjectile
+
+- type: entity
+  id: PKAUpgradeHumanPassthrough
+  parent: BasePKAUpgrade
+  name: PKA modkit (crew passthrough)
+  description: Tunes kinetic bolts to pass harmlessly through humanoid crew.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#6bd6ff"
+    - state: overlay-2
+      color: "#2c668c"
+    - state: overlay-3
+      color: "#b5efff"
+  - type: GunUpgrade
+    name: gun-upgrade-human-passthrough-name
+    uniqueGroup: kineticPassthrough
+  - type: GunUpgradeProjectileComponents
+    components:
+    - type: KineticHumanPassthroughProjectile
+
+- type: entity
+  id: PKAUpgradeDronePassthrough
+  parent: BasePKAUpgrade
+  name: PKA modkit (minebot passthrough)
+  description: Tunes kinetic bolts to pass harmlessly through mining support bots and station drones.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#90c58e"
+    - state: overlay-2
+      color: "#35603c"
+    - state: overlay-3
+      color: "#c7f4c0"
+  - type: GunUpgrade
+    name: gun-upgrade-drone-passthrough-name
+    uniqueGroup: kineticPassthrough
+  - type: GunUpgradeProjectileComponents
+    components:
+    - type: KineticDronePassthroughProjectile
+
+- type: entity
+  id: PKAUpgradeRapidRepeater
+  parent: BasePKAUpgrade
+  name: rapid repeater modkit
+  description: Greatly lengthens a missed-shot recharge, but a valid hit completes it in one quarter of that time.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#d5ff58"
+    - state: overlay-2
+      color: "#596d14"
+    - state: overlay-3
+      color: "#edff9c"
+  - type: GunUpgrade
+    name: gun-upgrade-rapid-repeater-name
+    uniqueGroup: rapidRepeater
+    capacityCost: 50
+    pipelinePriority: 40
+  - type: KineticRapidRepeaterUpgrade
+
+- type: entity
+  id: PKAUpgradeResonatorBlast
+  parent: BasePKAUpgrade
+  name: resonator blast modkit
+  description: Leaves a short-lived resonance field. Striking the field again detonates it.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#6dd4ff"
+    - state: overlay-2
+      color: "#3750a0"
+    - state: overlay-3
+      color: "#c4f0ff"
+  - type: GunUpgrade
+    name: gun-upgrade-resonator-blast-name
+    uniqueGroup: resonatorBlast
+    capacityCost: 30
+    pipelinePriority: 30
+  - type: KineticResonatorUpgrade
+    burstDamage:
+      types:
+        Blunt: 15
+        Structural: 60
+
+- type: entity
+  id: PKAUpgradeDeathSyphon
+  parent: BasePKAUpgrade
+  name: death syphon modkit
+  description: Assisting in a kill permanently increases this modkit's damage against that exact creature type, up to a limit.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#9d6ac9"
+    - state: overlay-2
+      color: "#3a214f"
+    - state: overlay-3
+      color: "#d3a6f5"
+  - type: GunUpgrade
+    name: gun-upgrade-death-syphon-name
+    uniqueGroup: deathSyphon
+    capacityCost: 30
+    pipelinePriority: 20
+  - type: KineticDeathSyphonUpgrade
+
+- type: entity
+  id: PKAUpgradeTracerAmber
+  parent: BasePKAUpgrade
+  name: amber kinetic tracer kit
+  description: Adds a harmless amber light to kinetic projectiles.
+  components:
+  - type: Sprite
+    layers:
+    - state: base
+    - state: overlay-1
+      color: "#ffbe4a"
+    - state: overlay-2
+      color: "#9b5a19"
+    - state: overlay-3
+      color: "#ffe2a0"
+  - type: GunUpgrade
+    name: gun-upgrade-tracer-amber-name
+    uniqueGroup: kineticTracer
+  - type: GunUpgradeProjectileComponents
+    components:
+    - type: PointLight
+      color: "#ffb13b"
+      radius: 1.5
+      energy: 0.8

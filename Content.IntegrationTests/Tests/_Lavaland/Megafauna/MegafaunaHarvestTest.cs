@@ -14,15 +14,19 @@ using Content.Lavaland.Shared.Megafauna.Harvesting;
 using Content.Lavaland.Shared.Megafauna.Mercury;
 using Content.Lavaland.Shared.Megafauna.Utility;
 using Content.Lavaland.Shared.MobPhases;
+using Content.Lavaland.Shared.Pressure;
 using Content.Lavaland.Shared.Research;
 using Content.Lavaland.Shared.Weapons.Upgrades;
 using Content.Lavaland.Server.Megafauna.Classic;
 using Content.Lavaland.Server.Megafauna.Bubblegum;
 using Content.Lavaland.Server.Mobs;
+using Content.Lavaland.Server.Weapons;
+using Content.Medical.Shared.Body;
 using Content.Server.Construction.Components;
 using Content.Medical.Shared.Surgery.Tools;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Content.Shared.Body;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Chemistry.Reaction;
 using Content.Shared.Chemistry.Components.SolutionManager;
@@ -41,6 +45,7 @@ using Content.Shared.Item;
 using Content.Shared.Lathe;
 using Content.Shared.Magic.Components;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Projectiles;
 using Content.Shared.Research.Prototypes;
 using Content.Shared.Stacks;
 using Content.Shared.Storage.Components;
@@ -49,13 +54,19 @@ using Content.Shared.Tools;
 using Content.Shared.Tools.Components;
 using Content.Shared.Weapons.Reflect;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Weapons.Ranged.Components;
+using Content.Trauma.Common.Bulletholes;
 using Robust.Shared.Containers;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Localization;
+using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Dynamics;
+using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Prototypes;
+using Robust.Server.GameObjects;
 
 namespace Content.IntegrationTests.Tests._Lavaland.Megafauna;
 
@@ -68,6 +79,16 @@ public sealed class MegafaunaHarvestTest : GameTest
         - type: entity
           id: MercuryRelicTestUser
           parent: MobHuman
+
+        - type: entity
+          id: MegafaunaLootAccountingDummy
+          parent: MobHuman
+          components:
+          - type: SpawnLootOnDeath
+            dropOnDeath: false
+            weaponWhitelist:
+              components:
+              - MegafaunaWeaponLooter
         """;
 
     private static readonly string[] HarvestBosses =
@@ -126,8 +147,7 @@ public sealed class MegafaunaHarvestTest : GameTest
         "ColossusAnomalousCrystalRepulsion",
         "ColossusAnomalousCrystalStasis",
         "ColossusAnomalousCrystalWard",
-        "DivineVocalCordsImplanter",
-        "DivineVocalCordsImplant",
+        "OrganDivineVocalCords",
         "MaterialNecroAlloy1",
         "WeaponCainAbel",
         "PersonalForcefieldGenerator",
@@ -141,8 +161,7 @@ public sealed class MegafaunaHarvestTest : GameTest
         "FoodDemonicChewingGum",
         "ChemistryBottleDemonicBlood",
         "TrophyLavalandBubblegumDemonClaws",
-        "StabilizedLegionCoreImplanter",
-        "StabilizedLegionCoreImplant",
+        "OrganStabilizedLegionCore",
         "LegionCore",
         "ChemistryBottleStabilizingSerum",
         "LegionServitorCulture",
@@ -200,10 +219,20 @@ public sealed class MegafaunaHarvestTest : GameTest
         "MedipenLegionBubblegumRegenerator",
         "ClothingBeltAshFrostThermalRegulator",
         "WeaponBloodDrunkMercuryPhaseCutter",
-        "ReinforcedLegionOniSurvivalImplanter",
-        "ReinforcedLegionOniSurvivalImplant",
+        "OrganCompressedLegionCore",
         "DrakeRemains",
         "ResearchDestructorMachineCircuitboard",
+        "WeaponProtoKineticRailgun",
+        "WeaponProtoKineticShockwave",
+        "PKAUpgradeMiningAoE",
+        "PKAUpgradeOffensiveAoE",
+        "PKAUpgradeHybridAoE",
+        "PKAUpgradeHumanPassthrough",
+        "PKAUpgradeDronePassthrough",
+        "PKAUpgradeRapidRepeater",
+        "PKAUpgradeResonatorBlast",
+        "PKAUpgradeDeathSyphon",
+        "PKAUpgradeTracerAmber",
     ];
 
     private static readonly (string Recipe, string Graph, string Node, string Result)[] MegafaunaConstructions =
@@ -217,7 +246,7 @@ public sealed class MegafaunaHarvestTest : GameTest
         ("LegionBubblegumRegeneratorConstruction", "LegionBubblegumRegeneratorConstructionGraph", "regenerator", "MedipenLegionBubblegumRegenerator"),
         ("AshFrostThermalRegulatorConstruction", "AshFrostThermalRegulatorConstructionGraph", "regulator", "ClothingBeltAshFrostThermalRegulator"),
         ("BloodDrunkMercuryPhaseCutterConstruction", "BloodDrunkMercuryPhaseCutterConstructionGraph", "cutter", "WeaponBloodDrunkMercuryPhaseCutter"),
-        ("LegionOniSurvivalImplanterConstruction", "LegionOniSurvivalImplanterConstructionGraph", "implanter", "ReinforcedLegionOniSurvivalImplanter"),
+        ("CompressedLegionCoreConstruction", "CompressedLegionCoreConstructionGraph", "core", "OrganCompressedLegionCore"),
         ("SpiderMercuryAlloyConstruction", "SpiderMercuryAlloyConstructionGraph", "alloy", "MaterialSpiderMercuryAlloy1"),
         ("SpiderMercuryRailgunConstruction", "SpiderMercuryRailgunConstructionGraph", "railgun", "WeaponSpiderMercuryRailgun"),
         ("SpiderMercuryCoreConstruction", "SpiderMercuryCoreConstructionGraph", "mercuryCore", "SpiderMercuryCore"),
@@ -244,6 +273,13 @@ public sealed class MegafaunaHarvestTest : GameTest
         "SpiderMercuryRadiantShieldLathe",
         "WeaponSpiderMercuryRailgunLathe",
         "ClothingModsuitMercuryRadiantLathe",
+        "WeaponProtoKineticRailgun",
+        "WeaponProtoKineticShockwave",
+        "PKAUpgradeMiningAoE",
+        "PKAUpgradeOffensiveAoE",
+        "PKAUpgradeHumanPassthrough",
+        "PKAUpgradeDronePassthrough",
+        "PKAUpgradeTracerAmber",
     ];
 
     // Prototype IDs in these data-driven assertions intentionally come from
@@ -321,10 +357,15 @@ public sealed class MegafaunaHarvestTest : GameTest
                     $"{bossId} must finish as its inert extractable carcass");
             }
 
+            var trophyIds = new HashSet<string>();
             foreach (var id in Trophies)
             {
                 var prototype = Prototype<EntityPrototype>(prototypes, id);
-                Assert.That(prototype.TryComp<CrusherTrophyComponent>(out _, components), Is.True);
+                Assert.That(prototype.TryComp<CrusherTrophyComponent>(out var trophy, components), Is.True);
+                Assert.That(trophy!.TrophyId, Is.Not.Empty, $"{id} needs a stable trophy identity");
+                Assert.That(trophyIds.Add(trophy.TrophyId), Is.True,
+                    $"{id} duplicates the trophy identity {trophy.TrophyId}");
+                Assert.That(trophy.CapacityCost, Is.GreaterThan(0).And.LessThanOrEqualTo(100));
                 Assert.That(
                     prototype.TryComp<TrophyRecyclableComponent>(out _, components),
                     Is.True,
@@ -411,11 +452,13 @@ public sealed class MegafaunaHarvestTest : GameTest
             var jackhammer = Prototype<EntityPrototype>(prototypes, "WeaponDemonicJackhammer");
             Assert.That(jackhammer.TryComp<DemonicJackhammerComponent>(out _, components), Is.True);
             var resurrectionCrystal = Prototype<EntityPrototype>(prototypes, "DemonicResurrectionCrystal");
-            Assert.That(resurrectionCrystal.TryComp<ResurrectionCrystalComponent>(out _, components), Is.True);
+            Assert.That(resurrectionCrystal.TryComp<ResurrectionCrystalComponent>(out var resurrection, components), Is.True);
+            Assert.That(resurrection!.ReviveTime, Is.EqualTo(TimeSpan.FromSeconds(8)));
             var cursedBoots = Prototype<EntityPrototype>(prototypes, "ClothingShoesBootsCursedIce");
             Assert.That(cursedBoots.TryComp<CursedIceBootsComponent>(out _, components), Is.True);
             var godslayer = Prototype<EntityPrototype>(prototypes, "ClothingOuterArmorGodslayer");
-            Assert.That(godslayer.TryComp<GodslayerArmorComponent>(out _, components), Is.True);
+            Assert.That(godslayer.TryComp<GodslayerArmorComponent>(out var godslayerArmor, components), Is.True);
+            Assert.That(godslayerArmor!.RevivalDelay, Is.EqualTo(TimeSpan.FromSeconds(4)));
 
             var sacredFlameBook = Prototype<EntityPrototype>(prototypes, "SacredFlameSpellbook");
             Assert.That(sacredFlameBook.TryComp<SpellbookComponent>(out var sacredBook, components), Is.True);
@@ -453,15 +496,61 @@ public sealed class MegafaunaHarvestTest : GameTest
             }
 
             var crusher = Prototype<EntityPrototype>(prototypes, "WeaponCrusher");
-            Assert.That(crusher.TryComp<WeaponTrophySlotComponent>(out _, components), Is.True);
+            Assert.That(crusher.TryComp<WeaponTrophySlotComponent>(out var crusherTrophySlots, components), Is.True);
+            Assert.That(crusherTrophySlots!.SlotCount, Is.EqualTo(8));
+            Assert.That(crusherTrophySlots.MaxTrophyCapacity, Is.EqualTo(100));
 
-            var cords = Prototype<EntityPrototype>(prototypes, "DivineVocalCordsImplanter");
-            Assert.That(cords.TryComp<PerishableBossOrganComponent>(out var perishable, components), Is.True);
-            Assert.That(perishable!.FreshDuration, Is.EqualTo(TimeSpan.FromMinutes(4)));
+            var portablePka = Prototype<EntityPrototype>(prototypes, "WeaponProtoKineticAccelerator");
+            Assert.That(portablePka.TryComp<WeaponTrophySlotComponent>(out var pkaTrophySlots, components), Is.True);
+            Assert.That(pkaTrophySlots!.SlotCount, Is.EqualTo(8));
+            Assert.That(pkaTrophySlots.MaxTrophyCapacity, Is.EqualTo(100));
 
-            var legionImplanter = Prototype<EntityPrototype>(prototypes, "StabilizedLegionCoreImplanter");
-            Assert.That(legionImplanter.TryComp<PerishableBossOrganComponent>(out var stabilized, components), Is.True);
-            Assert.That(stabilized!.State, Is.EqualTo(PerishableBossOrganState.Stabilized));
+            var railgunBolt = Prototype<EntityPrototype>(prototypes, "BulletKineticRailgun");
+            Assert.That(railgunBolt.TryComp<KineticMobPenetrationProjectileComponent>(out _, components), Is.True,
+                "the Paradise railgun must pass through mobs but stop on structures");
+
+            var shockwaveSpread = Prototype<EntityPrototype>(prototypes, "BulletKineticShockwaveSpread");
+            Assert.That(shockwaveSpread.TryComp<ProjectileSpreadComponent>(out var spread, components), Is.True);
+            Assert.That(spread!.Count, Is.EqualTo(8));
+            Assert.That(spread.Proto, Is.EqualTo((EntProtoId) "BulletKineticShockwave"),
+                "shockwave children must use a non-spreading prototype to prevent recursive fragmentation");
+
+            var demonClaws = Prototype<EntityPrototype>(prototypes, "TrophyLavalandBubblegumDemonClaws");
+            Assert.That(demonClaws.TryComp<CrusherDemonClawsUpgradeComponent>(out var shotgun, components), Is.True);
+            Assert.That(shotgun!.ProjectileCount, Is.EqualTo(3));
+            Assert.That(shotgun.ProjectileSpread, Is.EqualTo(Angle.FromDegrees(45)));
+
+            var legionSkull = Prototype<EntityPrototype>(prototypes, "TrophyLavalandLegionSkull");
+            Assert.That(legionSkull.TryComp<CrusherLegionSkullUpgradeComponent>(out var skullLauncher, components), Is.True);
+            Assert.That(skullLauncher!.SkullHitsRequired, Is.GreaterThanOrEqualTo(3));
+            Assert.That(skullLauncher.SkullCooldown, Is.GreaterThan(TimeSpan.Zero),
+                "the ranged Legion trophy must remain bounded by hit count and cooldown");
+
+            var cords = Prototype<EntityPrototype>(prototypes, "OrganDivineVocalCords");
+            Assert.That(cords.TryComp<DivineVocalCordsOrganComponent>(out _, components), Is.True);
+            Assert.That(cords.TryComp<OrganComponent>(out var vocalOrgan, components), Is.True);
+            Assert.That(vocalOrgan!.Category, Is.EqualTo((ProtoId<OrganCategoryPrototype>) "DivineVocalCords"));
+            Assert.That(cords.TryComp<OrganActionsComponent>(out var vocalActions, components), Is.True);
+            Assert.That(vocalActions!.Actions, Does.Contain((EntProtoId<ActionComponent>) "ActionColossusRoar"));
+
+            var legionOrgan = Prototype<EntityPrototype>(prototypes, "OrganStabilizedLegionCore");
+            Assert.That(legionOrgan.TryComp<StabilizedLegionCoreOrganComponent>(out var legionCore, components), Is.True);
+            Assert.That(legionCore!.RevivalDelay, Is.EqualTo(TimeSpan.FromSeconds(4)));
+            Assert.That(legionOrgan.TryComp<OrganComponent>(out var regenerativeOrgan, components), Is.True);
+            Assert.That(regenerativeOrgan!.Category, Is.EqualTo((ProtoId<OrganCategoryPrototype>) "RegenerativeCore"));
+
+            foreach (var surgery in new[]
+                     {
+                         "SurgeryOpenDivineVocalCordsCavity",
+                         "SurgeryInsertDivineVocalCords",
+                         "SurgeryRemoveDivineVocalCords",
+                         "SurgeryOpenRegenerativeCoreCavity",
+                         "SurgeryInsertRegenerativeCore",
+                         "SurgeryRemoveRegenerativeCore",
+                     })
+            {
+                Assert.That(HasPrototype<EntityPrototype>(prototypes, surgery), Is.True, surgery);
+            }
 
             var crystal = Prototype<EntityPrototype>(prototypes, "ColossusAnomalousCrystal");
             Assert.That(crystal.TryComp<ResearchArtifactComponent>(out var artifact, components), Is.True);
@@ -571,7 +660,7 @@ public sealed class MegafaunaHarvestTest : GameTest
                          "MedipenLegionBubblegumRegenerator",
                          "ClothingBeltAshFrostThermalRegulator",
                          "WeaponBloodDrunkMercuryPhaseCutter",
-                         "ReinforcedLegionOniSurvivalImplanter",
+                         "OrganCompressedLegionCore",
                      })
             {
                 var reward = Prototype<EntityPrototype>(prototypes, multibossReward);
@@ -580,9 +669,11 @@ public sealed class MegafaunaHarvestTest : GameTest
                 Assert.That(provenance!.Grade, Is.EqualTo(MegafaunaProvenanceGrade.Processed));
             }
 
-            var reinforcedImplant = Prototype<EntityPrototype>(prototypes, "ReinforcedLegionOniSurvivalImplant");
-            Assert.That(reinforcedImplant.TryComp<StabilizedLegionCoreImplantComponent>(out var reinforcedCore, components), Is.True);
-            Assert.That(reinforcedCore!.MaxActivations, Is.EqualTo(2));
+            var compressedCore = Prototype<EntityPrototype>(prototypes, "OrganCompressedLegionCore");
+            Assert.That(compressedCore.TryComp<CompressedLegionCoreComponent>(out var compressed, components), Is.True);
+            Assert.That(compressed!.Cooldown, Is.EqualTo(TimeSpan.FromSeconds(60)));
+            Assert.That(compressedCore.TryComp<StabilizedLegionCoreOrganComponent>(out _, components), Is.False,
+                "the combined core grants Density Surge but must not provide another automatic resurrection");
 
             foreach (var construction in new[]
                      {
@@ -591,7 +682,7 @@ public sealed class MegafaunaHarvestTest : GameTest
                          "LegionBubblegumRegeneratorConstruction",
                          "AshFrostThermalRegulatorConstruction",
                          "BloodDrunkMercuryPhaseCutterConstruction",
-                         "LegionOniSurvivalImplanterConstruction",
+                         "CompressedLegionCoreConstruction",
                      })
             {
                 Assert.That(HasPrototype<ConstructionPrototype>(prototypes, construction), Is.True);
@@ -893,6 +984,7 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
     [SidedDependency(Side.Server)] private readonly SharedContainerSystem _containers = default!;
     [SidedDependency(Side.Server)] private readonly DamageableSystem _damage = default!;
     [SidedDependency(Side.Server)] private readonly SharedEntityEffectsSystem _entityEffects = default!;
+    [SidedDependency(Side.Server)] private readonly ItemSlotsSystem _itemSlots = default!;
     [SidedDependency(Side.Server)] private readonly SharedPhysicsSystem _physics = default!;
 
     private static readonly (string Recipe, string Result, (string Prototype, int Quantity)[] Ingredients)[]
@@ -908,13 +1000,13 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
         ("ColossusMercuryShieldConstruction", "ShieldColossusMercuryAnomalous",
             [("NecroAlloy", 5), ("SpiderMercuryAlloy", 3)]),
         ("LegionBubblegumRegeneratorConstruction", "MedipenLegionBubblegumRegenerator",
-            [("StabilizedLegionCoreImplanter", 1), ("ChemistryBottleDemonicBlood", 1)]),
+            [("OrganStabilizedLegionCore", 1), ("ChemistryBottleDemonicBlood", 1)]),
         ("AshFrostThermalRegulatorConstruction", "ClothingBeltAshFrostThermalRegulator",
             [("IceEnergyCrystal", 1), ("DragonWingMembrane", 3), ("DragonBone", 3)]),
         ("BloodDrunkMercuryPhaseCutterConstruction", "WeaponBloodDrunkMercuryPhaseCutter",
             [("WeaponPlasmaCutterOverclocked", 1), ("SpiderMercuryAlloy", 4)]),
-        ("LegionOniSurvivalImplanterConstruction", "ReinforcedLegionOniSurvivalImplanter",
-            [("StabilizedLegionCoreImplanter", 1), ("OniDensityCore", 1)]),
+        ("CompressedLegionCoreConstruction", "OrganCompressedLegionCore",
+            [("OrganStabilizedLegionCore", 1), ("OniDensityCore", 1)]),
         ("SpiderMercuryAlloyConstruction", "MaterialSpiderMercuryAlloy1",
             [("SpiderMercuryKeratin", 4), ("Diamond", 1)]),
         ("SpiderMercuryRailgunConstruction", "WeaponSpiderMercuryRailgun",
@@ -973,12 +1065,6 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
     qualities: [ Sawing ]
 
 - type: entity
-  id: MegafaunaPerishableOrganTest
-  components:
-  - type: PerishableBossOrgan
-    freshDuration: 20
-
-- type: entity
   parent: InteractionTestMob
   id: MegafaunaLegionTrophyFauna
   components:
@@ -1007,6 +1093,33 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
   components:
   - type: HumanoidProfile
   - type: MobState
+
+- type: entity
+  parent: InteractionTestMob
+  id: MegafaunaDelayedRevivalMob
+  components:
+  - type: Damageable
+  - type: Injurable
+    damageContainer: Biological
+  - type: MobState
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      10: Critical
+      20: Dead
+
+- type: entity
+  id: MegafaunaDelayedLegionCore
+  components:
+  - type: StabilizedLegionCoreOrgan
+    revivalDelay: 0.1
+
+- type: entity
+  id: MegafaunaDelayedGodslayerArmor
+  components:
+  - type: GodslayerArmor
+    revivalDelay: 0.1
+    cooldown: 1
 """;
 
     [Test]
@@ -1097,9 +1210,7 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
         Assert.That(CountLivingLegionSplits(), Is.EqualTo(3));
         AssertLegionHasNoIntermediateLoot();
 
-        // A non-qualifying hit on any descendant invalidates the one trophy
-        // owned by the root encounter. Reset it after proving the relay so this
-        // scenario can also verify the positive reward path at completion.
+        // Non-kinetic damage no longer invalidates cooperative qualification.
         var crowbar = ToServer(await Spawn("Crowbar"));
         var firstSplit = FirstLivingLegionSplit();
         await Server.WaitPost(() =>
@@ -1109,8 +1220,12 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
             SEntMan.EventBus.RaiseLocalEvent(firstSplit, attacked);
         });
         var rootLoot = SEntMan.GetComponent<SpawnLootOnDeathComponent>(root);
-        Assert.That(rootLoot.DoSpecialLoot, Is.False);
-        await Server.WaitPost(() => rootLoot.DoSpecialLoot = true);
+        Assert.That(rootLoot.QualifiedDamage, Is.EqualTo(FixedPoint2.Zero));
+
+        // The complete encounter owns one shared contribution pool. This test
+        // focuses on split/loot lifecycle; mark the pool qualified before the
+        // final generation so completion can verify the special table once.
+        await Server.WaitPost(() => rootLoot.QualifiedDamage = FixedPoint2.New(5000));
 
         // The apparent central corpse is not harvestable while its fragments live.
         await InteractUsing("MegafaunaHarvestInteractionSlicingTool", awaitDoAfters: false);
@@ -1130,61 +1245,531 @@ public sealed class MegafaunaHarvestInteractionTest : InteractionTest
         Assert.That(encounter.Completed, Is.True);
         Assert.That(CountPrototype("LavalandCrateNecropolisFilled"), Is.EqualTo(1));
         Assert.That(CountPrototype("TrophyLavalandLegionSkull"), Is.EqualTo(1));
-        Assert.That(CountPrototype("MaterialBones"), Is.Zero);
-        Assert.That(CountPrototype("MaterialBones1"), Is.Zero);
+        // The final filled Necropolis chest may legitimately contain the rare
+        // Legion-skull-and-bones bundle. The checks after every generation above
+        // are what guarantee that no fragment emitted intermediate floor loot.
         Assert.That(CountPrototype("LegionCore"), Is.Zero);
         Assert.That(CountPrototype("CrowbarRed"), Is.Zero);
     }
 
     [Test]
-    public async Task BossOrganDecayPausesInAFreezerAndStabilizationIsPermanent()
+    public async Task StabilizingSerumConvertsRawLegionCoreIntoPermanentOrgan()
     {
-        var organNet = await Spawn("MegafaunaPerishableOrganTest");
-        var freezerNet = await Spawn("CrateFreezer");
-        var organ = ToServer(organNet);
-        var freezer = ToServer(freezerNet);
-        var component = SEntMan.GetComponent<PerishableBossOrganComponent>(organ);
+        var rawCore = ToServer(await Spawn("LegionCore"));
 
         await Server.WaitPost(() =>
-        {
-            Assert.That(_containers.TryGetContainer(freezer, "entity_storage", out var container), Is.True);
-            Assert.That(_containers.Insert(organ, container), Is.True);
-        });
-        await RunTicks(25);
+            _entityEffects.RaiseEffectEvent(rawCore, new StabilizeLegionCore(), 1f, null, predicted: false));
+        await RunTicks(2);
 
-        Assert.That(component.State, Is.EqualTo(PerishableBossOrganState.Fresh));
-        Assert.That(component.PreservedBy, Is.EqualTo(freezer));
-
-        await Server.WaitPost(() =>
-        {
-            Assert.That(_containers.TryGetContainer(freezer, "entity_storage", out var container), Is.True);
-            Assert.That(_containers.Remove(organ, container), Is.True);
-            _entityEffects.RaiseEffectEvent(organ, new StabilizeMegafaunaOrgan(), 1f, null, predicted: false);
-        });
-        await RunTicks(25);
-
-        Assert.That(component.State, Is.EqualTo(PerishableBossOrganState.Stabilized));
-        Assert.That(component.DecayAt, Is.Null);
+        Assert.That(SEntMan.Deleted(rawCore), Is.True);
+        Assert.That(CountPrototype("OrganStabilizedLegionCore"), Is.EqualTo(1));
     }
 
     [Test]
-    public async Task CrusherAcceptsExactlyOneTrophyInItsDedicatedSlot()
+    public async Task LegionCoreWaitsBeforeRevivingAndCannotTriggerTwice()
+    {
+        var patient = ToServer(await Spawn("MegafaunaDelayedRevivalMob"));
+        var organ = ToServer(await Spawn("MegafaunaDelayedLegionCore"));
+
+        await Server.WaitPost(() =>
+        {
+            var carrier = SEntMan.EnsureComponent<LegionCoreCarrierComponent>(patient);
+            carrier.Organ = organ;
+            _damage.TryChangeDamage(
+                patient,
+                new DamageSpecifier { DamageDict = { ["Blunt"] = 15 } },
+                ignoreResistances: true,
+                origin: SPlayer);
+        });
+        await RunTicks(2);
+
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(patient).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Critical));
+        Assert.That(SEntMan.GetComponent<LegionCoreCarrierComponent>(patient).RevivalPending, Is.True);
+
+        await Server.WaitPost(() => _damage.TryChangeDamage(
+            patient,
+            new DamageSpecifier { DamageDict = { ["Blunt"] = 15 } },
+            ignoreResistances: true,
+            origin: SPlayer));
+        await RunTicks(2);
+
+        // More than the original critical-state deadline has elapsed, but less than
+        // one full delay has elapsed since death. The death event must restart it.
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(patient).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Dead));
+        Assert.That(SEntMan.GetComponent<LegionCoreCarrierComponent>(patient).RevivalPending, Is.True);
+        Assert.That(SEntMan.Deleted(organ), Is.False);
+
+        await RunTicks(4);
+
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(patient).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Alive));
+        Assert.That(SEntMan.HasComponent<LegionCoreCarrierComponent>(patient), Is.False);
+        Assert.That(SEntMan.Deleted(organ), Is.True);
+    }
+
+    [Test]
+    public async Task GodslayerWaitsBeforeRevivingItsWearer()
+    {
+        var wearer = ToServer(await Spawn("MegafaunaDelayedRevivalMob"));
+        var armor = ToServer(await Spawn("MegafaunaDelayedGodslayerArmor"));
+
+        await Server.WaitPost(() =>
+        {
+            SEntMan.GetComponent<GodslayerArmorComponent>(armor).Wearer = wearer;
+            var carrier = SEntMan.EnsureComponent<GodslayerCarrierComponent>(wearer);
+            carrier.Armor = armor;
+            _damage.TryChangeDamage(
+                wearer,
+                new DamageSpecifier { DamageDict = { ["Blunt"] = 15 } },
+                ignoreResistances: true,
+                origin: SPlayer);
+        });
+        await RunTicks(2);
+
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(wearer).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Critical));
+
+        await Server.WaitPost(() => _damage.TryChangeDamage(
+            wearer,
+            new DamageSpecifier { DamageDict = { ["Blunt"] = 15 } },
+            ignoreResistances: true,
+            origin: SPlayer));
+        await RunTicks(2);
+
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(wearer).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Dead));
+        Assert.That(SEntMan.GetComponent<GodslayerCarrierComponent>(wearer).RevivalPending, Is.True);
+
+        await RunTicks(4);
+
+        Assert.That(SEntMan.GetComponent<MobStateComponent>(wearer).CurrentState,
+            Is.EqualTo(Content.Shared.Mobs.MobState.Alive));
+        Assert.That(SEntMan.GetComponent<GodslayerCarrierComponent>(wearer).RevivalPending, Is.False);
+        Assert.That(SEntMan.GetComponent<GodslayerArmorComponent>(armor).NextRevival, Is.GreaterThan(TimeSpan.Zero));
+    }
+
+    [Test]
+    public async Task CrusherAcceptsDistinctTrophiesWithinDedicatedCapacity()
     {
         await SpawnTarget("WeaponCrusher");
         var crusher = STarget!.Value;
         var slots = SEntMan.GetComponent<ItemSlotsComponent>(crusher);
 
         await InteractUsing("TrophyLavalandAshDrakeSpike");
-        var installed = slots.Slots["trophy_slot"].Item;
-        Assert.That(installed, Is.Not.Null);
-        Assert.That(SEntMan.HasComponent<CrusherTrophyComponent>(installed!.Value), Is.True);
+        var ash = slots.Slots["trophy_slot_1"].Item;
+        Assert.That(ash, Is.Not.Null);
+        Assert.That(SEntMan.HasComponent<CrusherTrophyComponent>(ash!.Value), Is.True);
 
-        // A second trophy cannot spill into the legacy blade/handle slots inherited by trophy prototypes.
-        await InteractUsing("TrophyLavalandBubblegumDemonClaws", awaitDoAfters: false);
+        await InteractUsing("TrophyLavalandBubblegumDemonClaws");
+        var bubblegum = slots.Slots["trophy_slot_2"].Item;
+        Assert.That(bubblegum, Is.Not.Null);
+        Assert.That(bubblegum, Is.Not.EqualTo(ash));
+
+        // Duplicate identities and combinations above the 100 point trophy
+        // budget are rejected before a DoAfter can consume the item.
+        await InteractUsing("TrophyLavalandAshDrakeSpike", awaitDoAfters: false);
         Assert.That(ActiveDoAfters, Is.Empty);
-        Assert.That(slots.Slots["trophy_slot"].Item, Is.EqualTo(installed));
+        await InteractUsing("TrophyLavalandColossusBlasterTubes", awaitDoAfters: false);
+        Assert.That(ActiveDoAfters, Is.Empty);
+        Assert.That(slots.Slots["trophy_slot_1"].Item, Is.EqualTo(ash));
+        Assert.That(slots.Slots["trophy_slot_2"].Item, Is.EqualTo(bubblegum));
+        Assert.That(slots.Slots["trophy_slot_3"].Item, Is.Null);
         Assert.That(slots.Slots["upgrade_slot_blade"].Item, Is.Null);
         Assert.That(slots.Slots["upgrade_slot_handle"].Item, Is.Null);
+    }
+
+    [Test]
+    public async Task PortablePkaUsesTheSameIndependentTrophyCapacity()
+    {
+        await SpawnTarget("WeaponProtoKineticAccelerator");
+        var slots = SEntMan.GetComponent<ItemSlotsComponent>(STarget!.Value);
+
+        await InteractUsing("TrophyLavalandAshDrakeSpike");
+        await InteractUsing("TrophyLavalandBDMEye");
+
+        Assert.That(slots.Slots["trophy_slot_1"].Item, Is.Not.Null);
+        Assert.That(slots.Slots["trophy_slot_2"].Item, Is.Not.Null);
+        Assert.That(slots.Slots["upgrade_slot_1"].Item, Is.Null,
+            "boss trophies must not consume normal PKA modkit slots");
+    }
+
+    [Test]
+    public async Task DemonClawsMultipliesEveryKineticPlatformSpread()
+    {
+        var cases = new[]
+        {
+            (Gun: "WeaponProtoKineticAccelerator", Expected: 3),
+            (Gun: "WeaponProtoKineticShotgun", Expected: 12),
+            (Gun: "WeaponProtoKineticShockwave", Expected: 24),
+        };
+
+        foreach (var testCase in cases)
+        {
+            var (gun, projectiles) = await FireWithUpgrade(
+                testCase.Gun,
+                "TrophyLavalandBubblegumDemonClaws",
+                "trophy_slot_1");
+
+            Assert.That(projectiles, Has.Count.EqualTo(testCase.Expected), testCase.Gun);
+            foreach (var projectile in projectiles)
+            {
+                Assert.That(SEntMan.TryGetComponent<KineticTrophyProjectileComponent>(projectile, out var trophy),
+                    Is.True,
+                    $"{testCase.Gun} produced an unmodified pellet");
+                Assert.That(trophy!.DemonClawsTrophy, Is.Not.Null);
+            }
+
+            // The fan is calculated without modifying the ammunition entity in
+            // flight. Ordinary PKA bolts must therefore remain non-spreading.
+            if (testCase.Gun == "WeaponProtoKineticAccelerator")
+            {
+                Assert.That(projectiles.All(projectile =>
+                    !SEntMan.HasComponent<ProjectileSpreadComponent>(projectile)), Is.True);
+            }
+        }
+    }
+
+    [Test]
+    public async Task AshDrakeAndDemonClawsApplyToEveryShotgunPellet()
+    {
+        var gun = ToServer(await Spawn("WeaponProtoKineticShotgun"));
+        var ash = ToServer(await Spawn("TrophyLavalandAshDrakeSpike"));
+        var demon = ToServer(await Spawn("TrophyLavalandBubblegumDemonClaws"));
+        List<EntityUid> projectiles = [];
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(_itemSlots.TryInsert(gun, "trophy_slot_1", ash, null), Is.True);
+            Assert.That(_itemSlots.TryInsert(gun, "trophy_slot_2", demon, null), Is.True);
+            FireGunImmediately(gun);
+            projectiles = ProjectilesFiredBy(gun);
+        });
+
+        Assert.That(projectiles, Has.Count.EqualTo(12));
+        foreach (var uid in projectiles)
+        {
+            var projectile = SEntMan.GetComponent<ProjectileComponent>(uid);
+            Assert.That(projectile.Damage.DamageDict.TryGetValue("Heat", out var heat), Is.True);
+            Assert.That(heat, Is.GreaterThan(FixedPoint2.Zero));
+
+            var trophies = SEntMan.GetComponent<KineticTrophyProjectileComponent>(uid);
+            Assert.That(trophies.AshDrakeTrophy, Is.EqualTo(ash));
+            Assert.That(trophies.DemonClawsTrophy, Is.EqualTo(demon));
+        }
+    }
+
+    [Test]
+    public async Task TrophyProjectileDefersStaticStructureCollisionToServer()
+    {
+        // A persistent physics body stands in for the projectile here. The event
+        // contract depends only on physics fixtures and the trophy marker; using a
+        // short-lived real bolt would despawn before the client assertion at the
+        // integration runner's one-tick-per-second test rate.
+        var projectile = ToServer(await Spawn("MobMouse"));
+        var window = ToServer(await Spawn("Window"));
+        await Server.WaitPost(() => SEntMan.EnsureComponent<KineticTrophyProjectileComponent>(projectile));
+        await RunTicks(2);
+
+        await Client.WaitAssertion(() =>
+        {
+            var clientProjectile = ToClient(projectile);
+            var clientWindow = ToClient(window);
+            // Predicted shots assemble this marker locally before entering the
+            // physics world, mirroring SharedGunSystem's client firing path.
+            CEntMan.EnsureComponent<KineticTrophyProjectileComponent>(clientProjectile);
+
+            var projectilePhysics = CEntMan.GetComponent<PhysicsComponent>(clientProjectile);
+            var projectileFixture = CEntMan.GetComponent<FixturesComponent>(clientProjectile)
+                .Fixtures.Values.First(fixture => fixture.Hard);
+            var windowPhysics = CEntMan.GetComponent<PhysicsComponent>(clientWindow);
+            var windowFixture = CEntMan.GetComponent<FixturesComponent>(clientWindow)
+                .Fixtures.Values.First(fixture => fixture.Hard);
+            var collision = new PreventCollideEvent(
+                clientProjectile,
+                clientWindow,
+                projectilePhysics,
+                windowPhysics,
+                projectileFixture,
+                windowFixture);
+
+            CEntMan.EventBus.RaiseLocalEvent(clientProjectile, ref collision);
+            Assert.That(collision.Cancelled, Is.True,
+                "the client predicted a trophy-pellet contact with a static window");
+        });
+
+        await Server.WaitAssertion(() =>
+        {
+            var projectilePhysics = SEntMan.GetComponent<PhysicsComponent>(projectile);
+            var projectileFixture = SEntMan.GetComponent<FixturesComponent>(projectile)
+                .Fixtures.Values.First(fixture => fixture.Hard);
+            var windowPhysics = SEntMan.GetComponent<PhysicsComponent>(window);
+            var windowFixture = SEntMan.GetComponent<FixturesComponent>(window)
+                .Fixtures.Values.First(fixture => fixture.Hard);
+            var collision = new PreventCollideEvent(
+                projectile,
+                window,
+                projectilePhysics,
+                windowPhysics,
+                projectileFixture,
+                windowFixture);
+
+            SEntMan.EventBus.RaiseLocalEvent(projectile, ref collision);
+            Assert.That(collision.Cancelled, Is.False,
+                "the server must remain authoritative for trophy-pellet structure hits");
+        });
+    }
+
+    [Test]
+    public async Task EveryAddedProjectileModkitPreparesItsProjectile()
+    {
+        var cases = new[]
+        {
+            "PKAUpgradeMiningAoE",
+            "PKAUpgradeOffensiveAoE",
+            "PKAUpgradeHybridAoE",
+            "PKAUpgradeHumanPassthrough",
+            "PKAUpgradeDronePassthrough",
+            "PKAUpgradeRapidRepeater",
+            "PKAUpgradeResonatorBlast",
+            "PKAUpgradeDeathSyphon",
+            "PKAUpgradeTracerAmber",
+        };
+
+        foreach (var modkit in cases)
+        {
+            var (_, projectiles) = await FireWithUpgrade(
+                "WeaponProtoKineticAccelerator",
+                modkit,
+                "upgrade_slot_1");
+            Assert.That(projectiles, Has.Count.EqualTo(1), modkit);
+            var projectile = projectiles[0];
+
+            var prepared = modkit switch
+            {
+                "PKAUpgradeMiningAoE" =>
+                    SEntMan.HasComponent<KineticMiningAreaProjectileComponent>(projectile),
+                "PKAUpgradeOffensiveAoE" =>
+                    SEntMan.HasComponent<ProjectileAreaDamageComponent>(projectile),
+                "PKAUpgradeHybridAoE" =>
+                    SEntMan.HasComponent<KineticMiningAreaProjectileComponent>(projectile) &&
+                    SEntMan.HasComponent<ProjectileAreaDamageComponent>(projectile),
+                "PKAUpgradeHumanPassthrough" =>
+                    SEntMan.HasComponent<KineticHumanPassthroughProjectileComponent>(projectile),
+                "PKAUpgradeDronePassthrough" =>
+                    SEntMan.HasComponent<KineticDronePassthroughProjectileComponent>(projectile),
+                "PKAUpgradeRapidRepeater" =>
+                    SEntMan.HasComponent<KineticRapidRepeaterProjectileComponent>(projectile),
+                "PKAUpgradeResonatorBlast" =>
+                    SEntMan.HasComponent<KineticResonatorProjectileComponent>(projectile),
+                "PKAUpgradeDeathSyphon" =>
+                    SEntMan.HasComponent<KineticDeathSyphonProjectileComponent>(projectile),
+                "PKAUpgradeTracerAmber" =>
+                    SEntMan.HasComponent<PointLightComponent>(projectile),
+                _ => false,
+            };
+
+            Assert.That(prepared, Is.True, $"{modkit} did not prepare its fired projectile");
+        }
+    }
+
+    [Test]
+    public async Task EveryBaselinePkaModkitStillModifiesTheFiringPipeline()
+    {
+        var (_, baselineProjectiles) = await FireWithoutUpgrade("WeaponProtoKineticAccelerator");
+        var baselineProjectile = baselineProjectiles.Single();
+        var baselineDamage = SEntMan.GetComponent<ProjectileComponent>(baselineProjectile).Damage.GetTotal();
+        var baselineSpeed = SEntMan.GetComponent<PhysicsComponent>(baselineProjectile).LinearVelocity.Length();
+
+        var (_, damageProjectiles) = await FireWithUpgrade(
+            "WeaponProtoKineticAccelerator",
+            "PKAUpgradeDamage",
+            "upgrade_slot_1");
+        Assert.That(
+            SEntMan.GetComponent<ProjectileComponent>(damageProjectiles.Single()).Damage.GetTotal(),
+            Is.GreaterThan(baselineDamage));
+
+        var (_, rangeProjectiles) = await FireWithUpgrade(
+            "WeaponProtoKineticAccelerator",
+            "PKAUpgradeRange",
+            "upgrade_slot_1");
+        Assert.That(
+            SEntMan.GetComponent<PhysicsComponent>(rangeProjectiles.Single()).LinearVelocity.Length(),
+            Is.GreaterThan(baselineSpeed));
+
+        var (fireRateGun, _) = await FireWithUpgrade(
+            "WeaponProtoKineticAccelerator",
+            "PKAUpgradeFireRate",
+            "upgrade_slot_1");
+        Assert.That(SEntMan.GetComponent<GunComponent>(fireRateGun).FireRateModified, Is.GreaterThan(0.8f));
+
+        var (pressureGun, _) = await FireWithUpgrade(
+            "WeaponProtoKineticAccelerator",
+            "PKAUpgradePressure",
+            "upgrade_slot_1");
+        var pressureEfficiency = SEntMan.GetComponent<PressureEfficiencyComponent>(pressureGun);
+        Assert.That(pressureEfficiency.LowerBound, Is.EqualTo(0f));
+        Assert.That(pressureEfficiency.UpperBound, Is.EqualTo(200f));
+
+        var (spaceGun, _) = await FireWithUpgrade(
+            "WeaponProtoKineticAccelerator",
+            "PKAUpgradeSpace",
+            "upgrade_slot_1");
+        var spaceEfficiency = SEntMan.GetComponent<PressureEfficiencyComponent>(spaceGun);
+        Assert.That(spaceEfficiency.LowerBound, Is.EqualTo(0f));
+        Assert.That(spaceEfficiency.UpperBound, Is.EqualTo(10f));
+        Assert.That(SEntMan.GetComponent<PressureDamageChangeComponent>(spaceGun).AppliedModifier, Is.EqualTo(1.5f));
+    }
+
+    [Test]
+    public async Task EveryBossTrophyTagsItsRangedProjectile()
+    {
+        var cases = new[]
+        {
+            (Id: "TrophyLavalandAshDrakeSpike", Field: "ash"),
+            (Id: "TrophyLavalandColossusBlasterTubes", Field: "colossus"),
+            (Id: "TrophyLavalandBubblegumDemonClaws", Field: "demon"),
+            (Id: "TrophyLavalandLegionSkull", Field: "legion"),
+            (Id: "TrophyLavalandBDMEye", Field: "blood-drunk"),
+            (Id: "TrophySpiderMercuryAlloy", Field: "mercury"),
+            (Id: "TrophyChildishOniHorn", Field: "oni"),
+            (Id: "TrophyDemonicFrostMinerIceTalisman", Field: "ice"),
+        };
+
+        foreach (var testCase in cases)
+        {
+            var (_, projectiles) = await FireWithUpgrade(
+                "WeaponProtoKineticAccelerator",
+                testCase.Id,
+                "trophy_slot_1");
+            Assert.That(projectiles, Is.Not.Empty, testCase.Id);
+
+            foreach (var projectile in projectiles)
+            {
+                var trophy = SEntMan.GetComponent<KineticTrophyProjectileComponent>(projectile);
+                var source = testCase.Field switch
+                {
+                    "ash" => trophy.AshDrakeTrophy,
+                    "colossus" => trophy.ColossusTrophy,
+                    "demon" => trophy.DemonClawsTrophy,
+                    "legion" => trophy.LegionTrophy,
+                    "blood-drunk" => trophy.BloodDrunkTrophy,
+                    "mercury" => trophy.MercuryTrophy,
+                    "oni" => trophy.OniTrophy,
+                    "ice" => trophy.IceTalismanTrophy,
+                    _ => null,
+                };
+                Assert.That(source, Is.Not.Null, $"{testCase.Id} missed one fired projectile");
+            }
+        }
+    }
+
+    [Test]
+    public async Task PortablePkaProjectileDamageContributesWithoutLastHitRequirement()
+    {
+        await SpawnTarget("MegafaunaLootAccountingDummy");
+        var boss = STarget!.Value;
+        var loot = SEntMan.GetComponent<SpawnLootOnDeathComponent>(boss);
+        var pka = ToServer(await Spawn("WeaponProtoKineticAccelerator"));
+        var contribution = new DamageSpecifier { DamageDict = { ["Blunt"] = 40 } };
+
+        await Server.WaitPost(() =>
+        {
+            var projectile = SEntMan.SpawnAtPosition(
+                "BulletKinetic",
+                SEntMan.GetComponent<TransformComponent>(boss).Coordinates);
+            var projectileComponent = SEntMan.GetComponent<ProjectileComponent>(projectile);
+            var marker = SEntMan.EnsureComponent<MegafaunaWeaponLooterProjectileComponent>(projectile);
+            marker.SourceWeapon = pka;
+            projectileComponent.Shooter = SPlayer;
+            projectileComponent.Weapon = pka;
+
+            var projectileHit = new ProjectileHitEvent(contribution, boss, SPlayer);
+            SEntMan.EventBus.RaiseLocalEvent(projectile, ref projectileHit);
+            _damage.TryChangeDamage(boss, contribution, ignoreResistances: true, origin: SPlayer);
+        });
+        await RunTicks(2);
+
+        Assert.That(loot.QualifiedDamage, Is.GreaterThan(FixedPoint2.Zero));
+        var qualifiedAfterPka = loot.QualifiedDamage;
+
+        var crowbar = ToServer(await Spawn("Crowbar"));
+        await Server.WaitPost(() =>
+        {
+            var attacked = new AttackedEvent(
+                crowbar,
+                SPlayer,
+                SEntMan.GetComponent<TransformComponent>(boss).Coordinates);
+            SEntMan.EventBus.RaiseLocalEvent(boss, attacked);
+            _damage.TryChangeDamage(boss, contribution, ignoreResistances: true, origin: SPlayer);
+        });
+        await RunTicks(2);
+
+        Assert.That(loot.QualifiedDamage, Is.EqualTo(qualifiedAfterPka),
+            "non-kinetic damage must neither contribute nor erase earlier cooperative progress");
+    }
+
+    private async Task<(EntityUid Gun, List<EntityUid> Projectiles)> FireWithUpgrade(
+        string gunPrototype,
+        string upgradePrototype,
+        string slot)
+    {
+        var gun = ToServer(await Spawn(gunPrototype));
+        var upgrade = ToServer(await Spawn(upgradePrototype));
+        List<EntityUid> projectiles = [];
+
+        await Server.WaitAssertion(() =>
+        {
+            Assert.That(_itemSlots.TryInsert(gun, slot, upgrade, null), Is.True,
+                $"failed to insert {upgradePrototype} into {gunPrototype}:{slot}");
+            FireGunImmediately(gun);
+            projectiles = ProjectilesFiredBy(gun);
+        });
+
+        return (gun, projectiles);
+    }
+
+    private async Task<(EntityUid Gun, List<EntityUid> Projectiles)> FireWithoutUpgrade(string gunPrototype)
+    {
+        var gun = ToServer(await Spawn(gunPrototype));
+        List<EntityUid> projectiles = [];
+        await Server.WaitAssertion(() =>
+        {
+            FireGunImmediately(gun);
+            projectiles = ProjectilesFiredBy(gun);
+        });
+        return (gun, projectiles);
+    }
+
+    private void FireGunImmediately(EntityUid gun)
+    {
+        var provider = SEntMan.GetComponent<BasicEntityAmmoProviderComponent>(gun);
+        Assert.That(provider.Proto, Is.Not.Null, $"{SEntMan.ToPrettyString(gun)} has no entity ammunition");
+
+        var from = SEntMan.GetComponent<TransformComponent>(SPlayer).Coordinates;
+        var to = new EntityCoordinates(SPlayer, new Vector2(10f, 0f));
+        var ammunition = SEntMan.SpawnAtPosition(provider.Proto!, from);
+        SGun.Shoot(
+            (gun, SEntMan.GetComponent<GunComponent>(gun)),
+            ammunition,
+            from,
+            to,
+            out _,
+            SPlayer);
+    }
+
+    private List<EntityUid> ProjectilesFiredBy(EntityUid gun)
+    {
+        var result = new List<EntityUid>();
+        var query = SEntMan.EntityQueryEnumerator<ProjectileComponent>();
+        while (query.MoveNext(out var uid, out var projectile))
+        {
+            if (projectile.Weapon == gun)
+                result.Add(uid);
+        }
+
+        return result;
     }
 
     [Test]

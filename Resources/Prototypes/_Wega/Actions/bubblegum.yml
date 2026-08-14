@@ -10,9 +10,9 @@
   - type: Action
     raiseOnUser: true
     useDelay: 5
-  - type: Sprite
-    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
-    state: bubblegum
+    icon:
+      sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+      state: bubblegum
   - type: TargetAction
     range: 20
   - type: EntityTargetAction
@@ -62,9 +62,9 @@
   - type: Action
     raiseOnUser: true
     useDelay: 20
-  - type: Sprite
-    sprite: _Lavaland/Mobs/Bosses/96x96.rsi
-    state: bubblegum
+    icon:
+      sprite: _Lavaland/Mobs/Bosses/96x96.rsi
+      state: bubblegum
   - type: EntityTargetAction
     event: !type:BubblegumChaoticIllusionDashActionEvent
       illusionDamage:

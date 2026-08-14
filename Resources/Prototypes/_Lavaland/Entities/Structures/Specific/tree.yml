@@ -41,9 +41,8 @@
         minSpawn: 1
         maxSpawn: 2
   - type: Damageable
-    damageModifierSet: StructuralMetallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: PointLight
     radius: 3
     energy: 2
@@ -86,9 +85,8 @@
         minSpawn: 4 # This gon' be fun
         maxSpawn: 6
   - type: Damageable
-    damageModifierSet: StructuralMetallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: PointLight
     radius: 5
     energy: 5
@@ -142,9 +140,8 @@
     sprite: /Textures/_Lavaland/Structures/Specific/Crystal/tree.rsi
     state: crystalstump1
   - type: Damageable
-    damageModifierSet: StructuralMetallic
-  - type: Injurable
     damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallic
   - type: Fixtures
     fixtures:
       fix1:

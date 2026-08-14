@@ -719,16 +719,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 0.5,2.5
       parent: 201
-- proto: ClothingNeckCloakMiner
-  entities:
-  - uid: 148
-    components:
-    - type: Transform
-      pos: 1.4223602,1.506703
-      parent: 201
-    - type: Physics
-      angularDamping: 0
-      linearDamping: 0
 - proto: ComputerBroken
   entities:
   - uid: 83

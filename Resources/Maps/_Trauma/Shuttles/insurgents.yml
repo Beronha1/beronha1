@@ -504,13 +504,6 @@ entities:
     - type: Transform
       pos: 0.5,-3.5
       parent: 2
-- proto: PosterContrabandGoobYakub
-  entities:
-  - uid: 115
-    components:
-    - type: Transform
-      pos: 2.5,-1.5
-      parent: 2
 - proto: PosterContrabandGreyTide
   entities:
   - uid: 114

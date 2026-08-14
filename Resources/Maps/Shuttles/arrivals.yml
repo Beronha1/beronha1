@@ -2313,14 +2313,6 @@ entities:
     missingComponents:
     - Construction
     - Destructible
-- proto: MachineFTLDriveAutomated
-  entities:
-  - uid: 115
-    components:
-    - type: Transform
-      pos: 0.5,-5.5
-      parent: 292
-    - type: Unremoveable
 - proto: MaintenanceFluffSpawner
   entities:
   - uid: 284

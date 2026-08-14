@@ -45,6 +45,7 @@
 - type: reagent
   id: BaseAlcohol
   group: AlcoholicDrinks # Goob - Drinks guidebook split
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   abstract: true
   slipData:
     requiredSlipSpeed: 3.5

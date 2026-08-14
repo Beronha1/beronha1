@@ -41,6 +41,15 @@
     knockdownTimeDelta: -3
   - type: StaminaResistance # Goobstation
     damageCoefficient: 0.5
+  # Ganimed-Port: стайны (funky-station/forky-station#107)
+  - type: Stainable
+    clothingVisuals:
+      outerClothing:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: armorblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: armorbloodicon
 
 #Standard armor vest, allowed for security only
 - type: entity

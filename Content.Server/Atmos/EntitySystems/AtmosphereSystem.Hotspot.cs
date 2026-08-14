@@ -1,4 +1,5 @@
 using System.Globalization;
+using Content.Server._Funkystation.Atmos.Events; // Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
 using Content.Server.Atmos.Components;
 using Content.Server.Decals;
 using Content.Shared.Atmos;
@@ -203,6 +204,10 @@ public sealed partial class AtmosphereSystem
     {
         if (tile.Air == null)
             return;
+
+        // Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
+        var ev = new TileExposedEvent(tile.GridIndices, exposedTemperature, exposedVolume, sparkSourceUid);
+        RaiseLocalEvent(gridAtmosphere.Owner, ref ev);
 
         if (!IsMixtureOxidizer(tile.Air))
             return;

@@ -68,7 +68,8 @@ namespace Content.Server.Doors.Systems
                 // only bother to check pressure on doors that are some variation of closed.
                 if (door.State != DoorState.Closed
                     && door.State != DoorState.Welded
-                    && door.State != DoorState.Denying)
+                    && door.State != DoorState.Denying
+                    && door.State != DoorState.Open) // Ganimed-Port: фикс firelock (funky-station/forky-station#127)
                 {
                     continue;
                 }
@@ -76,18 +77,33 @@ namespace Content.Server.Doors.Systems
                 if (_airtightQuery.TryGetComponent(uid, out var airtight)
                     && _appearanceQuery.TryGetComponent(uid, out var appearance))
                 {
-                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, airtight);
-                    _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
-                    firelock.Temperature = fire;
-                    firelock.Pressure = pressure;
-                    _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
-                    _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
-                    Dirty(uid, firelock);
+                    // Ganimed-Port: фикс firelock (funky-station/forky-station#127)
+                    var xform = Transform(uid);
+                    var (pressure, fire) = CheckPressureAndFire(uid, firelock, xform, airtight, door.State == DoorState.Open);
 
-                    if (_pointLightQuery.TryComp(uid, out var pointLight))
+                    // Ganimed-Port-Start
+                    if (door.State == DoorState.Open)
                     {
-                        _pointLight.SetEnabled(uid, fire | pressure, pointLight);
+                        if (pressure || fire)
+                        {
+                            EmergencyPressureStop(uid, firelock, door);
+                        }
                     }
+                    else
+                    {
+                        _appearance.SetData(uid, DoorVisuals.ClosedLights, fire || pressure, appearance);
+                        firelock.Temperature = fire;
+                        firelock.Pressure = pressure;
+                        _appearance.SetData(uid, FirelockVisuals.PressureWarning, pressure, appearance);
+                        _appearance.SetData(uid, FirelockVisuals.TemperatureWarning, fire, appearance);
+                        Dirty(uid, firelock);
+
+                        if (_pointLightQuery.TryComp(uid, out var pointLight))
+                        {
+                            _pointLight.SetEnabled(uid, fire | pressure, pointLight);
+                        }
+                    }
+                    // Ganimed-Port-End
                 }
             }
         }
@@ -114,16 +130,18 @@ namespace Content.Server.Doors.Systems
         public (bool Pressure, bool Fire) CheckPressureAndFire(EntityUid uid, FirelockComponent firelock)
         {
             if (_airtightQuery.TryGetComponent(uid, out AirtightComponent? airtight))
-                return CheckPressureAndFire(uid, firelock, airtight);
+                return CheckPressureAndFire(uid, firelock, Transform(uid), airtight);
             return (false, false);
         }
 
         public (bool Pressure, bool Fire) CheckPressureAndFire(
-        EntityUid uid,
-        FirelockComponent firelock,
-        AirtightComponent airtight)
+            EntityUid uid,
+            FirelockComponent firelock,
+            TransformComponent xform,
+            AirtightComponent airtight,
+            bool checkEvenIfOpen = false) // Ganimed-Port: фикс firelock (funky-station/forky-station#127)
         {
-            if (!airtight.AirBlocked)
+            if (!checkEvenIfOpen && !airtight.AirBlocked) // Ganimed-Port: фикс firelock (funky-station/forky-station#127)
                 return (false, false);
 
             if (TryComp(uid, out DockingComponent? dock) && dock.Docked)
@@ -132,9 +150,13 @@ namespace Content.Server.Doors.Systems
                 return (false, false);
             }
 
-            var xform = Transform(uid);
-            if (!HasComp<GridAtmosphereComponent>(xform.ParentUid))
+            // Ganimed-Port: фикс firelock (funky-station/forky-station#127)
+            if (!HasComp<GridAtmosphereComponent>(xform.ParentUid) ||
+                !HasComp<MapGridComponent>(xform.ParentUid) ||
+                !HasComp<MapAtmosphereComponent>(xform.MapUid))
+            {
                 return (false, false);
+            }
 
             var grid = Comp<MapGridComponent>(xform.ParentUid);
             var pos = _mapping.CoordinatesToTile(xform.ParentUid, grid, xform.Coordinates);

@@ -50,6 +50,21 @@
   - type: Tag # goob edit
     tags:
     - Mask
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      mask:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: maskblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: maskbloodicon
+  # Ganimed-Port-End
+  - type: SolutionContainerManager
+    solutions:
+      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
+        maxVol: 5
 
 - type: entity
   abstract: true

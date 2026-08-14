@@ -20,7 +20,11 @@ using Content.Shared.Forensics.Components;
 using Content.Shared.Gibbing;
 using Content.Shared.HealthExaminable;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.Inventory;
 using Content.Shared.Popups;
+using Content.Shared._Funkystation.Fluids;
+using Content.Shared._Starfall.Particles; // Ganimed-Port: частицы крови при гиббинге (_Starfall, funky-station/forky-station#67)
+using Robust.Shared.Player; // Ganimed-Port: Filter.Pvs // Ganimed-Port: стайны (funky-station/forky-station#107)
 using Content.Shared.Random.Helpers;
 using Content.Shared.Rejuvenate;
 using Content.Shared.StatusEffectNew;
@@ -39,12 +43,15 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
     [Dependency] protected SharedSolutionContainerSystem SolutionContainer = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private SharedAudioSystem _audio = default!;
-    //[Dependency] private SharedPopupSystem _popup = default!; // Trauma - not used anymore
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
     [Dependency] private SharedPuddleSystem _puddle = default!;
     [Dependency] private StatusEffectsSystem _status = default!;
     [Dependency] private AlertsSystem _alertsSystem = default!;
     [Dependency] private MobStateSystem _mobStateSystem = default!;
     [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!; // Ganimed-Port: стайны (funky-station/forky-station#107)
+    [Dependency] private SharedTransformSystem _transform = default!; // Ganimed-Port: частицы крови при gibbing
 
     public override void Initialize()
     {
@@ -321,7 +328,19 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
 
     private void OnBeingGibbed(Entity<BloodstreamComponent> ent, ref GibbedBeforeDeletionEvent args)
     {
+        // Ganimed-Port-Start: частицы крови при гиббинге (_Starfall, funky-station/forky-station#67)
+        // Встроено сюда вместо серверного GibMistParticleSystem: пара (BloodstreamComponent, BeingGibbedEvent) уже занята этим классом.
+        // Цвет берём до SpillAllSolutions: после очистки раствор пуст и цвет был бы всегда красным.
+        var color = Color.Red;
+        var contents = ent.Comp.BloodSolution?.Comp.Solution.Contents;
+        if (contents is { Count: > 0 } && _prototypeManager.TryIndex(contents[0].Reagent.Prototype, out ReagentPrototype? reagentProto))
+            color = reagentProto.SubstanceColor;
+
         SpillAllSolutions(ent.AsNullable());
+
+        var coords = _transform.GetMapCoordinates(ent.Owner);
+        RaiseNetworkEvent(new GibMistParticleEvent(coords, color), Filter.Pvs(ent.Owner));
+        // Ganimed-Port-End
     }
 
     private void OnApplyMetabolicMultiplier(Entity<BloodstreamComponent> ent, ref ApplyMetabolicMultiplierEvent args)
@@ -549,6 +568,24 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
                 }
             }
             // </Goob>
+
+            // Ganimed-Port-Start: кровь пачкает одежду (funky-station/forky-station#107)
+            var stainEv = new SpilledOnEvent(ent.Owner, tempSolution);
+            RaiseLocalEvent(ent.Owner, stainEv);
+
+            var xform = Transform(ent.Owner);
+            foreach (var neighbor in _lookup.GetEntitiesInRange(xform.Coordinates, 1.5f))
+            {
+                if (neighbor == ent.Owner || !HasComp<InventoryComponent>(neighbor))
+                    continue;
+
+                RaiseLocalEvent(neighbor, new SpilledOnEvent(ent.Owner, tempSolution));
+
+                if (tempSolution.Volume <= 0)
+                    break;
+            }
+            // Ganimed-Port-End
+
             _puddle.TrySpillAt(ent.Owner, tempSolution, out _, sound: false);
 
             tempSolution.RemoveAllSolution();
@@ -620,6 +657,23 @@ public abstract partial class SharedBloodstreamSystem : EntitySystem
             SolutionContainer.RemoveAllSolution(ent.Comp.TemporarySolution.Value);
         }
 
+
+        // Ganimed-Port-Start: кровь пачкает одежду (funky-station/forky-station#107)
+        var stainEv = new SpilledOnEvent(ent.Owner, tempSol);
+        RaiseLocalEvent(ent.Owner, stainEv);
+
+        var xform = Transform(ent.Owner);
+        foreach (var neighbor in _lookup.GetEntitiesInRange(xform.Coordinates, 1.5f))
+        {
+            if (neighbor == ent.Owner || !HasComp<InventoryComponent>(neighbor))
+                continue;
+
+            RaiseLocalEvent(neighbor, new SpilledOnEvent(ent.Owner, tempSol));
+
+            if (tempSol.Volume <= 0)
+                break;
+        }
+        // Ganimed-Port-End
         _puddle.TrySpillAt(ent, tempSol, out _);
     }
 

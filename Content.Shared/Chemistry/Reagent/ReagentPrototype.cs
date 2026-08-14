@@ -194,6 +194,21 @@ namespace Content.Shared.Chemistry.Reagent
         /// <summary>
         /// Shitmed - Should this reagent only work on unconscious entities?
         /// </summary>
+
+        // Ganimed-Port-Start: реагентные пожары (funky-station/forky-station#127, автор YaraaraY, MIT)
+        /// <summary>
+        /// How flammable this reagent is. Higher values make it catch fire more easily and burn hotter.
+        /// </summary>
+        [DataField]
+        public int Flammability;
+
+        /// <summary>
+        /// If true, this reagent acts as its own oxidizer and can burn in vacuums or oxygen-deprived environments.
+        /// </summary>
+        [DataField]
+        public bool SelfOxidizing;
+        // Ganimed-Port-End
+
         [DataField]
         public bool? WorksOnUnconscious;
 

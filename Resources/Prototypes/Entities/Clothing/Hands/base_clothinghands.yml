@@ -18,11 +18,15 @@
   - type: Item
     size: Small
     storedRotation: -90
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 15
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 15
+      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
@@ -39,6 +43,17 @@
         Blunt: 0.95
         Slash: 0.95
         Piercing: 0.95
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      gloves:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: gloveblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: glovebloodicon
+  # Ganimed-Port-End
 
 - type: entity
   abstract: true

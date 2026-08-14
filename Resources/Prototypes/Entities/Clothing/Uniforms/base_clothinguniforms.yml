@@ -35,17 +35,32 @@
       Cloth: 150
   - type: Edible
     requiresSpecialDigestion: true
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 30
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 30
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 30
+      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
     - Recyclable
     - WhitelistChameleon
     - Skirt # Goobstation
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      jumpsuit:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: uniformblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: uniformbloodicon
+  # Ganimed-Port-End
 
 - type: entity
   abstract: true

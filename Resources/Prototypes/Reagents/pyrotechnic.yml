@@ -15,6 +15,8 @@
 
 - type: reagent
   id: Thermite
+  flammability: 5 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
+  selfOxidizing: true # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-thermite
   parent: BasePyrotechnic
   desc: reagent-desc-thermite
@@ -43,6 +45,8 @@
 
 - type: reagent
   id: Napalm
+  flammability: 4 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
+  selfOxidizing: true # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-napalm
   parent: BasePyrotechnic
   desc: reagent-desc-napalm
@@ -74,6 +78,8 @@
 
 - type: reagent
   id: Phlogiston
+  flammability: 5 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
+  selfOxidizing: true # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-phlogiston
   parent: BasePyrotechnic
   desc: reagent-desc-phlogiston
@@ -105,6 +111,8 @@
 
 - type: reagent
   id: ChlorineTrifluoride
+  flammability: 5 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
+  selfOxidizing: true # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-chlorine-trifluoride
   parent: BasePyrotechnic
   desc: reagent-desc-chlorine-trifluoride
@@ -167,6 +175,7 @@
 
 - type: reagent
   id: WeldingFuel
+  flammability: 2 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-welding-fuel
   parent: BasePyrotechnic
   desc: reagent-desc-welding-fuel

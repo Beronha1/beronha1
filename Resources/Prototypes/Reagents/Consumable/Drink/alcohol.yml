@@ -2,6 +2,7 @@
 
 - type: reagent
   id: Absinthe
+  flammability: 2 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-absinthe
   parent: BaseAlcohol
   desc: reagent-desc-absinthe
@@ -77,6 +78,7 @@
 
 - type: reagent
   id: BlueCuracao
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-blue-curacao
   parent: BaseAlcohol
   desc: reagent-desc-blue-curacao
@@ -97,6 +99,7 @@
 
 - type: reagent
   id: Cognac
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-cognac
   parent: BaseAlcohol
   desc: reagent-desc-cognac
@@ -118,6 +121,7 @@
 
 - type: reagent
   id: DeadRum
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-dead-rum
   parent: BaseAlcohol
   desc: reagent-desc-dead-rum
@@ -138,6 +142,7 @@
 
 - type: reagent
   id: Ethanol
+  flammability: 2 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-ethanol
   parent: BaseAlcohol
   desc: reagent-desc-ethanol
@@ -217,6 +222,7 @@
 
 - type: reagent
   id: Gin
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-gin
   parent: BaseAlcohol
   desc: reagent-desc-gin
@@ -285,6 +291,7 @@
 
 - type: reagent
   id: PoisonWine
+  flammability: 3 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-poison-wine
   parent: BaseAlcohol
   desc: reagent-desc-poison-wine
@@ -312,6 +319,7 @@
 
 - type: reagent
   id: Rum
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-rum
   parent: BaseAlcohol
   desc: reagent-desc-rum
@@ -333,6 +341,7 @@
 
 - type: reagent
   id: Sake
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-sake
   parent: BaseAlcohol
   desc: reagent-desc-sake
@@ -353,6 +362,7 @@
 
 - type: reagent
   id: Tequila
+  flammability: 1 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-tequila
   parent: BaseAlcohol
   desc: reagent-desc-tequila
@@ -389,6 +399,7 @@
 
 - type: reagent
   id: Vodka
+  flammability: 2 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-vodka
   parent: BaseAlcohol
   desc: reagent-desc-vodka
@@ -410,6 +421,7 @@
 
 - type: reagent
   id: Whiskey
+  flammability: 2 # Ganimed-Port: реагентные пожары (funky-station/forky-station#127)
   name: reagent-name-whiskey
   parent: BaseAlcohol
   desc: reagent-desc-whiskey

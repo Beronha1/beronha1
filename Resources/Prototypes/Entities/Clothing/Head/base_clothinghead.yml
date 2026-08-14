@@ -17,16 +17,31 @@
     storedRotation: -90
   - type: Edible
     requiresSpecialDigestion: true
-  - type: Solution
-    solution:
-      reagents:
-      - ReagentId: Fiber
-        Quantity: 15
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 15
+        reagents:
+        - ReagentId: Fiber
+          Quantity: 15
+      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
+        maxVol: 5
   - type: Tag
     tags:
     - ClothMade
     - WhitelistChameleon
     - DroneUsable # Goobstation
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
+  # Ganimed-Port-End
 
 - type: entity
   abstract: true
@@ -146,6 +161,9 @@
     - HeadTop
     - HeadSide
     - FacialHair
+  # Ganimed-Port: стайны (funky-station/forky-station#107)
+  - type: StainBlocker
+    slots: [MASK]
 
 - type: entity
   abstract: true
@@ -214,6 +232,19 @@
     - HeadSide
     - FacialHair
   - type: FaceHuggerBlocker # Goobstation
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
+  - type: StainBlocker
+    slots: [MASK]
+  # Ganimed-Port-End
 
 - type: entity
   abstract: true
@@ -304,3 +335,18 @@
     - Hair
     - HeadTop
     - HeadSide
+  # Ganimed-Port-Start: стайны (funky-station/forky-station#107)
+  - type: Appearance
+  - type: Stainable
+    clothingVisuals:
+      head:
+      - sprite: _Funkystation/Effects/blood.rsi
+        state: helmetblood
+    iconVisuals:
+    - sprite: _Funkystation/Effects/blood.rsi
+      state: helmetbloodicon
+  - type: SolutionContainerManager
+    solutions:
+      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
+        maxVol: 5
+  # Ganimed-Port-End

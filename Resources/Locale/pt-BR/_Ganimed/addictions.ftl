@@ -1,0 +1,30 @@
+trait-alcoholic-addiction-name = Dependência de álcool
+trait-alcoholic-addiction-desc = Você não consegue viver sem beber. A abstinência piora com o tempo e pode ser tratada com abstinência prolongada ou detoxina.
+trait-nicotine-addiction-name = Dependência de nicotina
+trait-nicotine-addiction-desc = Seu corpo exige nicotina. A abstinência piora com o tempo e pode ser tratada com abstinência prolongada ou detoxina.
+trait-drug-addiction-name = Dependência de drogas
+trait-drug-addiction-desc = Você depende de narcóticos. A abstinência piora com o tempo e pode ser tratada com abstinência prolongada ou detoxina.
+
+addiction-begin-alcohol = Você percebe que está ficando dependente de álcool...
+addiction-begin-nicotine = Você percebe que está ficando dependente de nicotina...
+addiction-begin-drug = Você percebe que está ficando dependente de narcóticos...
+addiction-dose-alcohol = O calor se espalha pelo corpo. A abstinência recua.
+addiction-dose-nicotine = A mente clareia e suas mãos param de tremer.
+addiction-dose-drug = A dose bate. A abstinência recua.
+addiction-withdrawal-alcohol-0 = Suas mãos tremem um pouco. Uma bebida ajudaria...
+addiction-withdrawal-alcohol-1 = Tudo irrita você e as palavras se confundem. Você precisa beber.
+addiction-withdrawal-alcohol-2 = Seu corpo dói e os pensamentos ficam turvos. Você precisa de uma dose agora.
+addiction-withdrawal-nicotine-0 = Você quer muito fumar.
+addiction-withdrawal-nicotine-1 = Seus dedos coçam e seu humor despenca. Você precisa de um cigarro.
+addiction-withdrawal-nicotine-2 = Sua cabeça lateja e suas mãos tremem. Você precisa de um cigarro agora.
+addiction-withdrawal-drug-0 = O mundo parece sem graça. Você precisa de uma dose.
+addiction-withdrawal-drug-1 = A ansiedade cresce e suas palavras se confundem. Você precisa de narcóticos.
+addiction-withdrawal-drug-2 = As alucinações se aproximam e suas pernas fraquejam. Você precisa de uma dose agora.
+addiction-cured-alcohol = Sua dependência de álcool passou.
+addiction-cured-nicotine = Sua dependência de nicotina passou.
+addiction-cured-drug = Sua dependência de drogas passou.
+
+reagent-name-ganimed-detoxin = Detoxina
+reagent-desc-ganimed-detoxin = Alivia a abstinência e trata gradualmente a dependência de álcool, nicotina e drogas.
+entity-effect-guidebook-adjust-addiction-level = Reduz a dependência em {$amount} por ciclo de metabolismo.
+guide-entry-addictions = Dependências

@@ -1,0 +1,30 @@
+trait-alcoholic-addiction-name = Alcohol addiction
+trait-alcoholic-addiction-desc = You cannot live without a drink. Withdrawal worsens with time and can be treated through abstinence or detoxin.
+trait-nicotine-addiction-name = Nicotine addiction
+trait-nicotine-addiction-desc = Your body demands nicotine. Withdrawal worsens with time and can be treated through abstinence or detoxin.
+trait-drug-addiction-name = Drug addiction
+trait-drug-addiction-desc = You are dependent on narcotics. Withdrawal worsens with time and can be treated through abstinence or detoxin.
+
+addiction-begin-alcohol = You notice that you are becoming dependent on alcohol...
+addiction-begin-nicotine = You notice that you are becoming dependent on nicotine...
+addiction-begin-drug = You notice that you are becoming dependent on narcotics...
+addiction-dose-alcohol = Warmth spreads through your body. The withdrawal recedes.
+addiction-dose-nicotine = Your mind clears and your hands stop shaking.
+addiction-dose-drug = The dose hits. The withdrawal recedes.
+addiction-withdrawal-alcohol-0 = Your hands shake slightly. A drink would help...
+addiction-withdrawal-alcohol-1 = Everything irritates you and your words get tangled. You need a drink.
+addiction-withdrawal-alcohol-2 = Your body aches and your thoughts blur. You need a dose now.
+addiction-withdrawal-nicotine-0 = You really want to smoke.
+addiction-withdrawal-nicotine-1 = Your fingers itch and your mood sinks. You need a cigarette.
+addiction-withdrawal-nicotine-2 = Your head pounds and your hands shake. You need a cigarette now.
+addiction-withdrawal-drug-0 = The world feels dull. You need a dose.
+addiction-withdrawal-drug-1 = Anxiety rises and your words get tangled. You need narcotics.
+addiction-withdrawal-drug-2 = Hallucinations close in and your legs buckle. You need a dose now.
+addiction-cured-alcohol = Your alcohol addiction has subsided.
+addiction-cured-nicotine = Your nicotine addiction has subsided.
+addiction-cured-drug = Your drug addiction has subsided.
+
+reagent-name-ganimed-detoxin = Detoxin
+reagent-desc-ganimed-detoxin = Relieves withdrawal and gradually treats alcohol, nicotine, and drug addiction.
+entity-effect-guidebook-adjust-addiction-level = Reduces addiction by {$amount} per metabolism cycle.
+guide-entry-addictions = Addictions

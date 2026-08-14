@@ -1,5 +1,5 @@
 using Content.Client._ES.Core;
-using Content.Client._ES.SecretIdentity;
+using Content.Client._ES.Masks;
 using Content.Client.Roles;
 using Content.Shared._ES.Auditions.Components;
 using Content.Shared.Mind;
@@ -17,7 +17,7 @@ public sealed partial class ESObservablePlayerButton : ContainerButton
     [Dependency] private IEntityManager _entityManager = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
     private readonly JobSystem _job;
-    private readonly ESSecretIdentitySystem _secretIdentity;
+    private readonly ESMaskSystem _mask;
     private readonly SpriteSystem _sprite;
 
     public ESObservablePlayerButton()
@@ -26,7 +26,7 @@ public sealed partial class ESObservablePlayerButton : ContainerButton
         IoCManager.InjectDependencies(this);
 
         _job = _entityManager.System<JobSystem>();
-        _secretIdentity = _entityManager.System<ESSecretIdentitySystem>();
+        _mask = _entityManager.System<ESMaskSystem>();
         _sprite = _entityManager.System<SpriteSystem>();
 
         ToggleMode = true;
@@ -45,8 +45,8 @@ public sealed partial class ESObservablePlayerButton : ContainerButton
     {
         var (uid, mind, character) = ent;
 
-        var secretIdentity = _secretIdentity.GetSecretIdentityOrNull((uid, mind));
-        var organization = _secretIdentity.GetOrganizationOrNull((uid, mind));
+        var secretIdentity = _mask.GetMaskOrNull((uid, mind));
+        var organization = _mask.GetTroupeOrNull((uid, mind));
 
         NameLabel.UnsafeSetMarkup(Loc.GetString("es-observe-menu-label-fmt", ("text", character.Name)));
 

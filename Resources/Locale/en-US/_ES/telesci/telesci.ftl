@@ -11,4 +11,4 @@ es-ui-portalgen-console-label-status-charging = [font size=18][color=yellow][bol
 es-ui-portalgen-console-label-status-ready = [font size=18][color=lime][bold]Ready[/bold][/color][/font]
 es-ui-portalgen-console-label-charge-header = [bold]Charge:[/bold]
 es-ui-portalgen-console-label-charge-fmt = [color=yellow]{$charge}%[/color]
-es-ui-portalgen-console-label-research-header = [bold]Resarch[/bold]
+es-ui-portalgen-console-label-research-header = [bold]Research[/bold]

@@ -58,6 +58,12 @@ namespace Content.Server.Lathe
         /// </summary>
         private readonly List<GasMixture> _environments = new();
 
+        /// <summary>
+        /// Mono - set while a looped batch is being charged, so the material change it causes
+        /// does not re-enter <see cref="TryStartProducing"/>.
+        /// </summary>
+        private bool _settlingQueue;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -72,6 +78,10 @@ namespace Content.Server.Lathe
             SubscribeLocalEvent<LatheComponent, LatheDeleteRequestMessage>(OnLatheDeleteRequestMessage);
             SubscribeLocalEvent<LatheComponent, LatheMoveRequestMessage>(OnLatheMoveRequestMessage);
             SubscribeLocalEvent<LatheComponent, LatheAbortFabricationMessage>(OnLatheAbortFabricationMessage);
+            // <Mono>
+            SubscribeLocalEvent<LatheComponent, LatheSetLoopingMessage>(OnLatheSetLoopingMessage);
+            SubscribeLocalEvent<LatheComponent, LatheSetSkipMessage>(OnLatheSetSkipMessage);
+            // </Mono>
 
             SubscribeLocalEvent<LatheComponent, BeforeActivatableUIOpenEvent>((u, c, _) => UpdateUserInterfaceState(u, c));
             SubscribeLocalEvent<LatheComponent, MaterialAmountChangedEvent>(OnMaterialAmountChanged);
@@ -180,7 +190,9 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in GetAdjustedAmount(component, recipe))
                 _materialStorage.TryChangeMaterialAmount(uid, mat, -amount * quantity);
 
-            if (component.Queue.Last is { } node && node.ValueRef.Recipe == recipe.ID)
+            // Mono - never merge into an unpaid looped batch: it settles for its whole size later,
+            // which would charge these materials a second time.
+            if (component.Queue.Last is { } node && node.ValueRef.Recipe == recipe.ID && node.ValueRef.Paid)
                 node.ValueRef.ItemsRequested += quantity;
             else
                 component.Queue.AddLast(new LatheRecipeBatch(recipe.ID, 0, quantity));
@@ -201,10 +213,21 @@ namespace Content.Server.Lathe
                 return false;
             // </Trauma>
 
+            // <Mono> settle any looped batch sitting at the head before it can print
+            if (!TrySettleQueueHead(uid, component))
+                return false;
+            // </Mono>
+
             var batch = component.Queue.First();
             batch.ItemsPrinted++;
             if (batch.ItemsPrinted >= batch.ItemsRequested || batch.ItemsPrinted < 0) // Rollover sanity check
+            {
                 component.Queue.RemoveFirst();
+                // <Mono> put the batch back at the end so the lathe keeps churning it out
+                if (component.Loop)
+                    component.Queue.AddLast(new LatheRecipeBatch(batch.Recipe, 0, batch.ItemsRequested, false));
+                // </Mono>
+            }
             var recipe = ProtoMan.Index(batch.Recipe);
 
             var time = _reagentSpeed.ApplySpeed(uid, recipe.CompleteTime) * component.TimeMultiplier;
@@ -288,10 +311,13 @@ namespace Content.Server.Lathe
                 return;
 
             var producing = component.CurrentRecipe;
-            if (producing == null && component.Queue.First is { } node)
+            // Mono - node.Value.Paid: a looped batch waiting on materials is parked,
+            // not printing. Reporting it here leaves the "fabricating" bar lit forever
+            // and the lathe looks like it is producing out of thin air.
+            if (producing == null && component.Queue.First is { } node && node.Value.Paid)
                 producing = node.Value.Recipe;
 
-            var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue.ToArray(), producing);
+            var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue.ToArray(), producing, component.Loop, component.SkipBad); // Mono - loop, skip
             _uiSys.SetUiState(uid, LatheUiKey.Key, state);
         }
 
@@ -339,6 +365,14 @@ namespace Content.Server.Lathe
         private void OnMaterialAmountChanged(EntityUid uid, LatheComponent component, ref MaterialAmountChangedEvent args)
         {
             UpdateUserInterfaceState(uid, component);
+
+            // <Mono> a loop parked on an empty stack picks back up once someone tops the lathe off
+            if (_settlingQueue || component.CurrentRecipe != null)
+                return;
+
+            if (component.Queue.First is { } head && !head.Value.Paid)
+                TryStartProducing(uid, component);
+            // </Mono>
         }
 
         /// <summary>
@@ -425,6 +459,9 @@ namespace Content.Server.Lathe
         /// </summary>
         private void RefundBatch(EntityUid uid, LatheComponent lathe, LatheRecipeBatch batch)
         {
+            if (!batch.Paid) // Mono - a looped batch that never paid has nothing to give back
+                return;
+
             var delta = batch.ItemsRequested - batch.ItemsPrinted;
 
             ProtoMan.Resolve(batch.Recipe, out var recipe);
@@ -432,6 +469,58 @@ namespace Content.Server.Lathe
             foreach (var (mat, amount) in GetAdjustedAmount(lathe, recipe!))
                 _materialStorage.TryChangeMaterialAmount(uid, mat, amount * delta);
         }
+
+        // <Mono>
+        /// <summary>
+        /// Charges the batch at the head of the queue if it has not paid for its materials yet.
+        /// Batches put back by <see cref="LatheComponent.Loop"/> arrive unpaid: if the lathe cannot
+        /// afford one it either holds the queue there or, with <see cref="LatheComponent.SkipBad"/>
+        /// on, drops it and settles the batch behind it.
+        /// </summary>
+        /// <returns>False when the queue has nothing printable at its head right now.</returns>
+        private bool TrySettleQueueHead(EntityUid uid, LatheComponent lathe)
+        {
+            var skipped = false;
+
+            // Paying raises MaterialAmountChangedEvent, which would otherwise come straight
+            // back here and start the same batch twice.
+            _settlingQueue = true;
+            try
+            {
+                while (lathe.Queue.First is { } node)
+                {
+                    var batch = node.Value;
+                    if (batch.Paid)
+                        break;
+
+                    var recipe = ProtoMan.Index(batch.Recipe);
+                    if (CanProduce(uid, recipe, batch.ItemsRequested, lathe, GetAlertLevel(uid))) // Trauma - alertLevel
+                    {
+                        batch.Paid = true;
+                        foreach (var (mat, amount) in GetAdjustedAmount(lathe, recipe))
+                            _materialStorage.TryChangeMaterialAmount(uid, mat, -amount * batch.ItemsRequested);
+
+                        break;
+                    }
+
+                    if (!lathe.SkipBad)
+                        break;
+
+                    lathe.Queue.RemoveFirst();
+                    skipped = true;
+                }
+            }
+            finally
+            {
+                _settlingQueue = false;
+            }
+
+            if (skipped)
+                UpdateUserInterfaceState(uid, lathe);
+
+            return lathe.Queue.First is { } head && head.Value.Paid;
+        }
+        // </Mono>
 
         public void AbortProduction(EntityUid uid, LatheComponent? component = null)
         {
@@ -444,7 +533,9 @@ namespace Content.Server.Lathe
                 {
                     // Batch abandoned while printing last item, need to create a one-item batch
                     var batch = component.Queue.First();
-                    if (batch.Recipe != component.CurrentRecipe)
+                    // Mono - !batch.Paid: a looped batch has not covered the in-flight item,
+                    // so that item needs a batch of its own or its materials are gone for good.
+                    if (batch.Recipe != component.CurrentRecipe || !batch.Paid)
                     {
                         var newBatch = new LatheRecipeBatch(component.CurrentRecipe.Value, 0, 1);
                         component.Queue.AddFirst(newBatch);
@@ -488,6 +579,22 @@ namespace Content.Server.Lathe
         {
             UpdateUserInterfaceState(uid, component);
         }
+
+        // <Mono>
+        private void OnLatheSetLoopingMessage(EntityUid uid, LatheComponent component, LatheSetLoopingMessage args)
+        {
+            component.Loop = args.ShouldLoop;
+            UpdateUserInterfaceState(uid, component);
+        }
+
+        private void OnLatheSetSkipMessage(EntityUid uid, LatheComponent component, LatheSetSkipMessage args)
+        {
+            component.SkipBad = args.ShouldSkip;
+            // A queue that was waiting on materials can move again as soon as skipping is on.
+            TryStartProducing(uid, component);
+            UpdateUserInterfaceState(uid, component);
+        }
+        // </Mono>
 
         /// <summary>
         /// Removes a batch from the batch queue by index.

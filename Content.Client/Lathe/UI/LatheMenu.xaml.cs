@@ -33,6 +33,10 @@ public sealed partial class LatheMenu : FancyWindow
     public event Action<int>? QueueMoveUpAction;
     public event Action<int>? QueueMoveDownAction;
     public event Action? DeleteFabricatingAction;
+    // <Mono>
+    public event Action<bool>? OnLoopCheckboxPressed;
+    public event Action<bool>? OnSkipCheckboxPressed;
+    // </Mono>
 
     public List<ProtoId<LatheRecipePrototype>> Recipes = new();
 
@@ -74,7 +78,24 @@ public sealed partial class LatheMenu : FancyWindow
         ServerListButton.OnPressed += a => OnServerListButtonPressed?.Invoke(a);
 
         DeleteFabricating.OnPressed += _ => DeleteFabricatingAction?.Invoke();
+
+        // <Mono>
+        LoopCheckbox.OnPressed += _ => OnLoopCheckboxPressed?.Invoke(LoopCheckbox.Pressed);
+        SkipCheckbox.OnPressed += _ => OnSkipCheckboxPressed?.Invoke(SkipCheckbox.Pressed);
+        // </Mono>
     }
+
+    // <Mono>
+    public void SetLooping(bool loop)
+    {
+        LoopCheckbox.Pressed = loop;
+    }
+
+    public void SetSkipping(bool skip)
+    {
+        SkipCheckbox.Pressed = skip;
+    }
+    // </Mono>
 
     public void SetEntity(EntityUid uid)
     {

@@ -101,7 +101,8 @@
   - extended
   - shittersafari
   name: extended-title
-  showInVote: false #2boring2vote
+  showInVote: true #traitor não inicia com menos de 5 jogadores
+  maxPlayers: 5
   description: extended-description
   rules:
   - BasicStationEventScheduler

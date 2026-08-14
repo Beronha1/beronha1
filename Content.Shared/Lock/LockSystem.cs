@@ -6,6 +6,7 @@ using Content.Shared.Examine;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
+using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.Storage;
 using Content.Shared.Storage.Components;
@@ -144,6 +145,9 @@ public sealed partial class LockSystem : EntitySystem
         if (!CanToggleLock(uid, user, quiet: false))
             return false;
 
+        if (lockComp.MindShieldLock && !HasMindshield(uid, user, false))
+            return false;
+
         if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
             return false;
 
@@ -241,6 +245,9 @@ public sealed partial class LockSystem : EntitySystem
             return false;
 
         if (!CanToggleLock(uid, user, quiet: false))
+            return false;
+
+        if (lockComp.MindShieldLock && !HasMindshield(uid, user, false))
             return false;
 
         if (lockComp.UseAccess && !HasUserAccess(uid, user, false))
@@ -354,6 +361,17 @@ public sealed partial class LockSystem : EntitySystem
             var denyReason = accessEv.DenyReason ?? Loc.GetString(_defaultDenyReason);
             _sharedPopupSystem.PopupEntity(denyReason, ent, user);
         }
+
+        return false;
+    }
+
+    private bool HasMindshield(EntityUid uid, EntityUid user, bool quiet = true)
+    {
+        if (HasComp<MindShieldComponent>(user))
+            return true;
+
+        if (!quiet)
+            _sharedPopupSystem.PopupEntity(Loc.GetString(_defaultDenyReason), uid, user);
 
         return false;
     }

@@ -38,6 +38,12 @@ public sealed partial class LockComponent : Component
     public bool LockOnClick;
 
     /// <summary>
+    /// Whether a mindshield is required to operate this lock.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool MindShieldLock;
+
+    /// <summary>
     /// Whether or not the lock is unlocked by simply clicking.
     /// </summary>
     [DataField, AutoNetworkedField]
@@ -119,6 +125,18 @@ public sealed partial class LockComponent : Component
     [DataField]
     [AutoNetworkedField]
     public TimeSpan UnlockTime;
+
+    /// <summary>
+    /// Whether the lock automatically unlocks when picked up.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool AutoUnlock = true;
+
+    /// <summary>
+    /// Whether the lock automatically locks when dropped.
+    /// </summary>
+    [DataField, AutoNetworkedField]
+    public bool AutoLock = true;
 
     /// <summary>
     /// Whether this lock can be locked again after being unlocked.

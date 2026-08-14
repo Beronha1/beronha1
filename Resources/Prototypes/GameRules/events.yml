@@ -18,6 +18,7 @@
     - id: KudzuGrowth
     - id: MassHallucinations
     - id: MouseMigration
+    - id: SyndicateDeadDrop # Starlight
     - id: PowerGridCheck
     - id: RandomSentience
     # <Trauma> - moved shit to basic antag

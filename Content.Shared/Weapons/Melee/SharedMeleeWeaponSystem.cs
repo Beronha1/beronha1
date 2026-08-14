@@ -11,6 +11,7 @@ using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Numerics;
+using Content.Shared._ES.Camera;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Actions.Events;
 using Content.Shared.Administration.Components;
@@ -76,6 +77,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
     [Dependency] private SharedStaminaSystem _stamina = default!;
     [Dependency] private DamageExamineSystem _damageExamine = default!;
     [Dependency] private SharedEntityEffectsSystem _effects = default!;
+    [Dependency] private ESScreenshakeSystem _screenshake = default!;
 
     [Dependency] private EntityQuery<DamageableComponent> _damageQuery = default!;
 
@@ -660,7 +662,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         // If the user is using a long-range weapon, this probably shouldn't be happening? But I'll interpret melee as a
         // somewhat messy scuffle. See also, heavy attacks.
-        Interaction.DoContactInteraction(user, target);
+        Interaction.DoContactInteraction(user, target, weapon, interactionParticles: false);
 
         // For stuff that cares about it being attacked.
         var attackedEvent = new AttackedEvent(meleeUid, user, targetXform.Coordinates);
@@ -701,6 +703,14 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         if (damageResult.GetTotal() > FixedPoint2.Zero && !TerminatingOrDeleted(target.Value))
         {
+            var attackerShake = new ESScreenshakeParameters
+                { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
+            var targetShake = new ESScreenshakeParameters
+                { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
+            _screenshake.Screenshake(user, null, attackerShake);
+            foreach (var shakeTarget in targets)
+                _screenshake.Screenshake(shakeTarget, targetShake, null);
+
             DoDamageEffect(targets, user, targetXform);
         }
     }
@@ -817,7 +827,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
             // If the user is using a long-range weapon, this probably shouldn't be happening? But I'll interpret melee as a
             // somewhat messy scuffle. See also, light attacks.
-            Interaction.DoContactInteraction(user, target);
+            Interaction.DoContactInteraction(user, target, weapon, interactionParticles: false);
         }
 
         var appliedDamage = new DamageSpecifier();
@@ -888,6 +898,14 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         if (appliedDamage.GetTotal() > FixedPoint2.Zero && targets.Count > 0)
         {
+            var attackerShake = new ESScreenshakeParameters
+                { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
+            var targetShake = new ESScreenshakeParameters
+                { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
+            _screenshake.Screenshake(user, null, attackerShake);
+            foreach (var shakeTarget in targets)
+                _screenshake.Screenshake(shakeTarget, targetShake, null);
+
             DoDamageEffect(targets, user, Transform(targets[0]));
         }
 

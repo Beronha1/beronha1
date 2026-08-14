@@ -52,7 +52,11 @@ public sealed partial class MegafaunaDirectorSystem : EntitySystem
         ent.Comp.EncounterMap = Transform(ent).MapID;
         if (!_thresholds.TryGetThresholdForState(ent, MobState.Dead, out var threshold))
         {
-            Log.Error($"Megafauna director attached to {ToPrettyString(ent)} without a dead mob threshold.");
+            // Components are instantiated without their prototype dependencies by the
+            // integration tests. Keep reporting malformed prototypes while allowing
+            // isolated component lifecycle checks to run cleanly.
+            if (MetaData(ent).EntityPrototype != null)
+                Log.Error($"Megafauna director attached to {ToPrettyString(ent)} without a dead mob threshold.");
             return;
         }
 

@@ -1,18 +1,22 @@
+using Content.Server._ES.Announcements;
 using Content.Server._ES.Radstorm.Components;
 using Content.Server.Chat.Systems;
+using Content.Shared._ES.Radstorm.Components;
 using Content.Shared.Power;
 
 namespace Content.Server._ES.Radstorm;
 
-public sealed class ESRadstormModifierMachineSystem : EntitySystem
+public sealed partial class ESRadstormModifierMachineSystem : EntitySystem
 {
-    [Dependency] private readonly ChatSystem _chat = default!;
-    [Dependency] private readonly ESRadstormRoundEndRuleSystem _radstormRoundEndRule = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private ESAnnouncementSystem _chat = default!;
+    [Dependency] private ESRadstormRoundEndRuleSystem _radstormRoundEndRule = default!;
 
     /// <inheritdoc/>
     public override void Initialize()
     {
         SubscribeLocalEvent<ESRadstormModifierMachineComponent, PowerChangedEvent>(OnPowerChanged);
+        SubscribeLocalEvent<ESRadstormModifierMachineComponent, ESThrusterEngineFuelStateChangedEvent>(OnFuelStateChanged);
         SubscribeLocalEvent<GetRadstormSpeedMultiplierEvent>(OnGetMultiplier);
     }
 
@@ -21,13 +25,18 @@ public sealed class ESRadstormModifierMachineSystem : EntitySystem
         SetEnabled(ent.AsNullable(), !args.Powered);
     }
 
+    private void OnFuelStateChanged(Entity<ESRadstormModifierMachineComponent> ent, ref ESThrusterEngineFuelStateChangedEvent args)
+    {
+        SetEnabled(ent.AsNullable(), !args.HasFuel);
+    }
+
     private void OnGetMultiplier(ref GetRadstormSpeedMultiplierEvent ev)
     {
         var query = EntityQueryEnumerator<ESRadstormModifierMachineComponent>();
         while (query.MoveNext(out var comp))
         {
             if (!comp.Enabled)
-                return;
+                continue;
 
             ev.Speed += comp.Modifier;
         }
@@ -42,14 +51,18 @@ public sealed class ESRadstormModifierMachineSystem : EntitySystem
             return;
 
         ent.Comp.Enabled = value;
+        _appearance.SetData(ent, ESRadstormModifierMachineVisuals.Enabled, value);
 
-        var minutes = (int) Math.Round(_radstormRoundEndRule.GetRadstormEstimatedArrivalTime().TotalMinutes);
+        var newTime = _radstormRoundEndRule.GetRadstormEstimatedArrivalTime();
+        var minutes = (int) Math.Round(newTime.TotalMinutes);
         var msg = Loc.GetString(ent.Comp.Enabled ? ent.Comp.EnableAnnouncement : ent.Comp.DisableAnnouncement,
             ("minutes", (minutes)));
-        _chat.DispatchGlobalAnnouncement(
-            msg,
+        var sound = ent.Comp.Enabled ? ent.Comp.AnnouncementSoundEnabled : ent.Comp.AnnouncementSoundDisabled;
+        _chat.DispatchRoundAnnouncement(msg,
             Loc.GetString("es-radstorm-announcer"),
-            announcementSound: ent.Comp.AnnouncementSound,
-            colorOverride: Color.LightSeaGreen);
+            announcementSound: sound,
+            colorOverride: Color.LightSeaGreen,
+            important: ent.Comp.Enabled);
+        _radstormRoundEndRule.UpdateScreenTimers(Single<ESRadstormRoundEndRuleComponent>(), newTime);
     }
 }

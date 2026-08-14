@@ -32,12 +32,6 @@
 
 - type: construction
   parent: BaseUtilityWallmount
-  id: WallmountTelescreen
-  graph: WallmountTelescreen
-  targetNode: Telescreen
-
-- type: construction
-  parent: BaseUtilityWallmount
   id: StationMap
   graph: StationMap
   targetNode: station_map

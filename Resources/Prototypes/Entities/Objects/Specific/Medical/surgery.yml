@@ -84,6 +84,7 @@
     endSound:
       path: /Audio/_Shitmed/Medical/Surgery/scalpel2.ogg
   - type: Scalpel
+  - type: ESAutopsyTool
   - type: Tag
     tags:
     - SurgeryTool

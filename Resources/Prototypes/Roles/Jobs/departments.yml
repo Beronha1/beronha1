@@ -115,6 +115,7 @@
   # </Trauma>
   - Chemist
   - ChiefMedicalOfficer
+  - ESCoroner # ES autopsies
   - MedicalDoctor
   - MedicalIntern
   - Psychologist

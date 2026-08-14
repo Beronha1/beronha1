@@ -35,3 +35,6 @@
     sprite: Structures/Furniture/Tables/optable.rsi
     state: operating_table
   - type: AmbientMusicMarkerMedical
+  - type: ESAutopsyTable
+  - type: Destructible
+    thresholds: [] # ES: the autopsy table must survive the procedure.

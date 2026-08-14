@@ -656,6 +656,9 @@ namespace Content.Server.Ghost
             if (playerEntity != null)
                 _adminLog.Add(LogType.Mind, $"{ToPrettyString(playerEntity.Value):player} ghosted{(!canReturn ? " (non-returnable)" : "")}");
 
+            // ES: autopsy reports use the mind's round-relative time of death.
+            mind.TimeOfDeath = _gameTiming.CurTime;
+
             var ghost = SpawnGhost((mindId, mind), position, canReturn);
 
             if (ghost == null)

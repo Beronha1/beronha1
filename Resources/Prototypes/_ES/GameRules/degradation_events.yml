@@ -1,0 +1,83 @@
+- type: entity
+  parent: BaseGameRule
+  id: ESBaseDegradationEvent
+  name: Unnamed Degradation Event
+  abstract: true
+  components:
+  - type: ESDegradationEvent
+  - type: StationEvent
+    earliestStart: 0
+    reoccurrenceDelay: 0
+    occursDuringRoundEnd: false
+    weight: 10
+
+- type: entityTable
+  id: ESDegradationEvents
+  table:
+    all:
+    - id: ESDegradationEventAirlocks
+    - id: ESDegradationEventCommunicationsConsole
+    - id: ESDegradationEventCriminalRecords
+    - id: ESDegradationEventTelecoms
+    - id: ESDegradationEventCrewMonitoring
+    - id: ESDegradationEventIDCardComputer
+
+# Event Prototypes
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventAirlocks
+  name: Airlock Bolt Breakage
+  components:
+  - type: ESDegradationEvent
+    count: 1, 5
+    component: Airlock
+    blacklist:
+      components:
+      - Docking
+  - type: StationEvent
+    weight: 50
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventCommunicationsConsole
+  name: Distorted Announcement
+  components:
+  - type: ESDegradationEvent
+    component: CommunicationsConsole
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventCriminalRecords
+  name: Hacked Criminal Records
+  components:
+  - type: ESDegradationEvent
+    component: CriminalRecordsConsole
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventTelecoms
+  name: Telecom Ghosts
+  components:
+  - type: ESDegradationEvent
+    component: TelecomServer
+    degradeImmediately: true # Doesn't react to anything
+  - type: StationEvent
+    weight: 20
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventCrewMonitoring
+  name: Sensor Manipulation
+  components:
+  - type: ESDegradationEvent
+    component: CrewMonitoringServer
+    degradeImmediately: true # Doesn't react to anything
+
+- type: entity
+  parent: ESBaseDegradationEvent
+  id: ESDegradationEventIDCardComputer
+  name: ID Scramble
+  components:
+  - type: ESDegradationEvent
+    component: IdCardConsole

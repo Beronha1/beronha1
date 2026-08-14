@@ -89,15 +89,35 @@
   - type: Aggressive
     forgiveRange: 20.0
   - type: MegafaunaDirector
+  - type: MegafaunaHarvestable
+    stages:
+    - name: megafauna-harvest-stage-miner-servos
+      toolQualities: [ Screwing ]
+      duration: 10
+      loot: !type:AllSelector
+        children:
+        - id: MaterialServoTier4_1
+          rolls: 4
+        - id: MaterialHighDensityCircuit1
+          rolls: 3
+    - name: megafauna-harvest-stage-miner-tools
+      toolQualities: [ Pulsing ]
+      duration: 12
+      loot: !type:AllSelector
+        children:
+        - id: WeaponPlasmaCutterOverclocked
+        - id: MaterialTitaniumAlloy1
+          rolls: 5
   - type: SpawnLootOnDeath
     deleteOnDeath: true
     dropBoth: true
     table: !type:AllSelector
       children:
-      - id: LavalandCrateNecropolisFilled
+      - id: LavalandCrateNecropolisBloodDrunkMinerFilled
     specialTable: !type:AllSelector
       children:
       - id: TrophyLavalandBDMEye
+      - id: WeaponWildhunterKnife
     weaponWhitelist:
       components:
       - MegafaunaWeaponLooter

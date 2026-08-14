@@ -33,7 +33,7 @@ spell-fail-mindswap-heretic = Você não pode trocar de mente com o herético!
 spell-fail-mindswap-ghoul = Você não pode trocar de mente com o ghoul!
 spell-fail-mindswap-ghost = Você não pode trocar de mente com um fantasma!
 spell-fail-mindswap-temporary = Você não pode trocar de mente com criaturas temporárias!
-spell-fail-mindswap-dead = Você não quer ficar morto, não é?
+spell-fail-mindswap-dead = You don't particularly want to be dead!
 
 spell-requirements-failed-clothes = Faltam requisitos para lançar este feitiço! Você precisa vestir túnica e chapéu de mago.
 spell-requirements-failed-speech = Faltam requisitos para lançar este feitiço! Você não consegue falar.
@@ -57,4 +57,3 @@ spell-summon-simians-maxed-out-message = Seu poder simiano atingiu capacidade m�
 ghosts-summoned-message = Os fantasmas foram invocados!
 dimension-shift-message = As dimensões mudaram!
 global-tile-movement-message = Um ritmo sombrio começa Uma tocar!
-

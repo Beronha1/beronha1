@@ -1,5 +1,5 @@
 ﻿# General
-cosmic-shop-interface-title = Ajuste de Influ?ncia
+cosmic-shop-interface-title = Influence Attunment
 
 # Progress bar
 cosmic-shop-interface-progress-bar = {$percentage}%
@@ -8,37 +8,36 @@ cosmic-shop-interface-progress-bar = {$percentage}%
 cosmic-shop-interface-entropy-title = Entropia
 cosmic-shop-interface-entropy-value = {$infused} Entropia
 cosmic-shop-interface-entropy-available-label = Disponível para uso:
-cosmic-shop-interface-entropy-next-stage-title = Entropia até a pr?xima etapa:
-cosmic-shop-interface-cultists-next-stage-title = Cultistas necess?rios para a pr?xima etapa:
+cosmic-shop-interface-entropy-next-stage-title = Entropy untill next Stage:
+cosmic-shop-interface-cultists-next-stage-title = Cultists required for next Stage:
 
 # Influences
 cosmic-shop-interface-influences-unlocked = Destravado
 cosmic-shop-interface-influences-locked = Travado
-cosmic-shop-interface-influences-owned = Possu?do
+cosmic-shop-interface-influences-owned = Owned
 cosmic-shop-interface-influences-cost = Custo:
 cosmic-shop-interface-influences-purchased = Obtido
-cosmic-shop-interface-influences-owned-tooltip = Você já possui essa influ?ncia.
-cosmic-shop-interface-influences-unlocked-not-enough-entropy-tooltip = Você precisa de mais {$entropy} entropia para ganhar esta influ?ncia.
-cosmic-shop-interface-influences-locked-tooltip = Você ainda não ? forte o bastante para obter esta influ?ncia.
-cosmic-shop-interface-respec-amount= {$count ->
-    [1]  Voc? pode refazer uma vez.
-    *[other] Voc? pode refazer {$count} vezes.
+cosmic-shop-interface-influences-owned-tooltip = You already own this influence.
+cosmic-shop-interface-influences-unlocked-not-enough-entropy-tooltip = You need {$entropy} more entropy to gain this influence.
+cosmic-shop-interface-influences-locked-tooltip = You are not yet strong enough to obtain this influence.
+cosmic-shop-interface-respec-amount = {$count ->
+    [1]  You can respec once.
+    *[other] You can respec {$count} times.
 }
-cosmic-shop-interface-respec-no-influence = N?o há nada para refazer.
-cosmic-shop-interface-respec-no-rift = Absorva uma fenda mal?fica para poder refazer.
+cosmic-shop-interface-respec-no-influence = There is nothing to respec.
+cosmic-shop-interface-respec-no-rift = Absorb a malign rift to be able to respec.
 
 # Levelup
-cosmic-shop-interface-consequences = Prosseguir para o pr?ximo nível ter? as seguintes consequ?ncias:
-cosmic-shop-interface-consequence-tier1 = Ocorrer? um pico de severidade baixa no Noosf?rico e fendas mal?ficas se formar?o.
-cosmic-shop-interface-consequence-tier2 = Ocorrer? um pico de severidade m?dia no Noosf?rico e a atividade de fendas ir? aumentar.
-cosmic-shop-interface-consequence-tier3 = Ocorrer? um pico de severidade alta no Noosf?rico, permitindo iniciarmos o Finale.
-cosmic-shop-interface-consequence-level1 = Algumas influ?ncias criar?o v?rtices persistentes de energia mal?fica.
-cosmic-shop-interface-consequence-level2 = Seus olhos vão brilhar com luz mal?fica. Você deve cobri-los com roupa.
-cosmic-shop-interface-consequence-level3 = Usar suas influ?ncias te envolver? em luz mal?fica, revelando sua posi??o.
+cosmic-shop-interface-consequences = Proceeding to next level will have following consequences:
+cosmic-shop-interface-consequence-tier1 = A low severity Noöspheric spike will occur, and malign rifts will form.
+cosmic-shop-interface-consequence-tier2 = A medium severity Noöspheric spike will occur, and rift activity will increase.
+cosmic-shop-interface-consequence-tier3 = A high severity Noöspheric spike will occur, letting us commence the Finale.
+cosmic-shop-interface-consequence-level1 = Some influences will create lingering vortecies of malign energy.
+cosmic-shop-interface-consequence-level2 = Your eyes will glow with malign light. You should hide them with clothing.
+cosmic-shop-interface-consequence-level3 = Using your influences will envelop you in malign light, giving away your position.
 
 # Buttons
 cosmic-shop-interface-influences-button-gain = Ganhar
 cosmic-shop-interface-confirm-button = Prosseguir.
 cosmic-shop-interface-respec-button = Reconfigurar
 cosmic-shop-interface-respec-confirmation = Confirmar
-

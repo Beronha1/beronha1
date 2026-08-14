@@ -9,7 +9,7 @@
 supermatter-announcer =Motor Automático de Supermatéria
 
 supermatter-examine-integrity =
-    It's integrity is [color=amarelo]{$integrity}%[/color].
+    It's integrity is [color=yellow]{$integrity}%[/color].
 
 supermatter-warning =
     Aviso! Integridade da hiperestrutura cristalina vacilando! Integridade: {$integrity}%.
@@ -39,9 +39,8 @@ supermatter-tamper-begin =
     Você começa a cortar cuidadosamente um pedaço do cristal da supermatéria...
 
 supermatter-tamper-end =
-    Você sente o poder de mil sóis nas palmas das mãos. Ou é toda a radiação?
+    You feel the power of a thousand suns laying on your palms. Or is it all the radiation?
 
 supermatter-announcement-cc-tamper =
     Nosso sistema automático de acidentes detectou que a integridade estrutural do cristal da supermatéria foi comprometida por uma força externa.
     Departamento de engenharia, reporte-se imediatamente ao motor de supermatéria.
-

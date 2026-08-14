@@ -5,13 +5,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-nanomed-1 = V? salvar algumas vidas!
+advertisement-nanomed-1 = Go save some lives!
 advertisement-nanomed-2 = As melhores coisas para sua enfermaria.
 advertisement-nanomed-3 = Somente as melhores ferramentas.
-advertisement-nanomed-4 = Qu?micos naturais!
+advertisement-nanomed-4 = Natural chemicals!
 advertisement-nanomed-5 = Esse material salva vidas.
-advertisement-nanomed-6 = Você não quer um pouco?
+advertisement-nanomed-6 = Don't you want some?
 advertisement-nanomed-7= Pingue!
-advertisement-nanomed-8 = N?o se esque?a de não causar overdose nas pessoas!
-advertisement-nanomed-9 = V? causar overdose nas pessoas!
-
+advertisement-nanomed-8 = Make sure not to overdose people!
+advertisement-nanomed-9 = Go overdose people!

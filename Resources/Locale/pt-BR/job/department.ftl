@@ -16,3 +16,4 @@ department-Silicon = Sintético
 
 department-Specific = Específico
 
+department-Unknown = Desconhecido

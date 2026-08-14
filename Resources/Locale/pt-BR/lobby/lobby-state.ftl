@@ -36,5 +36,4 @@ lobby-state-playtime-comment-normal =
     } no jogo hoje. Lembre-se de fazer pausas!
 lobby-state-playtime-comment-concerning = Você jogou por {$hours} horas hoje. Faça uma pausa, por favor.
 lobby-state-playtime-comment-grasstouchless = {$hours} horas. Considere sair para cuidar das suas necessidades.
-lobby-state-playtime-comment-selfdestructive = {$hours} horas. Sério?
-
+lobby-state-playtime-comment-selfdestructive = {$hours} hours. Really?

@@ -10,34 +10,33 @@ mining-voucher-selected = {$kit} selecionado!
 
 mining-voucher-extraction-name = Kit de extração e resgate
 mining-voucher-extraction-description =
-    Cont?m uma b?ia fulton e 20 fultons, que permite enviar minerais,
-    itens e corpos mortos de volta para casa sem usar a nave de minera??o.
-    Como b?nus, voc? recebe 30 beacons marcadores para marcar melhor seu caminho,
-    e um arn?s de explorador, que permite carregar ainda mais equipamento de minera??o.
+    Contains a fulton beacon and 20 fultons, which allows you to send minerals,
+    items and dead bodies back home without having to use the mining shuttle.
+    As a bonus, you get 30 marker beacons to help you better mark your path,
+    and an explorer's webbing, which allows you to carry even more mining equipment.
 
 mining-voucher-resonator-name = Kit de ressonador
 mining-voucher-resonator-description =
-    Cont?m um ressonador e um extintor de inc?ndio de bolso.
-    O ressonador ? um dispositivo port?til que cria pequenos campos
-    de energia que ressoam at? detonarem, esmagando rocha.
-    Ele causa mais dano em baixa press?o.
+    Contains a resonator and a pocket fire extinguisher.
+    The resonator is a handheld device that creates small fields
+    of energy that resonate until they detonate, crushing rock.
+    It does increased damage in low pressure.
 
-mining-voucher-survival-name = Kit de sobreviv?ncia
+mining-voucher-survival-name = Survival Kit
 mining-voucher-survival-description =
-    Cont?m um implantador de morte s?bita de lavaland e uma c?psula de abrigo reserva
-    para acompanh?-lo. Voc? n?o vai morrer hoje!
+    Contains a lavaland death rattle implanter, and a spare shelter capsule
+    to go with it. You are not dying today!
 
 mining-voucher-minebot-name = Kit Minebot
 mining-voucher-minebot-description =
-    Cont?m um pequeno companheiro minebot que ajuda a armazenar min?rio e ca?ar fauna.
-    Tamb?m vem com uma ferramenta de solda industrial aprimorada, uma m?scara de solda e uma modkit KA que permite disparos atravessarem o minebot.
+    Contains a little minebot companion that helps you in storing ore and hunting wildlife.
+    Also comes with an upgraded industrial welding tool, a welding mask and a KA modkit that allows shots to pass through the minebot.
 
 mining-voucher-combat-name = Kit de combate
 mining-voucher-combat-description =
-    Cont?m uma foice cin?tica e uma adaga cin?tica. A foice possui alcance superior para que voc?
-    possa atacar ? dist?ncia, e a adaga pode ser lan?ada em inimigos para cravar e causar dano cr?tico.
+    Contains a kinetic machete and a kinetic dagger. Machete has superior range so you
+    can attack from afar, and dagger can be thrown into enemies to embed and deal critical damage.
 
 mining-voucher-medical-name = Kit médico
 mining-voucher-medical-description =
-    Cont?m 1 kit m?dico para dano bruto e de queimadura, respectivamente, e um medipen de sobreviv?ncia para acompanhar.
-
+    Contains 1 medical kit for Brute and Burn damage respectively, and a survival medipen to go with it.

@@ -136,7 +136,7 @@ accent-medieval-words-replace-29 =bom dia
 accent-medieval-words-30 =oi
 accent-medieval-words-replace-30 =Ave
 
-accent-medieval-words-31 =e aí?
+accent-medieval-words-31 = sup
 accent-medieval-words-replace-31 =saudação
 
 accent-medieval-words-32 =saudações

@@ -8,10 +8,9 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Examine
-nanochat-card-examine-no-number = O cart?o NanoChat ainda não recebeu um número.
-nanochat-card-examine-number = O cart?o NanoChat mostra #{$number}.
+nanochat-card-examine-no-number = The NanoChat card has not been assigned a number yet.
+nanochat-card-examine-number = The NanoChat card displays #{$number}.
 
 # Microwave interactions
-nanochat-card-microwave-erased = O {$card} emite um bip suave enquanto todo o hist?rico de mensagens some no ?ter!
+nanochat-card-microwave-erased = The {$card} emits a soft beep as all its message history vanishes into the ether!
 nanochat-card-microwave-scrambled = O {$card} crepita enquanto suas mensagens ficam embaralhadas!
-

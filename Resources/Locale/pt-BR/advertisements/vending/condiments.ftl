@@ -6,11 +6,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-condiment-1 = Cansado de carne seca? Jogue alguns temperos cheios de sabor nela!
-advertisement-condiment-2 = Utens?lios seguros para crian?as. Garfos, colheres e facas que não cortam nada.
-advertisement-condiment-3 = ?leo de milho!
-advertisement-condiment-4 = Adoce o seu dia com Astrotame! Oito em cada dez médicos concordam que provavelmente não causa c?ncer.
+advertisement-condiment-1 = Tired of dry meat? Squirt some flavor-packed condiments on it!
+advertisement-condiment-2 = Child-safe utensils. Forks, spoons, and knives that won't cut a thing.
+advertisement-condiment-3 = Corn oil!
+advertisement-condiment-4 = Sweeten up your day with Astrotame! Eight out of ten doctors agree, it probably won't cause cancer.
 advertisement-condiment-5 = Molho Picante! Molho Churrasco! Molho Frio! Ketchup! Molho de Soja! Molho de Raiz-forte! Temos todos os molhos!
-advertisement-condiment-6 = Sempre lembre de colocar ketchup e mostarda nos seus hamb?rgueres! Os chefs esquecem disso ?s vezes.
-
-
+advertisement-condiment-6 = Make sure to put ketchup and mustard on your burgers! The chefs often forget.

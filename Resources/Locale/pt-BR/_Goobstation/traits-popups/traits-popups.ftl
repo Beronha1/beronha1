@@ -1,4 +1,2 @@
-﻿paralyzed-no-stand = Você está paralisado da cintura para baixo, não consegue ficar em p?!
-social-anxiety-hugged = Por causa da ansiedade social de { $user }, { $user } come?a a ter um ataque de p?nico!
-
-
+paralyzed-no-stand = You're paralyzed from the waist down, you can't stand!
+social-anxiety-hugged = Because of their social anxiety, { $user } starts to have a panic attack!

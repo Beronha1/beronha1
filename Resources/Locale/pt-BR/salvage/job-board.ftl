@@ -1,5 +1,5 @@
-﻿salvage-job-rank-title-0 =[color=cinza]Scavenger[/color]
-salvage-job-rank-title-1 = [color=branco]Raspador[/color]
+﻿salvage-job-rank-title-0 =[color=gray]Scavenger[/color]
+salvage-job-rank-title-1 = [color=white]Raspador[/color]
 salvage-job-rank-title-2 = [color=yellow]Especialista[/color]
 salvage-job-rank-title-MAX = [color=gold]Salvador Supremo[/color]
 
@@ -7,7 +7,7 @@ job-board-radio-announce = A classificação de salvador aumentou para [bold]{$r
 
 job-board-ui-window-title = Quadro de empregos
 job-board-ui-label-rank = [bold]Classificação:[/bold]
-job-board-ui-label-items = Alvo: [color=vermelho]{$item}[/color]
+job-board-ui-label-items = Alvo: [color=red]{$item}[/color]
 
 job-board-label-text = [head=2]Remessa de trabalho de resgate[/head]
     {"[italic]For use only on official off-station salvage shipments.[/italic]"}
@@ -47,4 +47,3 @@ bounty-description-salvage-ore-bananium = Temos um projeto em andamento para dec
 bounty-description-remains = Precisamos que você obtenha uma amostra de alguns núcleos do Hivelord. Esteja ciente de que os Hivelords podem replicar infinitamente se o núcleo não for destruído. Tome cuidado para não ficar sobrecarregado.
 bounty-description-plates = Precisamos que você consiga algumas folhas de couro de Golias. Esses caras são bem lentos, mas tome cuidado com os tentáculos: eles vão te agarrar e te puxar para o chão. Você não quer saber o que acontece a seguir.
 bounty-description-diamond = Precisamos que você adquira alguns diamantes para alguma fabricação avançada. Eles podem ser encontrados no asteróide de mineração próximo ou cortados da criatura basilisco. Seja como for, traga-nos alguns.
-

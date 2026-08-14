@@ -9,7 +9,7 @@ roles-antag-cosmiccult-name = Cultista Cosmico
 roles-antag-cosmiccult-description = Traga o fim de todas as coisas atraves de subterfugio e sabotagem, lavando o cerebro daqueles que se opuserem Uma voce.
 
 cosmiccult-gamemode-title = O Culto Cosmico
-cosmiccult-gamemode-description = Scanners detectam um aumento anomalo de pressao NoÃ¶spheric. Nao ha dados adicionais.
+cosmiccult-gamemode-description = Scanners detectam um aumento anomalo de pressao Noöspheric. Nao ha dados adicionais.
 
 cosmiccult-finale-autocall-briefing = O Monumento ativa {$minutesandseconds}! Reunam-se, e preparem-se para o fim.
 cosmiccult-finale-ready = Uma luz aterrorizante irrompe de O Monumento!
@@ -17,7 +17,7 @@ cosmiccult-finale-nobodyes = Traga humanoides em condicao critica para apressar 
 cosmiccult-finale-speedup = O chamado esta se acelerando! Uma energia sobe pelo ambiente...
 
 cosmiccult-finale-degen = Voce se sente se desmanchando!
-cosmiccult-finale-location = Scanners detectam uma enorme erupcao NoÃ¶spheric em {$location}! Seguroa imediatamente Uma explosao nuclear de fission da estacao!
+cosmiccult-finale-location = Scanners detectam uma enorme erupcao Noöspheric em {$location}! Seguroa imediatamente Uma explosao nuclear de fission da estacao!
 cosmiccult-finale-cancel-begin = Uma forca de vontade da sua mente comeca Uma romper o ritual...
 cosmiccult-finale-beckon-begin = Os sussurros Não fundo da sua mente se intensificam...
 
@@ -46,17 +46,17 @@ cosmiccult-roundend-crewminor = [color=green]Vitoria menor da tripulacao![/color
 cosmiccult-roundend-crewwin = [color=green]Vitoria majoritaria da tripulacao![/color]
 
 cosmiccult-summary-cultwin = Os cultistas cosmicos trouxeram o fim!
-cosmiccult-summary-crewwin = Uma tripulaÃ§Ã£o sobreviveu aos esforÃ§os do Culto CÃ³smico!
+cosmiccult-summary-crewwin = Uma tripulação sobreviveu aos esforços do Culto Cósmico!
 
-cosmiccult-elimination-shuttle-call = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia NoÃ¶spheric diminuiu. Agradecemos sua prudÃªncia. Uma nave de socorro foi automaticamente convocada para Uma estaÃ§Ã£o. Entregue qualquer pessoal infectado ao CentComm para processamento. ETA: {$time} {$units}.
-cosmiccult-elimination-announcement = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia NoÃ¶spheric diminuiu. Agradecemos sua prudÃªncia. Uma nave de socorro jÃ¡ estÃ¡ em rota para Uma estaÃ§Ã£o. Entregue qualquer pessoal infectado ao CentComm para processamento.
+cosmiccult-elimination-shuttle-call = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro foi automaticamente convocada para Uma estação. Entregue qualquer pessoal infectado ao CentComm para processamento. ETA: {$time} {$units}.
+cosmiccult-elimination-announcement = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro já está em rota para Uma estação. Entregue qualquer pessoal infectado ao CentComm para processamento.
 
 
 ## BRIEFINGS
 
 cosmiccult-role-roundstart-fluff =
     Ao se preparar para mais um turno em mais uma estacao da NanoTrasen, um conhecimento incontavel de repente inunda sua mente!
-    Uma revelaÃ§Ã£o sem igual. Um fim para o sofrimento cÃ­clico e sisifiano.
+    Uma revelação sem igual. Um fim para o sofrimento cíclico e sisifiano.
     Um chamado suave de cortina.
 
     Tudo que voce precisa fazer eh trazerl.
@@ -68,7 +68,7 @@ cosmiccult-role-short-briefing =
 
 cosmiccult-role-conversion-fluff =
     Quando a invocacao termina, um conhecimento incontavel de repente inunda sua mente!
-    Uma revelaÃ§Ã£o sem igual. Um fim para o sofrimento cÃ­clico e sisifiano.
+    Uma revelação sem igual. Um fim para o sofrimento cíclico e sisifiano.
     Um chamado suave de cortina.
 
     Tudo que voce precisa fazer eh trazer.
@@ -95,7 +95,7 @@ cosmiccult-role-levelup-awaiting-input =
 cosmiccult-rift-inuse = Voce nao pode fazer isso agora.
 cosmiccult-rift-invaliduser = Voce nao possui ferramentas adequadas para lidar com isto.
 cosmiccult-rift-chaplainoops = Empunhe sua escritura sagrada.
-cosmiccult-rift-alreadyempowered = VocÃª jÃ¡ estÃ¡ fortalecido; o poder da fenda seria desperdiÃ§ado.
+cosmiccult-rift-alreadyempowered = Você já está fortalecido; o poder da fenda seria desperdiçado.
 cosmiccult-rift-beginabsorb = Uma fenda comeca Uma se mesclar com voce...
 cosmiccult-rift-beginpurge = Sua consagracao comeca Uma purgar Uma fenda maligna...
 
@@ -105,8 +105,8 @@ cosmiccult-rift-purge = {$NAME} purga Uma fenda maligna da realidade!
 
 ## CHANTRY
 
-cosmiccult-chantry-location = Um aumento perigoso de pressao NoÃ¶spheric foi detectado {$location}! Intercepte e intervem imediatamente.
-cosmiccult-chantry-destruction = O pico repentino de pressao NoÃ¶spheric foi neutralizado. Vigilancia continua e aconselhada.
+cosmiccult-chantry-location = Um aumento perigoso de pressao Noöspheric foi detectado {$location}! Intercepte e intervem imediatamente.
+cosmiccult-chantry-destruction = O pico repentino de pressao Noöspheric foi neutralizado. Vigilancia continua e aconselhada.
 cosmiccult-chantry-powerup = Uma chantry vazia se acende em vida!
 
 ## UI / BASE POPUP
@@ -130,7 +130,7 @@ cosmiccult-ui-roundstart-text-2 =
 cosmiccult-ui-deconverted-text-1 =
     Voce nao faz mais parte do Culto Cosmico.
 cosmiccult-ui-deconverted-text-2 =
-    VocÃª perdeu todas as memÃ³rias relacionadas ao Culto CÃ³smico.
+    Você perdeu todas as memórias relacionadas ao Culto Cósmico.
     Se voce for convertido novamente, essas memorias voltarao.
 
 cosmiccult-ui-popup-confirm = Confirmar
@@ -151,18 +151,18 @@ objective-condition-victory-desc = Chame o Desconhecido, e anuncie Uma chamada f
 
 ## CHAT ANNOUNCEMENTS
 
-cosmiccult-announce-tier1-warning = Scanners detectam um aumento notavel de pressao NoÃ¶spheric. Fendas no espaço real podem aparecer em breve. Alerta seu capelao se as avistar.
+cosmiccult-announce-tier1-warning = Scanners detectam um aumento notavel de pressao Noöspheric. Fendas no espaço real podem aparecer em breve. Alerta seu capelao se as avistar.
 
-cosmiccult-announce-tier2-warning = Scanners detectam aumento significativo de pressao NoÃ¶spheric. Uma integridade do espaco real esta em risco. Evite rasgos Não tecido da realidade.
+cosmiccult-announce-tier2-warning = Scanners detectam aumento significativo de pressao Noöspheric. Uma integridade do espaco real esta em risco. Evite rasgos Não tecido da realidade.
 
-cosmiccult-announce-tier3-fluff = Arcos de energia NoÃ¶spheric estalam por toda Uma estrutura de choro da estacao. O fim se aproxima.
-cosmiccult-announce-tier3-warning = Aumento critico de pressao NoÃ¶spheric detectado. Pessoas infectadas devem ser neutralizadas na primeira vista.
+cosmiccult-announce-tier3-fluff = Arcos de energia Noöspheric estalam por toda Uma estrutura de choro da estacao. O fim se aproxima.
+cosmiccult-announce-tier3-warning = Aumento critico de pressao Noöspheric detectado. Pessoas infectadas devem ser neutralizadas na primeira vista.
 
-cosmiccult-announce-finale-warning = Toda tripulacao da estacao. Uma anomalia NoÃ¶spheric esta em supercritico, instrumentos falhando; horizonte de transicao NoÃ¶spheric-para-real IMMINENTE. Se voce ainda nao estiver Não contra-protocolo, saia imediatamente e intervem. Repetindo: Intervenha imediatamente ou morra.
+cosmiccult-announce-finale-warning = Toda tripulacao da estacao. Uma anomalia Noöspheric esta em supercritico, instrumentos falhando; horizonte de transicao Noöspheric-para-real IMMINENTE. Se voce ainda nao estiver Não contra-protocolo, saia imediatamente e intervem. Repetindo: Intervenha imediatamente ou morra.
 
 ## MISC
 
-cosmiccult-spire-entropy = Uma partÃ­cula de entropia condensa na superfÃ­cie da esbeltez.
+cosmiccult-spire-entropy = Uma partícula de entropia condensa na superfície da esbeltez.
 cosmiccult-entropy-unavailable = Voce nao pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
 cosmiccult-gear-pickup-rejection = {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!

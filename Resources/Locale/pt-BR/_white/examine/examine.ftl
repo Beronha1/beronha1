@@ -2,60 +2,115 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-examine-can-see-nothing = Está completamente sem roupa!
+examine-can-see-nothing = {CAPITALIZE(SUBJECT($ent))}'s completely naked!
+id-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} belt.
+head-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} head.
+eyes-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} eyes.
+mask-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} face.
+neck-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} neck.
+ears-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} ears.
+jumpsuit-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} {SUBJECT($ent)} is wearing.
+outer-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} body.
+suitstorage-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} shoulder.
+back-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} back.
+gloves-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} hands.
+belt-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} belt.
+shoes-examine = • {CAPITALIZE(POSS-ADJ($ent))} { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on {POSS-ADJ($ent)} feet.
 
-id-examine = - [bold]{$item}[/bold] no cinto.
+id-card-examine-full = • {CAPITALIZE(POSS-ADJ($wearer))} ID: [bold]{$nameAndJob}[/bold].
 
-head-examine = - [bold]{$item}[/bold] na cabeça.
+# Selfaware version
 
-eyes-examine = - [bold]{$item}[/bold] nos olhos.
+id-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your belt.
+head-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your head.
+eyes-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your eyes.
+mask-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your face.
+neck-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your neck.
+ears-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your ears.
+jumpsuit-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} you are wearing.
+outer-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your body.
+suitstorage-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your shoulder.
+back-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your back.
+gloves-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your hands.
+belt-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your belt.
+shoes-examine-selfaware = • Your { $id ->
+     [empty] [bold]{$item}[/bold]
+    *[other] [enttex id={$id} size={ $size }/][bold]{$item}[/bold]
+} on your feet.
 
-mask-examine = - [bold]{$item}[/bold] Não rosto.
-
-neck-examine = - [bold]{$item}[/bold] Não pescoço.
-
-ears-examine = - [bold]{$item}[/bold] nas orelhas.
-
-jumpsuit-examine = - Está vestindo [bold]{$item}[/bold].
-
-outer-examine = - [bold]{$item}[/bold] sobre o corpo.
-
-suitstorage-examine = - [bold]{$item}[/bold] no ombro.
-
-back-examine = - [bold]{$item}[/bold] nas costas.
-
-gloves-examine = - [bold]{$item}[/bold] nas mãos.
-
-belt-examine = - Está usando [bold]{$item}[/bold] no cinto.
-
-shoes-examine = - [bold]{$item}[/bold] nos pés.
-
-id-card-examine-full = - ID: [bold]{$nameAndJob}[/bold].
-
-id-examine-selfaware = - Seu [bold]{$id}[/bold] está no cinto.
-
-head-examine-selfaware = - Seu [bold]{$id}[/bold] está na cabeça.
-
-eyes-examine-selfaware = - Seu [bold]{$id}[/bold] está nos olhos.
-
-mask-examine-selfaware = - Seu [bold]{$id}[/bold] está Não rosto.
-
-neck-examine-selfaware = - Seu [bold]{$id}[/bold] está Não pescoço.
-
-ears-examine-selfaware = - Seu [bold]{$id}[/bold] está nas orelhas.
-
-jumpsuit-examine-selfaware = - Você está vestindo [bold]{$id}[/bold].
-
-outer-examine-selfaware = - Seu [bold]{$id}[/bold] está sobre o corpo.
-
-suitstorage-examine-selfaware = - Seu [bold]{$id}[/bold] está no ombro.
-
-back-examine-selfaware = - Seu [bold]{$id}[/bold] está nas costas.
-
-gloves-examine-selfaware = - Seu [bold]{$id}[/bold] está nas mãos.
-
-belt-examine-selfaware = - Você está usando [bold]{$id}[/bold] no cinto.
-
-shoes-examine-selfaware = - Seu [bold]{$id}[/bold] está nos pés.
-
-
+# Selfaware examine

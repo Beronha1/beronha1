@@ -19,7 +19,7 @@ shuttle-console-angular-velocity = Velocidade angular:
 shuttle-console-angular-velocity-value = {$angularVelocity}
 
 shuttle-console-unknown = Desconhecido
-shuttle-console-iff-label= @@ (@@m)
+shuttle-console-iff-label = {$name} ({$distance}m)
 shuttle-console-exclusion = Área de exclusão
 
 shuttle-console-nav-settings = Configurações

@@ -27,6 +27,6 @@ comp-light-replacer-refill-from-storage = Você recarrega {THE($light-replacer)}
 comp-light-replacer-no-lights = Está vazio.
 comp-light-replacer-has-lights = Ele contém o seguinte:
 comp-light-replacer-light-listing= {$amount ->
-    [one] [color=amarelo]{$amount}[/color] [color=cinza]{$name}[/color]
-    *[other] [color=amarelo]{$amount}[/color] [color=cinza]{$name}s[/color]
+    [one] [color=yellow]{$amount}[/color] [color=gray]{$name}[/color]
+    *[other] [color=yellow]{$amount}[/color] [color=gray]{$name}s[/color]
 }

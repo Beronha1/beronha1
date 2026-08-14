@@ -1,12 +1,10 @@
-﻿ghost-role-information-shadow-demon-name = Dem�nio das Sombras
-ghost-role-information-shadow-demon-description = A escurid�o precisa de um Rei, e voc� foi invocado para usar essa coroa.
+ghost-role-information-shadow-demon-name = Shadow Demon
+ghost-role-information-shadow-demon-description = The darkness needs a King, and you got summoned to wear that crown.
 ghost-role-information-shadow-demon-rules =
-    Como dem�nio das sombras, sua tarefa � causar o m�ximo de caos poss�vel,
-    ent�o use o agarr�o para entrar nos corredores da esta��o e se alimentar da tripula��o inocente.
-    VOC� EST� IMUNE � LUZ POR 20 SEGUNDOS DEPOIS QUE NASCEU, N�O ENTRE EM P�NICO.
-    Use a escurid�o a seu favor, porque ningu�m consegue te enfrentar l�,
-    e lembre-se de que [color=red]todos os dem�nios s�o seus aliados[/color], ent�o n�o hesite em trabalhar com outro dem�nio.
+    As a shadow demon, your task is to cause as much chaos as possible,
+    so grapple your way into the halls of the station, and feast on the innocent crew.
+    YOU ARE IMMUNE TO LIGHT FOR 20 SECONDS SINCE YOU SPAWN, DON'T PANIC.
+    Use darkness to your advantage, because nobody can take you on there,
+    and remember that [color=red]all demons are your allies[/color], so don't hesitate to work with another demon.
 
-roles-shadow-demon-name-token = Dem�nio das Sombras (Ficha)
-
-
+roles-shadow-demon-name-token = Shadow Demon (Token)

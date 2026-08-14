@@ -50,9 +50,9 @@ spellbook-mind-swap-description =
 spellbook-animate-name = Animar
 spellbook-animate-description = Traga um objeto inanimado à vida!
 
-spellbook-smite-name = Castigar
+spellbook-smite-name = Smite
 # Goob - rewritten
-#spellbook-smite-desc= Não gosta deles? EXPLODE-OS em miúdos! Requer Robe e Chapéu de Mago.
+#spellbook-smite-desc = Don't like them? EXPLODE them into giblets! Requires Wizard Robe & Hat.
 
 spellbook-cluwne-name = Maldição de Cluwne
 spellbook-cluwne-desc = Para quando você realmente odeia alguém e Castigo não é suficiente. Exige manto e chapéu do mago.

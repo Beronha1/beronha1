@@ -9,5 +9,4 @@ mutator-examine-spent = Seu mutagênico foi consumido.
 mutator-cant-mutate = {$target} não pode sofrer mutação
 
 mutator-mutating-you = {$user} está injetando um {$item} em você!
-mutator-mutating-others = {$user} está injetando um {$user} em {$user}!
-
+mutator-mutating-others = {$user} está injetando um {$item} em {$target}!

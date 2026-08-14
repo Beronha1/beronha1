@@ -7,23 +7,22 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-### Janela de Informa??es
+### Janela de Informações
 
 ## Coisas gerais
-ui-info-title = Informa??es
+ui-info-title = Information
 ui-info-tab-rules = Regras do servidor
 ui-info-tab-tutorial = Tutorial
 
 ## Aba Tutorial
 ui-info-text-controls = Você pode revisar e redefinir os controles do SS14 em
 
-ui-info-header-intro = Introdu??o
+ui-info-header-intro = Introduction
 ui-info-header-controls = Controles
 ui-info-header-gameplay= Jogabilidade
 ui-info-header-sandbox = Gerador de entidade
-ui-info-subheader-entityoptions = Op??es do painel de spawn de entidade:
-ui-info-subheader-gridoptions = Op??es de alinhamento em grade:
+ui-info-subheader-entityoptions = Entity spawn panel options:
+ui-info-subheader-gridoptions = Grid aligned options:
 ui-info-header-feedback= Opinião
 
-ui-info-button-controls = Menu de op??es
-
+ui-info-button-controls = Options Menu

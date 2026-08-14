@@ -17,10 +17,9 @@ crawl-under-floor-toggle-off = {$name} saiu do chão.
 crawl-under-floor-toggle-on-self = Você entra no chão.
 crawl-under-floor-toggle-off-self = Você sai do chão.
 
-steal-shoes-event = Você roubou os {$target} de {$target}!
+steal-shoes-event = You stole {$target}'s {$shoes}!
 steal-shoes-no-shoes = Não há sapatos para roubar!
 steal-shoes-covered = Você não consegue alcançar os sapatos daqui!
 
 shoes-stolen-target-event = Seus sapatos foram roubados!
-
 

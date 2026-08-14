@@ -10,7 +10,7 @@
 # SPDX-FileCopyrightText: 2024 IProduceWidgets <107586145+IProduceWidgets@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2024 James Simonson <jamessimo89@gmail.com>
 # SPDX-FileCopyrightText: 2024 SlamBamActionman <83650252+SlamBamActionman@users.noreply.github.com>
-# SPDX-FileCopyrightText: 2024 Ð”Ð¶ÐµÐºÑÐ¾Ð½ ÐœÐ¸ÑÑÐ¸ÑÑÐ¸Ð¿Ð¿Ð¸ <tripwiregamer@gmail.com>
+# SPDX-FileCopyrightText: 2024 Джексон Миссиссиппи <tripwiregamer@gmail.com>
 # SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-FileCopyrightText: 2025 ScarKy0 <106310278+ScarKy0@users.noreply.github.com>
@@ -73,7 +73,7 @@ admin-smite-super-bonk-lite-name = Super Bonk Leve
 admin-smite-terminate-name = Terminar
 admin-smite-super-slip-name = Super Escorregar
 admin-smite-creampie-name= Creme
-admin-smite-vomit-organs-name = Vomitar Ã“rgÃ£os
+admin-smite-vomit-organs-name = Vomitar Órgãos
 admin-smite-ghostkick-name = Chute Fantasma
 admin-smite-nyanify-name = Orelhas de Gato
 admin-smite-kill-sign-name = Sinal de Morte
@@ -97,28 +97,28 @@ admin-smite-remove-blood-description = Remover todo o sangue, de forma desorgani
 admin-smite-vomit-organs-description = Faz os dois vomitarem, com orgaos incluidos.
 admin-smite-remove-hands-description = Remover as maos deles.
 admin-smite-remove-hand-description = Remover apenas uma mao, em vez de todas.
-admin-smite-pinball-description = Transforma-os em uma bola super elÃ¡stica, atirando-os atÃ© atravessarem Uma estaÃ§Ã£o para o abismo.
+admin-smite-pinball-description = Transforma-os em uma bola super elástica, atirando-os até atravessarem Uma estação para o abismo.
 admin-smite-yeet-description = Joga os jogadores no espaço profundo ativando Não-clip.
-admin-smite-become-bread-description = Transforma-os em pÃ£o. SÃ©rio, e sÃ³ isso que faz.
+admin-smite-become-bread-description = Transforma-os em pão. Sério, e só isso que faz.
 admin-smite-ghostkick-description = Chuta silenciosamente o usuario, dropando Uma conexao deles.
-admin-smite-nyanify-description = Adiciona orelhas de gato forÃ§adamente, sem escape.
+admin-smite-nyanify-description = Adiciona orelhas de gato forçadamente, sem escape.
 admin-smite-kill-sign-description = Marca um jogador para morte por seus companheiros.
 admin-smite-kill-sign-hidden-description = Marca um jogador para morte por seus companheiros. Nao aparece para o jogador-alvo.
 admin-smite-cluwne-description = Cluwnifica-os. O traje nao pode ser removido e Uma tripulacao pode assassinar livremente.
 admin-smite-anger-pointing-arrows-description = Enfurece as setas apontadas, fazendo-as atacar explosivamente esta entidade.
 admin-smite-dust-description = Reduz o alvo Uma uma pequena pilha de cinzas.
-admin-smite-buffering-description = Faz o alvo comeÃ§ar Uma fazer buffering aleatoriamente, travando em um ponto por pouco tempo enquanto carrega.
-admin-smite-become-instrument-description = Transforma-os em um supersynth. SÃ³. NÃ£o Ã© mais do que isso.
+admin-smite-buffering-description = Faz o alvo começar Uma fazer buffering aleatoriamente, travando em um ponto por pouco tempo enquanto carrega.
+admin-smite-become-instrument-description = Transforma-os em um supersynth. Só. Não é mais do que isso.
 admin-smite-remove-gravity-description = Concede anti-gravidade.
 admin-smite-reptilian-species-swap-description = Muda Uma especie deles para Reptiliano. Util para pessoas com racismo espacial.
 admin-smite-vulpkanin-species-swap-description = Muda Uma especie deles para Vulpkanin. Util para pessoas com racismo espacial.
 admin-smite-locker-stuff-description = Entorta-os em um guarda-volumes (aparafusado).
 admin-smite-headstand-description = Inverte o sprite deles na vertical.
 admin-smite-become-mouse-description = Eles se tornam um rato. Squeak!
-admin-smite-maid-description = Converte-os forÃ§adamente em maid de limpeza gato. Isso Ã© uma tortura de verdade para alguns, use com sabedoria.
+admin-smite-maid-description = Converte-os forçadamente em maid de limpeza gato. Isso é uma tortura de verdade para alguns, use com sabedoria.
 admin-smite-zoom-in-description = Aumenta Uma visao deles para que nao vejam mais o entorno.
 admin-smite-flip-eye-description = Vira Uma visao deles, revertendo controles e deixando o jogo chato de jogar.
-admin-smite-run-walk-swap-description = Troca corrida e caminhada, forÃ§ando o shift para movimento rÃ¡pido.
+admin-smite-run-walk-swap-description = Troca corrida e caminhada, forçando o shift para movimento rápido.
 admin-smite-super-speed-description = Deixa-os muito rapidos, causando gibs na parede ao colidir.
 admin-smite-stomach-removal-description = Remover o estomago deles, impedindo-os de comer.
 admin-smite-speak-backwards-description = Faz-os falar ao contrario, assim nao conseguem pedir ajuda.

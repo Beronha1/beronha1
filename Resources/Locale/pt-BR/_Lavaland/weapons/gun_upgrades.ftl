@@ -21,8 +21,8 @@ gun-upgrade-damage-name = [color=#ec9b2d][bold]dano[/bold][/color]
 gun-upgrade-range-name = [color=#2decec][bold]intervalo[/bold][/color]
 gun-upgrade-reload-name = [color=#bbf134][bold]taxa de tiro[/bold][/color]
 gun-upgrade-light-name = [color=#bbf134][bold]claro[/bold][/color]
-gun-upgrade-vampirism-name = [color=carmesim][bold]vampirismo[/bold][/color]
-gun-upgrade-pressure-name = [color=laranja][bold]pressão[/bold][/color]
+gun-upgrade-vampirism-name = [color=crimson][bold]vampirismo[/bold][/color]
+gun-upgrade-pressure-name = [color=orangered][bold]pressão[/bold][/color]
 gun-upgrade-space-name = [color=#ff00bf][bold]espaço[/bold][/color]
 
 gun-upgrade-bayonet-name = [bold]baioneta[/bold]
@@ -38,4 +38,3 @@ gun-upgrade-crusher-sharpness = [bold]nitidez[/bold] lâmina
 gun-upgrade-crusher-weights = Alça [bold]ponderada[/bold]
 gun-upgrade-crusher-lightweight = Alça [bold]leve[/bold]
 gun-upgrade-crusher-range = Alça [bold]longa[/bold]
-

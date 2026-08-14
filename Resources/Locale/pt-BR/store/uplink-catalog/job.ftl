@@ -1,7 +1,7 @@
 ﻿# Job
 
 uplink-gatfruit-seeds-name = Pacote de sementes de gatfruit
-uplink-gatfruit-seeds-desc = E quem disse que arma não cresce em árvore?
+uplink-gatfruit-seeds-desc = And who says guns don't grow on trees?
 
 uplink-holy-hand-grenade-name = Granada da mão santa
 uplink-holy-hand-grenade-desc = Ó Senhor, abençoai esta tua granada, para que com ela tuas inimigas sejam reduzidas a poeira de misericórdia.
@@ -42,4 +42,3 @@ uplink-saw-advanced-desc = Uma lâmina cirúrgica de ponta projetada para cortar
 
 uplink-briefcase-gun-name = Arma de maleta
 uplink-briefcase-gun-desc = Uma maleta discreta com uma C-20K compacta montada no interior. Cuidado para não apertar o punho do cabo com força.
-

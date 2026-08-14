@@ -7,16 +7,16 @@
 
 accent-dementia-prefix-1 = Agora não tenho certeza, mas,
 accent-dementia-prefix-2 = Ei... merda, esqueci... Ah, é isso!
-accent-dementia-prefix-3 = O que era mesmo...? Ah!
+accent-dementia-prefix-3 = What was it again… Ah!
 accent-dementia-prefix-4= ouvidos
 accent-dementia-prefix-5= Ah,
 
-accent-dementia-suffix-1 = , espera, o que eu estava dizendo mesmo?
+accent-dementia-suffix-1 = , wait, what was I saying again?
 accent-dementia-suffix-2 = , ou algo assim...
-accent-dementia-suffix-3 = , você... espera, quem é você mesmo?
+accent-dementia-suffix-3 = , you- wait who are you again.
 accent-dementia-suffix-4 = , eu acho.
-accent-dementia-suffix-5 = . Ah, a propósito, você viu minhas pílulas?
-accent-dementia-suffix-6 = . Guh, onde eu tô?
+accent-dementia-suffix-5 = . Oh, by the way have you seen my pills?
+accent-dementia-suffix-6 = . Guh, where am I?
 
 accent-dementia-words-1= segurança
 accent-dementia-words-replace-1 = algum departamento

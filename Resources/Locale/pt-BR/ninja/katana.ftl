@@ -10,7 +10,6 @@ ninja-katana-recalled = Sua Katana de Energia teleporta para sua mão!
 ninja-hands-full = Suas mãos estáo cheias!
 
 dash-ability-not-held = Você não está segurando sua katana!
-dash-ability-no-charges = N?o há cargas restantes!
+dash-ability-no-charges = No charges left!
 dash-ability-cant-see = Você não consegue ver isso!
-
 

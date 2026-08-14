@@ -4,158 +4,157 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-book-cnc-sheet =Ficha de Personagem C&C 5e
+book-cnc-sheet = C&C 5e Character Sheet
     --------------------------------------------------------------------------------------
-    SEÇÃO 1: O BÁSICO
+    SECTION 1:  THE BASICS
     --------------------------------------------------------------------------------------
-    Nome do personagem:
-    Raça/Classe:
-    Pontos de Nível/Exp:
-    Fundo      :
-
-    --------------------------------------------------------------------------------------
-    SEÇÃO 2: HABILIDADES
-    --------------------------------------------------------------------------------------
-    Força= 10 (+0) 10 Base
-    Destreza= 10 (+0) 10 Base
-    Constituição= 10 (+0) 10 Base
-    Inteligência= 10 (+0) 10 Base
-    Sabedoria= 10 (+0) 10 Base
-    Carisma= 10 (+0) 10 Base
-
-    Bônus de proficiência =
-    Percepção (sabedoria passiva) =
-
-    Racial (raça)
-
-    Classe (Classe)
-
+    Character Name  :
+    Race / Class    :
+    Level / Exp Pts :
+    Background      :
 
     --------------------------------------------------------------------------------------
-    SEÇÃO 3: SALVANDO JOGOS
+    SECTION 2: ABILITIES
     --------------------------------------------------------------------------------------
+    Strength     =     10   (+0) 10 Base
+    Dexterity    =     10   (+0) 10 Base
+    Constitution =     10   (+0) 10 Base
+    Intelligence =     10   (+0) 10 Base
+    Wisdom       =     10   (+0) 10 Base
+    Charisma     =     10   (+0) 10 Base
 
-    ( )Força       =+0
-    ( )Destreza    =+0
-    ( )Constituição =+0
-    ( )Inteligência =+0
-    ( )Sabedoria   =+0
-    ( )Carisma     =+0
+    Proficiency Bonus =
+    Perception (passive wisdom) =
+
+    Racial (Race)
+
+    Class (Class)
 
 
     --------------------------------------------------------------------------------------
-    SEÇÃO 4: HABILIDADES
+    SECTION 3:  SAVING THROWS
     --------------------------------------------------------------------------------------
 
-    ( ) Acrobacia (Des) +0 ( ) Medicina (Sab) +0
-    ( ) Manejo de Animais (Sab) +0 ( ) Natureza (Int) +0
-    ( ) Arcano (Int) +0 ( ) Percepção (Sab) +0
-    ( ) Atletismo (For) +0 ( ) Desempenho (Car) +0
-    ( ) Enganação (Cha) +0 ( ) Persuasão (Cha) +0
-    ( ) História (Int) +0 ( ) Religião (Int) +0
-    ( ) Intuição (Sab) +0 ( ) Prestidigitação (Dex) +0
-    ( ) Intimidação (Car) +0 ( ) Furtividade (Dex) +0
-    ( ) Investigação (Int) +0 ( ) Sobrevivência (Sab) +0
+    ( )Strength     =      +0
+    ( )Dexterity    =      +0
+    ( )Constitution =      +0
+    ( )Intelligence =      +0
+    ( )Wisdom       =      +0
+    ( )Charisma     =      +0
 
 
     --------------------------------------------------------------------------------------
-    SEÇÃO 5: COMBATE E SAÚDE
+    SECTION 4:  SKILLS
     --------------------------------------------------------------------------------------
 
-
-    Classe de Armadura:
-    Iniciativa (passiva):
-    Velocidade                :
-
-    Dados de sucesso:
-    Pontos de vida máximos:
-    Pontos de vida atuais:
-    Pontos de vida temporários:
-
-    ATAQUES
-    Tipo de arma (corpo a corpo ou de longo alcance) / bônus / dano (tipo)
-
-    --------------------------------------------------------------------------------------
-    SEÇÃO 6: ANTECEDENTES
-    --------------------------------------------------------------------------------------
-
-    Idade/sexo:
-    Altura/Peso:
-    Olhos/Pele/Cabelo:
-    Descrição          :
-
-    Fundo           :
-    Proficiências em Habilidades:
-    Proficiências em ferramentas:
-    Idiomas:
-
-    Características             :
-    Contra de escolha:
-    Características               :
-    Ideal:
-    Títulos:
-    Imperfeições                :
-
-    --------------------------------------------------------------------------------------
-    SEÇÃO 7: EXTRAS
-    --------------------------------------------------------------------------------------
-    Lista de Equipamentos
-    Descrição Custo Peso
-
-
-    libras
-
-    Fortuna
-    PP:
-    PE:
-    GP:
-    SP:
-    CP:
-
-    Gemas:
-    Joia      :
-    Outro        :
-    Itens Mágicos:
+    ( )  Acrobatics (Dex)      +0       ( )  Medicine (Wis)        +0
+    ( )  Animal Handling (Wis) +0       ( )  Nature (Int)          +0
+    ( )  Arcana (Int)          +0       ( )  Perception (Wis)      +0
+    ( )  Athletics  (Str)      +0       ( )  Performance (Cha)     +0
+    ( )  Deception (Cha)       +0       ( )  Persuasion (Cha)      +0
+    ( )  History (Int)         +0       ( )  Religion (Int)        +0
+    ( )  Insight (Wis)         +0       ( )  Sleight of Hand (Dex) +0
+    ( )  Intimidation (Cha)    +0       ( )  Stealth (Dex)         +0
+    ( )  Investigation (Int)   +0       ( )  Survival (Wis)        +0
 
 
     --------------------------------------------------------------------------------------
-    SEÇÃO 8: FEITIÇO
+    SECTION 5:  COMBAT & HEALTH
     --------------------------------------------------------------------------------------
 
-    Nível de feitiço:
-    Feitiço Salvar DC:
-    Mod de ataque mágico:
-    Slots de feitiço:
-      1: (MÁX.) (USADO)
-      2: (MÁX.) (USADO)
-      3: (MÁX.) (USADO)
-      4: (MÁX.) (USADO)
-      5: (MÁX.) (USADO)
-      6: (MÁX.) (USADO)
-      7: (MÁX.) (USADO)
-      8: (MÁX.) (USADO)
-      9: (MÁX.) (USADO)
 
-    Truques
-    Componentes de duração do intervalo de tempo de lançamento de nome
+    Armor Class          :
+    Initiative (passive) :
+    Speed                :
 
-    1: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
+    Hit Dice             :
+    Max Hit Points       :
+    Current Hit Points   :
+    Temporary Hit Points :
 
-    2: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
+    ATTACKS
+    Weapon type(Melee or Ranged)   /   Bonus   /   Damage (Type)
 
-    3: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    4: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    5: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    6: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    7: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    8: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
-
-    9: Ritual dos componentes da duração do intervalo de tempo de lançamento do nome?
     --------------------------------------------------------------------------------------
-    Carpas e criptas 5e
+    SECTION 6:  BACKGROUND
+    --------------------------------------------------------------------------------------
 
+    Age / Gender         :
+    Height / Weight      :
+    Eyes / Skin / Hair   :
+    Description          :
+
+    Background           :
+    Skill Proficiencies  :
+    Tool Proficiencies   :
+    Languages            :
+
+    Features             :
+    Con of Choice        :
+    Traits               :
+    Ideal                :
+    Bonds                :
+    Flaws                :
+
+    --------------------------------------------------------------------------------------
+    SECTION 7: EXTRAS
+    --------------------------------------------------------------------------------------
+    Equipment List
+    Description                 Cost       Weight
+
+
+    lbs
+
+    Wealth
+    PP         :
+    EP         :
+    GP         :
+    SP         :
+    CP         :
+
+    Gems         :
+    Jewelry      :
+    Other        :
+    Magic Items  :
+
+
+    --------------------------------------------------------------------------------------
+    SECTION 8: SPELLCASTING
+    --------------------------------------------------------------------------------------
+
+    Spell Level:
+    Spell Save DC:
+    Spell Attack Mod:
+    Spell Slots:
+      1: (MAX) (USED)
+      2: (MAX) (USED)
+      3: (MAX) (USED)
+      4: (MAX) (USED)
+      5: (MAX) (USED)
+      6: (MAX) (USED)
+      7: (MAX) (USED)
+      8: (MAX) (USED)
+      9: (MAX) (USED)
+
+    Cantrips
+    Name  Casting Time  Range  Duration  Components
+
+    1: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    2: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    3: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    4: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    5: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    6: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    7: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    8: Name  Casting Time  Range  Duration  Components  Ritual?
+
+    9: Name  Casting Time  Range  Duration  Components  Ritual?
+    --------------------------------------------------------------------------------------
+    Carps and Crypts 5e

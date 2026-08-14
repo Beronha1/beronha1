@@ -4,5 +4,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-station-event-vent-creatures-start-announcement-deltav = Aten??o. Uma grande quantidade de formas de vida desconhecidas foi detectada nos sistemas de ventilação perto de {$location}. Todo o pessoal deve evacuar a ?rea imediatamente.
-
+station-event-vent-creatures-start-announcement-deltav = Attention. A large influx of unknown life forms has been detected in ventilation systems near {$location}. All personnel must vacate the area immediately.

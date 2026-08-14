@@ -7,11 +7,11 @@ roundend-prepend-devil-contracts-named = [color=white]{$name}[/color] fez [color
 devil-component-examined = [color=darkred]Os olhos de {CAPITALIZE(POSS-ADJ($target))} brilham em um vermelho fraco.[/color]
 condemned-component-examined = [color=chartreuse]Os olhos de {CAPITALIZE($target)} estão ocos e sem alma.[/color]
 
-devil-role-greeting = Você é um diabo das profundezas do inferno,
-  que possuiu o corpo de {$playerName}
-  Corrompa mortais e colete almas através dos contratos.
-  Não é do seu interesse fazer tarefas que não tenham a ver com seus acordos, elas estão abaixo de você.
-  Seu nome verdadeiro é {$trueName} - Tente manter em segredo, tudo bem?
+devil-role-greeting = You are a devil from the depths of hell,
+  who has possessed the body of {$playerName}
+  Corrupt mortals and collect souls through the use of contracts.
+  It is not in your interest to do tasks unrelated to your deals, they are beneath you.
+  Your true name is {$trueName} - Try to keep it a secret, will you?
 
 devil-true-name-heard = O ato de {$speaker} ordenar o nome verdadeiro de {$target} obriga {POSS-ADJ($target)} a parar.
 devil-true-name-heard-chaplain = O ato das palavras sagradas de {$speaker} ordenando o nome verdadeiro de {$target} queima a própria alma dele.
@@ -40,4 +40,3 @@ invalid-possession-target = Você não pode possuir esse alvo!
 devil-power-level-increase-weak = Faíscas de chamas sobem da ponta dos seus dedos. Sua conexão com o inferno se fortaleceu.
 devil-power-level-increase-moderate = Você sente sua força aumentar. Sua conexão com o inferno se fortaleceu.
 devil-power-level-increase-powerful = Você quase completou suas tarefas aqui. Só faltam mais algumas almas.
-

@@ -25,8 +25,8 @@ honkops-cond-somenukiesalive = Alguns operativos honklear morreram.
 honkops-cond-allnukiesalive = Nenhum operativo honklear morreu.
 
 honkops-list-start = Os operativos Honklear eram:
-honkops-list-name= - [color= Branco]{$name}[/color]
-honkops-list-name-user= - [color=Branco]{$name}[/color] ([color=cinza]{$user}[/color])
+honkops-list-name= - [color=White]{$name}[/color]
+honkops-list-name-user= - [color=White]{$name}[/color] ([color=gray]{$user}[/color])
 honkops-not-enough-ready-players = Não há jogadores suficientes prontos para o jogo! Havia {$readyPlayersCount} jogadores prontos de {$minimumPlayers} necessários. Não é possível iniciar Honkops.
 honkops-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar Honkops.
 

@@ -3,9 +3,9 @@
 # SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-book-text-plasma-trap = Heheheheh, não tem como eles chegarem no nosso esconderijo AGORA, né?
-      Eu deixei a área onde nossas coisas estão em mais de mil graus quentes.
-      Você sabe como drenar quando precisamos pegar para fora.
+book-text-plasma-trap = Heheheheh, no way in hell they're going to get at our stash NOW, is there?
+      I rigged the area where our stuff's at to be a toasty thousand K.
+      You know how to drain it when we need it out.
        - J.
 
 book-text-holoparasite-info = Obrigado por escolher nosso pacote de holoparasita!
@@ -75,4 +75,3 @@ book-text-combat-bakery-kit = Obrigado por escolher nosso kit de padaria de comb
       Fatia de manteiga x 1
       Fragmento de vidro x 1
       Tempo de cozimento: 5 segundos
-

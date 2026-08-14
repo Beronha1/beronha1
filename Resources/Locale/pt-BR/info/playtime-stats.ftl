@@ -7,14 +7,12 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-# Estat?sticas de tempo de jogo
+# Estatísticas de tempo de jogo
 
 ui-playtime-stats-title = Estatésticas de tempo de jogo do usuário
 ui-playtime-overall-base = Tempo de jogo total:
 ui-playtime-overall = Tempo de jogo total: {PLAYTIME($time)}
 ui-playtime-first-time = Primeira vez jogando
 ui-playtime-roles = Tempo de jogo por função
-ui-playtime-header-role-type = Fun??o
+ui-playtime-header-role-type = Role
 ui-playtime-header-role-time = Tempo
-
-

@@ -6,17 +6,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-happyhonk-1 = Honk! Honk! Por que não pedir uma refei??o Happy Honk hoje?
-advertisement-happyhonk-2 = Os palha?os merecem um abra?o; se voc? ver um, mostre sua apreciação.
-advertisement-happyhonk-3 = Se encontrar o Golden Honker, ore aos deuses, voc? ? uma pessoa muito sortuda.
-advertisement-happyhonk-4 = Happy Honk: ? uma refei??o, ? um bom neg?cio, vem com um brinquedo de pl?stico que vai te fazer gritar.
-advertisement-happyhonk-5 = O que ? preto, branco e vermelho por inteiro? O m?mico, e ela morreu de trauma craniano.
-advertisement-happyhonk-6 = Quantos agentes de segurança precisa para te prender? Três: um para te bater até a morte, um para te algemar e um para jogar seu corpo na manuten??o.
-advertisement-happyhonk-7 = Happy Honk não ? respons?vel pela qualidade da comida colocada dentro das nossas caixas de refei??o.
-advertisement-happyhonk-8 = Por que não pedir nosso pacote limitado de Mime Happy Honk Meal?
-advertisement-happyhonk-9 = Happy Honk ? uma marca registrada da Honk! co. e ? muito superior ? Robust Nukie Food corp.
-advertisement-happyhonk-10 = Nossas refei??es Happy Honk certamente trar?o uma grande surpresa!
+advertisement-happyhonk-1 = Honk! Honk! Why not order a Happy Honk Meal today?
+advertisement-happyhonk-2 = Clowns deserve a hug, if you see one be sure to show your appreciation.
+advertisement-happyhonk-3 = If you find the Golden Honker then pray to the gods, you are one lucky person.
+advertisement-happyhonk-4 = Happy Honk: it's a meal, it's a deal, it's got a plastic toy that will make you squeal.
+advertisement-happyhonk-5 = What's black and white and red all over? The mime and she died from blunt head trauma.
+advertisement-happyhonk-6 = How many security officers does it take to arrest you? Three, one to beat you to death, one to cuff you and one to dump your body in maintenance.
+advertisement-happyhonk-7 = Happy Honk is not responsible for the quality of the food placed within our Happy Honk meal boxes.
+advertisement-happyhonk-8 = Why not ask for our limited edition Mime Happy Honk Meal?
+advertisement-happyhonk-9 = Happy Honk is a trademark of Honk! co. and is far superior to Robust Nukie Food corp.
+advertisement-happyhonk-10 = Our Happy Honk meals are sure to offer a great surprise!
 thankyou-happyhonk-1= Buzina!
 thankyou-happyhonk-2= Buzina, buzina!
-thankyou-happyhonk-3 = V? compartilhar a diversão! Honk!
-thankyou-happyhonk-4 = V? fazer as pessoas escorregarem! Honk!
+thankyou-happyhonk-3 = Go share the fun! Honk!
+thankyou-happyhonk-4 = Go slip people! Honk!

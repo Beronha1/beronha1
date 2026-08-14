@@ -70,15 +70,15 @@ knowledge-path-side-t1-envy-desc =
 
 knowledge-path-side-t1-mask-name = Máscara da Loucura
 knowledge-path-side-t1-mask-desc =
-    O medo te perfura até o osso, cada instinto grita para desviar o olhar, mas é tarde demais...
-    Um único pensamento afoga toda a razão, irrompendo do fundo de sua mente:
-    "Por que? Por que fui condenado a testemunhar isso?"
+    Fear pierces you to your core, every instinct screams to tear your gaze away, but it is too late...
+    A single thought drowns out all reason, bursting forth from the depth of your mind:
+    "Why? Why was I cursed with sight to witness this?"
 
-    Permite transmutar qualquer máscara, um bastão de choque e um fígado para criar uma Máscara da Loucura.
-    A máscara te protege de flashes brilhantes e incute medo extremo em hereges que a veem,
-    fazendo-os perceber todos como uma pessoa que usa a máscara.
-    Pode ser alternada para te dar visão noturna, desativando medo e proteção ocular.
-    Também pode ser forçada em um herege, para impossibilitá-lo de tirá-la...
+    Allows you to transmute any mask, a stun baton, and a liver to create a Mask of Madness.
+    The mask protects you from bright flashes and instills extreme fear into heathens who witness it,
+    making them perceive everyone as a person who wears the mask.
+    It can be toggled to give you night vision instead, disabling fear and eye protection.
+    It can also be forced onto a heathen, to make them unable to take it off...
 
 knowledge-path-side-t1-coin-name = Moeda Eldritch
 knowledge-path-side-t1-coin-desc =

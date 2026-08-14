@@ -22,7 +22,7 @@ thaven-mood-cosmic-grotesqueworld-desc = O mundo ao seu redor esta nauseante e v
 thaven-mood-cosmic-voiceoftheend-name = Arauto Cosmico
 thaven-mood-cosmic-voiceoftheend-desc = O fim de todas as coisas esta chegando! Voce deve espalhar a palavra e garantir que o maximo possivel de pessoas esteja preparado para o fim.
 
-thaven-mood-cosmic-worshipoftheend-name = Fe =  # likely placeholder? maybe wrong
+thaven-mood-cosmic-worshipoftheend-name = Cosmic Faith
 haven-mood-cosmic-worshipoftheend-desc = Voce esta obcecado pela noao ideia do fim de todas as coisas. Ela deve ser adorada! Por voce e por tantos quantos voce convencer para se juntarem.
 
 thaven-mood-cosmic-disregardoftheliving-name = Desprezo dos Vivos

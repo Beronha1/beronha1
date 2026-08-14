@@ -5,8 +5,8 @@
 
 objectives-round-end-result-in-custody = {$custody} de {$count} {MAKEPLURAL($agent)} estiveram em custodia.
 
-objectives-player-user-named= [color=Branco]{$name}[/color] ([color=cinza]{$user}[/color])
-objectives-player-named= [color=Branco]{$name}[/color]
+objectives-player-user-named= [color=White]{$name}[/color] ([color=gray]{$user}[/color])
+objectives-player-named= [color=White]{$name}[/color]
 
 objectives-no-objectives = {$custody}{$title} foi um {$agent}.
 objectives-with-objectives = {$custody}{$title} foi um {$agent} que tinha os seguintes objetivos:

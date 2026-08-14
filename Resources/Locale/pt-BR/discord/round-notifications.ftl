@@ -7,6 +7,5 @@
 discord-round-notifications-new =Uma nova rodada está começando!
 discord-round-notifications-started = A rodada #{$id} no mapa "{$map}" começou.
 discord-round-notifications-end = A rodada #{$id} terminou. Durou {$hours} horas, {$minutes} minutos e {$seconds} segundos.
-discord-round-notifications-end-ping = <@&__TOK_0__>, uma nova rodada começará em breve!
+discord-round-notifications-end-ping = <@&{$roleId}>, a new round will start soon!
 discord-round-notifications-unknown-map = Desconhecido
-

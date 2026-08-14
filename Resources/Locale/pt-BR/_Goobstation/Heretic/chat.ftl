@@ -3,7 +3,7 @@ blade-arena-crit-message-heretic =Você fez bem, você pode sair agora.
 
 # influence gain and fracture examine messages must have newlines because otherwise they wouldn't fit in chat window
 
-influence-base-message =[
+influence-base-message = [textshader="{$text}" font="DefaultBold" size={$size} shader="Eldritch"]
 
 influence-gain-message-1 =
     UM BRILHO...
@@ -87,4 +87,3 @@ fracture-examine-message-15 =
 fracture-examine-message-16 =
     Pensávamos que éramos predadores,
     mas somos presas
-

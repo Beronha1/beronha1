@@ -4,7 +4,6 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-salvage-map-wreck-size-unknown = [color=purple]N?o identificado[/color]
+salvage-map-wreck-size-unknown = [color=purple]Unidentified[/color]
 
 salvage-magnet-mining-points-cost = Custo: {$points} pontos de mineração
-

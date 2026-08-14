@@ -75,11 +75,10 @@ holiday-name-pride-month = Mês do Orgulho
 
 holiday-custom-cosmonautics-day = Neste dia, há mais de 600 anos, o camarada Yuri Gagarin aventurou-se pela primeira vez no espaço!
 holiday-custom-mothers-day = Feliz Dia das Mães na maior parte das Américas, Ásia e Oceania!
-holiday-custom-bastille-day = Você ouve as pessoas cantando?
+holiday-custom-bastille-day = Do you hear the people sing?
 holiday-custom-friendship-day = Tenha um Dia da Amizade mágico!
 holiday-custom-talk-like-a-pirate-day = Você está falando como um pirata hoje ou então estará andando na prancha, amigo!
 holiday-custom-halloween = Tenha um Halloween assustador!
 holiday-custom-kindness-day = Faça alguns atos aleatórios de bondade por um estranho!
 holiday-custom-christmas = Tenha um feliz Natal!
 holiday-custom-festive-season = Tenha uma boa época festiva!
-

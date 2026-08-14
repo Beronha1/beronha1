@@ -17,9 +17,8 @@ materials-unit-web = teia
 # chunks of ore
 materials-unit-chunk = fragmento
 # boll of cotton
-materials-unit-boll = bolinha
+materials-unit-boll = boll
 
 # bills of spesos... not very good but they are not (yet?) used for crafting anything
 # also the lathe/atm would need bigger denominations to output...
 materials-unit-bill = nota
-

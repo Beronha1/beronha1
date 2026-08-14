@@ -7,7 +7,7 @@
 chuuni-eyepatch-backstory-1 = [color=hotpink]This eyepatch is a seal that contains the power of the demon king. If I remove it, I will unleash a cataclysmic destruction upon the world.[/color]
 chuuni-eyepatch-backstory-2 = [color=hotpink]This eyepatch is a gift from the angel of light. It allows me to see the true nature of things and protect the innocent from harm.[/color]
 chuuni-eyepatch-backstory-3 = [color=hotpink]This eyepatch is a mark of my contract with the dragon god. It grants me access to his ancient wisdom and fiery breath.[/color]
-chuuni-eyepatch-backstory-4 = [color=hotpink]This eyepatch is a symbol of my sacrifice for the sake of love. It hides the scar that I received from saving my beloved from a fatal attack.[color]
+chuuni-eyepatch-backstory-4 = [color=hotpink]This eyepatch is a symbol of my sacrifice for the sake of love. It hides the scar that I received from saving my beloved from a fatal attack.[/color]
 
 chuuni-invocation-unset = This is embarrassing... I can't remember the words... um... maybe if I just wave my hand like this... no, that's not wor- Ah! There it goes!
 chuuni-invocation-holy = By the grace of the holy one, I summon the light of salvation. Let my allies rejoice. O, Heaven! Bless them!

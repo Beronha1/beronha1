@@ -5,20 +5,18 @@ insurgent-round-end-agent-name = insurgente
 
 objective-issuer-insurgents = Insurgentes
 
-insurgency-title = Insurg?ncia
-insurgency-description = H? insurgentes entre nós...
+insurgency-title = Insurgency
+insurgency-description = Insurgents are among us...
 
-roles-antag-shadow-demon-name = Dem?nio Sombra
-roles-antag-shadow-demon-objective = A escurid?o precisa de um Rei, e voc? foi chamado para vestir essa coroa.
+roles-antag-shadow-demon-name = Shadow Demon
+roles-antag-shadow-demon-objective = The darkness needs a King, and you got summoned to wear that crown.
 
 roles-antag-mind-controlled-name = Controle Mental
 roles-antag-mind-controlled-objective = Ajudar seu Mestre
 
-roles-antag-spy-name = Espi?o
+roles-antag-spy-name = Spy
 roles-antag-spy-objective = Roube coisas e Concluir sua missão.
 
-spy-round-end-agent-name = espi?o
+spy-round-end-agent-name = spy
 
 never-shown = !
-
-

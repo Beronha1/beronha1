@@ -1,8 +1,8 @@
 ﻿reagent-name-lemonadelemonade = Limonada Limonada
-reagent-desc-lemonadelemonade = Garantido para causar azia, mas o gosto? Vale a pena.
+reagent-desc-lemonadelemonade = Guaranteed to give you heartburn, but the taste? Worth it.
 
 reagent-name-t = T
-reagent-desc-t = Uma mistura estranha de chá e... nada? Parece literalmente a letra T.
+reagent-desc-t = A strange mixture of tea and... nothing? It looks literally like the letter T.
 reagent-physical-desc-literal = literal
 
 reagent-name-rum-and-coke = Rum e cola

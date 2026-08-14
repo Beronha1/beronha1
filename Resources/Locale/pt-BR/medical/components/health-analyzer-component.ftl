@@ -11,6 +11,7 @@ health-analyzer-window-entity-dead-text = Morto
 health-analyzer-window-entity-critical-text = Crítico
 health-analyzer-window-entity-temperature-text = Temperatura:
 health-analyzer-window-entity-blood-level-text = Nível de sangue:
+health-analyzer-window-entity-allergy-text = Alergia detectada
 health-analyzer-window-entity-status-text = Estado:
 health-analyzer-window-entity-damage-total-text = Dano total:
 health-analyzer-window-damage-group-text = {$damageGroup}: {$amount}
@@ -22,4 +23,3 @@ health-analyzer-window-scan-mode-active = Ativo
 health-analyzer-window-scan-mode-inactive = Inativo
 health-analyzer-popup-scan-target = {$user} está tentando escanear você!
 health-analyzer-window-return-button-text =  Voltar
-

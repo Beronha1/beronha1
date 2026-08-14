@@ -29,6 +29,7 @@ health-analyzer-window-entity-critical-text = Critical
 
 health-analyzer-window-entity-temperature-text = Temperature:
 health-analyzer-window-entity-blood-level-text = Blood Level:
+health-analyzer-window-entity-allergy-text = Allergy detected
 health-analyzer-window-entity-status-text = Status:
 health-analyzer-window-entity-damage-total-text = Total Damage:
 

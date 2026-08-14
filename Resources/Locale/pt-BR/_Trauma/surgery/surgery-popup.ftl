@@ -1,22 +1,20 @@
-﻿surgery-popup-step-SurgeryStepRearrangeTissue = {$user} está rearranjando os tecidos no {$user} de {$user}.
-surgery-popup-step-SurgeryStepStitchVessels = {$user} está costurando vasos sangu?neos no {$user} de {$user}.
+surgery-popup-step-SurgeryStepRearrangeTissue = {$user} is rearranging tissues on {$target}'s {$part}.
+surgery-popup-step-SurgeryStepStitchVessels = {$user} is stitching blood vessels on {$target}'s {$part}.
 
-surgery-popup-procedure-SurgeryRemoveHypoport-step-SurgeryStepRemoveOrgan = {$user} está retirando o hypoport do {$user} de {$user}!
+surgery-popup-procedure-SurgeryRemoveHypoport-step-SurgeryStepRemoveOrgan = {$user} is extracting the hypoport from {$target}'s {$part}!
 
-surgery-popup-step-SurgeryStepInsertHypoport = {$user} está instalando um hypoport no {$user} de {$user}!
+surgery-popup-step-SurgeryStepInsertHypoport = {$user} is installing a hypoport into {$target}'s {$part}!
 
-surgery-popup-step-SurgeryStepCreateJoint = {$user} está criando uma articulação ?ssea no {$user} de {$user}!
-surgery-popup-step-SurgeryStepStitchJoint = {$user} está costurando os vasos de uma articulação no {$user} de {$user}!
-surgery-popup-procedure-SurgeryAttachTail-step-SurgeryStepInsertFeature = {$user} está fixando uma cauda no {$user} de {$user}!
-surgery-popup-procedure-SurgeryAttachWings-step-SurgeryStepInsertFeature = {$user} está fixando asas no {$user} de {$user}!
+surgery-popup-step-SurgeryStepCreateJoint = {$user} is create bone jointwork on {$target}'s {$part}!
+surgery-popup-step-SurgeryStepStitchJoint = {$user} is stitching a joint's vessels on {$target}'s {$part}!
+surgery-popup-procedure-SurgeryAttachTail-step-SurgeryStepInsertFeature = {$user} is attaching a tail onto {$target}'s {$part}!
+surgery-popup-procedure-SurgeryAttachWings-step-SurgeryStepInsertFeature = {$user} is attaching wings onto {$target}'s {$part}!
 
-surgery-popup-procedure-SurgeryRemoveTongue-step-SurgeryStepRemoveOrgan = {$user} está removendo a l?ngua de {$target}!
+surgery-popup-procedure-SurgeryRemoveTongue-step-SurgeryStepRemoveOrgan = {$user} is removing {$target}'s tongue!
 
-surgery-popup-step-SurgeryStepInsertTongue = {$user} está inserindo uma l?ngua no {$user} de {$user}!
+surgery-popup-step-SurgeryStepInsertTongue = {$user} is inserting a tongue into {$target}'s {$part}!
 
 surgery-popup-procedure-SurgeryRemoveKidneys-step-SurgeryStepRemoveOrgan = {$user} está removendo os rins de {$target}!
-surgery-popup-step-SurgeryStepInsertKidneys = {$user} está inserindo rins no {$user} de {$user}!
+surgery-popup-step-SurgeryStepInsertKidneys = {$user} is inserting kidneys into {$target}'s {$part}!
 
-surgery-popup-procedure-SurgeryRemoveTongue-step-SurgeryStepRemoveOrganHand = {$user} está removendo a l?ngua de {$target}!
-
-
+surgery-popup-procedure-SurgeryRemoveTongue-step-SurgeryStepRemoveOrganHand = {$user} is removing {$target}'s tongue!

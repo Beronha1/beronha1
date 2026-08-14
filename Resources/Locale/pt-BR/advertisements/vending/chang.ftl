@@ -7,10 +7,8 @@
 
 advertisement-chang-1 = Prove 5000 anos de cultura!
 advertisement-chang-2 = Sr. Chang, aprovado para consumo seguro em mais de 10 setores!
-advertisement-chang-3 = Comida chinesa ? ?tima para uma noite a dois, ou uma noite sozinho!
-advertisement-chang-4 = N?o há erro com a comida chinesa aut?ntica do Sr. Chang!
-advertisement-chang-5 = 100% de comida chinesa aut?ntica!
+advertisement-chang-3 = Chinese food is great for a date night, or a lonely night!
+advertisement-chang-4 = You can't go wrong with Mr. Chang's authentic Chinese food!
+advertisement-chang-5 = 100% authentic Chinese food!
 thankyou-chang-1 = Sr. Chang agradece!
-thankyou-chang-2 = Aproveite sua refei??o aut?ntica!
-
-
+thankyou-chang-2 = Enjoy your authentic meal!

@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-identity-unknown-name =???
+identity-unknown-name = ???
 
 identity-age-young = jovem
 identity-age-middle-aged = meia-idade
@@ -13,4 +13,3 @@ identity-age-old = velho
 identity-gender-feminine = mulher
 identity-gender-masculine = cara
 identity-gender-person = pessoa
-

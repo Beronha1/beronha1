@@ -5,8 +5,6 @@
 #
 # SPDX-License-Identifier: MIT
 
-advertisement-virodrobe-1 = V?rus te derrubando? Ent?o atualize para roupa esterilizada hoje!
-advertisement-virodrobe-2 = Se sentindo mal? Essas roupas ajudam a restringir a propagação daquela doen?a desagrad?vel... acho.
-advertisement-virodrobe-3 = Protege voc? contra todas as doen?as desagrad?veis!
-
-
+advertisement-virodrobe-1 = Viruses getting you down? Then upgrade to sterilized clothing today!
+advertisement-virodrobe-2 = Feeling ill? These outfits will help restrict the spread of that nasty disease... I think.
+advertisement-virodrobe-3 = Protects you against all nasty diseases!

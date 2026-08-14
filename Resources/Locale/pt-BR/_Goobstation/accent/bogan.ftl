@@ -33,8 +33,8 @@ accent-bogan-words-replace-5 =maldito skitz
 accent-bogan-words-6 =legal
 accent-bogan-words-replace-6 =esquiar
 
-accent-bogan-words-7 =o que?
-accent-bogan-words-replace-7 =o que é talkinbeterraba?
+accent-bogan-words-7 = what?
+accent-bogan-words-replace-7 = whuddyatalkinabeet?
 
 accent-bogan-words-8 =erva
 accent-bogan-words-replace-8 =iode
@@ -51,7 +51,7 @@ accent-bogan-words-replace-11 =boceta de cachorro
 accent-bogan-words-12 =barata
 accent-bogan-words-replace-12 =doendo, Roger
 
-accent-bogan-words-13 =e aí?
+accent-bogan-words-13 = sup
 accent-bogan-words-replace-13 =vamos em frente
 
 accent-bogan-words-14 =o que está acontecendo
@@ -225,8 +225,8 @@ accent-bogan-words-replace-69 =frio
 accent-bogan-words-70 =kudzu
 accent-bogan-words-replace-70 =tabaco maluco
 
-accent-bogan-words-71 =realmente?
-accent-bogan-words-replace-71 =completo?
+accent-bogan-words-71 = really?
+accent-bogan-words-replace-71 = full on?
 
 accent-bogan-words-72 =segurança
 accent-bogan-words-replace-72 =loja policial

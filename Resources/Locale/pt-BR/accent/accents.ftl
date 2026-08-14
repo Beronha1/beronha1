@@ -24,7 +24,7 @@ accent-words-cat-2 = Cortar.
 accent-words-cat-3 = Srrrow!
 accent-words-cat-4 = Hhhh!
 accent-words-cat-5 = Sobrancelha.
-accent-words-cat-6 = Miau?
+accent-words-cat-6 = Meow?
 accent-words-cat-7 = Miau.
 
 # Dog accent
@@ -96,13 +96,13 @@ accent-words-generic-aggressive-4 = Crescer!!
 # Duck
 accent-words-duck-1 = Quack!
 accent-words-duck-2 = Charlatão.
-accent-words-duck-3 = Charlatão?
+accent-words-duck-3 = Quack?
 accent-words-duck-4 = Quá-quá!
 
 # Chicken
 accent-words-chicken-1 = Cluck!
 accent-words-chicken-2 = Cluck.
-accent-words-chicken-3 =Cluck?
+accent-words-chicken-3 = Cluck?
 accent-words-chicken-4 = Cuck-cuck!
 
 # Pig
@@ -155,28 +155,28 @@ accent-words-nymph-4 = Chrup!
 # TomatoKiller
 accent-words-tomato-1= Batatas!
 accent-words-tomato-2 = Troteto
-accent-words-tomato-3 = Masteto?
+accent-words-tomato-3 = Mastet?
 accent-words-tomato-4 = Reaty!
 accent-words-tomato-5 = Água...
 
 # Scurret
 accent-words-scurret-1 =Uau!
-accent-words-scurret-2 = O quê?
+accent-words-scurret-2 = Wa?
 accent-words-scurret-3 = Uau.
 accent-words-scurret-4= De...
 accent-words-scurret-5 = Uau!
-accent-words-scurret-6 = Uau?
+accent-words-scurret-6 = Wawa?
 accent-words-scurret-7 = Uau.
 accent-words-scurret-8 = Uau...
 accent-words-scurret-9 = Uau, uau!
-accent-words-scurret-10 = O que é isso?
+accent-words-scurret-10 = Wa wawa?
 accent-words-scurret-11 = Wa wawa.
 accent-words-scurret-12 = Uau, uau...
 accent-words-scurret-13 = Uau, uau!
-accent-words-scurret-14 = O que é isso?
+accent-words-scurret-14 = Wawa wa?
 accent-words-scurret-15 = Wawa wa.
 accent-words-scurret-16= Uau...
 accent-words-scurret-17= Uau.
 accent-words-scurret-18= Uau!
-accent-words-scurret-19= Uau?
+accent-words-scurret-19 = Waaaaaa?
 accent-words-scurret-20= Uau...

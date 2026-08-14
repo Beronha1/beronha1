@@ -6,7 +6,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-revenant-essence-amount =Você tem [color=ameixa]{$current} Essência[/color]. Sua quantidade de regeneração é [color=ameixa]{$max} Essência[/color].
+revenant-essence-amount =Você tem [color=plum]{$current} Essência[/color]. Sua quantidade de regeneração é [color=plum]{$max} Essência[/color].
 revenant-max-essence-increased = Sua essência máxima aumentou!
 
 revenant-not-enough-essence = Essência insuficiente!
@@ -26,6 +26,6 @@ revenant-soul-finish-harvest= {CAPITALIZE(THE($target))} cai no chão!
 
 # UI
 revenant-user-interface-title = Loja de Habilidades
-revenant-user-interface-essence-amount = [color=ameixa]{$amount}[/color] Essência roubada
+revenant-user-interface-essence-amount = [color=plum]{$amount}[/color] Essência roubada
 
 revenant-user-interface-cost= {$price} Essência

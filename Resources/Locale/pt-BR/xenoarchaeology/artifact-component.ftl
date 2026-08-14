@@ -19,7 +19,7 @@ artifact-activation-fail = Nada acontece...
 artifact-activation-artifexium = O líquido penetra nos poros do artefato...
 
 ### Misc.
-artifact-examine-trigger-desc = [color=gray][italic]Você está pensando em mim?[/italic][/color]
+artifact-examine-trigger-desc = [color=gray][italic]Am I on your mind?[/italic][/color]
 
 artifact-node-class-1 = [color=#ff2bb1]Hílico[/color]
 artifact-node-class-2 = [color=#ff8b2b]Psíquico[/color]
@@ -27,4 +27,3 @@ artifact-node-class-3 = [color=#a9ff38]Pneumático[/color]
 artifact-node-class-4 = [color=#2bfff8]Arconte[/color]
 artifact-node-class-5 = [color=#7883ff]Luminária[/color]
 artifact-node-class-6 = [color=#be78ff]Demiurgo[/color]
-

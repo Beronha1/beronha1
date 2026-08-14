@@ -1,99 +1,96 @@
-﻿# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-License-Identifier: AGPL-3.0-or-later
 
-heretic-ritual-none = Nenhum
-heretic-ritual-unknown = Ritual desconhecido
-heretic-ritual-switch = {$name} selecionado
-heretic-ritual-success = Ritual bem-sucedido
+heretic-ritual-none = None
+heretic-ritual-unknown = Unknown Ritual
+heretic-ritual-switch = Selected {$name}
+heretic-ritual-success = Ritual successful
 
-heretic-ritual-fail-items = Ritual falhou. Itens necess�rios: {$itemlist}
-heretic-ritual-norituals = Voc� n�o conhece nenhum ritual!
-heretic-ritual-noritual = Nenhum ritual escolhido!
+heretic-ritual-fail-items = Ritual failed. Required items: {$itemlist}
+heretic-ritual-norituals = You don't know any rituals!
+heretic-ritual-noritual = No ritual chosen!
 
-heretic-ritual-knowledge-items = Itens necess�rios para o ritual de conhecimento: {$itemlist}
+heretic-ritual-knowledge-items = Required items for ritual of knowledge: {$itemlist}
 
-heretic-ritual-basic-sacrifice = Batimento do Mansus
-heretic-ritual-basic-sacrifice-desc = Traga um de seus alvos em condi��o cr�tica ou pior e o sacrifique para o Mansus, pulverizando-o e concedendo um ponto de conhecimento. Cabe�as da equipe d�o um ponto b�nus adicional.
+heretic-ritual-basic-sacrifice = Heartbeat of the Mansus
+heretic-ritual-basic-sacrifice-desc = Bring one of your targets in critical or worse condition to sacrifice them to the Mansus, gibbing them and granting you one knowledge point. Heads of staff give an additional bonus point.
 
-heretic-ritual-basic-focus = Foco de �mbar
-heretic-ritual-basic-focus-desc = Transmute um caco de vidro e um par de olhos em um Foco de �mbar. Um colar pequeno que permite lan�ar feiti�os avan�ados sem precisar segurar o c�dex na m�o.
+heretic-ritual-basic-focus = Amber Focus
+heretic-ritual-basic-focus-desc = Transmute a glass shard and a pair of eyes into Amber Focus. A small necklace that allows you to cast advanced spells without the need of holding the codex in your hand.
 
-heretic-ritual-basic-heart = Batimento implac�vel
-heretic-ritual-basic-heart-desc = Transmute um cora��o, uma caneta e um papel para refazer seus alvos. Cuidado, voc� pode tirar os mesmos alvos de antes. Use isso apenas se absolutamente necess�rio.
+heretic-ritual-basic-heart = Relentless Heartbeat
+heretic-ritual-basic-heart-desc = Transmute one heart, a pen and a paper to reroll your targets. Be wary that you may roll the same targets as before. Use this only if absolutely necessary.
 
-heretic-ritual-basic-codex = C�dex Cicatrix
+heretic-ritual-basic-codex = Codex Cicatrix
 heretic-ritual-basic-codex-desc =
-    O oculto deixa fragmentos de conhecimento e poder em qualquer lugar.
-    O C�dex Cicatrix � um exemplo disso. Dentro de suas p�ginas de couro e envelhecidas, um caminho para o Mansus � revelado.
+    The occult leaves fragments of knowledge and power anywhere and everywhere. The Codex Cicatrix is one such example. Within the leather-bound faces and age old pages, a path into the Mansus is revealed.
 
-    Permite que voc� transforme um livro, qualquer caneta e uma pe�a de �rg�o ou parte do corpo em um C�dex Cicatrix.
-    O C�dex Cicatrix pode ser usado para ganhar mais poder dos influenciadores. Tamb�m pode ser usado para encantar itens, desenhar e remover runas de transmuta��o e como foco de feiti�o em uma emerg�ncia.
+    Allows you to transmute a book, any pen, and flesh organ or body part to create a Codex Cicatrix.
+    The Codex Cicatrix can be used for gaining more power from influences. It can also be used to enchant items, draw and remove transmutation runes, and as a spell focus in a pinch.
 
-heretic-ritual-basic-reminiscence = Nostalgia
-heretic-ritual-basic-reminiscence-desc = Transmute uma cadeira para retornar instantaneamente uma de suas l�minas perdidas.
+heretic-ritual-basic-reminiscence = Reminiscence
+heretic-ritual-basic-reminiscence-desc = Transmute a chair to instantly return one of your lost blades.
 
-heretic-ritual-basic-owls = Banquete das corujas
+heretic-ritual-basic-owls = Feast of Owls
 heretic-ritual-basic-owls-desc =
-    Sob o brilho suave da irracionalidade, existe uma besta que ronda a noite. Eu a trarei e permitirei que entre na minha presen�a. Ela se deleitar� com minhas ambi��es e deixar� conhecimento em seu rastro.
+    Under the soft glow of unreason there is a beast that stalks the night. I shall bring it forth and let it enter my presence. It will feast upon my amibitions and leave knowledge in its wake.
 
-    Permite que voc� realize um ritual que concede 5 pontos de conhecimento, mas impede a ascens�o. Isso s� pode ser feito uma vez e n�o pode ser revertido.
+    Allows you to undergo a ritual that gives you 5 knowledge points but locks you out of ascension. This can only be done once and cannot be reverted.
 
-heretic-ritual-basic-phylactery = Fila��rio da Condena��o
+heretic-ritual-basic-phylactery = Phylactery of Damnation
 heretic-ritual-basic-phylactery-desc =
-    Uma tintura torcida em forma de um parasita hemat�fago.
-    Seja ela que escolheu sua pr�pria forma, ou o humor da mente adoentada que conjurou esse instrumento abjeto, � melhor n�o pensar nisso.
+    A tincture twisted into the shape of a bloodsucker vermin.
+    Whether it chose the shape for itself, or this is the humor of the sickened mind that conjured this vile implement into being is something best not pondered.
 
-    Permite que voc� transforme um b�quer e um reservat�rio de sangue em uma Fila��rio que pode extrair sangue instantaneamente, mesmo � longa dist�ncia.
-    Aten��o, seu alvo ainda pode sentir uma picada.
+    Allows you to transmute a beaker and a pool of blood into a Phylactery that can instantly draw blood, even from long distances.
+    Be warned, your target may still feel a prick.
 
-heretic-ritual-fail-sacrifice = N�o h� cad�ver para sacrificar.
-heretic-ritual-fail-sacrifice-not-enough = N�o h� cad�veres suficientes.
-heretic-ritual-fail-sacrifice-ineligible = A runa recusa este sacrif�cio.
-heretic-ritual-fail-reagent-blood = N�o h� sangue presente.
-heretic-ritual-fail-reagent-vomit = N�o h� v�mito presente.
-heretic-ritual-fail-temperature-hot = Est� quente demais aqui.
-heretic-ritual-fail-temperature-cold = N�o est� frio o suficiente aqui.
-heretic-ritual-fail-sacrifice-ash = N�o h� cad�veres de sapientes queimando o suficiente.
-heretic-ritual-fail-sacrifice-blade = N�o h� cad�veres de sapientes decapitados o suficiente.
-heretic-ritual-fail-sacrifice-rust = N�o h� cad�veres de sapientes apodrecidos ou de sil�cio o suficiente.
-heretic-ritual-fail-sacrifice-cosmos = N�o h� cad�veres de sapientes marcados por estrelas o suficiente.
-heretic-ritual-fail-sacrifice-lock = N�o h� cad�veres sapientes sem cora��o o suficiente.
-heretic-ritual-fail-sacrifice-soul = N�o h� cad�veres sapientes suficientes.
-heretic-ritual-fail-limit = Voc� atingiu o limite de itens que este ritual fornece.
-heretic-ritual-fail-no-lost-blades = Nenhuma l�mina perdida pode ser encontrada.
-heretic-ritual-fail-already-ascended = Voc� j� ascendeu.
-heretic-ritual-fail-cannot-ascend = Voc� n�o pode ascender.
-heretic-ritual-fail-cannot-ascend-objectives = Voc� precisa cumprir seus objetivos para ascender.
-heretic-ritual-fail-lookup-empty = N�o h� nada na runa.
-heretic-ritual-fail-ghoulify = N�o h� cad�ver para ghoulificar.
-heretic-ritual-fail-ghoul-limit = No limite de ghoul!
-heretic-ritual-fail-no-id-card = O ritual requer uma carteira de identifica��o.
+heretic-ritual-fail-sacrifice = There is no corpse to sacrifice.
+heretic-ritual-fail-sacrifice-not-enough = There is not enough corpses.
+heretic-ritual-fail-sacrifice-ineligible = The rune refuses to accept this sacrifice.
+heretic-ritual-fail-reagent-blood = There is no blood present.
+heretic-ritual-fail-reagent-vomit = There is no vomit present.
+heretic-ritual-fail-temperature-hot = It is too hot here.
+heretic-ritual-fail-temperature-cold = It is not cold enough here.
+heretic-ritual-fail-sacrifice-ash = Not enough burning sapient corpses.
+heretic-ritual-fail-sacrifice-blade = Not enough headless sapient corpses.
+heretic-ritual-fail-sacrifice-rust = Not enough rotting or silicon sapient corpses.
+heretic-ritual-fail-sacrifice-cosmos = Not enough star marked sapient corpses.
+heretic-ritual-fail-sacrifice-lock = Not enough heartless sapient corpses.
+heretic-ritual-fail-sacrifice-soul = Not enough sapient corpses.
+heretic-ritual-fail-limit = You have reached a limit of items that this ritual provides.
+heretic-ritual-fail-no-lost-blades = No lost blades can be found.
+heretic-ritual-fail-already-ascended = You are already ascended.
+heretic-ritual-fail-cannot-ascend = You cannot ascend.
+heretic-ritual-fail-cannot-ascend-objectives = You must complete your objectives in order to ascend.
+heretic-ritual-fail-lookup-empty = There's nothing on the rune.
+heretic-ritual-fail-ghoulify = There is no corpse to ghoulify.
+heretic-ritual-fail-ghoul-limit = At ghoul limit!
+heretic-ritual-fail-no-id-card = Ritual requires ID card.
 
 ## side quests
-heretic-ritual-side-knowledge = Ritual de conhecimento
-heretic-ritual-side-shark = Tubar�o abrasador
-heretic-ritual-side-cloak = Manto do Vazio
-heretic-ritual-side-ghoul = Ritual Quebrado
-heretic-ritual-side-armor = Ritual do Armador
-heretic-ritual-side-water = Ritual do sacerdote
-heretic-ritual-side-knife = Faca de entalhe
-heretic-ritual-side-crucible = Cadinho de mand�bula
-heretic-ritual-side-coin = Moeda arcaica
+heretic-ritual-side-knowledge = Ritual of Knowledge
+heretic-ritual-side-shark = Scorching Shark
+heretic-ritual-side-cloak = Void Cloak
+heretic-ritual-side-ghoul = Shattered Ritual
+heretic-ritual-side-armor = Armorer's Ritual
+heretic-ritual-side-water = Priest's Ritual
+heretic-ritual-side-knife = Carving Knife
+heretic-ritual-side-crucible = Mawed Crucible
+heretic-ritual-side-coin = Eldritch Coin
 
 ## ash path
-heretic-ritual-ash-blade = Segredo do Vigia Noturno
-heretic-ritual-ash-grasp = Garra da Cinza
-heretic-ritual-ash-mask = M�scara da Loucura
-heretic-ritual-ash-ascend = Rito do Senhor das Cinzas
+heretic-ritual-ash-blade = Nightwatcher's Secret
+heretic-ritual-ash-grasp = Grasp of Ash
+heretic-ritual-ash-mask = Mask of Madness
+heretic-ritual-ash-ascend = Ashlord's Rite
 
 ## flesh path
-heretic-ritual-flesh-blade = Princ�pio da Fome
-heretic-ritual-flesh-ghoul = Ritual Imperfeito
-heretic-ritual-flesh-prophet = Ritual Cru
-heretic-ritual-flesh-stalker = Ritual Solit�rio
-heretic-ritual-flesh-ascend = Hino Final do Sacerdote
+heretic-ritual-flesh-blade = Principle of Hunger
+heretic-ritual-flesh-ghoul = Imperfect Ritual
+heretic-ritual-flesh-prophet = Raw Ritual
+heretic-ritual-flesh-stalker = Lonely Ritual
+heretic-ritual-flesh-ascend = Priest's Final Hymn
 
 ## void path
-heretic-ritual-void-blade = Brilho do Inverno
-heretic-ritual-void-ascend = Valsa no Fim do Tempo
-
-
+heretic-ritual-void-blade = Glimmer of Winter
+heretic-ritual-void-ascend = Waltz at the End of Time

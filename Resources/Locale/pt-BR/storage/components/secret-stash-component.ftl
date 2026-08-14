@@ -15,7 +15,7 @@
 ### Secret stash component. Stuff like potted plants, comfy chair cushions, etc...
 
 comp-secret-stash-action-hide-success =Você esconde { THE($item) } no {$stashname}.
-comp-secret-stash-action-hide-container-not-empty = Já tem alguma coisa aqui!?
+comp-secret-stash-action-hide-container-not-empty = There's already something in here!?
 comp-secret-stash-action-hide-item-too-big= { CAPITALIZE(THE($item)) } é muito grande para caber no {$stashname}.
 comp-secret-stash-action-get-item-found-something = Havia algo dentro do {$stashname}!
 comp-secret-stash-on-examine-found-hidden-item = Há algo escondido dentro do {$stashname}!

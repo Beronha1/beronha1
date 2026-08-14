@@ -9,8 +9,6 @@ advertisement-vendomat-1 = Apenas o melhor!
 advertisement-vendomat-2 = Tenha algumas ferramentas.
 advertisement-vendomat-3 = O equipamento mais robusto.
 advertisement-vendomat-4 = O melhor equipamento no espaço!
-advertisement-vendomat-5 = Isso ? com certeza melhor que o equipamento padr?o da empresa!
+advertisement-vendomat-5 = This is surely better than standard issued equipment!
 advertisement-vendomat-6 = Pegue sua velha barra de ferro aqui!
-advertisement-vendomat-7 = Aqui para quando voc? precisar de um kit de ferramentas completo!
-
-
+advertisement-vendomat-7 = Here for when you need a full set of tools!

@@ -26,4 +26,4 @@ admin-player-actions-clone = Clone
 admin-player-actions-clone-message = Spawn de uma copia deste personagem, sem transferir sua mente.
 admin-player-actions-follow = Seguir
 admin-player-actions-check-afk = Verificar AFK
-admin-player-actions-confirm = Tem certeza?
+admin-player-actions-confirm = Are you sure?

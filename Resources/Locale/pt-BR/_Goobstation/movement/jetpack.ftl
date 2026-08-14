@@ -4,4 +4,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 jetpack-downed = O jetpack desliga
-jetpack-is-down = N?o ? poss?vel usar o jetpack enquanto estiver deitado
+jetpack-is-down = Can't use the jetpack while lying down

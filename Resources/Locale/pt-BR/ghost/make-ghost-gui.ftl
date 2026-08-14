@@ -15,7 +15,7 @@ make-ghost-roles-window-make-button = Criar
 make-ghost-roles-window-raffle-not-button = Sem raffle
 make-ghost-roles-window-raffle-custom-settings-button = Configuracoes personalizadas
 
-make-ghost-roles-window-raffle-role-label = Rolar por cargo?
+make-ghost-roles-window-raffle-role-label = Raffle Role?
 make-ghost-roles-window-raffle-settings-label = {$id} (inicial {$initialDuration}s, max {$maxDuration}s, entrada adiciona {$joinExtendsDurationBy}s)
 
 make-ghost-roles-window-raffle-warning-tooltip = A duracao inicial nao pode exceder a duracao maxima.

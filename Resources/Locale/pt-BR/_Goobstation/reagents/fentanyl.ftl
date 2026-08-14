@@ -4,7 +4,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-fentanyl-effect-lostsomething = Onde está?
+fentanyl-effect-lostsomething = Where is it?
 fentanyl-effect-fakepresence = Você sente alguém olhando por cima do seu ombro
 fentanyl-effect-skincrawl = Sua pele parece estar se movendo
 fentanyl-effect-rushing = Tudo está se movendo muito rápido...
@@ -13,4 +13,3 @@ fentanyl-effect-skinworms = Eles estão debaixo da minha pele, estão entrando p
 fentanyl-effect-breathingrazors = Você sente uma dor aguda nos pulmões
 fentanyl-effect-lungstight = Seus pulmões se recusam a inspirar
 fentanyl-effect-observed = Todos estão olhando diretamente para você
-

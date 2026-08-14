@@ -36,8 +36,8 @@ plant-holder-component-plant-unhealthy-adjective = insalubre
 plant-holder-component-dead-plant-matter-message = Está cheio de [color=red]matéria vegetal morta[/color].
 plant-holder-component-weed-high-level-message = Está cheio de [color=green]ervas daninhas[/color]!
 plant-holder-component-pest-high-level-message = Está cheio de [color=gray]pequenos vermes[/color]!
-plant-holder-component-water-level-message =Água: [color=ciano]{$waterLevel}[/color].
-plant-holder-component-nutrient-level-message = Nutriente: [color=laranja]{$nutritionLevel}[/color].
+plant-holder-component-water-level-message =Água: [color=cyan]{$waterLevel}[/color].
+plant-holder-component-nutrient-level-message = Nutriente: [color=orange]{$nutritionLevel}[/color].
 plant-holder-component-toxins-high-warning = O [color=red]alerta de nível de toxicidade[/color] está piscando em vermelho.
 plant-holder-component-light-improper-warning = O [color=yellow]alerta de nível de luz inadequado[/color] está piscando.
 plant-holder-component-heat-improper-warning = O [color=orange]alerta de nível de temperatura inadequado[/color] está piscando.

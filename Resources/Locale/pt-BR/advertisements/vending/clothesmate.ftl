@@ -11,7 +11,7 @@
 advertisement-clothes-1 = Vista-se para o sucesso!
 advertisement-clothes-2 = Prepare-se para parecer swagalicious!
 advertisement-clothes-3 = Olhe todo esse swag!
-advertisement-clothes-4 = Por que deixar o estilo para o acaso? Use o ClothesMate!
+advertisement-clothes-4 = Why leave style up to fate? Use the ClothesMate!
 advertisement-clothes-5 = Agora com protetores de pescoço extras!
 advertisement-clothes-6 = Você está com estilo!
 advertisement-clothes-7 = Que look lindo que você escolheu!

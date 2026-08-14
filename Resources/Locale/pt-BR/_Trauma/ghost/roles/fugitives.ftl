@@ -14,5 +14,4 @@ ghost-role-information-bounty-hunter-rules = Você é um [color={role-type-team-
 
 ghost-role-information-fugitive-name = Fugitivo
 ghost-role-information-fugitive-description = Você é um condenado que fugiu. Seu passado finalmente te alcançou, mas você não vai permitir. Não hoje.
-ghost-role-information-fugitive-rules = Você é um [color={role-type-solo-antagonist-color}][bold]{role-type-solo-antagonist-name}[/bold][/color]. Foque em se esconder em vez de enfrentar caçadores ou segurança diretamente.
-
+ghost-role-information-fugitive-rules = Você é um [color={role-type-team-antagonist-color}][bold]{role-type-solo-antagonist-name}[/bold][/color]. Foque em se esconder em vez de enfrentar caçadores ou segurança diretamente.

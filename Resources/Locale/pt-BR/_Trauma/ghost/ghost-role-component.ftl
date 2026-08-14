@@ -1,30 +1,29 @@
-﻿ghost-role-information-facehugger-name = facehugger
-ghost-role-information-facehugger-description = Um pesadelo contorcido. O facehugger se agarra ao rosto de sua v�tima, inserindo � Para�a um feto xenomorfo.
+ghost-role-information-facehugger-name = facehugger
+ghost-role-information-facehugger-description = A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
 
-ghost-role-information-wailing-horse-name = Cavalo de Gemido
-ghost-role-information-wailing-horse-desc = D�i... Por que d�i tanto?
+ghost-role-information-wailing-horse-name = Wailing Horse
+ghost-role-information-wailing-horse-desc = It hurts...Why does it hurt so much?
 
 ghost-role-information-ratma-name = Ratma
-ghost-role-information-ratma-desc = Cace e mate.
+ghost-role-information-ratma-desc = Hunt and kill.
 
-ghost-role-information-bioweapon-name = Arma biol�gica
-ghost-role-information-bioweapon-desc = Voc� � uma arma biol�gica comprada pelo departamento de seguran�a. Siga suas ordens.
-ghost-role-information-bioweapon-rules = Siga a ordem falada mais recente que voc� entender. Mesmo se ela conflitar com ordens anteriores.
+ghost-role-information-bioweapon-name = Bioweapon
+ghost-role-information-bioweapon-desc = You are a bioweapon bought by the security department. Follow your orders.
+ghost-role-information-bioweapon-rules = Follow the most recent SPOKEN order you understand. Even if it conflicts with previous orders.
 
-ghost-role-information-breadling-name= Empanado
-ghost-role-information-breadling-desc = Trazido � vida por um padeiro amoroso, aproveite o curto tempo que lhe resta. Voc� n�o tem conhecimento de sua morte futura a menos que lhe digam.
+ghost-role-information-breadling-name = Breadling
+ghost-role-information-breadling-desc = Brought to life by a loving baker, enjoy the fickle time you have remaining. You have no knowledge of your coming death unless told.
 
-ghost-role-information-coconutcrab-name = Caranguejo de coco
+ghost-role-information-coconutcrab-name = Coconut Crab
 
-ghost-role-information-goidabot-name = goidabot
-ghost-role-information-goidabot-desc = ?????
+ghost-role-information-goidabot-name = goida bot
+ghost-role-information-goidabot-desc = ГОЙДА
 
-ghost-role-information-cursed-name = artefato amaldi�oado
-ghost-role-information-cursed-desc = Voc� � um artefato amaldi�oado com consci�ncia, enlouque�a seu portador.
+ghost-role-information-cursed-name = cursed artifact
+ghost-role-information-cursed-desc = You are an artifact cursed with sentience, drive your wielder insane.
 
-ghost-role-information-animal-rules = Voc� � um [color={role-type-animal-color}][bold]{role-type-animal-name}[/bold][/color]. Aja como o animal que voc� �.
-                                         Isso significa n�o sair matando pessoas / causando problemas sem motivo.
-                                         Voc� n�o lembra de sua vida anterior e n�o se lembra de nada que aprendeu como fantasma.
-                                         Voc� pode reter conhecimento geral do jogo, como cozinhar, usar objetos etc.
-                                         Voc� est� absolutamente [color=red]N�O[/color] pode lembrar, por exemplo, o nome, apar�ncia, etc., de seu personagem anterior.
-
+ghost-role-information-animal-rules = You are an [color={role-type-animal-color}][bold]{role-type-animal-name}[/bold][/color]. Act like the animal you are does.
+                                         This means to not go around killing people / causing problems for no reason.
+                                         You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
+                                         You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
+                                         You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.

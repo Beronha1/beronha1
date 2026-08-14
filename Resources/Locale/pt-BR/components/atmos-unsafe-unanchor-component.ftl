@@ -1,1 +1,1 @@
-comp-atmos-unsafe-unanchor-warning = Um jato de ar sopra em seu rosto... Talvez seja melhor repensar isso?
+comp-atmos-unsafe-unanchor-warning = A gush of air blows in your face... Maybe you should reconsider?

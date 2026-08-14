@@ -25,6 +25,10 @@ comp-pda-ui-blank= EU IA:
 
 comp-pda-ui-owner = Proprietário: [color=white]{$actualOwnerName}[/color]
 
+comp-pda-ui-health-scan-title = MedTek
+comp-pda-ui-health-scan-trauma = Traumas:
+comp-pda-ui-health-scan-fluids = Fluidos corporais
+
 comp-pda-io-program-list-button = Programas
 
 comp-pda-io-settings-button = Configurações

@@ -41,5 +41,4 @@ ghost-roles-window-no-roles-available-label = Atualmente nao ha funcoes de fanta
 ghost-roles-window-rules-footer = O botao sera habilitado apos {$time} segundos (esse delay garante que voce leu as regras).
 
 ghost-return-to-body-title = Voltar ao corpo
-ghost-return-to-body-text = Uma medicina eh tão competente que voce esta sendo revivido! Retornar ao seu corpo?
-
+ghost-return-to-body-text = Med is so competent that you are being revived! Return to your body?

@@ -14,7 +14,7 @@ comp-stack-split-custom = Dividir quantidade...
 comp-stack-split-halve = Dividir ao meio
 comp-stack-split-too-small = A pilha esta pequena demais para dividir.
 
-comp-stack-split-size= MÃ¡x.: {$size}
+comp-stack-split-size= Máx.: {$size}
 
 ui-custom-stack-split-title = Dividir quantidade
 ui-custom-stack-split-line-edit-placeholder = Quantidade

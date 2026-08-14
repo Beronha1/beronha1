@@ -17,8 +17,8 @@ server-currency-gift-command-description = Dá parte do seu saldo como presente 
 server-currency-gift-command-help = Uso: presente <jogador> <valor>
 server-currency-gift-command-error-1 = Você não pode presentear Uma si mesmo!
 server-currency-gift-command-error-2 = Você não pode se dar Uma esse presente! Seu saldo é de {$balance}.
-server-currency-gift-command-giver = Você deu {$player} {$player}.
-server-currency-gift-command-reciever = {$player} te deu {$player}.
+server-currency-gift-command-giver = You gave {$player} {$amount}.
+server-currency-gift-command-reciever = {$player} gave you {$amount}.
 
 server-currency-balance-command = saldo
 server-currency-balance-command-description = Retorna seu saldo.
@@ -45,7 +45,7 @@ server-currency-command-completion-1 = Nome de usuário
 server-currency-command-completion-2 = Valor
 server-currency-command-error-1 = Não foi possível encontrar um jogador com esse nome.
 server-currency-command-error-2 = O valor deve ser inteiro.
-server-currency-command-return = {$player} tem {$player}.
+server-currency-command-return = {$player} has {$balance}.
 
 # 65% Update
 

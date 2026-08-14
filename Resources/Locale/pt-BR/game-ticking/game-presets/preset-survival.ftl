@@ -7,8 +7,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 survival-title = Sobrevivência
-survival-description = Sem ameaças internas, mas quão longa pode durar a estação enquanto eventos cada vez mais caóticos e frequentes aumentam?
+survival-description = No internal threats, but how long can the station survive increasingly chaotic and frequent events?
 
 kessler-syndrome-title = Síndrome de Kessler
 kessler-syndrome-description = Sem ameaças internas, mas a estação está caindo rapidamente em uma faixa de meteoros!
-

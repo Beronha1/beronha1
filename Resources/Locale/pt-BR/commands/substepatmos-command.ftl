@@ -6,8 +6,8 @@ cmd-error-couldnt-parse-entity = A entidade fornecida nao pode ser processada ou
 cmd-error-no-gridatmosphere = A entidade fornecida nao tem um GridAtmosphereComponent.
 cmd-error-no-gastileoverlay = A entidade fornecida nao tem um GasTileOverlayComponent.
 cmd-error-no-mapgrid = A entidade fornecida nao tem um MapGridComponent.
-cmd-error-no-xform = A entidade fornecida nao tem um TransformComponent?
-cmd-error-no-valid-map = A grade fornecida nao esta em um mapa valido?
+cmd-error-no-xform = Entity provided doesn't have a TransformComponent?
+cmd-error-no-valid-map = The grid provided is not on a valid map?
 
 cmd-substepatmos-info-implicitly-paused-simulation = Pausou implicitamente a simulacao de atmosfericos em {$grid}.
 cmd-substepatmos-info-substepped-grid = Avancou a simulacao de atmosfericos por um atmostick em {$grid}.

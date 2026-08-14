@@ -9,19 +9,17 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-lawdrobe-1 = OBJE??O! Pegue a lei para voc? mesmo!
-advertisement-lawdrobe-2 = V? importunar a segurança até eles seguirem suas pr?prias regras!
-advertisement-lawdrobe-3 = Entrou um novo caso? Tire-os da prisão já!
+advertisement-lawdrobe-1 = OBJECTION! Get the rule of law for yourself!
+advertisement-lawdrobe-2 = Go pester security until they abide by your own rules!
+advertisement-lawdrobe-3 = A new case just came in? Go get them out of jail!
 advertisement-lawdrobe-4 = Um donut por dia afasta a segurança!
-advertisement-lawdrobe-5 = Ningu?m está acima da lei!
+advertisement-lawdrobe-5 = No one is above the law!
 advertisement-lawdrobe-6 = Nenhum oficial, não consinto busca em mim!
-advertisement-lawdrobe-7 = Injetar drogas espaciais não deixa evid?ncia!
-advertisement-lawdrobe-8 = Você ou alguém querido machucado pela Nanotrasen? Que azar!
-advertisement-lawdrobe-9 = Caso encerrado! O r?u tem muito drip!
+advertisement-lawdrobe-7 = Injecting space drugs leaves no evidence!
+advertisement-lawdrobe-8 = You or a loved one hurt by Nanotrasen? Too bad!
+advertisement-lawdrobe-9 = Case closed! Defendant has too much drip!
 thankyou-lawdrobe-1 = Você pode ganhar qualquer caso nesse uniforme!
 thankyou-lawdrobe-2 = Pegue um para seu cliente também!
-thankyou-lawdrobe-3 = Ganhe ou perca, voc? ? pago de qualquer jeito!
-thankyou-lawdrobe-4 = Lembre-se: s? ? ilegal se te pegarem!
-thankyou-lawdrobe-5 = OBJE??O! Esse uniforme ? bonito demais para a corte!
-
-
+thankyou-lawdrobe-3 = Win or lose, you get paid either way!
+thankyou-lawdrobe-4 = Remember: It's only illegal if you get caught!
+thankyou-lawdrobe-5 = OBJECTION! That outfit is too cool for court!

@@ -26,5 +26,4 @@ advertisement-fitness-5 = Force mais!
 advertisement-fitness-6 = Este é o único intervalo que você tem hoje.
 advertisement-fitness-7 = Não chore, suor!
 advertisement-fitness-8 = Saudável é uma roupa que fica bem em todo mundo.
-advertisement-fitness-9 = Quer se esconder das autoridades solarianas? Não se preocupe, elas não sabem como é a parte interna de uma academia.
-
+advertisement-fitness-9 = Want to hide from the Solarian authorities? Don't worry, they don't know what the inside of a gym looks like.

@@ -19,7 +19,7 @@ reagent-name-coffee =café
 reagent-desc-coffee = Uma bebida feita com grãos de café moídos. Contém uma quantidade moderada de cafeína.
 
 reagent-name-cream = creme
-reagent-desc-cream = A parte gordurosa e ainda líquida do leite. Por que você não mistura isso com uísque, hein?
+reagent-desc-cream = The fatty, still liquid part of milk. Why don't you mix this with sum scotch, eh?
 
 reagent-name-coconut-water = água de coco
 reagent-desc-coconut-water = Um favorito dos sobreviventes em ilhas desertas.
@@ -82,7 +82,7 @@ reagent-name-hot-cocoa = cacau quente
 reagent-desc-hot-cocoa = Cheira a férias!
 
 reagent-name-soda-water = água com gás
-reagent-desc-soda-water = Um recipiente de club soda. Por que não fazer um uísque com refrigerante?
+reagent-desc-soda-water = A container of club soda. Why not make a scotch and soda?
 
 reagent-name-soy-latte = café com leite de soja
 reagent-desc-soy-latte = Uma bebida de café feita com café expresso e leite de soja vaporizado.

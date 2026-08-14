@@ -14,32 +14,32 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-device-pda-slot-component-slot-name-cartridge = Cartucho
+device-pda-slot-component-slot-name-cartridge = Cartridge
 
-default-program-name = Programa
-notekeeper-program-name = Notas
+default-program-name = Program
+notekeeper-program-name = Notekeeper
 nano-task-program-name = NanoTask
-news-read-program-name = Não�cias da esta��o
+news-read-program-name = Station news
 
-crew-manifest-program-name = Manifesto da tripula��o
-crew-manifest-cartridge-loading = Carregando ...
-crew-manifest-cartridge-loading-failed = Falha ao carregar manifesto da tripula��o!
+crew-manifest-program-name = Crew manifest
+crew-manifest-cartridge-loading = Loading ...
+crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
 
 net-probe-program-name = NetProbe
-net-probe-scan = {$device} analisado!
-net-probe-label-name = Nome
-net-probe-label-address = Endere�o
-net-probe-label-frequency = Frequ�ncia
-net-probe-label-network = Rede
+net-probe-scan = Scanned {$device}!
+net-probe-label-name = Name
+net-probe-label-address = Address
+net-probe-label-frequency = Frequency
+net-probe-label-network = Network
 
 log-probe-program-name = LogProbe
-log-probe-scan = Logs baixados de {$device}!
-log-probe-label-time = Hor�rio
-log-probe-label-accessor = Acessado por
+log-probe-scan = Downloaded logs from {$device}!
+log-probe-label-time = Time
+log-probe-label-accessor = Accessed by
 log-probe-label-number = #
-log-probe-print-button = Imprimir logs
-log-probe-printout-device = Dispositivo escaneado: {$name}
-log-probe-printout-header = Logs recentes:
+log-probe-print-button = Print Logs
+log-probe-printout-device = Scanned Device: {$name}
+log-probe-printout-header = Latest logs:
 log-probe-printout-entry = #{$number} / {$time} / {$accessor}
 
 astro-nav-program-name = AstroNav
@@ -49,76 +49,76 @@ med-tek-program-name = MedTek
 # NanoTask cartridge
 
 nano-task-ui-heading-high-priority-tasks =
-{ $amount ->
-        [zero] Nenhuma tarefa de alta prioridade
-        [one] 1 tarefa de alta prioridade
-       *[other] {$amount} tarefas de alta prioridade
+    { $amount ->
+        [zero] No High Priority Tasks
+        [one] 1 High Priority Task
+       *[other] {$amount} High Priority Tasks
     }
 nano-task-ui-heading-medium-priority-tasks =
-{ $amount ->
-        [zero] Nenhuma tarefa de m�dia prioridade
-        [one] 1 tarefa de m�dia prioridade
-       *[other] {$amount} tarefas de m�dia prioridade
+    { $amount ->
+        [zero] No Medium Priority Tasks
+        [one] 1 Medium Priority Task
+       *[other] {$amount} Medium Priority Tasks
     }
 nano-task-ui-heading-low-priority-tasks =
-{ $amount ->
-        [zero] Nenhuma tarefa de baixa prioridade
-        [one] 1 tarefa de baixa prioridade
-       *[other] {$amount} tarefas de baixa prioridade
+    { $amount ->
+        [zero] No Low Priority Tasks
+        [one] 1 Low Priority Task
+       *[other] {$amount} Low Priority Tasks
     }
-nano-task-ui-done = Conclu�do
-nano-task-ui-revert-done = Desfazer
-nano-task-ui-priority-low = Baixa
-nano-task-ui-priority-medium = M�dia
-nano-task-ui-priority-high = Alta
-nano-task-ui-cancel = Cancelar
-nano-task-ui-print = Imprimir
-nano-task-ui-delete = Excluir
-nano-task-ui-save = Salvar
-nano-task-ui-new-task = Nova tarefa
-nano-task-ui-description-label = Descri��o:
-nano-task-ui-description-placeholder = Pegue algo importante
-nano-task-ui-requester-label = Solicitante:
+nano-task-ui-done = Done
+nano-task-ui-revert-done = Undo
+nano-task-ui-priority-low = Low
+nano-task-ui-priority-medium = Medium
+nano-task-ui-priority-high = High
+nano-task-ui-cancel = Cancel
+nano-task-ui-print = Print
+nano-task-ui-delete = Delete
+nano-task-ui-save = Save
+nano-task-ui-new-task = New Task
+nano-task-ui-description-label = Description:
+nano-task-ui-description-placeholder = Get something important
+nano-task-ui-requester-label = Requester:
 nano-task-ui-requester-placeholder = John Nanotrasen
-nano-task-ui-item-title = Editar tarefa
-nano-task-printed-description = [bold]Descri��o[/bold]: {$description}
-nano-task-printed-requester = [bold]Solicitante[/bold]: {$requester}
-nano-task-printed-high-priority = [bold]Prioridade[/bold]: [color=red]Alta[/color]
-nano-task-printed-medium-priority = [bold]Prioridade[/bold]: M�dia
-nano-task-printed-low-priority = [bold]Prioridade[/bold]: Baixa
+nano-task-ui-item-title = Edit Task
+nano-task-printed-description = [bold]Description[/bold]: {$description}
+nano-task-printed-requester = [bold]Requester[/bold]: {$requester}
+nano-task-printed-high-priority = [bold]Priority[/bold]: [color=red]High[/color]
+nano-task-printed-medium-priority = [bold]Priority[/bold]: Medium
+nano-task-printed-low-priority = [bold]Priority[/bold]: Low
 
 # Wanted list cartridge
-wanted-list-program-name = Lista de procurados
-wanted-list-label-no-records = Tudo certo, cowboy
-wanted-list-search-placeholder = Buscar por nome e status
+wanted-list-program-name = Wanted list
+wanted-list-label-no-records = It's all right, cowboy
+wanted-list-search-placeholder = Search by name and status
 
-wanted-list-age-label = [color=darkgray]Idade:[/color] [color=white]{$age}[/color]
-wanted-list-job-label = [color=darkgray]Cargo:[/color] [color=white]{$job}[/color]
-wanted-list-species-label = [color=darkgray]Esp�cie:[/color] [color=white]{$species}[/color]
-wanted-list-gender-label = [color=darkgray]G�nero:[/color] [color=white]{$gender}[/color]
+wanted-list-age-label = [color=darkgray]Age:[/color] [color=white]{$age}[/color]
+wanted-list-job-label = [color=darkgray]Job:[/color] [color=white]{$job}[/color]
+wanted-list-species-label = [color=darkgray]Species:[/color] [color=white]{$species}[/color]
+wanted-list-gender-label = [color=darkgray]Gender:[/color] [color=white]{$gender}[/color]
 
-wanted-list-reason-label = [color=darkgray]Motivo:[/color] [color=white]{$reason}[/color]
-wanted-list-unknown-reason-label = motivo desconhecido
+wanted-list-reason-label = [color=darkgray]Reason:[/color] [color=white]{$reason}[/color]
+wanted-list-unknown-reason-label = unknown reason
 
-wanted-list-initiator-label = [color=darkgray]Iniciador:[/color] [color=white]{$initiator}[/color]
-wanted-list-unknown-initiator-label = iniciador desconhecido
+wanted-list-initiator-label = [color=darkgray]Initiator:[/color] [color=white]{$initiator}[/color]
+wanted-list-unknown-initiator-label = unknown initiator
 
 # Trauma - added demote-perma
 wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
-        [demote] [color=red]rebaixar[/color]
-        [brutalize] [color=orange]torturar[/color]
-        [search] [color=#008080]procurar[/color]
-        [perma] [color=#b18644]pris�o perp�tua[/color]
-        [suspected] [color=yellow]suspeito[/color]
-        [wanted] [color=red]procurado[/color]
-        [detained] [color=#b18644]detido[/color]
-        [paroled] [color=green]liberado condicional[/color]
-        [discharged] [color=green]solto[/color]
-        [hostile] [color=darkred]hostil[/color]
-        [eliminated] [color=gray]eliminado[/color]
-        *[other] nenhum
+        [demote] [color=red]demote[/color]
+        [brutalize] [color=orange]brutalize[/color]
+        [search] [color=#008080]search[/color]
+        [perma] [color=#b18644]perma[/color]
+        [suspected] [color=yellow]suspected[/color]
+        [wanted] [color=red]wanted[/color]
+        [detained] [color=#b18644]detained[/color]
+        [paroled] [color=green]paroled[/color]
+        [discharged] [color=green]discharged[/color]
+        [hostile] [color=darkred]hostile[/color]
+        [eliminated] [color=gray]eliminated[/color]
+        *[other] none
     }
 
-wanted-list-history-table-time-col = Hor�rio
+wanted-list-history-table-time-col = Time
 wanted-list-history-table-reason-col = Crime
-wanted-list-history-table-initiator-col = Iniciador
+wanted-list-history-table-initiator-col = Initiator

@@ -8,7 +8,5 @@
 
 advertisement-robodrobe-1 = Você me deixa TRUE, use defines!
 advertisement-robodrobe-2 = 0110001101101100011011110111010001101000011001010111001101101000011001010111001001100101
-advertisement-robodrobe-3 = Roube alguém da manuten??o e transforme-o em rob?!
-advertisement-robodrobe-4 = Rob?tica ? divertida!
-
-
+advertisement-robodrobe-3 = Steal someone from maintenance and turn them into a robot!
+advertisement-robodrobe-4 = Robotics is fun!

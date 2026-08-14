@@ -6,7 +6,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 reagent-name-gin-and-sonic =gim e sonic
-reagent-desc-gin-and-sonic = Por que o ouriço foi para Saturno? Para coletar seus anéis!
+reagent-desc-gin-and-sonic = Why did the hedgehog go to Saturn? To collect its rings!
 
 reagent-name-golden-cat = gato dourado
 reagent-desc-golden-cat = As lendas falam de um gato dourado que vendeu um hambúrguer por uma fortuna. Tem um cheiro metálico.
@@ -21,4 +21,3 @@ reagent-name-bees-knees = joelhos de abelha
 reagent-desc-bees-knees = BEEEEEEEEEEEEEEEE!!! Tem um cheiro mesquinho.
 reagent-name-pumpkin-spice-latte = café com leite de abóbora temperado
 reagent-desc-pumpkin-spice-latte = É outono em algum lugar. Cheira a canela e cravo.
-

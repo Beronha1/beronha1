@@ -18,7 +18,7 @@ comp-gas-canister-ui-release-valve = Valvula de liberacao:
 comp-gas-canister-ui-release-valve-open = Abrir
 comp-gas-canister-ui-release-valve-close = Fechar
 
-comp-gas-canister-ui-pressure= @@ kPa
+comp-gas-canister-ui-pressure = {$pressure} kPa
 
 # Canister gas tank slot
 

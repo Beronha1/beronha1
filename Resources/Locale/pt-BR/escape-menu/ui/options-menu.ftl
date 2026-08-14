@@ -36,6 +36,9 @@ ui-options-restart-sounds = Sons de reinício da rodada
 ui-options-event-music = Música de eventos
 ui-options-admin-sounds = Reproduzir sons administrativos
 ui-options-bwoink-sound = Reproduzir som de notificação de AHelp
+ui-options-mute-unfocused = Silenciar o áudio quando a janela estiver sem foco
+ui-options-audio-device = Dispositivo de saída:
+ui-options-audio-device-default = Padrão do sistema
 ui-options-audio-hrtf = Ativar processamento de áudio HRTF (requer reinício)
 ui-options-volume-label = Volume
 

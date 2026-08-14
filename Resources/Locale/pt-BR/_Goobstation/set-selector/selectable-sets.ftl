@@ -8,10 +8,10 @@ selectable-set-thief-anatomy-description =
 
 selectable-set-thief-breacher-name =Kit de violador
 selectable-set-thief-breacher-description =
-    Que som é esse? Um pequeno C4 batendo na porta deles.
-    Nenhum obstáculo pode pará-lo!
-    Inclui: Dois C4, uma multiferramenta, sinalizador remoto, mandíbulas de vida,
-    soldador avançado, óculos de engenharia e luvas isoladas.
+    What's that sound? A lil' C4 knockin' at their door.
+    No obstacle can stop you!
+    Includes: Two C4, a multitool, remote signaller, jaws of life,
+    advanced welder, engineering goggles, and insulated gloves.
 
 selectable-set-thief-chameleon-name =Kit Camaleão
 selectable-set-thief-chameleon-description =
@@ -22,10 +22,10 @@ selectable-set-thief-chameleon-description =
 
 selectable-set-thief-syndie-name =Kit Syndie
 selectable-set-thief-syndie-description =
-    Bugigangas de um passado rejeitado ou roubadas de um agente descuidado?
-    Você fez algumas conexões. Uísque, eco...
-    Inclui: Um Emag, Access Breaker, cigarros Interdyne, uma palavra-código Syndicate,
-    um Radio Jammer, uma nova caixa de isqueiro e alguns estranhos cristais vermelhos.
+    Trinkets from a disavowed past, or stolen from a careless agent?
+    You've made some connections. Whiskey, echo...
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
+    a Radio Jammer, a novelty lighter box and some strange red crystals.
 
 selectable-set-thief-sleeper-name =Kit Dorminhoco
 selectable-set-thief-sleeper-description =
@@ -106,9 +106,9 @@ selectable-set-syndicate-friendship-description =
 
 selectable-set-syndicate-carp-name =Pacote de Carpa
 selectable-set-syndicate-carp-description =
-    Grr! Rrr! Gr... Crescer?! KOWABUNGA!
-    Contém: um pergaminho do Caminho da Carpa Adormecida, 10 carpas desidratadas
-    (metade dos quais são holo), um hardsuit de carpa e uma chave de criptografia de sindicato.
+    Grr! Rrrr! Grr... Grrow?! KOWABUNGA!
+    Contains: a scroll of the Way of The Sleeping Carp, 10 dehydrated carp
+    (half of which are holo), a carp hardsuit and a syndicate encryption key.
 
 selectable-set-syndicate-western-name =Pacote Ocidental
 selectable-set-syndicate-western-description =

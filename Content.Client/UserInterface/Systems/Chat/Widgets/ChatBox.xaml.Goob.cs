@@ -5,6 +5,12 @@ namespace Content.Client.UserInterface.Systems.Chat.Widgets;
 
 public partial class ChatBox
 {
+    private void ResetCoalescenceState()
+    {
+        _lastLine = null;
+        _lastLineRepeatCount = 0;
+    }
+
     private void UpdateCoalescence(bool value)
     {
         _coalescence = value;
@@ -21,6 +27,7 @@ public partial class ChatBox
 
         public void Repopulate()
         {
+            ResetCoalescenceState();
             Contents.Clear();
 
             // Goobstation start
@@ -41,6 +48,7 @@ public partial class ChatBox
 
         private void OnChannelFilter(ChatChannel channel, bool active)
         {
+            ResetCoalescenceState();
             Contents.Clear();
 
             // Goobstation start

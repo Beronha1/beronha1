@@ -9,7 +9,7 @@ hugbot-start-hug-8 = Fui projetado para abraçar e você SERÁ abraçado.
 
 hugbot-finish-hug-1 = Tudo feito.
 hugbot-finish-hug-2 = Rotina de abraço encerrada.
-hugbot-finish-hug-3 = Sente-se melhor?
+hugbot-finish-hug-3 = Feel better?
 hugbot-finish-hug-4 = Sinta-se melhor logo!
 hugbot-finish-hug-5 = Você é amado.
 hugbot-finish-hug-6 = Você é importante.
@@ -24,4 +24,3 @@ hugbot-emagged-finish-hug-5 =Maldito bebê chorão.
 hugbot-emagged-finish-hug-6 = Vá morrer.
 hugbot-emagged-finish-hug-7 = Caia morto.
 hugbot-emagged-finish-hug-8 = Você está sozinho neste universo.
-

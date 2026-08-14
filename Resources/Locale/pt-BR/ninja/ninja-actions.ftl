@@ -12,14 +12,12 @@
 
 ninja-no-power = Carga insuficiente na bateria do traje!
 ninja-revealed = Você foi revelado!
-ninja-suit-cooldown = O traje precisa de tempo para se recuperar do ?ltimo ataque.
-ninja-cell-downgrade = O traje s? aceita uma nova c?lula de energia que seja melhor do que a atual.
+ninja-suit-cooldown = The suit needs time to recuperate from the last attack.
+ninja-cell-downgrade = The suit will only accept a new power cell that is better than the current one!
 ninja-cell-too-large = Esta fonte de energia não cabe no traje ninja!
 
 ninja-download-fail = Servidor sem dados de pesquisa...
-ninja-research-steal-fail = Nenhum novo n? de pesquisa foi roubado...
+ninja-research-steal-fail = No new research nodes were stolen...
 ninja-research-steal-success = Roubou {$count} novos nós de pesquisa de {THE($server)}.
 
 ninja-criminal-records-hack-announcement = ERRO: Registros criminais detectaram um erro [REDACTED] #*;" 
-
-

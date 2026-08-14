@@ -21,7 +21,7 @@ chat-manager-dead-chat-disabled-message = O chat dos mortos foi desativado.
 chat-manager-max-message-length-exceeded-message = Sua mensagem excedeu o limite de {$limit} caracteres
 chat-manager-no-headset-on-message = Você não está usando um fone de ouvido!
 chat-manager-no-radio-key = Nenhuma chave de rádio especificada!
-chat-manager-no-such-channel = Não existe canal com Uma chave '{$key}'!
+chat-manager-no-such-channel = Não existe canal com a chave '{$key}'!
 chat-manager-whisper-headset-on-message = Você não pode sussurrar pelo rádio!
 
 # Aspas duplas Unicode U+201C e U+201D.
@@ -33,8 +33,8 @@ chat-manager-sender-announcement = Comando Central
 chat-manager-sender-announcement-wrap-message = [font size=14][bold]Comunicado de {$sender}:[/font][font size=12]
                                                 {$message}[/bold][/font]
 
-chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Nome]{$entityName}[/Nome][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]{ chat-manager-speech-double-quote-begin }[BubbleContent][font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
-chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Nome]{$entityName}[/Nome][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]{ chat-manager-speech-double-quote-begin }[BubbleContent][font="{$fontType}" size={$fontSize}][bold][color={$color}][/color][/bold][/font][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
+chat-manager-entity-say-wrap-message = [BubbleHeader][bold][Name]{$entityName}[/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]{ chat-manager-speech-double-quote-begin }[BubbleContent][font="{$fontType}" size={$fontSize}][color={$color}]{$message}[/color][/font][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
+chat-manager-entity-say-bold-wrap-message = [BubbleHeader][bold][Name]{$entityName}[/Name][/bold][/BubbleHeader] {$verb}, [font={$fontType} size={$fontSize}]{ chat-manager-speech-double-quote-begin }[BubbleContent][font="{$fontType}" size={$fontSize}][bold][color={$color}]{$message}[/color][/bold][/font][/BubbleContent]{ chat-manager-speech-double-quote-end }[/font]
 chat-manager-entity-whisper-wrap-message = [font size=11][italic][BubbleHeader][Name]{$entityName}[/Name][/BubbleHeader] sussurra, { chat-manager-speech-double-quote-begin }[BubbleContent][color={$color}][font="{$fontType}"]{$message}[/font][/color][/BubbleContent][font size=11]{ chat-manager-speech-double-quote-end }[/italic][/font]
 chat-manager-entity-whisper-unknown-wrap-message = [font size=11][italic][BubbleHeader]Alguém[/BubbleHeader] sussurra, { chat-manager-speech-double-quote-begin }[BubbleContent][color={$color}][font="{$fontType}"]{$message}[/color][/font][/BubbleContent][font size=11]{ chat-manager-speech-double-quote-end }[/italic][/font]
 
@@ -43,16 +43,16 @@ chat-manager-entity-me-wrap-message = [italic]{ PROPER($entity) ->
      [true] {CAPITALIZE($entityName)} {$message}[/italic]
     }
 
-chat-manager-entity-looc-wrap-message = LOOC: [bold]{$entityName}:[/bold] 
-chat-manager-send-ooc-wrap-message = OOC: [bold]{$playerName}:[/bold] 
-chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={$patronColor}]{$playerName}[/color]:[/bold] 
-chat-manager-send-dead-chat-wrap-message = {$deadChannelName}: [bold][BubbleHeader]{$playerName}[/BubbleHeader][/bold] {$verb}: "[BubbleContent][/BubbleContent]"
-chat-manager-send-admin-dead-chat-wrap-message = {$adminChannelName}: [bold]([BubbleHeader]{$userName}[/BubbleHeader])[/bold] {$verb}: "[BubbleContent][/BubbleContent]"
-chat-manager-send-admin-chat-wrap-message = {$adminChannelName}: [bold]{$playerName}:[/bold] 
-chat-manager-send-admin-announcement-wrap-message = [bold]{$adminChannelName}: [/bold]
-chat-manager-send-hook-ooc-wrap-message = OOC: [bold](D){$senderName}:[/bold] 
+chat-manager-entity-looc-wrap-message = LOOC: [bold]{$entityName}:[/bold] {$message}
+chat-manager-send-ooc-wrap-message = OOC: [bold]{$playerName}:[/bold] {$message}
+chat-manager-send-ooc-patron-wrap-message = OOC: [bold][color={$patronColor}]{$playerName}[/color]:[/bold] {$message}
+chat-manager-send-dead-chat-wrap-message = {$deadChannelName}: [bold][BubbleHeader]{$playerName}[/BubbleHeader][/bold] {$verb}: "[BubbleContent]{$message}[/BubbleContent]"
+chat-manager-send-admin-dead-chat-wrap-message = {$adminChannelName}: [bold]([BubbleHeader]{$userName}[/BubbleHeader])[/bold] {$verb}: "[BubbleContent]{$message}[/BubbleContent]"
+chat-manager-send-admin-chat-wrap-message = {$adminChannelName}: [bold]{$playerName}:[/bold] {$message}
+chat-manager-send-admin-announcement-wrap-message = [bold]{$adminChannelName}: {$message}[/bold]
+chat-manager-send-hook-ooc-wrap-message = OOC: [bold](D){$senderName}:[/bold] {$message}
 chat-manager-dead-channel-name = MORTOS
-chat-manager-admin-channel-name = administração
+chat-manager-admin-channel-name = ADMIN
 chat-manager-rate-limited = Você está enviando mensagens rápido demais!
 chat-manager-rate-limit-admin-announcement = Aviso de limite de mensagens: { $player }
 chat-manager-follow-button = (F)
@@ -158,4 +158,3 @@ chat-speech-verb-wawa-1 = entoa
 chat-speech-verb-wawa-2 = declara
 chat-speech-verb-wawa-3 = proclama
 chat-speech-verb-wawa-4 = pondera
-

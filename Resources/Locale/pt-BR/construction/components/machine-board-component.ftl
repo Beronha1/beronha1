@@ -6,4 +6,4 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 machine-board-component-on-examine-label= Requer:
-machine-board-component-required-element-entry-text= [color=amarelo]{$amount}x[/color] [color=verde]{$requiredElement}[/color]
+machine-board-component-required-element-entry-text= [color=yellow]{$amount}x[/color] [color=green]{$requiredElement}[/color]

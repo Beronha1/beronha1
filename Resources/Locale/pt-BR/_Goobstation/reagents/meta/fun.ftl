@@ -13,7 +13,7 @@ reagent-popup-tranquility = Você se sente estranhamente calmo...
 
 reagent-name-binglejuice = suco bingle
 reagent-desc-binglejuice= Bong Bong.
-reagent-popup-binglejuice = O pensamento provavelmente já cruzou sua mente em algum momento. O pensamento de que você foi longe demais. O pensamento de que esta será uma viagem de mão única. Então, ao invés de lutar contra o inevitável, por que não abraçá-la? Apenas deite e descanse. Há beleza nessa escuridão que pode ser domada e usada para trazer algo novo.
+reagent-popup-binglejuice = The thought must have crossed your mind at some point. The thought that you delved too deep. The thought that this would be a one-way trip. So instead of fighting the inevitable, why not embrace it? Just lay down and rest. There is beauty in this darkness that can be harnessed and used to usher something new.
 
 reagent-name-carpolin = carpolina
 reagent-desc-carpolin = Faz o metabolizador se transformar em uma forma de vida superior.
@@ -43,10 +43,10 @@ reagent-popup-copium-11 = Você sabe o que é melhor.
 reagent-popup-copium-12 = Você pode levá-lo.
 
 reagent-name-cat-drugs = drogas felinas
-reagent-desc-cat-drugs = Drogas para gatos? Drogas feitas de gatos? Melhor não perguntar.
+reagent-desc-cat-drugs = Cat drugs? Drugs for cats? Drugs from cats? Better not to ask.
 
 reagent-name-nostalgia = nostalgia
-reagent-desc-nostalgia = Por que isso está aqui?
+reagent-desc-nostalgia = Why is this here?
 
 reagent-name-tilenol= azulejo
 reagent-desc-tilenol = Você pode sentir-se mais robusto apenas de segurar isso.

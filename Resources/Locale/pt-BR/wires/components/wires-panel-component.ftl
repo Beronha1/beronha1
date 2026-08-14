@@ -3,10 +3,10 @@
 #
 # SPDX-License-Identifier: MIT
 
-wires-panel-component-on-examine-open = O [color=lightgray]painel de manuten??o[/color] está [color=red]aberto[/color].
-wires-panel-component-on-examine-closed = O [color=lightgray]painel de manuten??o[/color] está [color=darkgreen]fechado[/color].
+wires-panel-component-on-examine-open = The [color=lightgray]maintenance panel[/color] is [color=red]open[/color].
+wires-panel-component-on-examine-closed = The [color=lightgray]maintenance panel[/color] is [color=darkgreen]closed[/color].
 
-wires-panel-verb-view-panel = Ver painel de manuten??o
+wires-panel-verb-view-panel = View maintenance panel
 
 # wire colors
 
@@ -28,7 +28,7 @@ wire-letter-name-alpha = Alfa
 wire-letter-name-beta = Beta
 wire-letter-name-gamma = Gama
 wire-letter-name-delta = Delta
-wire-letter-name-epsilon = ?psilon
+wire-letter-name-epsilon = Epsilon
 wire-letter-name-zeta = Zeta
 wire-letter-name-eta= E
 wire-letter-name-theta = Teta
@@ -38,13 +38,13 @@ wire-letter-name-lambda= lambda
 wire-letter-name-mu= Em
 wire-letter-name-nu= Não
 wire-letter-name-xi = Xi
-wire-letter-name-omicron = ?micron
+wire-letter-name-omicron = Omicron
 wire-letter-name-pi = Pi
 wire-letter-name-rho= Ró
 wire-letter-name-sigma = Sigma
 wire-letter-name-tau= Sim
-wire-letter-name-upsilon = ?psilon
+wire-letter-name-upsilon = Upsilon
 wire-letter-name-phi= Fi
 wire-letter-name-chi = Chi
 wire-letter-name-psi= psi
-wire-letter-name-omega = ?mega
+wire-letter-name-omega = Omega

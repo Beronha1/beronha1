@@ -14,7 +14,7 @@ reagent-name-aranesp = aranesp
 reagent-desc-aranesp = Um melhorador de desempenho de difícil síntese, mais famoso por forte capacidade de restauração de energia.
 
 reagent-name-mousebites = Picadas de rato
-reagent-desc-mousebites = Você já experimentou a medicina?
+reagent-desc-mousebites = Did you try the medicine drug?
 
 reagent-name-oleoresin-capsaicin = oleorresina de capsaicina
 reagent-desc-oleoresin-capsaicin = Uma resina oleosa derivada da capsaicina. Causa irritação severa ao tocar olhos ou boca.
@@ -24,4 +24,3 @@ reagent-desc-heroin = Uma droga ilegal de rua que já foi usada na medicina, mas
 
 reagent-name-nitrosyl-plasmide = nitrosil-plasmídeo
 reagent-desc-nitrosyl-plasmide = Um estimulante potente que pode prevenir sonolência, atordoamentos e quedas.
-

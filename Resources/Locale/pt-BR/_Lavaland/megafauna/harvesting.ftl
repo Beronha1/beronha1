@@ -1,9 +1,9 @@
 megafauna-harvest-wrong-tool = A ferramenta não consegue realizar a etapa de {$stage}.
 megafauna-harvest-complete = Etapa de colheita concluída: {$stage}.
-megafauna-harvest-examine = [color=yellow]Etapa de colheita {$current}/{$total}: {$stage}.[/color]
-megafauna-harvest-legion-locked = A carcaÃ§a ainda Ã© animada pelos fragmentos dispersos. Destrua-os primeiro.
-megafauna-harvest-legion-locked-examine = [color=orange]Os fragmentos dispersos ainda animam a carcaÃ§a; ela ainda nÃ£o pode ser colhida.[/color]
-legion-encounter-complete = O Ãºltimo fragmento desaba. A carcaÃ§a central da LegiÃ£o fica inerte e seu tesouro Ã© revelado!
+megafauna-harvest-examine = [color=yellow]Harvest stage {$current}/{$total}: {$stage}.[/color] [color=lightblue]Required tool: {$tools}. Use it on the carcass to begin a {$seconds}-second extraction.[/color]
+megafauna-harvest-legion-locked = A carcaça ainda é animada pelos fragmentos dispersos. Destrua-os primeiro.
+megafauna-harvest-legion-locked-examine = [color=orange]Os fragmentos dispersos ainda animam a carcaça; ela ainda não pode ser colhida.[/color]
+legion-encounter-complete = O último fragmento desaba. A carcaça central da Legião fica inerte e seu tesouro é revelado!
 
 megafauna-harvest-stage-drake-hide = couro ignífugo e membranas das asas
 megafauna-harvest-stage-drake-bones = ossos de dragão

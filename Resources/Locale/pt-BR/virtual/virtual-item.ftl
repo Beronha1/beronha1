@@ -3,5 +3,4 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-virtual-item-dropped-other =V
-
+virtual-item-dropped-other = You dropped {THE($dropped)}!

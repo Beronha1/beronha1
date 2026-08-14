@@ -8,9 +8,8 @@
 
 guide-entry-surgery = Cirurgia
 guide-entry-partmanipulation = Manipulação de Partes
-guide-entry-organmanipulation = Manipulação de ?rg?os
-guide-entry-utilitysurgeries = Cirurgias utilit?rias
+guide-entry-organmanipulation = Organ Manipulation
+guide-entry-utilitysurgeries = Utility Surgeries
 guide-entry-autodoc = Autodoc
 guide-entry-abductors = Abductores
-
 

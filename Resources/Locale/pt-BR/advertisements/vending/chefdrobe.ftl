@@ -7,9 +7,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-chefdrobe-1 = Nossas roupas são garantidas para proteger voc? de respingos de comida!
-advertisement-chefdrobe-2 = Perfeitamente brancas, para que todos vejam o homic?dio na cozinha!
-advertisement-chefdrobe-3 = F?cil de limpar, f?cil de ver!
-advertisement-chefdrobe-4 = Cozinhe como um profissional, pare?a um maestro!
-
-
+advertisement-chefdrobe-1 = Our clothes are guaranteed to protect you from food splatters!
+advertisement-chefdrobe-2 = Perfectly white, so everyone knows about the murder in the kitchen!
+advertisement-chefdrobe-3 = Easy to clean, easy to see!
+advertisement-chefdrobe-4 = Cook like a pro, look like a maestro!

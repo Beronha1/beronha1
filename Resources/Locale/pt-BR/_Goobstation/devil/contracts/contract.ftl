@@ -22,7 +22,7 @@ devil-deal-time-ran-out = Sua visão fica escura quando seus músculos te abando
 revival-contract-accepted = Você sente sua conexão com seu corpo se fortalecer...
 revival-contract-rejected = Você rejeita a oferta profana.
 revival-contract-expired = Tempo esgotado.
-revival-contract-prompt = {$offerer} oferece restaurar sua vida por um preço... Você aceita?
+revival-contract-prompt = {$offerer} offers to restore your life for a price... Do you accept?
 revival-contract-use-success = Você oferece a {$target} um acordo que ninguém recusaria...
 revival-contract-use-failed = Você não pode oferecer esse acordo a {$target}.
 
@@ -30,7 +30,7 @@ revival-contract-prompt-reject = Rejeitar oferta
 revival-contract-prompt-accept = Aceitar oferta
 
 revival-contract-menu-title = Contrato das Profundezas
-revival-contract-menu-prompt = Venda sua alma para uma segunda chance?
+revival-contract-menu-prompt = Sell your soul for a second chance?
 
 default-contract-content = Este contrato de vínculo foi firmado neste dia entre:
 
@@ -45,4 +45,3 @@ default-contract-content = Este contrato de vínculo foi firmado neste dia entre
 
             {"["}italic]Todas as cláusulas entram em vigor assim que esse papel é assinado por ambas as partes.{"["}/italic]
             {"["}italic]{"["}color=#ac3a0d]Cláusulas não podem ser quebradas. Nunca.{"["}/color]{"["}/italic]
-

@@ -11,7 +11,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 wires-component-ui-on-receive-message-no-hands = Você não tem mãos.
-wires-component-ui-on-receive-message-cannot-reach = Você não consegue alcan?ar a?!
+wires-component-ui-on-receive-message-cannot-reach = You can't reach there!
 wires-component-ui-on-receive-message-need-wirecutters = Você precisa segurar um corta-fios na mão!
 wires-component-ui-on-receive-message-need-multitool = Você precisa segurar uma multitool na mão!
 wires-component-ui-on-receive-message-cannot-pulse-cut-wire = Você não pode pulsar um fio que já foi cortado!
@@ -23,10 +23,8 @@ wires-component-ui-on-receive-message-cannot-mend-uncut-wire = Você não pode r
 wires-menu-name-label = Fios
 wires-menu-dead-beef-text = FIOS-PROVA
 wires-menu-help-popup =
-    Clique nos contatos dourados com uma multitool na m?o para enviar pulso no fio.
-    Clique nos fios com uma chave de fio na m?o para cort?-los ou remend?-los.
+    Click on the gold contacts with a multitool in hand to pulse their wire.
+    Click on the wires with a pair of wirecutters in hand to cut/mend them.
 
-    As luzes no alto mostram o estado da m?quina; mexer nos fios provavelmente altera o funcionamento dela.
-    Os arranjos de fios mudam em cada rodada, mas s?o consistentes entre m?quinas do mesmo tipo.
-
-
+    The lights at the top show the state of the machine, messing with wires will probably do stuff to them.
+    Wire layouts are different each round, but consistent between machines of the same type.

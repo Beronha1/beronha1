@@ -1,7 +1,7 @@
 ﻿guide-entry-hypoports = Hipoportas
 
-guide-entry-genetics = Gen?tica
-guide-entry-mutations = Lista de muta??es
+guide-entry-genetics = Genetics
+guide-entry-mutations = Mutations list
 guide-entry-xenobiology = Xenobiologia
 
 guide-entry-counterattack = Contra-ataque
@@ -20,13 +20,13 @@ guide-entry-changelings= Mutantes
 guide-entry-changeling-abilities = Habilidades dos changelings
 guide-entry-corporate-agents = Agentes corporativos
 guide-entry-devil = Diabo
-guide-entry-devil-clauses = Cl?usulas do diabo
+guide-entry-devil-clauses = Devil Clauses
 guide-entry-insurgents = Insurgentes
 guide-entry-morph= Morfar
-guide-entry-shadow-demon = Dem?nio das sombras
+guide-entry-shadow-demon = Shadow Demon
 guide-entry-slasher= Cortador
-guide-entry-slaughter-demon = Dem?nio matador
-guide-entry-spies = Espi?es
+guide-entry-slaughter-demon = Slaughter Demon
+guide-entry-spies = Spies
 
 guide-entry-skills = Habilidades
 

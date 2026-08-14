@@ -2,18 +2,18 @@
 
 cqc-fail-notself = Você não pode ensinar ninguém com {CAPITALIZE(THE($manual))}.
 
-cqc-fail-changeling = Isso já ? demais para nós.
+cqc-fail-changeling = We are beyond using this.
 cqc-fail-knowanother = Você já conhece outra arte marcial.
 cqc-fail-already = Você já sabe uma arte marcial.
-cqc-success-unblocked = Suas habilidades de CQC não estáo mais presas ? cozinha.
+cqc-success-unblocked = Your CQC skills are not bound to kitchen anymore.
 cqc-success-learned = Você aprendeu CQC. O manual incinera em suas mãos...
 capoeira-success-learned = Você aprendeu Capoeira. O manual incinera em suas mãos...
 dragon-success-learned = Você aprendeu Dragon Kung Fu. O manual incinera em suas mãos...
 ninjutsu-success-learned = Você aprendeu Ninjutsu. O pergaminho incinera em suas mãos...
 
-carp-scroll-waiting = A viagem de mil milhas come?a com um passo, e o caminho da sabedoria ? percorrido lentamente, uma li??o de cada vez.
+carp-scroll-waiting = The journey of a thousand miles begins with one step, and the path of wisdom is traveled slowly, one lesson at a time.
 carp-scroll-advance = Você deu mais um passo para se tornar um mestre do Caminho do Sleeping Carp.
-carp-scroll-complete = Agora voc? ? um mestre do Caminho do Sleeping Carp.
+carp-scroll-complete = You are now a master of the Way of the Sleeping Carp.
 
 carp-saying-huah = HUAH!
 carv-vaying-hya= Ei!
@@ -41,22 +41,22 @@ martial-arts-saying-generic= AH!
 krav-maga-ready = Você está pronto para {$action}
 
 martial-arts-action-sender = Você atingiu {$name} com {$move}
-martial-arts-action-receiver = {$name} atingiu voc? com {$move}
+martial-arts-action-receiver = {$name} hit you with {$move}
 
 martial-arts-fail-prone = Você não pode usar essa combinação deitado!
-martial-arts-fail-target-down = Você não pode usar essa combinação em alvos ca?dos!
-martial-arts-fail-target-standing = Você não pode usar essa combinação em alvos em p?!
+martial-arts-fail-target-down = You can't use this combo on downed targets!
+martial-arts-fail-target-standing = You can't use this combo on standing targets!
 capoeira-fail-low-velocity = Você está lento demais para executar esta combinação!
-ninjutsu-fail-loss-of-surprise = Suas inten??es foram detectadas! N?o ? poss?vel fazer esse movimento!
+ninjutsu-fail-loss-of-surprise = Your intentions are known! Cannot perform this move!
 
-alerts-dragon-power-name = Poder do Drag?o
-alerts-dragon-power-desc = Você tira um momento para refletir sobre batalhas passadas e futuras. Essa visão proteger? voc? de danos futuros.
+alerts-dragon-power-name = Dragon Power
+alerts-dragon-power-desc = You take a moment to reflect on battles past and to come. This insight will protect you from future harm.
 
 alerts-sneak-attack-name = Ataque furtivo
-alerts-sneak-attack-desc = Para um verdadeiro shinobi, o primeiro e o ?ltimo golpe são o mesmo.
+alerts-sneak-attack-desc = To a true shinobi, the first strike and the last strike are one and the same.
 
 alerts-loss-of-surprise-name = Falta de Surpresa
-alerts-loss-of-surprise-desc = Suas inten??es foram conhecidas! Levar? alguns momentos para atacar furtivamente novamente.
+alerts-loss-of-surprise-desc = Your intentions are known! It will take you a few moments to sneak attack again.
 
 cqc-slam = ESMAGAR!
 cqc-kick = TUM!
@@ -67,7 +67,7 @@ cqc-neck-snap = ESTALO!
 cqc-leg-sweep = CHUVA DE PERNA!
 spacebear-bearjaws = MORDER!
 spacebear-pawslam = ATAQUE DE PATAS!
-spacebear-smokey = FUMA?A!
+spacebear-smokey = SMOKEY!
 judo-discombobulate = DESESTABILIZAR!
 judo-eyepoke = OLHAR!
 judo-throw = ARREMESSAR!

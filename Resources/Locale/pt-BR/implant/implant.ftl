@@ -18,10 +18,10 @@ injector-invalid-injector-toggle-mode = Modo de implante inválido
 
 implanter-empty-text = Vazio
 
-implanter-label-inject= [color=verde]{$implantName}[/color]
+implanter-label-inject= [color=green]{$implantName}[/color]
     Modo: [color=white]{$modeString}[/color]
 
-implanter-label-draw= [color=vermelho]{$implantName}[/color]
+implanter-label-draw= [color=red]{$implantName}[/color]
     Modo: [color=white]{$modeString}[/color]
 
-implanter-contained-implant-text= [color=verde]{$desc}[/color]
+implanter-contained-implant-text= [color=green]{$desc}[/color]

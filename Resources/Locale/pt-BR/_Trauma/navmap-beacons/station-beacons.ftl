@@ -1,3 +1,2 @@
-﻿station-beacon-xenobio = Xenobiologia
+station-beacon-xenobio = Xenobiologia
 station-beacon-genetics = Genética
-

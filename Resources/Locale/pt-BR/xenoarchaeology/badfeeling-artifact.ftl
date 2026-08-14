@@ -23,8 +23,7 @@ badfeeling-artifact-15 = Algo está errado.
 
 badfeeling-artifact-drastic-1 = Alguém está tentando te matar!
 badfeeling-artifact-drastic-2 = Há algo lá fora!
-badfeeling-artifact-drastic-3 = O que está acontecendo com você?
+badfeeling-artifact-drastic-3 = What's happening to you?
 badfeeling-artifact-drastic-4 = AH DEUS!
 badfeeling-artifact-drastic-5 = ME AJUDE!
 badfeeling-artifact-drastic-6 =Você tem que sair daqui!
-

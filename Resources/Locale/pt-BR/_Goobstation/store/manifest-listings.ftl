@@ -1,6 +1,5 @@
 ﻿manifest-listing-entry-start = (Used {$spent})
-manifest-listing-entry-listing = [tamanho da fonte=30]\[[tex path="{$sprite}" state="{$sprite}" offsetY=-12 tooltip="{$sprite}"]{$sprite ->
+manifest-listing-entry-listing = [font size=30]\[[tex path="{$sprite}" state="{$state}" offsetY=-12 tooltip="{$info}"]{$amount ->
     [1] {""}
     *[other] x{$amount}
 }\][/font]
-

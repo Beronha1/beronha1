@@ -1,4 +1,2 @@
-﻿station-anchor-unanchoring-failed = Nao e possivel desenraizar um station anchor ativo.
-station-anchor-window-title = �ncora da Estacao
-
-
+station-anchor-unanchoring-failed = Can't unanchor an active station anchor.
+station-anchor-window-title = Station Anchor

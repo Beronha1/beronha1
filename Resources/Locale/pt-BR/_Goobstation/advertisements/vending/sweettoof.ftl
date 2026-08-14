@@ -7,5 +7,4 @@
 advertisement-sweettoof-1 = 99.9% de açúcares artificiais!
 advertisement-sweettoof-2 = Patrocinado pela Donk Co.!
 advertisement-sweettoof-3 = SweetToof! Todo mundo merece um pouco de doce!
-advertisement-sweettoof-4 = Ei! Quer um doce?
-
+advertisement-sweettoof-4 = Hey! Want some candy?

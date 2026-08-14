@@ -20,22 +20,22 @@ analysis-console-info-ready = Sistemas operacionais. Pronto para digitalizar.
 
 analysis-console-no-node = Selecione o nó para visualizar
 analysis-console-info-id = [font="Monospace" size=11]ID:[/font]
-analysis-console-info-id-value = [font="Monoespaçado" tamanho=11][color=yellow]{$id}[/color][/font]
+analysis-console-info-id-value = [font="Monospace" size=11][color=yellow]{$id}[/color][/font]
 analysis-console-info-class = [font="Monospace" size=11]Classe:[/font]
-analysis-console-info-class-value = [font="Monoespaçado" tamanho=11]{$class}[/font]
-analysis-console-info-locked = [font="Monoespaçado" size=11]Status:[/font]
+analysis-console-info-class-value = [font="Monospace" size=11]{$class}[/font]
+analysis-console-info-locked = [font="Monospace" size=11]Status:[/font]
 analysis-console-info-locked-value= [font="Monospace" size=11][color={ $state ->
-    [0] vermelho]Bloqueado
-    [1] limão] Desbloqueado
-    *[2] ameixa]Ativo
-}[/color][/fonte]
+    [0] red]Bloqueado
+    [1] lime] Desbloqueado
+    *[2] plum]Ativo
+}[/color][/font]
 analysis-console-info-durability = [font="Monospace" size=11]Durabilidade:[/font]
-analysis-console-info-durability-value = [font="Monoespaçado" tamanho=11][color={$color}]{$current}/{$max}[/color][/font]
+analysis-console-info-durability-value = [font="Monospace" size=11][color={$color}]{$current}/{$max}[/color][/font]
 analysis-console-info-effect = [font="Monospace" size=11]Efeito:[/font]
 analysis-console-info-effect-value= [font="Monospace" size=11][color=gray]{ $state ->
     [true] {$info}
     *[false] Desbloqueie nós para obter informações
-}[/color][/fonte]
+}[/color][/font]
 analysis-console-info-trigger = [font="Monospace" size=11]Acionadores:[/font]
 analysis-console-info-triggered-value = [font="Monospace" size=11][color=gray]{$triggers}[/color][/font]
 analysis-console-info-scanner = Digitalizando...

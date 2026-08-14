@@ -156,7 +156,7 @@
     - sandbox
   name: sandbox-title
   description: sandbox-description
-  showInVote: true # Low-pop alternative, capped to limit uncontrolled entity spawning.
+  showInVote: false # Not suitable without admin intervention; entity spam can crash the server.
   maxPlayers: 5
   rules:
     - Sandbox

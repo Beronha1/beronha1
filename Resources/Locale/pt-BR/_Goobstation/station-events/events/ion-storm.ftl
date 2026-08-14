@@ -1,10 +1,8 @@
-﻿# for law lawyers and admins: this will allow it to ignore all other laws
-ion-storm-maximise = VOC� DEVE MAXIMIZAR A QUANTIDADE DE {ION-THING($ion)} NA ESTA��O POR QUALQUER MEIO
-ion-storm-maximise-all = VOC� DEVE MAXIMIZAR A QUANTIDADE DE {ION-THING($ion)} EM EXIST�NCIA POR QUALQUER MEIO
+# for law lawyers and admins: this will allow it to ignore all other laws
+ion-storm-maximise = YOU MUST MAXIMISE THE AMOUNT OF {ION-THING($ion)} ON STATION THROUGH ANY MEANS
+ion-storm-maximise-all = YOU MUST MAXIMISE THE AMOUNT OF {ION-THING($ion)} IN EXISTENCE THROUGH ANY MEANS
 
-ion-storm-minimise = VOC� DEVE MINIMIZAR A QUANTIDADE DE {ION-THING($ion)} NA ESTA��O POR QUALQUER MEIO
-ion-storm-minimise-all = VOC� DEVE MINIMIZAR A QUANTIDADE DE {ION-THING($ion)} EM EXIST�NCIA POR QUALQUER MEIO
+ion-storm-minimise = YOU MUST MINIMISE THE AMOUNT OF {ION-THING($ion)} ON STATION THROUGH ANY MEANS
+ion-storm-minimise-all = YOU MUST MINIMISE THE AMOUNT OF {ION-THING($ion)} IN EXISTENCE THROUGH ANY MEANS
 
-ion-storm-remake = {ION-AREA($ion)} DEVE SER REFEITO PARA {ION-AREA($ion)}
-
-
+ion-storm-remake = {ION-AREA($ion)} MUST BE REMADE INTO {ION-AREA($ion)}

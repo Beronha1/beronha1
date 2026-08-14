@@ -4,6 +4,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 mousebites-effects-vexes = Isso me incomoda...
-mousebites-effects-stupid = Eu tentei a droga idiota?
+mousebites-effects-stupid = Did I try the stupid drug?
 mousebites-effects-metoo = Eu também estou neste episódio.
-

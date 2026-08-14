@@ -7,4 +7,4 @@ revenant-touch-of-evil-end = O efeito do toque desaparece...
 
 wraith-must-be-corporeal = Você precisa estar em forma corpórea para usar esta ação.
 collective-mind-wraith = Mente do Wraith
-wraith-wp-action-needs= [color=Vermelho]{$wp}WP[/color]
+wraith-wp-action-needs= [color=Red]{$wp}WP[/color]

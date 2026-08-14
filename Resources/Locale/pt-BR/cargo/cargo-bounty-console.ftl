@@ -20,7 +20,7 @@ bounty-console-manifest-entry =
 *[other] {$item} x{$amount}
     }
 bounty-console-manifest-reward = Recompensa: ${$reward}
-bounty-console-description-label= [color=cinza]{$description}[/color]
+bounty-console-description-label= [color=gray]{$description}[/color]
 bounty-console-id-label = ID#{$id}
 
 bounty-console-flavor-left = Recompensas obtidas de traficantes locais sem escrúpulos.

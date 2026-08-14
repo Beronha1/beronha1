@@ -25,7 +25,7 @@ uplink-decoy-disk-name = Disco nuclear falso
 uplink-decoy-disk-desc = Um pedaço de plástico com impressão lenticular, feito para parecer um disco de autenticação nuclear.
 
 uplink-bribe-name = Pacote de lobby
-uplink-bribe-desc = Um presente sincero que pode te ajudar a influenciar a opinião de alguém. Genuíno ou falso? Sim.
+uplink-bribe-desc = A heartfelt gift that can help you sway someone's opinion. Real or counterfeit? Yes.
 
 uplink-exploding-syndicate-bomb-fake-name = Bomba falsa da Sindicate
 uplink-exploding-syndicate-bomb-fake-desc = Uma bomba de treino feita com cuidado para se parecer exatamente como a real. Em todos os aspectos similar a uma bomba da Sindicate, mas cria apenas uma pequena explosão.
@@ -38,4 +38,3 @@ uplink-smuggler-satchel-desc = Uma bolsa prática e suspeita. Fina o suficiente 
 
 uplink-weighted-coin-name = Moeda de carga
 uplink-weighted-coin-desc = Uma moeda especial que sempre cai no lado de coroa, feita para parecer com as moedas de cara e coroa nas estações da Nanotrasen.
-

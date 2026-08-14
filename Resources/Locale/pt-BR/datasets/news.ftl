@@ -57,8 +57,8 @@ news-dataset-56 = Tommy B. Saif Sez: tente manter as despesas de seis meses rese
 news-dataset-57 = Tommy B. Saif Sez: troco não é dado sem compra
 news-dataset-58 = Tommy B. Saif Sez: se quebrar, você compra
 news-dataset-59 = Tommy B. Saif Sez: reservas devem ser canceladas com 48 horas de antecedência para reembolso
-news-dataset-60 = Donuts: existe algo que eles não possam fazer?
-news-dataset-61 = Se apitos de estanho são feitos de estanho, de que é feito o apito de neblina?
+news-dataset-60 = Doughnuts: Is There Anything They Can't Do
+news-dataset-61 = If Tin Whistles Are Made Of Tin, What Do They Make Foghorns Out Of?
 news-dataset-62 = Descobriram que o brócolis é uma colônia de pequenos alienígenas com intenção de matar
 
 ## Comentados
@@ -82,4 +82,3 @@ news-dataset-62 = Descobriram que o brócolis é uma colônia de pequenos alien�
 # Boy Saves Tajaran From Tree on {{AFFECTED}}, Thousands Cheer
 # Shipment Of Apples Overturns, {{AFFECTED}} Diner Offers Applesauce Special
 # Spotted Owl Spotted on {{AFFECTED}}
-

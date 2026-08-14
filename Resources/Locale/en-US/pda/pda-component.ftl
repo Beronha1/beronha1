@@ -25,6 +25,10 @@ comp-pda-ui-blank = ID:
 
 comp-pda-ui-owner = Owner: [color=white]{$actualOwnerName}[/color]
 
+comp-pda-ui-health-scan-title = MedTek
+comp-pda-ui-health-scan-trauma = Trauma:
+comp-pda-ui-health-scan-fluids = Body Fluids
+
 comp-pda-io-program-list-button = Programs
 
 comp-pda-io-settings-button = Settings

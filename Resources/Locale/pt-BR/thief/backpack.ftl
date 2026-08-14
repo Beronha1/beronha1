@@ -38,10 +38,10 @@ thief-backpack-category-chameleon-description =
 
 thief-backpack-category-tools-name = Kit de violador
 thief-backpack-category-tools-description =
-    Que som é esse? Um pequeno C4 batendo na porta deles.
-    Nenhum obstáculo pode pará-lo!
-    Inclui: Dois C4, uma multiferramenta, sinalizador remoto, mandíbulas de vida,
-    soldador avançado, óculos de engenharia e luvas isoladas.
+    What's that sound? A lil' C4 knockin' at their door.
+    No obstacle can stop you!
+    Includes: Two C4, a multitool, remote signaller, jaws of life,
+    advanced welder, engineering goggles, and insulated gloves.
 
 thief-backpack-category-chemistry-name = Kit de anatomia
 thief-backpack-category-chemistry-description =
@@ -51,10 +51,10 @@ thief-backpack-category-chemistry-description =
 
 thief-backpack-category-syndie-name = Kit Syndie
 thief-backpack-category-syndie-description =
-    Bugigangas de um passado rejeitado ou roubadas de um agente descuidado?
-    Você fez algumas conexões. Uísque, eco...
-    Inclui: Um Emag, Access Breaker, cigarros Interdyne, uma palavra-código Syndicate,
-    um Radio Jammer, um isqueiro e alguns estranhos cristais vermelhos.
+    Trinkets from a disavowed past, or stolen from a careless agent?
+    You've made some connections. Whiskey, echo...
+    Includes: An Emag, Access Breaker, Interdyne cigs, a Syndicate codeword,
+    a Radio Jammer, a lighter and some strange red crystals.
 
 thief-backpack-category-sleeper-name = Kit Dorminhoco
 thief-backpack-category-sleeper-description =
@@ -76,4 +76,3 @@ thief-backpack-category-smuggler-description =
     Não se esqueça de vincular seu fulton.
     Inclui: farol Fulton, 10 fultons, 3 granadas de fumaça,
     e uma caixa invisível para esconder itens valiosos.
-

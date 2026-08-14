@@ -16,7 +16,7 @@ durability-repair-irreparable =
     {"[color=#8f4f57]"}Este item não pode ser reparado.[/color]
 
 durability-repair-colortext =
-    {"[color= #644f8f]"}- @@@@
+    {"[color=#644f8f]"}- {$data}[/color]
 durability-repair-needed =
     {""}[color=#644f8f]Para reparar, você precisa de{$requirements}[/color]
 durability-repair-single =

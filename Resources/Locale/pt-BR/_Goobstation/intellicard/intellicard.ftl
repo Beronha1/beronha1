@@ -1,4 +1,3 @@
-﻿intellicard-extras-target-occupied = O dispositivo alvo já está ocupado por outra consci?ncia digital.
-intellicard-extras-target-empty = O dispositivo alvo não tem nenhuma consci?ncia digital para baixar.
-intellicard-extras-contained-missing = O dispositivo alvo não pode ser transferido porque a consci?ncia digital contida estava em estado irrecuper?vel.
-
+intellicard-extras-target-occupied = The targetted device is already occupied by another digital consciousness.
+intellicard-extras-target-empty = The targetted device has no digital consciousness to download.
+intellicard-extras-contained-missing = The targetted device could not be transferred to because the contained digital consciousness was in an irrecoverable state.

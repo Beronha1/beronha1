@@ -18,5 +18,4 @@ list-verbs-command-invalid-target-uid = O UID de destino não pôde ser analisad
 list-verbs-command-invalid-player-entity = O uid do jogador fornecido não corresponde a uma entidade válida.
 list-verbs-command-invalid-target-entity = O UID de destino fornecido não corresponde a uma entidade válida.
 
-list-verbs-verb-listing= { $type }: { $type }
-
+list-verbs-verb-listing = { $type }: { $verb }

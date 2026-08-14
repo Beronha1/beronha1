@@ -6,20 +6,18 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-cigs-1 = Cigarros espaciais t?m o gosto certo de um cigarro.
+advertisement-cigs-1 = Space cigs taste good like a cigarette should.
 advertisement-cigs-2 = Eu prefiro toolbox do que trocar.
 advertisement-cigs-3 = Fume!
-advertisement-cigs-4 = N?o acredite nos relatérios ? fume hoje!
-advertisement-cigs-5 = Provavelmente não ? ruim para voc?!
-advertisement-cigs-6 = N?o acredite nos cientistas!
-advertisement-cigs-7 = ? bom para voc?!
-advertisement-cigs-8 = N?o pare, compre mais!
-advertisement-cigs-9 = Para?so da nicotina.
+advertisement-cigs-4 = Don't believe the reports - smoke today!
+advertisement-cigs-5 = Probably not bad for you!
+advertisement-cigs-6 = Don't believe the scientists!
+advertisement-cigs-7 = It's good for you!
+advertisement-cigs-8 = Don't quit, buy more!
+advertisement-cigs-9 = Nicotine heaven.
 advertisement-cigs-10 = Melhores cigarros desde 2150.
 advertisement-cigs-11 = Cigarros premiados.
 advertisement-cigs-12 = Aqui para aliviar o peso do trabalho!
 thankyou-cigs-1 = Você já tem eles, agora fume-os!
 thankyou-cigs-2 = Você provavelmente não vai se arrepender!
-thankyou-cigs-3 = Em pouco tempo voc? vira viciado!
-
-
+thankyou-cigs-3 = You'll become an addict in no time!

@@ -22,4 +22,4 @@ xenoborg-number-crew-alive-end = Número de tripulação viva: {$count}
 xenoborg-max-number = O maior número de xenoborgs foi: {$count}
 
 xenoborgs-list-start = A equipe inicial de xenoborgs foi:
-xenoborgs-list= - [color=Branco]{$name}[/color] ([color=cinza]{$user}[/color])
+xenoborgs-list= - [color=White]{$name}[/color] ([color=gray]{$user}[/color])

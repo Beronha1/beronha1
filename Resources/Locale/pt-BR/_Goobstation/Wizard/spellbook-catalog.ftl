@@ -103,9 +103,9 @@ spellbook-arcane-barrage-desc =
 
 spellbook-lesser-summon-guns-name = Invocar Armas Menores
 spellbook-lesser-summon-guns-desc =
-    Por que recarregar se você tem armas infinitas? Invoca uma sequência infinita de rifles de ação, com pouco dano, mas que atordoam alvos. O feitiço é mais eficiente quando ambas as mãos estão livres.
-    Aprender esse feitiço impede que você aprenda Barragem Arcana.
-    Requer túnica e chapéu de mago para ser lançado.
+    Why reload when you have infinite guns? Summons an unending stream of bolt action rifles that deal little damage, but will stun targets. The spell is more effective when both of your hands are free.
+    Learning this spell makes you unable to learn Arcane Barrage.
+    Requires wizard's robe and hat to cast.
 
 spellbook-barnyard-name = Maldição do Curral
 spellbook-barnyard-desc =
@@ -185,4 +185,3 @@ spellbook-knock-desc =
 spellbook-smite-desc =
     Esse feitiço carrega sua mão com energia impura que pode ser usada para fazer uma vítima tocada explodir violentamente.
     Requer túnica e chapéu de mago para ser lançado.
-

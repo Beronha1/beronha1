@@ -1,6 +1,5 @@
-﻿ED209-Intimidation-1 = VOC� FOI MARCADO PARA MORTE.
-ED209-Intimidation-2 = EU SOU A LEI.
-ED209-Intimidation-3 = N�O RESISTA.
-ED209-Intimidation-4 = A RESIST�NCIA � IN�TIL.
-ED209-Intimidation-5 = ENTREGA-SE OU MORRA.
-
+ED209-Intimidation-1 = YOU HAVE BEEN MARKED FOR DEATH.
+ED209-Intimidation-2 = I AM THE LAW.
+ED209-Intimidation-3 = DO NOT RESIST.
+ED209-Intimidation-4 = RESISTANCE IS FUTILE.
+ED209-Intimidation-5 = SURRENDER OR DIE.

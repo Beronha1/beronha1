@@ -1,51 +1,51 @@
-﻿spy-uplink-examine-message =
-    Voc? reconhece isso como seu [bolditalic]uplink de espi?o[/bolditalic]
-    {"["}color=lime][bolditalic]Clique com bot?o direito[/bolditalic][/color] nele e escolha "Ver recompensas" para ver sua lista de recompensas.
-    {"["}color=orange][bolditalic]Clique[/bolditalic][/color] não alvo da recompensa com ele ligado para reivindic?-la.
+spy-uplink-examine-message =
+    You recognize this as your [bolditalic]spy uplink[/bolditalic]
+    {"["}color=lime][bolditalic]Right click[/bolditalic][/color] it and select "View Bounties" to view your bounty list.
+    {"["}color=orange][bolditalic]Click[/bolditalic][/color] the bounty target with it on to claim it.
 
 spy-uplink-open-verb = Ver Recompensas
 spy-uplink-steal-verb = Escanear alvo
 spy-uplink-refresh-time = Tempo até atualizar: {$time}
-spy-uplink-title = Uplink de Espi?o
+spy-uplink-title = Spy Uplink
 spy-uplink-flavor = Recompensas são dadas por ordem de chegada.
 spy-uplink-claimed = Reivindicado!
-spy-uplink-cant-claim = Seus benfeitores consideram voc? inapto para completar isso.
+spy-uplink-cant-claim = Your benefactors see you unfit to complete this.
 spy-uplink-reward = Recompensa: {$reward}
-spy-uplink-description-label= [tamanho da fonte=10][color=ciano escuro]{$desc}[/color][/font]
+spy-uplink-description-label= [font size=10][color=darkcyan]{$desc}[/color][/font]
 spy-uplink-collect-reward = Coletar Recompensa
 spy-uplink-bounties = Recompensas
 spy-uplink-rewards = Recompensas
 spy-uplink-select-reward = Selecionar Recompensa
 spy-uplink-no-rewards = Nenhuma recompensa disponível!
-spy-uplink-steal-fail = Seu uplink pisca vermelho: {$target} ? inv?lido para recompensas ativas ou não pode ser extra?do daqui.
-spy-uplink-new = Criar novo uplink de espi?o
+spy-uplink-steal-fail = Your uplink blinks red: {$target} is invalid for active non-claimed bounties or cannot be extracted from here.
+spy-uplink-new = 🕵 Make new spy uplink
 
-spy-uplink-ammo-name = Muni??o
-spy-uplink-ammo-desc = Alguma muni??o de sua escolha
+spy-uplink-ammo-name = Ammunition
+spy-uplink-ammo-desc = Some ammo of your choice
 
-spies-title = Espi?es
-spies-description = Um espi?o vermelho entrou na base.
+spies-title = Spies
+spies-description = A red spy has entered the base.
 
 spy-role-claimed-bounties =
     {CAPITALIZE($name)} reivindicou um total de [color=red]{$amount}[/color] recompensas.
     {" "}
 
 spy-role-greeting =
-    Voc? ? um espi?o.
-    Sua missão, se voc? aceitar: Infiltre a Estação Espacial 14.
-    Disfarce-se como membro da tripula??o e roube equipamentos vitais.
-    Se voc? for pego ou morto, seu empregador negar? qualquer conhecimento de suas a??es.
-    Boa sorte, agente.
+    You are a Spy.
+    Your mission, should you choose to accept it: Infiltrate Space Station 14.
+    Disguise yourself as a member of their crew and steal vital equipment.
+    Should you be caught or killed, your employer will disavow any knowledge of your actions.
+    Good luck agent.
 
-spy-role-briefing-short = Você ? um espi?o, encarregado de roubar v?rios equipamentos da estação.
+spy-role-briefing-short = You are a Spy, tasked with stealing various station equipment.
 
 spy-role-uplink-pda-short =
-    Seu uplink de recompensa est? localizado no seu PDA.
-    Lembre-se, voc? pode transformar qualquer PDA no seu uplink de espi?o se perder o seu.
+    Your bounty uplink is located in your PDA.
+    Remember, you can turn any PDA into your spy uplink if you lose yours.
 
 spy-role-no-uplink-short =
-    Voc? n?o tem um uplink.
-    Encontre qualquer PDA e transforme-o em uplink de espi?o manualmente.
+    You don not have an uplink.
+    Find any PDA and fashion it into spy uplink manually.
 
 spy-bounty-default-name = Furto de {CAPITALIZE($item)}
 spy-bounty-default-desc = Roube qualquer {$item}.
@@ -53,9 +53,8 @@ spy-bounty-default-desc = Roube qualquer {$item}.
 spy-bounty-specific-desc = Roube {$item}.
 
 spy-bounty-area-desc =
-    Roube {$item}, encontrado em {$areas}.
-    Alvos similares fora da ?rea especificada n?o concluir?o a recompensa.
+    Steal {$item}, found in {$areas}.
+    Similar targets outside of specified area won't complete the bounty.
 
 spy-bounty-organ-name = Roubo do {CAPITALIZE($uid)}'s {CAPITALIZE($organ)}
 spy-bounty-organ-desc = Escaneie {CAPITALIZE($uid)}, {$job} para roubar {$organ}.
-

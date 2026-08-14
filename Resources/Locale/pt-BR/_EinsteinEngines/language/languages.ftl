@@ -1,5 +1,5 @@
 ﻿language-Universal-name =Universal
-language-Universal-description =O que você está?
+language-Universal-description = What are you?
 
 language-Psychomantic-name =Psicomântico
 language-Psychomantic-description =Significado puro, livre da tirania das palavras e gestos primitivos.

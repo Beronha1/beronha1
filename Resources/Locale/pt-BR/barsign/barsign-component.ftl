@@ -117,7 +117,7 @@ barsign-prototype-description-maltroach = Chiado!
 
 ## Whiskey Echoes
 barsign-prototype-name-whiskeyechoes = Ecos de uísque
-barsign-prototype-description-whiskeyechoes = Um bar de elite para espera de ópera de elite, esta é uma estação Nanotrasen. Por que esse sinal está no banco de dados?
+barsign-prototype-description-whiskeyechoes = An elite bar for elite oper-wait, this is a Nanotrasen station. Why's this sign in the database?
 
 ## EmpBarSign
 barsign-prototype-name-empbarsign = sinal de barra com defeito
@@ -125,4 +125,3 @@ barsign-prototype-description-empbarsign = Algo deu muito errado.
 
 ## SignOff
 barsign-prototype-description-sign-off = Este sinal não parece estar aceso.
-

@@ -51,6 +51,7 @@ public sealed partial class ESCharacterWindow : FancyWindow
 
         _mask.OnMaskChanged += OnMaskChanged;
         _objective.OnObjectivesChanged += OnObjectivesChanged;
+        Update();
     }
 
     public override void Close()
@@ -91,11 +92,22 @@ public sealed partial class ESCharacterWindow : FancyWindow
 
         SelfView.SetEntity(localEntity);
 
+        var characterName = _ent.GetComponent<MetaDataComponent>(localEntity).EntityName;
+        SetCharacterName(characterName);
+
         if (!_mind.TryGetMind(localEntity, out var mind, out var mindComp))
             return;
 
-        if (_ent.TryGetComponent<ESCharacterComponent>(mind, out var character))
-            NameLabel.UnsafeSetMarkup(Loc.GetString("es-character-window-name-fmt", ("name", character.Name)));
+        if (!string.IsNullOrWhiteSpace(mindComp.CharacterName))
+            characterName = mindComp.CharacterName;
+
+        if (_ent.TryGetComponent<ESCharacterComponent>(mind, out var character) &&
+            !string.IsNullOrWhiteSpace(character.Name))
+        {
+            characterName = character.Name;
+        }
+
+        SetCharacterName(characterName);
 
         if (_job.MindTryGetJob(mind, out var job))
         {
@@ -160,5 +172,11 @@ public sealed partial class ESCharacterWindow : FancyWindow
             control.SetObjective(objective);
             ObjectivesContainer.AddChild(control);
         }
+    }
+
+    private void SetCharacterName(string characterName)
+    {
+        NameLabel.UnsafeSetMarkup(Loc.GetString("es-character-window-name-fmt",
+            ("name", FormattedMessage.EscapeText(characterName))));
     }
 }

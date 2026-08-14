@@ -4,10 +4,9 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-cursed-mask-examine-Neutral = Mostra uma fisionomia completamente sem gra?a.
+cursed-mask-examine-Neutral = It depicts an entirely unremarkable visage.
 cursed-mask-examine-Joy = Mostra um rosto tomado por alegria.
 cursed-mask-examine-Despair = Mostra uma face cheia de desespero.
 cursed-mask-examine-Anger = Mostra uma expressão furiosa presa na raiva.
 cursed-mask-takeover-popup = A máscara toma controle do seu corpo!
-
 

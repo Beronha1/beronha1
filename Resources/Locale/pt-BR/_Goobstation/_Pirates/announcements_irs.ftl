@@ -6,10 +6,10 @@
 
 pirates-announcer-irs =Agentes espaciais do IRS
 pirates-announcement-irs-threat =
-    TerraGov Aqui, percebemos que sua estação não está pagando seus impostos.
-    Vamos corrigir isso. Suas dívidas fiscais perdidas equivalem a uma boa soma de créditos.
-    Basta aceitar o pedido que gentilmente colocamos em seu console de carga.
-    É altamente recomendável pagar seus impostos, não precisamos enviar uma equipe até sua delegacia para resolver a situação, não é?
+    TerraGov Here, We noticed that your station hasn't been paying your taxes.
+    Let's rectify that, Your missing tax dues amounts to a nice sum of credits.
+    Simply accept the order that we kindly placed in your cargo console.
+    We highly recommend paying your taxes stat, we don't need to send a team to your station to resolve the situation do we?
 
 pirates-announcement-irs-arrival =
     Esta é a equipa de resolução de conflitos fiscais, prepare-se para que o seu património seja liquidado e acusado de fraude fiscal!
@@ -22,4 +22,3 @@ pirates-announcement-irs-cancelled =
 
 pirates-announcement-irs-notenough =
     Você apresentou seus impostos incorretamente. Uma equipe foi enviada para auxiliar na liquidação de ativos e prendê-lo por fraude fiscal.
-

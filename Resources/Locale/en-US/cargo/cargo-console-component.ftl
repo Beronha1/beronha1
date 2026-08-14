@@ -49,7 +49,7 @@ cargo-console-insufficient-funds = Insufficient funds (require {$cost})
 cargo-console-unfulfilled = No room to fulfill order
 cargo-console-trade-station = Sent to {$destination}
 cargo-console-unlock-approved-order-broadcast = [bold]{$productName} x{$orderAmount}[/bold], which cost [bold]{$cost}[/bold], was approved by [bold]{$approver}[/bold]
-cargo-console-fund-withdraw-broadcast = [bold]{$name} withdrew {$amount} spesos from {$name1} \[{$code1}\]
+cargo-console-fund-withdraw-broadcast = [bold]{$name} withdrew {$amount} spesos from {$name1} \[{$code1}\][/bold]
 cargo-console-fund-transfer-broadcast = [bold]{$name} transferred {$amount} spesos from {$name1} \[{$code1}\] to {$name2} \[{$code2}\][/bold]
 cargo-console-fund-transfer-user-unknown = Unknown
 
@@ -94,7 +94,7 @@ cargo-funding-alloc-console-label-save-fail = [bold]Revenue Divisions Invalid![/
 cargo-acquisition-slip-body = [head=3]Asset Detail[/head]
     {"[bold]Product:[/bold]"} {$product}
     {"[bold]Description:[/bold]"} {$description}
-    {"[bold]Unit cost:[/bold"}] ${$unit}
+    {"[bold]Unit cost:[/bold]"} ${$unit}
     {"[bold]Amount:[/bold]"} {$amount}
     {"[bold]Cost:[/bold]"} ${$cost}
 

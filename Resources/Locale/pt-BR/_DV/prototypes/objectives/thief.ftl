@@ -1,3 +1,2 @@
-﻿ent-EscapeThiefShuttleObjective = Seja o maior ladr?o de todos os tempos
-    .desc = Realize o maior assalto da gal?xia, que entre para os livros de hist?ria.
-
+ent-EscapeThiefShuttleObjective = Become the greatest thief of all time
+    .desc = Pull off the biggest heist in the galaxy, make it one for the history books.

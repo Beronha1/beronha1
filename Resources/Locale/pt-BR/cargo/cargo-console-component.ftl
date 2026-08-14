@@ -58,14 +58,14 @@ cargo-console-fund-transfer-user-unknown = Desconhecido
 cargo-console-paper-reason-default = Nenhum
 cargo-console-paper-approver-default = Desconhecido
 cargo-console-paper-print-name = Pedido nº {$orderNumber}
-cargo-console-paper-print-text = [bold]Pedido nº {$orderNumber}[/bold]
+cargo-console-paper-print-text = [head=2]Pedido nº {$orderNumber}[/head]
     {"[bold]Item:[/bold]"} {$itemName} (x{$orderQuantity})
-     {$requester}
+    {"[bold]Solicitado por:[/bold]"} {$requester}
 
-    
-    {"[bold]Payer[/bold]:"} {$account} [font="Monospace"]\[{$accountcode}\][/font]
-    {"[bold]Approved by:[/bold]"} {$approver}
-    {"[bold]Reason:[/bold]"} {$reason}
+    {"[head=3]Informações do pedido[/head]"}
+    {"[bold]Pagador[/bold]:"} {$account} [font="Monospace"]\[{$accountcode}\][/font]
+    {"[bold]Aprovado por:[/bold]"} {$approver}
+    {"[bold]Motivo:[/bold]"} {$reason}
 
 # Console da nave de Carga
 cargo-shuttle-console-menu-title = Console da nave de Carga
@@ -92,12 +92,12 @@ cargo-funding-alloc-console-label-save-fail = [bold]Divisão de receita inválid
 
 # Comprovante de aquisição
 cargo-acquisition-slip-body = [head=3]Detalhes do bem[/head]
-    {"[bold]Product:[/bold]"} {$product}
-    {"[bold]Description:[/bold]"} {$description}
-    {"[bold]Unit cost:[/bold]"} ${$unit}
-    {"[bold]Amount:[/bold]"} {$amount}
-    {"[bold]Cost:[/bold]"} ${$cost}
+    {"[bold]Produto:[/bold]"} {$product}
+    {"[bold]Descrição:[/bold]"} {$description}
+    {"[bold]Custo unitário:[/bold]"} ${$unit}
+    {"[bold]Quantidade:[/bold]"} {$amount}
+    {"[bold]Custo:[/bold]"} ${$cost}
 
-    
-    {"[bold]Orderer:[/bold]"} {$orderer}
-    {"[bold]Reason:[/bold]"} {$reason}
+    {"[head=3]Detalhes da compra[/head]"}
+    {"[bold]Solicitante:[/bold]"} {$orderer}
+    {"[bold]Motivo:[/bold]"} {$reason}

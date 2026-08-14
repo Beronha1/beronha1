@@ -10,15 +10,13 @@
 advertisement-chefvend-1 = Pelo menos sessenta por cento dos nossos ovos não estáo quebrados, garantido!
 advertisement-chefvend-2 = Arroz, arroz, baby.
 advertisement-chefvend-3 = Passe manteiga nisso!
-advertisement-chefvend-4 = Você vale o seu sal? N?s valemos.
+advertisement-chefvend-4 = Are you worth your salt? We are.
 advertisement-chefvend-5 = Mmm, carne.
 advertisement-chefvend-6 = Use o poder da farinha.
-advertisement-chefvend-7 = Mostre a seus clientes quem ? o melhor chef com nosso famoso molho de churrasco premiado pela gal?xia.
+advertisement-chefvend-7 = Show your customers who's the best chef around with our galaxy famous, award winning BBQ sauce.
 advertisement-chefvend-8 = Eu amo comida, principalmente ovos crus.
 advertisement-chefvend-9 = Aproveite uns bons ovos crus!
 thankyou-chefvend-1 = Hora de colocar a mão na massa!
 thankyou-chefvend-2 = Obrigado por confiar nos nossos ingredientes de qualidade!
 thankyou-chefvend-3 = Isso deve dar a eles o que querem!
-thankyou-chefvend-4 = V? fazer aqueles hamb?rgueres!
-
-
+thankyou-chefvend-4 = Go make those burgers!

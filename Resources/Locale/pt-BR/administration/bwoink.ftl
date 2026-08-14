@@ -18,32 +18,32 @@
 bwoink-user-title = Mensagem Admin
 bwoink-admin-title = Ajuda Admin
 
-bwoink-system-starmute-message-no-other-users = *Sistema: Ninguem esta disponivel para receber sua mensagem. Tente pingar admins do jogo no Discord.
+bwoink-system-starmute-message-no-other-users = *Sistema: Ninguém está disponível para receber sua mensagem. Tente chamar os administradores do jogo no Discord.
 
 bwoink-system-messages-being-relayed-to-discord =
-    Todas as mensagens sao repassadas aos administradores do jogo pelo Discord.
-    Pode haver tratativas de problemas sem resposta.
+    Todas as mensagens são repassadas aos administradores do jogo pelo Discord.
+    O problema pode ser tratado mesmo sem uma resposta.
 
 bwoink-system-introductory-message =
-    Descreva em detalhe o problema encontrado. Assuma que o administrador que esta resolvendo nao teve conhecimento do ocorrido.
-    Nao peça eventos especiais ou punições para outros jogadores.
-    Bugs e problemas relacionados devem ser reportados pelo Discord ou Github.
+    Descreva em detalhes o problema encontrado. Assuma que o administrador responsável não presenciou o ocorrido.
+    Não peça eventos especiais nem punições para outros jogadores.
+    Bugs e problemas relacionados devem ser reportados pelo Discord ou GitHub.
     Mau uso deste sistema de mensagens pode resultar em medida disciplinar.
 
-bwoink-system-typing-indicator= {$players} {$players ->
-[one] esta
-*[other] estao
+bwoink-system-typing-indicator = {$players} {$count ->
+[one] está
+*[other] estão
 } digitando...
 
 admin-ahelp-admin-only = Apenas admin
-admin-ahelp-admin-only-tooltip = Se marcado, a mensagem nao sera visivel para o jogador,
-    mas sera visivel para outros admins e ainda sera enviada ao Discord.
+admin-ahelp-admin-only-tooltip = Se marcado, a mensagem não será visível para o jogador,
+    mas será visível para outros admins e ainda será enviada ao Discord.
 
 admin-bwoink-play-sound = Bwoink?
 
-bwoink-title-none-selected = Nao selecionado
+bwoink-title-none-selected = Não selecionado
 
-bwoink-system-rate-limited = Sistema: voce esta enviando mensagens rapido demais.
+bwoink-system-rate-limited = Sistema: você está enviando mensagens rápido demais.
 bwoink-system-player-disconnecting = se desconectou.
 bwoink-system-player-reconnecting = se reconectou.
 bwoink-system-player-banned = foi banido por: {$banReason}

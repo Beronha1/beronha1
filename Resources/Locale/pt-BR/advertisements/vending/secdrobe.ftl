@@ -6,9 +6,7 @@
 # SPDX-License-Identifier: MIT
 
 advertisement-secdrobe-1 = Derrote marginais com estilo!
-advertisement-secdrobe-2 = ? vermelho para voc? não ver o sangue!
+advertisement-secdrobe-2 = It's red so you can't see the blood!
 advertisement-secdrobe-3 = Você tem direito de ser fashion!
-advertisement-secdrobe-4 = Agora voc? pode ser a pol?cia de moda que sempre quis ser!
+advertisement-secdrobe-4 = Now you can be the fashion police you always wanted to be!
 advertisement-secdrobe-5 = O melhor tom de vermelho, NEM SE PARECE com o mesmo tom que os Syndicates usam!
-
-

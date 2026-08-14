@@ -1,5 +1,5 @@
 atmos-monitoring-window-title = Monitor de Rede Atmosferica
-atmos-monitoring-window-station-name= [color=branco][tamanho da fonte=14]{$stationName}[/font][/color]
+atmos-monitoring-window-station-name= [color=white][font size=14]{$stationName}[/font][/color]
 atmos-monitoring-window-unknown-location = Local desconhecido
 atmos-monitoring-window-label-gas-opening = Abertura da rede
 atmos-monitoring-window-label-gas-scrubber = Filtro de ar

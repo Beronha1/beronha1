@@ -2,20 +2,20 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-injector-volume-transfer-label= Volume: [color=branco]{$currentVolume}/{$totalVolume}u[/color]
+injector-volume-transfer-label= Volume: [color=white]{$currentVolume}/{$totalVolume}u[/color]
     Modo: [color=white]{$modeString}[/color] ([color=white]{$transferVolume}u[/color])
-injector-volume-label= Volume: [color=branco]{$currentVolume}/{$totalVolume}u[/color]
+injector-volume-label= Volume: [color=white]{$currentVolume}/{$totalVolume}u[/color]
     Modo: [color=white]{$modeString}[/color]
 injector-toggle-verb-text = Alternar modo do injetor
 injector-component-inject-mode-name = injetar
 injector-component-draw-mode-name = extrair
 injector-component-dynamic-mode-name = dinâmico
 injector-component-mode-changed-text = Modo atual: {$mode}
-injector-component-transfer-success-message = Você transfere {$amount}u para {$amount}.
+injector-component-transfer-success-message = Você transfere {$amount}u para {$target}.
 injector-component-transfer-success-message-self = Você transfere {$amount}u para si mesmo.
-injector-component-inject-success-message = Você injeta {$amount}u em {$amount}!
+injector-component-inject-success-message = Você injeta {$amount}u em {$target}!
 injector-component-inject-success-message-self = Você injeta {$amount}u em si mesmo!
-injector-component-draw-success-message = Você extrai {$amount}u de {$amount}.
+injector-component-draw-success-message = Você extrai {$amount}u de {$target}.
 injector-component-draw-success-message-self = Você extrai {$amount}u de si mesmo.
 injector-component-target-already-full-message = {$target} já está cheio!
 injector-component-target-already-full-message-self = Você já está cheio!
@@ -41,4 +41,3 @@ injector-component-needle-drawing-target = {$user} está tentando extrair algo d
 injector-component-spray-injecting-user = Você começa Uma preparar o bico pulverizador.
 injector-component-spray-injecting-target = {$user} está tentando colocar um bico pulverizador em você!
 injector-component-feel-prick-message = Você sente uma picadinha!
-

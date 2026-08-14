@@ -15,9 +15,8 @@ ui-rules-header = Regras Oficiais do Servidor Trauma Station
 ui-rules-header-rp = Regras Oficiais de Roleplay do Trauma Station
 # </Trauma>
 ui-rules-accept = Eu li e concordo em seguir as regras
-ui-rules-wait = O bot?o de aceitar ser? habilitado após {$time} segundos.
+ui-rules-wait = The accept button will be enabled after {$time} seconds.
 
-ui-rules-button-home = In?cio
+ui-rules-button-home = Home
 ui-rules-button-back = Voltar
-
 

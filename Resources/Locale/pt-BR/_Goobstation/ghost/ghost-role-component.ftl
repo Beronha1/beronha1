@@ -37,11 +37,11 @@ ghost-role-information-navy-captain-rules = Você não está sujeito Uma regras.
 
 ghost-role-information-navy-officer-name = Oficial da Marinha
 ghost-role-information-navy-officer-description = Responda Uma faxes e comunicações de rádio destinadas ao Comando Central. Realize investigações na estação e em sua tripulação.
-ghost-role-information-navy-officer-rules = Siga as ordens do [color=#yellow][bold]Capitão da Marinha[/bold][/color]. Na ausência dele, faça seus próprios julgamentos.
+ghost-role-information-navy-officer-rules = Siga as ordens do [color=yellow][bold]Capitão da Marinha[/bold][/color]. Na ausência dele, faça seus próprios julgamentos.
 
 ghost-role-information-navy-officer-undercover-name = Oficial da Marinha infiltrado
 ghost-role-information-navy-officer-undercover-description = Conclua suas tarefas designadas e elimine os alvos informados. Boa sorte.
-ghost-role-information-navy-officer-undercover-rules = Siga as ordens do [color=#yellow][bold]Capitão da Marinha[/bold][/color], ou de outro oficial do Comando Central.
+ghost-role-information-navy-officer-undercover-rules = Siga as ordens do [color=yellow][bold]Capitão da Marinha[/bold][/color], ou de outro oficial do Comando Central.
 
 ghost-role-information-diplomat-name = Diplomata
 ghost-role-information-diplomat-description = Representar o Comando Central, gerenciando relações com outras facções Uma bordo da estação. Resolva os problemas que o capitão provavelmente causou.
@@ -77,7 +77,7 @@ ghost-role-cargo-bingle-desc = Sirva ao Representante da NanoTrasen e seus inter
 # shuttle roles
 
 ghost-role-information-alien-tourist-name = Turista Alienígena
-ghost-role-information-alien-tourist-description = Olhe ao redor da estação. Chupe as pessoas. Seja atirado por um oficial rápido Não gatilho.
+ghost-role-information-alien-tourist-description = Look around the station. Glorp at people. Get shot by a trigger-happy officer.
 
 # Conquest?
 
@@ -132,7 +132,7 @@ chosen-one-role-greeting = Você é o [color=#0087FF]Escolhido[/color], você fo
 objective-condition-dark-lord-kill-title = Certifique-se de que {$targetName} morra.
 
 ghost-role-information-mime-Assassin-name = Assassino Mime
-ghost-role-information-mime-Assassin-description = Um assassino que usa roupas de mime e favorece mortes silenciosas, o nome dele? bem, eles provavelmente não podem te dizer, mas isso é o que os torna tão bons!
+ghost-role-information-mime-Assassin-description = An assassin that uses mime clothes and favors silent kills, their name? well they probably can't tell you, but thats what makes then so good!
 mime-Assassin-role-greeting = Você é um [color=#880808]Assassino Mime[/color], você foi enviado à esta estação pela syndicate para matar alguns membros do comando que eles precisam tirar da jogada, Uma syndicate forneceu algumas ferramentas para você fazer o trabalho, silenciosamente... confira sua ficha de personagem para seus objetivos, e não seja pego.
 
 ghost-role-information-dark-priest-name = Sacerdote das Trevas
@@ -152,5 +152,5 @@ ghost-role-information-slasher-token = O Assassino (Token)
 
 ghost-role-information-contractor-name = Contratante da Syndicate
 ghost-role-information-contractor-token = Contratante da Syndicate (Token)
-ghost-role-information-contractor-description= OBTER DA... maré..?
+ghost-role-information-contractor-description = GET DA... tider..?
 contractor-role-greeting = Você é um [color=#611b2b]Contratante da Syndicate[/color], uma caçadora de recompensas, sua tarefa é recuperar alvos da estação, morto ou vivo.

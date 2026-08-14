@@ -8,9 +8,8 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 advertisement-janidrobe-1 = Venha pegar sua roupa de limpeza, agora aprovada por zeladores-lagartos de toda parte!
-advertisement-janidrobe-2 = Aqui para manter voc? limpo enquanto limpa o não limpo!
+advertisement-janidrobe-2 = Here to keep you clean as you clean up non-clean things!
 advertisement-janidrobe-3 = Amarelo com estilo!
 advertisement-janidrobe-4 = Pule o estilo com JaniDrobe!
 advertisement-janidrobe-5 = Brilhe como um piso brilhante!
-
 

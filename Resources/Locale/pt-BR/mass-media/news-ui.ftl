@@ -39,7 +39,7 @@ news-write-no-access-popup = Sem acesso
 news-writer-text-length-exceeded = O texto excede o comprimento máximo
 news-write-ui-richtext-tooltip = Artigos de notícias suportam rich text
     As seguintes tags de rich text são suportadas:
-    {"[color=Cinza][marcador/]título \\[tamanho=1-3\\]"}
+    {"[color=Gray][bullet/]título \\[size=1-3\\]"}
     {"[bullet/]bold"}
     {"[bullet/]italic"}
     {"[bullet/]bolditalic"}

@@ -1,129 +1,127 @@
-﻿store-preset-name-reinforcements = Refor?os
+store-preset-name-reinforcements = Reinforcements
 
 reinforcement-detective-name = Contratar Detetive
-reinforcement-detective-desc = Contrate um detetive para investigar crimes e auxiliar Uma seguran?Uma. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-detective-desc = Hire a detective to investigate crimes and assist security. Minimum arrival time of three minutes.
 
-reinforcement-sec-name = Contratar Oficial de Seguran?Uma
-reinforcement-sec-desc = Contrate um oficial de seguran?Uma para ajudar Uma manter Uma ordem na estação. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-name = Hire Security Officer
+reinforcement-sec-desc = Hire a security officer to help maintain order on the station. Minimum arrival time of three minutes.
 
-reinforcement-sec-express-name = Contratar Oficial de Seguran?Uma (Expresso)
-reinforcement-sec-express-desc = Contrate um oficial de seguran?Uma para resposta r?pida. Tempo mínimo de chegada de trinta segundos.
+reinforcement-sec-express-name = Hire Security Officer (Express)
+reinforcement-sec-express-desc = Hire a security officer for rapid response. Minimum arrival time of thirty seconds.
 
-reinforcement-sec-specialist-name = Contratar Especialista de Seguran?Uma
-reinforcement-sec-specialist-desc = Contrate um especialista de seguran?Uma blindado e armado para ajudar. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-name = Hire Security Specialist
+reinforcement-sec-specialist-desc = Hire an armored and armed security specialist. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-laser-name = Contratar Especialista de Seguran?Uma (Laser)
-reinforcement-sec-specialist-laser-desc = Contrate um especialista de seguran?Uma blindado equipado com carabina Uma laser. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-laser-name = Hire Security Specialist (Laser)
+reinforcement-sec-specialist-laser-desc = Hire an armored security specialist equipped with a laser carbine. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-riot-melee-name = Contratar Especialista de Seguran?Uma (Dist?rbio - Corpo Uma corpo)
-reinforcement-sec-specialist-riot-melee-desc = Contrate um especialista de seguran?Uma blindado equipado para controle de dist?rbios em curta distância. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-riot-melee-name = Hire Security Specialist (Riot - Melee)
+reinforcement-sec-specialist-riot-melee-desc = Hire an armored security specialist equipped for close-quarters riot control. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-riot-ranged-name = Contratar Especialista de Seguran?Uma (Dist?rbio - ? distância)
-reinforcement-sec-specialist-riot-ranged-desc = Contrate um especialista de seguran?Uma blindado equipado para controle de dist?rbios ? distância. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-riot-ranged-name = Hire Security Specialist (Riot - Ranged)
+reinforcement-sec-specialist-riot-ranged-desc = Hire an armored security specialist equipped for ranged riot control. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-heavy-laser-name = Contratar Especialista de Seguran?Uma (Laser Pesado)
-reinforcement-sec-specialist-heavy-laser-desc = Contrate um especialista de seguran?Uma blindado equipado com canháo de laser. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-heavy-laser-name = Hire Security Specialist (Heavy Laser)
+reinforcement-sec-specialist-heavy-laser-desc = Hire an armored security specialist equipped with a laser cannon. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-shield-name = Contratar Especialista de Seguran?Uma (Escudo)
-reinforcement-sec-specialist-shield-desc = Contrate um especialista de seguran?Uma blindado equipado com escudo bal?stico. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-shield-name = Hire Security Specialist (Shield)
+reinforcement-sec-specialist-shield-desc = Hire an armored security specialist equipped with a ballistic shield. Minimum arrival time of three minutes.
 
-reinforcement-sec-specialist-brigmedic-name = Contratar Especialista de Seguran?Uma (Brigmedic)
-reinforcement-sec-specialist-brigmedic-desc = Contrate um brigmedic de seguran?Uma treinado em combate e medicina. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-sec-specialist-brigmedic-name = Hire Security Specialist (Brigmedic)
+reinforcement-sec-specialist-brigmedic-desc = Hire a security brigmedic trained in both combat and medicine. Minimum arrival time of three minutes.
 
-reinforcement-cadet-name = Contratar Cadete de Seguran?Uma
-reinforcement-cadet-desc = Contrate um cadete de seguran?Uma, ansioso para aprender e ajudar o departamento. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-cadet-name = Hire Security Cadet
+reinforcement-cadet-desc = Hire a security cadet, eager to learn and assist the department. Minimum arrival time of three minutes.
 
 reinforcement-doctor-name = Contratar Doutor
-reinforcement-doctor-desc = Contrate um médico para manter Uma tripulação viva e consertada. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-doctor-desc = Hire a doctor to keep the crew alive and patched up. Minimum arrival time of three minutes.
 
-reinforcement-chemist-name = Contratar Qu?mico
-reinforcement-chemist-desc = Contrate um químico para sintetizar rem?dios, estimulantes e l?quidos suspeitos. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-chemist-name = Hire Chemist
+reinforcement-chemist-desc = Hire a chemist to synthesize medicine, stimulants, and suspicious liquids. Minimum arrival time of three minutes.
 
 reinforcement-paramedic-name = Contratar Paramédico
-reinforcement-paramedic-desc = Contrate um paramédico para resposta m?dica r?pida e recuperação de corpos. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-paramedic-desc = Hire a paramedic for rapid medical response and corpse retrieval. Minimum arrival time of three minutes.
 
 reinforcement-virologist-name = Contratar Virologista
-reinforcement-virologist-desc = Contrate um virologista para pesquisar doen?as e, esperamos, não acabar com Uma estação. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-virologist-desc = Hire a virologist to research diseases and hopefully not end the station. Minimum arrival time of three minutes.
 
-reinforcement-psychologist-name = Contratar Psic?logo
-reinforcement-psychologist-desc = Contrate um psic?logo para manter Uma tripulação são durante incidentes traum?ticos. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-psychologist-name = Hire Psychologist
+reinforcement-psychologist-desc = Hire a psychologist to keep the crew sane through traumatic incidents. Minimum arrival time of three minutes.
 
-reinforcement-medical-intern-name = Contratar Estagi?rio M?dico
-reinforcement-medical-intern-desc = Contrate um estagi?rio de medicina para auxiliar médicos e aprender Não trabalho. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-medical-intern-name = Hire Medical Intern
+reinforcement-medical-intern-desc = Hire a medical intern to assist doctors and learn on the job. Minimum arrival time of three minutes.
 
 reinforcement-scientist-name = Contratar Cientista
-reinforcement-scientist-desc = Contrate um cientista para conduzir experimentos perigosos e avan?ar Uma pesquisa da estação. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-scientist-desc = Hire a scientist to conduct dangerous experiments and advance station research. Minimum arrival time of three minutes.
 
-reinforcement-roboticist-name = Contratar Rob?tico
-reinforcement-roboticist-desc = Contrate um rob?tico para construir ciborgues, reparar vida sil?cio e manter os sil?cios da estação operacionais. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-roboticist-name = Hire Roboticist
+reinforcement-roboticist-desc = Hire a roboticist to construct cyborgs, repair silicon life, and keep the station's silicons operational. Minimum arrival time of three minutes.
 
 reinforcement-geneticist-name = Contratar Geneticista
-reinforcement-geneticist-desc = Contrate um geneticista para pesquisar gen?tica e explorar os mist?rios escondidos Não DNA. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-geneticist-desc = Hire a geneticist to research genetics and explore the mysteries hidden inside DNA. Minimum arrival time of three minutes.
 
 reinforcement-research-assistant-name = Contratar Assistente de Pesquisa
-reinforcement-research-assistant-desc = Contrate um assistente de pesquisa para apoiar opera??es cient?ficas. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-research-assistant-desc = Hire a research assistant to support scientific operations. Minimum arrival time of three minutes.
 
 reinforcement-dclass-name = Comprar D-Class
-reinforcement-dclass-desc = Contrate um descart?vel, trazido de algum planeta perif?rico. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-dclass-desc = Hire a disposable, taken from some backwater planet. Minimum arrival time of three minutes.
 
-reinforcement-cargo-name = Contratar T?cnico de Carga
-reinforcement-cargo-desc = Contrate um técnico de carga para mover caixas e fazer recompensas por servi?o. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-cargo-name = Hire Cargo Technician
+reinforcement-cargo-desc = Hire a cargo technician to move crates and do bounties. Minimum arrival time of three minutes.
 
 reinforcement-salvage-name = Contratar Especialista em Salvamento
-reinforcement-salvage-desc = Contrate um especialista em resgate de Lavaland habilidoso em mineração de min?rio e sobreviv?ncia em expedi??es hostis. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-salvage-desc = Hire a Lavaland salvage specialist skilled in mining ore, and surviving hostile expeditions. Minimum arrival time of three minutes.
 
 reinforcement-engineer-name = Contratar Engenheiro
-reinforcement-engineer-desc = Contrate um engenheiro para consertar Uma estação e amaldi?oar Uma rede el?trica. Ferramentas inclu?das. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-engineer-desc = Hire an engineer to repair the station and curse the power grid. Tools included. Minimum arrival time of three minutes.
 
-reinforcement-atmos-name = Contratar T?cnico de Atmos
-reinforcement-atmos-desc = Contrate um técnico de atmosfera para manter o ar respir?vel e conter o f?sforo. Ferramentas inclu?das. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-atmos-name = Hire Atmos Tech
+reinforcement-atmos-desc = Hire an atmos tech to keep the air breathable and the phoron contained. Tools included. Minimum arrival time of three minutes.
 
-reinforcement-technician-name = Contratar Assistente T?cnico
-reinforcement-technician-desc = Contrate um assistente técnico para ajudar engenheiros com tarefas de manuten??o. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-technician-name = Hire Technical Assistant
+reinforcement-technician-desc = Hire a technical assistant to help engineers with maintenance duties. Minimum arrival time of three minutes.
 
 reinforcement-bartender-name = Contratar Barman
-reinforcement-bartender-desc = Contrate um barman para servir bebidas e ouvir reclama??es da tripulação. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-bartender-desc = Hire a bartender to serve drinks and listen to crew complaints. Minimum arrival time of three minutes.
 
 reinforcement-chef-name = Contratar Cozinheiro
-reinforcement-chef-desc = Contrate um cozinheiro para alimentar Uma tripulação com algo, esperamos, comestável. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-chef-desc = Hire a chef to feed the crew something hopefully edible. Minimum arrival time of three minutes.
 
-reinforcement-botanist-name = Contratar Bot?nico
-reinforcement-botanist-desc = Contrate um bot?nico para cultivar culturas, ervas e plantas perigosas ocasionalmente. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-botanist-name = Hire Botanist
+reinforcement-botanist-desc = Hire a botanist to grow crops, herbs, and occasionally dangerous plants. Minimum arrival time of three minutes.
 
 reinforcement-janitor-name = Contratar Zelador
-reinforcement-janitor-desc = Contrate um zelador para manter Uma estação limpa e sem perigos escorregadios. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-janitor-desc = Hire a janitor to keep the station clean and free of slippery hazards. Minimum arrival time of three minutes.
 
 reinforcement-lawyer-name = Contratar Advogado
-reinforcement-lawyer-desc = Contrate um advogado para defender direitos da tripulação e usar Uma lei espacial como arma. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-lawyer-desc = Hire a lawyer to defend crew rights and weaponize space law. Minimum arrival time of three minutes.
 
-reinforcement-clown-name = Contratar Palha?o
-reinforcement-clown-desc = Contrate um palha?o para entreter Uma tripulação e espalhar caos. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-clown-name = Hire Clown
+reinforcement-clown-desc = Hire a clown to entertain the crew and spread chaos. Minimum arrival time of three minutes.
 
-reinforcement-mime-name = Contratar M?mico
-reinforcement-mime-desc = Contrate um m?mico para executar artes do sil?ncio e confundir Uma tripulação. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-mime-name = Hire Mime
+reinforcement-mime-desc = Hire a mime to perform silent arts and confuse the crew. Minimum arrival time of three minutes.
 
-reinforcement-chaplain-name = Contratar Capel?o
-reinforcement-chaplain-desc = Contrate um capel?o para fornecer orientação espiritual e servi?os funer?rios. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-chaplain-name = Hire Chaplain
+reinforcement-chaplain-desc = Hire a chaplain to provide spiritual guidance and funeral services. Minimum arrival time of three minutes.
 
-reinforcement-librarian-name = Contratar Bibliotec?rio
-reinforcement-librarian-desc = Contrate um bibliotec?rio para arquivar conhecimento e mandar calar tripulantes barulhentos. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-librarian-name = Hire Librarian
+reinforcement-librarian-desc = Hire a librarian to archive knowledge and shush loud crew members. Minimum arrival time of three minutes.
 
-reinforcement-musician-name = Contratar M?sico
-reinforcement-musician-desc = Contrate um m?sico para aumentar o moral com performances question?veis. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-musician-name = Hire Musician
+reinforcement-musician-desc = Hire a musician to boost morale through questionable performances. Minimum arrival time of three minutes.
 
-reinforcement-reporter-name = Contratar Rep?rter
-reinforcement-reporter-desc = Contrate um rep?rter para documentar eventos da estação e espalhar boatos profissionalmente. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-reporter-name = Hire Reporter
+reinforcement-reporter-desc = Hire a reporter to document station events and spread gossip professionally. Minimum arrival time of three minutes.
 
-reinforcement-service-worker-name = Contratar Trabalhador de Servi?o
-reinforcement-service-worker-desc = Contrate um trabalhador de servi?o para preencher qualquer função que ninguém mais queira. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-service-worker-name = Hire Service Worker
+reinforcement-service-worker-desc = Hire a service worker to fill whatever role nobody else wants. Minimum arrival time of three minutes.
 
 reinforcement-assistant-name = Contratar Assistente
-reinforcement-assistant-desc = Contrate um assistente; fenda não inclu?da. Tempo mínimo de chegada de tr?s minutos.
+reinforcement-assistant-desc = Hire an assistant, fent not included. Minimum arrival time of three minutes.
 
 bioweapon-manual-name = Comprar manual de biarmas
-bioweapon-manual-desc = Compre um manual de biarma que ensina os códigos necess?rios para comandar biarmas.
+bioweapon-manual-desc = Purchase a bioweapon manual that teaches the codes needed to command bioweapons.
 
 bioweapon-name = Comprar uma biarma
-bioweapon-desc = Compre uma biarma mutante para executar as ordens da seguran?Uma.
-
-
+bioweapon-desc = Purchase a bioweapon mutant to carry out the orders of security.

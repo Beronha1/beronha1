@@ -55,7 +55,7 @@ admin-notes-minutes = {$minutes} minutos
 admin-note-editor-title-new = Criando uma nova nota para {$player}
 admin-note-editor-title-existing = Editando nota {$id} em {$player} por {$author}
 admin-note-editor-pop-out = Abrir fora
-admin-note-editor-secret = Secreto?
+admin-note-editor-secret = Secret?
 admin-note-editor-secret-tooltip = Marcando isso, Uma nota nao sera visivel para o jogador
 admin-note-editor-type-note = Nota
 admin-note-editor-type-message = Mensagem
@@ -67,14 +67,14 @@ admin-note-editor-severity-none = Nenhum
 admin-note-editor-severity-low = Baixa
 admin-note-editor-severity-medium = Media
 admin-note-editor-severity-high = Alta
-admin-note-editor-expiry-checkbox = Permanente?
+admin-note-editor-expiry-checkbox = Permanent?
 admin-note-editor-expiry-checkbox-tooltip = Marque para fazer expirar
 admin-note-editor-expiry-label = Expira em:
 admin-note-editor-expiry-label-params = Expira em: {$date} (em {$expiresIn})
 admin-note-editor-expiry-label-expired = Expirado
 admin-note-editor-expiry-placeholder = Informe o tempo de expiracao (inteiro).
 admin-note-editor-submit = Enviar
-admin-note-editor-submit-confirm = Tem certeza?
+admin-note-editor-submit-confirm = Are you sure?
 
 # Time
 admin-note-button-minutes = Minutos

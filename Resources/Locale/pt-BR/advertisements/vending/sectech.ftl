@@ -6,13 +6,11 @@
 #
 # SPDX-License-Identifier: MIT
 
-advertisement-sectech-1 = Esmague cr?nios sindicais!
-advertisement-sectech-2 = Bata em algumas cabe?as!
-advertisement-sectech-3 = N?o se esque?a: o dano faz bem!
+advertisement-sectech-1 = Crack syndicate skulls!
+advertisement-sectech-2 = Beat some heads in!
+advertisement-sectech-3 = Don't forget - harm is good!
 advertisement-sectech-4 = Suas armas estáo aqui.
 advertisement-sectech-5 = Todos nós gostamos de ser ambiciosos por poder!
-thankyou-sectech-1 = Soltem o inferno l? fora!
-thankyou-sectech-2 = V? impor a lei!
-thankyou-sectech-3 = V? prender transeuntes inocentes!
-
-
+thankyou-sectech-1 = Give 'em hell out there!
+thankyou-sectech-2 = Go enforce the law!
+thankyou-sectech-3 = Go arrest innocent bystanders!

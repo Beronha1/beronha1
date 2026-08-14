@@ -16,7 +16,7 @@ spray-painter-verb-toggle-decals = Alternar pintura de decalque
 spray-painter-item-status-label = Decalques: {$mode}
 spray-painter-item-status-add = [color=green]Adicionar[/color]
 spray-painter-item-status-remove = [color=red]Remover[/color]
-spray-painter-item-status-off = [color=cinza]Desligado[/color]
+spray-painter-item-status-off = [color=gray]Desligado[/color]
 
 # UI
 spray-painter-window-title = Pintor em spray
@@ -196,4 +196,3 @@ spray-painter-style-canisters-plasma = Forão
 spray-painter-style-canisters-storage = Armazenamento
 spray-painter-style-canisters-tritium = Trítio
 spray-painter-style-canisters-water-vapor = Vapor de água
-

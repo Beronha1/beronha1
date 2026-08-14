@@ -70,6 +70,8 @@ namespace Content.Shared.Chat
             MessageColorOverride = copyFrom.MessageColorOverride;
             AudioPath = copyFrom.AudioPath;
             AudioVolume = copyFrom.AudioVolume;
+            CanCoalesce = copyFrom.CanCoalesce;
+            HidePopup = copyFrom.HidePopup;
             Read = copyFrom.Read;
         }
     }

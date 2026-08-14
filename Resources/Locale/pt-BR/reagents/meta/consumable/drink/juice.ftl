@@ -40,7 +40,7 @@ reagent-name-juice-lime = suco de limão
 reagent-desc-juice-lime = O suco agridoce do limão.
 
 reagent-name-juice-orange =suco de laranja
-reagent-desc-juice-orange = Delicioso E rico em vitamina C. O que mais você precisa?
+reagent-desc-juice-orange = Both delicious AND rich in Vitamin C. What more do you need?
 
 reagent-name-juice-pineapple = suco de abacaxi
 reagent-desc-juice-pineapple = O delicioso suco de abacaxi.
@@ -49,10 +49,9 @@ reagent-name-juice-potato = suco de batata
 reagent-desc-juice-potato = Suco da batata. Blá.
 
 reagent-name-juice-tomato = suco de tomate
-reagent-desc-juice-tomato = Tomates transformados em suco. Que desperdício de bons tomates, hein?
+reagent-desc-juice-tomato = Tomatoes made into juice. What a waste of good tomatoes, huh?
 
 reagent-name-juice-watermelon = suco de melancia
 reagent-desc-juice-watermelon = O delicioso suco de melancia.
 
 reagent-name-juice-cherry = suco de cereja
-

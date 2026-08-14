@@ -1,33 +1,33 @@
 ﻿signal-port-name-powered = Alimentado
-signal-port-description-powered = Esta porta ? acionada com HIGH ou LOW conforme Uma energia da máquina seja ligada ou desligada.
+signal-port-description-powered = This port is invoked with HIGH or LOW depending on the machine's power being switched on or off.
 
 signal-port-name-plumbing-input = Encanamento: Entrada
-signal-port-description-plumbing-input = Uma saída de automação hidr?ulica para bombear l?quidos para dentro.
+signal-port-description-plumbing-input = A plumbing automation slot to pump liquids into.
 
-signal-port-name-plumbing-output = Encanamento: Sa?da
-signal-port-description-plumbing-output = Uma saída de automação hidr?ulica para bombear l?quidos para fora.
+signal-port-name-plumbing-output = Plumbing: Output
+signal-port-description-plumbing-output = A plumbing automation slot to pump liquids out of.
 
 signal-port-name-plumbing-dispenser = Encanamento: Distribuidor
-signal-port-description-plumbing-dispenser = Uma saída de automação hidr?ulica para bombear l?quidos para dentro ou fora do frasco do distribuidor.
+signal-port-description-plumbing-dispenser = A plumbing automation slot to pump liquids into or out of a dispenser's beaker.
 
 # Robotic Arm
 
-signal-port-name-input-machine = item: M?quina de entrada
+signal-port-name-input-machine = Item: Input Machine
 signal-port-description-input-machine = Uma saída de automação de máquina para retirar itens, em vez de pegar do cháo.
 
-signal-port-name-output-machine = item: M?quina de saída
-signal-port-description-output-machine = Uma saída de automação de máquina para inserir itens, em vez de coloc?-los Não cháo.
+signal-port-name-output-machine = Item: Output Machine
+signal-port-description-output-machine = A machine automation slot to insert items into, instead of placing them on the floor.
 
 signal-port-name-item-moved = item movido
-signal-port-description-item-moved = Porta de sinal que ? acionada após um item ser movido por este bra?o.
+signal-port-description-item-moved = Signal port that gets pulsed after an item is moved by this arm.
 
 signal-port-name-automation-slot-filter = item: Slot de filtro
 signal-port-description-automation-slot-filter = Uma saída de automação para o filtro de uma máquina de automação.
 
 # Reagent Grinder
 
-signal-port-name-automation-slot-beaker = item: Slot de b?quer
-signal-port-description-automation-slot-beaker = Uma saída de automação para o b?quer de uma máquina de manipulação de l?quidos.
+signal-port-name-automation-slot-beaker = Item: Beaker Slot
+signal-port-description-automation-slot-beaker = An automation slot for a liquid-handling machine's beaker.
 
 signal-port-name-automation-slot-input = item: Itens de entrada
 signal-port-description-automation-slot-input = Uma saída de automação para armazenamento de itens de entrada de uma máquina.
@@ -46,21 +46,21 @@ signal-port-name-flush = Descarga
 signal-port-description-flush = Porta de sinal para alternar o mecanismo de descarga de uma unidade de descarte.
 
 signal-port-name-eject = Ejetar
-signal-port-description-eject = Porta de sinal para ejetar o conte?do de uma unidade de descarte.
+signal-port-description-eject = Signal port to eject a disposal unit's contents.
 
 signal-port-name-ready = Pronto
-signal-port-description-ready = Porta de sinal que ? acionada após Uma unidade de descarte ficar completamente pressurizada.
+signal-port-description-ready = Signal port that gets pulsed after a disposal unit becomes fully pressurized.
 
 # Storage Bin
 
 signal-port-name-automation-slot-storage = item: Armazenamento
-signal-port-description-automation-slot-storage = Uma saída de automação para o invent?rio de um cont?iner de armazenamento.
+signal-port-description-automation-slot-storage = An automation slot for a storage bin's inventory.
 
 signal-port-name-storage-inserted = Inserido
-signal-port-description-storage-inserted = Porta de sinal que ? acionada após um item ser inserido em um cont?iner de armazenamento.
+signal-port-description-storage-inserted = Signal port that gets pulsed after an item is inserted into a storage bin.
 
 signal-port-name-storage-removed = Removido
-signal-port-description-storage-removed = Porta de sinal que ? acionada após um item ser removido de um cont?iner de armazenamento.
+signal-port-description-storage-removed = Signal port that gets pulsed after an item is removed from a storage bin.
 
 # Fax Machine
 
@@ -75,17 +75,17 @@ signal-port-description-fax-copy = Porta de sinal para copiar o papel de uma má
 signal-port-name-machine-start = Iniciar
 signal-port-description-machine-start = Porta de sinal para iniciar uma máquina uma vez.
 
-signal-port-name-machine-autostart = em?cio autom?tico
-signal-port-description-machine-autostart = Porta de sinal para controlar o em?cio após concluir automaticamente.
+signal-port-name-machine-autostart = Auto Start
+signal-port-description-machine-autostart = Signal port to control starting after completing automatically.
 
 signal-port-name-machine-started = Iniciado
-signal-port-description-machine-started = Porta de sinal que ? acionada após uma máquina iniciar.
+signal-port-description-machine-started = Signal port that gets pulsed after a machine starts.
 
-signal-port-name-machine-completed = Conclu?do
-signal-port-description-machine-completed = Porta de sinal que ? acionada após uma máquina concluir seu trabalho.
+signal-port-name-machine-completed = Completed
+signal-port-description-machine-completed = Signal port that gets pulsed after a machine completes its work.
 
 signal-port-name-machine-failed = Falhou
-signal-port-description-machine-failed = Porta de sinal que ? acionada após uma máquina falhar ao iniciar.
+signal-port-description-machine-failed = Signal port that gets pulsed after a machine fails to start.
 
 # Interactor
 
@@ -96,15 +96,15 @@ signal-port-name-alt-interact = Modo de interação alternativa
 signal-port-description-alt-interact = Porta de sinal para alternar o modo de interação alternativa, ou defini-la para um valor HIGH/LOW.
 
 signal-port-name-use-in-hand = Usar Não modo na mão
-signal-port-description-use-in-hand = Porta de sinal para alternar o modo de uso na mão, ou defini-la para um valor HIGH/LOW. Isso ignorar? os alvos e usar? Z ou Alt+Z na ferramenta em mãos.
+signal-port-description-use-in-hand = Signal port to toggle use in hand mode, or set it to a HIGH/LOW value. This will ignore targets and use Z or Alt+Z on the held tool.
 
 signal-port-name-harm-mode = Modo agressivo
-signal-port-description-harm-mode = Porta de sinal para alternar o modo agressivo, ou defini-la para um valor HIGH/LOW. Isso atingir? o alvo com Uma ferramenta em mãos como o interator está Não modo agressivo.
+signal-port-description-harm-mode = Signal port to toggle harm mode, or set it to a HIGH/LOW value. This will hit the target with the held tool like the interactor is in harm mode.
 
 # Autodoc
 
-signal-port-name-automation-slot-autodoc-hand = item: M?o do Autodoc
-signal-port-description-automation-slot-autodoc-hand = Uma saída de automação para o ?rg?o/parte/etc em mãos de um autodoc das instru??es STORE item / GRAB item.
+signal-port-name-automation-slot-autodoc-hand = Item: Autodoc Hand
+signal-port-description-automation-slot-autodoc-hand = An automation slot for an autodoc's held organ/part/etc from STORE ITEM / GRAB ITEM instructions.
 
 # Gas Canister
 
@@ -114,20 +114,19 @@ signal-port-description-automation-slot-gas-tank = Uma saída de automação par
 # ChemMaster
 
 signal-port-name-automation-slot-bottles = item: Slot de frascos
-signal-port-description-automation-slot-bottles = Uma saída de automação para o frasco de comprimido ou l?quido do ChemMaster.
+signal-port-description-automation-slot-bottles = An automation slot for a ChemMaster's pill or liquid bottle.
 
 # Radiation Collector
 
 signal-port-name-rad-empty = Vazio
-signal-port-description-rad-empty = Porta de sinal definida como HIGH se o tanque estiver ausente ou abaixo de 33% de pressão, LOW caso contr?rio.
+signal-port-description-rad-empty = Signal port set to HIGH if the tank is missing or below 33% pressure, LOW otherwise.
 
 signal-port-name-rad-low = Baixo
-signal-port-description-rad-low = Porta de sinal definida como HIGH se o tanque estiver abaixo de 66% de pressão, LOW caso contr?rio.
+signal-port-description-rad-low = Signal port set to HIGH if the tank is below 66% pressure, LOW otherwise.
 
 signal-port-name-rad-full = Cheio
-signal-port-description-rad-full = Porta de sinal definida como HIGH se o tanque estiver acima de 66% de pressão, LOW caso contr?rio.
+signal-port-description-rad-full = Signal port set to HIGH if the tank is above 66% pressure, LOW otherwise.
 
 # Lathe
-signal-port-name-lathe-print = Imprimir ?ltima receita
-signal-port-description-lathe-print = Porta de sinal que imprime Uma ?ltima receita definida quando acionada.
-
+signal-port-name-lathe-print = Print last recipe
+signal-port-description-lathe-print = Signal port that prints the last set recipe when pulsed.

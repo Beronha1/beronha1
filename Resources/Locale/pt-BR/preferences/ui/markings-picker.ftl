@@ -10,16 +10,16 @@ markings-search = Pesquisar
 }
 markings-limits = { $required ->
     [true] { $count ->
-        [-1] Selecione pelo menos uma marca.
-        [false] Você não pode selecionar nenhuma marca, mas de alguma forma precisa? Isto é um erro.
-        [-1] Selecione uma marca.
-       *[other] Selecione pelo menos uma marca e até { $count} marcas. { -markings-selection(selectable: $selectable) }
+        [-1] Select at least one marking.
+        [0] You cannot select any markings, but somehow, you have to? This is a bug.
+        [one] Select one marking.
+       *[other] Select at least one marking and up to {$count} markings. { -markings-selection(selectable: $selectable) }
     }
    *[false] { $count ->
-        [-1] Selecione qualquer quantidade de marcas.
-        [0] Você não pode selecionar nenhuma marca.
-        [one] Selecione até uma marca.
-       *[other] Selecione até { $count} marcas. { -markings-selection(selectable: $selectable) }
+        [-1] Select any number of markings.
+        [0] You cannot select any markings.
+        [one] Select up to one marking.
+       *[other] Select up to {$count} markings. { -markings-selection(selectable: $selectable) }
     }
 }
 markings-reorder = Reordenar marcas

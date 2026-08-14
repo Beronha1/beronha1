@@ -9,6 +9,6 @@
 advertisement-theater-1 = Vista-se para o sucesso!
 advertisement-theater-2 = De terno e botas!
 advertisement-theater-3 = Está na hora do show!
-advertisement-theater-4 = Por que deixar o estilo para o destino? Use AutoDrobe!
+advertisement-theater-4 = Why leave style up to fate? Use AutoDrobe!
 advertisement-theater-5 = Todos os visuais e roupas malucas, das túnicas de gladiador até quem sabe o quê!
 advertisement-theater-6 = O palhaço vai curtir seu visual!

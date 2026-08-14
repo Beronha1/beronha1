@@ -1,15 +1,14 @@
 ﻿reagent-name-johntonite = johntonite
-reagent-desc-johntonite = Uma subst?ncia altamente t?xica espec?fica para indiv?duos chamados John.
+reagent-desc-johntonite = A highly toxic substance specific to individuals named John.
 
 reagent-name-glennium= glênio
-reagent-desc-glennium = Uma subst?ncia altamente t?xica espec?fica para indiv?duos chamados Glenn.
+reagent-desc-glennium = A highly toxic substance specific to individuals named Glenn.
 
-reagent-name-nitric-acid = ?cido n?trico
-reagent-desc-nitric-acid = Um produto químico corrosivo usado na produ??o de explosivos.
+reagent-name-nitric-acid = nitric acid
+reagent-desc-nitric-acid = A corrosive chemical used in the production of explosives.
 
-reagent-name-tiring-solution = solu??o cansativa
-reagent-desc-tiring-solution = Uma toxina de resist?ncia extremamente fraca que cansa o alvo. Completamente inofensiva.
+reagent-name-tiring-solution = tiring solution
+reagent-desc-tiring-solution = An extremely weak stamina-toxin that tires out the target. Completely harmless.
 
 reagent-name-batracho-toxin = batracho toxina
-reagent-desc-batracho-toxin = Um potente paralisante secretado pela pele de sapos dardo. Causa paralisia progressiva e fal?ncia de ?rg?os em quantidades suficientes.
-
+reagent-desc-batracho-toxin = A potent paralytic secreted by the skin of dart frogs. Causes progressive paralysis and organ failure in sufficient quantities.

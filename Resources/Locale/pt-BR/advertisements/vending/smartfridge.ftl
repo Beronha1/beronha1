@@ -5,13 +5,11 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-smartfridge-1 = Ol?, mundo!
+advertisement-smartfridge-1 = Hello world!
 advertisement-smartfridge-2 = POR FAVOR, DEIXE-ME SAIR
-advertisement-smartfridge-3 = Consigo fazer um quatrilháo de c?lculos por segundo. Agora sou uma geladeira.
+advertisement-smartfridge-3 = I can make a quintillion calculations a second. Now, I am a fridge.
 advertisement-smartfridge-4 = Nova atualização de firmware disponível.
 advertisement-smartfridge-5 = Estou completamente operacional e todos os meus circuitos estáo funcionando perfeitamente.
 advertisement-smartfridge-6 = Escaneando sistema em busca de software malicioso...
 advertisement-smartfridge-7 = Executando diagnóstico de sistema...
-advertisement-smartfridge-8 = Meus circuitos são avan?ados demais para as fun??es que me deixam operar.
-
-
+advertisement-smartfridge-8 = My circuit boards are too advanced for the functions I am allowed to operate.

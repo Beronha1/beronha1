@@ -15,8 +15,8 @@ delivery-slice-verb = Fatia aberta
 
 delivery-teleporter-amount-examine =
     { $amount ->
-        [one] It contains [color=amarelo]{$amount}[/color] entrega.
-        *[other] It contains [color=amarelo]{$amount}[/color] entregas.
+        [one] It contains [color=yellow]{$amount}[/color] entrega.
+        *[other] It contains [color=yellow]{$amount}[/color] entregas.
     }
 delivery-teleporter-empty = O {$entity} está vazio.
 delivery-teleporter-empty-verb = Leve correspondência
@@ -30,5 +30,5 @@ delivery-priority-expired-examine = Esta é uma prioridade [color=orange]{$type}
 delivery-fragile-examine = Este é um [color=red]frágil {$type}[/color]. Entregue-o intacto para receber um bônus.
 delivery-fragile-broken-examine = Este é um [color=red]frágil {$type}[/color]. Parece muito danificado.
 
-delivery-bomb-examine = Esta é uma bomba [color=roxa]{$type}[/color]. Oh não.
-delivery-bomb-primed-examine =Esta é uma bomba [color=roxa]{$type}[/color]. Ler isso é um mau uso do seu tempo.
+delivery-bomb-examine = Esta é uma bomba [color=purple]{$type}[/color]. Oh não.
+delivery-bomb-primed-examine =Esta é uma bomba [color=purple]{$type}[/color]. Ler isso é um mau uso do seu tempo.

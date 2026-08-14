@@ -91,10 +91,10 @@ trait-french-name = sotaque francês
 trait-french-desc =Seu sotaque parece ter um certo “je ne sais quoi”.
 
 trait-spanish-name = Sotaque espanhol
-trait-spanish-desc = Olá senhor, onde está a biblioteca?
+trait-spanish-desc = Hola señor, ¿dónde está la biblioteca?
 
 trait-dementia-name = Demência
-trait-dementia-desc = Eu... uh, sobre o que foi isso mesmo? Ah, isso mesmo! Você esquece muito às vezes
+trait-dementia-desc = I-... uh, what was this one about again? Oh thats right! You forget a lot sometimes
 
 trait-painnumbness-name = Entorpecido
 trait-painnumbness-desc = Você não tem qualquer sensação de dor, não tem consciência de quão magoado pode estar.
@@ -110,4 +110,3 @@ trait-hemophilia-desc = Seu corpo não consegue produzir coágulos sanguíneos.
 
 trait-impaired-mobility-name = Mobilidade Prejudicada
 trait-impaired-mobility-desc = Você tem dificuldade para se locomover sem auxílio de mobilidade.
-

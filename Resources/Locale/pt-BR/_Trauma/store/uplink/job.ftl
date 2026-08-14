@@ -1,5 +1,5 @@
-﻿uplink-foxdie-name = Retrov?rus FOXDIE
-uplink-foxdie-desc = Um coletor de DNA para o lend?rio retrov?rus FOXDIE. Escaneie algo com o DNA do seu alvo e ele matar? apenas ele, enquanto se espalha sem causar danos por todos os outros.
+uplink-foxdie-name = FOXDIE Retrovirus
+uplink-foxdie-desc = A dna sampler for the legendary FOXDIE retrovirus. Scan something with your target's DNA and it will kill only them, while spreading harmlessly through everyone else.
 
 uplink-hyposhell-name = Caixa de Hypershells
 uplink-hyposhell-desc = Uma caixa contendo quatro hypoeshells, cartuchos de shotgun que podem segurar 7u de qualquer químico.
@@ -7,23 +7,23 @@ uplink-hyposhell-desc = Uma caixa contendo quatro hypoeshells, cartuchos de shot
 uplink-appraisal-tool-gun-name = Pistola de Avaliação
 uplink-appraisal-tool-gun-desc = Uma Viper modificada para parecer uma ferramenta de avaliação.
 
-uplink-medipen-mute-name = Auto-Injetor de Toxina de Sil?ncio
-uplink-medipen-mute-desc = Um auto-injetor disfar?ado de medipen de emerg?ncia cheio com 15 unidades de toxina de sil?ncio.
+uplink-medipen-mute-name = Mute Toxin Auto Injector
+uplink-medipen-mute-desc = An auto injector disguised as an emergency medipen filled with 15 units of mute toxin.
 
 uplink-silent-shoes-name = Botas Silenciosas
-uplink-silent-shoes-desc = Uma amea?a silenciosa. Ningu?m vai ouvir voc? chegando com este par especial de sapatos.
+uplink-silent-shoes-desc = A silent threat. No one will hear you coming in this special pair of shoes.
 
-uplink-utility-knife-name = Faca de Utilidade Qu?mica
+uplink-utility-knife-name = Chemical Utility Knife
 uplink-utility-knife-desc = Uma faca de utilidade com sulcos especiais que pode segurar até 10u de qualquer químico.
 
-uplink-appraisal-tool-jammer-name = Bloqueador de R?dio da Ferramenta de Avaliação
-uplink-appraisal-tool-jammer-desc = Um bloqueador de r?dio escondido dentro de uma ferramenta de avaliação. Você pode bloquear comunica??es e fazer checagem de pre?o do cad?ver!
+uplink-appraisal-tool-jammer-name = Appraisal Tool Radio Jammer
+uplink-appraisal-tool-jammer-desc = A radio jammer hidden inside an appraisal tool. You can both jam their comms and price check the corpse!
 
 uplink-mimana-stealthy-name = Mimana Sigilosa
-uplink-mimana-stealthy-desc = Uma mimana mutada que parece se misturar ao fundo. N?o a perca!
+uplink-mimana-stealthy-desc = A mutated mimana that seems to fade into the background. Don't lose it!
 
-uplink-omnimed-tool-name = Omnitool Cir?rgico Gorlex
-uplink-omnimed-tool-desc = Um omnitool cir?rgico compacto, convenientemente embalado como uma canivete su??o. Pode realizar cirurgia atrav?s das roupas.
+uplink-omnimed-tool-name = Gorlex Surgical Omnitool
+uplink-omnimed-tool-desc = A compact surgical omnitool conveniently packed like a swiss army knife. Can perform surgery through clothing.
 
 uplink-kudzu-grenade-name = Granada de Kudzu
 uplink-kudzu-grenade-desc = Uma granada contendo kudzu mutado que se espalha mais rápido e causa dano a quem ficar dentro dela, excluindo diona.
@@ -38,6 +38,4 @@ uplink-lube-grenade-name = Granada Lubrificante
 uplink-lube-grenade-desc = Deixa o cháo escorregadio!
 
 uplink-glue-grenade-name = Granada de Cola
-uplink-glue-grenade-desc = Deixa o cháo dif?cil de andar!
-
-
+uplink-glue-grenade-desc = Make the floor hard to walk in!

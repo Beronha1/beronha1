@@ -5,13 +5,13 @@ cosmiccolossus-names-dataset-4= Hialoclast
 cosmiccolossus-names-dataset-5= Cataclasta
 cosmiccolossus-names-dataset-6= Tefroclasto
 
-cosmiccolossus-titles-dataset-1= Tit?nico
+cosmiccolossus-titles-dataset-1 = Titanic
 cosmiccolossus-titles-dataset-2= Enorme
 cosmiccolossus-titles-dataset-3 = Colossal
 
-cosmiccolossus-titles-lone-dataset-1= Herc?leo
-cosmiccolossus-titles-lone-dataset-2= M?tico
-cosmiccolossus-titles-lone-dataset-3= Ap?crifo
+cosmiccolossus-titles-lone-dataset-1 = Herculean
+cosmiccolossus-titles-lone-dataset-2 = Mythical
+cosmiccolossus-titles-lone-dataset-3 = Apocryphal
 cosmiccolossus-titles-lone-dataset-4= Gigantesco
 cosmiccolossus-titles-lone-dataset-5 = Monumental
 

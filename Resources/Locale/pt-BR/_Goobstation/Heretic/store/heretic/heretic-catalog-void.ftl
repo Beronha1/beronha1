@@ -20,10 +20,10 @@ knowledge-path-void-s2-desc =
 
 knowledge-path-void-s3-name = Marca do Vazio
 knowledge-path-void-s3-desc =
-    Uma rajada de vento? Um cintilar no ar? A presença é esmagadora, meus sentidos começaram a me trair. Minha mente é meu maior inimigo.
+    A gust of wind? A shimmer in the air? The presence is overwhelming, my senses began to betray me. My mind is my own enemy.
 
-    Seu Aperto do Mansus agora aplica a Marca do Vazio. A marca é ativada por um ataque com sua Lâmina do Vazio.
-    Quando ativa, dá à vítima a Maldição do Vazio, que a silencia e a congela lentamente até a morte.
+    Your Mansus Grasp now applies the Mark of Void. The mark is triggered from an attack with your Void Blade.
+    When triggered, gives the victim the Curse of Void, which will mute and slowly freeze them to death.
 
 knowledge-path-void-s4-name = Fase do Vazio
 knowledge-path-void-s4-desc =
@@ -56,10 +56,10 @@ knowledge-path-void-armor-desc =
 
 knowledge-path-void-s6-name = Puxão do Vazio
 knowledge-path-void-s6-desc =
-    Tudo é passageiro, mas o que mais permanece? Estou perto de acabar o que começou.
-    O Aristocrata se revela novamente para mim. Ele me diz que estou atrasado. Seu puxão é imenso, não consigo voltar atrás.
+    All is fleeting, but what else stays? I'm close to ending what was started.
+    The Aristocrat reveals themselves to me again. They tell me I am late. Their pull is immense, I cannot turn back.
 
-    Concede Puxão do Vazio, uma magia que puxa todos os hereges próximos em sua direção, atordoando-os brevemente.
+    Grants you Void Pull, a spell that pulls all nearby heathens towards you, stunning them briefly.
 
 knowledge-path-void-s7-name = Lâmina em Busca
 knowledge-path-void-s7-desc =
@@ -87,4 +87,3 @@ knowledge-path-void-s9-desc =
     Você também se tornará imune a chamas, espaço e perigos ambientais semelhantes.
     Agora você passa a dançar pelo ar, ignorando gravidade e movendo-se em maior velocidade.
     A condição de carga do Conduto do Vazio é removida e suas outras magias de vazio têm recarga reduzida à metade.
-

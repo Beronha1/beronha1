@@ -76,6 +76,43 @@
     nextSplit: null
 
 - type: entity
+  parent: MobBloodDrunkMiner
+  id: MobBloodDrunkMinerGuidance
+  name: blood-drunk miner of Guidance
+  suffix: Guidance
+  components:
+  - type: BloodDrunkMiner
+    closedDamage:
+      types:
+        Slash: 12
+        Structural: 35
+    openDamage:
+      types:
+        Slash: 30
+        Structural: 75
+
+- type: entity
+  parent: MobBloodDrunkMiner
+  id: MobBloodDrunkMinerHunter
+  name: blood-drunk miner of the Hunter
+  suffix: Hunter
+  components:
+  - type: BloodDrunkMiner
+    dashCooldown: 6
+
+- type: entity
+  parent: MobBloodDrunkMiner
+  id: MobBloodDrunkMinerDoom
+  name: blood-drunk miner of Doom
+  suffix: Doom
+  components:
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.7
+    baseSprintSpeed: 3.4
+  - type: BloodDrunkMiner
+    dashCooldown: 4
+
+- type: entity
   parent: [ LavalandMobBase, MobBloodstream ]
   id: MobLowerAshDrake
   name: ash drake

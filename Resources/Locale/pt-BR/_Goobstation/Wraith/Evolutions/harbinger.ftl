@@ -5,5 +5,4 @@ wraith-portal-blocked = Há algo no meio!
 wraith-portal-gathering = Você reúne sua energia e abre um portal.
 wraith-portal-cannot-open = Você não consegue abrir um portal aqui.
 
-wraith-portal-already = Se você já tem um portal, isso destruirá o antigo. Tem certeza?
-
+wraith-portal-already = If you already have a portal, this will destroy the old one. Are you sure?

@@ -9,12 +9,10 @@ advertisement-smite-2 = Uma explosão arcana de limão e lima!
 advertisement-smite-3 = Mais de 1 milháo de bebidas vendidas!
 advertisement-smite-4 = SMITE! Role 2d8 para SABOR.
 advertisement-smite-5 = SMITE! Vamos concluir essa papelada!
-advertisement-smite-6 = O zelador já vai atr?s de voc?!
-advertisement-smite-7 = SMITE! N?o vai te embriagar.
-advertisement-smite-8 = ? hora do limão-lima!
+advertisement-smite-6 = The janitor has it in for you!
+advertisement-smite-7 = SMITE! It won't get you hammered.
+advertisement-smite-8 = It's lemon-lime time!
 thankyou-smite-1 = SMITE acerta sempre!
 thankyou-smite-2 = Você DEFINITIVAMENTE queria limão-lima!
-thankyou-smite-3 = O escrit?rio não vai saber o que os atingiu.
+thankyou-smite-3 = The office won't know what hit them.
 thankyou-smite-4 = Afastar sua sede.
-
-

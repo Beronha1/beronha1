@@ -12,10 +12,9 @@ custom-vote-webhook-option-pending = A definir
 custom-vote-webhook-option-cancelled = N/D
 
 votekick-webhook-name = Votação realizada
-votekick-webhook-description = Iniciador: { $initiator}; Alvo: {$initiator}
+votekick-webhook-description = Initiator: { $initiator }; Target: { $target }
 votekick-webhook-cancelled-admin-online = **Votação cancelada devido aos administradores online**
 votekick-webhook-cancelled-admin-target = **Votação cancelada porque o alvo é administrador**
 votekick-webhook-cancelled-antag-target = **Votação cancelada devido ao alvo ser antag**
 
 votekick-ban-reason = "Votekick: {$reason}"
-

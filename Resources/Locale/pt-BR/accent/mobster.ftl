@@ -1,8 +1,8 @@
 ﻿accent-mobster-prefix-1 =Novamente,
 
-accent-mobster-suffix-boss-1 = , viu?
+accent-mobster-suffix-boss-1 = , see?
 accent-mobster-suffix-boss-2 = , fugido sobre isso.
-accent-mobster-suffix-boss-3= , entender?
+accent-mobster-suffix-boss-3 = , capiche?
 
 accent-mobster-suffix-minion-1 = , sim!
 accent-mobster-suffix-minion-2 = , diz o chefe!

@@ -2,15 +2,15 @@
     [1] exclui
     *[other] excluir
 } o alvo
-entity-effect-guidebook-force-equip-clothing = { $chance ->
-    [1] for?a
-    *[other] for?ar
-} {A($name)} para o {$slot} do alvo
+entity-effect-guidebook-force-equip-clothing = force {$chance ->
+    [1] equips
+    *[other] equip
+} {A($name)} to the target's {$slot}
 
-entity-effect-guidebook-part-add-slot = { $chance ->
-    [1] adiciona
-    *[other] adicionar
-} uma slot {$slot} ? parte do alvo
+entity-effect-guidebook-part-add-slot = {$chance ->
+    [1] adds
+    *[other] add
+} a {$slot} slot to the target part
 
 entity-effect-guidebook-insert-new-organ = { $chance ->
     [1] insere
@@ -19,18 +19,18 @@ entity-effect-guidebook-insert-new-organ = { $chance ->
 
 entity-effect-guidebook-add-to-chemicals = { $chance ->
     [1] { $deltasign ->
-            [1] Adiciona
-            *[-1] Remove
+            [1] Adds
+            *[-1] Removes
         }
     *[other]
         { $deltasign ->
-            [1] adicionar
-            *[-1] remover
+            [1] add
+            *[-1] remove
         }
-} {NATURALFIXED($amount, 2)}u de {$reagent} { $deltasign ->
-    [1] para
-    *[-1] de
-} a solu??o
+} {NATURALFIXED($amount, 2)}u of {$reagent} { $deltasign ->
+    [1] to
+    *[-1] from
+} the solution
 
 entity-effect-guidebook-make-traitor = { $chance ->
     [1] transforma
@@ -51,7 +51,7 @@ entity-effect-guidebook-remove-marking = { $chance ->
     *[other] remover
 } {$marking} do alvo
 
-entity-effect-guidebook-speak = Causa fala involunt?ria
+entity-effect-guidebook-speak = Causes involuntary speech
 
 entity-effect-guidebook-scale-entity = Altera o tamanho do alvo em ({$x}, {$y})
 
@@ -62,10 +62,10 @@ entity-effect-guidebook-attack-self = { $chance ->
     [true] atacar
     *[false] socar
 } a si mesmo
-entity-effect-guidebook-attack-others = { $chance ->
-    [1] faz
-    *[other] fazer
-} o alvo atacar algo aleat?rio por perto
+entity-effect-guidebook-attack-others = {$chance ->
+    [1] makes
+    *[other] make
+} the target attack a random nearby thing
 
 entity-effect-guidebook-start-use-delay = { $chance ->
     [1] inicia
@@ -97,10 +97,10 @@ entity-effect-guidebook-nothing = nada acontece { $chance ->
     *[other] nunca
 }
 
-entity-effect-guidebook-scramble-dna = { $chance ->
-    [1] embaralha
-    *[other] embaralhar
-} as muta??es do alvo
+entity-effect-guidebook-scramble-dna = {$chance ->
+    [1] scrambles
+    *[other] scramble
+} the target's mutations
 
 entity-effect-guidebook-move-organ = { $chance ->
     [1] move
@@ -108,9 +108,9 @@ entity-effect-guidebook-move-organ = { $chance ->
 } o {$organ} do alvo para {$dest}
 
 entity-effect-guidebook-heal-bone-damage = { $chance ->
-     [1] cura
-     *[other] curar
-} {NATURALFIXED($amount, 2)} de dano ?sseo
+     [1] heals
+     *[other] heal
+} {NATURALFIXED($amount, 2)} bone damage
 
 entity-effect-guidebook-detach-part = { $chance ->
     [1] Destaca
@@ -156,6 +156,4 @@ entity-effect-paint-target-guidebook-text = { $chance ->
     [1] Pinta
     *[other] pintar
 } o alvo
-
-
 

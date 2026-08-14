@@ -1,23 +1,17 @@
-﻿# SPDX-FileCopyrightText: 2025 Aviu00 <93730715+Aviu00@users.noreply.github.com>
-#
-# SPDX-License-Identifier: AGPL-3.0-or-later
-
-ghost-role-information-slaughter-demon-name = Dem�nio do Massacre
-ghost-role-information-slaughter-demon-description = QUE TEMPO PARA VIRAR PRISIONEIRO! QUE AQUELES MORTAIS FADASENHOS ENFRENTEM MINHA VERDADEIRA IRA!
+ghost-role-information-slaughter-demon-name = Slaughter Demon
+ghost-role-information-slaughter-demon-description = WHAT A TIME TO BE ALIVE! LET THOSE PUNY MORTALS FACE MY TRUE WRATH!
 ghost-role-information-slaughter-demon-rules =
-    FIQUE DE BANCO E APROVEITE O ASSASSINATO, POIS NINGU�M MAIS FAR� ISSO. AQUI EST�O COISAS PARA VOC� SE LEMBRAR, DEM�NIO COM DEM�NIO.
-        HIERARQUIA:
-        � ASSIM QUE FUNCIONA
-            SATAN�S
-            DEM�NIOS
-            REI DEM�NIO, BUBBLEGUM
-            DEM�NIOS
+    JUST SIT BACK AND ENJOY THE KILLING BECAUSE NOBODY ELSE WILL. HERE'S A COUPLE THINGS TO KEEP IN MIND THOUGH, DEMON TO DEMON.
+        HIERARCHY:
+        IT GOES LIKE THIS
+            SATAN
+            DEVILS
+            DEMON KING, BUBBLEGUM
+            DEMONS
             IMPS
-            ESTES ESTUPIDAS BOLAS DE GOOBALLS QUE CHAMAMOS DE HUMANOS
-    MEUS COLEGAS DEM�NIOS, POR FAVOR [color=red] N�O MATEM OS DEM�NIOS[/color] PORQUE SATAN�S DESTRUIR� VOC�S R�PIDO QUANDO O DEM�NIO DENUNCIAR VOC�S NO SUBMUNDO
+            STUPID GOOBALLS WE CALL HUMANS
+    MY FELLOW DEMONS, PLEASE [color=red] DO NOT KILL DEVILS[/color] BECAUSE SATAN WILL SMITE YOU REAL FAST AS SOON AS THE DEVIL SNITCHES ON YOU IN THE UNDERWORLD
 
 
-ghost-role-information-laughter-demon-name = Dem�nio da Gargalhada
-ghost-role-information-laughter-demon-description = QUE TEMPO PARA VIRAR PRISIONEIRO! � MELHOR EMBARCAR TODOS QUE VOC� VIR PARA ELES E MOSTRAR O QUE O AMOR DE VERDADE �!
-
-
+ghost-role-information-laughter-demon-name = Laughter Demon
+ghost-role-information-laughter-demon-description = WHAT A TIME TO BE ALIVE! YOU BETTER HUG EVERYONE YOU SEE, AND SHOW THEM WHAT TRUE LOVE FEELS LIKE!

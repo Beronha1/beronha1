@@ -6,6 +6,5 @@
 cmd-colornetwork-desc = Pinta os dispositivos de atmosfera na cor especificada
 cmd-colornetwork-help= rede colorida <uid> Tubo <HexColor>
 cmd-colornetwork-no-access = Você não consegue usar comandos de mapeamento no momento.
-shell-entity-is-not-node-container = A entidade-alvo não ? um recipiente de n?.
-shell-node-group-is-invalid = Grupo de n? inv?lido especificado. Grupos v?lidos: { $groups }.
-
+shell-entity-is-not-node-container = Target entity is not a node container.
+shell-node-group-is-invalid = Invalid node group specified. Valid groups: { $groups }.

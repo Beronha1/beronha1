@@ -11,12 +11,11 @@ docking-console-call = Chamar nave
 mining-console-window-title = Console de Nave de Mineração
 
 shuttle-destination-lavaland= Lavalândia
-shuttle-destination-glacier-surface = Superf?cie do glaciar
+shuttle-destination-glacier-surface = Glacier Surface
 
 docking-console-ftl-message-Unknown = Obtendo estado da FTL...
 docking-console-ftl-message-Ready = Todos os sistemas estáo prontos.
 docking-console-ftl-message-NoSelection = Selecione um dos destinos.
 docking-console-ftl-message-NoAccess = ERRO: Acesso negado.
 docking-console-ftl-message-RechargingFtl = AVISO: O sistema FTL não está pronto.
-docking-console-ftl-message-InFtl = FTL foi lan?ado!
-
+docking-console-ftl-message-InFtl = FTL is launched!

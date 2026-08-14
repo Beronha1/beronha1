@@ -1,6 +1,5 @@
 using Content.Client.Gameplay;
 using Content.Client.UserInterface.Controls;
-using Content.Client.UserInterface.Systems.Character;
 using Content.Client.UserInterface.Systems.MenuBar.Widgets;
 using Content.Shared._ES.CCVar;
 using Content.Shared.Input;
@@ -32,11 +31,12 @@ public sealed partial class ESCharacterUIController : UIController, IOnStateEnte
         _window.OnOpen += ActivateButton;
 
         _player.LocalPlayerAttached += OnLocalPlayerAttached;
+        _player.LocalPlayerDetached += OnLocalPlayerDetached;
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenCharacterMenu,
                 InputCmdHandler.FromDelegate(_ => ToggleWindow()))
-            .Register<CharacterUIController>();
+            .Register<ESCharacterUIController>();
 
         if (_cfg.GetCVar(ESCVars.ESOpenCharacterMenuOnSpawn) && !_window.IsOpen)
             _window?.OpenCenteredLeft();
@@ -51,8 +51,9 @@ public sealed partial class ESCharacterUIController : UIController, IOnStateEnte
         }
 
         _player.LocalPlayerAttached -= OnLocalPlayerAttached;
+        _player.LocalPlayerDetached -= OnLocalPlayerDetached;
 
-        CommandBinds.Unregister<CharacterUIController>();
+        CommandBinds.Unregister<ESCharacterUIController>();
     }
 
     private void DeactivateButton()
@@ -73,6 +74,11 @@ public sealed partial class ESCharacterUIController : UIController, IOnStateEnte
     private void OnLocalPlayerAttached(EntityUid obj)
     {
         _window?.Update();
+    }
+
+    private void OnLocalPlayerDetached(EntityUid obj)
+    {
+        _window?.Close();
     }
 
     private void ToggleWindow()

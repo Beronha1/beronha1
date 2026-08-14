@@ -2,26 +2,24 @@
 ent-ClothingOuterHardsuitSyndie = traje de combate vermelho-sangue
     .desc = Um traje de combate fortemente blindado, projetado para stunts de live-action e terrorismo ao mesmo tempo, e geralmente visto como o traje de um "soldado sem rosto". Propriedade da Gorlex Entertainment.
 
-ent-ClothingOuterHardsuitSyndieMedic = traje de combate vermelho-sangue médico
-    .desc = Um traje de combate avan?ado, pesado e ?gil, especialmente para que o médico que o usa se destaque entre seus colegas ao tratar ferimentos. Propriedade da Gorlex Entertainment.
+ent-ClothingOuterHardsuitSyndieMedic = blood-red medic hardsuit
+    .desc = A heavily armored and agile advanced hardsuit specifically so that the medic wearing it stands out among their fellow operatives as they heal their injuries. Property of Gorlex Entertainment.
 
-ent-ClothingOuterHardsuitSyndieCommander = traje de combate vermelho-sangue do comandante
-    .desc = Uma variante de luxo do traje vermelho-sangue, constru?do para que o comandante de um esquadr?o de operativos do sindicato se destaque e atue como o vil?o que a Gorlex deseja que ele seja. Tem armadura levemente melhorada e mobilidade muito melhorada.
+ent-ClothingOuterHardsuitSyndieCommander = blood-red commander hardsuit
+    .desc = A luxury variant of the blood-red hardsuit, purposely-built for the commander of a syndicate operative squad to stand out and act like the villain that Gorlex wants them to be. Has slightly improved armor and greatly improved mobility.
 
-ent-ClothingOuterHardsuitSyndieElite = traje de combate de elite do sindicato
-    .desc = Uma versão de elite do traje vermelho-sangue, com mobilidade melhorada, resist?ncia a fogo e armadura resistente ao calor, para operativos que querem ficar em p? para a câmera. Propriedade da Gorlex Entertainment.
+ent-ClothingOuterHardsuitSyndieElite = syndicate elite hardsuit
+    .desc = An elite version of the blood-red hardsuit, with improved mobility, fireproofing and heat-resistant armor, for those operatives who want to stand tall for the camera. Property of Gorlex Entertainment.
 
 # Hardsuit Helmets
-ent-ClothingHeadHelmetHardsuitSyndie = capacete de traje de combate vermelho-sangue
-    .desc = Este ? o capacete mais reconhec?vel da gal?xia conhecida, conhecido por sua tend?ncia de ser rasgado em fitas no mundo gal?ctico. Propriedade da Gorlex Entertainment.
+ent-ClothingHeadHelmetHardsuitSyndie = blood-red hardsuit helmet
+    .desc = This is the most recognizable helmet in the known galaxy, known best for its tendency to be shot to ribbons on the galactic net. Property of Gorlex Entertainment.
 
-ent-ClothingHeadHelmetHardsuitSyndieMedic = capacete de traje de combate vermelho-sangue médico
-    .desc = Legalmente distinto do vermelho-sangue, este capacete ? cobi?ado por colecionadores e operativos pela sua raridade. Propriedade da Gorlex Entertainment.
+ent-ClothingHeadHelmetHardsuitSyndieMedic = blood-red medic hardsuit helmet
+    .desc = Legally distinct from the blood-red, this helmet is coveted by collectors and operatives alike for its rarity. Property of Gorlex Entertainment.
 
-ent-HeadHelmetHardsuitSyndieCommander = capacete de traje de combate vermelho-sangue do comandante
-    .desc = O capacete pertencente ao papel principal de qualquer produ??o da Gorlex, este equipamento de luxo ? especialmente blindado e equipado com câmeras de ponta que enviam tudo de volta para a rede gal?ctica.
+ent-HeadHelmetHardsuitSyndieCommander = blood-red commander hardsuit helmet
+    .desc = The helmet belonging to the lead role of any Gorlex production, this luxury equipment is specially armored and is equipped with top-of-the-line cameras that feed everything back to the galactic net.
 
-ent-HeadHelmetHardsuitSyndieElite = capacete de traje de combate de elite do sindicato
-    .desc = Este capacete ? usado por membros da Gorlex Entertainment que se consideram as estrelas de suas produ??es, mas não conseguiram pegar o papel principal.
-
-
+ent-HeadHelmetHardsuitSyndieElite = syndicate elite hardsuit helmet
+    .desc = This helmet is employed by members of Gorlex Entertainment who consider themselves the star of their productions, but didn't manage to get the leading role.

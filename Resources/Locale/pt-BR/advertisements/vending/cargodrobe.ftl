@@ -8,7 +8,6 @@
 # SPDX-License-Identifier: MIT
 
 advertisement-cargodrobe-1 = Estilo de passageiro atualizado! Escolha o seu hoje!
-advertisement-cargodrobe-2 = Esses shorts são confort?veis e f?ceis de usar, pegue o seu agora!
+advertisement-cargodrobe-2 = These shorts are comfy and easy to wear, get yours now!
 advertisement-cargodrobe-3 = Feitos para conforto, e também baratos!
-
 

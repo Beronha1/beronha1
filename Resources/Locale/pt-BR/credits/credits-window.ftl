@@ -11,7 +11,7 @@ credits-window-ss14contributorslist-tab = Créditos
 credits-window-licenses-tab = Licenças de código aberto
 credits-window-attributions-tab = Atribuições
 credits-window-become-patron-button = Tornar-se patrono
-credits-window-contributor-encouragement-label = Quer entrar nesta lista?
+credits-window-contributor-encouragement-label = Want to get on this list?
 credits-window-contribute-button = Contribuir!
 credits-window-contributors-section-title = Contribuidores de Space Station 14
 credits-window-codebases-section-title = Bases de código de Space Station 13
@@ -27,4 +27,3 @@ credits-window-attributions-copyright = [color=white]Direitos autorais:[/color] 
 credits-window-attributions-license = [color=white]Licença:[/color] {$license}
 credits-window-attributions-source = [color=white]Fonte:[/color] {$source}
 credits-window-attributions-failed = [color=red]Falha ao ler o arquivo:[/color] {$file}
-

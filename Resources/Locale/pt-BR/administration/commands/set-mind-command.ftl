@@ -9,6 +9,5 @@
 
 cmd-setmind-desc = Transfere uma mente para a entidade especificada. A entidade deve ter {$requiredComponent}. Por padrao isto forca mentes que estao visitando outras entidades a retornarem (ou seja, retorna um ghost ao corpo principal).
 cmd-setmind-help = Uso: {$command} <entityUid> <username> [unvisit]
-cmd-setmind-command-target-has-no-content-data-message = O jogador alvo nao tem dados de conteudo (wtf?)
-cmd-setmind-command-target-has-no-mind-message = A entidade alvo nao tem uma mente (esqueceu de tornar ela inteligente?)
-
+cmd-setmind-command-target-has-no-content-data-message = Target player does not have content data (wtf?)
+cmd-setmind-command-target-has-no-mind-message = Target entity does not have a mind (did you forget to make sentient?)

@@ -7,9 +7,8 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-advertisement-hydrobe-1 = Ama solo? Ent?o compre nossas roupas!
+advertisement-hydrobe-1 = Do you love soil? Then buy our clothes!
 advertisement-hydrobe-2 = Pegue roupas para combinar com seu polegar verde aqui!
 advertisement-hydrobe-3 = Roupas perfeitas para manejar plantas!
-advertisement-hydrobe-4 = Roupas perfeitas para abra?adores de ?rvores... ou s? as ?rvores!
-advertisement-hydrobe-5 = Use verde e cres?a!
-
+advertisement-hydrobe-4 = Perfect outfits for tree huggers... or just literal trees!
+advertisement-hydrobe-5 = Wear green and grow!

@@ -33,4 +33,4 @@ cmd-explosion-failed-to-parse-coords = Falha ao converter coordenadas: {$value1}
 cmd-explosion-failed-to-parse-map-id = Falha ao converter ID de mapa: {$value}
 cmd-explosion-need-coords-explicit = Falhou ao obter coordenadas/mapa padrao pela transformacao do jogador. Especifique explicitamente.
 cmd-explosion-unknown-prototype = Prototipo de explosao desconhecido: {$value}
-cmd-explosion-no-prototypes = O gerenciador de prototipos nao tem prototipos de explosao?
+cmd-explosion-no-prototypes = Prototype manager has no explosion prototypes?

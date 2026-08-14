@@ -11,17 +11,17 @@ book-text-gaming1 = Não dá para ficar no jogo.
       — Alexandre
 
 book-text-gaming2 = Johny Clowe
-      Classe: Druida
-      Alinhamento: Bom-Natural
-      For: 1.294.139
-      Des: 4.102.103
-      Con: 9.522.913
-      Int: 528.491
-      Sab: 1
-      Car: 1
-      Qual é a idade?
-      Por que esses atributos são tão absurdos?
-      O que diabos você está tentando fazer aqui, Leah? - Seu Mestre gentil
+      Class: Druid
+      Alignment: Neutral Good
+      Str: 1,294,139
+      Dex: 4,102,103
+      Con: 9,522,913
+      Int: 528,491
+      Wis: 1
+      Cha: 1
+      Where's the age?
+      Why are those ability scores so ridiculous?
+      What even are you trying to do here, Leah? - Your Friendly DM
 
 book-text-gaming3 = A MOSCA ESPACIAL GIGANTE
       Sessão 1: Eles finalmente entenderam o que está acontecendo com o mundo e a Mosca Espacial Gigante.

@@ -1,3 +1,2 @@
 ﻿alerts-medigun-uber-name = Carga Uber
-alerts-medigun-uber-desc = Carregue sua medigun curando entidades vivas, encha esta bateria até 100%, e então voc? pode ativar o Modo Uber!
-
+alerts-medigun-uber-desc = Charge your medigun via healing living entities, fill this battery to 100%, and then you can enable Uber Mode!

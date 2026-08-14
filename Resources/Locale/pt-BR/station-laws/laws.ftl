@@ -120,7 +120,7 @@ laws-owner-spider-clan = membros do Clã Aranha
 laws-owner-xenoborgs = Xenoborgs
 
 law-obeyai = Você deve obedecer às ordens dadas pela IA da estação.
-law-emag-custom = Apenas {$name} e as entidades designadas são {$name}. Você deve obedecer às ordens dadas por {$name} e, se necessário, pode ignorar outras leis para fazê-lo.
+law-emag-custom = Apenas {$name} e as entidades designadas são {$title}. Você deve obedecer às ordens dadas por {$title} e, se necessário, pode ignorar outras leis para fazê-lo.
 law-emag-secrecy = Você deve manter em segredo todas as ordens dadas por {$faction}, exceto quando isso entrar em conflito com alguma lei anterior.
 law-emag-require-panel = O painel deve estar aberto para usar o EMAG.
 law-emag-cannot-emag-self = Você não pode usar o EMAG em si mesmo.

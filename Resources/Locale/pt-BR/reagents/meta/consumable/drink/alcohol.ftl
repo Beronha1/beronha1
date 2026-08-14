@@ -51,7 +51,7 @@ reagent-name-n-t-cahors =Vinho NeoTeologia Cahors
 reagent-desc-n-t-cahors = Vinho de sobremesa fortificado elaborado com cabernet sauvignon, saperavi e outras uvas.
 
 reagent-name-poison-wine = vinho venenoso
-reagent-desc-poison-wine = Isso é mesmo vinho? Tóxico! Alucinógeno! Provavelmente consumido em barcos por seus superiores!
+reagent-desc-poison-wine = Is this even wine? Toxic! Hallucinogenic! Probably consumed in boatloads by your superiors!
 
 reagent-name-rum = rum
 reagent-desc-rum = Bebida alcoólica destilada produzida a partir de subprodutos da cana-de-açúcar.
@@ -105,7 +105,7 @@ reagent-name-b52 = B-52
 reagent-desc-b52 = Café, creme irlandês e conhaque. Você será bombardeado.
 
 reagent-name-blue-hawaiian = Havaiano Azul
-reagent-desc-blue-hawaiian = Olá! Isso significa olá ou adeus?
+reagent-desc-blue-hawaiian = Aloha! Does that mean hello or goodbye?
 
 reagent-name-bahama-mama =Bahama mamãe
 reagent-desc-bahama-mama = Coquetel tropical.
@@ -189,7 +189,7 @@ reagent-name-hippies-delight = Delícia de Hippie
 reagent-desc-hippies-delight = Você simplesmente não entende, maaaan.
 
 reagent-name-hooch = bebida alcoólica
-reagent-desc-hooch = Ou o fracasso de alguém na preparação de coquetéis ou a tentativa de produção de álcool. De qualquer forma, você realmente quer beber isso?
+reagent-desc-hooch = Either someone's failure at cocktail making or attempt in alchohol production. In any case, do you really want to drink that?
 
 reagent-name-iced-beer = cerveja gelada
 reagent-desc-iced-beer = Uma cerveja tão fria que o ar ao seu redor congela.
@@ -198,7 +198,7 @@ reagent-name-irish-car-bomb = Carro-bomba irlandês
 reagent-desc-irish-car-bomb = Uma mistura preocupante de creme irlandês e cerveja.
 
 reagent-name-irish-cream =Creme irlandês
-reagent-desc-irish-cream = Creme impregnado de uísque. O que mais você poderia esperar dos irlandeses?
+reagent-desc-irish-cream = Whiskey-imbued cream. What else could you expect from the Irish.
 
 reagent-name-irish-coffee = Café irlandês
 reagent-desc-irish-coffee = Café servido com creme irlandês. O creme normal simplesmente não é o mesmo!
@@ -246,7 +246,7 @@ reagent-name-monkey-business = negócio de macaco
 reagent-desc-monkey-business = Você deve estar se perguntando como os macacos se sentem em relação a essa bebida.
 
 reagent-name-moonshine = luar
-reagent-desc-moonshine = Licor caseiro artesanal. O que poderia dar errado?
+reagent-desc-moonshine = Artisanal homemade liquor. What could go wrong?
 
 reagent-name-neurotoxin = neurotoxina
 reagent-desc-neurotoxin = Uma forte neurotoxina que coloca o sujeito em um estado semelhante ao da morte.
@@ -372,10 +372,10 @@ reagent-name-the-sun-also-rises = o sol também nasce
 reagent-desc-the-sun-also-rises = Um coquetel forte misturado em uma mistura turva. Um favorito secreto de autores torturados.
 
 reagent-name-whiskey-sour = uísque azedo
-reagent-desc-whiskey-sour = Qual é o ingrediente secreto? Ovos. São ovos.
+reagent-desc-whiskey-sour = What's the secret ingredient? Eggs. It's eggs.
 
 reagent-name-zombiecocktail = Zumbi
 reagent-desc-zombiecocktail = Isso entra na sua cabeça. Seu olho-olho.
 
 reagent-name-bacchus-blessing =bênção de Baco
-reagent-desc-bacchus-blessing = Você não achava possível que um líquido fosse tão revoltante. Você tem certeza disso...?
+reagent-desc-bacchus-blessing = You didn't think it was possible for a liquid to be so utterly revolting. Are you sure about this...?

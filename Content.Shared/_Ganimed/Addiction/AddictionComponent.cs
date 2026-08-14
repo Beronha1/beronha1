@@ -142,7 +142,7 @@ public sealed partial class AddictionComponent : Component
     /// Группа метаболизма, по которой реагент считается наркотиком.
     /// </summary>
     [DataField]
-    public ProtoId<MetabolismStagePrototype> NarcoticMetabolismGroup = "Narcotic";
+    public ProtoId<MetabolismStagePrototype> NarcoticMetabolismGroup = "Bloodstream";
 }
 
 /// <summary>

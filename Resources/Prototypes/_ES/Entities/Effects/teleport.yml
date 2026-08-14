@@ -1,0 +1,62 @@
+- type: entity
+  id: ESTeleportEffect
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: _ES/Effects/teleport.rsi
+    state: teleport
+    drawdepth: Effects
+    noRot: true
+    loop: false
+  - type: Appearance
+  - type: ESTimedDespawn
+    lifetime: 2.0
+  - type: EmitSoundOnSpawn
+    positional: true
+    sound:
+      path: /Audio/_ES/Effects/teleport.ogg
+      params:
+        variation: 0.05
+  - type: ESTimedDespawnLightFade
+    fadeTime: 1.5
+  - type: AnimationPlayer
+  - type: PointLight
+    radius: 3
+    energy: 2.5
+    falloff: 10
+    curveFactor: 0.5
+    color: "#aaff7a"
+    netsync: false
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: ESTeleportEffect
+  id: ESTeleportEffectSyndie
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: teleport_gray
+      color: "#ff5555"
+    - state: teleport_gray_electric
+      color: "#ff5555"
+    - state: teleport_gray_center
+  - type: PointLight
+    color: "#fa2a00"
+
+- type: entity
+  parent: ESTeleportEffect
+  id: ESTeleportEffectWarpDrive
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    layers:
+    - state: teleport_gray
+      color: "#dc54b7"
+    - state: teleport_gray_electric
+      color: "#dc54b7"
+    - state: teleport_gray_center
+  - type: PointLight
+    color: "#9A007B"

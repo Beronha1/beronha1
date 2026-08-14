@@ -11,9 +11,10 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon:
-      sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
-      state: dragon
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    layers:
+    - state: dragon
   - type: InstantAction
     event: !type:BecomeToDrakeActionEvent
 
@@ -26,8 +27,9 @@
   components:
   - type: Action
     itemIconStyle: BigAction
-    icon:
-      sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
-      state: dragon
+  - type: Sprite
+    sprite: _Wega/Mobs/Lavaland/ashdrake.rsi
+    layers:
+    - state: dragon
   - type: InstantAction
     event: !type:DrakeReturnBackActionEvent

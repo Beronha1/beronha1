@@ -17,7 +17,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     [Dependency] private IGameTiming _timing = default!;
 
     [SubscribeLocalEvent]
-    private void OnExamined(Entity<NanoChatCardComponent> ent, ref ExaminedEvent args)
+    private void OnExamined(Entity<TraumaNanoChatCardComponent> ent, ref ExaminedEvent args)
     {
         if (!args.IsInDetailsRange)
             return;
@@ -33,10 +33,10 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
 
     #region Public API Methods
 
-    public override uint? GetNumber(Entity<NanoChatCardComponent?> card)
+    public override uint? GetNumber(Entity<TraumaNanoChatCardComponent?> card)
         => Resolve(card, ref card.Comp) ? card.Comp.Number : null;
 
-    public override void SetNumber(Entity<NanoChatCardComponent?> card, uint number)
+    public override void SetNumber(Entity<TraumaNanoChatCardComponent?> card, uint number)
     {
         if (!Resolve(card, ref card.Comp) || card.Comp.Number == number || number > 9999)
             return;
@@ -45,7 +45,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         Dirty(card);
     }
 
-    public virtual void TrySendMessage(Entity<NanoChatCartridgeComponent> sender, Entity<NanoChatCardComponent> card, NanoChatMessage message, uint dest, EntityUid user)
+    public virtual void TrySendMessage(Entity<TraumaNanoChatCartridgeComponent> sender, Entity<TraumaNanoChatCardComponent> card, NanoChatMessage message, uint dest, EntityUid user)
     {
         // client cant predict radio stuff
     }
@@ -53,7 +53,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Sets IsClosed for a card.
     /// </summary>
-    public void SetClosed(Entity<NanoChatCardComponent?> card, bool closed)
+    public void SetClosed(Entity<TraumaNanoChatCardComponent?> card, bool closed)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -61,7 +61,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         card.Comp.IsClosed = closed;
     }
 
-    public override IReadOnlyDictionary<uint, NanoChatRecipient> GetRecipients(Entity<NanoChatCardComponent?> card)
+    public override IReadOnlyDictionary<uint, NanoChatRecipient> GetRecipients(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return new Dictionary<uint, NanoChatRecipient>();
@@ -72,7 +72,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets the messages dictionary from a card.
     /// </summary>
-    public IReadOnlyDictionary<uint, List<NanoChatMessage>> GetMessages(Entity<NanoChatCardComponent?> card)
+    public IReadOnlyDictionary<uint, List<NanoChatMessage>> GetMessages(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return new Dictionary<uint, List<NanoChatMessage>>();
@@ -80,7 +80,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         return card.Comp.Messages;
     }
 
-    public override void SetRecipient(Entity<NanoChatCardComponent?> card, uint number, NanoChatRecipient recipient)
+    public override void SetRecipient(Entity<TraumaNanoChatCardComponent?> card, uint number, NanoChatRecipient recipient)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -89,7 +89,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         Dirty(card);
     }
 
-    public NanoChatRecipient? GetRecipient(Entity<NanoChatCardComponent?> card, uint number)
+    public NanoChatRecipient? GetRecipient(Entity<TraumaNanoChatCardComponent?> card, uint number)
     {
         if (!Resolve(card, ref card.Comp) || !card.Comp.Recipients.TryGetValue(number, out var recipient))
             return null;
@@ -97,7 +97,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         return recipient;
     }
 
-    public override List<NanoChatMessage>? GetMessagesForRecipient(Entity<NanoChatCardComponent?> card, uint recipientNumber)
+    public override List<NanoChatMessage>? GetMessagesForRecipient(Entity<TraumaNanoChatCardComponent?> card, uint recipientNumber)
     {
         if (!Resolve(card, ref card.Comp) || !card.Comp.Messages.TryGetValue(recipientNumber, out var messages))
             return null;
@@ -105,7 +105,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         return new List<NanoChatMessage>(messages);
     }
 
-    public override void AddMessage(Entity<NanoChatCardComponent?> card, uint recipientNumber, NanoChatMessage message)
+    public override void AddMessage(Entity<TraumaNanoChatCardComponent?> card, uint recipientNumber, NanoChatMessage message)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -124,7 +124,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets the currently selected chat recipient.
     /// </summary>
-    public uint? GetCurrentChat(Entity<NanoChatCardComponent?> card)
+    public uint? GetCurrentChat(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return null;
@@ -135,7 +135,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Sets the currently selected chat recipient.
     /// </summary>
-    public void SetCurrentChat(Entity<NanoChatCardComponent?> card, uint? recipient)
+    public void SetCurrentChat(Entity<TraumaNanoChatCardComponent?> card, uint? recipient)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -147,7 +147,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets whether notifications are muted.
     /// </summary>
-    public bool GetNotificationsMuted(Entity<NanoChatCardComponent?> card)
+    public bool GetNotificationsMuted(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return false;
@@ -158,7 +158,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Sets whether notifications are muted.
     /// </summary>
-    public void SetNotificationsMuted(Entity<NanoChatCardComponent?> card, bool muted)
+    public void SetNotificationsMuted(Entity<TraumaNanoChatCardComponent?> card, bool muted)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -170,7 +170,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets whether NanoChat number is listed.
     /// </summary>
-    public bool GetListNumber(Entity<NanoChatCardComponent?> card)
+    public bool GetListNumber(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return false;
@@ -181,7 +181,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Sets whether NanoChat number is listed.
     /// </summary>
-    public void SetListNumber(Entity<NanoChatCardComponent?> card, bool listNumber)
+    public void SetListNumber(Entity<TraumaNanoChatCardComponent?> card, bool listNumber)
     {
         if (!Resolve(card, ref card.Comp) || card.Comp.ListNumber == listNumber)
             return;
@@ -193,7 +193,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets the time of the last message.
     /// </summary>
-    public TimeSpan? GetLastMessageTime(Entity<NanoChatCardComponent?> card)
+    public TimeSpan? GetLastMessageTime(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return null;
@@ -204,7 +204,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <summary>
     ///     Gets if there are unread messages from a recipient.
     /// </summary>
-    public bool HasUnreadMessages(Entity<NanoChatCardComponent?> card, uint recipientNumber)
+    public bool HasUnreadMessages(Entity<TraumaNanoChatCardComponent?> card, uint recipientNumber)
     {
         if (!Resolve(card, ref card.Comp) || !card.Comp.Recipients.TryGetValue(recipientNumber, out var recipient))
             return false;
@@ -212,7 +212,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
         return recipient.HasUnread;
     }
 
-    public override void Clear(Entity<NanoChatCardComponent?> card)
+    public override void Clear(Entity<TraumaNanoChatCardComponent?> card)
     {
         if (!Resolve(card, ref card.Comp))
             return;
@@ -228,7 +228,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     ///     Optionally keeps message history while removing from active chats.
     /// </summary>
     /// <returns>True if the chat was deleted successfully</returns>
-    public bool TryDeleteChat(Entity<NanoChatCardComponent?> card, uint recipientNumber, bool keepMessages = false)
+    public bool TryDeleteChat(Entity<TraumaNanoChatCardComponent?> card, uint recipientNumber, bool keepMessages = false)
     {
         if (!Resolve(card, ref card.Comp))
             return false;
@@ -256,7 +256,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     /// <param name="card">The card to check contacts for</param>
     /// <param name="recipientNumber">The recipient's number to check</param>
     /// <returns>True if the recipient exists or was created successfully</returns>
-    public bool EnsureRecipientExists(Entity<NanoChatCardComponent> card, uint recipientNumber)
+    public bool EnsureRecipientExists(Entity<TraumaNanoChatCardComponent> card, uint recipientNumber)
         => EnsureRecipientExists((card, card.Comp), recipientNumber, GetCardInfo(recipientNumber));
 
     /// <summary>
@@ -265,7 +265,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     public NanoChatRecipient? GetCardInfo(uint number)
     {
         // Find card with this number to get its info
-        var query = EntityQueryEnumerator<NanoChatCardComponent>();
+        var query = EntityQueryEnumerator<TraumaNanoChatCardComponent>();
         while (query.MoveNext(out var uid, out var card))
         {
             if (card.Number != number)
@@ -291,7 +291,7 @@ public abstract partial class SharedNanoChatSystem : CommonNanoChatSystem
     ///     If the recipient doesn't exist, they will be added with the provided info.
     /// </summary>
     /// <returns>True if the recipient was added or already existed</returns>
-    public bool EnsureRecipientExists(Entity<NanoChatCardComponent?> card,
+    public bool EnsureRecipientExists(Entity<TraumaNanoChatCardComponent?> card,
         uint recipientNumber,
         NanoChatRecipient? recipientInfo = null)
     {

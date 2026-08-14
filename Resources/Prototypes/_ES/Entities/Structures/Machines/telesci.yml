@@ -40,8 +40,9 @@
   - type: Transform
     anchored: true
     noRot: true
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: StructuralMetallicStrong
   - type: PowerConsumer
     drawRate: 1000

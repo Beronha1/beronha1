@@ -3,8 +3,7 @@
   parent: BaseGameRule
   id: SyndicateDeadDrop
   components:
-  - type: GameRule  #Omu addition to get it to work
-    chaosScore: 300
+  - type: GameRule  # Omu addition to get it to work
   - type: StationEvent
     startAnnouncement: station-syndicate-dead-drop-announcement
     startAudio:

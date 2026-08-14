@@ -1,7 +1,6 @@
 # Ovinia Language
 - type: language
   id: Caprine
-  isVisibleLanguage: true
   speech:
     color: "#9ddfb8"
   obfuscation:

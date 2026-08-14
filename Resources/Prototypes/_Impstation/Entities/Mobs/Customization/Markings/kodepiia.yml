@@ -196,7 +196,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/kodepiia/eyes.rsi
     state: humaneyes
-  shader: unshaded
 
 - type: marking
   id: KodeHumanEyesUneven
@@ -219,7 +218,6 @@
     state: humaneyeseneven1
   - sprite: _Impstation/Mobs/Customization/kodepiia/eyes.rsi
     state: humaneyeseneven2
-  shader: unshaded
 
 - type: marking
   id: KodeJamjar1
@@ -296,7 +294,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/kodepiia/eyes.rsi
     state: squareeyes
-  shader: unshaded
 
 - type: marking
   id: SquareEyesUneven
@@ -315,7 +312,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/kodepiia/eyes.rsi
     state: squareeyesuneven
-  shader: unshaded
 
 # head
 - type: marking
@@ -627,7 +623,6 @@
   sprites:
   - sprite: _Impstation/Mobs/Customization/kodepiia/chest.rsi
     state: stripes
-  shader: unshaded
 
 - type: marking
   id: KodeTeethChest

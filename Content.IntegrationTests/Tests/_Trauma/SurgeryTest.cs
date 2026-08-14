@@ -37,13 +37,6 @@ public sealed class SurgeryTest : InteractionTest
 
     protected override string PlayerPrototype => Human;
 
-    private static readonly EntProtoId Human = "MobHuman";
-    private static readonly EntProtoId Weapon = "CaptainSabre";
-    private static readonly ProtoId<OrganCategoryPrototype> ArmRight = "ArmRight";
-    private static readonly ProtoId<OrganCategoryPrototype> Torso = "Torso";
-
-    protected override string PlayerPrototype => Human;
-
     /// <summary>
     /// Checks that a sword can cut an arm off, leaving a dismemberment trauma on the torso.
     /// The trauma then has to be removed by surgery, which must allow reattaching the arm.

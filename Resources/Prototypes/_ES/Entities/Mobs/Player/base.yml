@@ -3,12 +3,6 @@
   id: ESBaseMob
   abstract: true
   components:
-  - type: ESInherentLight
-  - type: ESViewcone
-  - type: ESViewconeOccludable
   - type: ESHoldToFace
-  - type: ESKillTracker
-  - type: ESPainFlash
-  - type: ESCrosshairAimer
   - type: GhostOnMove # todo this kinda doesnt make any sense and it should really just always happen if someone controls something and dies.
     # also the name doesnt maek any sense

@@ -13,6 +13,7 @@ namespace Content.Server.Entry
             "AnimatedEmotesBlacklist",
             "ESTimedDespawnLightFade",
             "ESTimedDespawnSpriteFade",
+            "ESGenericPointLightVisualizer",
             // </Trauma>
             "ConstructionGhost",
             "IconSmooth",

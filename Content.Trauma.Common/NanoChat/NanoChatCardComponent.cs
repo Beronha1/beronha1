@@ -7,7 +7,7 @@ namespace Content.Trauma.Common.NanoChat;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(CommonNanoChatSystem))]
 [AutoGenerateComponentPause, AutoGenerateComponentState]
-public sealed partial class NanoChatCardComponent : Component
+public sealed partial class TraumaNanoChatCardComponent : Component
 {
     /// <summary>
     ///     The number assigned to this card.

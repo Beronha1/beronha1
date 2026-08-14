@@ -4,8 +4,9 @@
   description: Looks unstable. Kill it fast!
   components:
   - type: Clickable
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: MercurySpider
   - type: Physics
     bodyType: Static
@@ -93,8 +94,8 @@
         - Fauna
     inverted: true
     damage:
-      groups:
-        Genetic: 5
+      types:
+        Cellular: 5
   - type: EmitSoundOnSpawn
     sound:
       collection: MercuryBeam
@@ -147,8 +148,8 @@
     impactEffect: BulletImpactEffectDisabler
     deleteOnCollide: true
     damage:
-      groups:
-        Genetic: 2
+      types:
+        Cellular: 2
     soundHit:
       path: /Audio/Weapons/Guns/Hits/bullet_hit.ogg # TO DO: Change later
 

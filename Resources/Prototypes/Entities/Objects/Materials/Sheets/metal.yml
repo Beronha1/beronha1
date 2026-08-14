@@ -40,6 +40,13 @@
     - Steel
   # </Trauma>
   - type: Material
+  - type: UserInterface
+    interfaces:
+      enum.RatvarMidasTouchUIKey.Key:
+        type: RatvarMidasTouchBUI
+  - type: MidasMaterial
+    targets:
+    - MidasTouchSteel
   - type: PhysicalComposition
     materialComposition:
       Steel: 100
@@ -96,6 +103,13 @@
   description: A sheet of brass, primarily used by clockwork enthusiasts and the remnants of Ratvarian cults.
   suffix: Full
   components:
+  - type: UserInterface
+    interfaces:
+      enum.RatvarMidasTouchUIKey.Key:
+        type: RatvarMidasTouchBUI
+  - type: MidasMaterial
+    targets:
+    - MidasTouchPlasteel
   - type: PhysicalComposition
     materialComposition:
       Brass: 100

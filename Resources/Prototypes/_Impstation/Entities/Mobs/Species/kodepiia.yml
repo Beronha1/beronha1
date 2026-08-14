@@ -10,9 +10,8 @@
   - type: KodepiiaConsumeAction
     consumeActionId: ActionKodepiiaConsume
     damage:
-      groups:
-        Genetic: 15
       types:
+        Cellular: 15
         Piercing: 15
     whitelist:
       components:
@@ -64,7 +63,7 @@
   - type: Vocal
     emoteSounds: Kodepiia
   - type: InstrumentVisuals
-  - type: LanguageKnowledge
+  - type: LanguageSpeaker
     speaks:
     - TauCetiBasic
     - Universal
@@ -76,14 +75,7 @@
         enum.InstrumentVisuals.Layer:
           False: { visible: false }
           True: { visible: true }
-  - type: Sprite
-    layers:
-    - map: [ "enum.InstrumentVisuals.Layer" ]
-      sprite: _DV/Effects/harpysinger.rsi
-      state: singing_music_notes
-      visible: false
   - type: Butcherable
-    butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 5

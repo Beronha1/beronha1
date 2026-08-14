@@ -117,7 +117,6 @@
       types:
         Slash: 5
   - type: ToggleableGhostRole
-    allowMovement: true
     examineTextMindPresent: soulscythe-mind-present
     examineTextMindSearching: soulscythe-mind-searching
     examineTextNoMind: soulscythe-mind-empty
@@ -226,10 +225,14 @@
   id: ActionCainAbelWisps
   components:
   - type: Action
-    icon: { sprite: _Lavaland/Objects/Weapons/Melee/cain_abel.rsi, state: icon }
     useDelay: 0
-  - type: WorldTargetAction
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/cain_abel.rsi
+    layers:
+    - state: icon
+  - type: TargetAction
     range: 9
+  - type: WorldTargetAction
     event: !type:CainAbelWispActionEvent
 
 - type: entity
@@ -237,10 +240,14 @@
   id: ActionSoulScytheBloodWave
   components:
   - type: Action
-    icon: { sprite: _Lavaland/Objects/Weapons/Melee/soulscythe.rsi, state: icon }
     useDelay: 0
-  - type: WorldTargetAction
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Melee/soulscythe.rsi
+    layers:
+    - state: icon
+  - type: TargetAction
     range: 10
+  - type: WorldTargetAction
     event: !type:SoulScytheWaveActionEvent
 
 - type: entity
@@ -251,8 +258,11 @@
   description: Mark a nearby living humanoid for two minutes. The contract is consumed on success.
   components:
   - type: Action
-    icon: { sprite: _Goobstation/Wizard/Objects/scroll.rsi, state: scroll2 }
     useDelay: 1
+  - type: Sprite
+    sprite: _Goobstation/Wizard/Objects/scroll.rsi
+    layers:
+    - state: scroll2
   - type: TargetAction
     range: 12
     checkCanAccess: true

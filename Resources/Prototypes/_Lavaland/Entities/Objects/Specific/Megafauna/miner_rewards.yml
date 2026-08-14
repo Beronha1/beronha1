@@ -229,8 +229,7 @@
   - type: FireProtection
     reduction: 1
   - type: TemperatureProtection
-    heatingCoefficient: 0.05
-    coolingCoefficient: 0.05
+    coefficient: 0.05
   - type: GodslayerArmor
   - type: Construction
     graph: GodslayerArmorConstructionGraph
@@ -260,16 +259,18 @@
   - type: FireProtection
     reduction: 1
   - type: TemperatureProtection
-    heatingCoefficient: 0.05
-    coolingCoefficient: 0.05
+    coefficient: 0.05
 
 - type: entity
   parent: BaseAction
   id: ActionToggleCursedIceBoots
   components:
   - type: Action
-    icon: { sprite: _Lavaland/Clothing/Shoes/cursed_ice_boots.rsi, state: icon }
     useDelay: 0.5
+  - type: Sprite
+    sprite: _Lavaland/Clothing/Shoes/cursed_ice_boots.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:ToggleCursedIceBootsActionEvent
 

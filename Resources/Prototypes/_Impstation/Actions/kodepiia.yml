@@ -6,10 +6,11 @@
   - type: ConfirmableAction
     popup: dna-scrambler-action-popup
   - type: Action
-    icon:
-      sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      state: transform
     useDelay: 600
+  - type: Sprite
+    sprite: _Goobstation/Changeling/changeling_abilities.rsi
+    layers:
+    - state: transform
   - type: InstantAction
     event: !type:KodepiiaScramblerEvent
 
@@ -21,10 +22,11 @@
   components:
   - type: Action
     itemIconStyle: NoItem
-    icon:
-      sprite: _Goobstation/Changeling/changeling_abilities.rsi
-      state: absorb_dna
     useDelay: 60
+  - type: Sprite
+    sprite: _Goobstation/Changeling/changeling_abilities.rsi
+    layers:
+    - state: absorb_dna
   - type: TargetAction
   - type: EntityTargetAction
     event: !type:KodepiiaConsumeEvent

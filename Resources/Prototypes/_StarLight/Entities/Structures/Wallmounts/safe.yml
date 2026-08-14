@@ -31,8 +31,9 @@
       shader: unshaded
       visible: false
       map: ["spark"]
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

@@ -1,5 +1,6 @@
 es-coroner-report-complete-popup = Autopsy completed!
 ESjob-name-coroner = Coroner
+ESJobCoroner = Coroner
 ESjob-description-coroner = Examines bodies and reconstructs causes of death.
 es-coroner-report-paper = [head=2]Autopsy Report[/head]
     {""}[bold]Name:[/bold] {$name}

@@ -1,5 +1,6 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Starfall.Particles;
 using Content.Trauma.Shared.Particles;
 using Robust.Shared.Player;
 
@@ -19,6 +20,7 @@ public sealed class SpawnParticlesEffectSystem : SharedSpawnParticlesEffectSyste
         var filter = Filter.Pvs(target);
         if (user is { } u)
             filter = filter.RemoveWhereAttachedEntity(e => e == u);
+
         var ev = new SpawnParticlesEvent(GetNetEntity(target), particleProto, attached, number, color);
         RaiseNetworkEvent(ev, filter);
     }

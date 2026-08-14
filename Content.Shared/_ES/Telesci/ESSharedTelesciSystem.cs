@@ -47,6 +47,9 @@ public abstract partial class ESSharedTelesciSystem : EntitySystem
 
     private void OnActivePortalGenerator(Entity<ESPortalGeneratorConsoleComponent> ent, ref ESActivePortalGeneratorBuiMessage args)
     {
+        var activated = new ESPortalGeneratorActivatedEvent();
+        RaiseLocalEvent(ent.Owner, ref activated);
+
         if (!TryGetPortalGenerator(out var generator))
             return;
 

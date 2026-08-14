@@ -1,4 +1,4 @@
-using Content.Trauma.Common.CartridgeLoader.Cartridges;
+using Content.Shared._DV.CartridgeLoader.Cartridges;
 
 namespace Content.Shared.CartridgeLoader.Cartridges;
 

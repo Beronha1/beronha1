@@ -35,15 +35,14 @@
       Cloth: 150
   - type: Edible
     requiresSpecialDigestion: true
-  - type: SolutionContainerManager
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 30
+  - type: SolutionManager # Ganimed-Port: стайны (funky-station/forky-station#107)
     solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 30
-      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
-        maxVol: 5
+    - SolutionClothingStain
   - type: Tag
     tags:
     - ClothMade

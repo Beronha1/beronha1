@@ -9,4 +9,7 @@ public sealed partial class JuggernautComponent : Component
     [ViewVariables(VVAccess.ReadWrite),
      DataField("hummerSpawnId", customTypeSerializer: typeof(PrototypeIdSerializer<EntityPrototype>))]
     public string HummerSpawnId = "HammerJuggernaut";
+
+    [ViewVariables]
+    public EntityUid Hammer = EntityUid.Invalid;
 }

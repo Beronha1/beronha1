@@ -8,7 +8,7 @@
   - ESTroupeRuleCrew
   - ESSchedulerRuleStationEventVote
   - ESSchedulerRuleDegradationEventVote
-  - ESBasicRoundstartVariation
+  - BasicRoundstartVariation
 
 - type: gamePreset
   id: ESTraitors
@@ -20,7 +20,7 @@
   - ESTroupeRuleTraitor
   - ESSchedulerRuleStationEventVote
   - ESSchedulerRuleDegradationEventVote
-  - ESBasicRoundstartVariation
+  - BasicRoundstartVariation
 
 # Nonstandard modes
 
@@ -32,4 +32,16 @@
   maxPlayers: 5
   rules:
   - Sandbox
-  - ESBasicRoundstartVariation # included since it determines important features
+  - BasicRoundstartVariation
+
+- type: gamePreset
+  id: ESMasqueradeManaged
+  name: es-preset-masquerade-title
+  description: es-preset-masquerade-desc
+  showInVote: false
+  rules:
+  - ESTroupeRuleCrew
+  - ESTroupeRuleTraitor
+  - ESSchedulerRuleStationEventVote
+  - ESSchedulerRuleDegradationEventVote
+  - BasicRoundstartVariation

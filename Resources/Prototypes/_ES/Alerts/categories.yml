@@ -1,0 +1,8 @@
+- type: alertCategory
+  id: ESReadyStatus
+
+- type: alertCategory
+  id: ESSmokeInhalation
+
+- type: alertCategory
+  id: ESDisguise

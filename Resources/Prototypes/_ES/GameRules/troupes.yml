@@ -1,0 +1,32 @@
+- type: entity
+  parent: BaseGameRule
+  id: ESBaseTroupeRule
+  abstract: true
+  components:
+  - type: ESTroupeRule
+  - type: ESObjectiveHolder
+
+- type: entity
+  parent: ESBaseTroupeRule
+  name: The Crew
+  id: ESTroupeRuleCrew
+  components:
+  - type: ESTroupeRule
+    troupe: ESCrew
+    priority: 10
+    minTargetMembers: 1
+    playersPerTargetMember: 1
+
+- type: entity
+  parent: ESBaseTroupeRule
+  id: ESTroupeRuleTraitor
+  name: The Traitors
+  components:
+  - type: ESTroupeRule
+    troupe: ESTraitor
+    minTargetMembers: 1
+    maxTargetMembers: 5
+    playersPerTargetMember: 6
+  - type: ESTraitorRule
+  - type: LoadMapRule
+    mapPath: /Maps/_ES/syndiebase.yml

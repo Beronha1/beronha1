@@ -29,8 +29,9 @@
       map: [ "enum.PylonVisualsLayers.Activated" ]
   - type: PylonVisuals
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Glass
   - type: Destructible
     thresholds:
@@ -51,15 +52,15 @@
   - type: Appearance
   - type: Pylon
     healingAuraDamage:
-      groups:
-        Brute: -10
-        Burn: -10
-        Toxin: -6
-        Genetic: -5
-        Airloss: -20
+      types:
+        Blunt: -10
+        Heat: -10
+        Poison: -6
+        Cellular: -5
+        Asphyxiation: -20
     burnDamageOnInteract:
-      groups:
-        Burn: 5
+      types:
+        Heat: 5
   - type: PointLight
     color: "#FF0000"
     radius: 2
@@ -101,8 +102,9 @@
     - state: icon
       map: [ "enum.CultCraftStructureVisualsLayers.Activated" ]
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -166,8 +168,9 @@
     - state: icon
       map: [ "enum.CultCraftStructureVisualsLayers.Activated" ]
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:
@@ -230,8 +233,9 @@
     - state: icon
       map: [ "enum.CultCraftStructureVisualsLayers.Activated" ]
   - type: InteractionOutline
-  - type: Damageable
+  - type: Injurable
     damageContainer: Inorganic
+  - type: Damageable
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

@@ -2,7 +2,7 @@
   id: ESCoroner
   name: ESjob-name-coroner
   description: ESjob-description-coroner
-  playTimeTracker: JobMedicalDoctor
+  playTimeTracker: ESJobCoroner
   startingGear: ESCoronerGear
   icon: "JobIconMedicalDoctor"
   supervisors: job-supervisors-cmo
@@ -30,4 +30,3 @@
 - type: chameleonOutfit
   id: ESCoroner
   job: ESCoroner
-  hidden: false

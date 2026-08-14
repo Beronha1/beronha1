@@ -1,0 +1,364 @@
+# Prototype aliases and small compatibility definitions required by the
+# selectively ported upstream features.
+
+- type: Tag
+  id: ESElectronicsKeypad
+
+- type: Tag
+  id: ESGrille
+
+- type: Tag
+  id: ESEmitter
+
+- type: Tag
+  id: ESAncestor
+
+- type: Tag
+  id: HarpyEmotes
+
+- type: damageModifierSet
+  id: HardLightBarrier
+  coefficients:
+    Heat: 0.8
+    Blunt: 0.8
+    Slash: 0.8
+    Piercing: 0.8
+    Cold: 0.8
+    Shock: 1.6
+
+- type: objectiveIssuer
+  id: objective-issuer-cult
+  name: objective-issuer-cult
+
+- type: objectiveIssuer
+  id: objective-issuer-ratvar
+  name: objective-issuer-ratvar
+
+- type: entity
+  parent: BaseMeteor
+  id: ESMeteor
+  suffix: ES
+  components:
+  - type: Sprite
+    state: big
+    noRot: true
+  - type: Explosive
+    totalIntensity: 75
+  - type: Fixtures
+    fixtures:
+      projectile:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.15
+        density: 100
+        hard: false
+        layer:
+        - LargeMobLayer
+        mask:
+        - Impassable
+        - BulletImpassable
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1250
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MetalBreak
+      - !type:ExplodeBehavior
+  - type: WarpPoint
+    follow: true
+    location: es-warp-point-meteor
+    blacklist:
+      tags:
+      - GhostOnlyWarp
+  - type: Tag
+    tags: [ GhostOnlyWarp ]
+- type: entity
+  id: SolutionClothingStain
+  parent: Solution
+  name: clothing stain solution
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Solution
+    id: stain
+    solution:
+      maxVol: 5
+      canReact: false
+
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageCaprine
+  components:
+  - type: LanguageKnowledge
+    languageId: Caprine
+
+# Preserve map compatibility after Ephemeral's status-display overhaul.
+- type: entity
+  id: Screen
+  parent: ESStatusDisplayStation
+
+- type: entity
+  id: ArrivalsShuttleTimer
+  parent: ESStatusDisplayArrivals
+
+# Restore Ephemeral prototypes referenced by selectively merged mask systems.
+- type: entity
+  parent: BaseMentalAction
+  id: ESActionPhantomMaterialize
+  name: Materialize
+  description: Take physical form and terrorize the station!
+  components:
+  - type: Sprite
+    sprite: _ES/Actions/masks/phantom.rsi
+    layers:
+    - state: icon
+  - type: InstantAction
+    event: !type:ESPhantomMaterializeActionEvent
+
+- type: localizedDataset
+  id: ESInsiderCodenames
+  values:
+    prefix: es-dataset-insider-codename-
+    count: 80
+
+# The ported troupe system owns ES objectives and cannot consume legacy
+# Objective entities. Keep the traitor troupe's intent in the native tracker.
+- type: entity
+  parent: ESBaseMaskObjective
+  id: ESObjectiveKillCrew
+  name: Eliminate a crew member
+  description: Kill a member of the station crew before the shift ends.
+  components:
+  - type: ESObjective
+    icon:
+      sprite: _ES/Objects/Weapons/Guns/357.rsi
+      state: icon
+  - type: ESKillTroupeObjective
+    troupe: ESCrew
+  - type: ESCounterObjective
+    target: 1
+
+# Map compatibility for the Ephemeral syndicate base and singularity world.
+# Prefer current Trauma entities where the old fork-specific implementation
+# depended on prototype families that are not part of the selected ports.
+- type: entity
+  id: LockerCabinet
+  parent: LockerBase
+
+- type: entity
+  id: ESCatwalkGrey
+  parent: Catwalk
+
+- type: entity
+  id: ESVendingMachineCigs
+  parent: VendingMachineCigs
+
+- type: entity
+  id: ESWeaponPistol9mmSilenced
+  parent: WeaponPistolCobra
+
+- type: entity
+  id: ESCrateTrashBin
+  parent: CrateGenericSteel
+  name: trash bin
+
+- type: entity
+  id: ESCrateTrashBinSecure
+  parent: CrateSecure
+  name: secure trash bin
+
+- type: entity
+  id: ESCrateTrashBinFilledRandom
+  parent: ESCrateTrashBin
+  suffix: Filled, Random
+  components:
+  - type: EntityTableContainerFill
+    containers:
+      entity_storage: !type:NestedSelector
+        tableId: ESMaintLoot
+
+- type: entity
+  id: ESInvisibleWall
+  parent: MarkerBase
+  name: invisible wall marker
+  placement:
+    mode: SnapgridCenter
+    snap: [ Wall ]
+  components:
+  - type: Physics
+    bodyType: Static
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeAabb
+          bounds: "-0.5,-0.5,0.5,0.5"
+        mask: [ FullTileMask ]
+        layer: [ WallLayer ]
+  - type: Airtight
+  - type: Sprite
+    sprite: Markers/cross.rsi
+    layers:
+    - state: red
+    - sprite: Structures/Magic/forcewall.rsi
+      state: forcewall
+
+- type: entity
+  id: ESMarkerSpawnRegionSingularityWorldInWorld
+  parent: MarkerBase
+  name: singularity world arrival region
+  components:
+  - type: Transform
+    noRot: true
+  - type: ESSpawnRegionMarker
+    area: ESSingularityWorldTeleportInWorld
+
+- type: entity
+  abstract: true
+  id: ESCompatibilitySpawnerBase
+  parent: MarkerBase
+  components:
+  - type: Sprite
+    layers:
+    - state: red
+
+- type: entity
+  id: ESSpawnerRandomMaintLootStructure
+  parent: ESCompatibilitySpawnerBase
+  name: maintenance loot structure spawner
+  components:
+  - type: EntityTableSpawner
+    table:
+      id: ClosetMaintenanceFilledRandom
+
+- type: entity
+  id: ESSpawnerRandomMaintLootExposed25
+  parent: ESCompatibilitySpawnerBase
+  name: exposed maintenance loot spawner
+  suffix: ES, 25
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: ESMaintLootExposed
+      prob: 0.25
+
+- type: entity
+  id: ESSpawnerRandomMaintLootExposed50
+  parent: ESCompatibilitySpawnerBase
+  name: exposed maintenance loot spawner
+  suffix: ES, 50
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: ESMaintLootExposed
+      prob: 0.5
+
+- type: entity
+  id: ESSpawnerRandomMaintLootExposed100
+  parent: ESCompatibilitySpawnerBase
+  name: exposed maintenance loot spawner
+  suffix: ES, 100
+  components:
+  - type: EntityTableSpawner
+    table: !type:NestedSelector
+      tableId: ESMaintLootExposed
+
+- type: entity
+  id: ESSpawnerRandomMaintCanister
+  parent: ESCompatibilitySpawnerBase
+  name: maintenance canister spawner
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: OxygenCanister
+      - id: NitrogenCanister
+      - id: AirCanister
+      - id: CarbonDioxideCanister
+      - id: WaterVaporCanister
+      - id: PlasmaCanister
+        weight: 0.25
+
+- type: entity
+  id: ESSpawnerRandomMaintCrate
+  parent: ESCompatibilitySpawnerBase
+  name: maintenance crate spawner
+  components:
+  - type: EntityTableSpawner
+    table:
+      id: CrateGenericSteel
+
+- type: entity
+  id: ESSpawnerRandomGrilleBroken50
+  parent: ESCompatibilitySpawnerBase
+  name: grille spawner
+  suffix: ES, Full/Broken, 50
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: Grille
+      - id: GrilleBroken
+
+- type: entity
+  id: ESSpawnerRandomGrilleBroken75
+  parent: ESCompatibilitySpawnerBase
+  name: grille spawner
+  suffix: ES, Full/Broken, 75
+  components:
+  - type: EntityTableSpawner
+    table: !type:GroupSelector
+      children:
+      - id: Grille
+        weight: 3
+      - id: GrilleBroken
+
+- type: entity
+  id: ESSpawnerRandomTrashJunk25
+  parent: ESCompatibilitySpawnerBase
+  name: trash junk spawner
+  suffix: ES, 25
+  components:
+  - type: EntityTableSpawner
+    offset: 0.2
+    table: !type:NestedSelector
+      tableId: GenericTrashItems
+      prob: 0.25
+
+- type: entity
+  id: ESSpawnerRandomTrashJunk50
+  parent: ESCompatibilitySpawnerBase
+  name: trash junk spawner
+  suffix: ES, 50
+  components:
+  - type: EntityTableSpawner
+    offset: 0.2
+    table: !type:NestedSelector
+      tableId: GenericTrashItems
+      prob: 0.5
+
+- type: entity
+  id: ESSpawnerRandomTrashJunk75
+  parent: ESCompatibilitySpawnerBase
+  name: trash junk spawner
+  suffix: ES, 75
+  components:
+  - type: EntityTableSpawner
+    offset: 0.2
+    table: !type:NestedSelector
+      tableId: GenericTrashItems
+      prob: 0.75
+
+- type: entity
+  id: ESSpawnerRandomTrashJunk100
+  parent: ESCompatibilitySpawnerBase
+  name: trash junk spawner
+  suffix: ES, 100
+  components:
+  - type: EntityTableSpawner
+    offset: 0.2
+    table: !type:NestedSelector
+      tableId: GenericTrashItems

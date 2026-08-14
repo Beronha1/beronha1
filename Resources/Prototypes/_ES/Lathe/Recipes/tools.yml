@@ -1,7 +1,7 @@
 - type: latheRecipe
   parent: BaseToolRecipe
   id: ESWeaponKnife
-  result: ESWeaponKnife
+  result: KitchenKnife
   materials:
     Steel: 500
 

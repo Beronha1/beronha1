@@ -9,8 +9,10 @@ namespace Content.Trauma.Shared.Mind;
 /// <summary>
 /// Handles raising some events on roles when mind changes.
 /// </summary>
-public sealed class MindRoleEventSystem : EntitySystem
+public sealed partial class MindRoleEventSystem : EntitySystem
 {
+    [Dependency] private SharedMindSystem _mind = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -21,6 +23,8 @@ public sealed class MindRoleEventSystem : EntitySystem
 
     private void OnAdded(Entity<MindComponent> ent, ref MindGotAddedEvent args)
     {
+        _mind.RelayToObjectives(ent, ref args);
+
         if (ent.Comp.OwnedEntity is not {} mob)
             return;
 
@@ -28,6 +32,7 @@ public sealed class MindRoleEventSystem : EntitySystem
         var ev = new RoleMindAddedEvent(ent, mob);
         foreach (var role in ent.Comp.MindRoleContainer.ContainedEntities)
         {
+            RaiseLocalEvent(role, args);
             RaiseLocalEvent(role, ref ev);
         }
     }

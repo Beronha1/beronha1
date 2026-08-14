@@ -63,7 +63,6 @@
       - ReagentId: OniSake
         Quantity: 50
   - type: SolutionRegeneration
-    solution: drink
     generated:
       reagents:
       - ReagentId: OniSake

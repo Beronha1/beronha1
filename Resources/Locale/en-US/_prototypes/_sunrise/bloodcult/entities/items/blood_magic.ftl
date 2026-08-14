@@ -1,4 +1,4 @@
-ent-CultBloodSpell = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
-ent-CultBloodOrb = { ent-BaseItem }
-    .desc = { ent-BaseItem.desc }
+ent-CultBloodSpell = blood rite
+    .desc = A forbidden rite shaped from blood magic.
+ent-CultBloodOrb = blood orb
+    .desc = An orb pulsing with blood magic.

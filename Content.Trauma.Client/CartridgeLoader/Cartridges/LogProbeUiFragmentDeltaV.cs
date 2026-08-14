@@ -3,7 +3,7 @@
 using System.Linq;
 using Content.Client.CartridgeLoader.Cartridges;
 using Content.Trauma.Client.CartridgeLoader.Cartridges;
-using Content.Trauma.Common.CartridgeLoader.Cartridges;
+using Content.Shared._DV.CartridgeLoader.Cartridges;
 using Content.Shared.CartridgeLoader.Cartridges;
 using Robust.Client.UserInterface.Controllers;
 

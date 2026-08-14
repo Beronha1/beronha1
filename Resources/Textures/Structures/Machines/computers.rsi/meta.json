@@ -879,6 +879,44 @@
             "directions": 4
         },
         {
+            "name": "request-syndie",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3, 0.3]
+            ]
+        },
+        {
+            "name": "syndie_generic_keys",
+            "directions": 4
+        },
+        {
+            "name": "teleporters_station",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3]
+            ]
+        },
+        {
+            "name": "teleporters_syndicate",
+            "directions": 4,
+            "delays": [
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3],
+                [0.3, 0.3, 0.3, 0.3, 0.3]
+            ]
+        },
+        {
+            "name": "xenorobot",
+            "directions": 4
+        },
+        {
             "name": "wizard_key"
         }
     ]

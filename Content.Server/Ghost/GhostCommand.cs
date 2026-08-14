@@ -32,12 +32,6 @@ namespace Content.Server.Ghost
 
             var isAdmin = _admin.HasAdminFlag(player, AdminFlags.Admin);
 
-            if (player.AttachedEntity is not { Valid: true } playerEntity)
-            {
-                shell.WriteLine(Loc.GetString("ghost-command-denied"));
-                return;
-            }
-
             var gameTicker = _entities.System<GameTicker>();
             if (!isAdmin && (!gameTicker.PlayerGameStatuses.TryGetValue(player.UserId, out var playerStatus) ||
                 playerStatus is not PlayerGameStatus.JoinedGame))
@@ -46,7 +40,8 @@ namespace Content.Server.Ghost
                 return;
             }
 
-            if (_entities.HasComponent<AdminFrozenComponent>(playerEntity))
+            if (player.AttachedEntity is { Valid: true } playerEntity &&
+                _entities.HasComponent<AdminFrozenComponent>(playerEntity))
             {
                 var deniedMessage = Loc.GetString("ghost-command-denied");
                 shell.WriteLine(deniedMessage);
@@ -63,8 +58,9 @@ namespace Content.Server.Ghost
             }
 
             var mobStateSys = _entities.System<MobStateSystem>();
-            if (!isAdmin && (_entities.TryGetComponent<MobStateComponent>(playerEntity, out var mobState) &&
-                !mobStateSys.IsDead(playerEntity, mobState)))
+            if (!isAdmin && player.AttachedEntity is { Valid: true } livingEntity &&
+                (_entities.TryGetComponent<MobStateComponent>(livingEntity, out var mobState) &&
+                !mobStateSys.IsDead(livingEntity, mobState)))
             {
                 shell.WriteLine(Loc.GetString("ghost-command-not-dead"));
                 return;

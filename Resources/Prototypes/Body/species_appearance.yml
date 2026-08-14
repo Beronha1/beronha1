@@ -19,6 +19,8 @@
     # Limbs
     - map: [ "enum.HumanoidVisualLayers.RArm" ]
     - map: [ "enum.HumanoidVisualLayers.LArm" ]
+    - map: [ "enum.HumanoidVisualLayers.RArmExtension" ] # Impstation - Kodepiia
+    - map: [ "enum.HumanoidVisualLayers.LArmExtension" ] # Impstation - Kodepiia
     - map: [ "enum.HumanoidVisualLayers.RLeg" ]
     - map: [ "enum.HumanoidVisualLayers.LLeg" ]
 
@@ -72,9 +74,14 @@
     - map: [ "enum.HumanoidVisualLayers.Hair" ]
     - map: [ "enum.HumanoidVisualLayers.HeadSide" ]
     - map: [ "enum.HumanoidVisualLayers.HeadTop" ]
+    - map: [ "enum.HumanoidVisualLayers.NeckFluff" ] # Omu - Ovinia
     - map: [ "enum.HumanoidVisualLayers.Tail" ]
     - map: [ "enum.HumanoidVisualLayers.TailOverlay" ]
     - map: [ "enum.HumanoidVisualLayers.Wings" ] # Trauma
+    - map: [ "enum.InstrumentVisuals.Layer" ] # Impstation - Kodepiia singing overlay
+      sprite: _DV/Effects/harpysinger.rsi
+      state: singing_music_notes
+      visible: false
 
     # Stuff that goes in front of stuff that goes in front of equipment
     - map: [ "mask" ]

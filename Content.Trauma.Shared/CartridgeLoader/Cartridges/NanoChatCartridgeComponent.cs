@@ -6,7 +6,7 @@ namespace Content.Trauma.Shared.CartridgeLoader.Cartridges;
 
 [RegisterComponent, NetworkedComponent, Access(typeof(NanoChatCartridgeSystem))]
 [AutoGenerateComponentState]
-public sealed partial class NanoChatCartridgeComponent : Component
+public sealed partial class TraumaNanoChatCartridgeComponent : Component
 {
     /// <summary>
     ///     Station entity to keep track of.

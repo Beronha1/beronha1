@@ -18,15 +18,14 @@
   - type: Item
     size: Small
     storedRotation: -90
-  - type: SolutionContainerManager
+  - type: Solution
+    solution:
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 15
+  - type: SolutionManager # Ganimed-Port: стайны (funky-station/forky-station#107)
     solutions:
-      food:
-        maxVol: 15
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 15
-      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
-        maxVol: 5
+    - SolutionClothingStain
   - type: Tag
     tags:
     - ClothMade

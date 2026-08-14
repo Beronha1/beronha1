@@ -1,2 +1,2 @@
-ent-BloodCult = { ent-BaseGameRule }
-    .desc = { ent-BaseGameRule.desc }
+ent-BloodCult = blood cult
+    .desc = A blood cult attempts to summon its dark god.

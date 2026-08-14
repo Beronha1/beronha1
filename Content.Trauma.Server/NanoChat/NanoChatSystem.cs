@@ -7,6 +7,7 @@ using Content.Server.NameIdentifier;
 using Content.Server.Power.Components;
 using Content.Server.Radio;
 using Content.Shared.Access.Components;
+using Content.Shared.Access.Systems;
 using Content.Shared.CartridgeLoader;
 using Content.Shared.Database;
 using Content.Shared.Kitchen;
@@ -47,11 +48,11 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<NanoChatCardComponent, BeingMicrowavedEvent>(OnMicrowaved, after: [typeof(IdCardSystem)]);
+        SubscribeLocalEvent<TraumaNanoChatCardComponent, BeingMicrowavedEvent>(OnMicrowaved, after: [typeof(IdCardSystem)]);
     }
 
     [SubscribeLocalEvent]
-    private void OnInserted(Entity<NanoChatCardComponent> ent, ref EntGotInsertedIntoContainerMessage args)
+    private void OnInserted(Entity<TraumaNanoChatCardComponent> ent, ref EntGotInsertedIntoContainerMessage args)
     {
         if (args.Container.ID != PdaComponent.PdaIdSlotId)
             return;
@@ -61,7 +62,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     }
 
     [SubscribeLocalEvent]
-    private void OnRemoved(Entity<NanoChatCardComponent> ent, ref EntGotRemovedFromContainerMessage args)
+    private void OnRemoved(Entity<TraumaNanoChatCardComponent> ent, ref EntGotRemovedFromContainerMessage args)
     {
         if (args.Container.ID != PdaComponent.PdaIdSlotId)
             return;
@@ -70,7 +71,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
         Dirty(ent);
     }
 
-    private void OnMicrowaved(Entity<NanoChatCardComponent> ent, ref BeingMicrowavedEvent args)
+    private void OnMicrowaved(Entity<TraumaNanoChatCardComponent> ent, ref BeingMicrowavedEvent args)
     {
         // Skip if the entity was deleted (e.g., by ID card system burning it)
         if (TerminatingOrDeleted(ent))
@@ -113,7 +114,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
         Dirty(ent);
     }
 
-    private void ScrambleMessages(NanoChatCardComponent component)
+    private void ScrambleMessages(TraumaNanoChatCardComponent component)
     {
         foreach (var (recipientNumber, messages) in component.Messages)
         {
@@ -161,7 +162,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     }
 
     [SubscribeLocalEvent]
-    private void OnCardInit(Entity<NanoChatCardComponent> ent, ref MapInitEvent args)
+    private void OnCardInit(Entity<TraumaNanoChatCardComponent> ent, ref MapInitEvent args)
     {
         if (ent.Comp.Number != null)
             return;
@@ -173,12 +174,12 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     }
 
     [SubscribeLocalEvent]
-    private void OnAgentIDSetNumber(Entity<AgentIDCardComponent> ent, ref AgentIDSetNumberMessage args)
+    private void OnAgentIDSetNumber(ref AgentIDNanoChatNumberChangedEvent args)
     {
-        SetNumber(ent.Owner, args.Number);
+        SetNumber(args.Card, args.Number);
     }
 
-    public override void TrySendMessage(Entity<NanoChatCartridgeComponent> sender, Entity<NanoChatCardComponent> card, NanoChatMessage message, uint dest, EntityUid user)
+    public override void TrySendMessage(Entity<TraumaNanoChatCartridgeComponent> sender, Entity<TraumaNanoChatCardComponent> card, NanoChatMessage message, uint dest, EntityUid user)
     {
         // Attempt delivery
         var (deliveryFailed, recipients) = AttemptMessageDelivery(sender, dest);
@@ -216,11 +217,11 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     /// <param name="sender">The sending cartridge entity</param>
     /// <param name="recipientNumber">The recipient's number</param>
     /// <returns>Tuple containing delivery status and recipients if found.</returns>
-    private (bool failed, List<Entity<NanoChatCardComponent>> recipient) AttemptMessageDelivery(
-        Entity<NanoChatCartridgeComponent> sender,
+    private (bool failed, List<Entity<TraumaNanoChatCardComponent>> recipient) AttemptMessageDelivery(
+        Entity<TraumaNanoChatCartridgeComponent> sender,
         uint recipientNumber)
     {
-        var foundRecipients = new List<Entity<NanoChatCardComponent>>();
+        var foundRecipients = new List<Entity<TraumaNanoChatCardComponent>>();
 
         // First verify we can send from this device
         var channel = ProtoMan.Index(sender.Comp.RadioChannel);
@@ -230,7 +231,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
             return (false, foundRecipients);
 
         // Find all cards with matching number
-        var cardQuery = EntityQueryEnumerator<NanoChatCardComponent>();
+        var cardQuery = EntityQueryEnumerator<TraumaNanoChatCardComponent>();
         while (cardQuery.MoveNext(out var cardUid, out var card))
         {
             if (card.Number != recipientNumber)
@@ -245,11 +246,11 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
         var senderStation = _station.GetOwningStation(sender);
 
         // Now check if any of these cards can receive
-        var deliverableRecipients = new List<Entity<NanoChatCardComponent>>();
+        var deliverableRecipients = new List<Entity<TraumaNanoChatCardComponent>>();
         foreach (var recipient in foundRecipients)
         {
             // Find any cartridges that have this card
-            var cartridgeQuery = EntityQueryEnumerator<NanoChatCartridgeComponent, ActiveRadioComponent>();
+            var cartridgeQuery = EntityQueryEnumerator<TraumaNanoChatCartridgeComponent, ActiveRadioComponent>();
             while (cartridgeQuery.MoveNext(out var receiverUid, out var receiverCart, out _))
             {
                 if (receiverCart.Card != recipient.Owner)
@@ -309,8 +310,8 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     /// <param name="sender">The sender's card entity</param>
     /// <param name="recipient">The recipient's card entity</param>
     /// <param name="message">The <see cref="NanoChatMessage" /> to deliver</param>
-    private void DeliverMessageToRecipient(Entity<NanoChatCardComponent> sender,
-        Entity<NanoChatCardComponent> recipient,
+    private void DeliverMessageToRecipient(Entity<TraumaNanoChatCardComponent> sender,
+        Entity<TraumaNanoChatCardComponent> recipient,
         NanoChatMessage message)
     {
         var senderNumber = sender.Comp.Number;
@@ -334,7 +335,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
     /// <summary>
     ///     Handles unread message notifications and updates unread status.
     /// </summary>
-    private void HandleUnreadNotification(Entity<NanoChatCardComponent> recipient,
+    private void HandleUnreadNotification(Entity<TraumaNanoChatCardComponent> recipient,
         NanoChatMessage message,
         uint senderNumber)
     {
@@ -357,7 +358,7 @@ public sealed partial class NanoChatSystem : SharedNanoChatSystem
             // Don't notify if the recipient has the NanoChat program open with this chat selected.
             (hasSelectedCurrentChat &&
                 _ui.IsUiOpen(pdaUid, PdaUiKey.Key) &&
-                HasComp<NanoChatCartridgeComponent>(loader.ActiveProgram)))
+                HasComp<TraumaNanoChatCartridgeComponent>(loader.ActiveProgram)))
         {
             return;
         }

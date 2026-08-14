@@ -47,17 +47,12 @@ public sealed partial class ESWarpDriveSystem : GameRuleSystem<ESWarpDriveGameRu
         SubscribeLocalEvent<ESWarpDriveObjectiveComponent, ESGetObjectiveProgressEvent>(OnGetObjectiveProgress);
         SubscribeLocalEvent<ESSingularityWorldInterruptionComponent, GotEquippedHandEvent>(OnInterruptionPickedUp);
 
-        Subs.BuiEvents<ESPortalGeneratorConsoleComponent>(ESPortalGeneratorConsoleUiKey.Key,
-            subs =>
-            {
-                subs.Event<ESActivePortalGeneratorBuiMessage>(OnActivateWarpDrive);
-            }
-        );
+        SubscribeLocalEvent<ESPortalGeneratorConsoleComponent, ESPortalGeneratorActivatedEvent>(OnActivateWarpDrive);
 
         InitializeSingularityWorld();
     }
 
-    private void OnActivateWarpDrive(EntityUid uid, ESPortalGeneratorConsoleComponent component, ESActivePortalGeneratorBuiMessage args)
+    private void OnActivateWarpDrive(Entity<ESPortalGeneratorConsoleComponent> ent, ref ESPortalGeneratorActivatedEvent args)
     {
         var query = EntityQueryEnumerator<ESWarpDriveGameRuleComponent>();
         while (query.MoveNext(out var warpUid, out var warp))

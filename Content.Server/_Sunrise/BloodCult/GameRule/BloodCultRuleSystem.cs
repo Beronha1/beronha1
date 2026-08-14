@@ -12,7 +12,7 @@ using Content.Server.RoundEnd;
 using Content.Server.Storage.EntitySystems;
 using Content.Shared._Sunrise.BloodCult;
 using Content.Shared._Sunrise.BloodCult.Components;
-using Content.Shared._Sunrise.CollectiveMind;
+using Content.Trauma.Common.CollectiveMind;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
 using Content.Shared.Body.Systems;
@@ -376,9 +376,9 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     {
         if (TryComp<CollectiveMindComponent>(uid, out var collectiveMind))
         {
-            collectiveMind.Minds.Remove("BloodCult");
+            collectiveMind.Channels.Remove("BloodCult");
 
-            if (collectiveMind.Minds.Count == 0)
+            if (collectiveMind.Channels.Count == 0)
                 RemComp<CollectiveMindComponent>(uid);
         }
 
@@ -504,7 +504,7 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         EnsureComp<CultMemberComponent>(cultist);
 
         var collectiveMind = EnsureComp<CollectiveMindComponent>(cultist);
-        collectiveMind.Minds.Add("BloodCult");
+        collectiveMind.Channels.Add("BloodCult");
 
         _tagSystem.AddTag(cultist, CultistTag);
 

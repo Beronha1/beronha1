@@ -7,7 +7,9 @@
   components:
   - type: Action
     checkCanInteract: false
-    icon: _DV/Interface/Actions/harpy_sing.png
+  - type: Sprite
+    layers:
+    - texture: _DV/Interface/Actions/harpy_sing.png
   - type: InstantAction
     event: !type:OpenUiActionEvent
       key: enum.InstrumentUiKey.Key
@@ -20,20 +22,9 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Action
-    icon: _DV/Interface/Actions/harpy_syrinx.png
     itemIconStyle: BigAction
+  - type: Sprite
+    layers:
+    - texture: _DV/Interface/Actions/harpy_syrinx.png
   - type: InstantAction
     event: !type:VoiceMaskSetNameEvent
-
-- type: entity
-  parent: BaseAction
-  id: ActionToggleFlight
-  name: Fly
-  description: Make use of your wings to fly. Beat the flightless bird allegations.
-  components:
-  - type: Action
-    checkCanInteract: false
-    icon: { sprite: _EinsteinEngines/Interface/Actions/flight.rsi, state: flight_off }
-    iconOn: { sprite : _EinsteinEngines/Interface/Actions/flight.rsi, state: flight_on }
-  - type: InstantAction
-    event: !type:ToggleFlightEvent

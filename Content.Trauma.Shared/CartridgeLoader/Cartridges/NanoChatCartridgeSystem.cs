@@ -38,7 +38,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
         Subs.CVar(_cfg, CCVars.MaxIdJobLength, value => _maxIdJobLength = value, true);
     }
 
-    private void UpdateClosed(Entity<NanoChatCartridgeComponent> ent)
+    private void UpdateClosed(Entity<TraumaNanoChatCartridgeComponent> ent)
     {
         if (!TryComp<CartridgeComponent>(ent, out var cartridge) ||
             cartridge.LoaderUid is not { } pda ||
@@ -57,7 +57,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
         base.Update(frameTime);
 
         // Update card references for any cartridges that need it
-        var query = EntityQueryEnumerator<NanoChatCartridgeComponent, CartridgeComponent>();
+        var query = EntityQueryEnumerator<TraumaNanoChatCartridgeComponent, CartridgeComponent>();
         while (query.MoveNext(out var uid, out var nanoChat, out var cartridge))
         {
             if (cartridge.LoaderUid == null)
@@ -86,7 +86,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     ///     Handles incoming UI messages from the NanoChat cartridge.
     /// </summary>
     [SubscribeLocalEvent]
-    private void OnMessage(Entity<NanoChatCartridgeComponent> ent, ref CartridgeMessageEvent args)
+    private void OnMessage(Entity<TraumaNanoChatCartridgeComponent> ent, ref CartridgeMessageEvent args)
     {
         if (args is not NanoChatUiMessageEvent msg)
             return;
@@ -133,14 +133,14 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <returns>True if a valid NanoChat card was found</returns>
     private bool GetCardEntity(
         EntityUid loaderUid,
-        out Entity<NanoChatCardComponent> card)
+        out Entity<TraumaNanoChatCardComponent> card)
     {
         card = default;
 
         // Get the PDA and check if it has an ID card
         if (!TryComp<PdaComponent>(loaderUid, out var pda) ||
             pda.ContainedId == null ||
-            !TryComp<NanoChatCardComponent>(pda.ContainedId, out var idCard))
+            !TryComp<TraumaNanoChatCardComponent>(pda.ContainedId, out var idCard))
             return false;
 
         card = (pda.ContainedId.Value, idCard);
@@ -150,7 +150,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles creation of a new chat conversation.
     /// </summary>
-    private void HandleNewChat(Entity<NanoChatCardComponent> card, NanoChatUiMessageEvent msg)
+    private void HandleNewChat(Entity<TraumaNanoChatCardComponent> card, NanoChatUiMessageEvent msg)
     {
         if (msg.RecipientNumber == null || msg.Content == null || msg.RecipientNumber == card.Comp.Number)
             return;
@@ -191,7 +191,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles selecting a chat conversation.
     /// </summary>
-    private void HandleSelectChat(Entity<NanoChatCardComponent> card, NanoChatUiMessageEvent msg)
+    private void HandleSelectChat(Entity<TraumaNanoChatCardComponent> card, NanoChatUiMessageEvent msg)
     {
         if (msg.RecipientNumber == null)
             return;
@@ -210,7 +210,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles closing the current chat conversation.
     /// </summary>
-    private void HandleCloseChat(Entity<NanoChatCardComponent> card)
+    private void HandleCloseChat(Entity<TraumaNanoChatCardComponent> card)
     {
         _nanoChat.SetCurrentChat((card, card.Comp), null);
     }
@@ -218,7 +218,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles deletion of a chat conversation.
     /// </summary>
-    private void HandleDeleteChat(Entity<NanoChatCardComponent> card, NanoChatUiMessageEvent msg)
+    private void HandleDeleteChat(Entity<TraumaNanoChatCardComponent> card, NanoChatUiMessageEvent msg)
     {
         if (msg.RecipientNumber == null || card.Comp.Number == null)
             return;
@@ -239,13 +239,13 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles toggling notification mute state.
     /// </summary>
-    private void HandleToggleMute(Entity<NanoChatCardComponent> card)
+    private void HandleToggleMute(Entity<TraumaNanoChatCardComponent> card)
     {
         _nanoChat.SetNotificationsMuted((card, card.Comp), !_nanoChat.GetNotificationsMuted((card, card.Comp)));
         UpdateUIForCard(card);
     }
 
-    private void HandleToggleListNumber(Entity<NanoChatCardComponent> card)
+    private void HandleToggleListNumber(Entity<TraumaNanoChatCardComponent> card)
     {
         _nanoChat.SetListNumber((card, card.Comp), !_nanoChat.GetListNumber((card, card.Comp)));
         UpdateUIForAllCards();
@@ -254,8 +254,8 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     /// <summary>
     ///     Handles sending a new message in a chat conversation.
     /// </summary>
-    private void HandleSendMessage(Entity<NanoChatCartridgeComponent> cartridge,
-        Entity<NanoChatCardComponent> card,
+    private void HandleSendMessage(Entity<TraumaNanoChatCartridgeComponent> cartridge,
+        Entity<TraumaNanoChatCardComponent> card,
         NanoChatUiMessageEvent msg)
     {
         if (msg.RecipientNumber is not { } dest || msg.Content is not { } content || card.Comp.Number is not { } src)
@@ -292,7 +292,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     public void UpdateUIForCard(EntityUid cardUid)
     {
         // Find any PDA containing this card and update its UI
-        var query = EntityQueryEnumerator<NanoChatCartridgeComponent, CartridgeComponent>();
+        var query = EntityQueryEnumerator<TraumaNanoChatCartridgeComponent, CartridgeComponent>();
         while (query.MoveNext(out var uid, out var comp, out var cartridge))
         {
             if (comp.Card != cardUid || cartridge.LoaderUid is not { } pda)
@@ -308,7 +308,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     private void UpdateUIForAllCards()
     {
         // Find any PDA containing this card and update its UI
-        var query = EntityQueryEnumerator<NanoChatCartridgeComponent, CartridgeComponent>();
+        var query = EntityQueryEnumerator<TraumaNanoChatCartridgeComponent, CartridgeComponent>();
         while (query.MoveNext(out var uid, out var comp, out var cartridge))
         {
             if (cartridge.LoaderUid is { } loader)
@@ -317,12 +317,12 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
     }
 
     [SubscribeLocalEvent]
-    private void OnUiReady(Entity<NanoChatCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
+    private void OnUiReady(Entity<TraumaNanoChatCartridgeComponent> ent, ref CartridgeUiReadyEvent args)
     {
         UpdateUI(ent, args.Loader);
     }
 
-    private void UpdateUI(Entity<NanoChatCartridgeComponent> ent, EntityUid loader)
+    private void UpdateUI(Entity<TraumaNanoChatCartridgeComponent> ent, EntityUid loader)
     {
         List<NanoChatRecipient>? contacts;
         if (_station.GetOwningStation(loader) is { } station)
@@ -331,7 +331,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
 
             contacts = [];
 
-            var query = AllEntityQuery<NanoChatCardComponent, IdCardComponent>();
+            var query = AllEntityQuery<TraumaNanoChatCardComponent, IdCardComponent>();
             while (query.MoveNext(out var entityId, out var nanoChatCard, out var idCardComponent))
             {
                 if (nanoChatCard.ListNumber && nanoChatCard.Number is uint nanoChatNumber && idCardComponent.FullName is string fullName && _station.GetOwningStation(entityId) == station)
@@ -354,7 +354,7 @@ public sealed partial class NanoChatCartridgeSystem : EntitySystem
         var notificationsMuted = false;
         var listNumber = false;
 
-        if (ent.Comp.Card != null && TryComp<NanoChatCardComponent>(ent.Comp.Card, out var card))
+        if (ent.Comp.Card != null && TryComp<TraumaNanoChatCardComponent>(ent.Comp.Card, out var card))
         {
             recipients = card.Recipients;
             messages = card.Messages;

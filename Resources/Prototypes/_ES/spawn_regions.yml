@@ -1,0 +1,8 @@
+- type: esSpawnRegion
+  id: ESMaintenance
+
+- type: esSpawnRegion
+  id: ESSingularityWorldTeleportStation
+
+- type: esSpawnRegion
+  id: ESSingularityWorldTeleportInWorld

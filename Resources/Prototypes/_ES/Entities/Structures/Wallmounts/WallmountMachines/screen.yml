@@ -43,9 +43,9 @@
       map: [ "directional" ]
       visible: false
   - type: Marker
-    layers: [ "directional" ]
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Glass
   - type: ESBreakableDeviceNetwork
   - type: ESBreakable

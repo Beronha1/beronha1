@@ -35,6 +35,8 @@ namespace Content.Server.Preferences.Managers
     /// </summary>
     public sealed partial class ServerPreferencesManager : IServerPreferencesManager, IPostInjectInit
     {
+        public event Action? ESOnAfterCharacterUpdated;
+
         [Dependency] private IServerNetManager _netManager = default!;
         [Dependency] private IConfigurationManager _cfg = default!;
         [Dependency] private IServerDbManager _db = default!;
@@ -250,6 +252,7 @@ namespace Content.Server.Preferences.Managers
             {
                 await SetProfile(userId, message.Slot, message.Profile);
                 _afkManager.PlayerDidAction(message.MsgChannel);
+                ESOnAfterCharacterUpdated?.Invoke();
             }
         }
 

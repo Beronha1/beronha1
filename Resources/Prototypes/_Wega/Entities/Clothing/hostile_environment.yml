@@ -25,8 +25,7 @@
   - type: FireProtection
     reduction: 0.5
   - type: TemperatureProtection
-    heatingCoefficient: 0.05
-    coolingCoefficient: 0.4
+    coefficient: 0.05
   - type: DragonArmor
   - type: HeckSuit
   - type: PressureArmorChange

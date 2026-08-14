@@ -37,15 +37,16 @@
     iconVisuals:
     - sprite: _Funkystation/Effects/blood.rsi
       state: outerclothing
-  - type: SolutionContainerManager
+  - type: Solution
+    id: food
+    solution:
+      maxVol: 30
+      reagents:
+      - ReagentId: Fiber
+        Quantity: 30
+  - type: SolutionManager
     solutions:
-      food:
-        maxVol: 30
-        reagents:
-        - ReagentId: Fiber
-          Quantity: 30
-      stain:
-        maxVol: 5
+    - SolutionClothingStain
   - type: StainBlocker
     slots: [INNERCLOTHING]
   # Ganimed-Port-End

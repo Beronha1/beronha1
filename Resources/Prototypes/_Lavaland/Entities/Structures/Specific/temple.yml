@@ -90,8 +90,9 @@
     radius: 7
     energy: 3
     color: "#FFC90C"
-  - type: Damageable
+  - type: Injurable
     damageContainer: StructuralInorganic
+  - type: Damageable
     damageModifierSet: Wood
   - type: Destructible
     thresholds:

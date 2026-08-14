@@ -63,7 +63,10 @@ public sealed partial class MegafaunaFieldSystem : EntitySystem
     }
 
     private void OnTerminating(Entity<MegafaunaFieldGeneratorComponent> ent, ref EntityTerminatingEvent args)
-        => DeactivateField(ent);
+        // During map/grid teardown the broadphase can already be gone. Tracked
+        // and explicitly-owned walls are still safe to delete, but a spatial
+        // recovery query would log an error while the lookup tree is shutting down.
+        => DeactivateField(ent, recoverNearby: false);
 
     public void ActivateField(Entity<MegafaunaFieldGeneratorComponent> ent)
     {
@@ -96,7 +99,7 @@ public sealed partial class MegafaunaFieldSystem : EntitySystem
         }
     }
 
-    public void DeactivateField(Entity<MegafaunaFieldGeneratorComponent> ent)
+    public void DeactivateField(Entity<MegafaunaFieldGeneratorComponent> ent, bool recoverNearby = true)
     {
         if (!ent.Comp.Enabled && ent.Comp.Walls.Count == 0 && ent.Comp.FieldOrigin == null)
             return;
@@ -116,7 +119,7 @@ public sealed partial class MegafaunaFieldSystem : EntitySystem
         // replicating, or for a stale Walls list. The field is centered on its
         // activation point rather than the boss's death position because mobile
         // bosses can cross most of the arena during combat.
-        if (ent.Comp.FieldOrigin is { } origin && origin.IsValid(EntityManager))
+        if (recoverNearby && ent.Comp.FieldOrigin is { } origin && origin.IsValid(EntityManager))
         {
             var size = ent.Comp.WallShape.DefaultSize ?? ent.Comp.WallShape.Size;
             var offset = ent.Comp.WallShape.DefaultOffset ?? ent.Comp.WallShape.Offset;

@@ -39,3 +39,10 @@ public sealed class ESPortalGeneratorConsoleBuiState : BoundUserInterfaceState
 
 [Serializable, NetSerializable]
 public sealed class ESActivePortalGeneratorBuiMessage : BoundUserInterfaceMessage;
+
+/// <summary>
+/// Raised locally after the shared portal-generator UI accepts an activation request.
+/// Server game modes can react without registering duplicate handlers for the same BUI message.
+/// </summary>
+[ByRefEvent]
+public record struct ESPortalGeneratorActivatedEvent;

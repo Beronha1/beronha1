@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
-using Content.Trauma.Common.CartridgeLoader.Cartridges;
-using Content.Trauma.Common.NanoChat;
+using Content.Shared._DV.CartridgeLoader.Cartridges;
+using Content.Shared._DV.NanoChat;
 using Content.Shared.Interaction;
 
 namespace Content.Shared.CartridgeLoader.Cartridges;

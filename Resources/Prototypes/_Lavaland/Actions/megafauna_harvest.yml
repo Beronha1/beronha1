@@ -7,10 +7,11 @@
   description: Emit a divine shockwave that disarms and knocks down nearby creatures.
   components:
   - type: Action
-    icon:
-      sprite: _Wega/Objects/Specific/Lavaland/voicegod.rsi
-      state: icon
     useDelay: 1
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/voicegod.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:ColossusRoarActionEvent
 
@@ -21,10 +22,11 @@
   description: Ignite yourself and every flammable creature nearby in an inextinguishable-looking burst of draconic fire.
   components:
   - type: Action
-    icon:
-      sprite: _Wega/Objects/Specific/Lavaland/lavastaff.rsi
-      state: icon
     useDelay: 30
+  - type: Sprite
+    sprite: _Wega/Objects/Specific/Lavaland/lavastaff.rsi
+    layers:
+    - state: icon
   - type: InstantAction
     event: !type:SacredFlameActionEvent
       radius: 4
@@ -37,9 +39,10 @@
   description: Briefly anchor your body against control effects and add knockback to unarmed strikes.
   components:
   - type: Action
-    icon:
-      sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
-      state: core
     useDelay: 1
+  - type: Sprite
+    sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
+    layers:
+    - state: core
   - type: InstantAction
     event: !type:DensitySurgeActionEvent

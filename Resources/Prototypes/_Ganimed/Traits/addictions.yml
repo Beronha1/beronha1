@@ -8,13 +8,12 @@
   description: trait-alcoholic-addiction-desc
   category: Quirks
   cost: -1
-  speciesBlacklist:
+  excludedSpecies:
   - IPC
   - Diona
   - SlimePerson
-  - NovakidSpecies
   effects:
-  - !type:AddCompsEffect
+  - !type:AddComponents
     components:
     - type: Addiction
       channels:
@@ -27,13 +26,12 @@
   description: trait-nicotine-addiction-desc
   category: Quirks
   cost: -1
-  speciesBlacklist:
+  excludedSpecies:
   - IPC
   - Diona
   - SlimePerson
-  - NovakidSpecies
   effects:
-  - !type:AddCompsEffect
+  - !type:AddComponents
     components:
     - type: Addiction
       channels:
@@ -46,13 +44,12 @@
   description: trait-drug-addiction-desc
   category: Quirks
   cost: -1
-  speciesBlacklist:
+  excludedSpecies:
   - IPC
   - Diona
   - SlimePerson
-  - NovakidSpecies
   effects:
-  - !type:AddCompsEffect
+  - !type:AddComponents
     components:
     - type: Addiction
       channels:

@@ -231,6 +231,9 @@
   parent: [ OrganBaseTail, OrganOviniaExternal ]
   id: OrganOviniaTail
   components:
+  - type: Sprite
+    sprite: _Trauma/empty.rsi
+    state: empty
   - type: VisualOrgan
     data:
       sprite: _Trauma/empty.rsi
@@ -243,6 +246,11 @@
 - type: entity
   parent: [ OrganOviniaVisual, OrganBaseEyes, OrganOviniaInternal ]
   id: OrganOviniaEyes
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+      state: eyes
 
 - type: entity
   parent: [ OrganBaseTongue, OrganOviniaInternal ]

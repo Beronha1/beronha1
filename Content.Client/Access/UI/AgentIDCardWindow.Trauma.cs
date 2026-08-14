@@ -1,4 +1,4 @@
-using Content.Trauma.Common.NanoChat;
+using Content.Shared._DV.NanoChat;
 using Robust.Client.UserInterface.Controls;
 using System.Linq;
 using System.Numerics;

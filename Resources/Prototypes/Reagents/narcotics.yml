@@ -287,7 +287,7 @@
   # и система зависимостей (Content.Server/_Ganimed/Addiction) не ловит приём дозы.
   # Эффектов нет: сам по себе никотин безвреден.
   metabolisms:
-    Narcotic:
+    Bloodstream:
       metabolismRate: 0.05
       effects: []
   plantMetabolism:

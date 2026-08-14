@@ -11,6 +11,8 @@ namespace Content.Server.Preferences.Managers
 {
     public interface IServerPreferencesManager
     {
+        event Action? ESOnAfterCharacterUpdated;
+
         void Init();
 
         Task LoadData(ICommonSession session, CancellationToken cancel);

@@ -21,7 +21,7 @@ public abstract partial class ESSharedDiegeticLobbySystem : EntitySystem
         SubscribeLocalEvent<ESOnPlayerReadyToggled>(OnPlayerReadyToggled);
     }
 
-    protected virtual void OnPlayerReadyToggled(ref ESOnPlayerReadyToggled ev)
+    protected virtual void OnPlayerReadyToggled(ESOnPlayerReadyToggled ev)
     {
         if (ev.Player.AttachedEntity is not { } entity)
             return;

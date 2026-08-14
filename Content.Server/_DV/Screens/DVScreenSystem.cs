@@ -105,7 +105,7 @@ public sealed partial class DVScreenSystem : DVSharedScreenSystem
         UpdateVisuals(ent);
     }
 
-    private void OnAlertLevelChanged(AlertLevelChangedEvent ev)
+    private void OnAlertLevelChanged(ref AlertLevelChangedEvent ev)
     {
         var query = EntityQueryEnumerator<DVScreenComponent>();
         while (query.MoveNext(out var uid, out var screen))

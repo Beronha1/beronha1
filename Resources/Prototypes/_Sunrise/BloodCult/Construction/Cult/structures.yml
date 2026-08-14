@@ -1,5 +1,7 @@
 ﻿- type: construction
   id: CultGirder
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: CultGirder
   startNode: start
   targetNode: girder
@@ -13,6 +15,8 @@
 
 - type: construction
   id: AirlockGlassCult
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: AirlockGlassCult
   startNode: start
   targetNode: airlock
@@ -26,6 +30,8 @@
 
 - type: construction
   id: CultPylon
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: CultPylon
   startNode: start
   targetNode: pylon
@@ -39,6 +45,8 @@
 
 - type: construction
   id: NarsieCultPylon
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarsieCultPylon
   startNode: start
   targetNode: narsie_pylon
@@ -52,6 +60,8 @@
 
 - type: construction
   id: NarbeeCultPylon
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarbeeCultPylon
   startNode: start
   targetNode: narbee_pylon
@@ -65,6 +75,8 @@
 
 - type: construction
   id: ReaperCultPylon
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: ReaperCultPylon
   startNode: start
   targetNode: reaper_pylon
@@ -78,6 +90,8 @@
 
 - type: construction
   id: AltarTome
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: AltarTome
   startNode: start
   targetNode: tome
@@ -91,6 +105,8 @@
 
 - type: construction
   id: NarsieAltarTome
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarsieAltarTome
   startNode: start
   targetNode: narsie_tome
@@ -104,6 +120,8 @@
 
 - type: construction
   id: NarbeeAltarTome
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarbeeAltarTome
   startNode: start
   targetNode: narbee_tome
@@ -117,6 +135,8 @@
 
 - type: construction
   id: ReaperAltarTome
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: ReaperAltarTome
   startNode: start
   targetNode: reaper_tome
@@ -130,6 +150,8 @@
 
 - type: construction
   id: CultBloodAltar
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: CultBloodAltar
   startNode: start
   targetNode: altar
@@ -143,6 +165,8 @@
 
 - type: construction
   id: NarsieCultBloodAltar
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarsieCultBloodAltar
   startNode: start
   targetNode: narsie_altar
@@ -156,6 +180,8 @@
 
 - type: construction
   id: NarbeeCultBloodAltar
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarbeeCultBloodAltar
   startNode: start
   targetNode: narbee_altar
@@ -169,6 +195,8 @@
 
 - type: construction
   id: ReaperCultBloodAltar
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: ReaperCultBloodAltar
   startNode: start
   targetNode: reaper_altar
@@ -182,6 +210,8 @@
 
 - type: construction
   id: CultForge
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: CultForge
   startNode: start
   targetNode: forge
@@ -195,6 +225,8 @@
 
 - type: construction
   id: NarsieCultForge
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarsieCultForge
   startNode: start
   targetNode: narsie_forge
@@ -208,6 +240,8 @@
 
 - type: construction
   id: NarbeeCultForge
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: NarbeeCultForge
   startNode: start
   targetNode: narbee_forge
@@ -221,6 +255,8 @@
 
 - type: construction
   id: ReaperCultForge
+  theory:
+    MagicalLiteracyKnowledge: 0
   graph: ReaperCultForge
   startNode: start
   targetNode: reaper_forge

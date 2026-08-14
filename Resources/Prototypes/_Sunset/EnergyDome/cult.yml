@@ -1,0 +1,68 @@
+- type: entity
+  parent: BaseAction
+  id: ActionToggleDome
+  name: Toggle energy dome
+  description: Turn the energy barrier on or off.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Action
+    itemIconStyle: BigAction
+    priority: -10
+    useDelay: 1
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_shield.rsi
+    layers:
+    - state: eshield-on
+  - type: InstantAction
+    event: !type:ToggleActionEvent
+
+- type: entity
+  id: EnergyDomeBase
+  abstract: true
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          radius: 0.8
+        density: 0
+        mask:
+        - None
+        layer:
+        - BulletImpassable
+        - Opaque
+  - type: Physics
+    bodyType: Static
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Damageable
+    damageModifierSet: HardLightBarrier
+  - type: AmbientSound
+    volume: 35
+    range: 5
+    sound:
+      path: /Audio/Machines/energyshield_ambient.ogg
+  - type: EnergyDome
+  - type: Tag
+    tags:
+    - HideContextMenu
+
+- type: entity
+  parent: EnergyDomeBase
+  id: EnergyDomeCult
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Effects/EnergyDome/energydome_small.rsi
+    layers:
+    - state: small
+      color: "#8b0000"
+  - type: PointLight
+    enabled: true
+    radius: 5
+    energy: 2
+    color: "#8b0000"

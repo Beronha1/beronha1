@@ -1,0 +1,174 @@
+{
+    "version": 1,
+    "license": "CC0-1.0",
+    "copyright": "Created by Flareguy for Ephemeral Space. 'random' state taken from tgstation at commit https://github.com/tgstation/tgstation/commit/6665eec76c98a4f3f89bebcd10b34b47dcc0b8ae, cables taken and modified from tgstation commit 77608a9f46b06a46f0f6b1be061755f68cc255a3 by PotatOverlord",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "es"
+        },
+        {
+            "name": "c10"
+        },
+        {
+            "name": "c20"
+        },
+        {
+            "name": "c25"
+        },
+        {
+            "name": "c30"
+        },
+        {
+            "name": "c33"
+        },
+        {
+            "name": "c40"
+        },
+        {
+            "name": "c50"
+        },
+        {
+            "name": "c60"
+        },
+        {
+            "name": "c70"
+        },
+        {
+            "name": "c75"
+        },
+        {
+            "name": "c80"
+        },
+        {
+            "name": "c90"
+        },
+        {
+            "name": "c100"
+        },
+        {
+            "name": "all"
+        },
+        {
+            "name": "arcade"
+        },
+        {
+            "name": "biohazard"
+        },
+        {
+            "name": "box"
+        },
+        {
+            "name": "canister"
+        },
+        {
+            "name": "canister-broken"
+        },
+		{
+			"name": "cargo"
+		},
+        {
+            "name": "closet"
+        },
+        {
+            "name": "closet_text"
+        },
+        {
+            "name": "color"
+        },
+        {
+            "name": "combo"
+        },
+        {
+            "name": "door"
+        },
+        {
+            "name": "dorms"
+        },
+        {
+            "name": "directional",
+            "directions": 4
+        },
+        {
+            "name": "emergency"
+        },
+        {
+            "name": "emergency-biohazard"
+        },
+        {
+            "name": "id"
+        },
+        {
+            "name": "job"
+        },
+        {
+            "name": "random"
+        },
+        {
+            "name": "rand-dist"
+        },
+        {
+            "name": "maint"
+        },
+        {
+            "name": "marker"
+        },
+        {
+            "name": "broken"
+        },
+        {
+            "name": "empty"
+        },
+        {
+            "name": "crate"
+        },
+        {
+            "name": "crate_text"
+        },
+        {
+            "name": "girder"
+        },
+        {
+            "name": "gun"
+        },
+        {
+            "name": "secure"
+        },
+        {
+            "name": "tank"
+        },
+        {
+            "name": "tech"
+        },
+        {
+            "name": "trash"
+        },
+        {
+            "name": "trash-food"
+        },
+        {
+            "name": "vault"
+        },
+        {
+            "name": "vendor-drink"
+        },
+        {
+            "name": "vendor-snack"
+        },
+        {
+            "name": "vendor-special"
+        },
+        {
+            "name": "wardrobe"
+        },
+        {
+            "name": "wall"
+        },
+        {
+            "name": "cables"
+        }
+    ]
+}

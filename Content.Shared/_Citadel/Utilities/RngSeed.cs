@@ -2,11 +2,11 @@ using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Numerics;
-using System.Security.Cryptography;
 using JetBrains.Annotations;
 using Robust.Shared.Random;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
+using SpaceWizards.Sodium;
 
 namespace Content.Shared._Citadel.Utilities;
 
@@ -252,7 +252,7 @@ public readonly struct RngSeed
 
         EncodingHelpers.UTF8.GetBytes(seed.AsSpan(), utf8.AsSpan());
 
-        var hash = SHA256.HashData(utf8)[..16];
+        var hash = CryptoGenericHashBlake2B.Hash(16, utf8, ReadOnlySpan<byte>.Empty);
 
         rng = new(hash);
 

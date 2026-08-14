@@ -7,8 +7,10 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
 using Content.Shared.Storage;
+using Content.Shared.Tag;
 using Robust.Server.Audio;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -27,6 +29,7 @@ public sealed partial class EggLayerSystem : EntitySystem
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private TagSystem _tag = default!;
 
     public override void Initialize()
     {
@@ -92,6 +95,14 @@ public sealed partial class EggLayerSystem : EntitySystem
         if (_mobState.IsDead(uid))
             return false;
 
+        if (egglayer.PopulationCap is { } populationCap &&
+            egglayer.PopulationCapTag is { } populationTag &&
+            CountPopulationOnMap(uid, populationTag) >= populationCap)
+        {
+            _popup.PopupEntity(Loc.GetString("action-popup-lay-egg-unable"), uid, uid);
+            return false;
+        }
+
         // Goobstation - hard hunger requirement
         if (egglayer.HungerRequired && !HasComp<HungerComponent>(uid))
         {
@@ -125,5 +136,20 @@ public sealed partial class EggLayerSystem : EntitySystem
             uid);
 
         return true;
+    }
+
+    private int CountPopulationOnMap(EntityUid source, ProtoId<TagPrototype> tag)
+    {
+        var mapId = Transform(source).MapID;
+        var count = 0;
+        var query = EntityQueryEnumerator<TagComponent, TransformComponent>();
+
+        while (query.MoveNext(out _, out var tags, out var transform))
+        {
+            if (transform.MapID == mapId && _tag.HasTag(tags, tag))
+                count++;
+        }
+
+        return count;
     }
 }

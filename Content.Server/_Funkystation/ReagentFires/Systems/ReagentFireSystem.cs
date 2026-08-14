@@ -16,6 +16,7 @@ using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Mobs.Components;
 using Robust.Server.GameObjects;
@@ -52,7 +53,7 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
         public override void Initialize()
         {
             base.Initialize();
-            SubscribeLocalEvent<SolutionComponent, SolutionChangedEvent>(OnSolutionChanged);
+            SubscribeLocalEvent<PuddleSolutionChangedEvent>(OnSolutionChanged);
             SubscribeLocalEvent<TransformComponent, TileExposedEvent>(OnTileExposed);
             SubscribeLocalEvent<PuddleComponent, TileFireEvent>(OnPuddleTileFire);
             SubscribeLocalEvent<ReagentPuddleFireComponent, ComponentShutdown>(OnFireShutdown);
@@ -73,16 +74,10 @@ namespace Content.Server._Funkystation.ReagentFires.Systems
             }
         }
 
-        private void OnSolutionChanged(EntityUid uid, SolutionComponent component, ref SolutionChangedEvent args)
+        private void OnSolutionChanged(ref PuddleSolutionChangedEvent args)
         {
-            if (!TryComp<ContainedSolutionComponent>(uid, out var relation))
-                return;
-
-            var containerUid = relation.Container;
-            if (!TryComp<PuddleComponent>(containerUid, out _))
-                return;
-
-            var solution = component.Solution;
+            var containerUid = args.Puddle.Owner;
+            var solution = args.Solution.Comp.Solution;
             var flammability = solution.GetSolutionFlammability(_prototypeManager);
             var selfOxidizing = solution.IsSolutionSelfOxidizing(_prototypeManager);
 

@@ -61,10 +61,9 @@
     - sprite: _Funkystation/Effects/blood.rsi
       state: maskbloodicon
   # Ganimed-Port-End
-  - type: SolutionContainerManager
+  - type: SolutionManager # Ganimed-Port: стайны (funky-station/forky-station#107)
     solutions:
-      stain: # Ganimed-Port: стайны (funky-station/forky-station#107)
-        maxVol: 5
+    - SolutionClothingStain
 
 - type: entity
   abstract: true

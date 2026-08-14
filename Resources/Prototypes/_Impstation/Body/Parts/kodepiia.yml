@@ -108,7 +108,7 @@
   abstract: true
   components:
   - type: Sprite
-    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    sprite: Mobs/Species/Human/organs.rsi
 
 - type: entity
   id: OrganKodepiiaVisual
@@ -171,6 +171,8 @@
   id: OrganKodepiiaArmLeft
   components:
   - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.LArmExtension
     markingData:
       group: Kodepiia
       layers:
@@ -182,6 +184,8 @@
   id: OrganKodepiiaArmRight
   components:
   - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.RArmExtension
     markingData:
       group: Kodepiia
       layers:
@@ -216,6 +220,9 @@
   parent: [ OrganBaseTail, OrganKodepiiaExternal ]
   id: OrganKodepiiaTail
   components:
+  - type: Sprite
+    sprite: _Trauma/empty.rsi
+    state: empty
   - type: VisualOrgan
     data:
       sprite: _Trauma/empty.rsi
@@ -228,7 +235,9 @@
   description: Allegedly still functioning, or has it ever really functioned.
   components:
   - type: Sprite
-    state: billeausac
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: billeausac
 
 - type: entity
   parent: [ OrganKodepiiaVisual, OrganBaseEyes, OrganKodepiiaInternal ]
@@ -236,8 +245,14 @@
   name: opticullis
   description: The scavenger's kaleidoscope.
   components:
+  - type: VisualOrgan
+    data:
+      sprite: Mobs/Customization/eyes.rsi
+      state: eyes
   - type: Sprite
-    state: opticullis
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: opticullis
 
 - type: entity
   parent: [ OrganBaseTongue, OrganKodepiiaInternal ]
@@ -258,7 +273,9 @@
   description: Like lungs, but stretchier...?
   components:
   - type: Sprite
-    state: finecoil
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: finecoil
   - type: Instrument
     program: 109
 
@@ -269,7 +286,9 @@
   description: A compartment that serves much the same purpose as a heart.
   components:
   - type: Sprite
-    state: compartmentofallthings
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: compartmentofallthings
 
 - type: entity
   parent: [ OrganBaseStomach, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
@@ -278,7 +297,9 @@
   description: Leaky.
   components:
   - type: Sprite
-    state: primarygullet
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: primarygullet
 
 - type: entity
   parent: [ OrganBaseLiver, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]
@@ -287,7 +308,9 @@
   description: Something that used to be skin.
   components:
   - type: Sprite
-    state: slough
+    sprite: _Impstation/Mobs/Species/Kodepiia/organs.rsi
+    layers:
+    - state: slough
 
 - type: entity
   parent: [ OrganBaseKidneys, OrganKodepiiaInternal, OrganKodepiiaMetabolizer ]

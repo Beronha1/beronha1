@@ -8,15 +8,7 @@
   id: ESBaseStationEvacuation
   abstract: true
   components:
-  - type: ESEvacStation
   - type: StationEmergencyShuttle
-
-- type: entity
-  id: ESBaseStationStoreroom
-  abstract: true
-  components:
-  - type: ESStoreroomStation
-  - type: ESCargoRequestStation
 
 - type: entity
   id: ESBaseStationTelesci
@@ -67,7 +59,6 @@
   - BaseStationNanotrasen
   - BaseStationDeliveries
   - ESBaseStationArrivals
-  - ESBaseStationStoreroom
   - ESBaseStationTelesci
   categories: [ HideSpawnMenu ]
   components:

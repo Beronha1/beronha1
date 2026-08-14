@@ -32,7 +32,9 @@
     sprite: _Sunrise/BloodCult/pinpointer.rsi
     state: pinpointer_bloodcult
   - type: Pinpointer
-    component: BloodCultTarget
+    whitelist:
+      components:
+      - BloodCultTarget
     targetName: cult target
     updateTargetName: true
     canRetarget: false

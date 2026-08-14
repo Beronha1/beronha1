@@ -56,7 +56,17 @@ public sealed partial class AnnounceCommand : LocalizedEntityCommands
 
         // Optional sound argument
         if (args.Length >= 4)
-            sound = new SoundPathSpecifier(args[3]);
+        {
+            var requestedSound = new SoundPathSpecifier(args[3]);
+            if (_res.ContentFileExists(requestedSound.Path))
+            {
+                sound = requestedSound;
+            }
+            else
+            {
+                shell.WriteError($"Announcement sound '{requestedSound.Path}' was not found; using the default sound.");
+            }
+        }
 
         _chat.DispatchGlobalAnnouncement(message, sender, true, sound, color);
         shell.WriteLine(Loc.GetString("shell-command-success"));

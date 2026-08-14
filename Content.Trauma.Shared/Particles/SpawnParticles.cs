@@ -1,35 +1,24 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Shared._Starfall.Particles;
 using Content.Shared.EntityEffects;
 
 namespace Content.Trauma.Shared.Particles;
 
 /// <summary>
-/// Spawns particles at the current position of the entity.
+/// Compatibility entity effect for Trauma prototypes that spawn Starfall particles.
 /// </summary>
 public sealed partial class SpawnParticles : EntityEffectBase<SpawnParticles>
 {
-    /// <summary>
-    /// The particles to spawn
-    /// </summary>
     [DataField(required: true)]
     public ProtoId<ParticleEffectPrototype> ParticleProto;
 
-    /// <summary>
-    /// If true, it will attach to the entity
-    /// </summary>
     [DataField]
     public bool Attached;
 
-    /// <summary>
-    /// Amount of particles we're spawning
-    /// </summary>
     [DataField]
     public int Number = 1;
 
-    /// <summary>
-    /// If set, it will override the colour of the particle
-    /// </summary>
     [DataField]
     public Color? Color;
 }
@@ -42,14 +31,10 @@ public abstract class SharedSpawnParticlesEffectSystem : EntityEffectSystem<Tran
         var quantity = args.Effect.Number * (int) Math.Floor(args.Scale);
         var color = args.Effect.Color;
         var attach = args.Effect.Attached;
-        var user = args.User;
 
-        SpawnParticles(effect, ent.Owner, color, attach, quantity, user);
+        SpawnParticles(effect, ent.Owner, color, attach, quantity, args.User);
     }
 
-    /// <summary>
-    /// Virtual function to spawn particles via the client
-    /// </summary>
     protected virtual void SpawnParticles(ProtoId<ParticleEffectPrototype> particleProto,
         EntityUid target,
         Color? color,

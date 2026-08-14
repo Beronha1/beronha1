@@ -1,4 +1,4 @@
-ent-CultBarrier = { ent-BaseStructure }
-    .desc = { ent-BaseStructure.desc }
+ent-CultBarrier = cult barrier
+    .desc = It can be destroyed with a ritual dagger.
 ent-CultBarrierJuggernaut = { ent-CultBarrier }
     .desc = { ent-CultBarrier.desc }

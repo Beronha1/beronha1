@@ -185,10 +185,13 @@ namespace Content.Server.GameTicking
                 return;
             }
 
-            _playerGameStatuses[player.UserId] = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
+            var status = ready ? PlayerGameStatus.ReadyToPlay : PlayerGameStatus.NotReadyToPlay;
+            _playerGameStatuses[player.UserId] = status;
             RaiseNetworkEvent(GetStatusMsg(player), player.Channel);
             // update server info to reflect new ready count
             UpdateInfoText();
+
+            RaiseLocalEvent(new ESOnPlayerReadyToggled(player, status));
         }
 
         public bool UserHasJoinedGame(ICommonSession session)

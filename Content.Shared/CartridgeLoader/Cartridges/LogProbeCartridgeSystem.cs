@@ -1,5 +1,5 @@
 // <Trauma>
-using Content.Trauma.Common.NanoChat;
+using Content.Shared._DV.NanoChat;
 // </Trauma>
 using Content.Shared.Access.Components;
 using Content.Shared.Administration.Logs;

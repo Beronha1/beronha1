@@ -30,6 +30,11 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Fluids;
 
+[ByRefEvent]
+public readonly record struct PuddleSolutionChangedEvent(
+    Entity<PuddleComponent> Puddle,
+    Entity<SolutionComponent> Solution);
+
 public abstract partial class SharedPuddleSystem : EntitySystem
 {
     [Dependency] private IGameTiming _timing = default!;
@@ -125,6 +130,9 @@ public abstract partial class SharedPuddleSystem : EntitySystem
 
         if (args.Solution.Comp.Id != entity.Comp.SolutionName)
             return;
+
+        var puddleChanged = new PuddleSolutionChangedEvent(entity, args.Solution);
+        RaiseLocalEvent(ref puddleChanged);
 
         if (args.Solution.Comp.Solution.Volume <= 0)
         {

@@ -1,4 +1,4 @@
-ent-DrinkHolyWaterFull = { ent-DrinkBottleGlassBaseFull }
-    .desc = { ent-DrinkBottleGlassBaseFull.desc }
-ent-DrinkUnholyWaterFull = { ent-DrinkBottleGlassBaseFull }
-    .desc = { ent-DrinkBottleGlassBaseFull.desc }
+ent-DrinkHolyWaterFull = holy water flask
+    .desc = A flask containing holy water.
+ent-DrinkUnholyWaterFull = unholy water flask
+    .desc = A flask containing unholy water.

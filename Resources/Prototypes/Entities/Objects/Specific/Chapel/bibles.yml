@@ -217,7 +217,6 @@
     sprite: Objects/Specific/Chapel/tomeofnarsie.rsi
 
 - type: entity
-  abstract: true # Trauma - chudlain bibles unused
   id: BibleNanoTrasen
   name: codex nanotrasimus
   parent: Bible

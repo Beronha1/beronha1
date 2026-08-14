@@ -8,9 +8,10 @@
   - type: Action
     raiseOnUser: true
     useDelay: 4
-    icon:
-      sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
-      state: ice
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Projectiles/projectiles_tg.rsi
+    layers:
+    - state: ice
   - type: TargetAction
     range: 18
   - type: EntityTargetAction

@@ -1,4 +1,5 @@
 // <Trauma>
+using Content.Shared._DV.NanoChat;
 using Content.Trauma.Common.NanoChat;
 // </Trauma>
 using Content.Shared.Access.Components;
@@ -20,7 +21,7 @@ namespace Content.Shared.Access.Systems;
 public abstract partial class SharedAgentIdCardSystem : EntitySystem
 {
     // <Trauma>
-    [Dependency] private CommonNanoChatSystem _nanoChat = default!;
+    [Dependency] private SharedNanoChatSystem _nanoChat = default!;
     // </Trauma>
     [Dependency] private LockSystem _lock = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -80,6 +81,16 @@ public abstract partial class SharedAgentIdCardSystem : EntitySystem
             args.User);
         if (addedLength > 0)
             Dirty(ent, access);
+    }
+
+    [SubscribeLocalEvent]
+    private void OnNanoChatNumberChanged(Entity<AgentIDCardComponent> ent, ref AgentIDSetNumberMessage args)
+    {
+        if (TryComp<NanoChatCardComponent>(ent, out var nanoChat))
+            _nanoChat.SetNumber((ent.Owner, nanoChat), args.Number);
+
+        var changed = new AgentIDNanoChatNumberChangedEvent(ent.Owner, args.Number);
+        RaiseLocalEvent(ref changed);
     }
 
     [SubscribeLocalEvent]
@@ -145,6 +156,9 @@ public enum AgentIDCardUiKey : byte
 {
     Key,
 }
+
+[ByRefEvent]
+public readonly record struct AgentIDNanoChatNumberChangedEvent(EntityUid Card, uint Number);
 
 /// <summary>
 /// Sent from the agent ID UI to change the card name.

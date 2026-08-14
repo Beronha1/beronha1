@@ -1,5 +1,7 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 
+using Content.Client._Starfall.Particles;
+using Content.Shared._Starfall.Particles;
 using Content.Trauma.Shared.Particles;
 
 namespace Content.Trauma.Client.Particles;

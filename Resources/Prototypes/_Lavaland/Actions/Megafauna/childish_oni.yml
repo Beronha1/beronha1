@@ -8,15 +8,16 @@
   - type: Action
     priority: -21
     useDelay: 2
-    icon:
-      sprite: _Lavaland/Actions/banana.rsi
-      state: nameless
     itemIconStyle: NoItem
 
 - type: entity
   id: ActionChildishOniDemonicHandSpiral
   parent: ActionBaseChildishOni
   components:
+  - type: Sprite
+    sprite: _Lavaland/Actions/banana.rsi
+    layers:
+    - state: nameless
   - type: AngerDelayAction
     minDelay: 3
     maxDelay: 10
@@ -142,7 +143,7 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ChildishOniSlashProjectile
-      speed: 12
+      projectileSpeed: 12
 
 - type: entity
   id: ActionChildishOniBladeFlamingSlash
@@ -151,14 +152,15 @@
   - type: Action
     priority: -20
     useDelay: 8
-    icon:
-      sprite: _Lavaland/Actions/banana.rsi
-      state: nameless
     itemIconStyle: NoItem
+  - type: Sprite
+    sprite: _Lavaland/Actions/banana.rsi
+    layers:
+    - state: nameless
   - type: TargetAction
     checkCanAccess: true
     range: 12
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ChildishOniSlashProjectile
-      speed: 14
+      projectileSpeed: 14

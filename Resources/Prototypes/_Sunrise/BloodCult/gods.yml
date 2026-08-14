@@ -33,14 +33,14 @@
     tilesConvertRange: 15
     healingAuraRange: 100
     healingAuraDamage:
-      groups:
-        Brute: -5
-        Burn: -5
-        Toxin: -3
-        Genetic: -1
+      types:
+        Blunt: -5
+        Heat: -5
+        Poison: -3
+        Cellular: -1
     burnDamageOnInteract:
-      groups:
-        Burn: 5
+      types:
+        Heat: 5
 
 - type: entity
   id: Narsie

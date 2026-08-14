@@ -1,5 +1,6 @@
 using Content.Server.Animals.Systems;
 using Content.Shared.Storage;
+using Content.Shared.Tag;
 using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
@@ -52,6 +53,19 @@ public sealed partial class EggLayerComponent : Component
     /// </summary>
     [DataField]
     public bool HungerRequired = false;
+
+    /// <summary>
+    /// Optional map-wide cap for entities carrying <see cref="PopulationCapTag"/>.
+    /// This prevents self-replicating mobs from growing without bound.
+    /// </summary>
+    [DataField]
+    public int? PopulationCap;
+
+    /// <summary>
+    /// Tag counted when enforcing <see cref="PopulationCap"/>.
+    /// </summary>
+    [DataField]
+    public ProtoId<TagPrototype>? PopulationCapTag;
 
     [DataField] public EntityUid? Action;
 

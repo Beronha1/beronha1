@@ -9,7 +9,6 @@
   - CrowbarGreen
   - Multitool
   - Signaller
-  - ESFireExtinguisherMini
   - FireExtinguisher
   - SprayPainter
   - SprayPainterAmmo
@@ -25,16 +24,14 @@
   - CableMVStack
   - CableHVStack
   - RCDAmmo
-  - ESOxygenTank
-  - ESEmergencyOxygenTank
   - ESAnomalyResonator
 
 - type: latheRecipePack
   id: ESPartsStatic
   recipes:
   - PowerCellSmall
-  - ESVoiceTrigger
-  - ESProximitySensor
+  - VoiceTrigger
+  - ProximitySensor
   - Igniter
   - ModularReceiver
   - MicroManipulatorStockPart
@@ -43,9 +40,7 @@
 - type: latheRecipePack
   id: ESLightsStatic
   recipes:
-  - ESLightTubeDepartment
-  - ESLightTubeHallway
-  - ESLightTubeNightshift
+  - LightTube
   - LightBulb
   - DimLightBulb
 
@@ -88,7 +83,6 @@
   - AppraisalTool
   - Pickaxe
   - ESWeaponKnife
-  - ESVendingMachineRestockGlobal
 
 # Medical
 - type: latheRecipePack
@@ -126,14 +120,12 @@
 - type: latheRecipePack
   id: ESAmmunition
   recipes:
-  - ESMagazine9mmEmpty
-  - ESRound9mm
-  - ESSpeedLoader357Empty
-  - ESRound357
-  - ESShellShotgunBeanbag
-  - ESShellShotgunBuckshot
-  - ESShellShotgunSlug
-  - ESMiniSyringe
+  - MagazinePistol
+  - SpeedLoaderMagnumEmpty
+  - BoxBeanbag
+  - BoxLethalshot
+  - BoxShotgunSlug
+  - Syringe
 
 # Service
 - type: latheRecipePack

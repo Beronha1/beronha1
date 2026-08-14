@@ -2,7 +2,7 @@
   parent: Blood
   id: ShimmeringBlood
   name: reagent-name-shimmering-blood
-  group: biological
+  group: Biological
   desc: reagent-desc-shimmering-blood
   flavor: acid
   color: "#f26174"

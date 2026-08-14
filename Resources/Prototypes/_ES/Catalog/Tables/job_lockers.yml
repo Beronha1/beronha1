@@ -7,12 +7,12 @@
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingHeadsetAltCommand
-    - id: ESClothingOuterArmorCaptainCarapace
+    - id: ClothingOuterArmorCaptainCarapace
     - id: MedalCase
     - id: NukeDisk
     - id: PinpointerNuclear
     - id: RubberStampCaptain
-    - id: ESWeaponHybridTaser
+    - id: WeaponDisabler
     - id: ForensicScanner
     - id: ClothingEyesGlassesSecurity
 
@@ -32,7 +32,7 @@
     - id: ClothingHeadsetCommand
     - id: ClothingNeckGoldmedal
     - id: HoPIDCard
-    - id: ESWeaponHybridTaser
+    - id: WeaponDisabler
     - id: ClothingEyesHudSecurity
 
 # Security
@@ -40,14 +40,14 @@
   id: ESLockerFillHeadOfSecurity
   table: !type:AllSelector
     children:
-    - id: ESWeaponHybridTaser
+    - id: WeaponDisabler
     - id: BoxEncryptionKeySecurity
     - id: CigarGoldCase
       prob: 0.50
     - id: ClothingBeltSecurityFilled
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHeadsetAltSecurity
-    - id: ESClothingOuterCoatHoSTrench
+    - id: ClothingOuterCoatHoSTrench
     - id: ClothingShoesBootsJack
     - id: FlashlightSeclite
     - id: RubberStampHos
@@ -58,13 +58,13 @@
   table: !type:AllSelector
     children:
     - id: FlashlightSeclite
-    - id: ESWeaponHybridTaser
+    - id: WeaponDisabler
     - id: ClothingBeltSecurityFilled
     - id: Flash
     - id: ClothingEyesGlassesSecurity
     - id: ClothingHandsGlovesColorBlack
     - id: ClothingShoesBootsJack
-    - id: ESClothingOuterCoatWarden
+    - id: ClothingOuterCoatWarden
     - id: RubberStampWarden
     - id: Binoculars
 
@@ -74,9 +74,9 @@
     children:
     - id: FlashlightSeclite
       prob: 0.8
-    - id: ESWeaponHybridTaser
+    - id: WeaponDisabler
     - id: ClothingHeadHelmetBasic
-    - id: ESClothingOuterArmorSecurity
+    - id: ClothingOuterArmorBasic
     - id: ClothingBeltSecurityFilled
     - id: Flash
       prob: 0.5
@@ -90,14 +90,14 @@
   table: !type:AllSelector
     children:
     - id: ClothingEyesGlassesNoir
-    - id: ESWeaponRevolver357 # sure, the other security roles don't get guns, but what is a detective without their revolver?
-    - id: ESSpeedLoader357
+    - id: WeaponRevolverInspector
+    - id: SpeedLoaderMagnum
     - id: ClothingHeadHatDetGadget
       prob: 0.15
     - id: ClothingNeckTieDet
-    - id: ESWeaponHybridTaser
-    - id: ESClothingOuterArmorDetective
-    - id: ESClothingOuterCoatDetective
+    - id: WeaponDisabler
+    - id: ClothingOuterVestDetective
+    - id: ClothingOuterCoatDetective
     - id: FlippoEngravedLighter
     - id: FlashlightSeclite
     - id: ForensicScanner
@@ -114,7 +114,7 @@
   table: !type:AllSelector
     children:
     - id: ClothingOuterVest
-    - id: ESWeaponDoubleBarrelShotgunNonlethal
+    - id: WeaponShotgunDoubleBarreledRubber
     - id: DrinkShaker
     - id: ClothingEyesHudBeer
     - id: HandLabeler
@@ -124,7 +124,7 @@
     - !type:AllSelector
       rolls: 2
       children:
-      - id: ESShotgunShellsBoxBeanbag
+      - id: BoxBeanbag
       - id: RagItem
 
 # Science
@@ -159,7 +159,7 @@
   id: ESLockerFillCoroner
   table:
     all:
-    - id: ESScalpelAutopsy
+    - id: Scalpel
     - id: BoxFolderYellow
     - id: HandLabeler
     - id: BoxBodyBag

@@ -73,8 +73,9 @@
     - type: Sprite
       sprite: /Textures/_Sunrise/BloodCult/Structures/cult_girder.rsi
       state: cultgirder
-    - type: Damageable
+    - type: Injurable
       damageContainer: StructuralInorganic
+    - type: Damageable
       damageModifierSet: StructuralMetallic
     - type: Destructible
       thresholds:

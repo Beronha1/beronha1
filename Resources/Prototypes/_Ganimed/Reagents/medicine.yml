@@ -11,7 +11,7 @@
   color: "#3c8d5a"
   physicalDesc: reagent-physical-desc-pungent
   metabolisms:
-    Medicine:
+    Bloodstream:
       metabolismRate: 0.1
       effects:
       - !type:AdjustAddictionLevel

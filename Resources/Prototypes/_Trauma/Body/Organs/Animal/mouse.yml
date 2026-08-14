@@ -25,6 +25,8 @@
       hungerUsage: 20
       eggLayAction: MouseMultiply
       hungerRequired: true
+      populationCap: 24
+      populationCapTag: Mouse
 
 - type: entity
   parent: OrganAnimalStomach

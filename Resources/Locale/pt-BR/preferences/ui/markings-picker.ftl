@@ -56,6 +56,9 @@ markings-layer-Snout = Focinho
 markings-layer-SnoutCover = Focinho (cobertura)
 markings-layer-HeadSide = Cabeça (lateral)
 markings-layer-HeadTop = Cabeça (superior)
+markings-layer-NeckFluff = Pelagem do pescoço
+markings-layer-LArmExtension = Extensão do braço esquerdo
+markings-layer-RArmExtension = Extensão do braço direito
 markings-layer-Eyes = Olhos
 markings-layer-RArm = Braço direito
 markings-layer-LArm = Braço esquerdo
@@ -64,4 +67,3 @@ markings-layer-LHand = Mão esquerda
 markings-layer-RLeg = Perna direita
 markings-layer-LLeg = Perna esquerda
 markings-layer-RFoot = Pé direito
-

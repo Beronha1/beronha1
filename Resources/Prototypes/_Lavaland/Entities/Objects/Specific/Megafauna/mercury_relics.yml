@@ -140,8 +140,9 @@
         Heat: 1
         Piercing: 1
   - type: Appearance
-  - type: Damageable
+  - type: Injurable
     damageContainer: Shield
+  - type: Damageable
   - type: StaticPrice
     price: 7000
   - type: Construction

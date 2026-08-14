@@ -131,6 +131,81 @@
     - 0,0,1,0
     - 0,1,0,1
 
+# Native ECS ports of Paradise Station's specialist kinetic platforms.
+# The railgun uses the already-attributed Bubberstation RSI in this repository;
+# the shockwave world sprite and both gunshots are direct Paradise asset imports.
+- type: entity
+  id: WeaponProtoKineticRailgun
+  parent: [ BaseGunWieldable, WeaponProtoKineticAcceleratorBase, BaseCargoContraband ]
+  name: proto-kinetic railgun
+  description: A huge overclocked accelerator that punches through creatures at long range. Its safety only permits firing on planetary maps.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_railgun.rsi
+    layers:
+    - state: icon
+    - state: animation-icon
+      visible: false
+      map: [ "empty-icon" ]
+  - type: Clothing
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_railgun.rsi
+  # Keep the specialist Paradise/Bubber world sprite while reusing the base
+  # PKA's authored bayonet, flashlight and upgrade overlays.
+  - type: ItemMapper
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+  - type: Item
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_railgun.rsi
+    size: Ginormous
+    shape:
+    - 0,0,4,1
+  - type: GunRequiresWield
+  - type: MapRestrictedGun
+    planetWhitelist:
+      components:
+      - Biome
+    popupOnBlock: gun-lavaland-restricted-message
+  - type: Gun
+    projectileSpeed: 30
+    soundGunshot:
+      path: /Audio/_Lavaland/Weapons/Guns/kinetic_railgun.ogg
+      params:
+        volume: -4
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 3
+  - type: BasicEntityAmmoProvider
+    proto: BulletKineticRailgun
+
+- type: entity
+  id: WeaponProtoKineticShockwave
+  parent: [ WeaponProtoKineticAcceleratorBase, BaseCargoContraband ]
+  name: proto-kinetic shockwave
+  description: A short-range accelerator that drives a slug into the ground and splits it into an eight-direction concussive ring.
+  components:
+  - type: Sprite
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_shockwave.rsi
+    layers:
+    - state: icon
+    - state: animation-icon
+      visible: false
+      map: [ "empty-icon" ]
+  - type: Item
+    sprite: _Lavaland/Objects/Weapons/Guns/Basic/kinetic_shockwave.rsi
+    shape:
+    - 0,0,2,1
+  # The imported shockwave RSI has only its dedicated icon and empty state.
+  # Standard PKA overlays remain sourced from the existing licensed PKA RSI.
+  - type: ItemMapper
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Lavaland/Weapons/Guns/kinetic_shockwave.ogg
+      params:
+        volume: -4
+  - type: RechargeBasicEntityAmmo
+    rechargeCooldown: 2
+  - type: BasicEntityAmmoProvider
+    proto: BulletKineticShockwaveSpread
+
 # Space versions of all PKAs
 - type: entity
   id: WeaponProtoKineticAcceleratorSpace
@@ -181,6 +256,10 @@
     - id: WeaponProtoKineticShotgun
     - id: WeaponProtoKineticRepeater
     - id: WeaponProtoKineticPistol
+    - id: WeaponProtoKineticRailgun
+      weight: 0.35
+    - id: WeaponProtoKineticShockwave
+      weight: 0.5
 
 - type: entityTable
   id: ProtoKineticWeaponsSpace

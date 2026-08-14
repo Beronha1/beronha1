@@ -1,0 +1,25 @@
+{
+  "version": 2,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Extracted without pixel edits from Paradise Station icons/obj/guns/energy.dmi at commit f6b562e6b604f02596861117ea68a2d08e609c2a",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "animation-icon",
+      "delays": [
+        [
+          0.2,
+          0.2,
+          0.2,
+          0.2
+        ]
+      ]
+    }
+  ]
+}

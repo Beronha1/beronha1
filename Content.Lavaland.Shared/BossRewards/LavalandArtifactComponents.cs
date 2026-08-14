@@ -79,7 +79,7 @@ public sealed partial class SoulStorageComponent : Component
 }
 
 [RegisterComponent]
-public sealed partial class DivineVocalCordsImplantComponent : Component
+public sealed partial class DivineVocalCordsOrganComponent : Component
 {
     [DataField]
     public float Radius = 5f;
@@ -95,17 +95,66 @@ public sealed partial class DivineVocalCordsImplantComponent : Component
 public sealed partial class DivineVoiceCarrierComponent : Component
 {
     [DataField]
-    public EntityUid Implant;
+    public EntityUid Organ;
 }
 
 [RegisterComponent]
-public sealed partial class StabilizedLegionCoreImplantComponent : Component
+public sealed partial class StabilizedLegionCoreOrganComponent : Component
+{
+    /// <summary>
+    /// Time the core needs to rebuild its host after they enter critical condition or die.
+    /// If the host dies while the core is already charging, this delay starts again from death.
+    /// </summary>
+    [DataField]
+    public TimeSpan RevivalDelay = TimeSpan.FromSeconds(4);
+}
+
+[RegisterComponent]
+public sealed partial class LegionCoreCarrierComponent : Component
 {
     [DataField]
-    public int MaxActivations = 1;
+    public EntityUid Organ;
 
     [ViewVariables(VVAccess.ReadOnly)]
-    public int ActivationsRemaining;
+    public bool RevivalPending;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan RevivalAt;
+}
+
+[RegisterComponent]
+public sealed partial class CompressedLegionCoreComponent : Component
+{
+    [DataField]
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(60);
+
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(8);
+
+    [DataField]
+    public float KnockbackStrength = 3.5f;
+
+    [ViewVariables]
+    public TimeSpan NextUse;
+}
+
+[RegisterComponent]
+public sealed partial class DensitySurgeCarrierComponent : Component
+{
+    [DataField]
+    public EntityUid Organ;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan ActiveUntil;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool AddedStunImmunity;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool AddedSlowImmunity;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool AddedKnockdownImmunity;
 }
 
 [Serializable, NetSerializable]
@@ -126,6 +175,8 @@ public sealed partial class BecomeToDrakeActionEvent : InstantActionEvent
 public sealed partial class DrakeReturnBackActionEvent : InstantActionEvent;
 
 public sealed partial class ColossusRoarActionEvent : InstantActionEvent;
+
+public sealed partial class DensitySurgeActionEvent : InstantActionEvent;
 
 /// <summary>
 /// Reimplementation of the Ash Drake's Sacred Flame reward. The spellbook grants this action without

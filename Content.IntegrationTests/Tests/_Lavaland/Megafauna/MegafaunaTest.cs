@@ -672,7 +672,7 @@ public sealed partial class MegafaunaTest : GameTest
 
             Assert.That(SpawnIds(tables, protoMan.Index(
                     new ProtoId<EntityTablePrototype>("ColossusNecropolisCrateTable"))),
-                Does.Not.Contain("DivineVocalCordsImplanter"),
+                Does.Not.Contain("OrganDivineVocalCords"),
                 "the vocal cords are an exclusive carcass-harvest reward");
 
             var legionBoss = entMan.GetComponent<LegionBossComponent>(legion);
@@ -699,7 +699,7 @@ public sealed partial class MegafaunaTest : GameTest
                 "WeaponSpectralBlade",
                 "LavaStaffRod",
                 "BottleDragonBlood",
-                "DivineVocalCordsImplant",
+                "OrganDivineVocalCords",
                 "WeaponSpellBlade",
                 "GemHollowCrystal",
                 "GemBloodStone",
@@ -804,7 +804,7 @@ public sealed partial class MegafaunaTest : GameTest
             "ClothingHeadHelmetHostileEnv",
             "LavaStaffRod",
             "BottleDragonBlood",
-            "DivineVocalCordsImplant",
+            "OrganDivineVocalCords",
             "WeaponSpectralBlade",
             "WeaponSpellBlade",
             "LegionCore",

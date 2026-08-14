@@ -129,23 +129,16 @@
     node: cutter
 
 - type: entity
-  parent: StabilizedLegionCoreImplant
-  id: ReinforcedLegionOniSurvivalImplant
-  name: reinforced legion-oni survival implant
-  description: Density compression lets the stabilized Legion core reconstruct its host twice before collapse.
-  categories: [ HideSpawnMenu ]
+  parent: BaseOrganRegenerativeCore
+  id: OrganCompressedLegionCore
+  name: compressed legion core
+  description: An Oni density core compressed into stabilized Legion tissue. It grants its host controlled bursts of immovable force.
   components:
-  - type: StabilizedLegionCoreImplant
-    maxActivations: 2
-
-- type: entity
-  parent: BaseImplantOnlyImplanter
-  id: ReinforcedLegionOniSurvivalImplanter
-  name: reinforced legion-oni survival implanter
-  description: An implanter containing a twice-compressed emergency survival core.
-  components:
-  - type: Implanter
-    implant: ReinforcedLegionOniSurvivalImplant
+  - type: Sprite
+    color: "#d68cff"
+  - type: CompressedLegionCore
+  - type: OrganActions
+    actions: [ ActionDensitySurge ]
   - type: MegafaunaProvenance
     source: megafauna-source-legion-oni
     grade: Processed
@@ -153,5 +146,5 @@
   - type: StaticPrice
     price: 32000
   - type: Construction
-    graph: LegionOniSurvivalImplanterConstructionGraph
-    node: implanter
+    graph: CompressedLegionCoreConstructionGraph
+    node: core

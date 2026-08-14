@@ -29,3 +29,17 @@
     event: !type:SacredFlameActionEvent
       radius: 4
       severity: 0.45
+
+- type: entity
+  parent: BaseAction
+  id: ActionDensitySurge
+  name: Density surge
+  description: Briefly anchor your body against control effects and add knockback to unarmed strikes.
+  components:
+  - type: Action
+    icon:
+      sprite: Structures/Specific/Anomalies/Cores/gravity_core.rsi
+      state: core
+    useDelay: 1
+  - type: InstantAction
+    event: !type:DensitySurgeActionEvent

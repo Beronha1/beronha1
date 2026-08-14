@@ -183,6 +183,8 @@
 - type: entity
   parent: BaseCrusherUpgradeHandle
   id: TrophyDemonicFrostMinerIceTalisman
+  name: ice-block talisman
+  description: Freezes marked melee targets. Repeated kinetic hits build enough frost to knock a target down and encase it in ice.
   components:
   - type: Sprite
     sprite: _Lavaland/Objects/Specific/Megafauna/miner_artifacts.rsi
@@ -190,8 +192,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-frost-miner-name
     uniqueGroup: frostMinerTrophy
+    pipelinePriority: 30
   - type: CrusherIceBlockTalismanUpgrade
   - type: CrusherTrophy
+    trophyId: demonic-frost-miner
+    capacityCost: 35
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:

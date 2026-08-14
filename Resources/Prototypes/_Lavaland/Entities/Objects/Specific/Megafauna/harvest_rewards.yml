@@ -156,50 +156,27 @@
   - type: MegafaunaIntactSample
 
 - type: entity
-  parent: BaseImplantOnlyImplanter
-  id: DivineVocalCordsImplanter
-  name: divine vocal cords implanter
-  components:
-  - type: Implanter
-    implant: DivineVocalCordsImplant
-  - type: PerishableBossOrgan
-    freshDuration: 240
-    destroyContentsOf: implanter_slot
-  - type: Reactive
-    reactions:
-    - reagents: [ StabilizingSerum ]
-      methods: [ Touch ]
-      effects:
-      - !type:StabilizeMegafaunaOrgan
-  - type: MegafaunaProvenance
-    source: megafauna-source-colossus
-    grade: Intact
-  - type: MegafaunaIntactSample
-
-- type: entity
-  parent: BaseSubdermalImplant
-  id: StabilizedLegionCoreImplant
-  name: stabilized legion core implant
-  description: A single-use organic core that restores its host when critical injury is detected.
-  categories: [ HideSpawnMenu ]
+  abstract: true
+  parent: OrganBaseChildInternal
+  id: BaseOrganRegenerativeCore
   components:
   - type: Sprite
     sprite: _Wega/Objects/Specific/Lavaland/legioncore.rsi
     state: icon_base
-  - type: StabilizedLegionCoreImplant
-  - type: SubdermalImplant
-    whitelist:
-      components: [ MobState, Damageable ]
+  - type: Item
+    size: Small
+  - type: Organ
+    category: RegenerativeCore
+  - type: ChildOrgan
+    parents: [ Torso ]
 
 - type: entity
-  parent: BaseImplantOnlyImplanter
-  id: StabilizedLegionCoreImplanter
-  name: stabilized legion core implanter
+  parent: BaseOrganRegenerativeCore
+  id: OrganStabilizedLegionCore
+  name: stabilized legion core
+  description: A chemically stabilized organic core. Once transplanted, it restores its host from critical injury a single time before collapsing.
   components:
-  - type: Implanter
-    implant: StabilizedLegionCoreImplant
-  - type: PerishableBossOrgan
-    state: Stabilized
+  - type: StabilizedLegionCoreOrgan
   - type: Tag
     tags: [ StabilizedLegionCore ]
   - type: MegafaunaProvenance

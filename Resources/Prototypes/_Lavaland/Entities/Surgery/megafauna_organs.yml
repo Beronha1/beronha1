@@ -1,0 +1,69 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Divine vocal cords use their own cranial cavity instead of replacing the tongue.
+- type: entity
+  parent: SurgeryOpenCavityBase
+  id: SurgeryOpenDivineVocalCordsCavity
+  name: Open divine vocal cord cavity
+  components:
+  - type: Surgery
+    requirement: SurgeryOpenIncision
+  - type: SurgeryPartCondition
+    parts: [ Head ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: DivineVocalCords
+
+- type: entity
+  parent: BaseSurgeryInsertOrgan
+  id: SurgeryInsertDivineVocalCords
+  name: Insert divine vocal cords
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Head ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: DivineVocalCords
+  - type: SurgeryOrganCondition
+    organ: DivineVocalCords
+
+- type: entity
+  parent: BaseSurgeryRemoveOrgan
+  id: SurgeryRemoveDivineVocalCords
+  name: Remove divine vocal cords
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Head ]
+  - type: SurgeryOrganCondition
+    organ: DivineVocalCords
+
+# Both Legion-derived cores share one protected thoracic slot, preventing stacking.
+- type: entity
+  parent: SurgeryOpenCavityBase
+  id: SurgeryOpenRegenerativeCoreCavity
+  name: Open regenerative core cavity
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Torso ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: RegenerativeCore
+
+- type: entity
+  parent: BaseSurgeryInsertOrganChest
+  id: SurgeryInsertRegenerativeCore
+  name: Insert regenerative core
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Torso ]
+  - type: SurgeryOrganSlotCondition
+    organSlot: RegenerativeCore
+  - type: SurgeryOrganCondition
+    organ: RegenerativeCore
+
+- type: entity
+  parent: BaseSurgeryRemoveOrganChest
+  id: SurgeryRemoveRegenerativeCore
+  name: Remove regenerative core
+  components:
+  - type: SurgeryPartCondition
+    parts: [ Torso ]
+  - type: SurgeryOrganCondition
+    organ: RegenerativeCore

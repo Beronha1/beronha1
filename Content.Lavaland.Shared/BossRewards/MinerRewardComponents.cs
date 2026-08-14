@@ -5,6 +5,7 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.EntityTable;
 using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.Mobs;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -90,15 +91,21 @@ public sealed partial class DemonicJackhammerComponent : Component
 public sealed partial class ResurrectionCrystalComponent : Component
 {
     [DataField]
-    public ProtoId<Content.Shared.Polymorph.PolymorphPrototype> ResurrectionPolymorph = "ShadowPolymorph";
+    public TimeSpan ReviveTime = TimeSpan.FromSeconds(8);
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? ActiveTarget;
 }
 
 [RegisterComponent]
-public sealed partial class ResurrectionCrystalWardComponent : Component
+public sealed partial class ResurrectionInProgressComponent : Component
 {
     [DataField]
-    public ProtoId<Content.Shared.Polymorph.PolymorphPrototype> ResurrectionPolymorph = "ShadowPolymorph";
+    public EntityUid Crystal;
 }
+
+[Serializable, NetSerializable]
+public sealed partial class ResurrectionCrystalDoAfterEvent : SimpleDoAfterEvent;
 
 [RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class CursedIceBootsComponent : Component
@@ -131,6 +138,13 @@ public sealed partial class GodslayerArmorComponent : Component
     [DataField]
     public TimeSpan Cooldown = TimeSpan.FromMinutes(10);
 
+    /// <summary>
+    /// Time the armour needs to rebuild its wearer after they enter critical condition or die.
+    /// If the wearer dies while restoration is already charging, this delay starts again from death.
+    /// </summary>
+    [DataField]
+    public TimeSpan RevivalDelay = TimeSpan.FromSeconds(4);
+
     [ViewVariables(VVAccess.ReadOnly)]
     public TimeSpan NextRevival;
 
@@ -143,4 +157,10 @@ public sealed partial class GodslayerCarrierComponent : Component
 {
     [DataField]
     public EntityUid Armor;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool RevivalPending;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan RevivalAt;
 }

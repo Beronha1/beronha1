@@ -650,20 +650,47 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         void CreateAndFireProjectiles(EntityUid ammoEnt, AmmoComponent ammoComp)
         {
+            EntProtoId? pelletPrototype = null;
+            var pelletCount = 1;
+            var pelletSpread = Angle.Zero;
+
             if (TryComp<ProjectileSpreadComponent>(ammoEnt, out var ammoSpreadComp))
             {
-                var spreadEvent = new GunGetAmmoSpreadEvent(ammoSpreadComp.Spread, user); // Trauma - pass user
+                pelletPrototype = ammoSpreadComp.Proto;
+                pelletCount = ammoSpreadComp.Count;
+                pelletSpread = ammoSpreadComp.Spread;
+            }
+            else if (MetaData(ammoEnt).EntityPrototype?.ID is { } ammoPrototype)
+            {
+                pelletPrototype = new EntProtoId(ammoPrototype);
+            }
+
+            // Resolve the complete fan without mutating the predicted ammunition
+            // entity. Late component additions here caused client reconciliation
+            // to pull moving kinetic projectiles backwards for a frame.
+            var projectileSpreadEvent = new GunGetProjectileSpreadEvent(
+                ammoEnt,
+                pelletPrototype,
+                pelletCount,
+                pelletSpread,
+                user);
+            RaiseLocalEvent(gun, ref projectileSpreadEvent);
+
+            pelletCount = Math.Max(1, projectileSpreadEvent.Count);
+            if (pelletCount > 1 && projectileSpreadEvent.Prototype is { } projectilePrototype)
+            {
+                var spreadEvent = new GunGetAmmoSpreadEvent(projectileSpreadEvent.Spread, user); // Trauma - pass user
                 RaiseLocalEvent(gun, ref spreadEvent);
 
                 var angles = LinearSpread(mapAngle - spreadEvent.Spread / 2,
-                    mapAngle + spreadEvent.Spread / 2, ammoSpreadComp.Count);
+                    mapAngle + spreadEvent.Spread / 2, pelletCount);
 
                 ShootOrThrow(ammoEnt, angles[0].ToVec(), gunVelocity, gun, user, targetCoordinates: toMapBeforeRecoil); // Trauma - add target coords
                 shotProjectiles.Add(ammoEnt);
 
-                for (var i = 1; i < ammoSpreadComp.Count; i++)
+                for (var i = 1; i < pelletCount; i++)
                 {
-                    var newuid = PredictedSpawnAtPosition(ammoSpreadComp.Proto, fromEnt);
+                    var newuid = PredictedSpawnAtPosition(projectilePrototype, fromEnt);
                     // <Trauma>
                     var pelletEv = new SpreadPelletFiredEvent(newuid);
                     RaiseLocalEvent(ammoEnt, ref pelletEv);
@@ -686,6 +713,29 @@ public abstract partial class SharedGunSystem : EntitySystem
     public void ShootProjectile(EntityUid uid, Vector2 direction, Vector2 gunVelocity, EntityUid? gunUid, EntityUid? user = null, float speed = ProjectileSpeed,
         Vector2? targetCoordinates = null) // Trauma
     {
+        var projectile = EnsureComp<ProjectileComponent>(uid);
+        projectile.Weapon = gunUid;
+        var shooter = user ?? gunUid;
+        if (shooter != null)
+            Projectiles.SetShooter(uid, projectile, shooter.Value);
+
+        projectile.OriginalShooter = projectile.Shooter;
+        TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
+        // <Trauma>
+        if (targetCoordinates is {} target)
+            projectile.TargetCoordinates = target;
+
+        // Assemble upgrade damage and behaviour before the projectile enters the
+        // predicted physics world. Server-side corrections must never retrofit a
+        // moving projectile with the components that define its flight or impact.
+        if (gunUid is {} gun)
+        {
+            var shotEv = new ProjectileShotEvent(uid, user);
+            RaiseLocalEvent(gun, ref shotEv);
+        }
+
+        Dirty(uid, projectile);
+
         var physics = EnsureComp<PhysicsComponent>(uid);
         Physics.SetBodyStatus(uid, physics, BodyStatus.InAir);
 
@@ -694,32 +744,12 @@ public abstract partial class SharedGunSystem : EntitySystem
         var finalLinear = physics.LinearVelocity + targetMapVelocity - currentMapVelocity;
         Physics.SetLinearVelocity(uid, finalLinear, body: physics);
 
-        var projectile = EnsureComp<ProjectileComponent>(uid);
-        projectile.Weapon = gunUid;
-        var shooter = user ?? gunUid;
-        if (shooter != null)
-            Projectiles.SetShooter(uid, projectile, shooter.Value);
-
-        // <Trauma> - predict this shit
         Physics.UpdateIsPredicted(uid, physics);
-        projectile.OriginalShooter = projectile.Shooter;
-        Dirty(uid, projectile);
-        // </Trauma>
-
-        TransformSystem.SetWorldRotation(uid, direction.ToWorldAngle() + projectile.Angle);
-        // <Trauma>
-        if (targetCoordinates is {} target)
-            projectile.TargetCoordinates = target;
 
         if (user is {} userUid)
         {
             var ev = new PlayerShotProjectileEvent(uid, userUid);
             RaiseLocalEvent(ref ev);
-        }
-        if (gunUid is {} gun)
-        {
-            var shotEv = new ProjectileShotEvent(uid, user);
-            RaiseLocalEvent(gun, ref shotEv);
         }
         // </Trauma>
     }

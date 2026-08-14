@@ -99,10 +99,10 @@
     WeaponsKnowledge: 5
 
 - type: construction
-  id: LegionOniSurvivalImplanterConstruction
-  graph: LegionOniSurvivalImplanterConstructionGraph
+  id: CompressedLegionCoreConstruction
+  graph: CompressedLegionCoreConstructionGraph
   category: construction-category-misc
-  targetNode: implanter
+  targetNode: core
   objectType: Item
   theory:
     SurgeryKnowledge: 5

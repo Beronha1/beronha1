@@ -10,17 +10,5 @@ namespace Content.Lavaland.Shared.Artifacts;
 public sealed partial class LegionCoreComponent : Component
 {
     [DataField]
-    public bool Active = true;
-
-    [DataField]
-    public bool Stabilized;
-
-    [DataField]
     public DamageSpecifier HealAmount = new();
-
-    [DataField]
-    public TimeSpan ActiveDuration = TimeSpan.FromSeconds(150);
-
-    [ViewVariables]
-    public TimeSpan ActiveEndTime;
 }

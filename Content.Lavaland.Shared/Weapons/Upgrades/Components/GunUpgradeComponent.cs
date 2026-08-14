@@ -33,4 +33,11 @@ public sealed partial class GunUpgradeComponent : Component
     /// </summary>
     [DataField]
     public string? UniqueGroup;
+
+    /// <summary>
+    /// Stable order used when several upgrades relay the same event.
+    /// Lower values run first; the unique group is used as a deterministic tie-breaker.
+    /// </summary>
+    [DataField]
+    public int PipelinePriority;
 }

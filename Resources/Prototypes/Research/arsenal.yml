@@ -17,6 +17,8 @@
   - WeaponProtoKineticShotgun
   - WeaponProtoKineticRepeater
   - WeaponProtoKineticPistol
+  - WeaponProtoKineticRailgun
+  - WeaponProtoKineticShockwave
   # Lavaland Change end
   # These are roundstart but not replenishable for salvage
   position: 4,2 # Goobstation R&D Console rework

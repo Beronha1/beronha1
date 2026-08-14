@@ -27,9 +27,9 @@ public sealed partial class GunUpgradeSystem
 
         SubscribeLocalEvent<GunUpgradeSpeedComponent, GunRefreshModifiersEvent>(OnSpeedRefresh);
 
-        SubscribeLocalEvent<GunUpgradeProjectileComponentsComponent, GunShotEvent>(OnDamageGunShotComps);
+        SubscribeLocalEvent<GunUpgradeProjectileComponentsComponent, ProjectileShotEvent>(OnProjectileComponentsShot);
 
-        SubscribeLocalEvent<GunUpgradeVampirismComponent, GunShotEvent>(OnVampirismGunShot);
+        SubscribeLocalEvent<GunUpgradeVampirismComponent, ProjectileShotEvent>(OnVampirismProjectileShot);
         SubscribeLocalEvent<ProjectileVampirismComponent, ProjectileHitEvent>(OnVampirismProjectileHit);
 
         SubscribeLocalEvent<GunUpgradeBayonetComponent, GetRelayMeleeWeaponEvent>(OnGetMeleeRelay);
@@ -76,25 +76,21 @@ public sealed partial class GunUpgradeSystem
         args.ProjectileSpeed *= ent.Comp.Coefficient;
     }
 
-    private void OnDamageGunShotComps(Entity<GunUpgradeProjectileComponentsComponent> ent, ref GunShotEvent args)
+    private void OnProjectileComponentsShot(Entity<GunUpgradeProjectileComponentsComponent> ent,
+        ref ProjectileShotEvent args)
     {
-        foreach (var (ammo, _) in args.Ammo)
-        {
-            if (HasComp<ProjectileComponent>(ammo))
-                EntityManager.AddComponents(ammo.Value, ent.Comp.Components);
-        }
+        if (HasComp<ProjectileComponent>(args.FiredProjectile))
+            EntityManager.AddComponents(args.FiredProjectile, ent.Comp.Components);
     }
 
-    private void OnVampirismGunShot(Entity<GunUpgradeVampirismComponent> ent, ref GunShotEvent args)
+    private void OnVampirismProjectileShot(Entity<GunUpgradeVampirismComponent> ent,
+        ref ProjectileShotEvent args)
     {
-        foreach (var (ammo, _) in args.Ammo)
-        {
-            if (!HasComp<ProjectileComponent>(ammo))
-                continue;
+        if (!HasComp<ProjectileComponent>(args.FiredProjectile))
+            return;
 
-            var comp = EnsureComp<ProjectileVampirismComponent>(ammo.Value);
-            comp.DamageOnHit = ent.Comp.DamageOnHit;
-        }
+        var comp = EnsureComp<ProjectileVampirismComponent>(args.FiredProjectile);
+        comp.DamageOnHit = ent.Comp.DamageOnHit;
     }
 
     private void OnVampirismProjectileHit(Entity<ProjectileVampirismComponent> ent, ref ProjectileHitEvent args)

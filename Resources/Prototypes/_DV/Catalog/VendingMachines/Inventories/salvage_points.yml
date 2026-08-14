@@ -70,6 +70,14 @@
     cost: 1100
   - id: PKAUpgradeDamage
     cost: 1200
+  - id: PKAUpgradeMiningAoE
+    cost: 1200
+  - id: PKAUpgradeHumanPassthrough
+    cost: 1000
+  - id: PKAUpgradeDronePassthrough
+    cost: 1000
+  - id: PKAUpgradeTracerAmber
+    cost: 750
   # TODO: lazarus injector for 1k
   - id: WeaponCrusherHammer
     cost: 1250
@@ -85,6 +93,10 @@
     cost: 1250
   - id: WeaponProtoKineticShotgun
     cost: 1500
+  - id: WeaponProtoKineticRailgun
+    cost: 1500
+  - id: WeaponProtoKineticShockwave
+    cost: 1500
   - id: LuxuryMedipen
     cost: 1500
   - id: SkillChipMining
@@ -92,6 +104,8 @@
   - id: WeaponPlasmaCutter
     cost: 1700
   - id: BorgModuleAdvancedMining
+    cost: 2000
+  - id: PKAUpgradeOffensiveAoE
     cost: 2000
   - id: ClothingHandsGlovesCombat
     cost: 2000

@@ -22,6 +22,8 @@
   - WeaponProtoKineticShotgun
   - WeaponProtoKineticRepeater
   - WeaponProtoKineticPistol
+  - WeaponProtoKineticRailgun
+  - WeaponProtoKineticShockwave
   - WeaponPlasmaCutter
   # - WeaponPlasmaRifle
 
@@ -37,3 +39,8 @@
   - PKAUpgradeRange
   - PKAUpgradeFireRate
   - PKAUpgradeSpace
+  - PKAUpgradeMiningAoE
+  - PKAUpgradeOffensiveAoE
+  - PKAUpgradeHumanPassthrough
+  - PKAUpgradeDronePassthrough
+  - PKAUpgradeTracerAmber

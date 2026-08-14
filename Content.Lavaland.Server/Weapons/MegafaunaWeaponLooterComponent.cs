@@ -8,3 +8,14 @@ namespace Content.Lavaland.Server.Weapons;
 /// </summary>
 [RegisterComponent]
 public sealed partial class MegafaunaWeaponLooterComponent : Component;
+
+/// <summary>
+/// Identifies a projectile fired by a qualifying portable kinetic weapon.
+/// Kept server-side because it is only used to account megafauna trophy damage.
+/// </summary>
+[RegisterComponent]
+public sealed partial class MegafaunaWeaponLooterProjectileComponent : Component
+{
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid SourceWeapon;
+}

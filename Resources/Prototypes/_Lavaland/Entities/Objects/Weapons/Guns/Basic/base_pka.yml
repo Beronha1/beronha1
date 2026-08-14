@@ -18,6 +18,17 @@
     applyToMelee: false
   - type: PressureEfficiency
   - type: UpgradeableWeapon
+  - type: WeaponTrophySlot
+    maxTrophyCapacity: 100
+    slot:
+      name: weapon-upgrade-slot-name-trophy
+      swap: false
+      priority: 7
+      insertDelay: 2.0
+      ejectDelay: 1.0
+      whitelist:
+        components:
+        - CrusherTrophy
   - type: ContainerContainer
     containers:
       bayonet: !type:ContainerSlot

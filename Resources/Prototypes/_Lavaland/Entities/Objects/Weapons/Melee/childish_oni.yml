@@ -47,7 +47,7 @@
   parent: BaseCrusherUpgradeBlade
   id: TrophyChildishOniHorn
   name: childish oni horn
-  description: Sharpens a crusher with the oni's escalating fury.
+  description: Sharpens melee attacks with the oni's fury and makes kinetic impacts release a short density wave that throws nearby targets.
   components:
   - type: Sprite
     sprite: _Lavaland/Clothing/Head/Misc/oni.rsi
@@ -55,7 +55,11 @@
   - type: GunUpgrade
     name: lavaland-trophy-childish-oni-name
     uniqueGroup: childishOniTrophy
+    pipelinePriority: 30
   - type: CrusherTrophy
+    trophyId: childish-oni
+    capacityCost: 35
+  - type: CrusherOniHornUpgrade
   - type: TrophyRecyclable
     loot: !type:AllSelector
       children:

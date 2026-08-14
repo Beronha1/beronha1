@@ -1,0 +1,6 @@
+# SPDX-License-Identifier: CC-BY-SA-3.0
+
+- files: ["kinetic_railgun.ogg", "kinetic_shockwave.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Paradise Station at commit f6b562e6b604f02596861117ea68a2d08e609c2a"
+  source: "https://github.com/ParadiseSS13/Paradise/tree/f6b562e6b604f02596861117ea68a2d08e609c2a/sound/weapons"

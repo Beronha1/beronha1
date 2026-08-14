@@ -7,17 +7,6 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Lavaland.Shared.Artifacts;
 
-public sealed partial class StabilizeLegionCoreSystem : EntityEffectSystem<LegionCoreComponent, StabilizeLegionCore>
-{
-    protected override void Effect(Entity<LegionCoreComponent> entity, ref EntityEffectEvent<StabilizeLegionCore> args)
-    {
-        if (!entity.Comp.Active)
-            return;
-
-        entity.Comp.Stabilized = true;
-    }
-}
-
 public sealed partial class StabilizeLegionCore : EntityEffectBase<StabilizeLegionCore>
 {
     public override string? EntityEffectGuidebookText(

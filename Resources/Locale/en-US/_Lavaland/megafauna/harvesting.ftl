@@ -1,7 +1,6 @@
 megafauna-harvest-wrong-tool = The tool cannot perform the {$stage} stage.
 megafauna-harvest-complete = Harvest stage completed: {$stage}.
-megafauna-harvest-examine = [color=yellow]Harvest stage {$current}/{$total}: {$stage}.[/color]
-    [color=lightblue]Required tool: {$tools}. Use it on the carcass to begin a {$seconds}-second extraction.[/color]
+megafauna-harvest-examine = [color=yellow]Harvest stage {$current}/{$total}: {$stage}.[/color] [color=lightblue]Required tool: {$tools}. Use it on the carcass to begin a {$seconds}-second extraction.[/color]
 megafauna-harvest-legion-locked = The carcass is still animated by its scattered fragments. Destroy them first.
 megafauna-harvest-legion-locked-examine = [color=orange]Its scattered fragments still animate the carcass; it cannot be harvested yet.[/color]
 legion-encounter-complete = The final fragment collapses. Legion's central carcass becomes inert and its hoard is exposed!
@@ -26,7 +25,8 @@ megafauna-harvest-stage-oni-density-core = density-compression core
 
 weapon-upgrade-slot-name-trophy = Megafauna trophy
 density-core-slot-name = Density-compression core
-stabilized-legion-core-activate = The legion core collapses and rebuilds your failing body!
+stabilized-legion-core-charging = The legion core begins rebuilding your failing body!
+stabilized-legion-core-activate = The legion core completes its reconstruction and restores you!
 
 storm-staff-pacified = You do not want to call down a harmful thunderbolt.
 storm-staff-out-of-range = The target is beyond the staff's reach.
@@ -46,7 +46,6 @@ megafauna-organ-examine-fresh = [color=yellow]This organ remains viable for appr
 megafauna-organ-examine-preserved = [color=lightblue]Refrigeration has paused deterioration with approximately {$seconds} seconds of viability remaining.[/color]
 megafauna-organ-examine-stabilized = [color=green]This organ has been permanently stabilized.[/color]
 megafauna-organ-examine-deteriorated = [color=red]This organ has deteriorated beyond use.[/color]
-reagent-effect-guidebook-stabilize-megafauna-organ = Permanently stabilizes compatible fresh megafauna organs.
 
 research-destructor-no-power = The research destructor has no power.
 research-destructor-no-server = The research destructor is not connected to an R&D server.
@@ -109,10 +108,8 @@ ent-ClothingBeltAshFrostThermalRegulator = universal megafauna thermal regulator
     .desc = Opposed drake and frost-miner energies hold the wearer at a survivable thermal equilibrium.
 ent-WeaponBloodDrunkMercuryPhaseCutter = blood-drunk Mercury phase cutter
     .desc = An overclocked excavation tool whose ORT lattice wastes almost none of its stored energy.
-ent-ReinforcedLegionOniSurvivalImplant = reinforced legion-oni survival implant
-    .desc = Density compression lets the stabilized Legion core reconstruct its host twice before collapse.
-ent-ReinforcedLegionOniSurvivalImplanter = reinforced legion-oni survival implanter
-    .desc = An implanter containing a twice-compressed emergency survival core.
+ent-OrganCompressedLegionCore = compressed legion core
+    .desc = An Oni density core compressed into stabilized Legion tissue. It grants controlled bursts of immovable force.
 
 material-dragon-hide = dragon hide
 material-dragon-bone = dragon bone
@@ -237,12 +234,8 @@ ent-ColossusAnomalousCrystal = anomalous colossus crystal
     .desc = A crystal lattice holding impossible geometric field equations.
 ent-FoodDemonicChewingGum = demonic chewing gum
     .desc = A warm clot of demonic tissue that accelerates healing and movement while chewed.
-ent-DivineVocalCordsImplanter = divine vocal cords implanter
-    .desc = An implanter containing the Colossus's preserved divine vocal cords.
-ent-StabilizedLegionCoreImplant = stabilized legion core implant
-    .desc = A single-use organic core that restores its host upon critical injury.
-ent-StabilizedLegionCoreImplanter = stabilized legion core implanter
-    .desc = An implanter containing a permanently stabilized Legion core.
+ent-OrganStabilizedLegionCore = stabilized legion core
+    .desc = A transplantable organic core that reconstructs its host after a brief delay upon critical injury or death, then collapses.
 ent-LegionServitorCulture = necrotic legion culture
     .desc = A cultured skull mass ready to unfold into a tame biological servitor.
 ent-MobLegionServitor = legion servitor
@@ -272,6 +265,16 @@ ent-OniDensityCore = density-compression core
     .desc = Install it in a crate to double the crate's normal storage capacity.
 ent-ActionColossusRoar = Colossus roar
     .desc = Emit a divine shockwave that disarms and knocks down nearby creatures.
+ent-ActionDensitySurge = Density surge
+    .desc = Briefly resist control effects and add knockback to unarmed strikes.
+density-surge-activate = Your body becomes impossibly dense!
+
+ent-SurgeryOpenDivineVocalCordsCavity = Open divine vocal cord cavity
+ent-SurgeryInsertDivineVocalCords = Insert divine vocal cords
+ent-SurgeryRemoveDivineVocalCords = Remove divine vocal cords
+ent-SurgeryOpenRegenerativeCoreCavity = Open regenerative core cavity
+ent-SurgeryInsertRegenerativeCore = Insert regenerative core
+ent-SurgeryRemoveRegenerativeCore = Remove regenerative core
 
 ent-ColossusAnomalousCrystalReprise = anomalous reprise crystal
     .desc = A Colossus crystal that restores nearby living tissue without distinguishing friend from foe.

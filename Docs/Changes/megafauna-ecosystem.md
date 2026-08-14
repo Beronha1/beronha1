@@ -56,40 +56,80 @@ Primary code:
 
 ### Crusher trophies
 
-Every `BaseWeaponCrusher` descendant has one dedicated `trophy_slot`, so the
-axe, glaive, hammer and halberd all support the same trophies. Insert/eject uses
-the normal item-slot DoAfter. `GunUpgradeSystem` relays shots, melee hits, marker
-consumption and actions to the installed trophy.
+Every `BaseWeaponCrusher` descendant and portable PKA has eight dedicated
+`trophy_slot_*` containers and a separate 100-point boss-trophy budget. Normal
+PKA modkit capacity is not consumed. Duplicate trophy identities are rejected,
+while distinct trophies combine in stable pipeline order. Insert/eject uses the
+normal item-slot DoAfter, and Examine lists installed trophies, individual cost
+and remaining trophy capacity.
+
+A special boss reward is earned when Crushers and portable PKAs collectively
+deal at least 60% of the encounter's effective post-resistance health damage.
+It is cooperative and has no last-hit rule. Damage from other weapons neither
+contributes nor erases qualifying progress. Legion fragments relay their
+contribution into the single root encounter so the result cannot duplicate per
+fragment.
 
 Trophies and their effects:
 
-| Trophy ID | Effect |
-| --- | --- |
-| `TrophyLavalandAshDrakeSpike` | Area heat burst and knockback after consuming a marker; temporary heat/lava protection. |
-| `TrophyLavalandColossusBlasterTubes` | Geometric structural/mining shockwave. |
-| `TrophyLavalandBubblegumDemonClaws` | Marker-hit lifesteal. |
-| `TrophyLavalandLegionSkull` | Fire/attack-speed bonus and one living, non-boss raised fauna ally. Raised fauna cannot be recycled. |
-| `TrophyLavalandBDMEye` | Faster handling and short control immunity. |
-| `TrophyDemonicFrostMinerIceTalisman` | Freezes the marked target. |
-| `TrophySpiderMercuryAlloy` | Energy-reflection utility. |
-| `TrophyChildishOniHorn` | Oni-derived combat effect. |
+| Trophy ID | Cost | Melee and ranged effect |
+| --- | ---: | --- |
+| `TrophyLavalandAshDrakeSpike` | 25 | Marker heat burst and temporary heat/lava protection; kinetic hits knock back and periodically create a bounded fire burst. |
+| `TrophyLavalandColossusBlasterTubes` | 50 | Geometric structural shockwave; valid ranged hits shorten recharge to 40%. |
+| `TrophyLavalandBubblegumDemonClaws` | 40 | Marker lifesteal; one shot becomes three full-damage projectiles across 45 degrees with bounded per-hit healing. |
+| `TrophyLavalandLegionSkull` | 50 | Fire/attack-speed bonus and one raised fauna ally; every three ranged hits can create at most one active explosive skull. |
+| `TrophyLavalandBDMEye` | 30 | Faster handling and short control immunity; ranged hits restore a bounded amount of health. |
+| `TrophyDemonicFrostMinerIceTalisman` | 35 | Marker freeze; three ranged hits freeze the target with per-target cooldown. |
+| `TrophySpiderMercuryAlloy` | 40 | Energy-reflection utility; kinetic projectiles ricochet exactly once. |
+| `TrophyChildishOniHorn` | 35 | Oni melee effect; ranged impact releases a short density knockback wave. |
 
-All trophies are finitely recyclable with the Wildhunter Knife. One active
-trophy is enforced independently from the crusher's normal main/blade/handle
-upgrade slots.
+All trophies are finitely recyclable with the Wildhunter Knife. Raised Legion
+fauna cannot be recycled, projectile fragmentation cannot recursively fragment,
+ricochets are single-generation and entity-producing effects have hard active
+limits.
+
+### Proto-kinetic arsenal
+
+The Paradise proto-kinetic railgun and shockwave are native ECS ports. The
+railgun is a two-handed, planet-restricted long-range weapon whose bolt passes
+through mobs but stops on structures. The shockwave fires eight short-range
+concussive bolts in a ring. Their exact redistributable Paradise sound and
+shockwave icon states are imported at commit
+`f6b562e6b604f02596861117ea68a2d08e609c2a`; no generated art is used.
+
+Common PKA progression adds Mining AoE, Offensive AoE, crew passthrough,
+minebot/drone passthrough and an amber cosmetic tracer. Rare Necropolis-only
+loot includes Hybrid AoE, Rapid Repeater, Resonator Blast and Death Syphon,
+alongside the existing lifesteal crystal. Rapid Repeater heavily punishes misses
+and accelerates valid hits; Resonator Blast maintains one bounded field chain;
+Death Syphon learns capped prototype-specific bounties from assisted kills.
+
+The existing `SalvageWeapons` and `KineticModifications` nodes are preserved:
+the two weapons and common modkits are appended without creating a new research
+dependency chain. Cargo prices follow the existing vendor scale (750–2,000
+points); rare modules remain direct Necropolis rewards rather than purchasable
+or infinitely reproducible technology.
 
 ### Organic organs
 
-`PerishableBossOrganComponent` tracks Fresh, Preserved, Stabilized and
-Deteriorated states. Refrigeration pauses the viability timer; Stabilizing Serum
-permanently stabilizes a compatible organ. Deterioration destroys configured
-implanter contents and prevents stale organs from remaining usable.
+Boss organs are permanent physical organs and use the native anatomy and surgery
+systems. They do not deteriorate and are not installed with disposable implanters.
 
-- `DivineVocalCordsImplanter` grants an active Colossus roar and supports spoken
-  stop commands in English, Portuguese and Russian. It knocks down and disarms
-  creatures in range on a shared cooldown.
-- `StabilizedLegionCoreImplanter` automatically clears damage and restores its
-  host from critical/dead state once, then consumes itself.
+- `OrganDivineVocalCords` occupies a dedicated cranial `DivineVocalCords` slot.
+  It grants an active Colossus roar and supports spoken stop commands in English,
+  Portuguese and Russian. It knocks down and disarms creatures in range on a
+  shared cooldown.
+- Raw `LegionCore` remains a single-use direct healing item. Stabilizing Serum
+  converts it into `OrganStabilizedLegionCore`, which occupies the dedicated
+  thoracic `RegenerativeCore` slot, restores its host from critical/dead state
+  once and is consumed.
+- `OrganCompressedLegionCore` combines a stabilized core with an Oni density
+  core. It uses the same exclusive thoracic slot and grants Density Surge rather
+  than another automatic resurrection.
+- The Demonic Resurrection Crystal is a medical tool used on an intact corpse
+  through an interruptible eight-second procedure. It preserves the original
+  body, species, organs and inventory and is consumed only after a successful
+  resurrection.
 
 ### Research Destructor
 
@@ -201,7 +241,7 @@ Antitoxin Serum.
 | --- | --- |
 | Science | Research Destructor, direct hidden-node unlocks, anomalous crystals, Colossus/Mercury devices. |
 | Engineering | Drake armour, Lava Staff, synthetic thermal fuel, superconducting cable and Mercury energy tools. |
-| Medical/Chemistry | Perishable organs, surgery-ready implanters, stabilization, regeneration serum, antitoxin and venom refinement. |
+| Medical/Chemistry | Permanent surgical boss organs, Legion-core stabilization, corpse restoration, regeneration serum, antitoxin and venom refinement. |
 | Robotics | Tier-4 components and alternative Gygax armour/central/targeting recipes. |
 | Cargo | Component-based raw/intact/processed bounties, provenance examine text, density manipulator and trophy vault. |
 | Service | Demonic gum, Oni Gourd and Oni Sake with bounded healing/speed effects. |
@@ -218,7 +258,7 @@ knowledge. They include:
 - `LegionBubblegumRegeneratorConstruction`
 - `AshFrostThermalRegulatorConstruction`
 - `BloodDrunkMercuryPhaseCutterConstruction`
-- `LegionOniSurvivalImplanterConstruction`
+- `CompressedLegionCoreConstruction`
 
 ## Cargo and administration
 

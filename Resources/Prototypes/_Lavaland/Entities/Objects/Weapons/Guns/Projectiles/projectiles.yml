@@ -96,6 +96,40 @@
     spread: 20
 
 - type: entity
+  id: BulletKineticRailgun
+  name: hyper-kinetic bolt
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Projectile
+    damage:
+      types:
+        Blunt: 20
+        Structural: 25
+  - type: KineticMobPenetrationProjectile
+  - type: TimedDespawn
+    lifetime: 0.2
+
+- type: entity
+  id: BulletKineticShockwave
+  name: concussive kinetic bolt
+  parent: BulletKinetic
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: TimedDespawn
+    lifetime: 0.06
+
+- type: entity
+  id: BulletKineticShockwaveSpread
+  parent: BulletKineticShockwave
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: ProjectileSpread
+    proto: BulletKineticShockwave
+    count: 8
+    spread: 315
+
+- type: entity
   id: BulletCharge
   name: charge bolt
   parent: BaseBullet

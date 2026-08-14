@@ -43,24 +43,24 @@
     - suitStorage
   - type: UpgradeableWeapon
   - type: WeaponTrophySlot
+    maxTrophyCapacity: 100
+    slot:
+      name: weapon-upgrade-slot-name-trophy
+      swap: false
+      priority: 7
+      insertDelay: 3.0
+      ejectDelay: 1.5
+      whitelist:
+        components:
+        - CrusherTrophy
   - type: ContainerContainer
     containers:
       flashlight: !type:ContainerSlot
       upgrade_slot_main: !type:ContainerSlot
       upgrade_slot_blade: !type:ContainerSlot
       upgrade_slot_handle: !type:ContainerSlot
-      trophy_slot: !type:ContainerSlot
   - type: ItemSlots
     slots:
-      trophy_slot:
-        name: weapon-upgrade-slot-name-trophy
-        swap: false
-        priority: 7
-        insertDelay: 3.0
-        ejectDelay: 1.5
-        whitelist:
-          components:
-          - CrusherTrophy
       flashlight:
         name: weapon-upgrade-slot-name-flashlight
         priority: 6

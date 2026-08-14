@@ -34,3 +34,83 @@
     Silver: 500
     Gold: 500
     Plasma: 400
+
+- type: latheRecipe
+  id: WeaponProtoKineticRailgun
+  result: WeaponProtoKineticRailgun
+  categories:
+  - Weapons
+  completetime: 16
+  materials:
+    Steel: 2500
+    Glass: 1000
+    Silver: 600
+    Gold: 500
+    Plasma: 800
+
+- type: latheRecipe
+  id: WeaponProtoKineticShockwave
+  result: WeaponProtoKineticShockwave
+  categories:
+  - Weapons
+  completetime: 12
+  materials:
+    Steel: 1800
+    Glass: 700
+    Silver: 400
+    Plasma: 500
+
+- type: latheRecipe
+  id: PKAUpgradeMiningAoE
+  result: PKAUpgradeMiningAoE
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 500
+    Glass: 250
+    Silver: 100
+
+- type: latheRecipe
+  id: PKAUpgradeOffensiveAoE
+  result: PKAUpgradeOffensiveAoE
+  categories:
+  - Weapons
+  completetime: 7
+  materials:
+    Steel: 700
+    Glass: 400
+    Silver: 200
+    Plasma: 200
+
+- type: latheRecipe
+  id: PKAUpgradeHumanPassthrough
+  result: PKAUpgradeHumanPassthrough
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 400
+    Glass: 300
+    Silver: 150
+
+- type: latheRecipe
+  id: PKAUpgradeDronePassthrough
+  result: PKAUpgradeDronePassthrough
+  categories:
+  - Weapons
+  completetime: 5
+  materials:
+    Steel: 450
+    Glass: 250
+    Silver: 100
+
+- type: latheRecipe
+  id: PKAUpgradeTracerAmber
+  result: PKAUpgradeTracerAmber
+  categories:
+  - Weapons
+  completetime: 3
+  materials:
+    Steel: 200
+    Glass: 150

@@ -10,12 +10,12 @@ using Robust.Server.Player;
 
 namespace Content.Server._ES.Masks.Phantom;
 
-public sealed class ESAvengeSelfObjectiveSystem : ESBaseObjectiveSystem<ESAvengeSelfObjectiveComponent>
+public sealed partial class ESAvengeSelfObjectiveSystem : ESBaseObjectiveSystem<ESAvengeSelfObjectiveComponent>
 {
-    [Dependency] private readonly IChatManager _chat = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly ESTargetObjectiveSystem _targetObjective = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
+    [Dependency] private IChatManager _chat = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private ESTargetObjectiveSystem _targetObjective = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
 
     public override Type[] RelayComponents => [typeof(ESKilledRelayComponent)];
 

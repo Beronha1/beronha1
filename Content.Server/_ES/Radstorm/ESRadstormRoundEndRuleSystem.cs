@@ -8,7 +8,6 @@ using Content.Server.GameTicking.Rules;
 using Content.Server.RoundEnd;
 using Content.Shared._DV.Screens;
 using Content.Shared._ES.CCVar;
-using Content.Shared._Offbrand.Wounds;
 using Content.Shared.Damage.Components;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DeviceNetwork;
@@ -36,7 +35,6 @@ namespace Content.Server._ES.Radstorm;
 public sealed partial class ESRadstormRoundEndRuleSystem : GameRuleSystem<ESRadstormRoundEndRuleComponent>
 {
     [Dependency] private SharedAudioSystem _audio = default!;
-    [Dependency] private BrainDamageSystem _brainDamage = default!;
     [Dependency] private DeviceNetworkSystem _devicenet = default!;
     [Dependency] private ESAnnouncementSystem _chat = default!;
     [Dependency] private DamageableSystem _damage = default!;
@@ -110,9 +108,6 @@ public sealed partial class ESRadstormRoundEndRuleSystem : GameRuleSystem<ESRads
                 // and we haven't technically started yet, that means we're only space-dangerous, so don't hurt them
                 if (xform.ParentUid != mapUid && !RadstormStarted((uid, component)))
                     continue;
-
-                if (TryComp<BrainDamageComponent>(mob, out var brainDamage))
-                    _brainDamage.TryChangeBrainDamage((mob, brainDamage), brainDamage.MaxDamage / 20);
 
                 _damage.ChangeDamage((mob, damageable), component.RadstormDamagePerSecond, true, false);
             }

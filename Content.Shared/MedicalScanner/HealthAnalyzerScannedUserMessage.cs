@@ -43,6 +43,7 @@ public struct HealthAnalyzerUiState
     public NetEntity? Part;
     // </Traumaa>
     public bool? Unrevivable;
+    public List<(string ReagentId, FixedPoint2 Quantity)>? MetabolizingReagents;
 
     public HealthAnalyzerUiState() {}
 
@@ -52,7 +53,8 @@ public struct HealthAnalyzerUiState
         bool? unrevivable,
         Dictionary<ProtoId<OrganCategoryPrototype>, WoundableSeverity>? body,
         FixedPoint2 vitalDamage,
-        NetEntity? part = null)
+        NetEntity? part = null,
+        List<(string ReagentId, FixedPoint2 Quantity)>? metabolizingReagents = null)
         // </Trauma>
     {
         // <Shitmed>
@@ -66,5 +68,6 @@ public struct HealthAnalyzerUiState
         ScanMode = scanMode;
         Bleeding = bleeding;
         Unrevivable = unrevivable;
+        MetabolizingReagents = metabolizingReagents;
     }
 }

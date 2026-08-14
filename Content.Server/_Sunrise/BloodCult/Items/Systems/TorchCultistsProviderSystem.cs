@@ -22,20 +22,20 @@ using Robust.Shared.Timing;
 
 namespace Content.Server._Sunrise.BloodCult.Items.Systems;
 
-public sealed class TorchCultistsProviderSystem : EntitySystem
+public sealed partial class TorchCultistsProviderSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
-    [Dependency] private readonly AtmosphereSystem _atmosphere = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
-    [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
-    [Dependency] private readonly SharedPointLightSystem _pointLight = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly StationSystem _station = default!;
-    [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly SharedTransformSystem _xform = default!;
-    [Dependency] private readonly SharedMapSystem _map = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
+    [Dependency] private AtmosphereSystem _atmosphere = default!;
+    [Dependency] private SharedHandsSystem _hands = default!;
+    [Dependency] private SharedInteractionSystem _interactionSystem = default!;
+    [Dependency] private SharedPointLightSystem _pointLight = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private StationSystem _station = default!;
+    [Dependency] private IGameTiming _timing = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private SharedTransformSystem _xform = default!;
+    [Dependency] private SharedMapSystem _map = default!;
 
     public override void Initialize()
     {
@@ -104,8 +104,7 @@ public sealed class TorchCultistsProviderSystem : EntitySystem
 
         foreach (var cultist in cultists)
         {
-            if (!TryComp<MetaDataComponent>(cultist.Owner, out var meta))
-                return;
+            var meta = MetaData(cultist.Owner);
 
             if (cultist.Owner == args.User)
                 continue;
@@ -141,7 +140,7 @@ public sealed class TorchCultistsProviderSystem : EntitySystem
                 entityUid = cultist.Owner;
         }
 
-        if (entityUid == args.Actor && entityUid != null)
+        if (entityUid == args.Actor)
         {
             _popup.PopupEntity(Loc.GetString("cult-torch-no-cultist"), entityUid, entityUid);
             return;
@@ -151,9 +150,7 @@ public sealed class TorchCultistsProviderSystem : EntitySystem
         {
             var item = component.ItemSelected.Value;
 
-            if (!TryComp<TransformComponent>(entityUid, out var xForm))
-                return;
-
+            var xForm = Transform(entityUid);
             _xform.SetCoordinates(item, xForm.Coordinates);
             _hands.PickupOrDrop(entityUid, item);
         }

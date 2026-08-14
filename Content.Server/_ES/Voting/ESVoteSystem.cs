@@ -14,10 +14,10 @@ using Robust.Shared.Toolshed;
 namespace Content.Server._ES.Voting;
 
 /// <inheritdoc/>
-public sealed class ESVoteSystem : ESSharedVoteSystem
+public sealed partial class ESVoteSystem : ESSharedVoteSystem
 {
-    [Dependency] private readonly IAdminLogManager _adminLog = default!;
-    [Dependency] private readonly IChatManager _chat = default!;
+    [Dependency] private IAdminLogManager _adminLog = default!;
+    [Dependency] private IChatManager _chat = default!;
 
     private const string VoteSound = "/Audio/Effects/voteding.ogg";
 
@@ -32,7 +32,6 @@ public sealed class ESVoteSystem : ESSharedVoteSystem
     {
         // We manually start this rule now that the votes have concluded.
         // Is this kinda hacky? yes. I don't think it's that bad though
-        Comp<GameRuleComponent>(ent).Added = true;
         var ev = new GameRuleAddedEvent(ent, Prototype(ent)!.ID);
         RaiseLocalEvent(ent, ref ev, true);
     }

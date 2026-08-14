@@ -216,8 +216,10 @@ public sealed partial class ESWarpDriveSystem : GameRuleSystem<ESWarpDriveGameRu
             var state = new ESPortalGeneratorConsoleBuiState
             {
                 Charge = charge,
-                Interrupted = interrupted,
-                FinalPhase = finalPhase,
+                Charging = !interrupted && !finalPhase,
+                CurrentResearchStage = finalPhase ? 1 : 0,
+                MaxResearchStage = 1,
+                ThreatsLeft = interrupted ? 1 : 0,
             };
             _ui.SetUiState(uid, ESPortalGeneratorConsoleUiKey.Key, state);
         }

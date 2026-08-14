@@ -7,3 +7,9 @@ namespace Content.Trauma.Common.Teleportation;
 /// </summary>
 [ByRefEvent]
 public record struct PortalTeleportedEvent(EntityUid Source, EntityUid? Dest);
+
+/// <summary>
+/// Raised on the source portal after it teleports an entity.
+/// </summary>
+[ByRefEvent]
+public record struct PortalTeleportedEntityEvent(EntityUid Entity);

@@ -3,6 +3,7 @@ using Content.Shared._Sunrise.BloodCult.Components;
 using Content.Shared._Sunrise.BloodCult.Items;
 using Content.Shared.Actions;
 using Content.Shared.Actions.Components;
+using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.Input;
 using Robust.Client.Utility;
@@ -11,10 +12,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Sunrise.BloodCult.UI.SpellSelector;
 
-public sealed class SpellSelectorBUI : BoundUserInterface
+public sealed partial class SpellSelectorBUI : BoundUserInterface
 {
-    [Dependency] private readonly IClyde _displayManager = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
+    [Dependency] private IClyde _displayManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
 
     private RadialContainer? _menu;
 
@@ -38,6 +39,7 @@ public sealed class SpellSelectorBUI : BoundUserInterface
         };
 
         var protoMan = IoCManager.Resolve<IPrototypeManager>();
+        var entityMan = IoCManager.Resolve<IEntityManager>();
 
         foreach (var action in BloodCultistComponent.CultistActions)
         {
@@ -46,18 +48,10 @@ public sealed class SpellSelectorBUI : BoundUserInterface
 
             // Sunrise-TODO: Лютый щиткод, нужно нахуярить прототип cultAction и там хранить иконку и сам экшен.
             // Sunrise-TODO: А здесь лишь енумерировать все эти прототипы
-            if (!proto.Components.TryGetComponent("Action", out var actionComp))
+            if (!proto.TryComp(out IconComponent? icon, entityMan.ComponentFactory))
                 continue;
 
-            if (actionComp is not ActionComponent actionComponent)
-                continue;
-
-            var icon = actionComponent.Icon;
-
-            if (icon == null)
-                continue;
-
-            var texture = icon.Frame0();
+            var texture = icon.Icon.Frame0();
             var button = _menu.AddButton(proto.Name, texture);
 
             button.Controller.OnPressed += _ =>

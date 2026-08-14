@@ -12,14 +12,13 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Client._Sunrise.BloodCult.UI.StructureRadial;
 
-public sealed class StructureCraftBoundUserInterface : BoundUserInterface
+public sealed partial class StructureCraftBoundUserInterface : BoundUserInterface
 {
-    [Dependency] private readonly IEntityManager _entMan = default!;
-    [Dependency] private readonly IPlacementManager _placement = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
-    [Dependency] private readonly IEntitySystemManager _systemManager = default!;
+    [Dependency] private IEntityManager _entMan = default!;
+    [Dependency] private IPlacementManager _placement = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private IResourceCache _resourceCache = default!;
 
     private RadialContainer? _menu;
     private bool _selected;
@@ -106,8 +105,7 @@ public sealed class StructureCraftBoundUserInterface : BoundUserInterface
         //     return;
         // }
 
-        var constructSystem = _systemManager.GetEntitySystem<ConstructionSystem>();
-        var hijack = new ConstructionPlacementHijack(constructSystem, construct);
+        var hijack = new ConstructionPlacementHijack(construct);
 
         _placement.BeginPlacing(newObj, hijack);
     }

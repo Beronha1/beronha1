@@ -1,5 +1,4 @@
 using Content.Server._ES.Announcements;
-using Content.Server._ES.Radstorm.Components;
 using Content.Server.Chat.Systems;
 using Content.Shared._ES.Radstorm.Components;
 using Content.Shared.Power;
@@ -63,6 +62,6 @@ public sealed partial class ESRadstormModifierMachineSystem : EntitySystem
             announcementSound: sound,
             colorOverride: Color.LightSeaGreen,
             important: ent.Comp.Enabled);
-        _radstormRoundEndRule.UpdateScreenTimers(Single<ESRadstormRoundEndRuleComponent>(), newTime);
+        _radstormRoundEndRule.UpdateScreenTimers(Single<Components.ESRadstormRoundEndRuleComponent>(), newTime);
     }
 }

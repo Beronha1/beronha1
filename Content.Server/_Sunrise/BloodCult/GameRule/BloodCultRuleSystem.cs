@@ -4,7 +4,7 @@ using Content.Server._Sunrise.BloodCult.Objectives.Systems;
 using Content.Server._Sunrise.BloodCult.Runes.Systems;
 using Content.Server._Sunrise.TraitorTarget;
 using Content.Server.Antag;
-using Content.Server.Bible.Components;
+using Content.Shared.Bible.Components;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Rules;
@@ -28,6 +28,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Roles;
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.Tag;
@@ -39,28 +40,34 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Sunrise.BloodCult.GameRule;
 
-public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
+public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 {
-    [Dependency] private readonly AntagSelectionSystem _antagSelection = default!;
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
-    [Dependency] private readonly InventorySystem _inventorySystem = default!;
-    [Dependency] private readonly SharedMindSystem _mindSystem = default!;
-    [Dependency] private readonly MobStateSystem _mobStateSystem = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly RoundEndSystem _roundEndSystem = default!;
-    [Dependency] private readonly StorageSystem _storageSystem = default!;
-    [Dependency] private readonly TagSystem _tagSystem = default!;
-    [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerManager = default!;
-    [Dependency] private readonly KillCultistTargetsConditionSystem _cultistTargetsConditionSystem = default!;
-    [Dependency] private readonly SharedRoleSystem _roles = default!;
-    [Dependency] private readonly GibbingSystem _gibbingSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private AntagSelectionSystem _antagSelection = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private NpcFactionSystem _factionSystem = default!;
+    [Dependency] private InventorySystem _inventorySystem = default!;
+    [Dependency] private SharedMindSystem _mindSystem = default!;
+    [Dependency] private MobStateSystem _mobStateSystem = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private RoundEndSystem _roundEndSystem = default!;
+    [Dependency] private StorageSystem _storageSystem = default!;
+    [Dependency] private TagSystem _tagSystem = default!;
+    [Dependency] private SharedActionsSystem _actionsSystem = default!;
+    [Dependency] private ISharedPlayerManager _playerManager = default!;
+    [Dependency] private KillCultistTargetsConditionSystem _cultistTargetsConditionSystem = default!;
+    [Dependency] private SharedRoleSystem _roles = default!;
+    [Dependency] private GibbingSystem _gibbingSystem = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
 
     private readonly EntProtoId _mindRoleCultistPrototypeId = "MindRoleCultist";
     private readonly EntProtoId _cultistKillObjective = "CultistKillObjective";
+
+    private static readonly ProtoId<TagPrototype> DeconvertedCultistTag = "DeconvertedCultist";
+    private static readonly ProtoId<TagPrototype> CultistTag = "Cultist";
+    private static readonly ProtoId<NpcFactionPrototype> NanoTrasenFaction = "NanoTrasen";
+    private static readonly ProtoId<NpcFactionPrototype> BloodCultFaction = "BloodCult";
 
     public override void Initialize()
     {
@@ -337,7 +344,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
             var cultisQuery = EntityQueryEnumerator<BloodCultistComponent>();
             while (cultisQuery.MoveNext(out var cultistUid, out _))
             {
-                if (!HasComp<HumanoidAppearanceComponent>(cultistUid))
+                if (!HasComp<HumanoidProfileComponent>(cultistUid))
                     continue;
 
                 if (!TryComp<MobStateComponent>(cultistUid, out var mobState))
@@ -413,11 +420,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
     private void RemoveCultistAppearance(EntityUid cultist)
     {
-        if (TryComp<HumanoidAppearanceComponent>(cultist, out var appearanceComponent))
-        {
-            appearanceComponent.EyeColor = Color.White;
-            Dirty(cultist, appearanceComponent);
-        }
+        if (HasComp<HumanoidProfileComponent>(cultist))
+            _humanoidProfile.SetEyeColor(cultist, Color.White);
 
         RemComp<PentagramComponent>(cultist);
     }
@@ -432,7 +436,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var cultisQuery = EntityQueryEnumerator<BloodCultistComponent>();
         while (cultisQuery.MoveNext(out var cultistUid, out _))
         {
-            if (HasComp<HumanoidAppearanceComponent>(cultistUid))
+            if (HasComp<HumanoidProfileComponent>(cultistUid))
                 cultists.Add(cultistUid);
         }
 
@@ -454,11 +458,8 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
 
         foreach (var cultist in cultists)
         {
-            if (TryComp<HumanoidAppearanceComponent>(cultist, out var appearanceComponent))
-            {
-                appearanceComponent.EyeColor = rule.EyeColor;
-                Dirty(cultist, appearanceComponent);
-            }
+            if (HasComp<HumanoidProfileComponent>(cultist))
+                _humanoidProfile.SetEyeColor(cultist, rule.EyeColor);
 
             if (totalCultMembers < pentagramThreshold)
                 return;
@@ -471,7 +472,7 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
     {
         var potentialTargets = new List<EntityUid>();
 
-        var query = EntityQueryEnumerator<MindContainerComponent, AntagTargetComponent, HumanoidAppearanceComponent>();
+        var query = EntityQueryEnumerator<MindContainerComponent, AntagTargetComponent, HumanoidProfileComponent>();
         while (query.MoveNext(out var uid, out var mind, out _, out _))
         {
             if (mind.Mind == null || HasComp<BloodCultistComponent>(uid))
@@ -488,12 +489,12 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         if (!_mindSystem.TryGetMind(cultist, out var mindId, out var mind))
             return false;
 
-        if (_tagSystem.HasTag(cultist, "DeconvertedCultist"))
+        if (_tagSystem.HasTag(cultist, DeconvertedCultistTag))
             return false;
 
         _roles.MindAddRole(mindId, _mindRoleCultistPrototypeId);
 
-        var isHumanoid = HasComp<HumanoidAppearanceComponent>(cultist);
+        var isHumanoid = HasComp<HumanoidProfileComponent>(cultist);
 
         var cultistComponent = EnsureComp<BloodCultistComponent>(cultist);
 
@@ -505,10 +506,10 @@ public sealed class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleComponent>
         var collectiveMind = EnsureComp<CollectiveMindComponent>(cultist);
         collectiveMind.Minds.Add("BloodCult");
 
-        _tagSystem.AddTag(cultist, "Cultist");
+        _tagSystem.AddTag(cultist, CultistTag);
 
-        _factionSystem.RemoveFaction(cultist, "NanoTrasen", false);
-        _factionSystem.AddFaction(cultist, "BloodCult");
+        _factionSystem.RemoveFaction(cultist, NanoTrasenFaction, false);
+        _factionSystem.AddFaction(cultist, BloodCultFaction);
 
         // Для животных нужно добавить компонент StatusIcon, чтобы показывать иконку культиста
         if (!isHumanoid && !HasComp<StatusIconComponent>(cultist))

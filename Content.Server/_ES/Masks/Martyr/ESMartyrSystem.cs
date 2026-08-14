@@ -3,6 +3,7 @@ using Content.Server._ES.Masks.Objectives;
 using Content.Server._ES.Masks.Objectives.Relays;
 using Content.Server.Administration;
 using Content.Server.Chat;
+using Content.Server.Suicide;
 using Content.Shared._ES.Core.Timer;
 using Content.Shared._ES.Masks;
 using Robust.Shared.Player;
@@ -19,13 +20,13 @@ namespace Content.Server._ES.Masks.Martyr;
 /// <seealso cref="ESMartyrComponent"/>
 /// <seealso cref="ESMartyrKillerMarkerComponent"/>
 /// <seealso cref="ESBeKilledObjectiveSystem"/>
-public sealed class ESMartyrSystem : EntitySystem
+public sealed partial class ESMartyrSystem : EntitySystem
 {
-    [Dependency] private readonly SuicideSystem _suicide = default!;
-    [Dependency] private readonly GibbingSystem _gibbing = default!;
-    [Dependency] private readonly ESEntityTimerSystem _timer = default!;
-    [Dependency] private readonly ESBeKilledObjectiveSystem _beKilled = default!;
-    [Dependency] private readonly QuickDialogSystem _quickDialog = default!;
+    [Dependency] private SuicideSystem _suicide = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
+    [Dependency] private ESEntityTimerSystem _timer = default!;
+    [Dependency] private ESBeKilledObjectiveSystem _beKilled = default!;
+    [Dependency] private QuickDialogSystem _quickDialog = default!;
 
     private static readonly ProtoId<ESTroupePrototype> KillerMustBeTroupe = "ESCrew";
 

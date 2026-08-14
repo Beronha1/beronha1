@@ -22,12 +22,14 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
+using Content.Shared.NPC.Prototypes;
 using Content.Shared.Popups;
 using Content.Shared.SSDIndicator;
 using Content.Shared.Strip.Components;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Spawners;
 
@@ -38,20 +40,23 @@ namespace Content.Server._Sunrise.BloodCult.Items.Systems;
 /// </summary>
 public sealed partial class CultMirrorShieldSystem : EntitySystem
 {
-    [Dependency] private readonly ILogManager _log = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly TransformSystem _transform = default!;
-    [Dependency] private readonly StationSystem _stations = default!;
-    [Dependency] private readonly IServerPreferencesManager _preferences = default!;
-    [Dependency] private readonly StationSpawningSystem _spawning = default!;
-    [Dependency] private readonly ISharedPlayerManager _playerMan = default!;
-    [Dependency] private readonly InventorySystem _inventory = default!;
-    [Dependency] private readonly NpcFactionSystem _faction = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    private static readonly ProtoId<NpcFactionPrototype> BloodCultFaction = "BloodCult";
+    private static readonly ProtoId<NpcFactionPrototype> PassiveFaction = "Passive";
+
+    [Dependency] private ILogManager _log = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private StunSystem _stun = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private TransformSystem _transform = default!;
+    [Dependency] private StationSystem _stations = default!;
+    [Dependency] private IServerPreferencesManager _preferences = default!;
+    [Dependency] private StationSpawningSystem _spawning = default!;
+    [Dependency] private ISharedPlayerManager _playerMan = default!;
+    [Dependency] private InventorySystem _inventory = default!;
+    [Dependency] private NpcFactionSystem _faction = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
 
     private ISawmill _sawmill = default!;
 
@@ -323,7 +328,7 @@ public sealed partial class CultMirrorShieldSystem : EntitySystem
 
         // 🌇Sunset🌇 - this fork's GameTicker has no GetPlayerProfile; pull any enabled character from
         // preferences instead (illusion only needs to look roughly like a player, not their exact slot).
-        var profile = _preferences.GetPreferences(session.UserId).GetRandomEnabledProfile();
+        var profile = _preferences.GetPreferences(session.UserId).SelectedCharacter;
         mobUid = _spawning.SpawnPlayerMob(coords.Value, null, profile, stationUid);
 
         if (HasComp<SSDIndicatorComponent>(mobUid))
@@ -341,12 +346,12 @@ public sealed partial class CultMirrorShieldSystem : EntitySystem
             // Она должна атаковать всех не культистов
             if (agressive)
             {
-                _faction.AddFaction(mobUid.Value, "BloodCult");
+                _faction.AddFaction(mobUid.Value, BloodCultFaction);
                 _console.ExecuteCommand($"addnpc {mobUid.Value} HostileIllusionCompound");
             }
             else
             {
-                _faction.AddFaction(mobUid.Value, "Passive");
+                _faction.AddFaction(mobUid.Value, PassiveFaction);
                 EnsureComp<NPCRetaliationComponent>(mobUid.Value);
                 _console.ExecuteCommand($"addnpc {mobUid.Value} IdleCompound");
             }

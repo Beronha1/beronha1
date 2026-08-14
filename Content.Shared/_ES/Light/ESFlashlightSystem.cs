@@ -1,0 +1,64 @@
+using Content.Shared.ActionBlocker;
+using Content.Shared.Examine;
+using Content.Shared.Interaction;
+using Content.Shared.Light;
+using Content.Shared.Light.Components;
+using Content.Shared.Light.EntitySystems;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared._ES.Light;
+
+public sealed partial class ESFlashlightSystem : EntitySystem
+{
+    [Dependency] private ActionBlockerSystem _actionBlocker = default!;
+    [Dependency] private SharedHandheldLightSystem _handheldLight = default!;
+    [Dependency] private SharedInteractionSystem _interaction = default!;
+    [Dependency] private UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
+
+    /// <inheritdoc/>
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<UnpoweredFlashlightComponent, ExaminedEvent>(OnExamine);
+
+        SubscribeAllEvent<ESToggleFlashlightEvent>(OnToggleFlashlight);
+    }
+
+    private void OnExamine(Entity<UnpoweredFlashlightComponent> ent, ref ExaminedEvent args)
+    {
+        args.PushMarkup(Loc.GetString("es-flashlight-toggle-examine-keybind"));
+    }
+
+    private void OnToggleFlashlight(ESToggleFlashlightEvent msg, EntitySessionEventArgs args)
+    {
+        if (args.SenderSession.AttachedEntity is not { } ent ||
+            !TryGetEntity(msg.Flashlight, out var flashlight))
+            return;
+
+        if (!_interaction.IsAccessible(ent, flashlight.Value) ||
+            !_actionBlocker.CanInteract(ent, flashlight.Value))
+            return;
+
+        if (TryComp<UnpoweredFlashlightComponent>(flashlight.Value, out var unpowered))
+        {
+            _unpoweredFlashlight.TryToggleLight((flashlight.Value, unpowered), ent);
+        }
+        else if (TryComp<HandheldLightComponent>(flashlight.Value, out var handheld))
+        {
+            if (handheld.Activated)
+                _handheldLight.TurnOff((flashlight.Value, handheld));
+            else
+                _handheldLight.TurnOn(ent, (flashlight.Value, handheld));
+        }
+    }
+}
+
+[Serializable, NetSerializable]
+public sealed class ESToggleFlashlightEvent : EntityEventArgs
+{
+    public NetEntity Flashlight;
+
+    public ESToggleFlashlightEvent(NetEntity flashlight)
+    {
+        Flashlight = flashlight;
+    }
+}

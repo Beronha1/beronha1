@@ -1,7 +1,7 @@
 using Content.Server.Actions;
 using Content.Server.DoAfter;
-using Content.Server.Humanoid;
 using Content.Server.Popups;
+using Content.Shared.Body;
 using Content.Shared._Impstation.Kodepiia;
 using Content.Shared._Impstation.Kodepiia.Components;
 using Content.Shared.DoAfter;
@@ -14,13 +14,14 @@ using Robust.Shared.Player;
 
 namespace Content.Server._Impstation.Kodepiia;
 
-public sealed class KodepiiaScramblerSystem : SharedKodepiiaScramblerSystem
+public sealed partial class KodepiiaScramblerSystem : SharedKodepiiaScramblerSystem
 {
-    [Dependency] private readonly ActionsSystem _actionsSystem = default!;
-    [Dependency] private readonly HumanoidAppearanceSystem _humanoidAppearance = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private ActionsSystem _actionsSystem = default!;
+    [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
+    [Dependency] private SharedVisualBodySystem _visualBody = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -56,9 +57,11 @@ public sealed class KodepiiaScramblerSystem : SharedKodepiiaScramblerSystem
         if (args.Handled)
             return;
 
-        if (!TryComp(ent, out HumanoidAppearanceComponent? appearance))
+        if (!TryComp(ent, out HumanoidProfileComponent? appearance))
             return;
-        _humanoidAppearance.LoadProfile(ent, HumanoidCharacterProfile.RandomWithSpecies(appearance.Species), appearance);
+        var profile = HumanoidCharacterProfile.RandomWithSpecies(appearance.Species);
+        _visualBody.ApplyProfileTo(ent.Owner, profile);
+        _humanoidProfile.ApplyProfileTo((ent.Owner, appearance), profile);
 
         string popupSelf = Loc.GetString("kodepiia-scramble-self", ("name", Identity.Entity(ent, EntityManager)));
         _popup.PopupEntity(popupSelf, ent, ent);

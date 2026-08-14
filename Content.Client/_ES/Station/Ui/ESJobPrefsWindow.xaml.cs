@@ -60,7 +60,8 @@ public sealed partial class ESJobPrefsWindow : FancyWindow
                 .Where(job => job.SetPreference)
                 .ToArray();
 
-            Array.Sort(jobs, JobUIComparer.Instance);
+            if (JobUIComparer.TryCreate(_prototypeManager, null, out var comparer))
+                Array.Sort(jobs, comparer);
 
             foreach (var job in jobs)
             {

@@ -172,8 +172,8 @@ public sealed partial class ESArrivalsSystem : EntitySystem
         {
             if (TryComp<HungerComponent>(ev.SpawnResult, out var hunger))
             {
-                var threshold = _random.Prob(0.5f) ? HungerThreshold.Peckish : HungerThreshold.Hungry;
-                _hunger.SetHunger((ev.SpawnResult.Value, hunger), threshold);
+                var threshold = _random.Prob(0.5f) ? HungerThreshold.Peckish : HungerThreshold.Starving;
+                _hunger.SetHunger(ev.SpawnResult.Value, hunger.Thresholds[threshold], hunger);
             }
 
             var sicknessTime = TimeSpan.FromSeconds(Math.Max((arrivals.ArrivalTime - _timing.CurTime).TotalSeconds + _random.Next(10, 20), _random.Next(10, 15)));

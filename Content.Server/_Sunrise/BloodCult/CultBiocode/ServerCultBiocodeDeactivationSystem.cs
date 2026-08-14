@@ -8,11 +8,11 @@ namespace Content.Server._Sunrise.BloodCult.CultBiocode;
 /// <summary>
 /// Server-side implementation of the cult biocode deactivation system.
 /// </summary>
-public sealed class ServerCultBiocodeDeactivationSystem : CultBiocodeDeactivationSystem
+public sealed partial class ServerCultBiocodeDeactivationSystem : CultBiocodeDeactivationSystem
 {
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly PinpointerSystem _pinpointerSystem = default!;
-    [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private PinpointerSystem _pinpointerSystem = default!;
+    [Dependency] private SharedAppearanceSystem _appearance = default!;
 
     protected override void ShowAlert(EntityUid user, string alertText)
     {
@@ -23,7 +23,7 @@ public sealed class ServerCultBiocodeDeactivationSystem : CultBiocodeDeactivatio
     {
         if (TryComp<PinpointerComponent>(uid, out var pinpointer))
         {
-            _pinpointerSystem.SetActive(uid, false, pinpointer);
+            _pinpointerSystem.SetActive((uid, pinpointer), false);
 
             if (TryComp<AppearanceComponent>(uid, out var appearance))
             {

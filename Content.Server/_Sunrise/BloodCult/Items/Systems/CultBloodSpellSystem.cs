@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using Content.Server._Sunrise.BloodCult.Items.Components;
 using Content.Server.Body.Components;
-using Content.Server._Starlight.Medical.Body.Systems;
+using Content.Server.Body.Systems;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared._Sunrise.BloodCult.Components;
@@ -34,19 +34,19 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._Sunrise.BloodCult.Items.Systems;
 
-public sealed class CultBloodSpellSystem : EntitySystem
+public sealed partial class CultBloodSpellSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
-    [Dependency] private readonly BloodstreamSystem _bloodstreamSystem = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly HandsSystem _handsSystem = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionSystem = default!;
-    [Dependency] private readonly TransformSystem _transformSystem = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
-    [Dependency] private readonly UseDelaySystem _useDelay = default!;
+    [Dependency] private SharedAudioSystem _audioSystem = default!;
+    [Dependency] private BloodstreamSystem _bloodstreamSystem = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private HandsSystem _handsSystem = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private PopupSystem _popupSystem = default!;
+    [Dependency] private IPrototypeManager _prototypeManager = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionSystem = default!;
+    [Dependency] private TransformSystem _transformSystem = default!;
+    [Dependency] private UserInterfaceSystem _ui = default!;
+    [Dependency] private UseDelaySystem _useDelay = default!;
 
     public override void Initialize()
     {
@@ -292,8 +292,7 @@ public sealed class CultBloodSpellSystem : EntitySystem
                 absorbBlood.AddSolution(blood, _prototypeManager);
                 Spawn("CultTileSpawnEffect", Transform(puddle).Coordinates);
 
-                var ev = new SolutionContainerChangedEvent(puddleSolution.Value.Comp.Solution, solution);
-                RaiseLocalEvent(puddle, ref ev);
+                _solutionSystem.UpdateChemicals(puddleSolution.Value);
             }
         }
 
@@ -353,7 +352,10 @@ public sealed class CultBloodSpellSystem : EntitySystem
             if (selfHeal)
                 availableCharges /= 1.65f;
 
-            foreach (var (damageGroup, damage) in damageableComponent.DamagePerGroup.ToList())
+            var damagePerGroup = _damageableSystem.GetDamagePerGroup((target, damageableComponent));
+            var allDamage = _damageableSystem.GetAllDamage((target, damageableComponent));
+
+            foreach (var (damageGroup, damage) in damagePerGroup)
             {
                 if (!bloodSpell.HealingGroups.Contains(damageGroup))
                     continue;
@@ -361,7 +363,7 @@ public sealed class CultBloodSpellSystem : EntitySystem
                 totalDamage += damage;
             }
 
-            foreach (var (damageGroup, damage) in damageableComponent.DamagePerGroup.ToList())
+            foreach (var (damageGroup, damage) in damagePerGroup)
             {
                 if (availableCharges <= 0)
                     break;
@@ -375,7 +377,7 @@ public sealed class CultBloodSpellSystem : EntitySystem
 
                 foreach (var damageType in damageGroupSpecifier.DamageTypes)
                 {
-                    totalDamageInGroup += damageableComponent.Damage.DamageDict[damageType];
+                    totalDamageInGroup += allDamage.DamageDict.GetValueOrDefault(damageType);
                 }
 
                 if (totalDamageInGroup == 0 || totalDamage == 0)
@@ -389,7 +391,7 @@ public sealed class CultBloodSpellSystem : EntitySystem
 
                 foreach (var damageType in damageGroupSpecifier.DamageTypes.ToList())
                 {
-                    var damageInType = damageableComponent.Damage.DamageDict[damageType];
+                    var damageInType = allDamage.DamageDict.GetValueOrDefault(damageType);
 
                     var proportionalHealType = (proportionalHealGroup * (damageInType / totalDamageInGroup));
 

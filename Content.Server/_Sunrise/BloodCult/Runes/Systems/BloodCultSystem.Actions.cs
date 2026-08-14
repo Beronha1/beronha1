@@ -14,6 +14,7 @@ using Content.Shared.Body.Components;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Destructible;
 using Content.Shared.Destructible.Thresholds;
+using Content.Shared.Destructible.Thresholds.Behaviors;
 using Content.Shared.Destructible.Thresholds.Triggers;
 using Content.Shared.DoAfter;
 using Content.Shared.Doors.Components;

@@ -25,6 +25,12 @@ public sealed partial class ESCVars : CVars
     public static readonly CVarDef<bool> ESOpenCharacterMenuOnSpawn =
         CVarDef.Create("es_ic.open_character_menu_on_spawn", true, CVar.SERVER | CVar.REPLICATED);
 
+    /// <summary>
+    /// Prevents joining and round start while the diegetic lobby is closed.
+    /// </summary>
+    public static readonly CVarDef<bool> LobbyClosed =
+        CVarDef.Create("es_lobby.closed", false, CVar.SERVER | CVar.REPLICATED);
+
     // EVAC
 
     public static readonly CVarDef<float> ESEvacVotePercentage =

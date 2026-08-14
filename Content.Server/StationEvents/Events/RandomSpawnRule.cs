@@ -7,7 +7,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.StationEvents.Events;
 
-public sealed class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponent>
+public sealed partial class RandomSpawnRule : StationEventSystem<RandomSpawnRuleComponent>
 {
     [Dependency] private NavMapSystem _navMap = default!;
     [Dependency] private RadioSystem _radio = default!;

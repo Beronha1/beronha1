@@ -266,6 +266,9 @@ public abstract partial class SharedPortalSystem : EntitySystem
         // <Trauma>
         var ev = new PortalTeleportedEvent(ent, targetEntity);
         RaiseLocalEvent(subject, ref ev);
+
+        var portalEv = new PortalTeleportedEntityEvent(subject);
+        RaiseLocalEvent(ent.Owner, ref portalEv);
         // </Trauma>
 
         if (!playSound)

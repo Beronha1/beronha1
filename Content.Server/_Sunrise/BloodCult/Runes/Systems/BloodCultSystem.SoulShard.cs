@@ -22,7 +22,8 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
 
         private void OnShardInteractUse(EntityUid uid, SoulShardComponent component, AfterInteractEvent args)
         {
-            var target = args.Target;
+            if (args.Target is not { } target)
+                return;
 
             if (!HasComp<BloodCultistComponent>(args.User))
                 return;
@@ -31,12 +32,12 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
                 return;
 
             if (!TryComp<MindContainerComponent>(target, out var mindComponent) || !mindComponent.Mind.HasValue ||
-                !TryComp<HumanoidAppearanceComponent>(target, out _))
+                !TryComp<HumanoidProfileComponent>(target, out _))
                 return;
 
             _mindSystem.TransferTo(mindComponent.Mind.Value, uid);
 
-            var targetName = MetaData(target.Value).EntityName;
+            var targetName = MetaData(target).EntityName;
 
             _metaDataSystem.SetEntityName(uid,
                 Robust.Shared.Localization.Loc.GetString("soul-shard-description", ("soul", targetName)));
@@ -46,14 +47,13 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
 
         private void OnShardMindAdded(EntityUid uid, SoulShardComponent component, MindAddedMessage args)
         {
-            if (!TryComp<MindContainerComponent>(uid, out var mindContainer) || !mindContainer.HasMind)
-            {
+            if (!TryComp<MindContainerComponent>(uid, out var mindContainer) ||
+                mindContainer.Mind is not { } mind)
                 return;
-            }
 
-            if (_roleSystem.MindHasRole<TraitorRoleComponent>(mindContainer.Mind.Value))
+            if (_roleSystem.MindHasRole<TraitorRoleComponent>(mind))
             {
-                _roleSystem.MindRemoveRole<TraitorRoleComponent>(mindContainer.Mind.Value);
+                _roleSystem.MindRemoveRole<TraitorRoleComponent>(mind);
             }
 
             _appearanceSystem.SetData(uid, SoulShardVisualState.State, true);

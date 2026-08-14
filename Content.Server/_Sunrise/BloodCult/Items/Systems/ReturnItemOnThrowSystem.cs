@@ -9,11 +9,11 @@ using Content.Shared.Throwing;
 
 namespace Content.Server._Sunrise.BloodCult.Items.Systems;
 
-public sealed class ReturnItemOnThrowSystem : EntitySystem
+public sealed partial class ReturnItemOnThrowSystem : EntitySystem
 {
-    [Dependency] private readonly HandsSystem _hands = default!;
-    [Dependency] private readonly StunSystem _stun = default!;
-    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private StunSystem _stun = default!;
+    [Dependency] private StatusEffectsSystem _statusEffects = default!;
 
     public override void Initialize()
     {

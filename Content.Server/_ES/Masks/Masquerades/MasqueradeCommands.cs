@@ -14,9 +14,9 @@ namespace Content.Server._ES.Masks.Masquerades;
 
 [ToolshedCommand(Name = "mq")]
 [AdminCommand(AdminFlags.Round )]
-public sealed class MasqueradeCommands : ToolshedCommand
+public sealed partial class MasqueradeCommands : ToolshedCommand
 {
-    [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private IPrototypeManager _proto = default!;
 
     public static readonly ProtoId<GamePresetPrototype> MasqueradePreset = "ESMasqueradeManaged";
 

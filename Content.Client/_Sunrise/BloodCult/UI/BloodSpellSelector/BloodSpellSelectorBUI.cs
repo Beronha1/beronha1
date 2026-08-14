@@ -9,10 +9,14 @@ using Robust.Shared.Utility;
 
 namespace Content.Client._Sunrise.BloodCult.UI.BloodSpellSelector;
 
-public sealed class BloodSpellSelectorBUI : BoundUserInterface
+public sealed partial class BloodSpellSelectorBUI : BoundUserInterface
 {
-    [Dependency] private readonly IClyde _displayManager = default!;
-    [Dependency] private readonly IInputManager _inputManager = default!;
+    private static readonly EntProtoId BloodOrbPrototype = "CultBloodOrb";
+    private static readonly EntProtoId BloodSpearPrototype = "BloodSpear";
+    private static readonly EntProtoId BloodBoltBarragePrototype = "BloodBoltBarrage";
+
+    [Dependency] private IClyde _displayManager = default!;
+    [Dependency] private IInputManager _inputManager = default!;
 
     private RadialContainer? _menu;
 
@@ -39,7 +43,7 @@ public sealed class BloodSpellSelectorBUI : BoundUserInterface
         var entityMan = IoCManager.Resolve<IEntityManager>();
         var sprite = entityMan.System<SpriteSystem>();
 
-        if (protoMan.TryIndex("CultBloodOrb", out EntityPrototype? bloodOrb))
+        if (protoMan.TryIndex(BloodOrbPrototype, out EntityPrototype? bloodOrb))
         {
             var texture = sprite.GetPrototypeIcon(bloodOrb);
             var button = _menu.AddButton($"{bloodOrb.Name} (50)", texture.Default);
@@ -53,7 +57,7 @@ public sealed class BloodSpellSelectorBUI : BoundUserInterface
             };
         }
 
-        if (protoMan.TryIndex("BloodSpear", out EntityPrototype? bloodSpear))
+        if (protoMan.TryIndex(BloodSpearPrototype, out EntityPrototype? bloodSpear))
         {
             var texture = sprite.GetPrototypeIcon(bloodSpear);
             var button = _menu.AddButton($"{bloodSpear.Name} (100)", texture.Default);
@@ -67,7 +71,7 @@ public sealed class BloodSpellSelectorBUI : BoundUserInterface
             };
         }
 
-        if (protoMan.TryIndex("BloodBoltBarrage", out EntityPrototype? bloodBoltBarrage))
+        if (protoMan.TryIndex(BloodBoltBarragePrototype, out EntityPrototype? bloodBoltBarrage))
         {
             var texture = sprite.GetPrototypeIcon(bloodBoltBarrage);
             var button = _menu.AddButton($"{bloodBoltBarrage.Name} (200)", texture.Default);

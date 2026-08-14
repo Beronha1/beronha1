@@ -1,7 +1,6 @@
 ﻿using Content.Server._Sunrise.BloodCult.Items.Components;
 using Content.Server.Body.Components;
-using Content.Server._Starlight.Medical.Body.Systems;
-using Content.Shared._Starlight.Medical.Body.Systems;
+using Content.Shared.Body;
 using Content.Shared._Sunrise.BloodCult.Components;
 using Content.Shared._Sunrise.BloodCult.Items;
 using Content.Shared.Body.Components;
@@ -22,14 +21,14 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Sunrise.BloodCult.Items.Systems;
 
-public sealed class BloodCultWeaponSystem : EntitySystem
+public sealed partial class BloodCultWeaponSystem : EntitySystem
 {
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
+    [Dependency] private SharedAudioSystem _audio = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private DamageableSystem _damageableSystem = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private SharedStunSystem _stunSystem = default!;
 
     public override void Initialize()
     {
@@ -96,7 +95,7 @@ public sealed class BloodCultWeaponSystem : EntitySystem
             foreach (var ent in stomachs)
             {
                 var owner = ent.Owner;
-                if (!_solutionContainer.ResolveSolution(owner, StomachSystem.DefaultSolutionName, ref ent.Comp1.Solution, out stomachSol))
+                if (!_solutionContainer.ResolveSolution(owner, StomachSystem.DefaultSolutionName, ref ent.Comp.Solution, out stomachSol))
                     continue;
 
                 if (stomachSol.AvailableVolume <= highestAvailable)

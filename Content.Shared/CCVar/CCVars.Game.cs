@@ -40,6 +40,12 @@ public sealed partial class CCVars
         GameLobbyEnabled = CVarDef.Create("game.lobbyenabled", true, CVar.ARCHIVE);
 
     /// <summary>
+    /// Controls the diegetic lobby curtain animation.
+    /// </summary>
+    public static readonly CVarDef<bool>
+        GameLobbyCurtainAnimation = CVarDef.Create("game.lobbycurtainanimation", true, CVar.ARCHIVE | CVar.CLIENTONLY);
+
+    /// <summary>
     ///     Controls the duration of the lobby timer in seconds. Defaults to 2 minutes and 30 seconds.
     /// </summary>
     public static readonly CVarDef<int>

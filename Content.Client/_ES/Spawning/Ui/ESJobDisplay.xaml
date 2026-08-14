@@ -1,0 +1,16 @@
+<controls:ESJobDisplay
+    xmlns="https://spacestation14.io"
+    xmlns:controls="clr-namespace:Content.Client._ES.Spawning.Ui"
+    Orientation="Vertical"
+    HorizontalExpand="True">
+    <VFillStack VerticalAlignment="Center" HorizontalAlignment="Center">
+        <Control>
+            <SpriteView Name="JobView" Scale="3 3"/>
+        </Control>
+        <Spacer VSpace="5"/>
+        <Label Name="NameLabel" HorizontalAlignment="Center" StyleClasses="LabelKeyText"/>
+        <Spacer VSpace="5"/>
+    </VFillStack>
+    <RichTextLabel Name="DescriptionLabel" HorizontalAlignment="Center" VerticalAlignment="Top" StyleClasses="LabelSubText"/>
+    <Spacer VerticalExpand="True"/>
+</controls:ESJobDisplay>

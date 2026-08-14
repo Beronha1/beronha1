@@ -16,11 +16,11 @@ namespace Content.Server._ES.Masks.Objectives;
 ///     Handles gameplay behavior and objective logic for the Sacrifice's healing-on-death.
 /// </summary>
 /// <seealso cref="ESSacrificeHealObjectiveComponent"/>
-public sealed class ESSacrificeHealObjectiveSystem : ESBaseObjectiveSystem<ESSacrificeHealObjectiveComponent>
+public sealed partial class ESSacrificeHealObjectiveSystem : ESBaseObjectiveSystem<ESSacrificeHealObjectiveComponent>
 {
-    [Dependency] private readonly BloodstreamSystem _bloodstream = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly SharedPopupSystem _popup = default!;
+    [Dependency] private BloodstreamSystem _bloodstream = default!;
+    [Dependency] private EntityLookupSystem _lookup = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
 
     public override Type[] RelayComponents => [typeof(ESMobStateRelayComponent)];
 

@@ -11,12 +11,12 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._ES.Masks.Avenger;
 
-public sealed class ESAvengeOnKillObjectiveSystem : ESBaseTargetObjectiveSystem<ESAvengeOnKillObjectiveComponent>
+public sealed partial class ESAvengeOnKillObjectiveSystem : ESBaseTargetObjectiveSystem<ESAvengeOnKillObjectiveComponent>
 {
-    [Dependency] private readonly IChatManager _chatManager = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly ActionsSystem _actions = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
+    [Dependency] private IChatManager _chatManager = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private ActionsSystem _actions = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
 
     public override Type[] TargetRelayComponents { get; } = [typeof(ESAvengeOnKillObjectiveMarkerComponent)];
 

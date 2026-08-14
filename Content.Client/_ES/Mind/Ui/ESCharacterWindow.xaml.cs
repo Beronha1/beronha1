@@ -21,9 +21,9 @@ namespace Content.Client._ES.Mind.Ui;
 [GenerateTypedNameReferences]
 public sealed partial class ESCharacterWindow : FancyWindow
 {
-    [Dependency] private readonly IEntityManager _ent = default!;
-    [Dependency] private readonly IPlayerManager _player = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IEntityManager _ent = default!;
+    [Dependency] private IPlayerManager _player = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
     private readonly JobSystem _job;
     private readonly ESMaskSystem _mask;
     private readonly MindSystem _mind;

@@ -840,7 +840,7 @@ namespace Content.Server.GameTicking
             }
         }
 
-        private void AnnounceRound()
+        public void AnnounceRound()
         {
             if (CurrentPreset == null) return;
 

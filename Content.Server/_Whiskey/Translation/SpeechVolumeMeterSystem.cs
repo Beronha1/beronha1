@@ -29,9 +29,9 @@ namespace Content.Server._Whiskey.Translation;
 /// para reativar em duas linhas.
 /// </para>
 /// </summary>
-public sealed class SpeechVolumeMeterSystem : EntitySystem
+public sealed partial class SpeechVolumeMeterSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     /// <summary>
     /// Intervalo entre resumos no log. Dez minutos dá amostra suficiente sem

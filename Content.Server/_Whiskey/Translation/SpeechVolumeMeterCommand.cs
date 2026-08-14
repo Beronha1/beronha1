@@ -10,9 +10,9 @@ namespace Content.Server._Whiskey.Translation;
 /// no meio de uma rodada cheia sem depender do relógio.
 /// </summary>
 [AdminCommand(AdminFlags.Admin)]
-public sealed class SpeechVolumeMeterCommand : IConsoleCommand
+public sealed partial class SpeechVolumeMeterCommand : IConsoleCommand
 {
-    [Dependency] private readonly IEntityManager _entityManager = default!;
+    [Dependency] private IEntityManager _entityManager = default!;
 
     public string Command => "whiskey_falametrica";
     public string Description => "Escreve no log o resumo de volume de fala por idioma da janela atual.";

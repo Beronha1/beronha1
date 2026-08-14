@@ -16,15 +16,14 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server._ES.Masks.Phantom;
 
-public sealed class ESReincarnateSystem : EntitySystem
+public sealed partial class ESReincarnateSystem : EntitySystem
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly GameTicker _gameTicker = default!;
-    [Dependency] private readonly MetaDataSystem _metaData = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
+    [Dependency] private DamageableSystem _damageable = default!;
+    [Dependency] private GameTicker _gameTicker = default!;
+    [Dependency] private MetaDataSystem _metaData = default!;
+    [Dependency] private MindSystem _mind = default!;
+    [Dependency] private MobThresholdSystem _mobThreshold = default!;
 
     private static readonly ProtoId<DamageTypePrototype> AsphyxiationDamageType = "Asphyxiation";
 
@@ -49,7 +48,7 @@ public sealed class ESReincarnateSystem : EntitySystem
                 && TryComp<MobThresholdsComponent>(mindComp.OwnedEntity, out var thresholds))
             {
                 var playerDeadThreshold = _mobThreshold.GetThresholdForState(mindComp.OwnedEntity.Value, MobState.Dead, thresholds);
-                dealtDamage = playerDeadThreshold - damageable.TotalDamage;
+                dealtDamage = playerDeadThreshold - _damageable.GetTotalDamage((mindComp.OwnedEntity.Value, damageable));
             }
 
             DamageSpecifier damage = new(_prototype.Index(AsphyxiationDamageType), dealtDamage);

@@ -6,10 +6,10 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._ES.Masks.Survivalist;
 
-public sealed class ESMedAlertRadioAnnouncerSystem : EntitySystem
+public sealed partial class ESMedAlertRadioAnnouncerSystem : EntitySystem
 {
-    [Dependency] private readonly RadioSystem _radio = default!;
-    [Dependency] private readonly NavMapSystem _navMap = default!;
+    [Dependency] private RadioSystem _radio = default!;
+    [Dependency] private NavMapSystem _navMap = default!;
 
     public override void Initialize()
     {

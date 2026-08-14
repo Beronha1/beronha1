@@ -17,10 +17,10 @@ namespace Content.Server._ES.Auditions;
 /// <summary>
 /// This handles the server-side of auditioning!
 /// </summary>
-public sealed class ESAuditionsSystem : ESSharedAuditionsSystem
+public sealed partial class ESAuditionsSystem : ESSharedAuditionsSystem
 {
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly MindSystem _mind = default!;
+    [Dependency] private IRobustRandom _random = default!;
+    [Dependency] private MindSystem _mind = default!;
 
     public override void Initialize()
     {
@@ -68,9 +68,9 @@ public sealed class ESAuditionsSystem : ESSharedAuditionsSystem
 }
 
 [ToolshedCommand, AdminCommand(AdminFlags.Round)]
-public sealed class CastCommand : ToolshedCommand
+public sealed partial class CastCommand : ToolshedCommand
 {
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private IPrototypeManager _prototype = default!;
 
     private ESAuditionsSystem? _auditions;
     private ESCluesSystem? _clues;

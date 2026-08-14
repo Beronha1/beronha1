@@ -1,15 +1,16 @@
 using Content.Server.Instruments;
-using Content.Server.Speech.Components;
 using Content.Shared.Instruments;
 using Content.Shared.ActionBlocker;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared._DV.Harpy;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.FixedPoint;
 using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs;
 using Content.Shared.Popups;
+using Content.Shared.Speech.Components;
 using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.UserInterface;
@@ -23,14 +24,14 @@ using Content.Shared.Clothing;
 
 namespace Content.Server._DV.Harpy
 {
-    public sealed class HarpySingerSystem : EntitySystem
+    public sealed partial class HarpySingerSystem : EntitySystem
     {
-        [Dependency] private readonly InstrumentSystem _instrument = default!;
-        [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
-        [Dependency] private readonly InventorySystem _inventorySystem = default!;
-        [Dependency] private readonly ActionBlockerSystem _blocker = default!;
-        [Dependency] private readonly IPrototypeManager _prototype = default!;
-        [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
+        [Dependency] private InstrumentSystem _instrument = default!;
+        [Dependency] private SharedPopupSystem _popupSystem = default!;
+        [Dependency] private InventorySystem _inventorySystem = default!;
+        [Dependency] private ActionBlockerSystem _blocker = default!;
+        [Dependency] private IPrototypeManager _prototype = default!;
+        [Dependency] private SharedAppearanceSystem _appearance = default!;
 
         public override void Initialize()
         {
@@ -55,11 +56,10 @@ namespace Content.Server._DV.Harpy
         {
             // Check if an item that makes the singer mumble is equipped to their face
             // (not their pockets!). As of writing, this should just be the muzzle.
-            if (TryComp<AddAccentClothingComponent>(args.Equipment, out var accent) &&
-                (accent.ReplacementPrototype == "mumble" || accent.Accent == "MumbleAccent") &&
+            if (HasComp<MumbleAccentComponent>(args.Equipment) &&
                 args.Slot == "mask")
             {
-                CloseMidiUi(args.Equipee);
+                CloseMidiUi(args.EquipTarget);
             }
         }
 
@@ -98,7 +98,7 @@ namespace Content.Server._DV.Harpy
         /// and maintenance overhead. It still reuses the values from DamageForceSayComponent, so
         /// any tweaks to that will keep ForceSay consistent with singing interruptions.
         /// </summary>
-        private void OnBeforeDamageChanged(EntityUid uid, HarpySingerComponent harpySingerComponent, BeforeDamageChangedEvent args)
+        private void OnBeforeDamageChanged(EntityUid uid, HarpySingerComponent harpySingerComponent, ref BeforeDamageChangedEvent args)
         {
             if (!harpySingerComponent.ShutUpDamageThreshold.HasValue ||
                 !args.Damage.AnyPositive())
@@ -140,8 +140,7 @@ namespace Content.Server._DV.Harpy
             var canNotSpeak = !_blocker.CanSpeak(uid);
             var zombified = TryComp<ZombieComponent>(uid, out var _);
             var muzzled = _inventorySystem.TryGetSlotEntity(uid, "mask", out var maskUid) &&
-                TryComp<AddAccentClothingComponent>(maskUid, out var accent) &&
-                (accent.ReplacementPrototype == "mumble" || accent.Accent == "MumbleAccent");
+                HasComp<MumbleAccentComponent>(maskUid);
 
             // Set this event as handled when the singer should be incapable of singing in order
             // to stop the ActivatableUISystem event from opening the MIDI UI.

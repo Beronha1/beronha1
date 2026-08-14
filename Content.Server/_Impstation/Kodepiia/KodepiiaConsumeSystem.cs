@@ -5,11 +5,13 @@ using Content.Server.Fluids.EntitySystems;
 using Content.Server.Forensics;
 using Content.Server.Popups;
 using Content.Shared.Body.Components;
+using Content.Shared.Body;
 using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
+using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
-using Content.Goobstation.Maths.FixedPoint;
+using Content.Shared.FixedPoint;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Nutrition.EntitySystems;
@@ -19,7 +21,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
-using Content.Shared.Gibbing.Systems;
+using Content.Shared.Gibbing;
 using Content.Shared._Impstation.Kodepiia;
 using Content.Shared._Impstation.Kodepiia.Components;
 using System.Diagnostics.CodeAnalysis;
@@ -27,21 +29,22 @@ using Robust.Server.GameObjects;
 
 namespace Content.Server._Impstation.Kodepiia;
 
-public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
+public sealed partial class ConsumeSystem : SharedKodepiiaConsumeSystem
 {
-    [Dependency] private readonly AudioSystem _audio = default!;
-    [Dependency] private readonly BodySystem _body = default!;
-    [Dependency] private readonly DamageableSystem _damage = default!;
-    [Dependency] private readonly DoAfterSystem _doAfter = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelist = default!;
-    [Dependency] private readonly ForensicsSystem _forensics = default!;
-    [Dependency] private readonly IngestionSystem _ingestion = default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly PopupSystem _popup = default!;
-    [Dependency] private readonly PuddleSystem _puddle = default!;
-    [Dependency] private readonly RottingSystem _rotting = default!;
-    [Dependency] private readonly SharedSolutionContainerSystem _solutionContainer = default!;
-    [Dependency] private readonly StomachSystem _stomach = default!;
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private BodySystem _body = default!;
+    [Dependency] private DamageableSystem _damage = default!;
+    [Dependency] private GibbingSystem _gibbing = default!;
+    [Dependency] private DoAfterSystem _doAfter = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!;
+    [Dependency] private ForensicsSystem _forensics = default!;
+    [Dependency] private IngestionSystem _ingestion = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
+    [Dependency] private PopupSystem _popup = default!;
+    [Dependency] private PuddleSystem _puddle = default!;
+    [Dependency] private RottingSystem _rotting = default!;
+    [Dependency] private SharedSolutionContainerSystem _solutionContainer = default!;
+    [Dependency] private StomachSystem _stomach = default!;
 
     public override void Initialize()
     {
@@ -112,7 +115,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         if (args.Target == null || args.Cancelled || !TryComp<PhysicsComponent>(args.Target, out var targetPhysics))
             return;
 
-        if (!_body.TryGetBodyOrganEntityComps<StomachComponent>(ent.Owner, out var stomachs))
+        if (!_body.TryGetOrgansWithComponent<StomachComponent>(ent.Owner, out var stomachs))
             return;
 
         var highestAvailable = FixedPoint2.Zero;
@@ -120,7 +123,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         foreach (var stomach in stomachs)
         {
             var owner = stomach.Owner;
-            if (!_solutionContainer.ResolveSolution(owner, "stomach", ref stomach.Comp1.Solution, out var stomachSol))
+            if (!_solutionContainer.ResolveSolution(owner, "stomach", ref stomach.Comp.Solution, out var stomachSol))
                 continue;
 
             if (stomachSol.AvailableVolume <= highestAvailable)
@@ -158,7 +161,7 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
                 var split = consumedSolution.SplitSolution(consumedSolution.Volume - highestAvailable);
                 _puddle.TrySpillAt(ent.Owner, split, out _);
             }
-            _stomach.TryTransferSolution(stomachToUse.Value.Owner, consumedSolution, stomachToUse);
+            _stomach.TryTransferSolution(stomachToUse.Value.AsNullable(), consumedSolution);
         }
 
         // Transfer DNA
@@ -186,8 +189,8 @@ public sealed class ConsumeSystem : SharedKodepiiaConsumeSystem
         consumed.Count++;
         Dirty(args.Target.Value, consumed);
 
-        if (consumed.Count >= ent.Comp.GibThreshold && TryComp(args.Target.Value, out BodyComponent? targetBody))
-            _body.GibBody(args.Target.Value, true, targetBody);
+        if (consumed.Count >= ent.Comp.GibThreshold && HasComp<BodyComponent>(args.Target.Value))
+            _gibbing.Gib(args.Target.Value);
     }
 
     public void PlayConsumeSound(Entity<KodepiiaConsumeActionComponent> ent)

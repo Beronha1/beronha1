@@ -46,21 +46,7 @@ public sealed partial class CharacterUIController : UIController, IOnStateEntere
 
     public void OnStateEntered(GameplayState state)
     {
-// ES START
-        return;
-// ES END
-        DebugTools.Assert(_window == null);
-
-        _window = UIManager.CreateWindow<CharacterWindow>();
-        LayoutContainer.SetAnchorPreset(_window, LayoutContainer.LayoutPreset.CenterTop);
-
-        _window.OnClose += DeactivateButton;
-        _window.OnOpen += ActivateButton;
-
-        CommandBinds.Builder
-            .Bind(ContentKeyFunctions.OpenCharacterMenu,
-                InputCmdHandler.FromDelegate(_ => ToggleWindow()))
-            .Register<CharacterUIController>();
+        // ES uses ESCharacterUIController for this state.
     }
 
     public void OnStateExited(GameplayState state)

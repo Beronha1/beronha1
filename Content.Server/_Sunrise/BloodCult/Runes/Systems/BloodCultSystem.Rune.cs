@@ -4,7 +4,7 @@ using Content.Server._Sunrise.BloodCult.GameRule;
 using Content.Server._Sunrise.BloodCult.Objectives.Components;
 using Content.Server._Sunrise.BloodCult.Runes.Comps;
 using Content.Server.Atmos.Components;
-using Content.Server.Bible.Components;
+using Content.Shared.Bible.Components;
 using Content.Server.Body.Components;
 using Content.Server.Chat.Systems;
 using Content.Server.Chemistry.Components;
@@ -322,13 +322,13 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
 
         private void HandleCollision(EntityUid uid, CultRuneBaseComponent component, ref StartCollideEvent args)
         {
-            if (!TryComp<SolutionContainerManagerComponent>(args.OtherEntity, out var solution))
+            if (!TryComp<SolutionManagerComponent>(args.OtherEntity, out var solution))
             {
                 return;
             }
 
             if (!_solutionContainer.TryGetSolution((args.OtherEntity, solution),
-                    VaporComponent.SolutionName,
+                    "vapor",
                     out var vapor))
                 return;
 
@@ -586,7 +586,7 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
                 _lookup.GetEntitiesInRange(uid, component.RangeTarget, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             targets.RemoveWhere(x =>
-                !_entityManager.HasComponent<HumanoidAppearanceComponent>(x) ||
+                !_entityManager.HasComponent<HumanoidProfileComponent>(x) ||
                 !_entityManager.HasComponent<BloodCultistComponent>(x));
 
             if (targets.Count == 0)
@@ -700,16 +700,19 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
             var selectedRune = new EntityUid(args.SelectedItem);
             var baseRune = uid;
 
-            if (!TryComp<TransformComponent>(selectedRune, out var xFormSelected) ||
-                !TryComp<TransformComponent>(baseRune, out var xFormBase))
+            if (!Exists(selectedRune) || !Exists(baseRune))
                 return;
+
+            var xFormSelected = Transform(selectedRune);
+            var xFormBase = Transform(baseRune);
 
             foreach (var target in targets)
             {
                 if (TryComp<PullableComponent>(target, out var pullable))
                     _pulling.TryStopPull(target, pullable);
-                if (HasComp<HumanoidAppearanceComponent>(target) && TryComp<TransformComponent>(target, out TransformComponent? targetm))
+                if (HasComp<HumanoidProfileComponent>(target))
                 {
+                    var targetm = Transform(target);
                     _entityManager.SpawnEntity(TeleportInEffect, xFormSelected.Coordinates);
                     _entityManager.SpawnEntity(TeleportOutEffect, targetm.Coordinates);
                 }
@@ -859,7 +862,7 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
                 _lookup.GetEntitiesInRange(uid, component.RangeTarget, LookupFlags.Dynamic | LookupFlags.Sundries);
 
             targets.RemoveWhere(x =>
-                !_entityManager.HasComponent<HumanoidAppearanceComponent>(x) || !HasComp<BloodCultistComponent>(x));
+                !_entityManager.HasComponent<HumanoidProfileComponent>(x) || !HasComp<BloodCultistComponent>(x));
 
             if (targets.Count == 0)
                 return;
@@ -1115,7 +1118,7 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
 
             var inRange = _lookup.GetEntitiesInRange(rune, component.ProjectileRange * severity, LookupFlags.Dynamic);
             inRange.RemoveWhere(x =>
-                !_entityManager.HasComponent<HumanoidAppearanceComponent>(x) ||
+                !_entityManager.HasComponent<HumanoidProfileComponent>(x) ||
                 _entityManager.HasComponent<BloodCultistComponent>(x) ||
                 _entityManager.HasComponent<ConstructComponent>(x));
 
@@ -1177,9 +1180,9 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
         {
             var mapPos = coords.ToMap(EntityManager, _xform);
 
-            var spawnCoords = _mapMan.TryFindGridAt(mapPos, out var gridUid, out _)
+            var spawnCoords = _map.TryFindGridAt(mapPos, out var gridUid, out _)
                 ? coords.WithEntityId(gridUid, EntityManager)
-                : new(_mapMan.GetMapEntityId(mapPos.MapId), mapPos.Position);
+                : new(_map.GetMap(mapPos.MapId), mapPos.Position);
 
             var ent = Spawn(component.ProjectilePrototype, spawnCoords);
             var direction = targetCoords.ToMapPos(EntityManager, _xform) - mapPos.Position;
@@ -1259,7 +1262,7 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
                 // ыыыы
             }
 
-            var damageSpecifier = new DamageSpecifier(_prototypeManager.Index<DamageTypePrototype>("Slash"), 10);
+            var damageSpecifier = new DamageSpecifier(_prototypeManager.Index(SlashDamageType), 10);
             _damageableSystem.TryChangeDamage(uid, damageSpecifier, true, false);
 
             _entityManager.SpawnEntity(rune, coords);
@@ -1308,8 +1311,8 @@ namespace Content.Server._Sunrise.BloodCult.Runes.Systems
 
         private void HealCultist(EntityUid player)
         {
-            var damageSpecifier = _prototypeManager.Index<DamageGroupPrototype>("Brute");
-            var damageSpecifier2 = _prototypeManager.Index<DamageGroupPrototype>("Burn");
+            var damageSpecifier = _prototypeManager.Index(BruteDamageGroup);
+            var damageSpecifier2 = _prototypeManager.Index(BurnDamageGroup);
 
             _damageableSystem.TryChangeDamage(player, new DamageSpecifier(damageSpecifier, -40));
             _damageableSystem.TryChangeDamage(player, new DamageSpecifier(damageSpecifier2, -40));

@@ -248,6 +248,9 @@ public sealed partial class MetabolizerSystem : EntitySystem
             {
                 solution.RemoveReagent(reagent, mostToRemove);
 
+                var reagentEffects = new GetReagentEffectsEvent(reagent);
+                RaiseLocalEvent(actualEntity, ref reagentEffects);
+
                 // We have processed a reagant, so count it towards the cap
                 reagents += 1;
 

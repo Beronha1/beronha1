@@ -1,0 +1,81 @@
+- type: entity
+  id: ESBaseStationArrivals
+  abstract: true
+  components:
+  - type: ESStationArrivals
+
+- type: entity
+  id: ESBaseStationEvacuation
+  abstract: true
+  components:
+  - type: ESEvacStation
+  - type: StationEmergencyShuttle
+
+- type: entity
+  id: ESBaseStationStoreroom
+  abstract: true
+  components:
+  - type: ESStoreroomStation
+  - type: ESCargoRequestStation
+
+- type: entity
+  id: ESBaseStationTelesci
+  abstract: true
+  components:
+  - type: ESTelesciStation
+    stages:
+    - announcement: es-telesci-announcement-stage-1
+      rewards:
+        tableId: ESTelesciRewards
+      events:
+        id: ESPortalEventAnomalies
+        amount: 3
+    - announcement: es-telesci-announcement-stage-2
+      rewards:
+        tableId: ESTelesciRewards
+      events:
+        id: ESPortalEventAnomalies
+        amount: 5
+    - announcement: es-telesci-announcement-stage-3
+      rewards:
+        tableId: ESTelesciRewards
+      events:
+        id: ESPortalEventAnomalies
+        amount: 7
+    - announcement: es-telesci-announcement-stage-4
+
+- type: entity
+  id: ESBaseStationNeutral
+  parent:
+  - BaseStation
+  - BaseStationNews
+  - BaseStationCargo
+  - BaseStationJobsSpawning
+  - BaseStationRecords
+  - BaseStationGateway
+  - BaseStationShuttles
+  - BaseStationCentcomm
+  - BaseStationAlertLevels
+  - BaseStationMagnet
+  - BaseStationExpeditions
+  - BaseStationSalvageJobs
+  - BaseStationSiliconLawCrewsimov
+  - BaseStationAllEventsEligible
+  - BaseStationNanotrasen
+  - BaseStationDeliveries
+  - ESBaseStationArrivals
+  - ESBaseStationEvacuation
+  - ESBaseStationStoreroom
+  - ESBaseStationTelesci
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+  - type: ESProducer
+  - type: GridSpawn
+    groups:
+      trade: !type:GridSpawnGroup
+        addComponents:
+        - type: ProtectedGrid
+        - type: TradeStation
+        paths:
+        - /Maps/Shuttles/trading_outpost.yml

@@ -13167,5 +13167,7 @@ Entries:
     message: Repaired legacy entities in Lavaland, Atlas ruins and shuttle maps.
   - type: Fix
     message: Restored empty flagship links and official-client audio CVar compatibility.
+  - type: Fix
+    message: Hardened completed Ripley construction state during round and map initialization.
   id: 1435
   time: '2026-08-14T11:27:40.0000000+00:00'

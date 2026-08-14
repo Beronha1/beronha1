@@ -26,6 +26,11 @@ public sealed partial class BuildMech : IGraphAction
     // TODO use or generalize ConstructionSystem.ChangeEntity();
     public void PerformAction(EntityUid uid, EntityUid? userUid, IEntityManager entityManager)
     {
+        // Completed mechs keep their final construction node so they can be deconstructed.
+        // Do not run the assembly completion action again when one is spawned or map-initialized.
+        if (entityManager.HasComponent<MechComponent>(uid))
+            return;
+
         if (!entityManager.TryGetComponent(uid, out ContainerManagerComponent? containerManager))
         {
             Logger.Warning($"Mech construct entity {uid} did not have a container manager! Aborting build mech action.");
@@ -44,6 +49,7 @@ public sealed partial class BuildMech : IGraphAction
         if (container.ContainedEntities.Count != 1)
         {
             Logger.Warning($"Mech construct entity {uid} did not have exactly one item in the specified '{Container}' container! Aborting build mech action.");
+            return;
         }
 
         var cell = container.ContainedEntities[0];

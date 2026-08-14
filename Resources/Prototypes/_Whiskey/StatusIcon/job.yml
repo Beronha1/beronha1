@@ -1,0 +1,7 @@
+- type: jobIcon
+  parent: JobIcon
+  id: JobIconMachine
+  icon:
+    sprite: /Textures/_Whiskey/Interface/Misc/machine_job_icon.rsi
+    state: icon
+  jobName: job-name-machine

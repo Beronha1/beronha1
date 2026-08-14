@@ -1,0 +1,175 @@
+# SPDX-FileCopyrightText: 2026 AdventureTime SS14 contributors
+# SPDX-FileCopyrightText: 2026 Whiskey Station contributors
+#
+# SPDX-License-Identifier: MIT
+#
+# Combat design ported and adapted from Adventure Time Station at
+# dce93d3cd761e079822d27af785a1a58910d2492.
+
+- type: entity
+  id: MobBloodDrunkMiner
+  parent: LavalandMobBase
+  name: blood-drunk miner
+  description: A miner destined to wander forever, engaged in an endless hunt.
+  components:
+  - type: Physics
+    bodyType: KinematicController
+  - type: Clickable
+  - type: InteractionOutline
+  - type: Appearance
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: _Lavaland/Mobs/Bosses/BloodDrunkMiner/bloodminer.rsi
+    layers:
+    - map: ["enum.DamageStateVisualLayers.Base"]
+      state: alive_1
+  - type: GenericVisualizer
+    visuals:
+      enum.BloodDrunkMinerVisuals.SawOpen:
+        enum.DamageStateVisualLayers.Base:
+          True: { state: alive_2 }
+          False: { state: alive_1 }
+  - type: Damageable
+    damageModifierSet: Hierophant
+  - type: Injurable
+    damageContainer: Inorganic
+  - type: Destructible
+    thresholds: []
+  - type: StaminaResistance
+    damageCoefficient: 0
+    worn: false
+  - type: ExplosionResistance
+    damageCoefficient: 0
+  - type: NoSlip
+  - type: NpcFactionMember
+    factions:
+    - Lavafauna
+  - type: HTN
+    rootTask:
+      task: BloodDrunkMinerCompound
+    blackboard:
+      VisionRadius: !type:Single
+        30
+      AggroVisionRadius: !type:Single
+        16
+      MeleeMissChance: !type:Single
+        0
+      NavSmash: !type:Bool
+        true
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 4.4
+    baseSprintSpeed: 4.4
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      1250: Dead
+  - type: CombatMode
+  - type: MeleeWeapon
+    altDisarm: false
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
+    angle: 0
+    attackRate: 2.5
+    range: 1.5
+    animation: WeaponArcPunch
+    damage:
+      types:
+        Slash: 6
+  - type: BloodDrunkMiner
+    closedDamage:
+      types:
+        Slash: 6
+    openDamage:
+      types:
+        Slash: 10
+  - type: TileMovement
+  - type: BossMusic
+    soundId: BloodDrunkMiner
+  - type: Aggressive
+    forgiveRange: 20.0
+  - type: MegafaunaDirector
+  - type: SpawnLootOnDeath
+    deleteOnDeath: true
+    dropBoth: true
+    table: !type:AllSelector
+      children:
+      - id: LavalandCrateNecropolisFilled
+    specialTable: !type:AllSelector
+      children:
+      - id: TrophyLavalandBDMEye
+    weaponWhitelist:
+      components:
+      - MegafaunaWeaponLooter
+  - type: Tag
+    tags:
+    - CannotSuicide
+    - DoorBumpOpener
+    - StunImmune
+
+- type: entity
+  id: EffectBloodDrunkMinerDashSmoke
+  name: ""
+  parent: BaseEffectGoliathTentacleSpawn
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Transform
+    anchored: true
+  - type: Sprite
+    sprite: Effects/chemsmoke.rsi
+    drawdepth: Effects
+    color: "#FFFFFF77"
+    scale: 0.6, 0.6
+    layers:
+    - state: chemsmoke_white
+  - type: TimedDespawn
+    lifetime: 0.5
+
+- type: entity
+  id: BulletBloodDrunkMinerKinetic
+  name: kinetic bolt
+  parent: BaseBullet
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Reflective
+    reflective:
+    - NonEnergy
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: chronobolt
+      shader: unshaded
+  - type: Projectile
+    impactEffect: BulletImpactEffectKinetic
+    damage:
+      types:
+        Blunt: 20
+        Structural: 30
+  - type: TimedDespawn
+    lifetime: 0.16
+
+- type: entity
+  id: WeaponBloodDrunkMinerKineticAccelerator
+  name: proto-kinetic accelerator
+  parent: BaseItem
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: Objects/Weapons/Guns/Basic/kinetic_accelerator.rsi
+    state: icon
+  - type: Gun
+    fireRate: 2
+    projectileSpeed: 25
+    minAngle: 0
+    maxAngle: 0
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/kinetic_accel.ogg
+  - type: BasicEntityAmmoProvider
+    proto: BulletBloodDrunkMinerKinetic
+    capacity: 1
+    count: 1
+  - type: Unremoveable

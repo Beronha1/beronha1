@@ -8,7 +8,8 @@ ent-LavalandBossColossus = Colosso
 ent-LavalandBossMegaLegion = Mega Legião
     .desc = Um de muitos — e logo serão ainda mais.
 ent-MobBloodDrunkMiner = minerador embriagado de sangue
-    .desc = Um explorador que sobreviveu tempo demais em Lavaland.
+    .desc = Um minerador condenado a vagar para sempre, preso em uma caçada sem fim.
+blood-drunk-miner-butcher = O minerador embriagado de sangue dilacera { $target } e se alimenta da carnificina!
 
 # Elenco avançado
 ent-MobChildishOni = oni infantil

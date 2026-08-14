@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Content.IntegrationTests.Fixtures;
+using Content.Server.Lathe;
+using Content.Server.Lathe.Components;
+using Content.Server.Power.Components;
+using Content.Server.Power.EntitySystems;
 using Content.Shared.Lathe;
 using Content.Shared.Materials;
 //using Content.Shared.Prototypes; // Trauma - die
@@ -138,6 +142,102 @@ public sealed class LatheTest : GameTest
                 if (recipe.Result == null)
                     Assert.That(recipe.ResultReagents, Is.Not.Null, $"Recipe '{recipe.ID}' has no result or result reagents.");
             }
+        });
+    }
+
+    [Test]
+    public async Task LatheLoopChargesStopsResumesAndSkips()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var mapData = await pair.CreateTestMap();
+
+        var entMan = server.EntMan;
+        var protoMan = server.ProtoMan;
+        var latheSystem = server.System<LatheSystem>();
+        var materialSystem = server.System<SharedMaterialStorageSystem>();
+        var powerSystem = server.System<PowerReceiverSystem>();
+        ProtoId<LatheRecipePrototype> ashtrayRecipe = "Ashtray";
+        ProtoId<LatheRecipePrototype> wrenchRecipe = "Wrench";
+        var ashtray = protoMan.Index(ashtrayRecipe);
+        var wrench = protoMan.Index(wrenchRecipe);
+        EntityUid loopingLathe = default;
+
+        await server.WaitAssertion(() =>
+        {
+            loopingLathe = entMan.SpawnEntity("Autolathe", mapData.GridCoords);
+            powerSystem.SetNeedsPower(loopingLathe, false);
+            var power = entMan.GetComponent<ApcPowerReceiverComponent>(loopingLathe);
+            power.Powered = true;
+
+            var lathe = entMan.GetComponent<LatheComponent>(loopingLathe);
+            lathe.Loop = true;
+
+            Assert.That(materialSystem.TryChangeMaterialAmount(loopingLathe, "Steel", 90), Is.True);
+            Assert.That(latheSystem.TryAddToQueue(loopingLathe, ashtray, 1, lathe), Is.True);
+            Assert.That(materialSystem.GetMaterialAmount(loopingLathe, "Steel"), Is.EqualTo(60));
+            Assert.That(latheSystem.TryStartProducing(loopingLathe, lathe), Is.True);
+
+            for (var i = 0; i < 3; i++)
+            {
+                var producing = entMan.GetComponent<LatheProducingComponent>(loopingLathe);
+                latheSystem.FinishProducing(loopingLathe, lathe, producing);
+            }
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(materialSystem.GetMaterialAmount(loopingLathe, "Steel"), Is.Zero,
+                    "Looping created material or failed to charge a repeated batch.");
+                Assert.That(lathe.CurrentRecipe, Is.Null,
+                    "The lathe kept producing after it ran out of material.");
+                Assert.That(lathe.Queue, Has.Count.EqualTo(1));
+                Assert.That(lathe.Queue.First!.Value.Paid, Is.False,
+                    "A parked loop batch was incorrectly marked as paid.");
+            });
+        });
+
+        server.RunTicks(1);
+        await server.WaitIdleAsync();
+
+        await server.WaitAssertion(() =>
+        {
+            var lathe = entMan.GetComponent<LatheComponent>(loopingLathe);
+            Assert.That(materialSystem.TryChangeMaterialAmount(loopingLathe, "Steel", 30), Is.True);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(lathe.CurrentRecipe, Is.EqualTo(ashtray.ID),
+                    "A parked loop batch did not resume when material was added.");
+                Assert.That(materialSystem.GetMaterialAmount(loopingLathe, "Steel"), Is.Zero);
+            });
+        });
+
+        await server.WaitAssertion(() =>
+        {
+            var skippingLathe = entMan.SpawnEntity("Autolathe", mapData.GridCoords);
+            powerSystem.SetNeedsPower(skippingLathe, false);
+            var power = entMan.GetComponent<ApcPowerReceiverComponent>(skippingLathe);
+            power.Powered = true;
+
+            var lathe = entMan.GetComponent<LatheComponent>(skippingLathe);
+            Assert.That(materialSystem.TryChangeMaterialAmount(skippingLathe, "Steel", 30), Is.True);
+            lathe.Queue.AddLast(new LatheRecipeBatch(wrench.ID, 0, 1, false));
+            lathe.Queue.AddLast(new LatheRecipeBatch(ashtray.ID, 0, 1, false));
+
+            Assert.That(latheSystem.TryStartProducing(skippingLathe, lathe), Is.False,
+                "The queue advanced past an unaffordable batch while skip was disabled.");
+            Assert.That(lathe.Queue, Has.Count.EqualTo(2));
+
+            lathe.SkipBad = true;
+            Assert.That(latheSystem.TryStartProducing(skippingLathe, lathe), Is.True);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(lathe.CurrentRecipe, Is.EqualTo(ashtray.ID),
+                    "Skip did not advance to the affordable batch.");
+                Assert.That(lathe.Queue, Is.Empty);
+                Assert.That(materialSystem.GetMaterialAmount(skippingLathe, "Steel"), Is.Zero);
+            });
         });
     }
 }

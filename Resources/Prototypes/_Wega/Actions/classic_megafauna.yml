@@ -21,39 +21,6 @@
 
 - type: entity
   parent: BaseAction
-  id: ActionBloodDrunkMinerDash
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Action
-    raiseOnUser: true
-    useDelay: 1.5
-  - type: Sprite
-    sprite: Interface/Actions/jump.rsi
-    layers:
-    - state: icon
-  - type: TargetAction
-    range: 10
-  - type: EntityTargetAction
-    event: !type:BloodDrunkMinerDashAction
-
-- type: entity
-  parent: ActionBloodDrunkMinerDash
-  id: ActionBloodDrunkMinerDashHunter
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Action
-    useDelay: 6
-
-- type: entity
-  parent: ActionBloodDrunkMinerDash
-  id: ActionBloodDrunkMinerDashDoom
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: Action
-    useDelay: 4
-
-- type: entity
-  parent: BaseAction
   id: ActionColossusFraction
   categories: [ HideSpawnMenu ]
   components:

@@ -35,8 +35,7 @@ lathe-menu-move-up-tooltip = Mover este lote para Uma frente na fila.
 lathe-menu-move-down-tooltip = Mover este lote para tr?s na fila.
 lathe-menu-item-single = {$index}. {$name}
 lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})
-
-
-
-
-
+lathe-menu-loop = Repetir
+lathe-menu-loop-tooltip = Recoloca cada lote no fim da fila depois de concluído, mantendo a produção até os materiais acabarem.
+lathe-menu-skip = Pular se insuficiente
+lathe-menu-skip-tooltip = Descarta um lote repetido sem materiais suficientes em vez de bloquear a fila até o reabastecimento.

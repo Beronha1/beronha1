@@ -26,7 +26,7 @@ public sealed partial class FancySpeechBubble : Control
     private string? _contentTag;
     private string? _glyph;
 
-    public FancySpeechBubble(ChatMessage message, int fontSize = 12, string font = "Minecraft", bool forceFont = false, Color? fontColor = null, int? thicknessOverride = null, string? contentTag = null, string? glyph = null)
+    public FancySpeechBubble(ChatMessage message, int fontSize = 12, string font = "Default", bool forceFont = false, Color? fontColor = null, int? thicknessOverride = null, string? contentTag = null, string? glyph = null)
     {
         RobustXamlLoader.Load(this);
         IoCManager.InjectDependencies(this);

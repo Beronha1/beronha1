@@ -24,16 +24,16 @@
 
 - type: font
   id: Minecraft
-  path: /Fonts/Minecraft/macs-minecraft.ttf
+  path: /Fonts/NotoSans/NotoSans-Regular.ttf
 
 - type: font
   id: MinecraftBold
-  path: /Fonts/Minecraft/macs-minecraft-Bold.ttf
+  path: /Fonts/NotoSans/NotoSans-Bold.ttf
 
 - type: font
   id: MinecraftBoldItalic
-  path: /Fonts/Minecraft/macs-minecraft-Bold-Italic.ttf
+  path: /Fonts/NotoSans/NotoSans-BoldItalic.ttf
 
 - type: font
   id: MinecraftItalic
-  path: /Fonts/Minecraft/macs-minecraft-Italic.ttf
+  path: /Fonts/NotoSans/NotoSans-Italic.ttf

@@ -16,6 +16,8 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
 
     private Action<string> OnPressed;
 
+    private bool _openCentered; // WhiteDream - Blood Cult
+
     public RadialSelectorMenuBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
         _construction = EntMan.System<ConstructionSystem>();
@@ -32,7 +34,11 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
     {
         base.Open();
 
-        Menu.OpenOverMouseScreenPosition();
+        // WhiteDream - Blood Cult
+        if (_openCentered)
+            Menu.OpenCentered();
+        else
+            Menu.OpenOverMouseScreenPosition();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -42,6 +48,7 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
         if (state is not RadialSelectorState cast)
             return;
 
+        _openCentered = cast.OpenCentered; // WhiteDream - Blood Cult
         CreateMenu(cast.Entries);
     }
 
@@ -68,7 +75,7 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
             {
                 models.Add(new RadialMenuActionOption<string>(OnPressed, proto)
                 {
-                    ToolTip = GetName(proto),
+                    ToolTip = entry.Name ?? GetName(proto), // WhiteDream - Blood Cult
                     IconSpecifier = RadialMenuIconSpecifier.With(entry.Icon) ?? GetIcon(proto)
                 });
             }

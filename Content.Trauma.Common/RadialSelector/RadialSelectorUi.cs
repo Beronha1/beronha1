@@ -10,9 +10,13 @@ public enum RadialSelectorUiKey : byte
 }
 
 [Serializable, NetSerializable]
-public sealed class RadialSelectorState(List<RadialSelectorEntry> entries) : BoundUserInterfaceState
+public sealed class RadialSelectorState(List<RadialSelectorEntry> entries, bool openCentered = false)
+    : BoundUserInterfaceState
 {
     public List<RadialSelectorEntry> Entries = entries;
+
+    // WhiteDream - Blood Cult
+    public bool OpenCentered { get; private set; } = openCentered;
 }
 
 [Serializable, NetSerializable]
@@ -26,6 +30,14 @@ public sealed partial class RadialSelectorEntry
 {
     [DataField]
     public string? Prototype { get; set; }
+
+    // <WhiteDream> - Blood Cult
+    [DataField]
+    public string? Name { get; set; }
+
+    [DataField]
+    public bool CloseUiOnSelect = true;
+    // </WhiteDream>
 
     [DataField]
     public SpriteSpecifier? Icon { get; set; }

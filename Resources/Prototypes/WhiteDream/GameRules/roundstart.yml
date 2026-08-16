@@ -1,0 +1,18 @@
+- type: entity
+  id: BloodCult
+  parent: [ BaseGameRule, BaseRoundstartAntagRule ]
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: GameRule
+    minPlayers: 15
+    chaosScore: 1000
+  - type: BloodCultRule
+  # Trauma - no IntraPlayerSpawn here; BaseRoundstartAntagRule already sets PrePlayerSpawn
+  - type: AntagSelection
+    antags:
+    - !type:LinearAntagCount
+      proto: BloodCultist
+      range:
+        min: 2
+        max: 4
+      playerRatio: 15

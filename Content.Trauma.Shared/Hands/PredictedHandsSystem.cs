@@ -171,6 +171,14 @@ public sealed partial class PredictedHandsSystem : EntitySystem
         if (ev.Cancelled)
             return true;
 
+        // <WhiteDream> - Blood Cult
+        var itemEv = new BeforeGettingThrownEvent(ev.ItemUid, ev.Direction, ev.ThrowSpeed, ev.PlayerUid);
+        RaiseLocalEvent(ev.ItemUid, ref itemEv);
+
+        if (itemEv.Cancelled)
+            return true;
+        // </WhiteDream>
+
         // This can grief the above event so we raise it afterwards
         if (_hands.IsHolding((player, hands), throwEnt, out _) && !_hands.TryDrop(player, throwEnt.Value))
             return false;

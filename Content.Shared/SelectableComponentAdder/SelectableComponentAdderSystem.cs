@@ -22,7 +22,7 @@ public sealed partial class SelectableComponentAdderSystem : EntitySystem
 
         var target = args.Target;
         var user = args.User;
-        var verbCategory = new VerbCategory(ent.Comp.VerbCategoryName, null);
+        var verbCategory = new VerbCategory(ent.Comp.VerbCategoryName, (string?) null);
 
         foreach (var entry in ent.Comp.Entries)
         {

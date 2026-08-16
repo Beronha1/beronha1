@@ -141,6 +141,7 @@ guide-entry-traitors = Traitors
 guide-entry-zombies = Zombies
 guide-entry-revolutionaries = Revolutionaries
 guide-entry-minor-antagonists = Minor Antagonists
+guide-entry-blood-cult = Blood Cult
 guide-entry-space-ninja = Space Ninja
 guide-entry-thieves = Thieves
 guide-entry-wizard = Wizard

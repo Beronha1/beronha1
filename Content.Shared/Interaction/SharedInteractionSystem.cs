@@ -107,6 +107,9 @@ namespace Content.Shared.Interaction
 
         private static readonly ProtoId<TagPrototype> BypassInteractionRangeChecksTag = "BypassInteractionRangeChecks";
 
+        // WhiteDream - Blood Cult
+        private static readonly ProtoId<TagPrototype> BloodRitesAuraTag = "BloodRitesAura";
+
         public delegate bool Ignored(EntityUid entity);
 
         public override void Initialize()
@@ -464,8 +467,14 @@ namespace Content.Shared.Interaction
 
             if (!altInteract && _combatQuery.TryComp(user, out var combatMode) && combatMode.IsInCombatMode)
             {
-                if (!CombatModeCanHandInteract(user, target))
+                // <WhiteDream> - Blood Cult (blood rites aura must work in combat mode)
+                if (!CombatModeCanHandInteract(user, target)
+                    && (!TryGetUsedEntity(user, out var bloodRitesHeld, checkCanUse: false)
+                        || !_tagSystem.HasTag(bloodRitesHeld.Value, BloodRitesAuraTag)))
+                {
                     return;
+                }
+                // </WhiteDream>
             }
 
             if (!ValidateInteractAndFace(user, coordinates))

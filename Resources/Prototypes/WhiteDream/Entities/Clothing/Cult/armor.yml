@@ -1,0 +1,166 @@
+- type: entity
+  parent: ClothingOuterHardsuitBase
+  id: ClothingOuterCultArmor
+  name: true nar'sien hardened armor
+  description: heavily-armored exosuit worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_armor.rsi
+  - type: PressureProtection
+    highPressureMultiplier: 0.02
+    lowPressureMultiplier: 1000
+  - type: ClothingSpeedModifier
+    walkModifier: 1.0
+    sprintModifier: 1.0
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.5
+        Slash: 0.6
+        Piercing: 0.5 # WhiteDream - 50%
+        Ballistic: 0.55 # WhiteDream - 45%
+        Heat: 0.7
+        Caustic: 0.2
+        Radiation: 0.2
+  - type: StaminaResistance # WhiteDream - 50% stamina resist
+    damageCoefficient: 0.5
+  - type: ExplosionResistance
+    damageCoefficient: 0.5
+  - type: TemperatureProtection
+    heatingCoefficient: 0.001
+    coolingCoefficient: 0.001
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHelmetCultArmor
+  - type: CultItem
+
+- type: entity
+  parent: ClothingHeadHardsuitBase
+  id: ClothingHeadHelmetCultArmor
+  categories: [ HideSpawnMenu ]
+  name: true nar'sien hardened helmet
+  description: A heavily-armored helmet worn by warriors of the Nar'Sien cult. It can withstand hard vacuum.
+  components:
+  - type: BreathMask
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_helmet.rsi
+    equipSound: /Audio/Effects/rustle1.ogg
+    unequipSound: /Audio/Effects/rustle2.ogg
+  - type: PressureProtection
+    highPressureMultiplier: 0.08
+    lowPressureMultiplier: 1000
+
+- type: entity
+  parent: ClothingOuterRobesCult
+  id: ClothingOuterRobesCultTrue
+  name: flagellant's robe
+  description: Blood-soaked robes infused with dark magic; allows the user to move at inhuman speeds, but at the cost of increased damage.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Outer/cult_robe.rsi
+  - type: CultItem
+  - type: ClothingSpeedModifier
+    walkModifier: 1.25
+    sprintModifier: 1.25
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.4
+        Slash: 1.4
+        Piercing: 1.4
+        Heat: 0.2 # WhiteDream - 80% heat resist
+  - type: FireProtection # WhiteDream - 80% less fire damage
+    reduction: 0.8
+  - type: ToggleableClothing
+    clothingPrototype: ClothingHeadHatHoodCultHoodTrue
+  - type: ContainerContainer
+    containers:
+      toggleable-clothing: !type:Container { }
+
+- type: entity
+  parent: ClothingHeadHatHoodCulthood
+  id: ClothingHeadHatHoodCultHoodTrue
+  name: flagellant's hood
+  description: A blood-soaked hood infused with dark magic.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Entities/Clothes/Helmet/cult_hood.rsi
+    equipSound: /Audio/Effects/rustle1.ogg
+    unequipSound: /Audio/Effects/rustle2.ogg
+  - type: ClothingSpeedModifier
+    walkModifier: 1.25
+    sprintModifier: 1.25
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 1.4
+        Slash: 1.4
+        Piercing: 1.4
+        Heat: 1.4
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyeCultBlindfold
+  name: zealot's blindfold
+  description: May Nar'Sie guide you through the darkness and shield you from the light
+  components:
+  - type: Sprite
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+    state: icon
+  - type: Clothing
+    sprite: Clothing/Eyes/Misc/blindfold.rsi
+  - type: FlashImmunity
+  - type: ShowHealthBars
+    damageContainers:
+    - Biological
+    - Inorganic
+  - type: ShowHealthIcons
+    damageContainers:
+    - Biological
+  # TODO: ADD NIGHT VISION
+
+
+# WhiteDream - summoned variant of the upstream acolyte armour.
+# Kept separate so the Lavaland necropolis loot version stays untouched.
+- type: entity
+  parent: ClothingOuterArmorCult
+  id: ClothingOuterArmorCultSummoned
+  name: acolyte armor
+  description: An evil-looking piece of cult armor, made of bones. This one still reeks of the rite that called it here.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients: # 40% resist across the board
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Ballistic: 0.6
+        Heat: 0.6
+  - type: StaminaResistance # 25% stamina resist
+    damageCoefficient: 0.75
+  - type: CultItem
+
+# WhiteDream - summoned variant of the upstream cult helmet, original left alone.
+- type: entity
+  parent: ClothingHeadHelmetCult
+  id: ClothingHeadHelmetCultSummoned
+  name: cult helmet
+  description: A robust, evil-looking cult helmet. This one was called straight out of the veil.
+  components:
+  - type: Armor
+    modifiers:
+      coefficients: # 40% resist across the board
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.6
+        Ballistic: 0.6
+        Heat: 0.6
+  - type: CultItem

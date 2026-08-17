@@ -1,5 +1,6 @@
 ﻿cult-rune-cant-draw = You can not draw rune here!
 cult-rune-cant-draw-rending = You have to be near the area where the veil between our Worlds is the thinnest.
+cult-rune-cant-draw-leader = Only the one Nar'Sie speaks through may draw this rune.
 cult-rune-started-erasing = Started erasing...
 cult-rune-erased = Rune has been erased.
 cult-rune-not-enough-cultists = Not enough cultists to perform the ritual!
@@ -27,3 +28,6 @@ cult-rending-target-alive = Can not start the ritual: the target is alive.
 cult-rending-already-summoning = Can not start the ritual: it's already in progress.
 cult-rending-started = The Geometer Of Blood has started the ritual of Dimensional Rending {$location}!
 cult-rending-prevented = Someone has stopped the ritual.
+cult-offering-need-invokers = Not enough of us stand upon the rune. { $current } of { $required }.
+cult-rune-cant-draw-veil = The veil still holds. This rune is for after it breaks.
+cult-barrier-destroyed = The barrier crumbles.

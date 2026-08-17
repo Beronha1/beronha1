@@ -11,8 +11,22 @@
     icon:
       sprite: Objects/Weapons/Melee/cult_dagger.rsi
       state: icon
-  - type: RoleRequirement
-    roles:
-    - BloodCultistRole
   - type: KillTargetCult
     title: blood-cult-objective-sacrifice-title
+
+# WhiteDream - the cult's shared goal, always visible alongside the sacrifice.
+- type: entity
+  parent: BaseObjective
+  id: SummonNarsieObjective
+  name: Summon Nar'Sie
+  description: The veil must be torn and the Geometer of Blood dragged into our reality.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Objective
+    issuer: objective-issuer-blood-cult
+    unique: true
+    difficulty: 5
+    icon:
+      sprite: WhiteDream/BloodCult/actions.rsi
+      state: veiling
+  - type: SummonNarsieObjective

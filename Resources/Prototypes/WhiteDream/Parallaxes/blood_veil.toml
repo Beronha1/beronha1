@@ -1,0 +1,98 @@
+# WhiteDream - recoloured from the upstream parallax config for the torn veil.
+# SPDX-License-Identifier: MIT
+
+
+# Clear to black.
+[[layers]]
+type = "clear"
+color = "#000000"
+
+# Background nebula detail.
+[[layers]]
+type = "noise"
+seed = 7832
+innercolor = "#c81414"
+outercolor = "#3d0000"
+noise_type = "ridged"
+frequency = "4"
+octaves = 8
+power = "0.25"
+threshold = "0.40"
+
+# Mask background nebula.
+[[layers]]
+type = "noise"
+noise_type = "fbm"
+innercolor = "#000000"
+outercolor = "#000000"
+destfactor = "SrcAlpha"
+seed = 3551
+octaves = 4
+power = "0.35"
+lacunarity = "1.5"
+frequency = "3"
+threshold = "0.0"
+
+# Dim background nebula stars.
+[[layers]]
+type = "points"
+seed = 3909
+closecolor = "#6e3838"
+count = 1500
+mask = true
+masknoise_type = "fbm"
+maskoctaves = 4
+maskpersistence = "0.5"
+maskpower = "0.35"
+masklacunarity = "1.5"
+maskfrequency = "3"
+maskthreshold = "0.0"
+maskseed = 3551
+
+# Bright background nebula stars.
+[[layers]]
+type = "points"
+closecolor = "#c46a6a"
+count = 1000
+seed = 3472
+mask = true
+masknoise_type = "fbm"
+maskoctaves = 4
+maskpersistence = "0.5"
+maskpower = "0.35"
+masklacunarity = "1.5"
+maskfrequency = "3"
+maskthreshold = "0.37"
+maskseed = 3551
+
+# Bright background nebula stars, dim edge.
+[[layers]]
+type = "points"
+closecolor = "#5a2a2a"
+pointsize = 2
+count = 1000
+seed = 3472
+mask = true
+masknoise_type = "fbm"
+maskoctaves = 4
+maskpersistence = "0.5"
+maskpower = "0.35"
+masklacunarity = "1.5"
+maskfrequency = "3"
+maskthreshold = "0.37"
+maskseed = 3551
+
+# Couple of odd bright yellow-ish stars.
+[[layers]]
+type = "points"
+closecolor = "#ff6b4a"
+count = 30
+seed = 6454
+
+# And their dim edge.
+[[layers]]
+type = "points"
+closecolor = "#3a1410"
+pointsize = 2
+count = 30
+seed = 6454

@@ -36,6 +36,8 @@ public sealed partial class BloodCultSpellsHolderComponent : Component
     [DataField]
     public List<EntProtoId> ManagementActions =
     [
+        "ActionBloodCultCommune", // Funky - long distance cult telepathy
+        "ActionBloodCultStudyVeil", // Funky - progress report
         "ActionBloodCultSelectSpells",
         "ActionBloodCultRemoveSpells"
     ];

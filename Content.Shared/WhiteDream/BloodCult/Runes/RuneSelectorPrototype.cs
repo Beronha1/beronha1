@@ -22,6 +22,18 @@ public sealed partial class RuneSelectorPrototype : IPrototype
     public int RequiredTotalCultists = 1;
 
     /// <summary>
+    ///     WhiteDream - only the cult leader may draw this rune.
+    /// </summary>
+    [DataField]
+    public bool RequireLeader;
+
+    /// <summary>
+    ///     WhiteDream - this rune cannot be drawn until the veil has been torn.
+    /// </summary>
+    [DataField]
+    public bool RequireVeilWeakened;
+
+    /// <summary>
     ///     Damage dealt on the rune drawing.
     /// </summary>
     [DataField]

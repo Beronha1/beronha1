@@ -7,6 +7,7 @@ using Robust.Shared.Player;
 using Content.Server.Popups;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
@@ -89,14 +90,13 @@ public sealed partial class CultRuneReviveSystem : EntitySystem
 
         chargesProvider.Charges--;
 
-        var deadThreshold = _threshold.GetThresholdForState(target, MobState.Dead);
-        _damageable.TryChangeDamage(target, rune.Comp.Healing);
+        // <Trauma>
+        // Damage lives on the organs on this fork, so healing the mob's DamageableComponent with a
+        // DamageSpecifier did nothing and the rune silently failed. RejuvenateEvent is the path that
+        // actually clears every organ AND flips AllowRevives so the mob can leave the dead state.
+        RaiseLocalEvent(target, new RejuvenateEvent(false, false));
+        // </Trauma>
 
-        // Trauma - DamageableComponent members are access-restricted, read through the system
-        if (!HasComp<DamageableComponent>(target) || _damageable.GetTotalDamage(target) > deadThreshold)
-            return;
-
-        _mobState.ChangeMobState(target, MobState.Critical, origin: user);
         if (!_mind.TryGetMind(target, out _, out var mind))
         {
             // if the mind is not found in the body, try to find the original cultist mind

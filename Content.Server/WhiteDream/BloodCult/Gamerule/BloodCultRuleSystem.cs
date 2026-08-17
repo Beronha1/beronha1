@@ -3,8 +3,6 @@ using Content.Shared.Antag;
 using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using Content.Server.Actions;
-using Content.Server.EUI;
-using Content.Server._Mini.BloodCult.UI;
 using Content.Server.Antag;
 using Content.Server.Antag.Components;
 using Content.Shared.Gibbing;
@@ -31,6 +29,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Pinpointer;
 using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.WhiteDream.BloodCult.Components;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
@@ -47,7 +46,6 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 {
     [Dependency] private IRobustRandom _random = default!;
 
-    [Dependency] private EuiManager _euiMan = default!;
     [Dependency] private ActionsSystem _actions = default!;
     [Dependency] private AntagSelectionSystem _antagSelection = default!;
     [Dependency] private BloodSpearSystem _bloodSpear = default!;
@@ -79,6 +77,8 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         SubscribeLocalEvent<BloodCultistComponent, CloningEvent>(OnClone);
 
         SubscribeLocalEvent<BloodCultistRoleComponent, GetBriefingEvent>(OnGetBriefing);
+
+        InitializeStatus();
     }
 
     protected override void Started(
@@ -91,6 +91,9 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         base.Started(uid, component, gameRule, args);
 
         GetRandomRunePlacements(component);
+
+        // WhiteDream - give the cult a few minutes to find each other before they pick a leader.
+        ScheduleLeaderVote(component, component.LeaderVoteDelay);
     }
 
     protected override void AppendRoundEndText(
@@ -130,19 +133,29 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         while (rulesQuery.MoveNext(out _, out var cult, out _))
         {
             cult.WinCondition = CultWinCondition.Win;
-            _roundEnd.EndRound();
 
-            foreach (var ent in cult.Cultists)
+            // <WhiteDream>
+            // Query the world instead of cult.Cultists: gibbing mutates that list as we go, which used
+            // to throw halfway through and leave everyone but the first cultist as a ghost.
+            var cultists = new List<EntityUid>();
+            var cultistQuery = EntityQueryEnumerator<BloodCultistComponent>();
+            while (cultistQuery.MoveNext(out var cultistUid, out _))
+                cultists.Add(cultistUid);
+
+            foreach (var cultist in cultists)
             {
-                if (Deleted(ent.Owner) || !TryComp(ent.Owner, out MindContainerComponent? mindContainer) ||
-                    !mindContainer.Mind.HasValue)
+                if (TerminatingOrDeleted(cultist) || !_mind.TryGetMind(cultist, out var mindId, out _))
                     continue;
 
-                var harvester = Spawn(cult.HarvesterPrototype, Transform(ent.Owner).Coordinates);
-                _mind.TransferTo(mindContainer.Mind.Value, harvester);
-                _gibbing.Gib(ent);
+                var harvester = Spawn(cult.HarvesterPrototype, Transform(cultist).Coordinates);
+                _mind.TransferTo(mindId, harvester);
+                _language.UpdateEntityLanguages(harvester);
+                _gibbing.Gib(cultist);
             }
 
+            // Let them actually be harvesters for a bit before the round is called.
+            cult.VictoryEndTime = _timing.CurTime + cult.VictoryEndDelay;
+            // </WhiteDream>
             return;
         }
     }
@@ -156,7 +169,25 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         {
             cult.Cultists.Add(cultist);
             UpdateCultStage(cult);
+
+            // WhiteDream - anyone converted after the cult already reached a stage still gets its marks.
+            ApplyCurrentStageAppearance(cult, cultist);
         }
+    }
+
+    /// <summary>
+    ///     Brings a single cultist up to date with the stage the cult is already at.
+    /// </summary>
+    private void ApplyCurrentStageAppearance(BloodCultRuleComponent cultRule, Entity<BloodCultistComponent> cultist)
+    {
+        if (cultRule.Stage >= CultStage.RedEyes)
+        {
+            cultist.Comp.OriginalEyeColor ??= _humanoid.GetEyeColor(_humanoid.GetOrgansData(cultist));
+            _humanoid.SetEyeColor(cultist, cultRule.EyeColor);
+        }
+
+        if (cultRule.PentagramApplied)
+            EnsureComp<PentagramComponent>(cultist);
     }
 
     private void OnCultistComponentRemoved(Entity<BloodCultistComponent> cultist, ref ComponentRemove args)
@@ -184,8 +215,11 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
     private void OnCultistsStateChanged(Entity<BloodCultistComponent> cultist, ref MobStateChangedEvent args)
     {
-        if (args.NewMobState == MobState.Dead)
-            CheckWinCondition();
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        CheckWinCondition();
+        CheckLeaderAlive(cultist); // WhiteDream - Nar'Sie calls a new vote if her voice fell.
     }
 
     private void OnClone(Entity<BloodCultistComponent> cultist, ref CloningEvent args) =>
@@ -203,6 +237,14 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
             args.Append(
                 Loc.GetString("blood-cult-role-briefing-emergency-rending", ("amount", rule.EmergencyMarkersCount)));
             return;
+        }
+
+        // WhiteDream - beacon-picked sites go in the briefing too.
+        var siteQuery = QueryActiveRules();
+        while (siteQuery.MoveNext(out _, out var siteRule, out _))
+        {
+            foreach (var site in GetAvailableRendingSites(siteRule))
+                args.Append(Loc.GetString("blood-cult-role-briefing-rending-site", ("location", site.Name)));
         }
 
         var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
@@ -225,24 +267,19 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
 
     // Trauma - rule + antag specifier used when converting an existing player mid-round
     private static readonly EntProtoId DefaultRule = "BloodCult";
-    private static readonly ProtoId<AntagSpecifierPrototype> MidroundAntagProto = "BloodCultistMidround";
 
     public void Convert(EntityUid target)
     {
         if (!TryComp(target, out ActorComponent? actor))
             return;
 
-        var query = QueryActiveRules();
-        while (query.MoveNext(out var ruleUid, out _, out _, out _))
-        {
-            if (!TryComp(ruleUid, out AntagSelectionComponent? _))
-                continue;
-
-            // Trauma - antag selection was refactored to AntagSpecifierPrototype
-            _antagSelection.ForceMakeAntag<BloodCultRuleComponent>(actor.PlayerSession,
-                DefaultRule,
-                MidroundAntagProto);
-        }
+        // <WhiteDream>
+        // Two bugs lived here. It used to bail unless the rule entity carried an
+        // AntagSelectionComponent (it doesn't), and then it asked for BloodCultistMidround, which is
+        // not one of the rule's own antag definitions - "Antag Prototype ... does not exist".
+        // This is exactly what the admin verb does, and that has always worked.
+        _antagSelection.ForceMakeAntag<BloodCultRuleComponent>(actor.PlayerSession, DefaultRule);
+        // </WhiteDream>
     }
 
     public bool IsObjectiveFinished() =>
@@ -299,11 +336,14 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     {
         var ruleQuery = QueryActiveRules();
         while (ruleQuery.MoveNext(out _, out var rule, out _))
+        {
             if (rule is { EmergencyMarkersMode: true, EmergencyMarkersCount: > 0 })
-            {
-                rule.EmergencyMarkersCount--;
                 return true;
-            }
+
+            // WhiteDream - beacon-picked sites. Checking only, the site is spent on activation.
+            if (IsNearRendingSite(rule, user, out _))
+                return true;
+        }
 
         var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
         while (query.MoveNext(out var uid, out var marker))
@@ -342,11 +382,20 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
     {
         var ruleQuery = QueryActiveRules();
         while (ruleQuery.MoveNext(out _, out var rule, out _))
+        {
             if (rule is { EmergencyMarkersMode: true, EmergencyMarkersCount: > 0 })
             {
                 rule.EmergencyMarkersCount--;
                 return true;
             }
+
+            // WhiteDream - spend the beacon site the cultist is standing at.
+            if (IsNearRendingSite(rule, user, out var site) && site is not null)
+            {
+                site.Used = true;
+                return true;
+            }
+        }
 
         var userLocation = Transform(user).Coordinates;
         var query = EntityQueryEnumerator<RendingRunePlacementMarkerComponent>();
@@ -395,8 +444,8 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         if (rule.Comp.OfferingTarget is { } target && target != cultist)
             _mind.TryAddObjective(mindId, mind, "KillTargetCultObjective");
 
-        if (TryComp(cultist, out ActorComponent? actor))
-            _euiMan.OpenEui(new BloodCultRoundStartEui(), actor.PlayerSession);
+        // WhiteDream - the round start popup was removed: the antag briefing (chat + character menu)
+        // already carries the same text, and the Study the Veil action gives live status on demand.
     }
 
     private static string GetStageLocId(CultStage stage) => stage switch
@@ -411,8 +460,9 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
         var allMarkers = EntityQuery<RendingRunePlacementMarkerComponent>().ToList();
         if (allMarkers.Count == 0)
         {
-            component.EmergencyMarkersMode = true;
-            component.EmergencyMarkersCount = component.RendingRunePlacementsAmount;
+            // WhiteDream - no mapper placed markers, so pick a few station beacons instead. The rune
+            // stays restricted to a handful of named places rather than "anywhere".
+            PickRendingSitesFromBeacons(component);
             return;
         }
 
@@ -425,6 +475,68 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
             var marker = _random.PickAndTake(allMarkers);
             marker.IsActive = true;
         }
+    }
+
+    /// <summary>
+    ///     Chooses the places where the veil is thin from the station's own beacons.
+    /// </summary>
+    private void PickRendingSitesFromBeacons(BloodCultRuleComponent component)
+    {
+        var beacons = new List<EntityUid>();
+        var query = EntityQueryEnumerator<NavMapBeaconComponent>();
+        while (query.MoveNext(out var uid, out var beacon))
+        {
+            // WhiteDream - only beacons that belong to a station. Otherwise the veil ends up thin
+            // on the escape shuttle, on debris, or on some off-station ruin.
+            if (beacon.Enabled && _station.GetOwningStation(uid) is not null)
+                beacons.Add(uid);
+        }
+
+        if (beacons.Count == 0)
+        {
+            // Truly nothing to anchor to. Fall back to the old free-for-all so the round isn't stuck.
+            component.EmergencyMarkersMode = true;
+            component.EmergencyMarkersCount = component.RendingRunePlacementsAmount;
+            return;
+        }
+
+        _random.Shuffle(beacons);
+        var amount = Math.Min(component.RendingRunePlacementsAmount, beacons.Count);
+
+        for (var i = 0; i < amount; i++)
+        {
+            var beacon = beacons[i];
+            component.RendingSites.Add(new RendingSite
+            {
+                Beacon = beacon,
+                Name = FormattedMessage.RemoveMarkupPermissive(_navMap.GetNearestBeaconString(beacon)),
+            });
+        }
+    }
+
+    /// <summary>
+    ///     Every site the cult can still tear open.
+    /// </summary>
+    public IEnumerable<RendingSite> GetAvailableRendingSites(BloodCultRuleComponent component)
+    {
+        return component.RendingSites.Where(site => !site.Used && !TerminatingOrDeleted(site.Beacon));
+    }
+
+    private bool IsNearRendingSite(BloodCultRuleComponent component, EntityUid user, out RendingSite? found)
+    {
+        found = null;
+        var userLocation = Transform(user).Coordinates;
+
+        foreach (var site in GetAvailableRendingSites(component))
+        {
+            if (!_transform.InRange(Transform(site.Beacon).Coordinates, userLocation, component.RendingSiteRange))
+                continue;
+
+            found = site;
+            return true;
+        }
+
+        return false;
     }
 
     private void RemoveAllCultItems(Entity<BloodCultistComponent> cultist)
@@ -484,15 +596,14 @@ public sealed partial class BloodCultRuleSystem : GameRuleSystem<BloodCultRuleCo
                 foreach (var cultist in cultRule.Cultists)
                 {
                     // Trauma - eye colour is stored on the eye organ now
-                    cultist.Comp.OriginalEyeColor = _humanoid.GetEyeColor(_humanoid.GetOrgansData(cultist));
+                    cultist.Comp.OriginalEyeColor ??= _humanoid.GetEyeColor(_humanoid.GetOrgansData(cultist));
                     _humanoid.SetEyeColor(cultist, cultRule.EyeColor);
                 }
 
                 break;
             case CultStage.Pentagram:
-                foreach (var cultist in cultRule.Cultists)
-                    EnsureComp<PentagramComponent>(cultist);
-
+                // WhiteDream - warn the cult first, brand them two minutes later.
+                BeginAscension(cultRule);
                 break;
         }
     }

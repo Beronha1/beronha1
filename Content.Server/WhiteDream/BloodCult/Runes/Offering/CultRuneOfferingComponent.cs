@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Offering;
@@ -30,6 +31,18 @@ public sealed partial class CultRuneOfferingComponent : Component
     /// </summary>
     [DataField]
     public int ReviveChargesPerOffering = 1;
+
+    /// <summary>
+    ///     WhiteDream - played when the rune takes a life.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier SacrificeSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/curse.ogg");
+
+    /// <summary>
+    ///     WhiteDream - played when the rune claims a mind instead.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier ConvertSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/enter_blood.ogg");
 
     [DataField]
     public EntProtoId SoulShardProto = "SoulShard";

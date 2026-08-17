@@ -52,7 +52,9 @@
   - type: InteractionOutline
   - type: Physics
     bodyType: KinematicController
+  # WhiteDream - constructs break apart when they fall and drop the soul they were carrying.
   - type: Construct
+    shattersOnDeath: true
   - type: WeakToHoly # Mini: declare in YAML — CultWeakToHolySystem must not add it at spawn (PrototypeSaveTest)
     alwaysTakeHoly: true
   - type: Fixtures
@@ -65,13 +67,16 @@
         - FlyingMobMask
         layer:
         - FlyingMobLayer
+  # Trauma - the damage container lives on Injurable now. It was still declared on Damageable, where
+  # nothing reads it, so every construct was flat-out immune to damage.
   - type: Damageable
-    damageContainer: ManifestedSpirit
     damageModifierSet: ManifestedSpirit
+  - type: Injurable
+    damageContainer: ManifestedSpirit
   - type: MobThresholds
     thresholds:
       0: Alive
-      60: Dead
+      100: Dead
   - type: MobState
     allowedStates:
     - Alive
@@ -95,6 +100,9 @@
     needsHands: false
   - type: Visibility
   - type: ContentEye
+  # WhiteDream - constructs see in the dark, same as the zealot's blindfold.
+  - type: NightVision
+    lightingColor: "#c99a9a"
   - type: Actions
   - type: Hands
   - type: ContainerContainer
@@ -127,8 +135,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100: Dead
+      250: Dead
   - type: Construct
+    # All that armour coming down at once.
+    shatterSound:
+      collection: MetalBreak
     actions:
     - ActionForceWallCult
     - ActionGauntletEcho
@@ -159,6 +170,11 @@
   name: artificer
   description: A bulbous construct dedicated to building and maintaining the Cult of Nar'Sie's armies.
   components:
+  # The builder. Squishiest of the real constructs - it is not meant to hold a line.
+  - type: MobThresholds
+    thresholds:
+      0: Alive
+      90: Dead
   - type: Sprite
     layers:
     - state: artificer
@@ -166,6 +182,9 @@
     - state: glow_artificer_cult
       map: [ "enum.ConstructVisualsState.Glow" ]
   - type: Construct
+    # Brittle shell, cracks like the runed metal it is made of.
+    shatterSound:
+      collection: GlassBreak
     actions:
     - ActionSummonCultFloor
     - ActionLesserConstruction
@@ -208,8 +227,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      65: Dead
+      120: Dead
   - type: Construct
+    # It dissipates rather than breaks.
+    shatterSound:
+      path: /Audio/WhiteDream/BloodCult/wraith_phase.ogg
     actions:
     - ActionPhaseShift
   - type: MovementIgnoreGravity
@@ -255,8 +277,11 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      65: Dead
+      200: Dead
   - type: Construct
+    # The herald falling is meant to be heard across the room.
+    shatterSound:
+      path: /Audio/WhiteDream/BloodCult/resonator_blast.ogg
   - type: MovementSpeedModifier
     baseWalkSpeed: 5
     baseSprintSpeed: 5
@@ -278,10 +303,14 @@
   components:
   - type: Sprite
     state: shade_cult
+  - type: Construct
+    # A spirit doesn't shatter, it is pulled back through the veil.
+    shatterSound:
+      path: /Audio/WhiteDream/BloodCult/veilout.ogg
   - type: MobThresholds
     thresholds:
       0: Alive
-      40: Dead
+      60: Dead
   - type: MeleeWeapon
     hidden: true
     angle: 30

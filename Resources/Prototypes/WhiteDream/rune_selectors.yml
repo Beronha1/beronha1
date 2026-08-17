@@ -26,21 +26,23 @@
   id: CultRuneBloodBoil
   prototype: CultRuneBloodBoil
 
+# WhiteDream - the leader's rune, and only once the veil has already been torn.
 - type: runeSelector
   id: CultRuneApocalypse
   prototype: CultRuneApocalypse
-  requireTargetDead: true
-  requiredTotalCultists: 10
-  drawTime: 40
+  requireLeader: true
+  requireVeilWeakened: true
+  drawTime: 30
   drawDamage:
     types:
       Slash: 20
 
+# WhiteDream - unlocks at the pentagram stage (BloodCultRuleComponent.PentagramThreshold), keep in sync.
 - type: runeSelector
   id: CultRuneDimensionalRending
   prototype: CultRuneDimensionalRending
   requireTargetDead: true
-  requiredTotalCultists: 10
+  requiredTotalCultists: 8
   drawTime: 40
   drawDamage:
     types:

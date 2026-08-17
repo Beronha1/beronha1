@@ -82,6 +82,13 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
                 runeSelector.RequiredTotalCultists > _cultRule.GetTotalCultists())
                 continue;
 
+            // WhiteDream - leader-only runes stay hidden from everyone else.
+            if (runeSelector.RequireLeader && !HasComp<BloodCultLeaderComponent>(args.Actor))
+                continue;
+
+            if (runeSelector.RequireVeilWeakened && !_cultRule.IsVeilWeakened())
+                continue;
+
             availableRunes.Add(runeSelector.ID);
         }
 
@@ -96,6 +103,19 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
         if (runeSelector.RequireTargetDead && !_cultRule.CanDrawRendingRune(args.Actor))
         {
             _popup.PopupEntity(Loc.GetString("cult-rune-cant-draw-rending"), args.Actor, args.Actor);
+            return;
+        }
+
+        // WhiteDream - leader-only runes.
+        if (runeSelector.RequireLeader && !HasComp<BloodCultLeaderComponent>(args.Actor))
+        {
+            _popup.PopupEntity(Loc.GetString("cult-rune-cant-draw-leader"), args.Actor, args.Actor);
+            return;
+        }
+
+        if (runeSelector.RequireVeilWeakened && !_cultRule.IsVeilWeakened())
+        {
+            _popup.PopupEntity(Loc.GetString("cult-rune-cant-draw-veil"), args.Actor, args.Actor);
             return;
         }
 
@@ -128,9 +148,11 @@ public sealed partial class CultRuneBaseSystem : EntitySystem
 
         _audio.PlayPvs(args.EndDrawingSound, args.User, AudioParams.Default.WithMaxDistance(2f));
         var runeEnt = SpawnRune(args.User, runeSelector.Prototype);
-        if (TryComp(runeEnt, out CultRuneBaseComponent? rune) 
+        // WhiteDream - was passing the rune drawer (held item) instead of the cultist, so the
+        // proximity check resolved against a container rather than the map.
+        if (TryComp(runeEnt, out CultRuneBaseComponent? rune)
             && rune.TriggerRendingMarkers
-            && !_cultRule.TryConsumeNearestMarker(ent))
+            && !_cultRule.TryConsumeNearestMarker(args.User))
             return;
 
         var ev = new AfterRunePlaced(args.User);

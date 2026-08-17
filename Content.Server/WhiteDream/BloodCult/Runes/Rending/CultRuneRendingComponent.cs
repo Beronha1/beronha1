@@ -1,7 +1,4 @@
-﻿using Content.Shared.DoAfter;
 using Robust.Shared.Audio;
-using Robust.Shared.Audio.Components;
-using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Rending;
 
@@ -9,25 +6,46 @@ namespace Content.Server.WhiteDream.BloodCult.Runes.Rending;
 public sealed partial class CultRuneRendingComponent : Component
 {
     [DataField]
-    public float SummonTime = 40;
-
-    [DataField]
     public SoundSpecifier FinishedDrawingAudio =
         new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/rending_draw_finished.ogg");
 
     [DataField]
     public SoundSpecifier SummonAudio = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/rending_ritual.ogg");
 
+    #region Collective chant (funky-station)
+
+    /// <summary>
+    ///     How many times the cult has to chant together before the veil gives.
+    /// </summary>
     [DataField]
-    public EntProtoId NarsiePrototype = "MobNarsieSpawn";
+    public int TotalChantSteps = 6;
 
     /// <summary>
-    ///     Used to track if the rune is being used right now.
+    ///     Seconds between each chant.
     /// </summary>
-    public DoAfterId? CurrentDoAfter;
+    [DataField]
+    public float ChantInterval = 5f;
 
     /// <summary>
-    ///     Used to track the summon audio entity.
+    ///     How close a cultist has to stand to a rending rune to count as chanting.
     /// </summary>
-    public Entity<AudioComponent>? AudioEntity;
+    [DataField]
+    public float ParticipantRange = 1.5f;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool RitualInProgress;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public bool RitualCompleted;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public int CurrentChantStep;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public float TimeUntilNextChant;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public EntityUid? RitualMap;
+
+    #endregion
 }

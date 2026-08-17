@@ -38,5 +38,11 @@ public sealed partial class BloodCultistComponent : Component, IAntagStatusIconC
 
     public Color? OriginalEyeColor;
 
+    /// <summary>
+    ///     WhiteDream - set once this cultist has been handed their objectives, so we don't retry forever.
+    /// </summary>
+    [ViewVariables, NonSerialized]
+    public bool ObjectivesGranted;
+
     public CancellationTokenSource? DeconvertToken { get; set; }
 }

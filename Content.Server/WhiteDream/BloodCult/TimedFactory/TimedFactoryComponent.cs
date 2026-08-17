@@ -1,4 +1,5 @@
 ﻿using Content.Trauma.Common.RadialSelector;
+using Robust.Shared.Audio;
 
 namespace Content.Server.WhiteDream.BloodCult.TimedFactory;
 
@@ -10,6 +11,12 @@ public sealed partial class TimedFactoryComponent : Component
 
     [DataField]
     public float Cooldown = 240;
+
+    /// <summary>
+    ///     WhiteDream - played when the structure spits something out.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier? ProductionSound;
 
     [ViewVariables(VVAccess.ReadOnly)]
     public float CooldownRemaining = 0;

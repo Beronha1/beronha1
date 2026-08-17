@@ -3,13 +3,16 @@ using Content.Server.Popups;
 using Content.Trauma.Common.RadialSelector;
 using Content.Shared.UserInterface;
 using Content.Shared.WhiteDream.BloodCult;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 
 namespace Content.Server.WhiteDream.BloodCult.TimedFactory;
 
 public sealed partial class TimedFactorySystem : EntitySystem
 {
     [Dependency] private AppearanceSystem _appearance = default!;
+    [Dependency] private AudioSystem _audio = default!;
     [Dependency] private HandsSystem _hands = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private UserInterfaceSystem _ui = default!;
@@ -56,6 +59,10 @@ public sealed partial class TimedFactorySystem : EntitySystem
 
         var product = Spawn(args.SelectedItem, Transform(args.Actor).Coordinates);
         _hands.TryPickupAnyHand(args.Actor, product);
+
+        // WhiteDream - each structure has its own voice.
+        if (factory.Comp.ProductionSound is { } sound)
+            _audio.PlayPvs(sound, factory, AudioParams.Default.WithVolume(-2f));
         factory.Comp.CooldownRemaining = factory.Comp.Cooldown;
         _appearance.SetData(factory, GenericCultVisuals.State, false);
         _ui.CloseUi(args.Actor, RadialSelectorUiKey.Key);

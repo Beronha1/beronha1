@@ -18,6 +18,41 @@
 
 - type: entity
   parent: BaseAction
+  id: ActionBloodCultCommune
+  name: Commune
+  description: Send a message to your fellow cultists, wherever they are. Beware - the uninitiated can see you whispering the incantation.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/commune.rsi
+    layers:
+    - state: commune
+  - type: Action
+    itemIconStyle: NoItem
+    checkCanInteract: false
+  - type: InstantAction
+    event: !type:BloodCultCommuneEvent {}
+
+- type: entity
+  parent: BaseAction
+  id: ActionBloodCultStudyVeil
+  name: Study the veil
+  description: Read the veil and learn how far the cult has come, and where reality is thin enough to tear.
+  categories: [ HideSpawnMenu ]
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/actions.rsi
+    layers:
+    - state: veiling
+  - type: Action
+    itemIconStyle: NoItem
+    checkCanInteract: false
+    useDelay: 5
+  - type: InstantAction
+    event: !type:BloodCultStudyVeilEvent {}
+
+- type: entity
+  parent: BaseAction
   id: ActionBloodCultRemoveSpells
   name: Remove blood spells
   description: Opens the menu to remove prepared blood spells.
@@ -188,7 +223,7 @@
       prototypes:
         outerClothing: ClothingOuterArmorCultSummoned
         head: ClothingHeadHelmetCultSummoned
-        shoes: ClothingShoesCult
+        shoes: ClothingShoesCultSummoned
         hand1: EldritchBlade
         hand2: CultBola
   - type: LimitedCharges

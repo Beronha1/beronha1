@@ -1,5 +1,6 @@
 ﻿using Content.Shared.Antag;
 using Content.Shared.StatusIcon;
+using Robust.Shared.Audio;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared.WhiteDream.BloodCult.Constructs;
@@ -21,6 +22,32 @@ public sealed partial class ConstructComponent : Component, IAntagStatusIconComp
 
     [DataField]
     public bool IconVisibleToGhost { get; set; } = true;
+
+    #region Shattering
+
+    /// <summary>
+    ///     WhiteDream - when this construct dies the body breaks apart instead of lying around, and
+    ///     the soul inside falls out as a shard so it can be rebuilt.
+    /// </summary>
+    [DataField]
+    public bool ShattersOnDeath;
+
+    [DataField]
+    public EntProtoId ShardProto = "SoulShard";
+
+    [DataField]
+    public EntProtoId ShardGhostProto = "SoulShardGhost";
+
+    [DataField]
+    public SoundSpecifier ShatterSound = new SoundCollectionSpecifier("GlassBreak");
+
+    /// <summary>
+    ///     Cosmetic debris left where the construct fell.
+    /// </summary>
+    [DataField]
+    public EntProtoId? ShatterEffect = "CultTileSpawnEffect";
+
+    #endregion
 
     public bool Transforming = false;
     public float TransformAccumulator = 0;

@@ -62,6 +62,8 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/altar.rsi
   - type: TimedFactory
+    productionSound:
+      path: /Audio/WhiteDream/BloodCult/rites.ogg
     entries:
     - prototype: ConstructShell
     - prototype: WhetstoneCult
@@ -78,6 +80,8 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/forge.rsi
   - type: TimedFactory
+    productionSound:
+      path: /Audio/WhiteDream/BloodCult/enter_blood.ogg
     entries:
     - prototype: MirrorShieldCult
     - prototype: EldritchLongsword
@@ -96,6 +100,8 @@
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Structures/archives.rsi
   - type: TimedFactory
+    productionSound:
+      path: /Audio/WhiteDream/BloodCult/magic.ogg
     entries:
     - prototype: ShuttleCurse
     - prototype: ClothingEyeCultBlindfold

@@ -65,8 +65,11 @@ public sealed partial class ConstructShellSystem : EntitySystem
         {
             DoContactInteraction = true,
             Text = Loc.GetString("soul-shard-selector-form"),
-            Icon = new SpriteSpecifier.Texture(
-                new ResPath("/Textures/WhiteDream/BloodCult/Entities/Items/construct_shell.rsi")),
+            // WhiteDream - this was a Texture pointing at an .rsi folder, which can't be loaded as
+            // a plain image and blew up the verb menu.
+            Icon = new SpriteSpecifier.Rsi(
+                new ResPath("/Textures/WhiteDream/BloodCult/Entities/Items/construct_shell.rsi"),
+                "icon"),
             Act = action
         });
     }

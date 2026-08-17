@@ -1,10 +1,10 @@
 using Content.Goobstation.Shared.PhaseShift;
-using Content.Shared.StatusEffect;
 using Content.Shared.WhiteDream.BloodCult.Spells;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
+using Robust.Shared.Timing;
 
 namespace Content.Server.WhiteDream.BloodCult;
 
@@ -15,7 +15,7 @@ public sealed partial class ConstructActionsSystem : EntitySystem
     [Dependency] private AudioSystem _audio = default!;
     [Dependency] private MapSystem _mapSystem = default!;
     [Dependency] private TransformSystem _transform = default!;
-    [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     private const string CultTileSpawnEffect = "CultTileSpawnEffect";
 
@@ -56,11 +56,39 @@ public sealed partial class ConstructActionsSystem : EntitySystem
         if (args.Handled)
             return;
 
-        if (_statusEffects.TryAddStatusEffect<PhaseShiftedComponent>(
-            args.Performer,
-            args.StatusEffectId,
-            args.Duration,
-            false))
-            args.Handled = true;
+        // <WhiteDream>
+        // This went through the old status effect system and asked for a "PhaseShifted" status
+        // effect prototype, which this fork doesn't have - so the ability silently did nothing.
+        // Apply the component ourselves and time it out below.
+        EnsureComp<PhaseShiftedComponent>(args.Performer);
+        EnsureComp<BloodCultPhasedComponent>(args.Performer).EndTime = _timing.CurTime + args.Duration;
+        // </WhiteDream>
+
+        args.Handled = true;
     }
+
+    public override void Update(float frameTime)
+    {
+        base.Update(frameTime);
+
+        var query = EntityQueryEnumerator<BloodCultPhasedComponent>();
+        while (query.MoveNext(out var uid, out var phased))
+        {
+            if (_timing.CurTime < phased.EndTime)
+                continue;
+
+            RemComp<PhaseShiftedComponent>(uid);
+            RemCompDeferred<BloodCultPhasedComponent>(uid);
+        }
+    }
+}
+
+/// <summary>
+///     WhiteDream - tracks how long a construct stays phased out.
+/// </summary>
+[RegisterComponent]
+public sealed partial class BloodCultPhasedComponent : Component
+{
+    [ViewVariables(VVAccess.ReadOnly)]
+    public TimeSpan EndTime;
 }

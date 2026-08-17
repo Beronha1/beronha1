@@ -19,7 +19,8 @@ public sealed partial class BloodCultBarrierSystem : EntitySystem
         if (!HasComp<RuneDrawerComponent>(args.Used) || !HasComp<BloodCultistComponent>(args.User))
             return;
 
-        _popup.PopupEntity("cult-barrier-destroyed", args.User, args.User);
+        // WhiteDream - this was passing the raw loc key straight to the popup.
+        _popup.PopupEntity(Loc.GetString("cult-barrier-destroyed"), args.User, args.User);
         Del(args.Target);
     }
 }

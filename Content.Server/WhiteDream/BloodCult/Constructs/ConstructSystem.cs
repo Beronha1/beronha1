@@ -1,10 +1,14 @@
 using Content.Trauma.Common.Language.Systems;
 using Content.Server.Actions;
+using Content.Server.Mind;
 using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Shared.Mind.Components;
+using Content.Shared.Mobs;
 using Content.Shared.WhiteDream.BloodCult;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
+using Robust.Server.Audio;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
 
 namespace Content.Server.WhiteDream.BloodCult.Constructs;
 
@@ -12,7 +16,9 @@ public sealed partial class ConstructSystem : EntitySystem
 {
     [Dependency] private ActionsSystem _actions = default!;
     [Dependency] private AppearanceSystem _appearanceSystem = default!;
+    [Dependency] private AudioSystem _audio = default!;
     [Dependency] private CommonLanguageSystem _language = default!;
+    [Dependency] private MindSystem _mind = default!;
 
     public override void Initialize()
     {
@@ -21,6 +27,7 @@ public sealed partial class ConstructSystem : EntitySystem
         SubscribeLocalEvent<ConstructComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<ConstructComponent, MindAddedMessage>(OnMindAdded);
         SubscribeLocalEvent<ConstructComponent, ComponentShutdown>(OnComponentShutdown);
+        SubscribeLocalEvent<ConstructComponent, MobStateChangedEvent>(OnConstructStateChanged);
     }
 
     public override void Update(float frameTime)
@@ -59,6 +66,38 @@ public sealed partial class ConstructSystem : EntitySystem
         var cultistRule = EntityQueryEnumerator<BloodCultRuleComponent>();
         while (cultistRule.MoveNext(out _, out var rule))
             rule.Constructs.Add(construct);
+    }
+
+    /// <summary>
+    ///     WhiteDream - a shattering construct breaks apart on death, drops the soul it was carrying
+    ///     as a shard and leaves nothing else behind.
+    /// </summary>
+    private void OnConstructStateChanged(Entity<ConstructComponent> construct, ref MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead || !construct.Comp.ShattersOnDeath)
+            return;
+
+        var coordinates = Transform(construct.Owner).Coordinates;
+
+        _audio.PlayPvs(construct.Comp.ShatterSound, coordinates, AudioParams.Default.WithVolume(2f));
+
+        if (construct.Comp.ShatterEffect is { } effect)
+            Spawn(effect, coordinates);
+
+        // Whoever was piloting it goes back into a shard, so the cult can rebuild them.
+        if (_mind.TryGetMind(construct.Owner, out var mindId, out _))
+        {
+            var shard = Spawn(construct.Comp.ShardProto, coordinates);
+            _mind.TransferTo(mindId, shard);
+            _mind.UnVisit(mindId);
+            _language.UpdateEntityLanguages(shard);
+        }
+        else
+        {
+            Spawn(construct.Comp.ShardGhostProto, coordinates);
+        }
+
+        QueueDel(construct.Owner);
     }
 
     private void OnComponentShutdown(Entity<ConstructComponent> construct, ref ComponentShutdown args)

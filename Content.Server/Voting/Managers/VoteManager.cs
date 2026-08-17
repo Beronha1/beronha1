@@ -17,6 +17,7 @@ using Content.Shared.Database;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Players.PlayTimeTracking;
 using Content.Shared.Voting;
+using Content.Shared.WhiteDream.BloodCult.BloodCultist; // WhiteDream
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
@@ -457,6 +458,11 @@ namespace Content.Server.Voting.Managers
                     return false;
             }
 
+            // WhiteDream - blood cult leader vote: only the faithful get a say.
+            if (eligibility == VoterEligibility.BloodCult &&
+                !_entityManager.HasComponent<BloodCultistComponent>(player.AttachedEntity))
+                return false;
+
             // <Trauma> - Cosmic Cult
             var ev = new CheckVotingEligibilityEvent();
             if (player.AttachedEntity is { } playerEntity)
@@ -564,6 +570,7 @@ namespace Content.Server.Voting.Managers
             GhostMinimumPlaytime, // Player needs to be a ghost, with a minimum playtime and deathtime as defined by votekick CCvars.
             MinimumPlaytime, //Player needs to have a minimum playtime and deathtime as defined by votekick CCvars.
             CosmicCult, // DeltaV - Player needs to be a cosmic cultist. Used by the cosmic cult gamemode.
+            BloodCult, // WhiteDream - Player needs to be a blood cultist. Used for the cult leader vote.
         }
 
         #endregion

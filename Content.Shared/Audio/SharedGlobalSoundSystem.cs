@@ -46,6 +46,7 @@ public enum StationEventMusicType : byte
     Nuke,
     // <Trauma>
     CosmicCult,
+    BloodCult, // WhiteDream
     VoidAscended,
     ShadowLing,
     Xenomorph,

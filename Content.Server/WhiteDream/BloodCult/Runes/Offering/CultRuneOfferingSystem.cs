@@ -1,4 +1,5 @@
 using System.Linq;
+using Robust.Shared.Prototypes;
 using Content.Shared.Bible.Components;
 using Content.Trauma.Common.Language.Systems;
 using Content.Shared.Gibbing;
@@ -15,11 +16,19 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffect;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.Damage.Systems;
+using Content.Server.Popups;
+using Content.Shared.Popups;
+using Robust.Server.Audio;
+using Robust.Shared.Audio;
+using StatusEffectsNewSystem = Content.Shared.StatusEffectNew.StatusEffectsSystem; // Trauma
 
 namespace Content.Server.WhiteDream.BloodCult.Runes.Offering;
 
 public sealed partial class CultRuneOfferingSystem : EntitySystem
 {
+    // Trauma - muting moved to the new status effect system
+    private static readonly EntProtoId MutedEffect = "StatusEffectMuted";
+
     [Dependency] private BloodCultRuleSystem _bloodCultRule = default!;
     [Dependency] private CommonLanguageSystem _language = default!;
     [Dependency] private GibbingSystem _gibbing = default!;
@@ -30,6 +39,9 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
     [Dependency] private MindSystem _mind = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
+    [Dependency] private StatusEffectsNewSystem _statusEffectsNew = default!; // Trauma
+    [Dependency] private AudioSystem _audio = default!;
+    [Dependency] private PopupSystem _popup = default!;
     [Dependency] private SharedStunSystem _stun = default!;
 
     public override void Initialize()
@@ -58,7 +70,11 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
 
     private bool TryOffer(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user, int invokersTotal)
     {
-        // if the target is dead we should always sacrifice it.
+        // WhiteDream - Nar'Sie's marked offering always costs three of us, alive or dead. Any other
+        // corpse only needs one.
+        if (_bloodCultRule.IsTarget(target))
+            return TrySacrifice(rune, target, invokersTotal);
+
         if (_mobState.IsDead(target))
         {
             Sacrifice(rune, target);
@@ -75,7 +91,17 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
     private bool TrySacrifice(Entity<CultRuneOfferingComponent> rune, EntityUid target, int invokersAmount)
     {
         if (invokersAmount < rune.Comp.AliveSacrificeInvokersAmount)
+        {
+            // WhiteDream - it used to just cancel in silence, so nothing at all seemed to happen.
+            _popup.PopupEntity(
+                Loc.GetString("cult-offering-need-invokers",
+                    ("current", invokersAmount),
+                    ("required", rune.Comp.AliveSacrificeInvokersAmount)),
+                rune,
+                PopupType.MediumCaution);
+
             return false;
+        }
 
         Sacrifice(rune, target);
         return true;
@@ -84,7 +110,16 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
     private bool TryConvert(Entity<CultRuneOfferingComponent> rune, EntityUid target, EntityUid user, int invokersTotal)
     {
         if (invokersTotal < rune.Comp.ConvertInvokersAmount)
+        {
+            _popup.PopupEntity(
+                Loc.GetString("cult-offering-need-invokers",
+                    ("current", invokersTotal),
+                    ("required", rune.Comp.ConvertInvokersAmount)),
+                rune,
+                PopupType.MediumCaution);
+
             return false;
+        }
 
         _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
         Convert(rune, target, user);
@@ -94,6 +129,10 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
     private void Sacrifice(Entity<CultRuneOfferingComponent> rune, EntityUid target)
     {
         _cultRuneRevive.AddCharges(rune, rune.Comp.ReviveChargesPerOffering);
+
+        // WhiteDream - the veil takes its due.
+        _audio.PlayPvs(rune.Comp.SacrificeSound, rune, AudioParams.Default.WithVolume(2f));
+
         var transform = Transform(target);
 
         if (!_mind.TryGetMind(target, out var mindId, out _))
@@ -119,7 +158,10 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
             _cuffable.Uncuff(target, user, lastAddedCuffs);
         }
 
-        _statusEffects.TryRemoveStatusEffect(target, "Muted");
+        // Trauma - muting moved to the new status effect system, the old call silently did nothing.
+        _statusEffectsNew.TryRemoveStatusEffect(target, MutedEffect);
         _damageable.TryChangeDamage(target, rune.Comp.ConvertHealing);
+
+        _audio.PlayPvs(rune.Comp.ConvertSound, rune, AudioParams.Default.WithVolume(1f));
     }
 }

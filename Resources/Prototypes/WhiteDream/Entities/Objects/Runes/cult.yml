@@ -34,7 +34,27 @@
     state: "offering"
   - type: CultRuneBase
     invokePhrase: "Mah'weyh pleggh at e'ntrath!"
+    # WhiteDream - 1 tile meant a second cultist could only ever stand orthogonally, and even then
+    # right on the edge. Conversion needs two of us, so give them room to stand.
+    runeActivationRange: 1.5
   - type: CultRuneOffering
+
+# Funky - spawned automatically around the blood rift. Cannot be drawn by hand.
+- type: entity
+  parent: CultRuneBase
+  id: CultRuneFinalSummoning
+  name: rune of final summoning
+  description: One of the four runes that hold the rift open. Stand upon it and chant to drag Nar'Sie through.
+  components:
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Entities/Runes/dimensional_rending.rsi
+    state: rune
+  - type: CultRuneBase
+    requiredInvokers: 1
+    invokeChatType: Speak
+    invokePhrase: "TOK-LYR RQA-NAP G'OLT-ULOFT!!!"
+    canBeErased: false
+  - type: FinalSummoningRune
 
 - type: entity
   parent: CultRuneBase
@@ -131,7 +151,7 @@
   parent: CultRuneBase
   id: CultRuneApocalypse
   name: rune of apocalypse
-  description: Harbinger of the end times. Grows in strength with the cult's desperation - but at the risk of... side effects. Requires 3 invokers.
+  description: Harbinger of the end times. Only the cult leader may draw it. Grows in strength with the cult's desperation - but at the risk of... side effects. Requires 3 invokers.
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Runes/apocalypse.rsi
@@ -139,9 +159,10 @@
       - state: icon
         map: [ "enum.ApocalypseRuneVisuals.Layer" ]
   - type: CultRuneBase
+    # WhiteDream - three cultists on the rune to set it off. Drawn only by the leader, so it no
+    # longer eats one of the three rending sites.
     requiredInvokers: 3
     invokePhrase: "Ta'gh fara'qha fel d'amar det!"
-    triggerRendingMarkers: true
     canBeErased: false
     activationDamage:
       types:
@@ -157,7 +178,7 @@
   parent: CultRuneBase
   id: CultRuneDimensionalRending
   name: rune of dimensional rending
-  description: Tears apart dimensional barriers, calling forth the Geometer. Requires 10 invokers
+  description: Tears apart dimensional barriers, calling forth the Geometer. The cult must gather upon the runes and chant together.
   components:
   - type: Sprite
     sprite: WhiteDream/BloodCult/Entities/Runes/dimensional_rending.rsi
@@ -165,7 +186,8 @@
     - state: rune
       map: [ "enum.RendingRuneVisuals.Layer" ]
   - type: CultRuneBase
-    requiredInvokers: 10
+    # Funky - the real gate is the collective chant, which scales with the crew size.
+    requiredInvokers: 1
     invokeChatType: Speak
     invokePhrase: "TOK-LYR RQA-NAP G'OLT-ULOFT!!!"
     triggerRendingMarkers: true

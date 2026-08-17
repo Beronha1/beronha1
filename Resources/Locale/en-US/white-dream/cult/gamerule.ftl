@@ -7,9 +7,12 @@ roles-antag-blood-cultist-objective = Summon the Old God Nar'Sie.
 blood-cult-role-greeting = The Geometer of Blood, Nar-Sie, has sent a number of her followers to Space Station.
     As a cultist, you have an abundance of cult magics at your disposal, something for all situations.
     You must work with your brethren to summon an avatar of your eldritch goddess!
+    Sacrifice your marked target and tear the veil to summon Nar'Sie. Stealth is your greatest ally.
 
-blood-cult-role-briefing-short = Use '^' to contact other members of your brethren.
+blood-cult-role-briefing-short = Use the Commune action to reach your brethren anywhere on the station.
+    Study the veil to see the cult's standing, your objectives and where the veil runs thin.
 blood-cult-role-briefing-rending-locations = The veil can be torn {$location}, {$coordinates}
+blood-cult-role-briefing-rending-site = The veil is thin { $location }.
 blood-cult-role-briefing-emergency-rending = We can draw {$amount} more rending or apocalypse runes!
 
 objective-issuer-blood-cult = [color=red]The Geometer of Blood[/color]
@@ -35,3 +38,9 @@ blood-cult-roundend-stats-stage = Cult stage reached: { $stage }
 blood-cult-stage-start = initial
 blood-cult-stage-red-eyes = red eyes
 blood-cult-stage-pentagram = pentagram
+
+# WhiteDream - ascension + objectives
+cult-offering-target-chosen = Nar'Sie has chosen an offering: [color=#d43a3a]{ $name }[/color].
+cult-ascension-warning = The end draws near. In { $minutes } minutes her mark will show upon us all - gather, and be ready for the ascension of our Mother.
+cult-ascension-rending-unlocked = We are strong enough to tear the veil. The rune of dimensional rending is ours to draw.
+cult-ascension-marked = Her mark is upon us. There is no hiding now.

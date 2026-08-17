@@ -125,7 +125,10 @@
   - type: ShowHealthIcons
     damageContainers:
     - Biological
-  # TODO: ADD NIGHT VISION
+  # WhiteDream - Nar'Sie guides you through the darkness, literally.
+  - type: NightVision
+    relayOverlay: true
+    lightingColor: "#c99a9a"
 
 
 # WhiteDream - summoned variant of the upstream acolyte armour.
@@ -133,9 +136,15 @@
 - type: entity
   parent: ClothingOuterArmorCult
   id: ClothingOuterArmorCultSummoned
-  name: acolyte armor
-  description: An evil-looking piece of cult armor, made of bones. This one still reeks of the rite that called it here.
+  name: zealot's robes
+  description: Heavy robes woven for those who answered the call. They still reek of the rite that summoned them.
   components:
+  # Funky sprites (PR #2426) so the summoned set reads apart from the acolyte armour at a glance.
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_robes.rsi
   - type: Armor
     modifiers:
       coefficients: # 40% resist across the board
@@ -152,9 +161,15 @@
 - type: entity
   parent: ClothingHeadHelmetCult
   id: ClothingHeadHelmetCultSummoned
-  name: cult helmet
-  description: A robust, evil-looking cult helmet. This one was called straight out of the veil.
+  name: zealot's hood
+  description: A hood of the same dark weave, called straight out of the veil.
   components:
+  # Funky sprites (PR #2426).
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_hood.rsi
   - type: Armor
     modifiers:
       coefficients: # 40% resist across the board
@@ -163,4 +178,19 @@
         Piercing: 0.6
         Ballistic: 0.6
         Heat: 0.6
+  - type: CultItem
+
+# WhiteDream - summoned boots. The chapel's ClothingShoesCult is left untouched.
+- type: entity
+  parent: ClothingShoesCult
+  id: ClothingShoesCultSummoned
+  name: zealot's boots
+  description: Boots of the same dark weave. Sure-footed, whatever the floor is covered in.
+  components:
+  # Funky sprites (PR #2426).
+  - type: Sprite
+    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
+    state: icon
+  - type: Clothing
+    sprite: WhiteDream/BloodCult/Clothing/cult_boots.rsi
   - type: CultItem

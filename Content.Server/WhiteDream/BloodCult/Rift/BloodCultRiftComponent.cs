@@ -120,6 +120,51 @@ public sealed partial class BloodCultRiftComponent : Component
 
     #endregion
 
+    #region Guardians
+
+    /// <summary>
+    ///     What the rift vomits out to defend itself. Without this the rift is a passive object the
+    ///     crew can simply walk up to and camp.
+    /// </summary>
+    [DataField]
+    public EntProtoId GuardianProto = "MobHellspawnCult";
+
+    /// <summary>
+    ///     Seconds before a new guardian crawls out, while the rift is just sitting there bleeding.
+    /// </summary>
+    [DataField]
+    public float GuardianInterval = 60f;
+
+    /// <summary>
+    ///     Seconds before a replacement crawls out once the final chant has begun. The veil is wide
+    ///     open by then, so the rift patches its own guard faster.
+    /// </summary>
+    [DataField]
+    public float RitualGuardianInterval = 25f;
+
+    /// <summary>
+    ///     One at a time. A hellspawn is a mini-boss on its own; a pack of them is not a fight.
+    /// </summary>
+    [DataField]
+    public int MaxGuardians = 1;
+
+    [DataField]
+    public int RitualMaxGuardians = 1;
+
+    /// <summary>
+    ///     How far from the rift a guardian can crawl out.
+    /// </summary>
+    [DataField]
+    public float GuardianSpawnRange = 2.5f;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public float TimeUntilNextGuardian;
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public List<EntityUid> Guardians = new();
+
+    #endregion
+
     #region Music
 
     /// <summary>

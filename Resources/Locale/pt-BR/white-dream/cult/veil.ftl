@@ -50,3 +50,8 @@ alert-level-delta-cult-announcement = Atenção a todos os funcionários: Anomal
 # A Central percebe a contagem regressiva
 cult-ascension-centcom-sender = Comando Central
 cult-ascension-centcom-announcement = Atenção: nossos sensores de longo alcance detectaram distúrbios no espaço-tempo originando-se da sua estação. As leituras são consistentes com uma brecha dimensional incipiente. Recomenda-se que a segurança vasculhe a estação e reporte qualquer anomalia. Não entrem em pânico.
+
+# A ninhada da fenda
+ghost-role-information-hellspawn-cult-name = Hellspawn
+ghost-role-information-hellspawn-cult-description = Rasteje para fora da fenda de sangue e despedace quem vier fechá-la.
+ghost-role-information-hellspawn-cult-rules = Você é uma besta de Nar'Sie, arrastada pelo rasgo na realidade. Você não é um cultista e não recebe ordens, mas o culto não é sua presa - a tripulação é. Guarde a fenda. Mate tudo que não for da Geômetra.

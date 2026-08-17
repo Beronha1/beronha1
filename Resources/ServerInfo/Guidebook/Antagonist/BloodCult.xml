@@ -28,6 +28,7 @@
 
   - 1. De um lugar escondido, fale com seus aliados pela ação [bold]Comunhão[/bold], que alcança todo o culto em qualquer distância.
   - 2. Encontrem uma base: acessível ao culto, escondida da segurança.
+  - 2.5. Aos cinco minutos, [bold]votem no líder[/bold] quando Nar'Sie perguntar. Sem líder não há runa do apocalipse.
   - 3. Desenhem uma runa de teleporte para que todos cheguem lá.
   - 4. Desenhem uma runa de fortalecimento e preparem até 4 magias de sangue.
   - 5. Convertam ou sacrifiquem sobre a runa de oferenda. Combinem fragmentos de alma cheios com cascas de constructo para criar constructos poderosos!
@@ -36,7 +37,7 @@
   - 8. Reúnam-se sobre as runas de rasgo e [bold]cantem juntos[/bold] até o véu ceder.
   - 9. Esperem a fenda nascer e completem o ritual final sobre ela.
 
-  ## Comunhão e a voz de Nar'Sie
+  ## Comunhão e o véu
 
   <Box>
     <GuideEntityEmbed Entity="ActionBloodCultCommune" Caption="Comunhão"/>
@@ -47,7 +48,19 @@
 
   O [bold]Estudar o véu[/bold] é o seu painel: mostra quantos somos, quem é o líder, o que falta para o próximo estágio, quem é a oferenda marcada e onde o véu está fino. Consulte antes de qualquer decisão grande.
 
-  Alguns minutos após o início da rodada, Nar'Sie abre uma [bold]votação[/bold] entre os cultistas para escolher quem fala por ela. [color=#d43a3a]Só cultistas votam.[/color] O escolhido vira o [bold]líder do culto[/bold], recebe um ícone próprio e é o único capaz de desenhar a runa do apocalipse. Se o líder morrer, Nar'Sie convoca uma nova votação.
+  ## O líder do culto
+
+  [color=#d43a3a]Nar'Sie escolhe uma voz entre vocês, e quem escolhe por ela são vocês mesmos.[/color]
+
+  [bold]Cinco minutos[/bold] depois do início da rodada, ela abre uma [bold]votação[/bold] com todos os cultistas vivos como candidatos. A votação dura 45 segundos e [bold]apenas cultistas podem votar[/bold] — a tripulação nem vê que ela aconteceu. Havendo empate, ela decide entre os empatados. Se por acaso houver um único cultista, ele é coroado sem votação.
+
+  O escolhido vira o [bold]líder do culto[/bold] e ganha:
+
+  - Um [bold]ícone próprio[/bold] no HUD do culto, para os irmãos saberem a quem seguir.
+  - O direito exclusivo de desenhar a [bold]runa do apocalipse[/bold]. Ninguém mais consegue — ela nem aparece no menu da adaga dos outros.
+  - O nome dele aparece no [bold]Estudar o véu[/bold] como "a voz dela entre nós".
+
+  Se o líder morrer, o culto é avisado no chat e [bold]Nar'Sie convoca uma nova votação[/bold] cerca de 45 segundos depois. Ou seja: proteger o líder importa, e caçar o líder também — a tripulação que descobrir quem é atrasa o apocalipse.
 
   ## Adaga ritual
 
@@ -142,6 +155,12 @@
   </Box>
 
   Dois minutos depois do véu ser rasgado, uma [bold]fenda da realidade[/bold] abre em algum lugar da estação — o local é anunciado no chat do culto. Ela nasce sobre piso reforçado, cercada por quatro runas de invocação final, e sangra [bold]perniculado sanguíneo[/bold] sem parar, formando um oceano crescente.
+
+  <Box>
+    <GuideEntityEmbed Entity="MobHellspawnCult" Caption="Hellspawn"/>
+  </Box>
+
+  A fenda não fica indefesa: ela [bold]vomita um hellspawn[/bold] para guardá-la — uma besta de 450 de vida que reflete tiros de energia e ateia fogo no que toca. Ele atende a Nar'Sie, então não ataca o culto: caça a tripulação. É sempre [bold]um de cada vez[/bold]. Se matarem o guardião, a fenda leva cerca de um minuto para arrastar outro — e, [bold]depois que o cântico final começa, apenas 25 segundos[/bold]. Fantasmas podem assumir o controle dele.
 
   Invoque uma das quatro runas com [bold]3 cultistas[/bold] em cima delas para começar o ritual final. O cântico [bold]acelera[/bold]: começa espaçado e vai apertando até virar frenesi, acompanhando a música.
 

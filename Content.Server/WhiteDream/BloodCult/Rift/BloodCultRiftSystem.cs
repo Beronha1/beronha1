@@ -12,6 +12,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Gibbing;
 using Content.Shared.Popups;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Robust.Server.GameObjects;
 using Robust.Shared.Random;
@@ -31,6 +32,7 @@ public sealed partial class BloodCultRiftSystem : EntitySystem
     [Dependency] private CommonLanguageSystem _language = default!;
     [Dependency] private GibbingSystem _gibbing = default!;
     [Dependency] private MindSystem _mind = default!;
+    [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private PopupSystem _popup = default!;
     [Dependency] private ServerGlobalSoundSystem _sound = default!;
     [Dependency] private SharedSolutionContainerSystem _solution = default!;
@@ -57,6 +59,10 @@ public sealed partial class BloodCultRiftSystem : EntitySystem
                 rift.TimeUntilNextPulse = rift.PulseInterval;
             }
 
+            rift.TimeUntilNextGuardian -= frameTime;
+            if (rift.TimeUntilNextGuardian <= 0f)
+                TrySpawnGuardian(uid, rift);
+
             if (!rift.RitualInProgress)
                 continue;
 
@@ -80,6 +86,32 @@ public sealed partial class BloodCultRiftSystem : EntitySystem
         if (HasComp<AppearanceComponent>(uid))
             _appearance.SetData(uid, AnomalyVisualLayers.Animated, true);
     }
+
+    #region Guardians
+
+    /// <summary>
+    ///     Something crawls out of the wound. The rate and the cap both go up once the final chant
+    ///     starts, so the crew can't simply wait the rift out and then stroll in.
+    /// </summary>
+    private void TrySpawnGuardian(EntityUid riftUid, BloodCultRiftComponent rift)
+    {
+        rift.TimeUntilNextGuardian = rift.RitualInProgress
+            ? rift.RitualGuardianInterval
+            : rift.GuardianInterval;
+
+        rift.Guardians.RemoveAll(guardian => TerminatingOrDeleted(guardian) || _mobState.IsDead(guardian));
+
+        var cap = rift.RitualInProgress ? rift.RitualMaxGuardians : rift.MaxGuardians;
+        if (rift.Guardians.Count >= cap)
+            return;
+
+        var coordinates = Transform(riftUid).Coordinates
+            .Offset(_random.NextVector2(rift.GuardianSpawnRange));
+
+        rift.Guardians.Add(Spawn(rift.GuardianProto, coordinates));
+    }
+
+    #endregion
 
     #region Ritual
 

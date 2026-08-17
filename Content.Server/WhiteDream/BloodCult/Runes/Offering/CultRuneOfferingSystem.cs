@@ -11,7 +11,7 @@ using Content.Server.WhiteDream.BloodCult.Gamerule;
 using Content.Server.WhiteDream.BloodCult.Runes.Revive;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Damage;
-using Content.Shared.Mindshield.Components;
+using Content.Shared.Mindshield;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusEffect;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
@@ -37,6 +37,7 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
     [Dependency] private CultRuneReviveSystem _cultRuneRevive = default!;
     [Dependency] private DamageableSystem _damageable = default!;
     [Dependency] private MindSystem _mind = default!;
+    [Dependency] private MindShieldSystem _mindShield = default!;
     [Dependency] private MobStateSystem _mobState = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
     [Dependency] private StatusEffectsNewSystem _statusEffectsNew = default!; // Trauma
@@ -81,8 +82,11 @@ public sealed partial class CultRuneOfferingSystem : EntitySystem
             return true;
         }
 
+        // WhiteDream - MindShieldComponent lives on the implant/clothing, never on the person, so
+        // HasComp here was always false and mindshielded crew were being converted. MindShieldSystem
+        // says outright: never look for the component, ask it instead.
         if (!_mind.TryGetMind(target, out _, out _) || _bloodCultRule.IsTarget(target) ||
-            HasComp<BibleUserComponent>(target) || HasComp<MindShieldComponent>(target))
+            HasComp<BibleUserComponent>(target) || _mindShield.IsShielded(target))
             return TrySacrifice(rune, target, invokersTotal);
 
         return TryConvert(rune, target, user, invokersTotal);

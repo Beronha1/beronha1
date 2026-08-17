@@ -50,3 +50,8 @@ alert-level-delta-cult-announcement = Attention all personnel: reality-distortio
 # Central Command notices the countdown
 cult-ascension-centcom-sender = Central Command
 cult-ascension-centcom-announcement = Attention: our long-range sensors have picked up space-time disturbances originating from your station. The readings are consistent with an incipient dimensional breach. Security is advised to sweep the station and report anything anomalous. Do not panic.
+
+# The rift's brood
+ghost-role-information-hellspawn-cult-name = Hellspawn
+ghost-role-information-hellspawn-cult-description = Crawl out of the blood rift and tear apart anyone who comes to close it.
+ghost-role-information-hellspawn-cult-rules = You are a beast of Nar'Sie, dragged through the tear in reality. You are not a cultist and you take no orders, but the cult is not your prey - the crew is. Guard the rift. Kill anything that is not of the Geometer.

@@ -12,7 +12,7 @@ using Content.Shared.Clothing.Components;
 using Content.Shared.Cuffs.Components;
 using Content.Shared.DoAfter;
 using Content.Shared.Inventory;
-using Content.Shared.Mindshield.Components;
+using Content.Shared.Mindshield;
 using Content.Shared.Popups;
 using Content.Goobstation.Shared.ListViewSelector;
 using Content.Trauma.Common.RadialSelector;
@@ -43,6 +43,7 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
     [Dependency] private CuffableSystem _cuffable = default!;
     [Dependency] private EmpSystem _empSystem = default!;
     [Dependency] private HandsSystem _hands = default!;
+    [Dependency] private MindShieldSystem _mindShield = default!;
     [Dependency] private InventorySystem _inventory = default!;
     [Dependency] private TransformSystem _transform = default!;
     [Dependency] private PopupSystem _popup = default!;
@@ -87,7 +88,8 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
         if (spell.Comp.BypassProtection)
             return;
 
-        if (HasComp<MindShieldComponent>(args.Target))
+        // WhiteDream - same story as the offering rune: ask the system, don't look for the component.
+        if (_mindShield.IsShielded(args.Target))
             args.Handled = true;
     }
 

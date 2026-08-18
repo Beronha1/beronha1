@@ -14,12 +14,18 @@ public sealed partial class CultRuneReviveComponent : Component
     [DataField]
     public DamageSpecifier Healing = new()
     {
-        // Trauma - DamageDict is keyed by ProtoId now
+        // Trauma - DamageDict is keyed by ProtoId now, and only damage types are valid keys,
+        // so the old Brute/Burn groups are spelled out.
         DamageDict = new Dictionary<ProtoId<DamageTypePrototype>, FixedPoint2>
         {
-            ["Brute"] = -100,
-            ["Burn"] = -100,
+            ["Blunt"] = -100,
+            ["Slash"] = -100,
+            ["Piercing"] = -100,
+            ["Ballistic"] = -100,
             ["Heat"] = -100,
+            ["Shock"] = -100,
+            ["Cold"] = -100,
+            ["Caustic"] = -100,
             ["Asphyxiation"] = -100,
             ["Bloodloss"] = -100,
             ["Poison"] = -50,

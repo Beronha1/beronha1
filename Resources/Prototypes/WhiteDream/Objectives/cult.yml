@@ -5,7 +5,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Objective
-    issuer: objective-issuer-blood-cult
+    issuer: BloodCult
     unique: true
     difficulty: 3
     icon:
@@ -23,7 +23,7 @@
   categories: [ HideSpawnMenu ]
   components:
   - type: Objective
-    issuer: objective-issuer-blood-cult
+    issuer: BloodCult
     unique: true
     difficulty: 5
     icon:

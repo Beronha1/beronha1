@@ -28,9 +28,9 @@
     damageCoefficient: 0.5
   - type: ExplosionResistance
     damageCoefficient: 0.5
+  # Trauma - TemperatureProtection has a single coefficient here, not separate heating/cooling ones.
   - type: TemperatureProtection
-    heatingCoefficient: 0.001
-    coolingCoefficient: 0.001
+    coefficient: 0.001
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetCultArmor
   - type: CultItem

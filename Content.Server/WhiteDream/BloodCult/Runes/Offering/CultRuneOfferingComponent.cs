@@ -53,10 +53,17 @@ public sealed partial class CultRuneOfferingComponent : Component
     [DataField]
     public DamageSpecifier ConvertHealing = new()
     {
+        // Trauma - only damage types are valid keys, so the old Brute/Burn groups are spelled out.
         DamageDict = new()
         {
-            ["Brute"] = -40,
-            ["Burn"] = -40
+            ["Blunt"] = -40,
+            ["Slash"] = -40,
+            ["Piercing"] = -40,
+            ["Ballistic"] = -40,
+            ["Heat"] = -40,
+            ["Shock"] = -40,
+            ["Cold"] = -40,
+            ["Caustic"] = -40
         }
     };
 }

@@ -21,11 +21,11 @@ public sealed partial class ConstructActionsSystem : EntitySystem
 
     public override void Initialize()
     {
-        SubscribeLocalEvent<PlaceTileEntityEvent>(OnPlaceTileEntityEvent);
+        SubscribeLocalEvent<CultPlaceTileEntityEvent>(OnCultPlaceTileEntityEvent);
         SubscribeLocalEvent<PhaseShiftEvent>(OnPhaseShift);
     }
 
-    private void OnPlaceTileEntityEvent(PlaceTileEntityEvent args)
+    private void OnCultPlaceTileEntityEvent(CultPlaceTileEntityEvent args)
     {
         if (args.Handled)
             return;

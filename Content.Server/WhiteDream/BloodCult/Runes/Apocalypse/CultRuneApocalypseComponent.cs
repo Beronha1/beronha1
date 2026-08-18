@@ -50,11 +50,12 @@ public sealed partial class CultRuneApocalypseComponent : Component
     [DataField]
     public Dictionary<EntProtoId, int> PossibleEvents = new()
     {
+        // WhiteDream - the upstream ids do not exist in this fork, these are the local equivalents.
         ["ImmovableRodSpawn"] = 3,
-        ["MimicVendorRule"] = 2,
-        ["KingRatSpawn"] = 2,
-        ["GameRuleMeteorSwarmMedium"] = 2,
-        ["SpiderSpawn"] = 3, // more spiders
+        ["MassHallucinations"] = 2,
+        ["KingRatMigration"] = 2,
+        ["MeteorSwarmMedium"] = 2,
+        ["SpiderSpawnHorde"] = 3, // more spiders
         ["AnomalySpawn"] = 4,
         ["KudzuGrowth"] = 2,
     };

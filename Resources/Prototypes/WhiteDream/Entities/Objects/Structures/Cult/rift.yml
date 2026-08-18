@@ -78,7 +78,6 @@
     factions:
     - GeometerOfBlood
   - type: WeakToHoly
-    alwaysTakeHoly: true
   - type: GhostRole
     allowMovement: true
     makeSentient: true

@@ -1,3 +1,4 @@
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -75,6 +76,14 @@ public sealed partial class EnsnaringComponent : Component
     /// </summary>
     [DataField]
     public bool DestroyOnRemove;
+
+    /// <summary>
+    /// WhiteDream
+    /// Anything matching this whitelist walks straight through the snare. Used by the nar'sien bola,
+    /// which is meant to be harmless to fellow cultists.
+    /// </summary>
+    [DataField]
+    public EntityWhitelist? IgnoredTargets;
 }
 
 /// <summary>

@@ -9,10 +9,13 @@
     sprite: WhiteDream/BloodCult/Effects/blood_boil.rsi
     state: bullet
   - type: Projectile
+    # WhiteDream - DamageSpecifier lost the `groups` shortcut.
     damage:
-      groups:
-        Burn: 10
-        Brute: 10
+      types:
+        Heat: 5
+        Shock: 5
+        Blunt: 5
+        Slash: 5
   - type: PointLight
     enabled: true
     color: "#ff4300"

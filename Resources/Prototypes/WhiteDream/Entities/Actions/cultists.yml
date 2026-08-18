@@ -295,7 +295,7 @@
     checkCanAccess: false
     range: 5
   - type: WorldTargetAction
-    event: !type:PlaceTileEntityEvent
+    event: !type:CultPlaceTileEntityEvent
       tileId: CultFloor
       audio: !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -319,7 +319,7 @@
     checkCanAccess: false
     range: 5
   - type: WorldTargetAction
-    event: !type:PlaceTileEntityEvent
+    event: !type:CultPlaceTileEntityEvent
       entity: WallCult
       audio: !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -343,7 +343,7 @@
     checkCanAccess: false
     range: 5
   - type: WorldTargetAction
-    event: !type:PlaceTileEntityEvent
+    event: !type:CultPlaceTileEntityEvent
       entity: CultDoor
       audio: !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -367,7 +367,7 @@
     checkCanAccess: false
     range: 5
   - type: WorldTargetAction
-    event: !type:PlaceTileEntityEvent
+    event: !type:CultPlaceTileEntityEvent
       entity: SoulShardGhost
       audio: !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -391,7 +391,7 @@
     checkCanAccess: false
     range: 5
   - type: WorldTargetAction
-    event: !type:PlaceTileEntityEvent
+    event: !type:CultPlaceTileEntityEvent
       entity: SoulShardHolyGhost
       audio: !type:SoundPathSpecifier
         path: /Audio/WhiteDream/BloodCult/curse.ogg
@@ -460,5 +460,5 @@
   - type: WorldTargetAction
     event: !type:ProjectileSpellEvent
       prototype: ProjectileGauntlet
-      speed: 5
+      projectileSpeed: 5
   - type: BaseCultSpell

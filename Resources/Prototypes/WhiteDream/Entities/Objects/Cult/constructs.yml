@@ -56,7 +56,6 @@
   - type: Construct
     shattersOnDeath: true
   - type: WeakToHoly # Mini: declare in YAML — CultWeakToHolySystem must not add it at spawn (PrototypeSaveTest)
-    alwaysTakeHoly: true
   - type: Fixtures
     fixtures:
       fix1:
@@ -257,9 +256,8 @@
         enum.ConstructVisualsState.Glow:
           True: { visible: false }
           False: { visible: true }
-  - type: StatusEffects
-    allowed:
-    - PhaseShifted
+  # WhiteDream - the phase shift is applied as a component by ConstructActionsSystem now, there is no
+  # "PhaseShifted" status effect prototype in this fork.
   - type: Pullable
 
 - type: entity

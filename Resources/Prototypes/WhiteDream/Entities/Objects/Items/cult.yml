@@ -187,6 +187,8 @@
     blockSound: !type:SoundPathSpecifier
       path: /Audio/Effects/glass_step.ogg
   - type: Damageable
+  # Trauma - the damage container lives on Injurable now.
+  - type: Injurable
     damageContainer: Shield
   - type: Destructible
     thresholds:

@@ -102,7 +102,7 @@ public sealed partial class BloodCultRemoveSpellsEvent : InstantActionEvent;
 
 public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
 
-public sealed partial class PlaceTileEntityEvent : WorldTargetActionEvent
+public sealed partial class CultPlaceTileEntityEvent : WorldTargetActionEvent
 {
     // Trauma - renamed from 'Entity': WorldTargetActionEvent now has its own Entity member
     [DataField("entity")]
@@ -120,9 +120,8 @@ public sealed partial class PhaseShiftEvent : InstantActionEvent
 {
     [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(5);
-
-    [DataField]
-    public ProtoId<StatusEffectPrototype> StatusEffectId = "PhaseShifted";
+    // WhiteDream - the StatusEffectId field is gone: this fork has no "PhaseShifted" status effect
+    // prototype, so the phase shift is applied as a component directly by ConstructActionsSystem.
 }
 
 [Serializable, NetSerializable]

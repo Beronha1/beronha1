@@ -16,6 +16,7 @@ using Content.Shared.Popups;
 using Content.Shared.StepTrigger.Systems;
 using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
 using Robust.Shared.Serialization;
@@ -38,6 +39,7 @@ public abstract partial class SharedEnsnareableSystem : EntitySystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] protected SharedPopupSystem Popup = default!;
     [Dependency] private SharedStaminaSystem _stamina = default!;
+    [Dependency] private EntityWhitelistSystem _whitelist = default!; // WhiteDream
 
     public override void Initialize()
     {
@@ -285,6 +287,10 @@ public abstract partial class SharedEnsnareableSystem : EntitySystem
     /// <param name="component">The ensnaring component</param>
     public bool TryEnsnare(EntityUid target, EntityUid ensnare, EnsnaringComponent component)
     {
+        // WhiteDream - some snares are built to let their own side through.
+        if (_whitelist.IsWhitelistPass(component.IgnoredTargets, target))
+            return false;
+
         //Don't do anything if they don't have the ensnareable component.
         if (!TryComp<EnsnareableComponent>(target, out var ensnareable) || ensnareable.Container == null)
             return false;

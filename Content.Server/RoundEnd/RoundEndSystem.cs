@@ -418,6 +418,11 @@ namespace Content.Server.RoundEnd
             _countdownTokenSource = new CancellationTokenSource();
 
             Timer.Spawn(countdown, _shuttle.DockEmergencyShuttle, _countdownTokenSource.Token);
+
+            // Every other place in this file that moves the countdown raises this, and the crew-facing
+            // timer only refreshes when it does. Without it the shuttle really was delayed but the
+            // station kept counting down to the old time.
+            RaiseLocalEvent(RoundEndSystemChangedEvent.Default);
         }
         // </WhiteDream>
     }

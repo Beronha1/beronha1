@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 using Content.Shared.Interaction;
 using Content.Shared.Item;
 using Content.Shared.Weapons.Melee;
@@ -7,7 +10,7 @@ using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Player;
 
-namespace Content.Server.Whetstone;
+namespace Content.Server.WhiteDream.BloodCult.Whetstone;
 
 public sealed partial class WhetstoneSystem : EntitySystem
 {

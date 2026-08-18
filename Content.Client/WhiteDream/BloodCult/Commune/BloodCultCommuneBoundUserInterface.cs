@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // Ported from funky-station (PR #1922) and adapted to the WhiteDream cult.
 using Content.Shared.WhiteDream.BloodCult.Commune;
 using JetBrains.Annotations;

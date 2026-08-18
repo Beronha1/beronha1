@@ -1,4 +1,7 @@
-﻿using Content.Shared.Containers.ItemSlots;
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Shared.Containers.ItemSlots;
 using Content.Trauma.Common.RadialSelector;
 
 namespace Content.Server.WhiteDream.BloodCult.Constructs.Shell;

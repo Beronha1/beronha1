@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // WhiteDream - the cult picks who speaks for Nar'Sie, instead of her picking at random.
 using System.Linq;
 using Content.Server.Voting;

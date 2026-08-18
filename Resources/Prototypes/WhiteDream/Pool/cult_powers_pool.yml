@@ -1,4 +1,4 @@
-﻿- type: psionicPowerPool
+- type: cultPowerPool
   id: BloodCultPowers
   powers:
   - ActionBloodCultStun

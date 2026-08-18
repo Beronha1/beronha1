@@ -1,6 +1,9 @@
-﻿using Content.Shared.Doors;
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Shared.Doors;
 using Content.Shared.Prying.Components;
-using Content.Shared.Repulsor;
+using Content.Shared.WhiteDream.BloodCult.Repulsor;
 using Content.Shared.WhiteDream.BloodCult.BloodCultist;
 using Content.Shared.WhiteDream.BloodCult.Constructs;
 

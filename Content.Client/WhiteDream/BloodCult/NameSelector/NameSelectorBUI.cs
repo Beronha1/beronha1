@@ -1,4 +1,7 @@
-﻿using Content.Client.UserInterface.Controls;
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Client.UserInterface.Controls;
 using Content.Shared.WhiteDream.BloodCult.UI;
 using JetBrains.Annotations;
 using Robust.Client.UserInterface.Controls;

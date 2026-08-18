@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // Inspired by funky-station's "Study the Veil" ability (PR #1922), rebuilt on our own gamerule data.
 using System.Linq;
 using System.Text;

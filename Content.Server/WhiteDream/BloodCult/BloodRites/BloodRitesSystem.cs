@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
 using Content.Server.Hands.Systems;

@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // Veil progression, ported from funky-station (PR #630 / #1922) onto our own gamerule.
 using System.Linq;
 using Content.Shared.AlertLevel;

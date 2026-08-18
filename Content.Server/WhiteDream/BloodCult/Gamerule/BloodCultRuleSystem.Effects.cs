@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // WhiteDream - the station itself reacts when the cult moves.
 using Content.Server.Station.Systems;
 using Content.Shared.Station.Components;

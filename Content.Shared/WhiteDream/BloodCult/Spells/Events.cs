@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 using Content.Shared.Actions;
 using Content.Shared.Chat;
 using Content.Shared.DoAfter;
@@ -102,6 +105,11 @@ public sealed partial class BloodCultRemoveSpellsEvent : InstantActionEvent;
 
 public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
 
+/// <summary>
+///     WhiteDream - renamed from PlaceTileEntityEvent: Trauma already ships a type with that name
+///     (Content.Trauma.Shared.Actions.Events), and the serializer keys events by type name, so the two
+///     shadowed each other and broke the xenomorph resin actions.
+/// </summary>
 public sealed partial class CultPlaceTileEntityEvent : WorldTargetActionEvent
 {
     // Trauma - renamed from 'Entity': WorldTargetActionEvent now has its own Entity member

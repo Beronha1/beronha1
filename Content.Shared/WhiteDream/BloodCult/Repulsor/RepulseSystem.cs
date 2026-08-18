@@ -1,10 +1,13 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 using Content.Shared.Interaction;
 using Content.Shared.Standing;
 using Content.Shared.Stunnable;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 
-namespace Content.Shared.Repulsor;
+namespace Content.Shared.WhiteDream.BloodCult.Repulsor;
 
 public sealed partial class RepulseSystem : EntitySystem
 {

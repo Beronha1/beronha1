@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // Ported from funky-station (BloodCultRiftSetupSystem) and adapted to our gamerule.
 using System.Linq;
 using System.Numerics;

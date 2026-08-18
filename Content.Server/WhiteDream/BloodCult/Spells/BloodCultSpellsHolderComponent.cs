@@ -1,7 +1,10 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 using Robust.Shared.Audio;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
-using Content.Shared.Psionics;
+using Content.Shared.WhiteDream.BloodCult.Spells;
 using Robust.Shared.Prototypes;
 
 namespace Content.Server.WhiteDream.BloodCult.Spells;
@@ -31,7 +34,7 @@ public sealed partial class BloodCultSpellsHolderComponent : Component
     public SoundSpecifier SpellCreationEndSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/blood.ogg");
 
     [DataField]
-    public ProtoId<PsionicPowerPoolPrototype> PowersPoolPrototype = "BloodCultPowers";
+    public ProtoId<CultPowerPoolPrototype> PowersPoolPrototype = "BloodCultPowers";
 
     [DataField]
     public List<EntProtoId> ManagementActions =

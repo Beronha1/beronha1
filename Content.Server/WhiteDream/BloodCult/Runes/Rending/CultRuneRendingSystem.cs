@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // The 40 second solo do-after was replaced by funky-station's collective chant ritual.
 using System.Linq;
 using Content.Shared.AlertLevel;

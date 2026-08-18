@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // WhiteDream - objective bookkeeping, the pentagram grace period and the victory wind-down.
 using System.Linq;
 using Content.Shared.Mobs.Components;

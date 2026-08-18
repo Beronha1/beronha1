@@ -1,3 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
 // Ported from funky-station (BloodCultRiftComponent) and adapted.
 using Content.Shared.Chemistry.Reagent;
 using Robust.Shared.Audio;

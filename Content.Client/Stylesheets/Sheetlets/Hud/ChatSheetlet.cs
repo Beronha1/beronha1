@@ -1,6 +1,7 @@
 using Content.Client.Stylesheets.SheetletConfigs;
 using Content.Client.Stylesheets.Stylesheets;
 using Content.Client.UserInterface.Systems.Chat.Controls;
+using Content.Goobstation.UIKit.UserInterface.Controls;
 using Robust.Client.Graphics;
 using Robust.Client.UserInterface;
 using Robust.Client.UserInterface.Controls;
@@ -44,6 +45,9 @@ public sealed class ChatSheetlet<T> : Sheetlet<T> where T: PalettedStylesheet, I
             E<LineEdit>()
                 .Class(ChatInputBox.StyleClassChatLineEdit)
                 .Prop(LineEdit.StylePropertyStyleBox, new StyleBoxEmpty()),
+            E<CustomOutputPanel>()
+                .Class("ChatSubPanel")
+                .Font(sheet.BaseFont.GetFont(12)),
             E<Button>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatChannelButton),
             E<ContainerButton>().Class(ChatInputBox.StyleClassChatFilterOptionButton).Box(chatFilterButton),
         ];

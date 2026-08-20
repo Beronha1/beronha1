@@ -3,7 +3,6 @@
 using Content.Goobstation.Common.Blob;
 using Content.Server.Administration.Systems;
 using Content.Server.Antag;
-using Content.Server.RPSX.GameTicking.Rules.Ratvar;
 using Content.Shared.Database;
 using Content.Shared.Verbs;
 using Content.Trauma.Common.Silicon;
@@ -36,19 +35,5 @@ public sealed partial class GoobAdminVerbSystem
             Message = Loc.GetString("admin-verb-text-make-blob"),
         });
 
-        // RPSX - Ratvar
-        var ratvarRighteousName = Loc.GetString("admin-verb-text-make-ratvar-righteous");
-        var targetSession = args.Session;
-        args.Verbs.Verbs.Add(new()
-        {
-            Text = ratvarRighteousName,
-            Category = VerbCategory.Antag,
-            Icon = new SpriteSpecifier.Rsi(
-                new("/Textures/DarkStation/MainGame/DarkForces/Ratvar/actions.rsi"),
-                "ratvar"),
-            Act = () => _antag.ForceMakeAntag<RatvarRuleComponent>(targetSession, "Ratvar"),
-            Impact = LogImpact.High,
-            Message = ratvarRighteousName,
-        });
     }
 }

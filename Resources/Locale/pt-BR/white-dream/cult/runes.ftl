@@ -11,7 +11,6 @@ cult-cant-draw-rune = Você não pode desenhar runas agora.
 cult-teleport-not-found = Nenhuma runa encontrada.
 cult-teleport-rune-unnamed = Runa sem nome
 
-list-view-window-default-title = Selecione uma opção
 list-view-selector-unnamed-entry = Sem nome
 
 cult-revive-rune-no-charges = Não é possível realizar o ritual de ressurreição: sem cargas.

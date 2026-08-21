@@ -10,7 +10,6 @@ cult-cant-draw-rune = You can't draw runes right now.
 cult-teleport-not-found = No runes found.
 cult-teleport-rune-unnamed = Unnamed rune
 
-list-view-window-default-title = Select an option
 list-view-selector-unnamed-entry = Unnamed
 
 cult-revive-rune-no-charges = Can not perform the revive ritual: no charges left.

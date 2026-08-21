@@ -216,21 +216,6 @@
   - BasicRoundstartVariation
 
 - type: gamePreset
-  id: BloodCultPreset
-  alias:
-    - cult
-    - bloodcult
-  name: cult-title
-  description: cult-description
-  minPlayers: 10
-  showInVote: true
-  rules:
-  - BloodCult
-  - BasicStationEventScheduler
-  - SpaceTrafficControlEventScheduler
-  - BasicRoundstartVariation
-
-- type: gamePreset
   id: Revolutionary
   alias:
     - rev

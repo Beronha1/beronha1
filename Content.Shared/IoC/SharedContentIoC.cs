@@ -1,4 +1,3 @@
-using Content.Shared._Sunrise.BloodCult.Systems;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Localizations;
 

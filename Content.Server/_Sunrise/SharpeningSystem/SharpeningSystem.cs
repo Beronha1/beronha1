@@ -1,4 +1,3 @@
-using Content.Shared._Sunrise.BloodCult.Items;
 using Content.Shared.Damage;
 using Content.Shared.Interaction;
 using Content.Shared.Item;

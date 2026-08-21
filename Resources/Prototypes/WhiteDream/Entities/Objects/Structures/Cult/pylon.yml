@@ -1,0 +1,82 @@
+﻿- type: entity
+  id: CultPylon
+  parent: BaseStructure
+  name: pylon
+  description: A floating crystal that slowly heals those faithful to Nar'Sie.
+  components:
+  - type: Transform
+    noRot: true
+  - type: Fixtures
+    fixtures:
+      pylonFix:
+        shape:
+          !type:PhysShapeAabb
+          bounds: "-0.1,-0.3,0.1,0.3"
+        density: 190
+        mask:
+        - TabletopMachineMask
+        layer:
+        - TabletopMachineLayer
+  - type: Sprite
+    noRot: true
+    sprite: WhiteDream/BloodCult/Entities/Structures/pylon.rsi
+    layers:
+    - state: icon
+      map: [ "enum.PylonVisuals.Layer" ]
+  - type: InteractionOutline
+  - type: Damageable
+    damageModifierSet: Glass
+  # Trauma - the damage container lives on Injurable now.
+  - type: Injurable
+    damageContainer: StructuralInorganic
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 50
+      behaviors:
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+      - !type:PlaySoundBehavior
+        sound:
+          collection: GlassBreak
+      - !type:SpawnEntitiesBehavior
+        spawn:
+          ShardGlass:
+            min: 1
+            max: 2
+  - type: Appearance
+  - type: Pylon
+    # WhiteDream - DamageSpecifier lost the `groups` shortcut, so the groups are spelled out.
+    healing:
+      types:
+        Blunt: -5
+        Slash: -5
+        Piercing: -5
+        Ballistic: -5
+        Heat: -5
+        Shock: -5
+        Cold: -5
+        Caustic: -5
+        Poison: -5
+        Radiation: -5
+        Cellular: -5
+        Asphyxiation: -10
+        Bloodloss: -10
+    damageOnInteract:
+      types:
+        Heat: 5
+  - type: PointLight
+    color: "#FF0000"
+    radius: 2
+    energy: 2
+    enabled: true
+  - type: GenericVisualizer
+    visuals:
+      enum.PylonVisuals.Activated:
+        enum.PylonVisuals.Layer:
+          True: { state: "icon" }
+          False: { state: "icon_off" }
+  - type: Construction
+    graph: CultPylon
+    node: pylon

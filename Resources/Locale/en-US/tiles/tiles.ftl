@@ -23,6 +23,7 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 tiles-space = space
+tiles-cult-floor = cult floor
 tiles-plating = plating
 tiles-rcd-plating = RCD plating
 tiles-lattice = lattice

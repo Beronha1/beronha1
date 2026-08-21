@@ -1,0 +1,72 @@
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Shared.Damage;
+using Content.Shared.FixedPoint;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+
+namespace Content.Server.WhiteDream.BloodCult.Runes.Offering;
+
+[RegisterComponent]
+public sealed partial class CultRuneOfferingComponent : Component
+{
+    /// <summary>
+    ///     The lookup range for offering targets
+    /// </summary>
+    [DataField]
+    public float OfferingRange = 0.5f;
+
+    /// <summary>
+    ///     The amount of cultists require to convert a living target.
+    /// </summary>
+    [DataField]
+    public int ConvertInvokersAmount = 2;
+
+    /// <summary>
+    ///     The amount of cultists required to sacrifice a living target.
+    /// </summary>
+    [DataField]
+    public int AliveSacrificeInvokersAmount = 3;
+
+    /// <summary>
+    ///     The amount of charges revive rune system should recieve on sacrifice/convert.
+    /// </summary>
+    [DataField]
+    public int ReviveChargesPerOffering = 1;
+
+    /// <summary>
+    ///     WhiteDream - played when the rune takes a life.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier SacrificeSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/curse.ogg");
+
+    /// <summary>
+    ///     WhiteDream - played when the rune claims a mind instead.
+    /// </summary>
+    [DataField]
+    public SoundSpecifier ConvertSound = new SoundPathSpecifier("/Audio/WhiteDream/BloodCult/enter_blood.ogg");
+
+    [DataField]
+    public EntProtoId SoulShardProto = "SoulShard";
+
+    [DataField]
+    public EntProtoId SoulShardGhostProto = "SoulShardGhost";
+
+    [DataField]
+    public DamageSpecifier ConvertHealing = new()
+    {
+        // Trauma - only damage types are valid keys, so the old Brute/Burn groups are spelled out.
+        DamageDict = new()
+        {
+            ["Blunt"] = -40,
+            ["Slash"] = -40,
+            ["Piercing"] = -40,
+            ["Ballistic"] = -40,
+            ["Heat"] = -40,
+            ["Shock"] = -40,
+            ["Cold"] = -40,
+            ["Caustic"] = -40
+        }
+    };
+}

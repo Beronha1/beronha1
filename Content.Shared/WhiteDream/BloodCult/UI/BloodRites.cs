@@ -1,0 +1,28 @@
+﻿// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Shared.FixedPoint;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.WhiteDream.BloodCult.UI;
+
+[NetSerializable, Serializable]
+public enum BloodRitesUiKey : byte
+{
+    Key,
+}
+
+[Serializable, NetSerializable]
+public sealed class BloodRitesUiState(Dictionary<EntProtoId, float> crafts, FixedPoint2 storedBlood)
+    : BoundUserInterfaceState
+{
+    public Dictionary<EntProtoId, float> Crafts = crafts;
+    public FixedPoint2 StoredBlood = storedBlood;
+}
+
+[Serializable, NetSerializable]
+public sealed class BloodRitesMessage(EntProtoId selectedProto) : BoundUserInterfaceMessage
+{
+    public EntProtoId SelectedProto = selectedProto;
+}

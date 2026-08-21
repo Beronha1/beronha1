@@ -1,0 +1,57 @@
+# Blood Cult — licensing and attribution
+
+The Blood Cult is ported code, not original work. Every `.cs` file that this port adds carries
+`// SPDX-License-Identifier: AGPL-3.0-or-later` and a pointer back to this file.
+
+## Chain of origin
+
+| Step | Repository | License |
+| --- | --- | --- |
+| Original implementation | [WWhiteDreamProject/wwdpublic](https://github.com/WWhiteDreamProject/wwdpublic) | AGPL-3.0-or-later |
+| Intermediate port | Mini-Station | AGPL-3.0-or-later (inherited) |
+| This port | Whiskey-Station/whiskey-station | AGPL-3.0-or-later |
+
+The intermediate step is identified from what came across with the code: the `_Mini/` namespaces
+(`Content.Client/_Mini/BloodCult/`, `Content.Server/_Mini/BloodCult/`) and the `# Mini:` comments left
+in the prototypes. If a maintainer knows the hop went through Einstein Engines instead, or through both,
+this table is the place to correct it.
+
+Because the original is AGPL-3.0-or-later, everything derived from it stays AGPL-3.0-or-later regardless
+of the license the rest of the repository uses.
+
+## Files covered
+
+- `Content.Server/WhiteDream/**`
+- `Content.Shared/WhiteDream/**`
+- `Content.Client/WhiteDream/**`
+- `Content.Client/_Mini/BloodCult/**`, `Content.Server/_Mini/BloodCult/**`
+- `Content.Server/Roles/BloodCultistRoleComponent.cs`
+- `Content.Shared/Actions/Events/ActionGettingDisabledEvent.cs`
+- `Content.Shared/Antag/IAntagStatusIconComponent.cs`
+- `Content.Shared/Magic/ISpeakSpell.cs`, `Content.Shared/Magic/Events/SpeakSpellEvent.cs`
+
+Pre-existing upstream files that this port only *modifies* (`SharedInteractionSystem`, `RoundEndSystem`,
+`PullingSystem`, `SharedDoorSystem`, `BlockingSystem`, and so on) keep their original headers. The added
+sections there are marked inline with `// <WhiteDream>` … `// </WhiteDream>`.
+
+## Open question: funky-station
+
+The veil progression — the collective chant, the blood rift and its summoning runes, the final ritual, and
+the reagent the rift bleeds — is derived from funky-station's blood cult.
+
+**funky-station declares no license.** That is unresolved, and it needs a maintainer decision before this
+merges. The affected code is confined to these files, so it can be dropped without touching the White Dream
+port underneath:
+
+- `Content.Server/WhiteDream/BloodCult/Gamerule/BloodCultRuleSystem.Veil.cs`
+- `Content.Server/WhiteDream/BloodCult/Gamerule/BloodCultRuleSystem.Progression.cs`
+- `Content.Server/WhiteDream/BloodCult/Rift/**`
+- `Resources/Prototypes/WhiteDream/Entities/Objects/Structures/Cult/rift.yml`
+- `Resources/Prototypes/WhiteDream/Reagents/blood_cult.yml`
+
+## Assets
+
+Sounds and sprites under `Resources/Audio/WhiteDream/` and `Resources/Textures/WhiteDream/` come from the
+same White Dream port. Sprites added later from
+[funky-station PR #2426](https://github.com/funky-station/funky-station/pull/2426) are noted in the
+`meta.json` of the `.rsi` folders they belong to.

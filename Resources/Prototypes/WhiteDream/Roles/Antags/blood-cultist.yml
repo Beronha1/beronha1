@@ -1,0 +1,46 @@
+- type: antag
+  id: BloodCultist
+  name: roles-antag-blood-cultist-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-blood-cultist-objective
+  guides: [ BloodCult ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 43200
+
+- type: startingGear
+  id: BloodCultistGear
+  storage:
+    back:
+    - RitualDagger
+    - RunedMetal20
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: BloodCultist
+  prefRoles: [ BloodCultist ]
+  startingGear: BloodCultistGear
+  briefing:
+    text: blood-cult-role-greeting
+    color: Red
+    sound: /Audio/WhiteDream/BloodCult/blood_cult_greeting.ogg
+  components:
+  - type: BloodCultist
+  - type: BloodCultSpellsHolder
+  mindRoles:
+  - MindRoleBloodCultist
+
+- type: antagSpecifier
+  parent: BloodCultist
+  id: BloodCultistMidround
+  multiAntagSetting: NotExclusive
+
+- type: antagSmite
+  id: BloodCultist
+  antag: BloodCultist
+  rule: BloodCult
+  ruleComp: BloodCultRule # component registry name, without the 'Component' suffix
+  icon:
+    sprite: /Textures/WhiteDream/BloodCult/cult_hud.rsi
+    state: cult_member

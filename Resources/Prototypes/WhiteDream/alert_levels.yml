@@ -1,0 +1,11 @@
+# WhiteDream - the station's own delta for a torn veil, with its own Central Command briefing.
+- type: alertLevel
+  parent: BaseDelta
+  id: DeltaCult
+  announcement: alert-level-delta-cult-announcement
+  sound:
+    path: /Audio/Misc/delta.ogg
+    params:
+      volume: -3
+  color: DarkRed
+  emergencyLightColor: DarkRed

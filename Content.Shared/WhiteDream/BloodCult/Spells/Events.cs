@@ -1,0 +1,156 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+// Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
+
+using Content.Shared.Actions;
+using Content.Shared.Chat;
+using Content.Shared.DoAfter;
+using Content.Shared.Magic;
+using Content.Shared.StatusEffect;
+using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
+using Robust.Shared.Serialization;
+
+namespace Content.Shared.WhiteDream.BloodCult.Spells;
+
+public sealed partial class BloodCultStunEvent : EntityTargetActionEvent, ISpeakSpell
+{
+    [DataField]
+    public TimeSpan ParalyzeDuration = TimeSpan.FromSeconds(16);
+
+    [DataField]
+    public TimeSpan MuteDuration = TimeSpan.FromSeconds(12);
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodCultTeleportEvent : EntityTargetActionEvent, ISpeakSpell
+{
+    [DataField]
+    public float Range = 5;
+
+    [DataField]
+    public TimeSpan DoAfterDuration = TimeSpan.FromSeconds(2);
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodCultEmpEvent : InstantActionEvent, ISpeakSpell
+{
+    [DataField]
+    public float Range = 4;
+
+    [DataField]
+    public float EnergyConsumption = 1000;
+
+    [DataField]
+    public float Duration = 20;
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodCultShacklesEvent : EntityTargetActionEvent, ISpeakSpell
+{
+    [DataField]
+    public EntProtoId ShacklesProto = "ShadowShackles";
+
+    [DataField]
+    public TimeSpan CuffDuration = TimeSpan.FromSeconds(3);
+
+    [DataField]
+    public TimeSpan MuteDuration = TimeSpan.FromSeconds(5);
+
+    [DataField]
+    public TimeSpan KnockdownDuration = TimeSpan.FromSeconds(1);
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodCultTwistedConstructionEvent : EntityTargetActionEvent, ISpeakSpell
+{
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class SummonEquipmentEvent : InstantActionEvent, ISpeakSpell
+{
+    /// <summary>
+    /// Slot - EntProtoId
+    /// </summary>
+    [DataField]
+    public Dictionary<string, EntProtoId> Prototypes = new();
+
+    [DataField]
+    public string? Speech { get; set; }
+
+    public InGameICChatType ChatType => InGameICChatType.Whisper;
+}
+
+public sealed partial class BloodCultSelectSpellsEvent : InstantActionEvent;
+
+public sealed partial class BloodCultRemoveSpellsEvent : InstantActionEvent;
+
+public sealed partial class BloodSpearRecalledEvent : InstantActionEvent;
+
+/// <summary>
+///     WhiteDream - renamed from PlaceTileEntityEvent: Trauma already ships a type with that name
+///     (Content.Trauma.Shared.Actions.Events), and the serializer keys events by type name, so the two
+///     shadowed each other and broke the xenomorph resin actions.
+/// </summary>
+public sealed partial class CultPlaceTileEntityEvent : WorldTargetActionEvent
+{
+    // Trauma - renamed from 'Entity': WorldTargetActionEvent now has its own Entity member
+    [DataField("entity")]
+    public EntProtoId? EntityProto;
+
+    [DataField]
+    public string? TileId;
+
+    [DataField]
+    public SoundSpecifier? Audio;
+
+}
+
+public sealed partial class PhaseShiftEvent : InstantActionEvent
+{
+    [DataField]
+    public TimeSpan Duration = TimeSpan.FromSeconds(5);
+    // WhiteDream - the StatusEffectId field is gone: this fork has no "PhaseShifted" status effect
+    // prototype, so the phase shift is applied as a component directly by ConstructActionsSystem.
+}
+
+[Serializable, NetSerializable]
+public sealed partial class BloodCultShacklesDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class TwistedConstructionDoAfterEvent : SimpleDoAfterEvent;
+
+[Serializable, NetSerializable]
+public sealed partial class CreateSpeellDoAfterEvent : SimpleDoAfterEvent
+{
+    public EntProtoId ActionProtoId;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class TeleportActionDoAfterEvent : SimpleDoAfterEvent
+{
+    public NetEntity Rune;
+    public SoundPathSpecifier TeleportInSound = new("/Audio/WhiteDream/BloodCult/veilin.ogg");
+    public SoundPathSpecifier TeleportOutSound = new("/Audio/WhiteDream/BloodCult/veilout.ogg");
+}
+
+[Serializable, NetSerializable]
+public sealed partial class BloodRitesExtractDoAfterEvent : SimpleDoAfterEvent;

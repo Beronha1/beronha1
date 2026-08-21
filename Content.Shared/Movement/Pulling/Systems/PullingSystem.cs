@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis; // WhiteDream - Blood Cult
 // <Trauma>
 using Content.Trauma.Common.Heretic;
 using Content.Trauma.Common.MartialArts;
@@ -723,6 +724,23 @@ public sealed partial class PullingSystem : EntitySystem
         // </Goob>
         return true;
     }
+
+    // <WhiteDream> - Blood Cult
+    public bool TryGetPulledEntity(EntityUid puller, [NotNullWhen(true)] out EntityUid? pulling, PullerComponent? component = null)
+    {
+        pulling = null;
+        if (!Resolve(puller, ref component, false) || !component.Pulling.HasValue)
+            return false;
+
+        pulling = component.Pulling;
+        return true;
+    }
+
+    public bool TryStopPull(EntityUid pullableUid, EntityUid? user = null, bool ignoreGrab = false)
+    {
+        return TryComp<PullableComponent>(pullableUid, out var pullable) && TryStopPull(pullableUid, pullable, user, ignoreGrab);
+    }
+    // </WhiteDream>
 
     public bool TryStopPull(EntityUid pullableUid, PullableComponent pullable, EntityUid? user = null,
         bool ignoreGrab = false) // Goob

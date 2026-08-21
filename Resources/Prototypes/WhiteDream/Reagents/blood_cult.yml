@@ -1,0 +1,34 @@
+# Ported from funky-station - the profane blood the rift bleeds into reality.
+- type: flavor
+  id: forbidden
+  flavorType: Base
+  description: flavor-base-forbidden
+
+- type: reagent
+  parent: Blood
+  id: SanguinePerniculate
+  name: reagent-name-sanguine-perniculate
+  group: Biological
+  desc: reagent-desc-sanguine-perniculate
+  physicalDesc: reagent-physical-desc-profane
+  flavor: forbidden
+  color: "#660000"
+  boilingPoint: 100.0
+  meltingPoint: 0.0
+  recognizable: true
+  # Trauma - metabolism stages here are Digestion/Bloodstream, not the old Drink/Poison groups.
+  metabolisms:
+    Digestion:
+      effects:
+      - !type:SatiateThirst
+        factor: 0.5
+    Bloodstream:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 2
+  footstepSound:
+    collection: FootstepBlood
+    params:
+      volume: 6

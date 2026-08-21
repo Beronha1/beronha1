@@ -49,6 +49,13 @@ public sealed partial class BlockingSystem
         if (args.Damage.GetTotal() <= 0)
             return;
 
+        // <WhiteDream> - Blood Cult
+        var beforeBlockEv = new BeforeBlockingEvent(entity, args.Origin);
+        RaiseLocalEvent(item, beforeBlockEv);
+        if (beforeBlockEv.Cancelled)
+            return;
+        // </WhiteDream>
+
         var blockFraction = blocking.IsRaised ? blocking.ActiveBlockFraction : blocking.PassiveBlockFraction;
         // <Trauma>
         var fractionEv = new GetBlockFractionEvent(entity, item, blockFraction);

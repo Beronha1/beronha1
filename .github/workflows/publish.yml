@@ -49,6 +49,18 @@ jobs:
     - name: Package client
       run: dotnet run --project Content.Packaging client --no-wipe-release
 
+    # Guarda os pacotes antes de tentar publicar. O passo de publicação aponta
+    # para o CDN do Trauma e não tem token aqui, e quando ele falha o job morre
+    # levando os zips junto, porque eles só existem no runner. Subindo antes,
+    # dá para baixar e aplicar à mão mesmo que a publicação continue falhando.
+    - name: Upload packages
+      uses: actions/upload-artifact@v4
+      with:
+        name: pacotes-${{ github.sha }}
+        path: release/
+        retention-days: 7
+        compression-level: 0
+
     - name: Publish version
       run: Tools/publish_multi_request.py
       env:

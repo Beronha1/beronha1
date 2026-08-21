@@ -4,6 +4,7 @@ using Content.Shared.Item;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared._Sunrise.SharpeningSystem;
 
 namespace Content.Server._Sunrise.SharpeningSystem;
 

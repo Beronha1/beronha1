@@ -9,7 +9,6 @@ namespace Content.Shared.IoC
         {
             deps.Register<MarkingManager, MarkingManager>();
             deps.Register<ContentLocalizationManager, ContentLocalizationManager>();
-            deps.Register<CultistWordGeneratorManager, CultistWordGeneratorManager>();
         }
     }
 }

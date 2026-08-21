@@ -1,10 +1,11 @@
 ﻿- type: gamePreset
   id: BloodCult
   alias:
+  - cult
   - bloodcult
   name: blood-cult-title
-  showInVote: false
-  minPlayers: 20
+  showInVote: true
+  minPlayers: 15
   description: blood-cult-description
   rules:
   - BloodCult

@@ -76,7 +76,11 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
                 models.Add(new RadialMenuActionOption<string>(OnPressed, proto)
                 {
                     ToolTip = entry.Name ?? GetName(proto), // WhiteDream - Blood Cult
-                    IconSpecifier = RadialMenuIconSpecifier.With(entry.Icon) ?? GetIcon(proto)
+                    // <WhiteDream> - Blood Cult
+                    IconSpecifier = RadialMenuIconSpecifier.With(entry.Icon)
+                                    ?? RadialMenuIconSpecifier.With(EntMan.GetEntity(entry.IconEntity))
+                                    ?? GetIcon(proto)
+                    // </WhiteDream>
                 });
             }
         }
@@ -106,6 +110,18 @@ public sealed partial class RadialSelectorMenuBUI : BoundUserInterface
         if (!_construction.TryGetRecipePrototype(proto, out var result))
             result = proto;
 
-        return RadialMenuIconSpecifier.With(proto);
+        // <WhiteDream> - Blood Cult
+        // An id that is not a prototype at all (an EntityUid printed as text, say) used to reach
+        // RadialMenuEntityPrototypeIconSpecifier and throw EntityCreationException from inside the
+        // BUI constructor, which killed the entire menu instead of costing one icon. Guarding here
+        // also puts `result` to use: it was being computed and then thrown away.
+        if (_proto.TryIndex(result, out var resultProto) && resultProto is not null)
+            return RadialMenuIconSpecifier.With(result);
+
+        if (_proto.TryIndex(proto, out var rawProto) && rawProto is not null)
+            return RadialMenuIconSpecifier.With(proto);
+
+        return null;
+        // </WhiteDream>
     }
 }

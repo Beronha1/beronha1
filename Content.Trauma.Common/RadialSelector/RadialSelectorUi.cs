@@ -37,6 +37,16 @@ public sealed partial class RadialSelectorEntry
 
     [DataField]
     public bool CloseUiOnSelect = true;
+
+    /// <summary>
+    ///     Entity whose sprite is used as the icon.
+    ///     Actions no longer carry a SpriteSpecifier on this engine, so the only way to draw one
+    ///     is to point at the action entity itself. Stuffing its EntityUid into Prototype instead
+    ///     makes the client try to spawn a prototype named after a number, which throws and takes
+    ///     the whole BUI down with it.
+    /// </summary>
+    [DataField]
+    public NetEntity? IconEntity { get; set; }
     // </WhiteDream>
 
     [DataField]

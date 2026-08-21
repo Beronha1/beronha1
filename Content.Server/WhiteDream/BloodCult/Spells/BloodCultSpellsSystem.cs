@@ -378,7 +378,7 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
             {
                 Prototype = spell.ToString(),
                 Name = Name(spell),
-                Icon = GetActionIcon(spell)
+                IconEntity = GetNetEntity(spell) // Trauma - actions have no SpriteSpecifier here
             };
 
             radialList.Add(entry);
@@ -404,8 +404,6 @@ public sealed partial class BloodCultSpellsSystem : EntitySystem
     // <Trauma>
     // Action icons are no longer a field on ActionComponent: they come from the action entity's own
     // Sprite component. Returning null makes the radial menu resolve the icon from the prototype itself.
-    private SpriteSpecifier? GetActionIcon(EntityUid actionUid) => null;
-
     private SpriteSpecifier? GetActionPrototypeIcon(string protoId) => null;
     // </Trauma>
 

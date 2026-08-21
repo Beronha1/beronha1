@@ -1,61 +1,40 @@
 // SPDX-License-Identifier: AGPL-3.0-or-later
 // Blood Cult: ported from WWhiteDreamProject/wwdpublic. See Content.Shared/WhiteDream/BloodCult/ATTRIBUTION.md
 
-using System.Numerics;
 using Content.Client.UserInterface.Controls;
 using Content.Shared.WhiteDream.BloodCult.Runes;
 using JetBrains.Annotations;
-using Robust.Client.GameObjects;
-using Robust.Client.Graphics;
-using Robust.Client.Input;
 using Robust.Client.UserInterface;
-using Robust.Client.UserInterface.Controls;
 using Robust.Shared.Prototypes;
-
-// ReSharper disable InconsistentNaming
 
 namespace Content.Client.WhiteDream.BloodCult.Runes.UI;
 
 [UsedImplicitly]
 public sealed partial class RuneDrawerBUI : BoundUserInterface
 {
-    [Dependency] private EntityManager _entManager = default!;
-    [Dependency] private IClyde _displayManager = default!;
     [Dependency] private IPrototypeManager _protoManager = default!;
-    [Dependency] private IInputManager _inputManager = default!;
 
-    private readonly SpriteSystem _spriteSystem;
-    private readonly RadialMenu _menu;
+    private readonly SimpleRadialMenu _menu;
 
     public RuneDrawerBUI(EntityUid owner, Enum uiKey) : base(owner, uiKey)
     {
-        _spriteSystem = _entManager.System<SpriteSystem>();
-        _menu = new()
-        {
-            HorizontalExpand = true,
-            VerticalExpand = true,
-            BackButtonStyleClass = "RadialMenuBackButton",
-            CloseButtonStyleClass = "RadialMenuCloseButton"
-        };
+        // <Whiskey>
+        // Was a hand-built RadialMenu + RadialContainer, which is the older control: it draws no
+        // backdrop, so the runes floated bare over the game, and it opened at the mouse, which put
+        // the whole menu down by the hotbar whenever the dagger was clicked there. SimpleRadialMenu
+        // is what the spell selector already uses, so the two cult menus now look and behave alike.
+        // </Whiskey>
+        _menu = this.CreateWindow<SimpleRadialMenu>();
     }
 
     protected override void Open()
     {
         base.Open();
 
-        _menu.OnClose += Close;
-        _menu.OpenCenteredAt(_inputManager.MouseScreenPosition.Position / _displayManager.ScreenSize);
+        _menu.OpenCentered();
 
         if (State is RuneDrawerMenuState runeDrawerState)
             FillMenu(runeDrawerState.AvailalbeRunes);
-    }
-
-    protected override void Dispose(bool disposing)
-    {
-        base.Dispose(disposing);
-
-        if (disposing)
-            _menu.Dispose();
     }
 
     protected override void UpdateState(BoundUserInterfaceState state)
@@ -71,14 +50,7 @@ public sealed partial class RuneDrawerBUI : BoundUserInterface
         if (runes is null)
             return;
 
-        _menu.Children.Clear();
-
-        var container = new RadialContainer
-        {
-            InitialRadius = 48f + 24f * MathF.Log(runes.Count)
-        };
-
-        _menu.AddChild(container);
+        var models = new List<RadialMenuOptionBase>();
 
         foreach (var runeSelector in runes)
         {
@@ -86,34 +58,20 @@ public sealed partial class RuneDrawerBUI : BoundUserInterface
                 !_protoManager.TryIndex(runeSelectorProto.Prototype, out var runeProto))
                 continue;
 
-            var itemSize = new Vector2(64f, 64f);
-            var button = new RadialMenuButton
+            models.Add(new RadialMenuActionOption<ProtoId<RuneSelectorPrototype>>(OnRunePressed, runeSelector)
             {
-                ToolTip = runeProto.Name, // WhiteDream - EntityPrototype.Name is already localised text, not a loc id
-                StyleClasses = { "RadialMenuButton" },
-                SetSize = itemSize
-            };
-
-            var runeIcon = _spriteSystem.Frame0(runeProto);
-            var runeScale = itemSize / runeIcon.Size;
-
-            var texture = new TextureRect
-            {
-                VerticalAlignment = Control.VAlignment.Center,
-                HorizontalAlignment = Control.HAlignment.Center,
-                Texture = _spriteSystem.Frame0(runeProto),
-                TextureScale = runeScale
-            };
-
-            button.AddChild(texture);
-
-            button.OnButtonUp += _ =>
-            {
-                SendMessage(new RuneDrawerSelectedMessage(runeSelector));
-                Close();
-            };
-
-            container.AddChild(button);
+                // EntityPrototype.Name is already localised text, not a loc id.
+                ToolTip = runeProto.Name,
+                IconSpecifier = RadialMenuIconSpecifier.With(runeSelectorProto.Prototype)
+            });
         }
+
+        _menu.SetButtons(models);
+    }
+
+    private void OnRunePressed(ProtoId<RuneSelectorPrototype> runeSelector)
+    {
+        SendMessage(new RuneDrawerSelectedMessage(runeSelector));
+        Close();
     }
 }

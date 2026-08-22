@@ -1,1 +1,1 @@
-connecting-title-trauma = Estacao Trauma
+connecting-title-trauma = Estação Whiskey

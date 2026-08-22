@@ -3,7 +3,7 @@ ghost-role-information-reinforcement-sec-name = Reforço da estação (Policial)
 ghost-role-information-reinforcement-fast-sec-name = Reforço da estação (Policial)(Expresso)
 ghost-role-information-reinforcement-specialist-sec-name = Reforço da estação (Especialista em segurança)
 ghost-role-information-reinforcement-specialist-laser-name = Reforço da estação (Especialista em segurança - Laser)
-ghost-role-information-reinforcement-specialist-riot-melee-name = Reforço da estação (Especialista em segurança - Motim Corpo Uma Corpo)
+ghost-role-information-reinforcement-specialist-riot-melee-name = Reforço da estação (Especialista em segurança - Motim Corpo a Corpo)
 ghost-role-information-reinforcement-specialist-riot-ranged-name = Reforço da estação (Especialista em segurança - Motim À Distância)
 ghost-role-information-reinforcement-specialist-heavy-laser-name = Reforço da estação (Especialista em segurança - Laser Pesado)
 ghost-role-information-reinforcement-specialist-shield-name = Reforço da estação (Especialista em segurança - Escudo)
@@ -45,5 +45,5 @@ ghost-role-information-reinforcement-service-worker-name = Reforço da estação
 ghost-role-information-reinforcement-assistant-name = Reforço da estação (Assistente)
 
 ghost-role-information-reinforcement-description = Você é um reforço enviado para uma estação Nanotrasen.
-ghost-role-information-DClass-description = Uma equipe de ciência quer usá-lo para seus experimentos, obedeça ou arrisque Uma morte.
+ghost-role-information-DClass-description = Uma equipe de ciência quer usá-lo para seus experimentos, obedeça ou arrisque a morte.
 

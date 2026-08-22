@@ -11,7 +11,7 @@ descriptions-atv-dataset-10 = Visão Tele.
 descriptions-atv-dataset-11 = Vagabundo com Ajuste Desajeitado.
 descriptions-atv-dataset-12 = Voluntário de Tragédia Artística.
 descriptions-atv-dataset-13 = Vaga de Taco Automático.
-descriptions-atv-dataset-14 = Mais Uma Vista Extraordinária.
+descriptions-atv-dataset-14 = Mais a Vista Extraordinária.
 descriptions-atv-dataset-15 = Todas As Virgens.
 descriptions-atv-dataset-16 = Veículo Terrível.
 

@@ -24,11 +24,11 @@ cosmic-field-component-bomb-defused-message = {$bomb} desliga de repente!
 chat-speech-verb-name-hiss = Sibilar
 
 void-ascend-begin = Uma nevasca surge subitamente de fora das janelas. Um sentido de pavor avassalador se aproxima...
-void-ascend-end = Uma nevasca começa Uma desaparecer...
+void-ascend-end = Uma nevasca começa a desaparecer...
 void-ascend-restart = Uma nevasca aparece de novo de repente...
 
 ghoul-unghoulify-message = {CAPITALIZE($ent)} foi libertado das correntes do Mansus!
-ghoul-weapon-comp-examine = [color=red]Esta arma parece extremamente frágil. Em uma inspeção mais detalhada ela parece ser feita de carne e sangue. Ela pertence Uma uma das criaturas do mansus e desaparecerá quando Uma criatura morrer.[/color]
+ghoul-weapon-comp-examine = [color=red]Esta arma parece extremamente frágil. Em uma inspeção mais detalhada ela parece ser feita de carne e sangue. Ela pertence a uma das criaturas do mansus e desaparecerá quando a criatura morrer.[/color]
 
 injector-component-drain-mode-name = Drenar
 

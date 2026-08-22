@@ -24,8 +24,8 @@ alert-level-blue-announcement = Há uma ameaça confirmada à estação. Uma seg
 alert-level-blue-instructions = Os tripulantes devem ficar alertas e relatar atividades suspeitas à equipe de segurança.
 
 alert-level-red = Vermelho
-alert-level-red-announcement = Existe uma ameaça imediata à estação. Uma segurança deve se preparar para usar força letal se necessário. Os tripulantes devem procurar um local seguro e seguir Uma autoridade de comando presente.
-alert-level-red-instructions = Os tripulantes devem procurar um local seguro e seguir Uma autoridade de comando presente.
+alert-level-red-announcement = Existe uma ameaça imediata à estação. Uma segurança deve se preparar para usar força letal se necessário. Os tripulantes devem procurar um local seguro e seguir a autoridade de comando presente.
+alert-level-red-instructions = Os tripulantes devem procurar um local seguro e seguir a autoridade de comando presente.
 
 alert-level-violet = Violeta
 alert-level-violet-announcement = Há uma ameaça viral na estação. Uma equipe médica deve isolar tripulantes que apresentem sintomas. Os tripulantes devem manter distância dos outros e seguir protocolos de segurança para evitar mais contaminação.
@@ -36,8 +36,8 @@ alert-level-yellow-announcement = Há uma ameaça estrutural ou atmosférica na 
 alert-level-yellow-instructions = Tripulantes devem manter distância da ameaça e permanecer nos postos se necessário.
 
 alert-level-gamma = Gama
-alert-level-gamma-announcement = O Comando Central ordenou o nível de segurança Gama na estação. Uma segurança deve manter armas equipadas o tempo todo, e todos os civis devem procurar imediatamente o chefe mais próximo para ser levado Uma um local seguro.
-alert-level-gamma-instructions = Todos os civis devem procurar imediatamente o chefe mais próximo para ser levado Uma um local seguro.
+alert-level-gamma-announcement = O Comando Central ordenou o nível de segurança Gama na estação. Uma segurança deve manter armas equipadas o tempo todo, e todos os civis devem procurar imediatamente o chefe mais próximo para ser levado a um local seguro.
+alert-level-gamma-instructions = Todos os civis devem procurar imediatamente o chefe mais próximo para ser levado a um local seguro.
 
 alert-level-delta = Delta
 alert-level-delta-nuke-announcement = Uma estação está sob ameaça de destruição iminente. Os tripulantes devem seguir as orientações dos chefes da equipe para obter mais informações.

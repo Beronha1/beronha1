@@ -142,7 +142,7 @@ ntr-bounty-console-manifest-entry =
 ntr-bounty-console-flavor-left = Bounties approved by Central Command. Bribes not included. Probably.
 
 ntr-console-task-fail-insert = Falha na tarefa.
-ntr-console-reagent-fail = Reagente insuficiente para completar Uma tarefa!
+ntr-console-reagent-fail = Reagente insuficiente para completar a tarefa!
 
 # experimental
 ntr-console-no-solution = Could not find solution {$solutionName} on the vial.

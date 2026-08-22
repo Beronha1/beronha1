@@ -35,7 +35,7 @@ signal-port-description-automation-slot-input = Uma saída de automação para a
 # Flatpacker
 
 signal-port-name-automation-slot-board = item: Slot de placa
-signal-port-description-automation-slot-board = Uma saída de automação para Uma placa de circuito de um flatpacker.
+signal-port-description-automation-slot-board = Uma saída de automação para a placa de circuito de um flatpacker.
 
 signal-port-name-automation-slot-materials = item: Armazenamento de materiais
 signal-port-description-automation-slot-materials = Uma saída de automação para inserir materiais no armazenamento de uma máquina.
@@ -65,7 +65,7 @@ signal-port-description-storage-removed = Signal port that gets pulsed after an 
 # Fax Machine
 
 signal-port-name-automation-slot-paper = item: Papel
-signal-port-description-automation-slot-paper = Uma saída de automação para Uma bandeja de papel de uma máquina de fax.
+signal-port-description-automation-slot-paper = Uma saída de automação para a bandeja de papel de uma máquina de fax.
 
 signal-port-name-fax-copy = Copiar fax
 signal-port-description-fax-copy = Porta de sinal para copiar o papel de uma máquina de fax.
@@ -90,7 +90,7 @@ signal-port-description-machine-failed = Signal port that gets pulsed after a ma
 # Interactor
 
 signal-port-name-automation-slot-tool = item: Ferramenta
-signal-port-description-automation-slot-tool = Uma saída de automação para Uma ferramenta em mãos de um interator.
+signal-port-description-automation-slot-tool = Uma saída de automação para a ferramenta em mãos de um interator.
 
 signal-port-name-alt-interact = Modo de interação alternativa
 signal-port-description-alt-interact = Porta de sinal para alternar o modo de interação alternativa, ou defini-la para um valor HIGH/LOW.

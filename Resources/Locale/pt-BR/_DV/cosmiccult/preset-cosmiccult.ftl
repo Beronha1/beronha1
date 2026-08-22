@@ -25,7 +25,7 @@ cosmiccult-monument-approval-lowlevel = Você tenta se concentrar, mas ainda nã
 cosmiccult-monument-approval-added = Você concentra sua força de vontade para invocar o Monumento...
 cosmiccult-monument-approval-removed = Você não está mais se concentrando neste ponto.
 cosmiccult-monument-approval-count = [color=#4cabb3]{$count} cultistas estão concentrados neste ponto.[/color]
-cosmiccult-monument-approval-needed = [color=#4cabb3]{$count} cultistas Uma mais devem se concentrar para invocar O Monumento.[/color]
+cosmiccult-monument-approval-needed = [color=#4cabb3]{$count} cultistas a mais devem se concentrar para invocar O Monumento.[/color]
 cosmiccult-monument-approval-examine-present = [color=#4cabb3]Você já está concentrado neste ponto.[/color]
 cosmiccult-monument-mark-removed = Sua marca anterior foi removida.
 
@@ -48,8 +48,8 @@ cosmiccult-roundend-crewwin = [color=green]Vitória total da tripulação![/colo
 cosmiccult-summary-cultwin = Os cultistas cosmicos trouxeram o fim!
 cosmiccult-summary-crewwin = Uma tripulação sobreviveu aos esforços do Culto Cósmico!
 
-cosmiccult-elimination-shuttle-call = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro foi automaticamente convocada para Uma estação. Entregue qualquer pessoal infectado ao CentComm para processamento. ETA: {$time} {$units}.
-cosmiccult-elimination-announcement = Com base nas leituras dos nossos sensores de longo alcance, Uma anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro já está em rota para Uma estação. Entregue qualquer pessoal infectado ao CentComm para processamento.
+cosmiccult-elimination-shuttle-call = Com base nas leituras dos nossos sensores de longo alcance, a anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro foi automaticamente convocada para a estação. Entregue qualquer pessoal infectado ao CentComm para processamento. ETA: {$time} {$units}.
+cosmiccult-elimination-announcement = Com base nas leituras dos nossos sensores de longo alcance, a anomalia Noöspheric diminuiu. Agradecemos sua prudência. Uma nave de socorro já está em rota para a estação. Entregue qualquer pessoal infectado ao CentComm para processamento.
 
 
 ## BRIEFINGS
@@ -99,8 +99,8 @@ cosmiccult-rift-alreadyempowered = Você já está fortalecido; o poder da fenda
 cosmiccult-rift-beginabsorb = A fenda começa a se fundir com você...
 cosmiccult-rift-beginpurge = Sua consagração começa a purgar a fenda maligna...
 
-cosmiccult-rift-absorb = {$NAME} absorve Uma fenda, e luz maligna empodera seu corpo!
-cosmiccult-rift-purge = {$NAME} purga Uma fenda maligna da realidade!
+cosmiccult-rift-absorb = {$NAME} absorve a fenda, e luz maligna empodera seu corpo!
+cosmiccult-rift-purge = {$NAME} purga a fenda maligna da realidade!
 
 
 ## CHANTRY
@@ -147,7 +147,7 @@ objective-condition-entropy-desc = Em conjunto, suguem pelo menos {$count} de en
 objective-condition-culttier-title = ALCANÇAR PODER
 objective-condition-culttier-desc = Reuna entropia suficiente para chegar ao fim.
 objective-condition-victory-title = TRAZER O FIM
-objective-condition-victory-desc = Chame o Desconhecido, e anuncie Uma chamada final de cortina.
+objective-condition-victory-desc = Chame o Desconhecido, e anuncie a chamada final de cortina.
 
 ## CHAT ANNOUNCEMENTS
 

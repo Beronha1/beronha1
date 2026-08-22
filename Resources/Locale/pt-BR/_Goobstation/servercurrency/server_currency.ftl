@@ -15,8 +15,8 @@ server-currency-name-plural= Moedas de uísque
 server-currency-gift-command = gift
 server-currency-gift-command-description = Dá parte do seu saldo como presente para outro jogador.
 server-currency-gift-command-help = Uso: presente <jogador> <valor>
-server-currency-gift-command-error-1 = Você não pode presentear Uma si mesmo!
-server-currency-gift-command-error-2 = Você não pode se dar Uma esse presente! Seu saldo é de {$balance}.
+server-currency-gift-command-error-1 = Você não pode presentear a si mesmo!
+server-currency-gift-command-error-2 = Você não pode se dar a esse presente! Seu saldo é de {$balance}.
 server-currency-gift-command-giver = You gave {$player} {$amount}.
 server-currency-gift-command-reciever = {$player} gave you {$amount}.
 

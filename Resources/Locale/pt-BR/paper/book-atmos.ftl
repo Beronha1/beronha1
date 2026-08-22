@@ -45,7 +45,7 @@ book-text-atmos-alarms = Alarmes de ar ficam espalhados pelas estações para pe
             - Encher: desabilita os scrubbers e define as ventilações para pressão máxima
             - Pânico: desabilita as ventilações e define os scrubbers para sucção
 
-            Uma multitool ou configurador de rede pode ser usada para ligar dispositivos aos alarmes de ar.
+            a multitool ou configurador de rede pode ser usada para ligar dispositivos aos alarmes de ar.
 
 book-text-atmos-vents =
     Abaixo está um guia de referência rápida para vários dispositivos atmosféricos:

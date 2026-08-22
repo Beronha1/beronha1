@@ -7,7 +7,7 @@ game-ticker-unknown-role = Desconhecido
 game-ticker-delay-start = O início da rodada foi adiado por {$seconds} segundos.
 game-ticker-pause-start = O início da rodada foi pausado.
 game-ticker-pause-start-resumed = Uma contagem de início da rodada foi retomada.
-game-ticker-player-join-game-message = Bem-vindo ao Space Station 14! Se esta é Uma sua primeira vez, certifique-se de ler as regras do jogo e não tenha medo de pedir ajuda não LOOC (OOC local) ou OOC (geralmente disponível apenas entre as rodadas).
+game-ticker-player-join-game-message = Bem-vindo ao Space Station 14! Se esta é a sua primeira vez, certifique-se de ler as regras do jogo e não tenha medo de pedir ajuda não LOOC (OOC local) ou OOC (geralmente disponível apenas entre as rodadas).
 game-ticker-get-info-text = Olá e bem-vindo ao [color=white]Space Station 14![/color]
                             A rodada atual é: [color=white]#{$roundId}[/color]
                             O número atual de jogadores é: [color=white]{$playerCount}[/color]
@@ -35,9 +35,9 @@ player-leave-message = O jogador {$name} saiu.
 
 latejoin-arrival-announcement = {$character} ({$job}) chegou à estação!
 latejoin-arrival-announcement-special = {$job} {$character} não deck!
-latejoin-arrivals-direction = Uma nave de chegada para Uma estação chegará em breve.
-latejoin-arrivals-direction-time = Uma nave de chegada para Uma estação chegará em { $time}.
-latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sair com Uma nave de chegada.
+latejoin-arrivals-direction = Uma nave de chegada para a estação chegará em breve.
+latejoin-arrivals-direction-time = Uma nave de chegada para a estação chegará em { $time}.
+latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sair com a nave de chegada.
 latejoin-arrivals-teleport-to-spawn = Uma força misteriosa te teleporta para fora da nave de chegada. Tenha um turno seguro!
 
 preset-not-enough-ready-players = Não é possível iniciar {$presetName}. Requer {$minimumPlayers} jogadores, mas temos {$readyPlayersCount}.

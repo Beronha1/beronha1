@@ -145,7 +145,7 @@ story-gen-book-event10 = algum fenômeno místico
 story-gen-book-event11 = intervenção divina
 story-gen-book-event12 = os próprios motivos egoístas dos personagens
 story-gen-book-event13 = uma traição inesperada
-story-gen-book-event14 = Uma ressurreição de um dos personagens após Uma morte
+story-gen-book-event14 = Uma ressurreição de um dos personagens após a morte
 story-gen-book-event15 = Uma tortura brutal dos protagonistas
 story-gen-book-event16 = o desacerto acidental de uma singularidade gravitacional
 story-gen-book-event17 = uma previsão psíquica de eventos futuros
@@ -167,7 +167,7 @@ story-gen-book-action7 = manipular
 story-gen-book-action8 = sacrificar um hamster para
 story-gen-book-action9 = invadir o casamento de
 story-gen-book-action10 = se juntar para vencer o inimigo comum,
-story-gen-book-action11 = são forçados Uma trabalhar juntos para escapar
+story-gen-book-action11 = são forçados a trabalhar juntos para escapar
 story-gen-book-action12 = dar um presente valioso para
 
 story-gen-book-action-trait1 = desajeitadamente

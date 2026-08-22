@@ -39,10 +39,10 @@ signal-port-name-order-receiver = Receptor de pedidos
 signal-port-description-order-receiver = Receptor de pedidos do console de carga.
 
 signal-port-name-pressurize = Pressurizar
-signal-port-description-pressurize = Faz o dispositivo liberar ar até atingir Uma pressão definida.
+signal-port-description-pressurize = Faz o dispositivo liberar ar até atingir a pressão definida.
 
 signal-port-name-depressurize = Despressurizar
-signal-port-description-depressurize = Faz o dispositivo aspirar o ar até atingir Uma pressão definida.
+signal-port-description-depressurize = Faz o dispositivo aspirar o ar até atingir a pressão definida.
 
 signal-port-name-pod-sender = Cápsula de clonagem
 signal-port-description-pod-sender = Emissor de sinal da cápsula de clonagem.
@@ -77,7 +77,7 @@ signal-port-description-set-particle-zeta = Define como zeta o tipo de partícul
 signal-port-name-set-particle-sigma = Definir partícula: sigma
 signal-port-description-set-particle-sigma = Define como sigma o tipo de partícula emitida pelo dispositivo.
 
-signal-port-name-logic-input-a = Entrada Uma
+signal-port-name-logic-input-a = Entrada a
 signal-port-description-logic-input-a = Primeira entrada de uma porta lógica.
 
 signal-port-name-logic-input-b = Entrada B

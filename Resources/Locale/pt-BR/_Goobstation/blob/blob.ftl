@@ -8,9 +8,9 @@ ent-MobBlobBlobbernaut = Blobbernaut
 ent-BaseBlob = blob básico.
     .desc = { "" }
 ent-NormalBlobTile = Tile Blob Regular
-    .desc = Uma parte comum do blob necessária para Uma construção de blocos mais avançados.
+    .desc = Uma parte comum do blob necessária para a construção de blocos mais avançados.
 ent-CoreBlobTile = Núcleo do Blob
-    .desc = O órgão mais importante do blob. Ao destruir o núcleo, Uma infecção cessará.
+    .desc = O órgão mais importante do blob. Ao destruir o núcleo, a infecção cessará.
 ent-FactoryBlobTile = Fábrica de Blob
     .desc = Gera Drops de Blob e Blobbernauts com o tempo.
 ent-ResourceBlobTile = Blob de Recurso
@@ -18,17 +18,17 @@ ent-ResourceBlobTile = Blob de Recurso
 ent-NodeBlobTile = Nó de Blob
     .desc = Uma mini versão do núcleo que permite colocar blocos especiais de blob ao redor dele.
 ent-StrongBlobTile = Tile de Blob Forte
-    .desc = Uma versão reforçada da peça normal. Não permite Uma passagem de ar e protege contra dano bruto.
+    .desc = Uma versão reforçada da peça normal. Não permite a passagem de ar e protege contra dano bruto.
 ent-ReflectiveBlobTile = Tile de Blob Reflexivo
     .desc = Reflete lasers, mas não protege tão bem contra dano bruto.
 objective-issuer-blob= bolha
 
 
 ghost-role-information-blobbernaut-name = Blobbernaut
-ghost-role-information-blobbernaut-description = Você é um Blobbernaut. Você deve defender o núcleo do blob. Use + ou +e Não chat para falar com Uma mente do blob.
+ghost-role-information-blobbernaut-description = Você é um Blobbernaut. Você deve defender o núcleo do blob. Use + ou +e Não chat para falar com a mente do blob.
 
 ghost-role-information-blob-name= bolha
-ghost-role-information-blob-description = Você é Uma Infecção Blob. Consuma Uma estação.
+ghost-role-information-blob-description = Você é a Infecção Blob. Consuma a estação.
 
 roles-antag-blob-name= bolha
 roles-antag-blob-objective = Alcançar massa crítica.
@@ -54,8 +54,8 @@ blob-spent-resource= -{$point}
 blobberaut-not-on-blob-tile = Você está morrendo por não estar em blocos de blob.
 carrier-blob-alert = Você tem { $second } segundos antes da transformação.
 
-blob-mob-zombify-second-start = { $pod } começou Uma te transformar em zumbi.
-blob-mob-zombify-third-start = { $pod } começou Uma transformar { $target } em zumbi.
+blob-mob-zombify-second-start = { $pod } começou a te transformar em zumbi.
+blob-mob-zombify-third-start = { $pod } começou a transformar { $target } em zumbi.
 
 blob-mob-zombify-second-end = { $pod } te transformou em zumbi.
 blob-mob-zombify-third-end = { $pod } transformou { $target } em zumbi.
@@ -71,8 +71,8 @@ blob-alert-out-off-station = O blob foi removido porque foi encontrado fora da e
 
 # Announcment
 blob-alert-recall-shuttle = Uma nave de emergência não pode ser enviada enquanto houver biohazard de nível 5 na estação.
-blob-alert-detect = Surto de biohazard de nível 5 confirmado Uma bordo da estação. Todo o pessoal deve conter o surto.
-blob-alert-critical = Nível de biohazard crítico, códigos nucleares foram enviados para Uma estação. O Comando Central ordena que qualquer pessoal restante ative o mecanismo de autodestruição.
+blob-alert-detect = Surto de biohazard de nível 5 confirmado a bordo da estação. Todo o pessoal deve conter o surto.
+blob-alert-critical = Nível de biohazard crítico, códigos nucleares foram enviados para a estação. O Comando Central ordena que qualquer pessoal restante ative o mecanismo de autodestruição.
 blob-alert-critical-NoNukeCode = Nível de biohazard crítico. O Comando Central ordena que qualquer pessoal restante procure abrigo e espere resgate.
 blob-alert-shuttle-arrived = Risco biológico detectado a bordo. Todos os tripulantes devem evacuar imediatamente.
 
@@ -87,7 +87,7 @@ blob-carrier-role-name = Carregador de Blob
 blob-carrier-role-desc =  Uma criatura infectada pelo blob.
 blob-carrier-role-rules = Você é um antagonista. Você tem 10 minutos antes de se transformar em um blob.
                         Use esse tempo para encontrar um local seguro na estação. Lembre-se de que ficará muito fraco logo após a transformação.
-blob-carrier-role-greeting = Você é um portador de Blob. Encontre um local discreto na estação e transforme-se em um Blob. Transforme Uma estação em massa e seus habitantes em seus servos. Todos nós somos Blobs.
+blob-carrier-role-greeting = Você é um portador de Blob. Encontre um local discreto na estação e transforme-se em um Blob. Transforme a estação em massa e seus habitantes em seus servos. Todos nós somos Blobs.
 
 # Verbs
 blob-pod-verb-zombify = Zombificar
@@ -108,14 +108,14 @@ blob-role-greeting =
         Certifique-se de colocar blobs de recurso para gerar recursos.
         Lembre-se de que os blobs de recurso e fábricas só funcionarão quando ao lado de nós ou núcleos de blob.
         Você pode usar + ou +e no chat para usar a Mente do Blob e falar com seus servos.
-blob-zombie-greeting = Você foi infectado e gerado por uma espora de blob. Agora você deve ajudar o blob Uma tomar Uma estação. Use +e Não chat para falar em Mente do Blob.
+blob-zombie-greeting = Você foi infectado e gerado por uma espora de blob. Agora você deve ajudar o blob a tomar a estação. Use +e Não chat para falar em Mente do Blob.
 
 # End round
 blob-round-end-agent-name = infecção blob
 
 # Objectivies
-objective-condition-blob-capture-title = Tomar Uma estação
-objective-condition-blob-capture-description = Seu único objetivo é tomar conta de toda Uma estação. Você precisa ter pelo menos {$count} blocos de blob.
+objective-condition-blob-capture-title = Tomar a estação
+objective-condition-blob-capture-description = Seu único objetivo é tomar conta de toda a estação. Você precisa ter pelo menos {$count} blocos de blob.
 objective-condition-success = { $condition } | [color={ $markupColor }]Sucesso![/color]
 objective-condition-fail = { $condition } | [color={ $markupColor }]Falha![/color] ({ $progress }%)
 

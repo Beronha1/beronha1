@@ -18,7 +18,7 @@ selectable-set-no-russian-description =
 
 selectable-set-syndicate-pirate-captain-name = Kit do Capitão Pirata do Sindicato
 selectable-set-syndicate-pirate-captain-description =
-    Yo ho, yo ho, Uma vida de pirata para mim!
+    Yo ho, yo ho, a vida de pirata para mim!
     Contém: roupa de pirata, chapéu de pirata, manto de capitão pirata,
     magboots do sindicato, máscara de gás de explorador, hardsuit de capitão pirata,
     tapa-olho, headset over-ear freelancer, PDA de pirata,

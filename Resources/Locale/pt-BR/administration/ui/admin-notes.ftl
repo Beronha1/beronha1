@@ -56,7 +56,7 @@ admin-note-editor-title-new = Criando uma nova nota para {$player}
 admin-note-editor-title-existing = Editando nota {$id} em {$player} por {$author}
 admin-note-editor-pop-out = Abrir fora
 admin-note-editor-secret = Secret?
-admin-note-editor-secret-tooltip = Marcando isso, Uma nota nao sera visivel para o jogador
+admin-note-editor-secret-tooltip = Marcando isso, a nota nao sera visivel para o jogador
 admin-note-editor-type-note = Nota
 admin-note-editor-type-message = Mensagem
 admin-note-editor-type-watchlist= Lista de observação
@@ -95,7 +95,7 @@ admin-notes-new-message = Voce recebeu uma mensagem de administrador de {$admin}
 admin-notes-fallback-admin-name = [System]
 
 # Admin remarks
-admin-remarks-command-description = Abre Uma pagina de observacoes administração
+admin-remarks-command-description = Abre a pagina de observacoes administração
 admin-remarks-command-error = Observacoes administração foram desabilitadas
 admin-remarks-title = Observacoes administração
 

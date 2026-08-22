@@ -47,7 +47,7 @@ alerts-ensnared-name = [color=yellow]Enredado[/color]
 alerts-ensnared-desc = Você está [color=yellow]enredado[/color], o que prejudica sua capacidade de se mover.
 
 alerts-buckled-name = [color=yellow]Preso[/color]
-alerts-buckled-desc = Você está [color=yellow]preso[/color] Uma algo. Clique no alerta para se soltar, Uma menos que esteja [color=yellow]algemado.[/color]
+alerts-buckled-desc = Você está [color=yellow]preso[/color] Uma algo. Clique no alerta para se soltar, a menos que esteja [color=yellow]algemado.[/color]
 
 alerts-crit-name = [color=red]Estado crítico[/color]
 alerts-crit-desc = Você está gravemente ferido e inconsciente.
@@ -86,7 +86,7 @@ alerts-parched-name = [color=red]Desidratado[/color]
 alerts-parched-desc = Você está com muita sede. Ela torna qualquer movimento difícil.
 
 alerts-muted-name = Sem fala
-alerts-muted-desc = Você perdeu Uma capacidade de falar.
+alerts-muted-desc = Você perdeu a capacidade de falar.
 
 alerts-vow-silence-name = Voto de silêncio
 alerts-vow-silence-desc = Você fez um voto que proíbe comunicação verbal ou escrita como parte da iniciação na Mystiko Tagma Mimon. Clique para quebrar o voto.
@@ -128,6 +128,6 @@ alerts-stealthy-name = Batedor de carteiras
 alerts-stealthy-desc = Indica se você está furtando bolsos. Clique para alternar.
 
 alerts-prying-name = Arrombando
-alerts-prying-desc = Você pode arrombar portas naturalmente usando Uma interação alternativa.
+alerts-prying-desc = Você pode arrombar portas naturalmente usando a interação alternativa.
 
 

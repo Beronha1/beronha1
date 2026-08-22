@@ -8,7 +8,7 @@ spellbook-upgrade-mime-malaise-name = Aprimoramento do Mal-estar Mímico
 spellbook-upgrade-mime-malaise-desc = Aperfeiçoa o Mal-estar Mímico até o nível máximo 5!
 
 spellbook-upgrade-cluwne-curse-name = Aprimoramento da Maldição do Cluwne
-spellbook-upgrade-cluwne-curse-desc = Aperfeiçoa Uma Maldição do Cluwne até o nível máximo 3!
+spellbook-upgrade-cluwne-curse-desc = Aperfeiçoa a Maldição do Cluwne até o nível máximo 3!
 
 spellbook-upgrade-banana-touch-name = Aprimoramento do Toque de Banana
 spellbook-upgrade-banana-touch-desc = Aperfeiçoa o Toque de Banana até o nível máximo 5!
@@ -41,7 +41,7 @@ spellbook-upgrade-lightning-bolt-name = Aprimoramento do Raio
 spellbook-upgrade-lightning-bolt-desc = Aperfeiçoa Raio até o nível máximo 5!
 
 spellbook-upgrade-homing-toolbox-name = Aprimoramento da Caixa de Ferramentas Teleguiada
-spellbook-upgrade-homing-toolbox-desc = Aperfeiçoa Uma Caixa de Ferramentas Teleguiada até o nível máximo 5!
+spellbook-upgrade-homing-toolbox-desc = Aperfeiçoa a Caixa de Ferramentas Teleguiada até o nível máximo 5!
 
 spellbook-upgrade-arcane-barrage-name = Aprimoramento de Barragem Arcana
 spellbook-upgrade-arcane-barrage-desc = Aperfeiçoa Barragem Arcana até o nível máximo 3!
@@ -50,7 +50,7 @@ spellbook-upgrade-lesser-summon-guns-name = Aprimoramento do Invocar Armas Menor
 spellbook-upgrade-lesser-summon-guns-desc = Aperfeiçoa Invocar Armas Menores até o nível máximo 3!
 
 spellbook-upgrade-barnyard-name = Aprimoramento da Maldição da Granja
-spellbook-upgrade-barnyard-desc = Aperfeiçoa Uma Maldição da Granja até o nível máximo 3!
+spellbook-upgrade-barnyard-desc = Aperfeiçoa a Maldição da Granja até o nível máximo 3!
 
 spellbook-upgrade-scream-for-me-name = Aprimoramento de Grito por Mim
 spellbook-upgrade-scream-for-me-desc = Aperfeiçoa Grito por Mim até o nível máximo 5!

@@ -37,7 +37,7 @@ uplink-hardlight-bow-desc = Um arco moderno que pode fabricar flechas hardlight,
 # Job-specific
 
 uplink-pie-cannon-name = Canháo de torta regenerativo
-uplink-pie-cannon-desc = Um canháo de torta que regenera tortas automaticamente, uma Uma cada dez segundos.
+uplink-pie-cannon-desc = Um canháo de torta que regenera tortas automaticamente, uma a cada dez segundos.
 
 uplink-beenade-name = Beenade
 uplink-beenade-desc = A non-explosive grenade full of... bees?! NOT THE BEES!!!
@@ -46,7 +46,7 @@ uplink-dart-gun-name = Pistola de dardos
 uplink-dart-gun-desc = This gun applies inside chemicals to its regenerating dart supply, allowing to distantly heal allies or to commit war crimes by poisoning foes.
 
 uplink-his-grace-name = His Grace
-uplink-his-grace-desc = Uma entidade de outro mundo presa em uma caixa de ferramentas. Cresce em poder Uma cada morte, mas vai te consumir se não para alimentada. Ative na mão para se prender.
+uplink-his-grace-desc = Uma entidade de outro mundo presa em uma caixa de ferramentas. Cresce em poder a cada morte, mas vai te consumir se não para alimentada. Ative na mão para se prender.
 
 uplink-magazine-nailgun-name = Cargador de pistola de pregos (AP)
 uplink-magazine-nailgun-desc = Almost like a normal magazine for your nail gun. The only difference is that this one is armor-piercing.
@@ -149,16 +149,16 @@ uplink-cartridge-G8-hypercharged-name = Cartucho hipercarregado G8
 uplink-cartridge-G8-hypercharged-desc = This cartridge shots "The Bolt of Zeus" bullet, shocking everyone on its way and creating an energy vortex at its destination point, that creates a massive explosion on overcharge. Used by HE1S-G8.
 
 uplink-high-caliber-shotgun-box-name = 8 Gauge shell box
-uplink-high-caliber-shotgun-box-desc = 16 cartuchos calibre 8, para Uma espingarda de combate.
+uplink-high-caliber-shotgun-box-desc = 16 cartuchos calibre 8, para a espingarda de combate.
 
 uplink-high-caliber-shotgun-box-slug-name = Caixa de slug calibre 8
-uplink-high-caliber-shotgun-box-slug-desc = 16 cartuchos de slug calibre 8, para Uma espingarda de combate.
+uplink-high-caliber-shotgun-box-slug-desc = 16 cartuchos de slug calibre 8, para a espingarda de combate.
 
 uplink-high-caliber-shotgun-box-flash-slug-name = Caixa de flashbang calibre 8
 uplink-high-caliber-shotgun-box-flash-slug-desc = 16 shells of 8 Gauge flashbang shells, for the combat shotgun. Doesn't down those with flash protection.
 
 uplink-high-caliber-shotgun-box-sarin-name = Caixa de sarin calibre 8
-uplink-high-caliber-shotgun-box-sarin-desc = 16 cartuchos de sarin calibre 8 para Uma espingarda de combate, que libera uma pequena nuvem em formato de mais de gás sarin.
+uplink-high-caliber-shotgun-box-sarin-desc = 16 cartuchos de sarin calibre 8 para a espingarda de combate, que libera uma pequena nuvem em formato de mais de gás sarin.
 
 # Grenades
 
@@ -211,7 +211,7 @@ uplink-smoke-implant-name = Smoke Implant
 uplink-smoke-implant-desc = Releases a cloud of smoke when activated.
 
 uplink-nutriment-implant-name = Implante de bomba de nutrientes
-uplink-nutriment-implant-desc = Remover Uma necessidade do usuário de consumir comida e/ou bebidas.
+uplink-nutriment-implant-desc = Remover a necessidade do usuário de consumir comida e/ou bebidas.
 
 uplink-krav-maga-implant-name = Implante de Krav Maga
 uplink-krav-maga-implant-desc = Allows the user to perform various Krav Maga moves.

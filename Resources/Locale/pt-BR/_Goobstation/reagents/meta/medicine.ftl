@@ -20,13 +20,13 @@ reagent-desc-lingdrenaline = Uma reserva de adrenalina potente armazenada em uma
 reagent-popup-lingdrenaline = Nosso corpo inteiro treme e oscila violentamente.
 
 reagent-name-probital= condicional
-reagent-desc-probital = Faz o corpo do paciente gastar energia para criar mais compostos curativos. Superdosagem exaura o corpo, causando o equivalente Uma cochilos de recuperação.
+reagent-desc-probital = Faz o corpo do paciente gastar energia para criar mais compostos curativos. Superdosagem exaura o corpo, causando o equivalente a cochilos de recuperação.
 
 reagent-name-mitogen = mitogênio
 reagent-desc-mitogen = Converte nutrientes em mitotrofina para cura altamente eficiente. Pode ser tomado em excesso acidentalmente, causando vômito.
 
 reagent-name-mitotrophin = mitotrofina
-reagent-desc-mitotrophin = Composto curativo criado Uma partir de químicos comumente encontrados em alimentos.
+reagent-desc-mitotrophin = Composto curativo criado a partir de químicos comumente encontrados em alimentos.
 
 reagent-name-tirimol= trimol
 reagent-desc-tirimol = Um depressor forte usado Não tratamento de dano por asfixia curativa. Diminui drasticamente o consumo de oxigênio às custas de enfraquecer os músculos.
@@ -44,7 +44,7 @@ reagent-name-synthcells = sintetócitos
 reagent-desc-synthcells = "Células" produzidas artificialmente que destroem e substituem qualquer célula disfuncional rapidamente. Funciona por aplicação externa e interna. Funciona em mortos.
 
 reagent-name-salicylic-acid = ácido salicílico
-reagent-desc-salicylic-acid = Um agente curativo poderoso, excelente em restaurar Uma maioria dos cadáveres mutilados. Difícil de superdosar.
+reagent-desc-salicylic-acid = Um agente curativo poderoso, excelente em restaurar a maioria dos cadáveres mutilados. Difícil de superdosar.
 
 reagent-name-oxandrolone = oxandrolona
 reagent-desc-oxandrolone = Químico gelatinosa que cura dano de queimadura mais rapidamente quanto mais queimado estiver o corpo do paciente. Difícil de superdosar.
@@ -59,13 +59,13 @@ reagent-name-calomel = calomel
 reagent-desc-calomel = Liga-se rapidamente com químicos e os Remover da corrente sanguínea. Mantém pacientes em estado de quase morte, portanto deve ser usado apenas como suplemento.
 
 reagent-name-ammoniated-mercury = mercúrio amoniacal
-reagent-desc-ammoniated-mercury = Difícil de usar, mas droga potencialmente poderosa com nicho específico Não combate Uma toxinas. Remover venenos e curará rapidamente qualquer dano por veneno se o paciente não estiver danificado externamente. Não use em pacientes feridos, embora o remédio mantenha Uma capacidade de remover toxinas.
+reagent-desc-ammoniated-mercury = Difícil de usar, mas droga potencialmente poderosa com nicho específico Não combate a toxinas. Remover venenos e curará rapidamente qualquer dano por veneno se o paciente não estiver danificado externamente. Não use em pacientes feridos, embora o remédio mantenha a capacidade de remover toxinas.
 
 reagent-name-antihol = antihol
-reagent-desc-antihol = Neutraliza rapidamente qualquer etanol da solução, enquanto cura Uma maioria dos etilistas crônicos.
+reagent-desc-antihol = Neutraliza rapidamente qualquer etanol da solução, enquanto cura a maioria dos etilistas crônicos.
 
 reagent-name-ibuprofen = ibuprofeno
-reagent-desc-ibuprofen = Droga fraca que ajuda com dores de cabeça e Uma voltar para Uma enfermaria depois de um dia ruim.
+reagent-desc-ibuprofen = Droga fraca que ajuda com dores de cabeça e a voltar para a enfermaria depois de um dia ruim.
 
 reagent-name-silver-sulfadiazine = sulfadiazina de prata
 reagent-desc-silver-sulfadiazine = Líquido calmante que pode ser aplicado externamente para tratar rapidamente queimaduras leves. Tóxico na corrente sanguínea. Funciona em mortos.
@@ -98,7 +98,7 @@ reagent-name-hercuri= diariamente
 reagent-desc-hercuri = Refrigeração forte, útil para aplicação interna e externa; tome cuidado para não congelar demais os pacientes.
 
 reagent-name-herignis= ouriços
-reagent-desc-herignis = Pode descongelar Uma maioria dos lagartos frios; recomendada apenas em doses pequenas, pois pode aquecer rapidamente seu metabolizador até níveis perigosos.
+reagent-desc-herignis = Pode descongelar a maioria dos lagartos frios; recomendada apenas em doses pequenas, pois pode aquecer rapidamente seu metabolizador até níveis perigosos.
 
 reagent-name-immurin= immurina
 reagent-desc-immurin = Um químico que fortalece o sistema imunológico, fazendo-o agir mais rápido e com mais força. O efeito permanece por um tempo, mesmo após o metabolismo do químico. Tem gosto terrível.

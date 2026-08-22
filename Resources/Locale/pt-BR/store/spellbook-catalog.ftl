@@ -61,7 +61,7 @@ spellbook-slip-name = Declive Escorregadio
 spellbook-slip-desc = Aprenda os caminhos antigos do zelador e amaldiçoe seu alvo para ficar escorregadio.
 
 spellbook-item-recall-name = Recobrar item
-spellbook-item-recall-description = Marque um item em mãos e convoque-o de volta Uma qualquer momento com um estalo de dedos!
+spellbook-item-recall-description = Marque um item em mãos e convoque-o de volta a qualquer momento com um estalo de dedos!
 
 spellbook-guardian-deck-name = Baralho de Tarô
 spellbook-guardian-deck-description = Um baralho bizarro de cartas que concede um guardião espectral quando usado.
@@ -90,14 +90,14 @@ spellbook-event-summon-ghosts-description =
     Não pode ser reembolsado.
 
 spellbook-event-summon-guns-name = Invocar Armas
-spellbook-event-summon-guns-description = AK47 para todos! Coloca uma arma aleatória na frente de todos. Desativa reembolsos após Uma compra!
+spellbook-event-summon-guns-description = AK47 para todos! Coloca uma arma aleatória na frente de todos. Desativa reembolsos após a compra!
 
 spellbook-event-summon-magic-name = Invocar Magia
-spellbook-event-summon-magic-description = Coloca um item mágico aleatório na frente de todos. Não pode dar errado! Desativa reembolsos após Uma compra!
+spellbook-event-summon-magic-description = Coloca um item mágico aleatório na frente de todos. Não pode dar errado! Desativa reembolsos após a compra!
 
 # Upgrades
 spellbook-upgrade-fireball-name = Aprimoramento de Bola de Fogo
-spellbook-upgrade-fireball-description = Melhora Uma Bola de Fogo até o nível máximo 3!
+spellbook-upgrade-fireball-description = Melhora a Bola de Fogo até o nível máximo 3!
 
 spellbook-upgrade-jaunt-name = Aprimoramento de Viagem Etérea
-spellbook-upgrade-jaunt-description = Melhora Uma Transposição até o nível máximo 3!
+spellbook-upgrade-jaunt-description = Melhora a Transposição até o nível máximo 3!

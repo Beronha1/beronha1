@@ -48,7 +48,7 @@ health-examinable-carbon-Cold-100 = [color=#695BBB]O corpo de {$target} está co
 health-examinable-carbon-Cold-200 = [color=#5B4CB4]O corpo de {$target} está completamente congelado e rígido![/color]
 health-examinable-carbon-Caustic-8 = [color=#F0C5E8]Uma pele de {$target} parece levemente descolorida.[/color]
 health-examinable-carbon-Caustic-15 = [color=#FAAFDD]Uma pele de {$target} parece irritada e desbotada.[/color]
-health-examinable-carbon-Caustic-30 = [color=#FF9CD2]Uma pele de {$target} está inflamada e começando Uma descamar.[/color]
+health-examinable-carbon-Caustic-30 = [color=#FF9CD2]Uma pele de {$target} está inflamada e começando a descamar.[/color]
 health-examinable-carbon-Caustic-50 = [color=#FF8ECB]Uma pele de {$target} está queimada e soltando grandes pedaços.[/color]
 health-examinable-carbon-Caustic-75 = [color=#FF7CC0]Uma pele de {$target} está gravemente queimada e se desprendendo.[/color]
 health-examinable-carbon-Caustic-100 = [color=#FF6FBA]{$target} apresenta queimaduras químicas extremas pelo corpo.[/color]

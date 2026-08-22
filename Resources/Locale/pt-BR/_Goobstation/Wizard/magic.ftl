@@ -12,7 +12,7 @@ spell-fail-no-held-entity = Qualquer item em suas mãos pode ser usado para lan�
 spell-fail-no-soul = Você não tem uma alma!
 spell-fail-unremoveable = {CAPITALIZE($item)} está grudado em sua mão - não é uma boa ideia colocar sua alma nele.
 spell-fail-soul-item-not-suitable = {CAPITALIZE($item)} não é adequado para armazenar sua alma frágil.
-spell-fail-soul-not-bound = Sua alma não está vinculada Uma nenhum item!
+spell-fail-soul-not-bound = Sua alma não está vinculada a nenhum item!
 spell-fail-item-destroyed = Sua filácteria sumiu!
 spell-fail-item-on-another-plane = Não foi possível ressuscitar! Sua filácteria está em outro plano.
 spell-fail-bind-soul-silicon = Não dá para ligar alma em forma silicon.
@@ -39,13 +39,13 @@ spell-requirements-failed-clothes = Faltam requisitos para lançar este feitiço
 spell-requirements-failed-speech = Faltam requisitos para lançar este feitiço! Você não consegue falar.
 
 instant-summons-item-marked = {$item} marcado(Uma) com sucesso.
-instant-summons-confirm-popup = Essa ação vai remover Uma marca atual! Use novamente para confirmar.
+instant-summons-confirm-popup = Essa ação vai remover a marca atual! Use novamente para confirmar.
 
-chuuni-invocation-confirm-popup = Essa ação vai te forçar Uma usar um tapa-olho sem remoção! Use novamente para confirmar.
+chuuni-invocation-confirm-popup = Essa ação vai te forçar a usar um tapa-olho sem remoção! Use novamente para confirmar.
 
 spell-soul-tap-dead-message-others = {CAPITALIZE($uid)} morreu de repente!
 spell-soul-tap-dead-message-user = Sua alma enfraquecida é completamente consumida pelo toque!
-spell-soul-tap-almost-dead-message = Seu corpo está incrivelmente drenado, e Uma dor ardente é difícil de ignorar!
+spell-soul-tap-almost-dead-message = Seu corpo está incrivelmente drenado, e a dor ardente é difícil de ignorar!
 spell-soul-tap-message = Seu corpo fica drenado e há uma dor em queimação Não peito.
 
 spell-charge-spells-charged-pulled = Você sente magia bruta correndo por você. É uma sensação boa!
@@ -56,4 +56,4 @@ spell-summon-simians-maxed-out-message = Seu poder simiano atingiu capacidade m�
 
 ghosts-summoned-message = Os fantasmas foram invocados!
 dimension-shift-message = As dimensões mudaram!
-global-tile-movement-message = Um ritmo sombrio começa Uma tocar!
+global-tile-movement-message = Um ritmo sombrio começa a tocar!

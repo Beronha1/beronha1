@@ -1,7 +1,7 @@
 ﻿chemicompiler-slot-reservoir = Reservatério
 
 chemicompiler-window-title= ChemiCompilador M7
-chemicompiler-window-code = Code
+chemicompiler-window-code = Código
 chemicompiler-window-save = Salvar
 chemicompiler-window-load = Carregar
 chemicompiler-window-reservoirs = Reservatérios
@@ -17,7 +17,7 @@ chemicompiler-window-mode-load = Pressione uma slot para carregar seu código N�
 chemicompiler-window-status-idle = Ocioso.
 chemicompiler-window-status-running = Executando...
 
-chemicompiler-error-too-long = That program is too long, the limit is { $max } characters.
+chemicompiler-error-too-long = O programa é longo demais; o limite é de { $max } caracteres.
 chemicompiler-error-unmatched-start = Esse programa tem um [ que nunca foi fechado.
 chemicompiler-error-unmatched-end = Esse programa tem um ] sem [ antes dele.
 

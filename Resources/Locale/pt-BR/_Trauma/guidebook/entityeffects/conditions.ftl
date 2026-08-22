@@ -1,17 +1,17 @@
 ﻿entity-condition-guidebook-has-mob-name = O nome do alvo contém { $name }
 entity-condition-guidebook-inventory-nested = O alvo está vestindo qualquer coisa onde {$condition}
-entity-condition-guidebook-inside-area = the target is inside an area
+entity-condition-guidebook-inside-area = o alvo está dentro de uma área
 entity-condition-guidebook-has-marking = O alvo tem uma marcação {$marking}
-entity-condition-guidebook-is-species = the target is a {$species}
+entity-condition-guidebook-is-species = o alvo pertence à espécie {$species}
 
 entity-condition-guidebook-pressure-protection = O alvo está protegido contra pressão
-entity-condition-guidebook-cosmic-cultist = the target is a cosmic cultist
-entity-condition-shadowling-or-thrall = target is a shadowling or thrall
-entity-condition-not-shadowling-or-thrall = target is not a shadowling or thrall
-entity-condition-guidebook-is-humanoid = target is humanoid
+entity-condition-guidebook-cosmic-cultist = o alvo é um cultista cósmico
+entity-condition-shadowling-or-thrall = o alvo é um shadowling ou thrall
+entity-condition-not-shadowling-or-thrall = o alvo não é um shadowling nem thrall
+entity-condition-guidebook-is-humanoid = o alvo é humanoide
 entity-condition-guidebook-hypoport-target = O alvo pode receber uma hipoporta
 
-entity-condition-guidebook-cybernetics-blacklist = Is not a cybernetic limb
+entity-condition-guidebook-cybernetics-blacklist = não é um membro cibernético
 
 entity-condition-guidebook-is-awake = O alvo está acordado
 

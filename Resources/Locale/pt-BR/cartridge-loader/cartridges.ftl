@@ -19,22 +19,22 @@ device-pda-slot-component-slot-name-cartridge = Cartridge
 default-program-name = Program
 notekeeper-program-name = Notekeeper
 nano-task-program-name = NanoTask
-news-read-program-name = Station news
+news-read-program-name = Notícias da estação
 
-crew-manifest-program-name = Crew manifest
+crew-manifest-program-name = Manifesto da tripulação
 crew-manifest-cartridge-loading = Loading ...
-crew-manifest-cartridge-loading-failed = Failed to load crew manifest!
+crew-manifest-cartridge-loading-failed = Falha ao carregar o manifesto da tripulação!
 
 net-probe-program-name = NetProbe
 net-probe-scan = Scanned {$device}!
 net-probe-label-name = Name
-net-probe-label-address = Address
-net-probe-label-frequency = Frequency
+net-probe-label-address = Endereço
+net-probe-label-frequency = Frequência
 net-probe-label-network = Network
 
 log-probe-program-name = LogProbe
 log-probe-scan = Downloaded logs from {$device}!
-log-probe-label-time = Time
+log-probe-label-time = Horário
 log-probe-label-accessor = Accessed by
 log-probe-label-number = #
 log-probe-print-button = Print Logs
@@ -66,42 +66,42 @@ nano-task-ui-heading-low-priority-tasks =
         [one] 1 Low Priority Task
        *[other] {$amount} Low Priority Tasks
     }
-nano-task-ui-done = Done
+nano-task-ui-done = Concluída
 nano-task-ui-revert-done = Undo
 nano-task-ui-priority-low = Low
-nano-task-ui-priority-medium = Medium
+nano-task-ui-priority-medium = Média
 nano-task-ui-priority-high = High
 nano-task-ui-cancel = Cancel
 nano-task-ui-print = Print
 nano-task-ui-delete = Delete
 nano-task-ui-save = Save
 nano-task-ui-new-task = New Task
-nano-task-ui-description-label = Description:
+nano-task-ui-description-label = Descrição:
 nano-task-ui-description-placeholder = Get something important
 nano-task-ui-requester-label = Requester:
 nano-task-ui-requester-placeholder = John Nanotrasen
 nano-task-ui-item-title = Edit Task
-nano-task-printed-description = [bold]Description[/bold]: {$description}
+nano-task-printed-description = [bold]Descrição[/bold]: {$description}
 nano-task-printed-requester = [bold]Requester[/bold]: {$requester}
 nano-task-printed-high-priority = [bold]Priority[/bold]: [color=red]High[/color]
-nano-task-printed-medium-priority = [bold]Priority[/bold]: Medium
+nano-task-printed-medium-priority = [bold]Prioridade[/bold]: Média
 nano-task-printed-low-priority = [bold]Priority[/bold]: Low
 
 # Wanted list cartridge
 wanted-list-program-name = Wanted list
 wanted-list-label-no-records = It's all right, cowboy
-wanted-list-search-placeholder = Search by name and status
+wanted-list-search-placeholder = Buscar por nome e situação
 
 wanted-list-age-label = [color=darkgray]Age:[/color] [color=white]{$age}[/color]
 wanted-list-job-label = [color=darkgray]Job:[/color] [color=white]{$job}[/color]
-wanted-list-species-label = [color=darkgray]Species:[/color] [color=white]{$species}[/color]
-wanted-list-gender-label = [color=darkgray]Gender:[/color] [color=white]{$gender}[/color]
+wanted-list-species-label = [color=darkgray]Espécie:[/color] [color=white]{$species}[/color]
+wanted-list-gender-label = [color=darkgray]Gênero:[/color] [color=white]{$gender}[/color]
 
 wanted-list-reason-label = [color=darkgray]Reason:[/color] [color=white]{$reason}[/color]
 wanted-list-unknown-reason-label = unknown reason
 
-wanted-list-initiator-label = [color=darkgray]Initiator:[/color] [color=white]{$initiator}[/color]
-wanted-list-unknown-initiator-label = unknown initiator
+wanted-list-initiator-label = [color=darkgray]Responsável:[/color] [color=white]{$initiator}[/color]
+wanted-list-unknown-initiator-label = responsável desconhecido
 
 # Trauma - added demote-perma
 wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
@@ -119,6 +119,6 @@ wanted-list-status-label = [color=darkgray]status:[/color] {$status ->
         *[other] none
     }
 
-wanted-list-history-table-time-col = Time
+wanted-list-history-table-time-col = Horário
 wanted-list-history-table-reason-col = Crime
-wanted-list-history-table-initiator-col = Initiator
+wanted-list-history-table-initiator-col = Responsável

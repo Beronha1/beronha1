@@ -1,26 +1,26 @@
 ghost-role-information-facehugger-name = facehugger
-ghost-role-information-facehugger-description = A writhing nightmare. The facehugger clings to its victim's face, forcibly inserting a xenomorph fetus.
+ghost-role-information-facehugger-description = Um pesadelo contorcido. O facehugger se agarra ao rosto da vítima e implanta à força um feto xenomorfo.
 
 ghost-role-information-wailing-horse-name = Wailing Horse
-ghost-role-information-wailing-horse-desc = It hurts...Why does it hurt so much?
+ghost-role-information-wailing-horse-desc = Dói... Por que dói tanto?
 
 ghost-role-information-ratma-name = Ratma
 ghost-role-information-ratma-desc = Hunt and kill.
 
 ghost-role-information-bioweapon-name = Bioweapon
-ghost-role-information-bioweapon-desc = You are a bioweapon bought by the security department. Follow your orders.
-ghost-role-information-bioweapon-rules = Follow the most recent SPOKEN order you understand. Even if it conflicts with previous orders.
+ghost-role-information-bioweapon-desc = Você é uma bioarma comprada pelo departamento de Segurança. Cumpra suas ordens.
+ghost-role-information-bioweapon-rules = Siga a ordem FALADA mais recente que você tenha entendido, mesmo que ela contradiga ordens anteriores.
 
-ghost-role-information-breadling-name = Breadling
-ghost-role-information-breadling-desc = Brought to life by a loving baker, enjoy the fickle time you have remaining. You have no knowledge of your coming death unless told.
+ghost-role-information-breadling-name = Pão Vivo
+ghost-role-information-breadling-desc = Trazido à vida por um padeiro carinhoso, aproveite o pouco tempo que lhe resta. Você não sabe da morte que se aproxima, a menos que alguém conte.
 
 ghost-role-information-coconutcrab-name = Coconut Crab
 
 ghost-role-information-goidabot-name = goida bot
 ghost-role-information-goidabot-desc = ГОЙДА
 
-ghost-role-information-cursed-name = cursed artifact
-ghost-role-information-cursed-desc = You are an artifact cursed with sentience, drive your wielder insane.
+ghost-role-information-cursed-name = Artefato Amaldiçoado
+ghost-role-information-cursed-desc = Você é um artefato amaldiçoado com senciência. Leve seu portador à loucura.
 
 ghost-role-information-animal-rules = You are an [color={role-type-animal-color}][bold]{role-type-animal-name}[/bold][/color]. Act like the animal you are does.
                                          This means to not go around killing people / causing problems for no reason.

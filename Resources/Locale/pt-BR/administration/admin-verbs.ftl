@@ -11,7 +11,7 @@ admin-verbs-freeze = Congelar
 admin-verbs-freeze-and-mute = Congelar e Silenciar
 admin-verbs-unfreeze = Descongelar
 admin-verbs-camera = Abrir Camera
-admin-verbs-camera-description = Abre uma janela de camera que segue Uma entidade selecionada.
+admin-verbs-camera-description = Abre uma janela de câmera que segue a entidade selecionada.
 admin-verbs-erase = Apagar
 admin-verbs-erase-description = remover o jogador da rodada e do manifest da tripulacao e apaga as mensagens do chat.
     Os itens dele sao descartados no chao.

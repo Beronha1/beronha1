@@ -13,7 +13,7 @@ reagent-popup-tranquility = Você se sente estranhamente calmo...
 
 reagent-name-binglejuice = suco bingle
 reagent-desc-binglejuice= Bong Bong.
-reagent-popup-binglejuice = The thought must have crossed your mind at some point. The thought that you delved too deep. The thought that this would be a one-way trip. So instead of fighting the inevitable, why not embrace it? Just lay down and rest. There is beauty in this darkness that can be harnessed and used to usher something new.
+reagent-popup-binglejuice = Em algum momento, esse pensamento deve ter passado pela sua cabeça: você foi longe demais…
 
 reagent-name-carpolin = carpolina
 reagent-desc-carpolin = Faz o metabolizador se transformar em uma forma de vida superior.

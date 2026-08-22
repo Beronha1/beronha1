@@ -8,12 +8,12 @@
 
 ## Localização do comando upgradeaction
 upgradeaction-command-help = Uso: upgradeaction <entityUid> [nível]
-upgradeaction-command-need-one-argument = upgradeaction needs at least one argument, the action entity uid. The second optional argument is a specified level.
+upgradeaction-command-need-one-argument = upgradeaction exige pelo menos um argumento: o UID da entidade da ação. O segundo argumento opcional define um nível.
 upgradeaction-command-max-two-arguments = upgradeaction aceita no máximo dois argumentos: o UID da entidade da ação e o nível (opcional) a definir.
-upgradeaction-command-second-argument-not-number = upgradeaction's second argument can only be a number.
+upgradeaction-command-second-argument-not-number = O segundo argumento de upgradeaction deve ser um número.
 upgradeaction-command-less-than-required-level = upgradeaction não pode aceitar nível 0 ou menor.
-upgradeaction-command-incorrect-entityuid-format = You must use a valid entityuid format for upgradeaction.
-upgradeaction-command-entity-does-not-exist = This entity does not exist, a valid entity is required for upgradeaction.
+upgradeaction-command-incorrect-entityuid-format = Use um EntityUid válido com upgradeaction.
+upgradeaction-command-entity-does-not-exist = Essa entidade não existe; upgradeaction exige uma entidade válida.
 upgradeaction-command-entity-is-not-action = Esta entidade não tem o componente de upgrade de ação, portanto esta ação não pode ser atualizada.
 upgradeaction-command-cannot-level-up = Esta ação não pode ganhar nível.
-upgradeaction-command-description = Upgrades an action by one level, or to the specified level, if applicable.
+upgradeaction-command-description = Melhora uma ação em um nível ou até o nível especificado, quando aplicável.

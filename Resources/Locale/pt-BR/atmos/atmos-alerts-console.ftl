@@ -5,14 +5,14 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-atmos-alerts-window-title = Atmospheric Alerts Computer
+atmos-alerts-window-title = Computador de Alertas Atmosféricos
 atmos-alerts-window-station-name= [color=white][font size=14]{$stationName}[/font][/color]
 atmos-alerts-window-unknown-location = Localização desconhecida
 
 atmos-alerts-window-tab-no-alerts = Alertas
 atmos-alerts-window-tab-alerts = Alertas ({$value})
 atmos-alerts-window-tab-air-alarms = Alarmes de ar
-atmos-alerts-window-tab-fire-alarms = Fire alarms
+atmos-alerts-window-tab-fire-alarms = Alarmes de incêndio
 
 atmos-alerts-window-alarm-label = {CAPITALIZE($name)} ({$address})
 atmos-alerts-window-temperature-label = Temperatura
@@ -29,7 +29,7 @@ atmos-alerts-window-other-gases-value = {$shorthand} ({$value}%)
 atmos-alerts-window-other-gases-value-nil = Nenhum
 atmos-alerts-window-silence-alerts = Silenciar alertas deste alarme
 
-atmos-alerts-window-label-alert-types = Alert levels:
+atmos-alerts-window-label-alert-types = Níveis de alerta:
 atmos-alerts-window-normal-state = Normal
 atmos-alerts-window-warning-state = Alerta
 atmos-alerts-window-danger-state = Perigo!
@@ -39,7 +39,7 @@ atmos-alerts-window-no-active-alerts = [font size=16][color=white]Sem alertas at
 atmos-alerts-window-no-data-available = Nenhum dado disponível
 atmos-alerts-window-alerts-being-silenced = Silenciando alertas...
 
-atmos-alerts-window-toggle-overlays = Toggle alarm display
+atmos-alerts-window-toggle-overlays = Alternar exibição dos alarmes
 
-atmos-alerts-window-flavor-left = Contact an atmospheric technician for assistance
+atmos-alerts-window-flavor-left = Procure um técnico atmosférico se precisar de ajuda
 atmos-alerts-window-flavor-right = v1.8

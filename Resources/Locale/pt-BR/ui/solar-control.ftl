@@ -5,11 +5,11 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 solar-control-window-title = Console de controle solar
-solar-control-window-output-power = Output Power:
+solar-control-window-output-power = Potência de saída:
 solar-control-window-watts= C
-solar-control-window-sun-angle = Sun Angle:
+solar-control-window-sun-angle = Ângulo do sol:
 solar-control-window-degrees = Graus
-solar-control-window-panel-angle = Panel Angle:
+solar-control-window-panel-angle = Ângulo do painel:
 solar-control-window-panel-angular-velocity = Velocidade angular do painel:
 solar-control-window-degrees-per-minute = Graus por min.
 solar-control-window-press-enter-to-confirm = Pressione Enter para confirmar.

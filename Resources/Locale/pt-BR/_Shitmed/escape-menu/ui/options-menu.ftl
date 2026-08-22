@@ -1,12 +1,12 @@
 ﻿ui-options-header-targeting = Alvo
-ui-options-function-target-head = Target head
+ui-options-function-target-head = Mirar na cabeça
 ui-options-function-target-chest = Mirar Não peito
 ui-options-function-target-groin = Mirar na virilha
-ui-options-function-target-left-arm = Target left arm
-ui-options-function-target-right-arm = Target right arm
+ui-options-function-target-left-arm = Mirar no braço esquerdo
+ui-options-function-target-right-arm = Mirar no braço direito
 ui-options-function-target-left-hand = Mirar na mão esquerda
 ui-options-function-target-right-hand = Mirar na mão direita
 ui-options-function-target-left-leg = Mirar na perna esquerda
 ui-options-function-target-right-leg = Mirar na perna direita
-ui-options-function-target-left-foot = Target left foot
-ui-options-function-target-right-foot = Target right foot
+ui-options-function-target-left-foot = Mirar no pé esquerdo
+ui-options-function-target-right-foot = Mirar no pé direito

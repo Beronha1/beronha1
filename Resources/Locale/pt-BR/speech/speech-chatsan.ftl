@@ -23,7 +23,7 @@ chatsan-word-8 = sim
 chatsan-replacement-8= eu sei
 
 chatsan-word-9 = ikr
-chatsan-replacement-9= eu sei direito
+chatsan-replacement-9 = eu sei, né
 
 chatsan-word-10 = não sei
 chatsan-replacement-10= eu não ligo
@@ -47,7 +47,7 @@ chatsan-word-17 = np
 chatsan-replacement-17= sem problemas
 
 chatsan-word-18 = ai
-chatsan-replacement-18= estou a caminho
+chatsan-replacement-18 = tô a caminho
 
 chatsan-word-19 = nvm
 chatsan-replacement-19= deixa para lá
@@ -64,7 +64,7 @@ chatsan-word-24 = franco
 chatsan-replacement-24= sério
 
 chatsan-word-25 = brb
-chatsan-replacement-25= volto logo
+chatsan-replacement-25 = já volto
 
 chatsan-word-26 = por falar nisso
 chatsan-replacement-26= por falar nisso
@@ -170,7 +170,7 @@ chatsan-word-60 = jfc
 chatsan-replacement-60= jesus porra cristo
 
 chatsan-word-61 = ai
-chatsan-replacement-61= estou a caminho
+chatsan-replacement-61 = tô a caminho
 
 chatsan-word-62 = ai
 chatsan-replacement-62= no caminho

@@ -74,7 +74,7 @@ blob-alert-recall-shuttle = Uma nave de emergência não pode ser enviada enquan
 blob-alert-detect = Surto de biohazard de nível 5 confirmado Uma bordo da estação. Todo o pessoal deve conter o surto.
 blob-alert-critical = Nível de biohazard crítico, códigos nucleares foram enviados para Uma estação. O Comando Central ordena que qualquer pessoal restante ative o mecanismo de autodestruição.
 blob-alert-critical-NoNukeCode = Nível de biohazard crítico. O Comando Central ordena que qualquer pessoal restante procure abrigo e espere resgate.
-blob-alert-shuttle-arrived = Biohazard detectado Uma bordo. Todos os tripulantes devem evacuar imediatamente.
+blob-alert-shuttle-arrived = Risco biológico detectado a bordo. Todos os tripulantes devem evacuar imediatamente.
 
 # Actions
 blob-teleport-to-node-action-name = Ir para o Nó (0)

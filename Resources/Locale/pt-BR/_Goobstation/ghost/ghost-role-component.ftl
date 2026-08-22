@@ -77,7 +77,7 @@ ghost-role-cargo-bingle-desc = Sirva ao Representante da NanoTrasen e seus inter
 # shuttle roles
 
 ghost-role-information-alien-tourist-name = Turista Alienígena
-ghost-role-information-alien-tourist-description = Look around the station. Glorp at people. Get shot by a trigger-happy officer.
+ghost-role-information-alien-tourist-description = Passeie pela estação. Glorpe para as pessoas. Leve um tiro de um oficial com o dedo nervoso.
 
 # Conquest?
 
@@ -132,7 +132,7 @@ chosen-one-role-greeting = Você é o [color=#0087FF]Escolhido[/color], você fo
 objective-condition-dark-lord-kill-title = Certifique-se de que {$targetName} morra.
 
 ghost-role-information-mime-Assassin-name = Assassino Mime
-ghost-role-information-mime-Assassin-description = An assassin that uses mime clothes and favors silent kills, their name? well they probably can't tell you, but thats what makes then so good!
+ghost-role-information-mime-Assassin-description = Um assassino vestido de mímico que prefere mortes silenciosas. O nome dele? Bem, provavelmente não pode dizer — e é isso que o torna tão bom!
 mime-Assassin-role-greeting = Você é um [color=#880808]Assassino Mime[/color], você foi enviado à esta estação pela syndicate para matar alguns membros do comando que eles precisam tirar da jogada, Uma syndicate forneceu algumas ferramentas para você fazer o trabalho, silenciosamente... confira sua ficha de personagem para seus objetivos, e não seja pego.
 
 ghost-role-information-dark-priest-name = Sacerdote das Trevas

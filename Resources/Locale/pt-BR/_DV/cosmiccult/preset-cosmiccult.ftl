@@ -3,26 +3,26 @@
 cosmiccult-announcement-sender = ???
 
 cosmiccult-title = Culto Cósmico
-cosmiccult-description = Cultistas espreitam entre Uma tripulacao.
+cosmiccult-description = Cultistas espreitam entre a tripulação.
 
 roles-antag-cosmiccult-name = Cultista Cósmico
-roles-antag-cosmiccult-description = Traga o fim de todas as coisas atraves de subterfugio e sabotagem, lavando o cerebro daqueles que se opuserem Uma voce.
+roles-antag-cosmiccult-description = Traga o fim de todas as coisas por meio de subterfúgio e sabotagem, convertendo aqueles que se opuserem a você.
 
 cosmiccult-gamemode-title = O Culto Cósmico
-cosmiccult-gamemode-description = Scanners detectam um aumento anomalo de pressao Noöspheric. Nao ha dados adicionais.
+cosmiccult-gamemode-description = Os sensores detectam um aumento anômalo da pressão noosférica. Não há dados adicionais.
 
-cosmiccult-finale-autocall-briefing = O Monumento ativa {$minutesandseconds}! Reunam-se, e preparem-se para o fim.
+cosmiccult-finale-autocall-briefing = O Monumento será ativado em {$minutesandseconds}! Reúnam-se e preparem-se para o fim.
 cosmiccult-finale-ready = Uma luz aterrorizante irrompe de O Monumento!
-cosmiccult-finale-nobodyes = Traga humanoides em condicao critica para apressar o chamado.
+cosmiccult-finale-nobodyes = Traga humanoides em estado crítico para acelerar o Chamado.
 cosmiccult-finale-speedup = O chamado esta se acelerando! Uma energia sobe pelo ambiente...
 
-cosmiccult-finale-degen = Voce se sente se desmanchando!
-cosmiccult-finale-location = Scanners detectam uma enorme erupcao Noöspheric em {$location}! Seguroa imediatamente Uma explosao nuclear de fission da estacao!
-cosmiccult-finale-cancel-begin = Uma forca de vontade da sua mente comeca Uma romper o ritual...
+cosmiccult-finale-degen = Você sente seu corpo se desfazendo!
+cosmiccult-finale-location = Os sensores detectam uma enorme erupção noosférica em {$location}! Proteja imediatamente o dispositivo nuclear da estação!
+cosmiccult-finale-cancel-begin = A força de vontade da sua mente começa a romper o ritual...
 cosmiccult-finale-beckon-begin = Os sussurros Não fundo da sua mente se intensificam...
 
-cosmiccult-monument-approval-lowlevel = Voce tenta se concentrar, mas ainda nao e forte o suficiente.
-cosmiccult-monument-approval-added = Voce concentra sua forca de vontade para invocar O Monumento...
+cosmiccult-monument-approval-lowlevel = Você tenta se concentrar, mas ainda não é forte o bastante.
+cosmiccult-monument-approval-added = Você concentra sua força de vontade para invocar o Monumento...
 cosmiccult-monument-approval-removed = Você não está mais se concentrando neste ponto.
 cosmiccult-monument-approval-count = [color=#4cabb3]{$count} cultistas estão concentrados neste ponto.[/color]
 cosmiccult-monument-approval-needed = [color=#4cabb3]{$count} cultistas Uma mais devem se concentrar para invocar O Monumento.[/color]
@@ -39,11 +39,11 @@ cosmiccult-roundend-entropy-count = O culto absorveu {$count} Entropia.
 cosmiccult-roundend-list-start = Os cultistas foram:
 cosmiccult-roundend-list-name-user = - [color=#4cabb3]{$name}[/color] ([color=gray]{$user}[/color])
 
-cosmiccult-roundend-cultwin = [color=#4cabb3]Vitoria majoritaria do Culto Cosmico![/color]
-cosmiccult-roundend-cultminor = [color=#4cabb3]Vitoria menor do Culto Cosmico![/color]
+cosmiccult-roundend-cultwin = [color=#4cabb3]Vitória total do Culto Cósmico![/color]
+cosmiccult-roundend-cultminor = [color=#4cabb3]Vitória parcial do Culto Cósmico![/color]
 cosmiccult-roundend-neutral = [color=yellow]Final neutro![/color]
-cosmiccult-roundend-crewminor = [color=green]Vitoria menor da tripulacao![/color]
-cosmiccult-roundend-crewwin = [color=green]Vitoria majoritaria da tripulacao![/color]
+cosmiccult-roundend-crewminor = [color=green]Vitória parcial da tripulação![/color]
+cosmiccult-roundend-crewwin = [color=green]Vitória total da tripulação![/color]
 
 cosmiccult-summary-cultwin = Os cultistas cosmicos trouxeram o fim!
 cosmiccult-summary-crewwin = Uma tripulação sobreviveu aos esforços do Culto Cósmico!
@@ -93,11 +93,11 @@ cosmiccult-role-levelup-awaiting-input =
 ## MALIGN RIFTS
 
 cosmiccult-rift-inuse = Você não pode fazer isso agora.
-cosmiccult-rift-invaliduser = Voce nao possui ferramentas adequadas para lidar com isto.
+cosmiccult-rift-invaliduser = Você não possui as ferramentas adequadas para lidar com isto.
 cosmiccult-rift-chaplainoops = Empunhe sua escritura sagrada.
 cosmiccult-rift-alreadyempowered = Você já está fortalecido; o poder da fenda seria desperdiçado.
-cosmiccult-rift-beginabsorb = Uma fenda comeca Uma se mesclar com voce...
-cosmiccult-rift-beginpurge = Sua consagracao comeca Uma purgar Uma fenda maligna...
+cosmiccult-rift-beginabsorb = A fenda começa a se fundir com você...
+cosmiccult-rift-beginpurge = Sua consagração começa a purgar a fenda maligna...
 
 cosmiccult-rift-absorb = {$NAME} absorve Uma fenda, e luz maligna empodera seu corpo!
 cosmiccult-rift-purge = {$NAME} purga Uma fenda maligna da realidade!
@@ -105,8 +105,8 @@ cosmiccult-rift-purge = {$NAME} purga Uma fenda maligna da realidade!
 
 ## CHANTRY
 
-cosmiccult-chantry-location = Um aumento perigoso de pressao Noöspheric foi detectado {$location}! Intercepte e intervem imediatamente.
-cosmiccult-chantry-destruction = O pico repentino de pressao Noöspheric foi neutralizado. Vigilancia continua e aconselhada.
+cosmiccult-chantry-location = Um aumento perigoso da pressão noosférica foi detectado em {$location}! Intercepte e intervenha imediatamente.
+cosmiccult-chantry-destruction = O pico repentino de pressão noosférica foi neutralizado. Recomenda-se vigilância contínua.
 cosmiccult-chantry-powerup = Uma chantry vazia se acende em vida!
 
 ## UI / BASE POPUP
@@ -139,11 +139,11 @@ cosmiccult-ui-popup-confirm = Confirmar
 
 objective-issuer-cosmiccult = [bold][color=#cae8e8]O Desconhecido[/color][/bold]
 
-objective-cosmiccult-charactermenu = Voce deve trazer o fim de todas as coisas. Concluir as tarefas para avancar o progresso do culto.
-objective-cosmiccult-steward-charactermenu = Voce deve conduzir o culto para trazer o fim de todas as coisas. Supervise e garanta o progresso do culto.
+objective-cosmiccult-charactermenu = Você deve trazer o fim de todas as coisas. Conclua as tarefas para avançar o progresso do culto.
+objective-cosmiccult-steward-charactermenu = Você deve conduzir o culto para trazer o fim de todas as coisas. Supervisione e garanta o progresso do culto.
 
 objective-condition-entropy-title = SISU CARREGAR ENTROPIA
-objective-condition-entropy-desc = Coletivamente, sifonem pelo menos {$count} entropia da tripulacao.
+objective-condition-entropy-desc = Em conjunto, suguem pelo menos {$count} de entropia da tripulação.
 objective-condition-culttier-title = ALCANÇAR PODER
 objective-condition-culttier-desc = Reuna entropia suficiente para chegar ao fim.
 objective-condition-victory-title = TRAZER O FIM
@@ -155,8 +155,8 @@ cosmiccult-announce-tier1-warning = Scanners detectam um aumento notavel de pres
 
 cosmiccult-announce-tier2-warning = Scanners detectam aumento significativo de pressao Noöspheric. Uma integridade do espaco real esta em risco. Evite rasgos Não tecido da realidade.
 
-cosmiccult-announce-tier3-fluff = Arcos de energia Noöspheric estalam por toda Uma estrutura de choro da estacao. O fim se aproxima.
-cosmiccult-announce-tier3-warning = Aumento critico de pressao Noöspheric detectado. Pessoas infectadas devem ser neutralizadas na primeira vista.
+cosmiccult-announce-tier3-fluff = Arcos de energia noosférica estalam por toda a estrutura que geme ao redor da estação. O fim se aproxima.
+cosmiccult-announce-tier3-warning = Aumento crítico da pressão noosférica detectado. Pessoas infectadas devem ser neutralizadas assim que avistadas.
 
 cosmiccult-announce-finale-warning = Toda tripulacao da estacao. Uma anomalia Noöspheric esta em supercritico, instrumentos falhando; horizonte de transicao Noöspheric-para-real IMMINENTE. Se voce ainda nao estiver Não contra-protocolo, saia imediatamente e intervem. Repetindo: Intervenha imediatamente ou morra.
 
@@ -167,7 +167,7 @@ cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
 cosmiccult-gear-pickup-rejection = {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!
 cosmiccult-astral-minion = {$name}, maligno
-cosmiccult-gear-pickup = Voce pode sentir-se se desfazendo enquanto segura Uma {$ITEM}!
+cosmiccult-gear-pickup = Você sente seu corpo se desfazendo enquanto segura o {$ITEM}!
 
 cosmiccult-silicon-subverted-briefing =
     Luz maligna percorre sua circuiteria.

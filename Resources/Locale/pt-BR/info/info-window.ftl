@@ -10,19 +10,19 @@
 ### Janela de Informações
 
 ## Coisas gerais
-ui-info-title = Information
+ui-info-title = Informações
 ui-info-tab-rules = Regras do servidor
 ui-info-tab-tutorial = Tutorial
 
 ## Aba Tutorial
 ui-info-text-controls = Você pode revisar e redefinir os controles do SS14 em
 
-ui-info-header-intro = Introduction
+ui-info-header-intro = Introdução
 ui-info-header-controls = Controles
 ui-info-header-gameplay= Jogabilidade
 ui-info-header-sandbox = Gerador de entidade
-ui-info-subheader-entityoptions = Entity spawn panel options:
-ui-info-subheader-gridoptions = Grid aligned options:
+ui-info-subheader-entityoptions = Opções do painel de spawn de entidade:
+ui-info-subheader-gridoptions = Opções de alinhamento à grade:
 ui-info-header-feedback= Opinião
 
-ui-info-button-controls = Options Menu
+ui-info-button-controls = Menu de opções

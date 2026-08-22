@@ -16,6 +16,6 @@ entity-effect-popup-blood-stops-swelling = Seu sangue para de inchar.
 
 entity-effect-popup-vampire-light-1 = A luz solar te queima!
 entity-effect-popup-vampire-light-2 = Você deveria se afastar do espaço...
-entity-effect-popup-vampire-light-3 = You look pale!
+entity-effect-popup-vampire-light-3 = Você parece pálido!
 
 entity-effect-popup-strawberry-ice-addiction = Você sente a necessidade de um sabor rosado gaseificado

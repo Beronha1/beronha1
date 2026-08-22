@@ -1,4 +1,4 @@
-cosmicability-generic-fail = Your influence fails to take hold..
+cosmicability-generic-fail = Sua influência não consegue se firmar...
 
 cosmicability-glare-confirm = Pressione novamente para ativar o Esvaziamento de Olhar.
 cosmicability-hibernate-confirm = Press again to activate Slumber Shell.
@@ -8,18 +8,18 @@ cosmicability-siphon-success = Você sorve Silenciosamente Entropia de {CAPITALI
 cosmicability-siphon-fail = Você não consegue sugar Entropia de {CAPITALIZE(THE($target))}.
 cosmicability-siphon-full = Você não pode segurar mais Entropia!
 
-cosmicability-blank-begin = {CAPITALIZE(THE($target))} attempts to grab hold of you!
-cosmicability-blank-success = You shunt {CAPITALIZE(THE($target))}'s mind unto the cosmic dark.
+cosmicability-blank-begin = {CAPITALIZE(THE($target))} tenta agarrar você!
+cosmicability-blank-success = Você projeta a mente de {CAPITALIZE(THE($target))} na escuridão cósmica.
 cosmicability-blank-transfer = Um poder cósmico transfere sua mente para fora do seu corpo!
-cosmicability-blank-return = Your mind is drawn back to your body.
+cosmicability-blank-return = Sua mente é puxada de volta ao corpo.
 
-cosmicability-lapse-success = You lapse {CAPITALIZE(THE($target))}'s corporeal form.
+cosmicability-lapse-success = Você coloca a forma corpórea de {CAPITALIZE(THE($target))} em lapso.
 
-cosmicability-monument-move-confirm = THIS ACTION CAN ONLY BE USED ONCE EVERY 10 MINUTES! Use it again to confirm.
-cosmicability-monument-spawn-confirm = THIS ACTION CAN ONLY BE USED ONCE! Use it again to confirm.
-cosmicability-monument-spawn-error-grid = Invalid location! The Monument must be beckoned upon a stable surface.
-cosmicability-monument-spawn-error-station = Invalid location! The Monument must be beckoned upon the station.
-cosmicability-monument-spawn-error-intersection = Too crowded! The Monument requires an empty 3x1 area to be beckoned.
+cosmicability-monument-move-confirm = ESTA AÇÃO SÓ PODE SER USADA UMA VEZ A CADA 10 MINUTOS! Use-a novamente para confirmar.
+cosmicability-monument-spawn-confirm = ESTA AÇÃO SÓ PODE SER USADA UMA VEZ! Use-a novamente para confirmar.
+cosmicability-monument-spawn-error-grid = Local inválido! O Monumento deve ser invocado sobre uma superfície estável.
+cosmicability-monument-spawn-error-station = Local inválido! O Monumento deve ser invocado na estação.
+cosmicability-monument-spawn-error-intersection = Espaço insuficiente! O Monumento exige uma área vazia de 3x1 para ser invocado.
 cosmicability-monument-spawn-error-space = Muito perto do espaço! O Monumento precisa ficar a pelo menos {$DISTANCE}m de distância.
 
 cosmicability-chantry-active = Você não pode iniciar um ritual de chantry enquanto outro já está ativo!
@@ -30,9 +30,9 @@ cosmicability-ingress-not-empowered-door = Você precisa estar empoderado para a
 cosmicability-transmute-not-empowered = Você precisa estar empoderado para transmutar isso.
 cosmicability-transmute-not-transmutable = Este item não pode ser transmutado.
 cosmicability-transmute-type-mismatch = Você precisa aumentar sua habilidade de transmutação para transmutar este item.
-cosmicability-transmute-no-item = You must hold an item to transform it.
+cosmicability-transmute-no-item = Você precisa segurar um item para transformá-lo.
 
-cosmicability-convert-mindshield = Mental shielding prevents the influence from taking hold!
-cosmicability-convert-chaplain = A spark of divine light prevents the influence from taking hold!
-cosmicability-convert-mindless = The target has no mind, the power would be wasted.
-cosmicability-convert-rotten = The influence has no effect on rotting corpses!
+cosmicability-convert-mindshield = A proteção mental impede que a influência se firme!
+cosmicability-convert-chaplain = Uma centelha de luz divina impede que a influência se firme!
+cosmicability-convert-mindless = O alvo não possui mente; o poder seria desperdiçado.
+cosmicability-convert-rotten = A influência não surte efeito em cadáveres apodrecidos!

@@ -76,7 +76,7 @@ ghost-role-information-monkey-description = Uque uque!
 ghost-role-information-kobold-name = Kobold
 ghost-role-information-kobold-description = Seja o pequeno gremlin que você é, grite com as pessoas e peça carne!
 ghost-role-information-rat-king-name = Rei Rato
-ghost-role-information-rat-king-description = You are the Rat King, your interests are food, food, and more food. Fight against the station for food. Did I say food interests you?
+ghost-role-information-rat-king-description = Você é o Rei Rato; seus interesses são comida, comida e mais comida. Lute contra a estação por comida. Já disse que comida interessa a você?
 
 ghost-role-information-rat-servant-name = Servo Rato
 ghost-role-information-rat-servant-description = Você é um Servo Rato. Deve obedecer às ordens de seu rei.
@@ -149,7 +149,7 @@ ghost-role-information-behonker-description = Você é um antagonista; leve mort
 ghost-role-information-hellspawn-name = Cria do inferno
 ghost-role-information-hellspawn-description = Leve morte a quem não segue o grande deus Nar'Sie.
 ghost-role-information-Death-Squad-name = Operativo do Esquadrão da Morte
-ghost-role-information-Death-Squad-description = We need the Nanotrasen Representative alive to tell us what happened. The rest? Well... they're witnesses.
+ghost-role-information-Death-Squad-description = Precisamos do representante da NanoTrasen vivo para contar o que ocorreu. O resto? Bem... são testemunhas.
 ghost-role-information-Death-Squad-rules = Seus objetivos são simples: [color=red][bold]elimine[/bold][/color] todos que não pertençam ao Comando Central. Ordens executivas podem alterar isto.
 ghost-role-information-SyndiCat-name = SyndiCat
 ghost-role-information-SyndiCat-description = Você é o animal de estimação treinado e fiel de operativos nucleares, com uma microbomba. Sirva seu mestre até a morte!

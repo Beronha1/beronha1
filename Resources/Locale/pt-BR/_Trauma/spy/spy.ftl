@@ -6,10 +6,10 @@ spy-uplink-examine-message =
 spy-uplink-open-verb = Ver Recompensas
 spy-uplink-steal-verb = Escanear alvo
 spy-uplink-refresh-time = Tempo até atualizar: {$time}
-spy-uplink-title = Spy Uplink
+spy-uplink-title = Uplink de Espião
 spy-uplink-flavor = Recompensas são dadas por ordem de chegada.
 spy-uplink-claimed = Reivindicado!
-spy-uplink-cant-claim = Your benefactors see you unfit to complete this.
+spy-uplink-cant-claim = Seus contratantes julgam que você não serve para concluir isto.
 spy-uplink-reward = Recompensa: {$reward}
 spy-uplink-description-label= [font size=10][color=darkcyan]{$desc}[/color][/font]
 spy-uplink-collect-reward = Coletar Recompensa
@@ -17,14 +17,14 @@ spy-uplink-bounties = Recompensas
 spy-uplink-rewards = Recompensas
 spy-uplink-select-reward = Selecionar Recompensa
 spy-uplink-no-rewards = Nenhuma recompensa disponível!
-spy-uplink-steal-fail = Your uplink blinks red: {$target} is invalid for active non-claimed bounties or cannot be extracted from here.
-spy-uplink-new = 🕵 Make new spy uplink
+spy-uplink-steal-fail = Seu uplink pisca em vermelho: {$target} não corresponde a uma recompensa ativa ainda não reivindicada ou não pode ser extraído daqui.
+spy-uplink-new = 🕵 Criar novo uplink de espião
 
-spy-uplink-ammo-name = Ammunition
-spy-uplink-ammo-desc = Some ammo of your choice
+spy-uplink-ammo-name = Munição
+spy-uplink-ammo-desc = Um pouco da munição que você escolher
 
-spies-title = Spies
-spies-description = A red spy has entered the base.
+spies-title = Espiões
+spies-description = Um espião vermelho entrou na base.
 
 spy-role-claimed-bounties =
     {CAPITALIZE($name)} reivindicou um total de [color=red]{$amount}[/color] recompensas.
@@ -37,7 +37,7 @@ spy-role-greeting =
     Should you be caught or killed, your employer will disavow any knowledge of your actions.
     Good luck agent.
 
-spy-role-briefing-short = You are a Spy, tasked with stealing various station equipment.
+spy-role-briefing-short = Você é um Espião encarregado de roubar diversos equipamentos da estação.
 
 spy-role-uplink-pda-short =
     Your bounty uplink is located in your PDA.

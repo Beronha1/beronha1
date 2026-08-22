@@ -9,7 +9,7 @@
 
 guidebook-window-title = Guia
 guidebook-placeholder-text = Selecione uma entrada.
-guidebook-placeholder-text-2 = If you're new, head over to "New? Start here!"
+guidebook-placeholder-text-2 = Se você é novo, consulte "Novo por aqui? Comece aqui!"
 guidebook-filter-placeholder-text = Filtrar itens
 guidebook-toc-header = Índice
 

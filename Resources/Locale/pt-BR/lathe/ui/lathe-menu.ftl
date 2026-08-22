@@ -28,13 +28,13 @@ lathe-menu-no-materials-message = No materials loaded.
 lathe-menu-silo-linked-message = Silo conectado
 lathe-menu-fabricating-message = Fabricando...
 lathe-menu-materials-title = Materiais
-lathe-menu-queue-title = Build Queue
+lathe-menu-queue-title = Fila de produção
 
 # Mono
 lathe-menu-delete-fabricating-tooltip = Cancelar Uma impressão do item atual.
 lathe-menu-delete-item-tooltip = Cancelar Uma impressão deste lote.
 lathe-menu-move-up-tooltip = Mover este lote para Uma frente na fila.
-lathe-menu-move-down-tooltip = Move this batch back in the queue.
+lathe-menu-move-down-tooltip = Mover este lote para trás na fila.
 lathe-menu-item-single = {$index}. {$name}
 lathe-menu-item-batch = {$index}. {$name} ({$printed}/{$total})
 lathe-menu-loop = Repetir

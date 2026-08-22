@@ -6,5 +6,5 @@
 
 ### Messages that pop up when metabolizing Frost Oil.
 
-frost-oil-effect-light-cold =V
+frost-oil-effect-light-cold = Você sente um leve arrepio gelado na garganta...
 

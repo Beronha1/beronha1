@@ -1,2 +1,2 @@
-﻿flavor-complex-mango =c
+flavor-complex-mango = como manga
 

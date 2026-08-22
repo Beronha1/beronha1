@@ -6,7 +6,7 @@ ghost-gui-toggle-ghost-visibility-popup-off = Visibilidade de fantasmas desativa
 ghost-gui-toggle-lighting-manager-popup-normal = Luz normal.
 ghost-gui-toggle-lighting-manager-popup-half-bright = Meia-luz.
 ghost-gui-toggle-lighting-manager-popup-fullbright = Totalmente claro.
-ghost-gui-toggle-fov-popup = Campo de visao alternado.
+ghost-gui-toggle-fov-popup = Campo de visão alternado.
 
 ghost-gui-toggle-hearing-popup-on = Voce pode ouvir todas as mensagens.
 ghost-gui-toggle-hearing-popup-off = Agora voce so ouve radio e mensagens proximas.
@@ -16,13 +16,13 @@ ghost-target-window-current-button = Deslocar: {$name}
 ghost-target-window-warp-to-title = [bold]Warp rapido[/bold]
 ghost-target-window-warp-to-most-followed = Mais seguidos
 ghost-target-window-warp-to-random-followed = Seguidos aleatorios
-ghost-target-window-warp-to-random = Aleatorio
+ghost-target-window-warp-to-random = Aleatório
 ghost-target-window-warp-to-most-followed-tooltip = Warp para o jogador mais seguido
 ghost-target-window-warp-to-random-followed-tooltip = Warp para um jogador seguido aleatoriamente
 ghost-target-window-warp-to-random-tooltip = Warp para um jogador aleatorio
 
 ghost-roles-window-title = Funcoes de fantasma
-ghost-roles-window-available-button = Disponiveis ({$rolesCount})
+ghost-roles-window-available-button = Disponíveis ({$rolesCount})
 ghost-roles-window-join-raffle-button = Entrar na raffle
 ghost-roles-window-join-raffle-in-progress-button =
     Entrar na raffle ({$time} restante, { $players ->

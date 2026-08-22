@@ -3,4 +3,4 @@
 #
 # SPDX-License-Identifier: MIT
 
-skeleton-suffix =A
+skeleton-suffix = ACK ACK!

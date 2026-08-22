@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-spell-requirements-failed =F
+spell-requirements-failed = Faltam requisitos para lançar este feitiço!
 

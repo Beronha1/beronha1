@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-drag-drop-system-out-of-range-text =V
+drag-drop-system-out-of-range-text = Você não alcança esse lugar!
 

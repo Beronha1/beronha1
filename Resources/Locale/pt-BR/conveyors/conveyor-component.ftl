@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-conveyor-component-failed-link =A
+conveyor-component-failed-link = A porta dá um choque em você quando tenta conectá-la!
 

@@ -6,13 +6,13 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 player-panel-title = informacoes para {$player}
-player-panel-username = Usuario: {$player}
+player-panel-username = Usuário: {$player}
 player-panel-whitelisted= Lista de permissões:
 player-panel-bans = Total de Banimentos: {$totalBans}
 player-panel-rolebans = Total de Banimentos de cargo: {$totalRoleBans}
 player-panel-notes = Total de Notas: {$totalNotes}
 player-panel-playtime = Tempo de jogo total: {$days}d:{$hours}h:{$minutes}m
-player-panel-shared-connections = Conexoes compartilhadas: {$sharedConnections}
+player-panel-shared-connections = Conexões compartilhadas: {$sharedConnections}
 player-panel-trust-score = Score de confianca: {TOSTRING($trustScore, "P0")}
 player-panel-account-creation = Conta criada: {TOSTRING($date, "yyyy-MM-dd")}
 

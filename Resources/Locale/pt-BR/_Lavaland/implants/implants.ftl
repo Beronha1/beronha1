@@ -1,2 +1,2 @@
-﻿shop-listing-deathrattle-implant-lavaland =i
+shop-listing-deathrattle-implant-lavaland = implantador de estertor da lavaland
 

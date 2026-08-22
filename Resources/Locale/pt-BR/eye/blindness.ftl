@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-blindness-fail-attempt =V
+blindness-fail-attempt = Você não pode fazer isso estando cego!
 

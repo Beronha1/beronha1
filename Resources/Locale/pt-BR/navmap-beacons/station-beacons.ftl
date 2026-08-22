@@ -44,7 +44,7 @@ station-beacon-anomaly-gen = Anomalias
 
 station-beacon-supply = Suprimentos
 station-beacon-cargo = Carga
-station-beacon-cargo-bay = Baia de carga
+station-beacon-cargo-bay = Baía de carga
 station-beacon-qm = QM
 station-beacon-salvage = Salvamento
 

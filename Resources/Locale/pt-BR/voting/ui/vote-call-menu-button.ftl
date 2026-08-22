@@ -6,5 +6,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
 # Button text in lobby/escape menu
-ui-vote-menu-button =C
+ui-vote-menu-button = Convocar votação
 

@@ -24,7 +24,7 @@ command-description-xenoartifact-addedge =
 
 command-spawnartifactwithnode-spawn-artifact-item-hint =usar artefato portátil
 command-spawnartifactwithnode-spawn-artifact-structure-hint =use artefato estacionário semelhante a uma estrutura
-command-spawnartifactwithnode-spawn-artifact-type-hint =<
+command-spawnartifactwithnode-spawn-artifact-type-hint = <ID do protótipo da entidade do artefato>
 
 command-xenoartifact-common-node-hint =profundidade {$depth} nó {$nodeId} gatilho {$nodeDetail}
 

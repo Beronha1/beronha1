@@ -8,5 +8,5 @@
 # SPDX-License-Identifier: MIT
 
 # Verbs
-power-cell-slot-component-slot-name-default =C
+power-cell-slot-component-slot-name-default = Célula de energia
 

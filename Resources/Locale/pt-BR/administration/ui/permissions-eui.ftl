@@ -10,7 +10,7 @@
 permissions-eui-do-not-have-required-flags-to-edit-admin-tooltip = Voce nao tem as flags necessarias para editar este administração.
 permissions-eui-do-not-have-required-flags-to-edit-rank-tooltip = Voce nao tem as flags necessarias para editar esta patente.
 
-permissions-eui-menu-title = Painel de Permissoes
+permissions-eui-menu-title = Painel de Permissões
 permissions-eui-menu-add-admin-button = Adicionar administração
 permissions-eui-menu-add-admin-rank-button = Adicionar patente de administração
 permissions-eui-menu-save-admin-rank-button = Salvar

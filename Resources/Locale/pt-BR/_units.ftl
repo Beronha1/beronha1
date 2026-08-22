@@ -61,9 +61,9 @@ units-g-pascal-long = Gigapascal
 ## Watts (Power)
 units-u--watt = µW
 units-m--watt = mW
-units-watt= C
+units-watt = W
 units-k-watt = kW
-units-m-watt = mW
+units-m-watt = MW
 units-g-watt = GW
 
 units-u--watt-long = Microwatt
@@ -76,9 +76,9 @@ units-g-watt-long= Gigawatts
 ## Joule (Energy)
 units-u--joule= μJ
 units-m--joule = mJ
-units-joule= J.
+units-joule = J
 units-k-joule = kJ
-units-m-joule = mJ
+units-m-joule = MJ
 
 units-u--joule-long= Microjoules
 units-m--joule-long= Milijoules

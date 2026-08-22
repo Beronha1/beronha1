@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-locking-whitelist-component-lock-toggle-deny =V
+locking-whitelist-component-lock-toggle-deny = Você não consegue alternar a trava.
 

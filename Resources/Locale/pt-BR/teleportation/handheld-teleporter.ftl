@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-handheld-teleporter-instability-fizzle =O
+handheld-teleporter-instability-fizzle = O portal falha ao ser posicionado, destruindo as duas extremidades!
 

@@ -19,7 +19,7 @@ admin-player-actions-respawn = Respawnar no Lobby
 admin-player-actions-respawn-message = Retorna o jogador ao lobby, permitindo respawn com novo personagem.
 admin-player-actions-spawn = Spawnar aqui
 admin-player-actions-spawn-message = Spawn uma nova copia deste personagem e transfere imediatamente sua mente.
-admin-player-spawn-failed = Falha ao encontrar coordenadas validas
+admin-player-spawn-failed = Falha ao encontrar coordenadas válidas
 admin-player-actions-player-panel = Abrir Painel do Jogador
 
 admin-player-actions-clone = Clone

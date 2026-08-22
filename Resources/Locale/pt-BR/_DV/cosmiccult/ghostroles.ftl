@@ -6,7 +6,7 @@ ghost-role-information-theunknown-rules = ...
 
 # COLOSSUS
 
-ghost-role-information-colossus-name = Colosso Entropico
+ghost-role-information-colossus-name = Colosso Entrópico
 ghost-role-information-colossus-description = Call upon an Effigy of Entropy to perpetuate your existence and accelerate the end of all things! You have 15 minutes to do so or your energies will be extinguished.
 ghost-role-information-colossus-rules = Você é um [color={role-type-team-antagonist-color}][bold]{role-type-team-antagonist-name}[/bold][/color] junto com quaisquer cultistas cósmicos que estejam presentes.
 

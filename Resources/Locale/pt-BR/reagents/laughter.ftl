@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-laughter-effect-control-laughter =V
+laughter-effect-control-laughter = Você não consegue conter o riso!
 

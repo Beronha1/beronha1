@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-defusable-verb-begin =C
+defusable-verb-begin = Iniciar contagem regressiva
 

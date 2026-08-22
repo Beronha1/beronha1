@@ -19,28 +19,28 @@ admin-notes-id= Identidade: {$id}
 admin-notes-type = Tipo: {$type}
 admin-notes-severity = Severidade: {$severity}
 admin-notes-secret = Secreto
-admin-notes-notsecret = Nao secreto
+admin-notes-notsecret = Não secreto
 admin-notes-expires = Expira em: {$expires}
-admin-notes-expires-never = Nao expira
+admin-notes-expires-never = Não expira
 admin-notes-edited-never = Nunca
 admin-notes-round-id = Rodada Id: {$id}
 admin-notes-round-id-unknown = Rodada Id: Desconhecido
 admin-notes-created-by = Criado por: {$author}
 admin-notes-created-at = Criado em: {$date}
-admin-notes-last-edited-by = Ultima edicao por: {$author}
-admin-notes-last-edited-at = Ultima edicao em: {$date}
+admin-notes-last-edited-by = Última edição por: {$author}
+admin-notes-last-edited-at = Última edição em: {$date}
 admin-notes-edit = Editar
 admin-notes-delete = Excluir
 admin-notes-hide = Ocultar
-admin-notes-delete-confirm = Confirmar exclusao
-admin-notes-edited = Ultima edicao por {$author} em {$date}
+admin-notes-delete-confirm = Confirmar exclusão
+admin-notes-edited = Última edição por {$author} em {$date}
 admin-notes-unbanned = Unban por {$admin} em {$date}
 admin-notes-message-desc = [color=white]Você recebeu { $count ->
     [1] uma mensagem administrativa
     *[other] mensagens administrativas
 } desde a ultima vez que jogou neste servidor.[/color]
 admin-notes-message-admin = De [bold]{ $admin }[/bold], escrito em { TOSTRING($date, "f") }:
-admin-notes-message-wait = O botao de aceitar sera ativado em {$time} segundos.
+admin-notes-message-wait = O botão de aceitar será ativado em {$time} segundos.
 admin-notes-message-accept = Encerrar permanentemente
 admin-notes-message-dismiss = Dispensar por agora
 admin-notes-message-seen = Visto
@@ -65,7 +65,7 @@ admin-note-editor-type-role-ban = Ban de cargo
 admin-note-editor-severity-select = Selecionar
 admin-note-editor-severity-none = Nenhum
 admin-note-editor-severity-low = Baixa
-admin-note-editor-severity-medium = Media
+admin-note-editor-severity-medium = Média
 admin-note-editor-severity-high = Alta
 admin-note-editor-expiry-checkbox = Permanent?
 admin-note-editor-expiry-checkbox-tooltip = Marque para fazer expirar

@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-hand-placeholder-name =S
+hand-placeholder-name = Espaço de módulo para
 

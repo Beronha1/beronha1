@@ -26,7 +26,7 @@ influence-description-imposition-upgrade = Se fortalecido, o poder cosmico perma
 influence-name-conversion = Cindir Cognicao
 influence-description-conversion = Instila conhecimento verdadeiro e indeleble em um individuo desviado, deixando-o sem escolha Uma nao ser aderir Uma sua causa. Uso unico.
 
-influence-name-transmutation = Corromper Materia
+influence-name-transmutation = Corromper Matéria
 influence-description-transmutation = Canaliza energia malefica para um objeto na palma da sua mao, torcendo-o em alguma outra coisa.
 influence-description-transmutation-upgrade = Se fortalecido, voce pode forjar itens ainda mais sofisticados.
 

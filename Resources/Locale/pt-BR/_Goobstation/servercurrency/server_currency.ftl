@@ -12,7 +12,7 @@ server-currency-name-plural= Moedas de uísque
 
 ## Commands
 
-server-currency-gift-command = presente
+server-currency-gift-command = gift
 server-currency-gift-command-description = Dá parte do seu saldo como presente para outro jogador.
 server-currency-gift-command-help = Uso: presente <jogador> <valor>
 server-currency-gift-command-error-1 = Você não pode presentear Uma si mesmo!
@@ -20,24 +20,24 @@ server-currency-gift-command-error-2 = Você não pode se dar Uma esse presente!
 server-currency-gift-command-giver = You gave {$player} {$amount}.
 server-currency-gift-command-reciever = {$player} gave you {$amount}.
 
-server-currency-balance-command = saldo
+server-currency-balance-command = balance
 server-currency-balance-command-description = Retorna seu saldo.
 server-currency-balance-command-help = Uso: saldo
 server-currency-balance-command-return = Você tem {$balance}.
 
-server-currency-add-command = saldo:Adicionar
+server-currency-add-command = balance:add
 server-currency-add-command-description = Adiciona moeda ao saldo de um jogador.
 server-currency-add-command-help = Uso: saldo:Adicionar <jogador> <valor>
 
-server-currency-remove-command = saldo:rem
+server-currency-remove-command = balance:rem
 server-currency-remove-command-description = Remover moeda do saldo de um jogador.
 server-currency-remove-command-help = Uso: saldo:rem <jogador> <valor>
 
-server-currency-set-command = saldo:Definir
+server-currency-set-command = balance:set
 server-currency-set-command-description = Define o saldo de um jogador.
 server-currency-set-command-help = Uso: saldo:Definir <jogador> <valor>
 
-server-currency-get-command = saldo:get
+server-currency-get-command = balance:get
 server-currency-get-command-description = Obtém o saldo de um jogador.
 server-currency-get-command-help = Uso: saldo:get <jogador>
 

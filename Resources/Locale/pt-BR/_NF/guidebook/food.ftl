@@ -1,4 +1,4 @@
-﻿guidebook-food-name =[bold][color={$color}]{CAPITALIZE($color)}[/color][/bold]
+guidebook-food-name = [bold][color={$color}]{CAPITALIZE($name)}[/color][/bold]
 guidebook-food-unknown-proto = Protótipo desconhecido
 # Frontier
 guidebook-food-recipes-header = Receitas

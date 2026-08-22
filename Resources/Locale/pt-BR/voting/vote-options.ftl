@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-vote-options-server-initiator-text =O
+vote-options-server-initiator-text = O servidor
 

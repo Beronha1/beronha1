@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-diona-hurt-by-herbicide-popup =O
+diona-hurt-by-herbicide-popup = O produto químico faz parte da sua vegetação murchar!
 

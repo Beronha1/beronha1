@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-potted-plant-hide-component-interact-hand-got-no-item-message =V
+potted-plant-hide-component-interact-hand-got-no-item-message = Você remexe entre as raízes.
 

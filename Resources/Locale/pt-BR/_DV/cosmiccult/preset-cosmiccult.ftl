@@ -2,13 +2,13 @@
 
 cosmiccult-announcement-sender = ???
 
-cosmiccult-title = Culto Cosmico
+cosmiccult-title = Culto Cósmico
 cosmiccult-description = Cultistas espreitam entre Uma tripulacao.
 
-roles-antag-cosmiccult-name = Cultista Cosmico
+roles-antag-cosmiccult-name = Cultista Cósmico
 roles-antag-cosmiccult-description = Traga o fim de todas as coisas atraves de subterfugio e sabotagem, lavando o cerebro daqueles que se opuserem Uma voce.
 
-cosmiccult-gamemode-title = O Culto Cosmico
+cosmiccult-gamemode-title = O Culto Cósmico
 cosmiccult-gamemode-description = Scanners detectam um aumento anomalo de pressao Noöspheric. Nao ha dados adicionais.
 
 cosmiccult-finale-autocall-briefing = O Monumento ativa {$minutesandseconds}! Reunam-se, e preparem-se para o fim.
@@ -23,10 +23,10 @@ cosmiccult-finale-beckon-begin = Os sussurros Não fundo da sua mente se intensi
 
 cosmiccult-monument-approval-lowlevel = Voce tenta se concentrar, mas ainda nao e forte o suficiente.
 cosmiccult-monument-approval-added = Voce concentra sua forca de vontade para invocar O Monumento...
-cosmiccult-monument-approval-removed = Voce nao esta mais se concentrando neste ponto.
-cosmiccult-monument-approval-count = [color=#4cabb3]{$count} cultistas estao concentrados neste ponto.[/color]
+cosmiccult-monument-approval-removed = Você não está mais se concentrando neste ponto.
+cosmiccult-monument-approval-count = [color=#4cabb3]{$count} cultistas estão concentrados neste ponto.[/color]
 cosmiccult-monument-approval-needed = [color=#4cabb3]{$count} cultistas Uma mais devem se concentrar para invocar O Monumento.[/color]
-cosmiccult-monument-approval-examine-present = [color=#4cabb3]Voce ja esta concentrado neste ponto.[/color]
+cosmiccult-monument-approval-examine-present = [color=#4cabb3]Você já está concentrado neste ponto.[/color]
 cosmiccult-monument-mark-removed = Sua marca anterior foi removida.
 
 ## ROUNDEND TEXT
@@ -92,7 +92,7 @@ cosmiccult-role-levelup-awaiting-input =
 
 ## MALIGN RIFTS
 
-cosmiccult-rift-inuse = Voce nao pode fazer isso agora.
+cosmiccult-rift-inuse = Você não pode fazer isso agora.
 cosmiccult-rift-invaliduser = Voce nao possui ferramentas adequadas para lidar com isto.
 cosmiccult-rift-chaplainoops = Empunhe sua escritura sagrada.
 cosmiccult-rift-alreadyempowered = Você já está fortalecido; o poder da fenda seria desperdiçado.
@@ -144,7 +144,7 @@ objective-cosmiccult-steward-charactermenu = Voce deve conduzir o culto para tra
 
 objective-condition-entropy-title = SISU CARREGAR ENTROPIA
 objective-condition-entropy-desc = Coletivamente, sifonem pelo menos {$count} entropia da tripulacao.
-objective-condition-culttier-title = ALCANCAR PODER
+objective-condition-culttier-title = ALCANÇAR PODER
 objective-condition-culttier-desc = Reuna entropia suficiente para chegar ao fim.
 objective-condition-victory-title = TRAZER O FIM
 objective-condition-victory-desc = Chame o Desconhecido, e anuncie Uma chamada final de cortina.
@@ -163,7 +163,7 @@ cosmiccult-announce-finale-warning = Toda tripulacao da estacao. Uma anomalia No
 ## MISC
 
 cosmiccult-spire-entropy = Uma partícula de entropia condensa na superfície da esbeltez.
-cosmiccult-entropy-unavailable = Voce nao pode fazer isso agora.
+cosmiccult-entropy-unavailable = Você não pode fazer isso agora.
 cosmiccult-astral-ascendant = {$name}, Ascendente
 cosmiccult-gear-pickup-rejection = {$ITEM} resiste ao toque de {CAPITALIZE(THE($TARGET))}!
 cosmiccult-astral-minion = {$name}, maligno

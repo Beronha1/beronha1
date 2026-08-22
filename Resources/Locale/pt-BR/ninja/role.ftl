@@ -6,7 +6,7 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-ninja-round-end-agent-name =n
+ninja-round-end-agent-name = ninja
 
 objective-issuer-spiderclan =[color=#33cc00]Clã Aranha[/color]
 

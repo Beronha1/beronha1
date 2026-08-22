@@ -5,5 +5,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-particle-accelerator-control-box-component-wires-update-limiter-on-pulse =A
+particle-accelerator-control-box-component-wires-update-limiter-on-pulse = A caixa de controle emite um zumbido.
 

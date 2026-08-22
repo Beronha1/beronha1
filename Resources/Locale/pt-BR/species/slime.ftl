@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-slime-hurt-by-water-popup =A
+slime-hurt-by-water-popup = A água derrete parte do seu corpo gosmento!
 

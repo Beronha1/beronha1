@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-storage-component-transfer-verb =T
+storage-component-transfer-verb = Transferir conteúdo
 

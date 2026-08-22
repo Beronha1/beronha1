@@ -3,5 +3,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-tendril-destroyed-warning-message =O
+tendril-destroyed-warning-message = O chão sob o tentáculo está desabando! CORRA!!!
 

@@ -1,3 +1,3 @@
 ﻿# Trauma - plasma -> phoron
-phlogiston-plasma-created =A
+phlogiston-plasma-created = A mistura borbulha, e fóron sobe dela!
 

@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: AGPL-3.0-or-later
 
-clothing-required-step-trigger-examine =V
+clothing-required-step-trigger-examine = Talvez você não devesse pisar nisso descalço.
 

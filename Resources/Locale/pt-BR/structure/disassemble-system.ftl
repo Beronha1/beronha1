@@ -4,5 +4,5 @@
 #
 # SPDX-License-Identifier: MIT
 
-disassemble-system-verb-disassemble =D
+disassemble-system-verb-disassemble = Desmontar
 

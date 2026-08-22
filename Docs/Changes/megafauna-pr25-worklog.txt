@@ -2,7 +2,7 @@ WHISKEY STATION - PR #25: ECOSSISTEMA DE MEGAFAUNAS
 Registro de implementação e changelog de trabalho
 ==================================================
 
-PR: https://github.com/Whiskey-Station/whiskey-station/pull/25
+PR: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/25
 
 OBJETIVO DESTE ARQUIVO
 ----------------------

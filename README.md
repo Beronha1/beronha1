@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://discord.gg/cafFGGPx8">Discord</a> •
   <a href="ss14://45.154.159.111:1212/">Jogar</a> •
-  <a href="https://github.com/Whiskey-Station/whiskey-station/issues">Issues</a> •
+  <a href="https://github.com/Whiskey-Station/Whiskey-Station-14/issues">Issues</a> •
   <a href="https://docs.spacestation14.com/">Documentação do SS14</a>
 </p>
 
@@ -36,7 +36,7 @@ Nosso princípio é simples: **qualidade acima de tudo**. Mudanças devem ser co
 Contribuições são bem-vindas quando preservam a estabilidade e a qualidade do projeto. Antes de abrir uma pull request:
 
 1. Leia as [diretrizes de contribuição](CONTRIBUTING.md).
-2. Procure uma tarefa na lista de [issues](https://github.com/Whiskey-Station/whiskey-station/issues) ou apresente sua proposta no Discord.
+2. Procure uma tarefa na lista de [issues](https://github.com/Whiskey-Station/Whiskey-Station-14/issues) ou apresente sua proposta no Discord.
 3. Mantenha a alteração focada, documente decisões relevantes e execute as validações aplicáveis.
 4. Confirme a autoria e a licença de todo código, áudio, textura ou outro asset adicionado.
 

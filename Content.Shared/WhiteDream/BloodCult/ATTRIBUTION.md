@@ -1,4 +1,4 @@
-# Blood Cult — licensing and attribution
+# Blood Cult: licensing and attribution
 
 The Blood Cult is ported code, not original work. Every `.cs` file that this port adds carries
 `// SPDX-License-Identifier: AGPL-3.0-or-later` and a pointer back to this file.
@@ -9,7 +9,7 @@ The Blood Cult is ported code, not original work. Every `.cs` file that this por
 | --- | --- | --- |
 | Original implementation | [WWhiteDreamProject/wwdpublic](https://github.com/WWhiteDreamProject/wwdpublic) | AGPL-3.0-or-later |
 | Intermediate port | Mini-Station | AGPL-3.0-or-later (inherited) |
-| This port | Whiskey-Station/whiskey-station | AGPL-3.0-or-later |
+| This port | Whiskey-Station/Whiskey-Station-14 | AGPL-3.0-or-later |
 
 The intermediate step is identified from what came across with the code: the `_Mini/` namespaces
 (`Content.Client/_Mini/BloodCult/`, `Content.Server/_Mini/BloodCult/`) and the `# Mini:` comments left
@@ -36,8 +36,8 @@ sections there are marked inline with `// <WhiteDream>` … `// </WhiteDream>`.
 
 ## Open question: funky-station
 
-The veil progression — the collective chant, the blood rift and its summoning runes, the final ritual, and
-the reagent the rift bleeds — is derived from funky-station's blood cult.
+The veil progression (the collective chant, the blood rift and its summoning runes, the final ritual,
+and the reagent the rift bleeds) is derived from funky-station's blood cult.
 
 **funky-station declares no license.** That is unresolved, and it needs a maintainer decision before this
 merges. The affected code is confined to these files, so it can be dropped without touching the White Dream

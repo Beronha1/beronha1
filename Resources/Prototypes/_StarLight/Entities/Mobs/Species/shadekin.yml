@@ -1,18 +1,23 @@
 - type: entity
   save: false
   name: Urist McShadow
-  parent: [MobBloodstream, MobAtmosStandard, MobFlammable, BaseMobSpecies, BaseSpeciesPickupableHuge]
+  # Whiskey: BaseMobSpecies e BaseSpeciesPickupableHuge são do Starlight. Aqui o
+  # equivalente é BaseSpeciesMobOrganic, e a aparência entra como pai, igual o
+  # MobHuman faz com AppearanceHuman.
+  parent: [AppearanceShadekin, MobBloodstream, MobAtmosStandard, MobFlammable, BaseSpeciesMobOrganic]
   id: BaseMobShadekin
   abstract: true
   components:
-    - type: LanguageKnowledge
+    # Whiskey: o componente daqui é LanguageSpeaker, com a mesma forma de listas.
+    # O comum da estação é TauCetiBasic, não GalacticCommon, e o Empathy é
+    # exclusivo do Starlight, então ficou de fora.
+    - type: LanguageSpeaker
       speaks:
-        - GalacticCommon
+        - TauCetiBasic
         - Marish
       understands:
-        - GalacticCommon
+        - TauCetiBasic
         - Marish
-        - Empathy
     - type: Inventory
       speciesId: shadekin
     - type: Shadekin
@@ -24,21 +29,17 @@
     - type: Absorbable
     - type: Hunger
     - type: Thirst
-    - type: HumanoidAppearance
-      species: Shadekin
     - type: Icon
       sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
       state: full
-    - type: Body
-      prototype: Shadekin
-      requiredLegs: 2
+    - type: Body # Whiskey: sem campo; quem monta é o InitialBody do AppearanceShadekin
     - type: Speech
-      allowedEmotes: ["Marr", "Wurble", "Hisses", "Growl", "Purr"]
+      # Whiskey: o Hisses do Starlight tem as mesmas palavras-gatilho do Hiss
+      # que este fork já tem, e emote duplicado quebra o chat. Ficou o Hiss daqui.
+      allowedEmotes: ["Marr", "Wurble", "Hiss", "Growl", "Purr"]
     - type: Vocal
-      sounds:
-        Male: MaleShadekin
-        Female: FemaleShadekin
-        Unsexed: MaleShadekin
+      # Whiskey: o Vocal daqui nao mapeia por sexo. Quem faz isso e o campo
+      # defaultSoundsBySex do species.
     - type: MeleeWeapon
       soundHit:
         collection: AlienClaw
@@ -48,10 +49,13 @@
         types:
           Slash: 5
     - type: Damageable
-      damageContainer: Biological
       damageModifierSet: Shadekin
+    # Whiskey: o damageContainer saiu do Damageable e vive no Injurable,
+    # que é do Shitmed. Ver Resources/Prototypes/Body/base_organs.yml.
+    - type: Injurable
+      damageContainer: Biological
     - type: Deathgasp
-      damageType: Bloodloss
+      # Whiskey: o Deathgasp daqui nao tem damageType.
     - type: Reactive
       groups:
         Flammable: [Touch]
@@ -63,7 +67,7 @@
           effects:
             - !type:WashCreamPie
             - !type:Emote
-              emote: Hisses
+              emote: Hiss
               showInChat: false
     - type: Bloodstream
       bloodlossDamage:
@@ -85,11 +89,20 @@
     - type: PassiveDamage
       allowedStates:
         - Alive
-      damageCap: 20
+      # Whiskey: o PassiveDamage daqui nao tem damageCap.
       damage:
-        groups:
-          Brute: -0.07
-          Burn: -0.07
+        # Whiskey: aqui o PassiveDamage so aceita types. Brute e Burn tem 4 tipos
+        # cada e o valor de grupo e dividido entre eles, entao -0.07 vira -0.0175
+        # por tipo e a cura por segundo fica igual a do original.
+        types:
+          Blunt: -0.0175
+          Slash: -0.0175
+          Piercing: -0.0175
+          Ballistic: -0.0175
+          Heat: -0.0175
+          Shock: -0.0175
+          Cold: -0.0175
+          Caustic: -0.0175
     - type: Destructible
       thresholds:
         - trigger: !type:DamageTypeTrigger
@@ -125,7 +138,9 @@
           Heat: 0.1
     - type: Fingerprint
     - type: Blindable
-    - type: DarkenedVision
+    # Whiskey: DarkenedVision é sobreposição de cliente do Starlight. Nem lá o
+    # Shadekin mexia nela, a força nasce zero e nenhum sistema levanta, então
+    # ela era inerte de qualquer jeito.
     # Other
     - type: TemperatureDamage
       heatDamageThreshold: 325
@@ -137,7 +152,7 @@
         types:
           Heat: 1.5 #per second, scales with temperature & other constants
     - type: Temperature
-      currentTemperature: 310.15
+      temperature: 310.15
       specificHeat: 42
     - type: TemperatureSpeed
       thresholds:
@@ -154,7 +169,7 @@
       thermalRegulationTemperatureThreshold: 2
     - type: Perishable
     - type: Butcherable
-      butcheringType: Spike # TODO human.
+      # Whiskey: o Butcherable daqui nao tem butcheringType.
       spawned:
         - id: FoodMeat
           amount: 5

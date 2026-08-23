@@ -1,58 +1,51 @@
-- type: body
-  id: Shadekin
-  name: "shadekin"
-  root: torso
-  slots:
-    head:
-      part: HeadShadekin
-      connections:
-      - torso
-      organs:
-        brain: OrganShadekinBrain
-        eyes: OrganShadekinEyes
-        tongue: OrganShadekinTongue
-        eye_implant: null
-        nose_implant: null # 🌟Starlight🌟
-        brain_implant: null
-    torso:
-      part: TorsoShadekin
-      connections:
-      - right arm
-      - left arm
-      - right leg
-      - left leg
-      organs:
-        heart: OrganShadekinHeart
-        core: OrganShadekinCore
-        stomach: OrganShadekinStomach
-        liver: OrganShadekinLiver
-        kidneys: OrganShadekinKidneys
-        cavity: null
-    right arm:
-      part: RightArmShadekin
-      connections:
-      - right hand
-    left arm:
-      part: LeftArmShadekin
-      connections:
-      - left hand
-    right hand:
-      part: RightHandShadekin
-      organs:
-        hand_implant: null
-    left hand:
-      part: LeftHandShadekin
-      organs:
-        hand_implant: null
-    right leg:
-      part: RightLegShadekin
-      connections:
-      - right foot
-    left leg:
-      part: LeftLegShadekin
-      connections:
-      - left foot
-    right foot:
-      part: RightFootShadekin
-    left foot:
-      part: LeftFootShadekin
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: aqui vivia um "type: body" com slots e connections, que este fork não
+# tem mais. A montagem agora é o InitialBody, um mapa de categoria de órgão para
+# prototype, e ele mora na entidade de aparência da espécie.
+# Molde seguido: AppearanceHuman, em Resources/Prototypes/Body/Species/human.yml
+
+# O núcleo é órgão exclusivo do Shadekin, então precisa de categoria própria e de
+# um encaixe no torso dele, que o OrganShadekinTorso acrescenta.
+- type: organCategory
+  id: ShadekinCore
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceShadekin
+  categories: [ HideSpawnMenu ]
+  name: shadekin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganShadekinTorso
+      Head: OrganShadekinHead
+      ArmLeft: OrganShadekinArmLeft
+      ArmRight: OrganShadekinArmRight
+      HandLeft: OrganShadekinHandLeft
+      HandRight: OrganShadekinHandRight
+      LegLeft: OrganShadekinLegLeft
+      LegRight: OrganShadekinLegRight
+      FootLeft: OrganShadekinFootLeft
+      FootRight: OrganShadekinFootRight
+      Brain: OrganShadekinBrain
+      Eyes: OrganShadekinEyes
+      Tongue: OrganShadekinTongue
+      Appendix: OrganShadekinAppendix
+      Heart: OrganShadekinHeart
+      Stomach: OrganShadekinStomach
+      Liver: OrganShadekinLiver
+      Kidneys: OrganShadekinKidneys
+      ShadekinCore: OrganShadekinCore
+      # Pulmão e orelha ficam com o órgão humano de propósito: o corpo do
+      # Starlight não listava nenhum dos dois, mas aqui o Shadekin herda o
+      # MobAtmosStandard, que dá respirador, e sem pulmão ele sufocaria ao
+      # nascer. O RSI de órgãos dele também não tem desenho para esses dois.
+      Lungs: OrganHumanLungs
+      Ears: OrganHumanEars
+  - type: HumanoidProfile
+    species: Shadekin

@@ -1,0 +1,29 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+# Só os blocos que o Shadekin usa, extraídos um a um em vez de copiar os
+# arquivos inteiros do Starlight, que trariam conteúdo sem relação.
+
+- type: reagent
+  parent: Blood
+  id: DarkBlood
+  name: reagent-name-dark-blood
+  group: Biological
+  desc: reagent-desc-dark-blood
+  flavor: metallic
+  color: "#1c1624"
+  recognizable: true
+  physicalDesc: reagent-physical-desc-unidentifiable
+  metabolisms:
+    Bloodstream:
+      effects:
+      - !type:ModifyStatusEffect
+        conditions:
+        - !type:ReagentCondition
+          reagent: DarkBlood
+          min: 10
+        effectProto: StatusEffectTheDark
+        type: Add
+        time: 5

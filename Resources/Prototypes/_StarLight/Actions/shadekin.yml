@@ -6,10 +6,12 @@
   components:
     - type: Action
       useDelay: 1
-      icon:
-        sprite: _Starlight/Interface/Actions/shadekin32.rsi
-        state: phase_shift
       itemIconStyle: BigItem
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin32.rsi
+      state: phase_shift
     - type: InstantAction
       event: !type:NullPhaseActionEvent
 
@@ -19,11 +21,13 @@
   categories: [HideSpawnMenu]
   components:
     - type: Action
-      icon:
-        sprite: _Starlight/Interface/Actions/shadekin.rsi
-        state: phase
       checkCanInteract: false
       itemIconStyle: NoItem
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin.rsi
+      state: phase
     - type: InstantAction
       event: !type:BrighteyePhaseActionEvent
 
@@ -35,14 +39,17 @@
   components:
     - type: Action
       useDelay: 1
-      icon:
-        sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
-        state: portal
       itemIconStyle: NoItem
       checkCanInteract: false
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
+      state: portal
     - type: InstantAction
       event: !type:BrighteyePortalActionEvent
-    - type: EorgPreventAction
+    # Whiskey: EorgPreventAction é do anti-grief de fim de rodada do Starlight,
+    # que este fork não tem.
 
 - type: entity
   id: BrighteyeDarkTrapAction
@@ -52,10 +59,12 @@
   components:
     - type: Action
       useDelay: 60
-      icon:
-        sprite: _Starlight/Interface/Actions/shadekin32.rsi
-        state: darktrap
       itemIconStyle: NoItem
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin32.rsi
+      state: darktrap
     - type: InstantAction
       event: !type:BrighteyeDarkTrapActionEvent
 
@@ -67,10 +76,12 @@
   components:
     - type: Action
       useDelay: 60
-      icon:
-        sprite: _Starlight/Interface/Actions/shadekin.rsi
-        state: shadeskip
       itemIconStyle: NoItem
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin.rsi
+      state: shadeskip
     - type: TargetAction
       interactOnMiss: false
     - type: EntityTargetAction
@@ -88,10 +99,13 @@
   components:
     - type: Action
       useDelay: 30
-      icon:
-        sprite: _Starlight/Interface/Actions/shadekin32.rsi
-        state: create_shade
       itemIconStyle: NoItem
+    # Whiskey: aqui o icone da acao e um componente Sprite irmao, nao um
+    # campo icon dentro do Action.
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin32.rsi
+      state: create_shade
     - type: InstantAction
       event: !type:BrighteyeCreateShadeActionEvent
-    - type: EorgPreventAction
+    # Whiskey: EorgPreventAction é do anti-grief de fim de rodada do Starlight,
+    # que este fork não tem.

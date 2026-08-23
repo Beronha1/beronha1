@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: o LanguagePrototype daqui só tem id, obfuscation e speech. Saíram o
+# icon e o chatPrefix, que este fork não tem, e saiu o fontId Lymphatic, porque
+# essa fonte não existe aqui e fonte faltando vira quadradinho na tela.
+
+- type: language
+  id: Marish
+  speech:
+    color: "#be3cc5"
+  obfuscation:
+    !type:SyllableObfuscation
+    minSyllables: 1
+    maxSyllables: 2
+    replacement:
+    - mar
+    - mwrrr
+    - maaAr
+    - aarrr
+    - wrurrl
+    - mmar

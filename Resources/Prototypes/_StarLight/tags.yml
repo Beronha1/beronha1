@@ -1,4 +1,37 @@
-# SPDX-License-Identifier: AGPL-3.0-or-later
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+# Só os blocos que o Shadekin usa, extraídos um a um em vez de copiar os
+# arquivos inteiros do Starlight, que trariam conteúdo sem relação.
 
+- type: Tag
+  id: Bow
+
+- type: Tag
+  id: CantBecomeRevolutionary
+
+- type: Tag
+  id: DamagedShadekinCore
+
+- type: Tag
+  id: Meson
+
+- type: Tag
+  id: NotLabelable
+
+- type: Tag
+  id: ShadekinEyes
+
+- type: Tag
+  id: TheDark
+
+# A categoria de órgão ShadekinCore já existe, mas o C# do porte também usa uma
+# tag com o mesmo nome para achar o núcleo, então as duas precisam existir.
+- type: Tag
+  id: ShadekinCore
+
+# Usada pelas plataformas e escadas do porte.
 - type: Tag
   id: Stairs

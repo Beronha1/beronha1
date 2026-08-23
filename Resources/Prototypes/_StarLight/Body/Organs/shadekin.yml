@@ -20,16 +20,19 @@
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     layers:
       - state: eyes
-  - type: FunctionalOrgan
-    comps:
+  # Whiskey: FunctionalOrgan do Starlight equivale ao OrganComponents daqui, e
+  # OrganVisualization equivale ao VisualOrgan. O FlashModifier virou
+  # SensibilidadeAFlash, que usa o FlashDurationMultiplierEvent deste fork.
+  - type: OrganComponents
+    onAdd:
     - type: NightVision
-      disabilityBlockable: true
-    - type: FlashModifier
-      modifier: 2
-  - type: OrganVisualization
-    layer: Eyes
-    prototypes:
-      Default: MobShadekinEyes
+    - type: SensibilidadeAFlash
+      multiplicador: 2
+  - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.Eyes
+    data:
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+      state: eyes
   - type: Tag
     tags:
       - ShadekinEyes
@@ -115,6 +118,7 @@
   components:
   - type: OrganShadekinCore
   - type: Organ
+    category: ShadekinCore
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     layers:

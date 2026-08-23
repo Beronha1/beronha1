@@ -18,8 +18,12 @@
           - material: Manipulator
             amount: 2
             doAfter: 5
-          - material: BluespaceCrystal
-            amount: 10
+          # Whiskey: o BluespaceCrystal é do Starlight e não existe aqui. O
+          # fragmento de artefato é o material exótico equivalente deste fork,
+          # também da ciência. A quantidade é escolha minha e vale conferir no
+          # balanceamento.
+          - material: ArtifactFragmentOre
+            amount: 5
             doAfter: 10
           - tag: ShadekinEyes
             name: construction-graph-tag-shadekin-eye

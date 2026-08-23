@@ -1,0 +1,38 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: o SubRule do Starlight equivale ao NestedRule daqui, e o campo mapTag
+# do LoadMapRule não existe neste fork, então quem põe a marca no mapa é o
+# MarcarMapaCarregado, que faz a mesma coisa pelo evento RuleLoadedGridsEvent.
+
+- type: entity
+  parent: BaseGameRule
+  id: TheDarkMap
+  components:
+  - type: StationEvent
+  - type: NestedRule
+    rules: !type:GroupSelector
+      children:
+      - id: TheDarkHideoutSpawn
+      - id: TheDarkGardenSpawn
+
+- type: entity
+  parent: BaseGameRule
+  id: TheDarkHideoutSpawn
+  components:
+  - type: LoadMapRule
+    mapPath: /Maps/_StarLight/TheDark/Hideout.yml
+  - type: MarcarMapaCarregado
+    marca: TheDark
+
+- type: entity
+  parent: BaseGameRule
+  id: TheDarkGardenSpawn
+  components:
+  - type: LoadMapRule
+    mapPath: /Maps/_StarLight/TheDark/Garden.yml
+  - type: MarcarMapaCarregado
+    marca: TheDark

@@ -1,117 +1,116 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: o Starlight define parte de corpo como entidade "Part" e monta o
+# corpo com um prototype "type: body", que este fork não tem mais. Aqui parte de
+# corpo É órgão, então cada parte virou um OrganShadekin* herdando o OrganBase*
+# equivalente, e a montagem foi para o InitialBody do AppearanceShadekin.
+# Molde seguido: Resources/Prototypes/Body/Species/human.yml
+
 - type: entity
-  id: PartShadekin
-  parent: [BaseItem, BasePart]
-  name: shadekin body part
+  parent: OrganBaseOrganic
+  id: OrganShadekin
+  abstract: true
+  suffix: shadekin
+
+- type: entity
+  parent: OrganShadekin
+  id: OrganShadekinExternal
   abstract: true
   components:
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 3
-          - ReagentId: DarkBlood
-            Quantity: 10
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Shadekin
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: DarkBlood
+        Quantity: 10
 
 - type: entity
-  id: TorsoShadekin
-  name: shadekin torso
-  parent: [PartShadekin, BaseTorso]
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganShadekinExternal ]
+  id: OrganShadekinTorso
   components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: torso_m
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 10
-          - ReagentId: DarkBlood
-            Quantity: 20
+  # a lista de slots é reescrita inteira porque YAML substitui, e o Shadekin
+  # precisa do encaixe do núcleo, que humano nenhum tem
+  - type: BodyPart
+    partType: Torso
+    slots:
+    - Head
+    - ArmLeft
+    - ArmRight
+    - LegLeft
+    - LegRight
+    - Appendix
+    - Lungs
+    - Heart
+    - Stomach
+    - Liver
+    - Kidneys
+    - ShadekinCore
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: DarkBlood
+        Quantity: 20
 
 - type: entity
-  id: HeadShadekin
-  name: shadekin head
-  parent: [PartShadekin, BaseHead]
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganShadekinExternal ]
+  id: OrganShadekinHead
   components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: head_m
-    - type: Extractable
-      juiceSolution:
-        reagents:
-          - ReagentId: Fat
-            Quantity: 5
-          - ReagentId: DarkBlood
-            Quantity: 10
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: DarkBlood
+        Quantity: 10
 
 - type: entity
-  id: LeftArmShadekin
-  name: left shadekin arm
-  parent: [PartShadekin, BaseLeftArm]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: l_arm
+  parent: [ OrganBaseArmLeft, OrganShadekinExternal ]
+  id: OrganShadekinArmLeft
 
 - type: entity
-  id: RightArmShadekin
-  name: right shadekin arm
-  parent: [PartShadekin, BaseRightArm]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: r_arm
+  parent: [ OrganBaseArmRight, OrganShadekinExternal ]
+  id: OrganShadekinArmRight
 
 - type: entity
-  id: LeftHandShadekin
-  name: left shadekin hand
-  parent: [PartShadekin, BaseLeftHand]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: l_hand
+  parent: [ OrganBaseHandLeft, OrganShadekinExternal ]
+  id: OrganShadekinHandLeft
 
 - type: entity
-  id: RightHandShadekin
-  name: right shadekin hand
-  parent: [PartShadekin, BaseRightHand]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: r_hand
+  parent: [ OrganBaseHandRight, OrganShadekinExternal ]
+  id: OrganShadekinHandRight
 
 - type: entity
-  id: LeftLegShadekin
-  name: left shadekin leg
-  parent: [PartShadekin, BaseLeftLeg]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: l_leg
+  parent: [ OrganBaseLegLeft, OrganShadekinExternal ]
+  id: OrganShadekinLegLeft
 
 - type: entity
-  id: RightLegShadekin
-  name: right shadekin leg
-  parent: [PartShadekin, BaseRightLeg]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: r_leg
+  parent: [ OrganBaseLegRight, OrganShadekinExternal ]
+  id: OrganShadekinLegRight
 
 - type: entity
-  id: LeftFootShadekin
-  name: left shadekin foot
-  parent: [PartShadekin, BaseLeftFoot]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: l_foot
+  parent: [ OrganBaseFootLeft, OrganShadekinExternal ]
+  id: OrganShadekinFootLeft
 
 - type: entity
-  id: RightFootShadekin
-  name: right shadekin foot
-  parent: [PartShadekin, BaseRightFoot]
-  components:
-    - type: Sprite
-      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
-      state: r_foot
+  parent: [ OrganBaseFootRight, OrganShadekinExternal ]
+  id: OrganShadekinFootRight

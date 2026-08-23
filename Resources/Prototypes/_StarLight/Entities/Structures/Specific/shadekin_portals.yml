@@ -1,0 +1,48 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+
+- type: entity
+  id: PortalDarkBreacher
+  parent: BasePortal
+  name: dark breaker portal
+  description: The portal to the light...
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: DarkHub
+      hub: false
+    - type: Sprite
+      noRot: true
+      sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
+      layers:
+        - state: portal
+    - type: PointLight
+      color: "#793a80dd"
+      radius: 3
+      energy: 1
+    - type: AmbientSound
+      range: 5
+      volume: -5
+      sound:
+        path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+    - type: Portal
+      arrivalSound: /Audio/Items/hiss.ogg
+      departureSound: /Audio/Items/hiss.ogg
+      canTeleportToOtherMaps: true
+      randomTeleport: false
+    - type: DarkLight
+
+- type: entity
+  name: dark net
+  id: ShadekinDarkNet
+  categories: [HideSpawnMenu]
+  components:
+    - type: Ensnaring
+      freeTime: 10
+      walkSpeed: 0.3
+      sprintSpeed: 0.3
+      staminaDamage: 100
+      ensnareSound: /Audio/_Starlight/Effects/Shadekin/nullphase.ogg

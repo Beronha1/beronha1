@@ -1,0 +1,30 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+
+- type: entity
+  parent: MobStatusEffectDebuff
+  id: StatusEffectTheDark
+  name: the dark
+  components:
+  - type: StatusEffect
+    whitelist:
+      components:
+      - MobState
+    blacklist:
+      components:
+      - Shadekin
+      - TheDarkImmune
+  - type: DrunkStatusEffect
+  - type: DrowsinessStatusEffect
+
+# Map Version so its we edit it slightly.
+
+- type: entity
+  parent: StatusEffectTheDark
+  id: StatusEffectTheDarkMap
+  components:
+  - type: StatusEffectAlert
+    alert: ShadekinTheDarkAlert

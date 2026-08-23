@@ -1,0 +1,71 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: saíram o roleLoadout AntagBrighteye, que puxava uma árvore de roupas
+# própria e é cosmético; o Railroadable, que é do sistema de tarefas do
+# Starlight; e os requisitos dos traços Burned e Nightblind, que este fork não
+# tem. O resto é igual ao original.
+
+- type: playTimeTracker
+  id: AntagBrighteye
+
+- type: antag
+  id: Brighteye
+  name: roles-antag-brighteye-name
+  antagonist: true
+  setPreference: true
+  objective: roles-antag-brighteye-description
+  guides: [ Shadekin, Brighteye ]
+  requirements:
+  - !type:OverallPlaytimeRequirement
+    time: 48h
+  - !type:SpeciesRequirement
+    species:
+    - Shadekin
+  # Whiskey: o AntagPrototype daqui não tem playTimeTracker.
+
+- type: antagSpecifier
+  parent: RestrictedAntag
+  id: Brighteye
+  spawnerPrototype: SpawnPointGhostBrighteye
+  prefRoles:
+  - Brighteye
+  allowNonHumans: true
+  blacklist:
+    components:
+    - AntagImmune
+  briefing:
+    text: brighteye-role-greeting
+    color: "#F200FF"
+    sound: "/Audio/_Starlight/Ambience/Antag/brighteye.ogg"
+  # Whiskey: o AntagSpecifierPrototype daqui não tem tags.
+  components:
+  - type: Brighteye
+    energy: 200
+  - type: NpcFactionMember
+    factions:
+    - SimpleHostile
+  - type: CombatMode
+    disarmFailChance: 0.5
+    canDisarm: true
+  mindRoles:
+  - MindRoleBrighteye
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleBrighteye
+  name: Brighteye Role
+  components:
+  - type: MindRole
+    antagPrototype: Brighteye
+    subtype: roles-antag-brighteye-name
+    exclusiveAntag: true
+  - type: BrighteyeRole
+
+# Whiskey: aqui o emissor de objetivo é um prototype, não só a chave de locale.
+- type: objectiveIssuer
+  id: Brighteye
+  name: objective-issuer-brighteye

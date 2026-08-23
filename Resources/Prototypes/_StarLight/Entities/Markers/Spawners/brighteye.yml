@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+
+- type: entity
+  id: SpawnPointGhostBrighteye
+  name: ghost role spawn point
+  suffix: brighteye
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: roles-antag-brighteye-name
+    description: roles-antag-brighteye-description
+    rules: ghost-role-information-antagonist-rules
+    mindRoles:
+    - MindRoleBrighteye
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobBrighteye

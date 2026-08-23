@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Robust.Client.Graphics;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -11,6 +17,10 @@ namespace Content.Client._Starlight;
 
 public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 {
+    // Whiskey: o analisador RA0033 recusa id de prototipo literal em Index,
+    // entao o id vira campo tipado.
+    private static readonly ProtoId<ShaderPrototype> NullSpaceShader = "NullSpaceShader";
+
     [Dependency] private IOverlayManager _overlayMan = default!;
     [Dependency] private ISharedPlayerManager _playerMan = default!;
     [Dependency] private IPrototypeManager _prototypeManager = default!;
@@ -32,7 +42,7 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         SubscribeLocalEvent<ShowNullSpaceComponent, LocalPlayerDetachedEvent>(OnPlayerDetached);
         SubscribeLocalEvent<ShowNullSpaceComponent, GotEquippedEvent>(GotEquippedEvent);
 
-        _overlay = new(_prototypeManager.Index<ShaderPrototype>("NullSpaceShader"));
+        _overlay = new(_prototypeManager.Index(NullSpaceShader));
     }
 
     private void OnInit(EntityUid uid, Component component, ComponentInit args)

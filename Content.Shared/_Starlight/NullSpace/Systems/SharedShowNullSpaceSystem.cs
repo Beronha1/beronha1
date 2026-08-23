@@ -1,4 +1,9 @@
-using Content.Shared._Starlight.CosmicCult.Components;
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared._Starlight.NullSpace.Components;
 using Content.Shared.Interaction.Events;
 
@@ -13,8 +18,8 @@ public abstract partial class SharedShowNullSpaceSystem : EntitySystem
         SubscribeLocalEvent<ShowNullSpaceComponent, InteractionAttemptEvent>(OnInteractionAttempt);
         SubscribeLocalEvent<ShowNullSpaceComponent, AttackAttemptEvent>(OnAttackAttempt);
 
-        SubscribeLocalEvent<CosmicCultComponent, InteractionAttemptEvent>(OnInteractionAttempt);
-        SubscribeLocalEvent<CosmicCultComponent, AttackAttemptEvent>(OnAttackAttempt);
+        // Whiskey: o culto cósmico é de outra assembly e entra pelo
+        // CultoCosmicoNaEscuridaoSystem, em Content.Trauma.Shared.
     }
 
     private void OnAttackAttempt(EntityUid uid, ShowNullSpaceComponent component, AttackAttemptEvent args)
@@ -23,19 +28,7 @@ public abstract partial class SharedShowNullSpaceSystem : EntitySystem
             args.Cancel();
     }
 
-    private void OnAttackAttempt(EntityUid uid, CosmicCultComponent component, AttackAttemptEvent args)
-    {
-        if (HasComp<NullSpaceComponent>(args.Target))
-            args.Cancel();
-    }
-
     private void OnInteractionAttempt(EntityUid uid, ShowNullSpaceComponent component, ref InteractionAttemptEvent args)
-    {
-        if (HasComp<NullSpaceComponent>(args.Target))
-            args.Cancelled = true;
-    }
-
-    private void OnInteractionAttempt(EntityUid uid, CosmicCultComponent component, ref InteractionAttemptEvent args)
     {
         if (HasComp<NullSpaceComponent>(args.Target))
             args.Cancelled = true;

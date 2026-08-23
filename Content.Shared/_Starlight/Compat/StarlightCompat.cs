@@ -26,18 +26,18 @@ namespace Content.Shared._Starlight.Medical.Body.Events
 {
     /// <summary> Órgão entrou no corpo. Ver OrganGotInsertedEvent da Whiskey. </summary>
     [ByRefEvent]
-    public record struct OrganAddedToBodyEvent;
+    public record struct OrganAddedToBodyEvent(EntityUid Body);
 }
 
 namespace Content.Shared._Starlight.Medical.Surgery.Events
 {
     /// <summary> Órgão retirado em cirurgia. Ver OrganGotRemovedEvent da Whiskey. </summary>
     [ByRefEvent]
-    public record struct SurgeryOrganExtracted;
+    public record struct SurgeryOrganExtracted(EntityUid Body);
 
     /// <summary> Órgão implantado em cirurgia. </summary>
     [ByRefEvent]
-    public record struct SurgeryOrganImplantationCompleted;
+    public record struct SurgeryOrganImplantationCompleted(EntityUid Body);
 }
 
 namespace Content.Shared._Starlight.Overlay.Components
@@ -54,23 +54,12 @@ namespace Content.Shared._Starlight.Station
     public record struct ForcedPrototypeDoSpecialEvent;
 }
 
-namespace Content.Shared._Starlight.Light
-{
-    // O EyeColorInitEvent nao entra aqui: a Whiskey tem o dela, em
-    // Content.Shared.Humanoid, e declarar um segundo criaria ambiguidade. O
-    // Shadekin usa o da Whiskey, entao esse tratador funciona de verdade.
-}
 
-namespace Content.Shared._Starlight.CosmicCult.Components
-{
-    /// <summary>
-    ///     A Whiskey tem culto cósmico próprio, vindo do _DV, com componente de
-    ///     outro nome. Este marcador existe só para o Shadekin compilar; quem
-    ///     quiser integrar de verdade deve trocar pela versão do _DV.
-    /// </summary>
-    [RegisterComponent, NetworkedComponent]
-    public sealed partial class CosmicCultComponent : Component;
-}
+// O coto de CosmicCultComponent foi removido: ele registrava o nome "CosmicCult",
+// que a Whiskey JÁ usa em Content.Trauma.Shared.CosmicCult.Components, e componente
+// registrado duas vezes derruba o jogo no arranque. O culto cósmico daqui é o de
+// verdade, e quem liga ele nas regras da escuridão é o CultoCosmicoNaEscuridaoSystem,
+// em Content.Trauma.Shared, que é o único lugar que enxerga os dois lados.
 
 namespace Content.Shared._Starlight.Language.Systems
 {
@@ -78,7 +67,7 @@ namespace Content.Shared._Starlight.Language.Systems
     ///     O Shadekin declara dependência disto e nunca usa. Mantido só para o
     ///     campo compilar; pode sair junto com a linha que o declara.
     /// </summary>
-    public sealed class SharedLanguageSystem : EntitySystem;
+    public sealed partial class SharedLanguageSystem : EntitySystem;
 }
 
 namespace Content.Shared._Starlight.Railroading
@@ -88,7 +77,7 @@ namespace Content.Shared._Starlight.Railroading
     ///     abrir portal. Sem tarefa nenhuma registrada, não fazer nada é o
     ///     comportamento correto.
     /// </summary>
-    public sealed class RailroadingSupercritPortalSystem : EntitySystem
+    public sealed partial class RailroadingSupercritPortalSystem : EntitySystem
     {
         public void SupercriticalTask(Entity<Component?> ent) { }
         public void SupercriticalTask(EntityUid ent) { }
@@ -124,6 +113,22 @@ namespace Content.Shared._Starlight.Railroading.Components.Tasks
     /// <summary> Tarefa do sistema de objetivos do Starlight. Inerte aqui. </summary>
     [RegisterComponent]
     public sealed partial class RailroadSupercritPortalTaskComponent : Component;
+
+    /// <summary>
+    ///     Avisa que uma lâmpada quebrou. No Starlight isto alimenta a tarefa de
+    ///     quebrar luz do Railroading. Aqui o Shadegen levanta e ninguém escuta,
+    ///     que é o comportamento certo enquanto não existir o sistema de tarefas.
+    /// </summary>
+    public sealed class OnLightBreakEvent : EntityEventArgs
+    {
+        /// <summary> A lâmpada que quebrou. </summary>
+        public EntityUid Light;
+
+        public OnLightBreakEvent(EntityUid light)
+        {
+            Light = light;
+        }
+    }
 }
 
 namespace Content.Shared._Starlight.Railroading.Components.Watchers

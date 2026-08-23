@@ -16,5 +16,8 @@ namespace Content.Shared.Eye
         CosmicCultMonument = 1 << 5, // cosmic cult
         EldritchInfluence = 1 << 6, // heretic
         // </Trauma>
+        // <Whiskey>
+        NullSpace = 1 << 7, // Shadekin, do Starlight: quem está na escuridão
+        // </Whiskey>
     }
 }

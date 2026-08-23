@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Eye;
 using Robust.Server.GameObjects;
 using Content.Shared.Inventory.Events;
@@ -35,7 +41,7 @@ public sealed partial class ShowNullSpaceSystem : SharedShowNullSpaceSystem
             || !clothing.Slots.HasFlag(args.SlotFlags))
             return;
 
-        EntityManager.CopyComponent(uid, args.EquipTarget, component);
+        CopyComp(uid, args.EquipTarget, component);
     }
 
     private void OnUnequipped(EntityUid uid, ShowNullSpaceComponent component, GotUnequippedEvent args) =>

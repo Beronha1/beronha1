@@ -1,4 +1,11 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Eye;
+using Content.Shared._Starlight.Immunity;
 using Robust.Server.GameObjects;
 using Content.Server.Atmos.Components;
 using Content.Shared.Stealth;
@@ -14,14 +21,13 @@ using Content.Shared.Hands.Components;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Hands;
-using Content.Server._Starlight.Bluespace;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Gravity;
-using Content.Server._Starlight.CosmicCult;
 using Content.Shared._Starlight.NullSpace.Systems;
 using Content.Shared._Starlight.NullSpace.Components;
-using Content.Shared._Starlight.CosmicCult.Components;
+using Content.Shared._Starlight.Bluespace;
+using Content.Shared.Atmos;
 
 namespace Content.Server._Starlight.NullSpace;
 
@@ -35,7 +41,6 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
     [Dependency] private SharedHandsSystem _hands = default!;
     [Dependency] private NullSpacePhaseSystem _phaseSystem = default!;
     [Dependency] private SharedGravitySystem _gravity = default!;
-    [Dependency] private CosmicCultRuleSystem _cosmicCult = default!;
     [Dependency] private VisibilitySystem _visibility = default!;
 
     public override void Initialize()
@@ -125,8 +130,10 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
         RemComp<PressureImmunityComponent>(uid);
         RemComp<FTLSmashImmuneComponent>(uid);
 
-        if (_cosmicCult.AssociatedGamerule(uid) is not { } cult || cult.Comp.CurrentTier != 3)
-            EnsureComp<TemperatureImmunityComponent>(uid);
+        // Whiskey: no Starlight isto negava a imunidade a quem estivesse num culto
+        // cósmico de nível 3. Aquele culto não existe aqui, então a condição seria
+        // sempre verdadeira e a imunidade vale sempre.
+        EnsureComp<TemperatureImmunityComponent>(uid);
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
     }

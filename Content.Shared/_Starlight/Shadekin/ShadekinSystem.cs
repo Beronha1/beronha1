@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Humanoid;
 using Content.Shared.Alert;
 using System.Linq;
@@ -29,7 +35,7 @@ using Robust.Shared.Containers;
 using Content.Shared._Starlight.Shadekin.Components;
 using Content.Shared._Starlight.Overlay.Components;
 using Content.Shared._Starlight.NullSpace.Components;
-using Content.Shared._Starlight.Language.Systems;
+using Content.Trauma.Common.Language.Systems;
 using Content.Shared._Starlight.NullSpace.Systems;
 using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
@@ -37,6 +43,8 @@ using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Stunnable;
 using Robust.Shared.Network;
+using Content.Shared.Overlays;
+using Content.Shared._Starlight.Light;
 
 namespace Content.Shared._Starlight.Shadekin;
 
@@ -51,7 +59,6 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedStationSystem _station = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
-    [Dependency] private BodySystem _body = default!;
     [Dependency] private HumanoidProfileSystem _humanoidProfile = default!;
     [Dependency] private BodySystem _bodySystem = default!;
     [Dependency] private InventorySystem _inventorySystem = default!;
@@ -67,7 +74,7 @@ public sealed partial class ShadekinSystem : EntitySystem
     [Dependency] private SharedGameTicker _gameTicker = default!;
     [Dependency] private SharedContainerSystem _container = default!;
     [Dependency] private ExamineSystemShared _examine = default!;
-    [Dependency] private SharedLanguageSystem _language = default!;
+    [Dependency] private CommonLanguageSystem _language = default!;
     [Dependency] private SharedPointLightSystem _pointLight = default!;
     [Dependency] private INetManager _net = default!;
     [Dependency] private IPrototypeManager _prototype = default!;
@@ -120,8 +127,8 @@ public sealed partial class ShadekinSystem : EntitySystem
 
     private void OnEyeColorChange(EntityUid uid, ShadekinComponent component, EyeColorInitEvent args)
     {
-        // No Starlight isto desligava o brilho do olho na criacao do personagem.
-        // A Whiskey nao tem EyeGlowing, e o EyeColorInitEvent aqui e coto, entao
+        // No Starlight isto desligava o brilho do olho na criação do personagem.
+        // A Whiskey não tem EyeGlowing, e o EyeColorInitEvent aqui é coto, então
         // este tratador nunca roda. Fica declarado para o porte continuar
         // parecido com a origem, o que facilita atualizar depois.
     }
@@ -246,22 +253,15 @@ public sealed partial class ShadekinSystem : EntitySystem
             ShadekinState.High or
             ShadekinState.Extreme)
         {
-            passive.DamageCap = 1;
         }
         else if (shadekinState == ShadekinState.Low)
         {
-            passive.DamageCap = 20;
-            passive.AllowedStates.Clear();
-            passive.AllowedStates.Add(MobState.Alive);
+            passive.AllowedStates = [MobState.Alive];
             passive.Interval = 1f;
         }
         else if (shadekinState == ShadekinState.Dark)
         {
-            passive.DamageCap = 0;
-            passive.AllowedStates.Clear();
-            passive.AllowedStates.Add(MobState.Alive);
-            passive.AllowedStates.Add(MobState.Critical);
-            passive.AllowedStates.Add(MobState.Dead);
+            passive.AllowedStates = [MobState.Alive, MobState.Critical, MobState.Dead];
             passive.Interval = 0.5f;
         }
     }
@@ -298,11 +298,11 @@ public sealed partial class ShadekinSystem : EntitySystem
         var shouldBeActive = shadekinState == ShadekinState.Dark;
 
         // avoid dirtying if we don't need to
-        if(nightVision.Active == shouldBeActive)
+        if(nightVision.Enabled == shouldBeActive)
             return;
 
         // update whether or not nightVision should be active based on light level
-        nightVision.Active = shouldBeActive;
+        nightVision.Enabled = shouldBeActive;
 
         // ensure nightVision updates to reflect the new state
         Dirty(uid, nightVision);
@@ -356,7 +356,11 @@ public sealed partial class ShadekinSystem : EntitySystem
             if (_tag.HasTag(mapuid, _theDarkTag))
                 return;
         }
-        _gameTicker.StartGameRule(_theDarkMap);
+        // Whiskey: iniciar regra de jogo é do GameTicker do servidor, e o
+        // SharedGameTicker daqui não expõe isso. Levantamos evento e quem
+        // resolve é o GarantirEscuridaoSystem, no lado servidor.
+        var ev = new GarantirEscuridaoEvent(_theDarkMap);
+        RaiseLocalEvent(ref ev);
     }
 
     public override void Update(float frameTime)

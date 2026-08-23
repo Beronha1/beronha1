@@ -1,4 +1,10 @@
-﻿using Content.Server.Power.Components;
+﻿// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
+using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
 using Content.Shared._Starlight.Shadekin;
 using Content.Shared._Starlight.Shadekin.Components;
@@ -8,7 +14,7 @@ using Robust.Shared.Random;
 
 namespace Content.Server._Starlight.Shadekin;
 
-public sealed class DarkBreacherSystem : SharedDarkBreacherSystem
+public sealed partial class DarkBreacherSystem : SharedDarkBreacherSystem
 {
     [Dependency] private LinkedEntitySystem _link = default!;
 

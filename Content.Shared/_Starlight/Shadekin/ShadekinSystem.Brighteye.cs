@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Rejuvenate;
 using Content.Shared.Popups;
 using Content.Shared._Starlight.Medical.Surgery.Events;
@@ -182,19 +188,15 @@ public sealed partial class ShadekinSystem
         if (component.Portal is null && !AreWeInTheDark(uid))
             return;
 
-        // Get a valid Location to get TP at.
-        var spawns = new List<EntityUid>();
-        var query = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
-        while (query.MoveNext(out var spawnUid, out _, out var xform))
-            if (_mapSystem.TryGetMap(xform.MapID, out var spawnmap))
-                if (_tag.HasTag(spawnmap.Value, _theDarkTag))
-                    spawns.Add(spawnUid);
+        // Whiskey: SpawnPointComponent só existe do lado servidor aqui, e este
+        // arquivo é compartilhado. Quem procura destino na escuridão é o
+        // DestinoNaEscuridaoSystem, do servidor. Sem destino, o Shadekin morre
+        // como morreria no original.
+        var pedido = new PedirDestinoNaEscuridaoEvent(_theDarkTag);
+        RaiseLocalEvent(ref pedido);
 
-        // If no valid spawnpoint... we just... DIE!
-        if (spawns.Count <= 0)
+        if (pedido.Destino is not { } destino)
             return;
-
-        _random.Shuffle(spawns);
 
         // First, Drop Everything we have.
         if (TryComp<InventoryComponent>(uid, out var inventoryComponent) && _inventorySystem.TryGetSlots(uid, out var slots))
@@ -205,11 +207,7 @@ public sealed partial class ShadekinSystem
         PredictedSpawnAtPosition(component.ShadekinShadow, Transform(uid).Coordinates);
 
         // Teleport to "The Dark"
-        foreach (var spawnUid in spawns)
-        {
-            _transform.SetCoordinates(uid, Transform(spawnUid).Coordinates);
-            break;
-        }
+        _transform.SetCoordinates(uid, destino);
 
         var effect = PredictedSpawnAtPosition(component.ShadekinPhaseInEffect2, Transform(uid).Coordinates);
         Transform(effect).LocalRotation = Transform(uid).LocalRotation;
@@ -229,9 +227,9 @@ public sealed partial class ShadekinSystem
     /// <param name="humanoid"></param>
     public void SetBrighteyes(EntityUid uid)
     {
-        // Whiskey: cor de olho aqui nao e campo do componente humanoide, e sim
-        // dado do orgao, aplicado pelo HumanoidProfileSystem. E o fork nao tem
-        // EyeGlowing, entao o olho muda de cor mas nao brilha.
+        // Whiskey: cor de olho aqui não é campo do componente humanoide, e sim
+        // dado do órgão, aplicado pelo HumanoidProfileSystem. E o fork não tem
+        // EyeGlowing, então o olho muda de cor mas não brilha.
         if (GetEyeColor(uid) is not { } atual)
             return;
 
@@ -252,12 +250,12 @@ public sealed partial class ShadekinSystem
     }
 
     /// <summary>
-    ///     Le a cor do olho pelo orgao, porque na Whiskey ela vive ali e nao no
+    ///     Lê a cor do olho pelo órgão, porque na Whiskey ela vive ali e não no
     ///     componente humanoide.
     /// </summary>
     private Color? GetEyeColor(EntityUid uid)
     {
-        if (_body.GetOrgan(uid, HumanoidProfileSystem.EyesCategory) is not { } olhos
+        if (_bodySystem.GetOrgan(uid, HumanoidProfileSystem.EyesCategory) is not { } olhos
             || !TryComp<VisualOrganComponent>(olhos, out var visual))
             return null;
 

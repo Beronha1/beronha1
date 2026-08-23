@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Teleportation.Systems;
 using Content.Shared.Anomaly.Components;
 using Content.Shared.Verbs;
@@ -10,7 +16,6 @@ using Content.Shared.Movement.Pulling.Components;
 using Content.Shared.Examine;
 using Content.Shared.Light.Components;
 using Content.Shared.Throwing;
-using Content.Shared._Starlight.CosmicCult.Components;
 using Content.Shared._Starlight.Railroading;
 using Content.Shared._Starlight.Shadekin.Components;
 using Content.Shared._Starlight.Railroading.Components.Watchers;
@@ -99,7 +104,6 @@ public sealed partial class DarkPortalSystem : EntitySystem
         _anomalySystem.ChangeAnomalyStability(uid, -0.5f, anomaly);
         _anomalySystem.ChangeAnomalySeverity(uid, -0.5f, anomaly);
         _anomalySystem.ChangeAnomalyHealth(uid, 1f, anomaly);
-        _anomalySystem.ShuffleParticlesEffect((uid, anomaly));
     }
 
     private void OnShutdown(Entity<DarkPortalComponent> ent, ref AnomalyShutdownEvent args)
@@ -116,7 +120,11 @@ public sealed partial class DarkPortalSystem : EntitySystem
         ent.Comp.Portal = null;
         _alerts.ShowAlert(ent.Owner, ent.Comp.PortalAlert);
 
-        if (HasComp<CosmicCultComponent>(ent))
+        // Whiskey: o culto cósmico é de outra assembly, então a pergunta vai por
+        // evento e quem responde é o CultoCosmicoNaEscuridaoSystem.
+        var pergunta = new EhCultistaCosmicoEvent();
+        RaiseLocalEvent(ent.Owner, ref pergunta);
+        if (pergunta.EhCultista)
             return;
 
         _actionsSystem.AddAction(ent, ref ent.Comp.PortalAction, ent.Comp.BrighteyePortalAction, ent);

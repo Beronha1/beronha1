@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared._Starlight.Shadekin.Components;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Inventory.Events;
@@ -5,9 +11,9 @@ using Robust.Shared.Timing;
 
 namespace Content.Shared._Starlight.Shadekin;
 
-public sealed class TheDarkImmuneSystem : EntitySystem
+public sealed partial class TheDarkImmuneSystem : EntitySystem
 {
-    [Dependency] private readonly IGameTiming _timing = default!;
+    [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {

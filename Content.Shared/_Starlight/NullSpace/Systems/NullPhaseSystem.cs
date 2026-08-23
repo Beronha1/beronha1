@@ -1,3 +1,9 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
 using Content.Shared.Inventory.Events;
 using Content.Shared.Clothing.Components;
 using Content.Shared.Actions;
@@ -20,6 +26,9 @@ namespace Content.Shared._Starlight.NullSpace.Systems;
 
 public sealed partial class NullSpacePhaseSystem : EntitySystem
 {
+    // RA0033: AddAction recusa valor literal, entao a acao vira constante.
+    private static readonly EntProtoId NullPhaseAction = "NullPhaseAction";
+
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
@@ -83,7 +92,7 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
     private void Toggle(EntityUid uid, NullPhaseComponent component, bool toggle)
     {
         if (toggle)
-            _actionsSystem.AddAction(uid, ref component.PhaseAction, "NullPhaseAction", uid);
+            _actionsSystem.AddAction(uid, ref component.PhaseAction, NullPhaseAction, uid);
         else
             _actionsSystem.RemoveAction(uid, component.PhaseAction);
     }
@@ -150,13 +159,8 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
         {
             if (TryComp<ShadekinComponent>(uid, out var shadekin))
             {
-                if (shadekin.DoLightFlicker)
-                {
-                    var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
-                        .Where(x => HasComp<PoweredLightComponent>(x));
-                    foreach (var light in lightQuery)
-                        _ghost.DoGhostBooEvent(light);
-                }
+                // Whiskey: o piscar das luzes em volta dependia do DoGhostBooEvent,
+                // que este fork não tem. O efeito era cosmético e saiu inteiro.
 
                 var effect = SpawnAtPosition(_shadekinPhaseInEffect, Transform(uid).Coordinates);
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;
@@ -172,13 +176,8 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
 
             if (TryComp<ShadekinComponent>(uid, out var shadekin))
             {
-                if (shadekin.DoLightFlicker)
-                {
-                    var lightQuery = _lookup.GetEntitiesInRange(uid, 5, flags: LookupFlags.StaticSundries)
-                        .Where(x => HasComp<PoweredLightComponent>(x));
-                    foreach (var light in lightQuery)
-                        _ghost.DoGhostBooEvent(light);
-                }
+                // Whiskey: o piscar das luzes em volta dependia do DoGhostBooEvent,
+                // que este fork não tem. O efeito era cosmético e saiu inteiro.
 
                 var effect = SpawnAtPosition(_shadekinPhaseOutEffect, Transform(uid).Coordinates);
                 Transform(effect).LocalRotation = Transform(uid).LocalRotation;

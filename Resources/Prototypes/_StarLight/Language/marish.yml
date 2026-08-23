@@ -23,3 +23,14 @@
     - aarrr
     - wrurrl
     - mmar
+
+# Whiskey: aqui conhecimento de idioma é entidade própria, uma por idioma, e o
+# sistema de conhecimento tenta criar todas ao montar o personagem. Sem esta
+# entidade, o spawn de QUALQUER cargo estoura com
+# "invalid prototype: LanguageMarish". Molde: _Trauma/Entities/Knowledge/language.yml
+- type: entity
+  parent: BaseLanguageKnowledge
+  id: LanguageMarish
+  components:
+  - type: LanguageKnowledge
+    languageId: Marish

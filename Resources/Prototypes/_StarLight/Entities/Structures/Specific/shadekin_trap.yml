@@ -34,7 +34,7 @@
       fixtureID: floortrap
       maxTriggers: 1
     # Whiskey: a lista branca saiu do TriggerOnCollide e virou componente de
-    # condicao proprio, o WhitelistTriggerCondition, com os campos userWhitelist
+    # condição próprio, o WhitelistTriggerCondition, com os campos userWhitelist
     # e userBlacklist.
     - type: WhitelistTriggerCondition
       userWhitelist:

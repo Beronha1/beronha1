@@ -26,7 +26,7 @@ namespace Content.Shared._Starlight.NullSpace.Systems;
 
 public sealed partial class NullSpacePhaseSystem : EntitySystem
 {
-    // RA0033: AddAction recusa valor literal, entao a acao vira constante.
+    // RA0033: AddAction recusa valor literal, então a ação vira constante.
     private static readonly EntProtoId NullPhaseAction = "NullPhaseAction";
 
     [Dependency] private SharedActionsSystem _actionsSystem = default!;

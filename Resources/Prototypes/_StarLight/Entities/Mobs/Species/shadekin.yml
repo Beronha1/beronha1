@@ -38,7 +38,7 @@
       # que este fork já tem, e emote duplicado quebra o chat. Ficou o Hiss daqui.
       allowedEmotes: ["Marr", "Wurble", "Hiss", "Growl", "Purr"]
     - type: Vocal
-      # Whiskey: o Vocal daqui nao mapeia por sexo. Quem faz isso e o campo
+      # Whiskey: o Vocal daqui não mapeia por sexo. Quem faz isso é o campo
       # defaultSoundsBySex do species.
     - type: MeleeWeapon
       soundHit:
@@ -55,7 +55,7 @@
     - type: Injurable
       damageContainer: Biological
     - type: Deathgasp
-      # Whiskey: o Deathgasp daqui nao tem damageType.
+      # Whiskey: o Deathgasp daqui não tem damageType.
     - type: Reactive
       groups:
         Flammable: [Touch]
@@ -89,11 +89,11 @@
     - type: PassiveDamage
       allowedStates:
         - Alive
-      # Whiskey: o PassiveDamage daqui nao tem damageCap.
+      # Whiskey: o PassiveDamage daqui não tem damageCap.
       damage:
-        # Whiskey: aqui o PassiveDamage so aceita types. Brute e Burn tem 4 tipos
-        # cada e o valor de grupo e dividido entre eles, entao -0.07 vira -0.0175
-        # por tipo e a cura por segundo fica igual a do original.
+        # Whiskey: aqui o PassiveDamage só aceita types. Brute e Burn têm 4 tipos
+        # cada e o valor de grupo é dividido entre eles, então -0.07 vira -0.0175
+        # por tipo e a cura por segundo fica igual à do original.
         types:
           Blunt: -0.0175
           Slash: -0.0175
@@ -169,7 +169,7 @@
       thermalRegulationTemperatureThreshold: 2
     - type: Perishable
     - type: Butcherable
-      # Whiskey: o Butcherable daqui nao tem butcheringType.
+      # Whiskey: o Butcherable daqui não tem butcheringType.
       spawned:
         - id: FoodMeat
           amount: 5

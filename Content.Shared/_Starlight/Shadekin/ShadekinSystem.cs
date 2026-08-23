@@ -4,6 +4,7 @@
 //
 // Portado de https://github.com/ss14Starlight/space-station-14
 
+using System.Collections.Generic;
 using Content.Shared.Humanoid;
 using Content.Shared.Alert;
 using System.Linq;
@@ -256,12 +257,14 @@ public sealed partial class ShadekinSystem : EntitySystem
         }
         else if (shadekinState == ShadekinState.Low)
         {
-            passive.AllowedStates = [MobState.Alive];
+            // Whiskey: expressão de coleção compila para CollectionsMarshal.SetCount, que
+            // o sandbox do engine recusa na hora de carregar, sem o build reclamar.
+            passive.AllowedStates = new List<MobState> { MobState.Alive };
             passive.Interval = 1f;
         }
         else if (shadekinState == ShadekinState.Dark)
         {
-            passive.AllowedStates = [MobState.Alive, MobState.Critical, MobState.Dead];
+            passive.AllowedStates = new List<MobState> { MobState.Alive, MobState.Critical, MobState.Dead };
             passive.Interval = 0.5f;
         }
     }

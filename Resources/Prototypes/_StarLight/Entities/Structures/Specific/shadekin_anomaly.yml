@@ -32,9 +32,9 @@
       maxPulseLength: 120
       decayhreshold: 0
       deleteEntity: false
-      # Whiskey: o AnomalyComponent daqui nao tem particleInteractions nem os
-      # dois campos de leitura de particula do scanner. A anomalia continua
-      # funcionando, so nao tem a interacao especial de estabilizacao.
+      # Whiskey: o AnomalyComponent daqui não tem particleInteractions nem os
+      # dois campos de leitura de partícula do scanner. A anomalia continua
+      # funcionando, só não tem a interação especial de estabilização.
     - type: SecretDataAnomaly
       randomStartSecretMin: 2
       randomStartSecretMax: 5

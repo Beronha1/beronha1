@@ -18,7 +18,7 @@ namespace Content.Client._Starlight;
 public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 {
     // Whiskey: o analisador RA0033 recusa id de prototipo literal em Index,
-    // entao o id vira campo tipado.
+    // então o id vira campo tipado.
     private static readonly ProtoId<ShaderPrototype> NullSpaceShader = "NullSpaceShader";
 
     [Dependency] private IOverlayManager _overlayMan = default!;

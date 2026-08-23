@@ -65,9 +65,13 @@
   name: shadekin heart
   suffix: Shadekin
   components:
+  # Whiskey: o OrganBaseHeart daqui declara layers com o estado heart-on, do
+  # coração batendo, e camada herdada vence o campo state solto. O RSI do
+  # Shadekin só tem heart, então a camada precisa ser sobrescrita inteira.
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
-    state: heart
+    layers:
+    - state: heart
 
 - type: entity
   id: OrganShadekinStomach

@@ -20,7 +20,7 @@
   maleFirstNames: names_shadekin
   femaleFirstNames: names_shadekin
   naming: First
-  # Whiskey: o Vocal daqui nao mapeia som por sexo; quem faz isso e este campo.
+  # Whiskey: o Vocal daqui não mapeia som por sexo; quem faz isso é este campo.
   # A ordem e masculino, feminino, sem sexo.
   defaultSoundsBySex: [MaleShadekin, FemaleShadekin, MaleShadekin]
   minAge: 20

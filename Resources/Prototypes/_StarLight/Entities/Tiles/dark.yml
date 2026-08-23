@@ -3,7 +3,7 @@
 # SPDX-License-Identifier: MIT
 #
 # Portado de https://github.com/ss14Starlight/space-station-14
-# Os pisos da dimensao escura. O DarkRandom sorteia entre os doze.
+# Os pisos da dimensão escura. O DarkRandom sorteia entre os doze.
 
 - type: entity
   id: DarkTile
@@ -51,7 +51,7 @@
     - type: SpeedModifierContacts
       walkSpeedModifier: 0.3
       sprintSpeedModifier: 0.3
-      # Whiskey: aqui o campo de excecao chama ignoreWhitelist.
+      # Whiskey: aqui o campo de exceção chama ignoreWhitelist.
       ignoreWhitelist:
         components:
           - Shadekin

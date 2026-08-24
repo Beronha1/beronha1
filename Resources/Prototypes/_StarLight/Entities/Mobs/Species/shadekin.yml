@@ -52,7 +52,6 @@
       # o vulto fica mais discreto. Fica aqui no prototype de propósito, para
       # dar para ajustar no balanceamento sem recompilar.
       visibilidadeNoEscuro: 0.2
-    - type: ApagarLuz
       # Whiskey: o Vocal daqui não mapeia por sexo. Quem faz isso é o campo
       # defaultSoundsBySex do species.
     - type: MeleeWeapon

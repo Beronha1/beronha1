@@ -398,7 +398,7 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             // Whiskey: o manto de sombra acompanha o mesmo estado de luz.
             if (TryComp<MantoDeSombraComponent>(uid, out var manto))
-                _manto.Atualizar(uid, manto, component.CurrentState);
+                _manto.Atualizar(uid, manto, component.CurrentState, lightExposure);
             _speed.RefreshMovementSpeedModifiers(uid);
 
             if (component.CurrentState == ShadekinState.Extreme)

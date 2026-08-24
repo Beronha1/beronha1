@@ -15,10 +15,14 @@ public sealed partial class MantoDeSombraSystem : EntitySystem
     /// <summary>
     ///     Chamado pelo ShadekinSystem a cada atualização de luz. Só mexe quando o
     ///     estado muda, para não sujar a entidade toda hora.
+    ///
+    ///     Exige exposição zero, e não só o estado Escuro. O estado Escuro aceita
+    ///     até 0,8 de exposição, o que deixaria o manto valer com uma luz fraca
+    ///     por perto. Por decisão da administração, qualquer luz revela.
     /// </summary>
-    public void Atualizar(EntityUid uid, MantoDeSombraComponent manto, ShadekinState estado)
+    public void Atualizar(EntityUid uid, MantoDeSombraComponent manto, ShadekinState estado, float exposicao)
     {
-        var deveValer = estado == ShadekinState.Dark;
+        var deveValer = estado == ShadekinState.Dark && exposicao <= 0f;
         if (deveValer == manto.Ativo)
             return;
 

@@ -1,0 +1,378 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Decals usados pelos mapas da escuridão: sombra, viga de aço, friso de
+# madeira cinza e linhas de marcação. Só os 49 que os mapas realmente citam,
+# e não os 150 dos arquivos de origem.
+
+- type: decal
+  id: GrayWoodTrimThinBox
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_box
+
+- type: decal
+  id: GrayWoodTrimThinCornerNe
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_corner_ne
+
+- type: decal
+  id: GrayWoodTrimThinCornerNw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_corner_nw
+
+- type: decal
+  id: GrayWoodTrimThinCornerSe
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_corner_se
+
+- type: decal
+  id: GrayWoodTrimThinCornerSw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_corner_sw
+
+- type: decal
+  id: GrayWoodTrimThinEndE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_end_e
+
+- type: decal
+  id: GrayWoodTrimThinEndN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_end_n
+
+- type: decal
+  id: GrayWoodTrimThinEndS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_end_s
+
+- type: decal
+  id: GrayWoodTrimThinEndW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_end_w
+
+- type: decal
+  id: GrayWoodTrimThinInnerNe
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_inner_ne
+
+- type: decal
+  id: GrayWoodTrimThinInnerNw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_inner_nw
+
+- type: decal
+  id: GrayWoodTrimThinInnerSe
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_inner_se
+
+- type: decal
+  id: GrayWoodTrimThinInnerSw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_inner_sw
+
+- type: decal
+  id: GrayWoodTrimThinLineE
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_line_e
+
+- type: decal
+  id: GrayWoodTrimThinLineN
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_line_n
+
+- type: decal
+  id: GrayWoodTrimThinLineS
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_line_s
+
+- type: decal
+  id: GrayWoodTrimThinLineW
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/gray_wood_trim.rsi
+    state: thin_line_w
+
+- type: decal
+  id: ShadowCornerNe
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_corner_ne
+
+- type: decal
+  id: ShadowCornerNw
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_corner_nw
+
+- type: decal
+  id: ShadowCornerSe
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_corner_se
+
+- type: decal
+  id: ShadowCornerSw
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_corner_sw
+
+- type: decal
+  id: ShadowInnerNe
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_inner_ne
+
+- type: decal
+  id: ShadowInnerNw
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_inner_nw
+
+- type: decal
+  id: ShadowInnerSe
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_inner_se
+
+- type: decal
+  id: ShadowInnerSw
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_inner_sw
+
+- type: decal
+  id: ShadowLineE
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_line_e
+
+- type: decal
+  id: ShadowLineN
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_line_n
+
+- type: decal
+  id: ShadowLineS
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_line_s
+
+- type: decal
+  id: ShadowLineW
+  tags: ["station"]
+  sprite:
+    sprite: _Starlight/Decals/shadows.rsi
+    state: shadow_line_w
+
+- type: decal
+  id: steelbeamEast
+  tags: ["Decal", "metal", "beam", "east"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_east
+
+- type: decal
+  id: steelbeamNorth
+  tags: ["Decal", "metal", "beam", "north"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_north
+
+- type: decal
+  id: steelbeamNorthEast
+  tags: ["Decal", "metal", "beam", "northeast", "ne"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_northeast
+
+- type: decal
+  id: steelbeamNorthEastCorner
+  tags: ["Decal", "metal", "beam", "northeast", "corner"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_northeast_corner
+
+- type: decal
+  id: steelbeamNorthWest
+  tags: ["Decal", "metal", "beam", "northwest", "nw"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_northwest
+
+- type: decal
+  id: steelbeamNorthWestCorner
+  tags: ["Decal", "metal", "beam", "northwest", "corner"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_northwest_corner
+
+- type: decal
+  id: steelbeamSouth
+  tags: ["Decal", "metal", "beam", "south"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_south
+
+- type: decal
+  id: steelbeamSouthEast
+  tags: ["Decal", "metal", "beam", "southeast", "se"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_southeast
+
+- type: decal
+  id: steelbeamSouthEastCorner
+  tags: ["Decal", "metal", "beam", "southeast", "corner"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_southeast_corner
+
+- type: decal
+  id: steelbeamSouthWest
+  tags: ["Decal", "metal", "beam", "southwest", "sw"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_southwest
+
+- type: decal
+  id: steelbeamSouthWestCorner
+  tags: ["Decal", "metal", "beam", "southwest", "corner"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_southwest_corner
+
+# Drains
+
+- type: decal
+  id: steelbeamWest
+  tags: ["Decal", "metal", "beam", "west"]
+  snapCardinals: false
+  defaultSnap: true
+  sprite:
+    sprite: _Starlight/Decals/steel_beam.rsi
+    state: steelbeam_west
+
+- type: decal
+  id: trimlineeast
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_east
+
+- type: decal
+  id: trimlinene
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_ne
+
+- type: decal
+  id: trimlinenorth
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_north
+
+- type: decal
+  id: trimlinenw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_nw
+
+- type: decal
+  id: trimlinese
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_se
+
+- type: decal
+  id: trimlinesouth
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_south
+
+- type: decal
+  id: trimlinesw
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_sw
+
+- type: decal
+  id: trimlinewest
+  tags: ["station", "markings"]
+  sprite:
+    sprite: _Starlight/Decals/trims.rsi
+    state: trimline_west

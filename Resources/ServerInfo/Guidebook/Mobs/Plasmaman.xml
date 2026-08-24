@@ -5,71 +5,72 @@
     <GuideEntityEmbed Entity="MobPlasmaman" Caption=""/>
   </Box>
 
-  They breathe plasma, and oxygen is highly toxic to them when inhaled.
-  Being exposed to oxygen sets them on fire.
+  Plasmamen respiram plasma; oxigênio inalado é extremamente tóxico para eles.
+  Exposição ao oxigênio faz seu corpo pegar fogo.
 
-  To prevent ignition, they wear sealed suits made up of an envirosuit (in the jumpsuit slot) and a [bold]spaceworthy[/bold] envirosuit helmet.
-  Other suits like EVA suits, vacsuits, and hardsuits will also seal them from oxygen exposure.
+  Para evitar a ignição, usam trajes selados compostos por um envirosuit no slot de uniforme e um capacete de envirosuit [bold]adequado ao espaço[/bold].
+  Outros trajes, como EVA suits, vacsuits e hardsuits, também os isolam da exposição ao oxigênio.
 
-  They don't experience hunger nor thirst.
-  They don't have blood and cannot bleed out.
+  Eles não sentem fome nem sede.
+  Não têm sangue e não podem morrer por sangramento.
 
-  Due to their skeleton body, they can consume Milk to gain a positive moodlet and slowly heal Brute, Heat, Shock, and Caustic damage.
-  They can also consume Plasma to gain a bigger positive moodlet and heal every damage type faster, except for Cellular damage.
+  Por possuírem corpo esquelético, podem beber Leite para ganhar um moodlet positivo e curar lentamente dano Brute, Heat, Shock e Cáustico.
+  Também podem consumir Plasma para receber um moodlet positivo maior e curar mais rápido todos os tipos de dano, exceto dano Celular.
 
   <Box>
     <GuideEntityEmbed Entity="DrinkCartonMilk" />
     <GuideEntityEmbed Entity="SheetPlasma1" />
   </Box>
 
-  They infuse their fists with plasma dust that combusts when they punch, dealing [color=orange]5 Heat[/color] and [color=red]2.25 Blunt[/color] damage. However, each successful punch deals [color=orange]1 Heat[/color] damage to their hands.
+  Plasmamen cobrem os punhos com pó de plasma, que entra em combustão ao socar e causa [color=orange]5 Heat[/color] e [color=red]2.25 Brute[/color]. Porém, cada soco que acerta também causa [color=orange]1 Heat[/color] nas próprias mãos.
 
-  Plasmamen with the traits [bold]Claws[/bold], [bold]Talons[/bold] or [bold]Natural Weapons Removal[/bold] have less unarmed damage but don't take self-damage from unarmed attacks.
+  Plasmamen com os traços [bold]Claws[/bold], [bold]Talons[/bold] ou [bold]Natural Weapons Removal[/bold] causam menos dano desarmado, mas não sofrem o dano próprio desses ataques.
 
-  They take [color=#1e90ff]25% less Piercing, 20% less Poison, and 15% less Slash damage[/color],
-  and are [color=#8658fc]immune to Radiation and Cold damage[/color],
-  but take [color=#ffa500]50% more Blunt and 50% more Heat damage[/color].
+  Eles recebem [color=#1e90ff]25% menos dano Perfurante, 20% menos Veneno e 15% menos dano Cortante[/color],
+  são [color=#8658fc]imunes a Radiação e Frio[/color],
+  mas recebem [color=#ffa500]50% mais dano Brute e 50% mais dano Heat[/color].
 
-  Due to their [color=#8658fc]Cold immunity[/color], they can live in cold environments without the need of a winter coat.
+  Graças à [color=#8658fc]imunidade a Frio[/color], conseguem viver em ambientes frios sem precisar de casaco de inverno.
 
-  They have a slightly lower density than the average species. This results in weaknesses such as but not limited to: being slightly more vulnerable to being shoved, picked up, and thrown by Space Wind, and having a harder time pulling heavy objects.
+  Sua densidade é ligeiramente menor que a média das espécies. Entre outras consequências, isso os torna um pouco mais vulneráveis a empurrões, a serem carregados e a serem arremessados pelo Vento Espacial, além de dificultar que puxem objetos pesados.
 
-  ## Equipment
+  ## Equipamento
   <Box>
     <GuideEntityEmbed Entity="ClothingUniformEnvirosuit" Caption="envirosuit"/>
-    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="envirosuit helmet"/>
+    <GuideEntityEmbed Entity="ClothingHeadEnvirohelm" Caption="capacete de envirosuit"/>
     <GuideEntityEmbed Entity="DoubleEmergencyPlasmaTankFilled" />
   </Box>
 
-  All Plasmamen start with an envirosuit, an envirosuit helmet, and a plasma internals tank.
+  Todo Plasmaman começa com um envirosuit, um capacete de envirosuit e um tanque de plasma para internals.
 
-  Their envirosuits contain a [color=#1e90ff]self-extinguisher[/color] with limited charges, which they can activate when they are on fire
-  and wearing their envirosuit helmet. The self-extinguisher needs to recharge between uses.
+  O envirosuit contém um [color=#1e90ff]autoextintor[/color] com cargas limitadas, ativável quando o usuário está em chamas
+  e usando o capacete do envirosuit. O autoextintor precisa recarregar entre usos.
 
   <Box HorizontalAlignment="Stretch">
-    Cartridge refills of the envirosuit's self-extinguisher can be bought in [bold]Loadouts[/bold], or printed at the medical techfab after research.
-    A refill makes a recharging self-extinguisher immediately usable again.
+    Recargas do cartucho do autoextintor podem ser compradas nos [bold]Loadouts[/bold] ou impressas no techfab médico depois da pesquisa correspondente.
+    Uma recarga torna imediatamente utilizável um autoextintor que ainda estava recarregando.
     <GuideEntityEmbed Entity="EnvirosuitExtinguisherRefill" />
   </Box>
 
-  Their envirosuit helmets are [bold]spaceworthy[/bold] and provide welding protection. The helmet's visor can be lit up like a flashlight, using the inserted power cell as a battery.
-  They cannot eat nor drink without taking off their envirosuit helmet.
+  Capacetes de envirosuit são [bold]adequados ao espaço[/bold] e oferecem proteção de soldagem. O visor pode acender como uma lanterna, usando a célula de energia inserida como bateria.
+  Plasmamen não conseguem comer nem beber sem retirar o capacete.
 
-  The plasma internals tank lasts roughly an hour before needing to be replaced or refilled.
+  O tanque de plasma dos internals dura aproximadamente uma hora antes de precisar ser trocado ou reabastecido.
 
-  ## Medical Treatment
+  ## Tratamento médico
   <Box>
     <GuideEntityEmbed Entity="StasisBed" />
   </Box>
 
-  Before performing surgery on a Plasmaman, their envirosuit needs to be unequipped first, which is disastrous in an oxygenated environment.
+  Antes de operar um Plasmaman, é preciso retirar seu envirosuit — algo desastroso num ambiente com oxigênio.
 
-  To get around this, the Plasmaman can be buckled to a [bold]stasis bed[/bold] before removing their envirosuit
-  to prevent them from self-igniting throughout the surgical procedure.
+  Para contornar isso, prenda o Plasmaman a uma [bold]cama de estase[/bold] antes de retirar o envirosuit;
+  assim ele não entrará em combustão durante a cirurgia.
 
   <Box HorizontalAlignment="Stretch">
-    Their envirosuit helmets prevents them from eating pills, but their envirosuits allow chemicals to be injected through them.
+    O capacete impede que ele engula comprimidos, mas o envirosuit permite injetar substâncias químicas através do traje.
     <GuideEntityEmbed Entity="Syringe" Caption=""/>
   </Box>
+
 
 </Document>

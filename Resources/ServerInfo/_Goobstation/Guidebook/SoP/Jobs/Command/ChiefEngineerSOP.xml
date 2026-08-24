@@ -6,26 +6,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Chief Engineer (CE) SOP
-This is the list of procedures, responsibilities, and duties of the [color=#1b67a5][bold]Chief Engineer[/bold][/color] of this station.
+# SOP do Engenheiro-Chefe (CE)
+Procedimentos, responsabilidades e deveres do [color=#1b67a5][bold]Engenheiro-Chefe[/bold][/color].
 
-1. The Chief Engineer must make sure that the AME, Supermatter Engine, Tesla and/or Singularity are fully set up and supplying power to the station before any further action is taken by themselves or their team.
-<Box>Atmospherics should be set up by Atmospheric Technicians unless there is understaffing. The Chief Engineer is expected to handle this [italic]after[/italic] power is setup.</Box>
+1. Garanta que AME, Supermatéria, Tesla e/ou Singularidade estejam montados e alimentando a estação antes de sua equipe fazer qualquer outra coisa.
+<Box>Atmos deve ser montada por Técnicos Atmosféricos, salvo falta de pessoal. O CE cuida disso [italic]depois[/italic] da energia.</Box>
 
-2. The Chief Engineer is responsible for maintaining the integrity of Telecommunications.
-<Box>The Chief Engineer must not hinder the proper functionality of Telecommunications, and must diagnose and repair any issues that arise.</Box>
+2. Mantenha a integridade das Telecomunicações.
+<Box>Não prejudique seu funcionamento; diagnostique e repare toda falha.</Box>
 
-3. The Chief Engineer is not permitted to take the axe out of its case unless there is an immediate and urgent threat to their life or urgent access to crisis locations is necessary.
-<Box>The axe must be returned to the case afterwards, and the case locked.</Box>
+3. Só retire o machado da caixa diante de ameaça imediata à vida ou necessidade urgente de acessar uma crise.
+<Box>Depois, devolva-o e tranque a caixa.</Box>
 
-4. The Chief Engineer is permitted to carry a telescopic baton, flash, and any Engineering equipment necessary for their job.
+4. Pode portar bastão telescópico, flash e equipamento de Engenharia necessário.
 
-5. The Chief Engineer is Responsible for maintaining the Integrity of the station's engines, power supply systems, [bold]and[/bold] atmospherics systems.
-<Box>Failure to maintain this is grounds for termination.</Box>
+5. Mantenha motores, sistemas elétricos [bold]e[/bold] atmosféricos.
+<Box>Falhar nisso é motivo para demissão.</Box>
 
-6. The Chief Engineer may declare an area "Condemned" if it is damaged to the point where repairs cannot reasonably be completed within an acceptable frame of time.
-<Box>This area should be blocked off by Engineering personnel (including the Chief Engineer) to prevent harm to station personnel. This area should be announced over Central Communications Console.</Box>
+6. Pode declarar uma área "Condenada" quando o dano não puder ser reparado em prazo razoável.
+<Box>A Engenharia deve isolá-la e anunciá-la pelo Console Central de Comunicações.</Box>
 
-7. The Chief Engineer is permitted to grant Building Permits to crewmembers.
+7. Pode conceder Licenças de Construção.
 
 </Document>

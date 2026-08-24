@@ -1,25 +1,25 @@
 <Document>
- # Ovinia, The Galaxy's Herders
-(lore written under this section is provided by 2blahajs on Discord or juniwoofs on GitHub)
+ # Ovinia, os pastores da galáxia
+(O lore desta seção foi escrito por 2blahajs no Discord, ou juniwoofs no GitHub.)
 
  <Box>
     <GuideEntityEmbed Entity="MobOviniaDummy" Caption=""/>
   </Box>
 
-## Benefits
-- They Take 20% less heat, cold, and shock damage due to their insulating wool and are less flammible
-- They digest food at a slower rate, becoming hungry and thirsty 25% slower
-- Their hooved feet protect them from shards of glass and sharp floor hazards
+## Vantagens
+- Sua lã isolante reduz em 20% o dano de Calor, Frio e Choque, além de torná-los menos inflamáveis.
+- Digerem comida mais devagar e, por isso, sentem fome e sede 25% mais lentamente.
+- Seus cascos protegem contra cacos de vidro e outros perigos cortantes no chão.
 
-## Downsides
-- They take 15% increased slash and pierce damage.
-- Will get poisoned by Theobromine (Chocolate, Tea, Coffee) and Allicin (Onion, Garlic).
-- Their aptitude for grazing and chewing cud has led to them consuming food and drink 20% slower than most species
+## Desvantagens
+- Recebem 15% mais dano Cortante e Perfurante.
+- Teobromina (chocolate, chá e café) e alicina (cebola e alho) os envenenam.
+- A adaptação a pastar e ruminar faz com que consumam comidas e bebidas 20% mais devagar que a maioria das espécies.
 
-## A Brief Introduction
-The Ovinia are a species of ruminant-like humaniods native to the pasture world of Runia located in the binary Lanei system. This world of flowing green pastures crossed by pristine rivers and almost alpine ranges of mountain was home to a tribal civilization at the time of their first contact with the outside galaxy.
+## Breve introdução
+Ovinia são humanoides semelhantes a ruminantes, nativos de Runia, um mundo de pastagens localizado no sistema binário Lanei. Esse planeta de campos verdes ondulantes, cortados por rios cristalinos e cordilheiras quase alpinas, abrigava uma civilização tribal quando teve seu primeiro contato com o restante da galáxia.
 
-Ovinia are densely built ruminant-like humanoids that usually all possess a coat of fluffy wool that is prized among their species. An Ovinia's wool is their pride and joy, and the act of sharing their wool or gifting their wool is one of incredible significance. Ovinia are a relatively naturalistic species, often forgoing clothing in favour of their natural coats. Though with influences from the outside galaxy, some Ovinia have taken to fashion quite warmly.
+Ovinia têm constituição robusta e normalmente possuem um manto de lã fofa, muito valorizado entre sua espécie. A lã é seu orgulho e sua alegria; compartilhar ou presentear alguém com ela é um gesto de enorme significado. São uma espécie relativamente naturalista e costumam dispensar roupas em favor do próprio manto. Com a influência da galáxia exterior, porém, alguns Ovinia passaram a abraçar a moda com bastante entusiasmo.
 
 
 </Document>

@@ -6,48 +6,48 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Chain of Command
-This is the ideal list for passing down the Captain role in command. There are several factors to take into respect here, but this boils down to a simple list.
+# Cadeia de Comando
+Lista ideal para transmitir o cargo de Capitão. Há vários fatores, mas tudo se resume a esta ordem.
 
-[bullet/][color=#1b67a5]Nanotrasen Representative[/color] (NTR) should never hold a position of command on this station.
+[bullet/]O [color=#1b67a5]Representante da Nanotrasen[/color] (NTR) nunca ocupa comando nesta estação.
 
-[bullet/]This list can be deviated from for special circumstances, with the vote resting on Command to do so.
+[bullet/]Em circunstâncias especiais, o Comando pode votar para desviar da lista.
 
-[bullet/][color=#1b67a5]Nanotrasen Representative[/color], if one is present, should assist in this process and guide the new Captain.
+[bullet/]Se presente, o [color=#1b67a5]Representante da Nanotrasen[/color] auxilia e orienta o novo Capitão.
 
-[bullet/]When choosing the succeeding Captain, they should be marked on their ID as [color=#1b67a5]Acting Captain[/color] (following the same promotion procedures).
+[bullet/]Marque no ID do sucessor [color=#1b67a5]Capitão Interino[/color], seguindo a promoção normal.
 
 <Box>~</Box>
-<Box>[bold][color=#1b67a5][head=1]Command Succession[/head][/color][/bold]</Box>
-<Box>Captain</Box>
-<Box>Head of Personnel (HoP)</Box>
-<Box>Head of Security (HoS)</Box>
-<Box>Warden</Box>
-<Box>Research Director (RD)</Box>
-<Box>Chief Medical Officer (CMO)</Box>
-<Box>Chief Engineer (CE)</Box>
-<Box>Quartermaster (QM)</Box>
-<Box>Security Officer</Box>
+<Box>[bold][color=#1b67a5][head=1]Sucessão do Comando[/head][/color][/bold]</Box>
+<Box>Capitão</Box>
+<Box>Chefe de Pessoal (HoP)</Box>
+<Box>Chefe de Segurança (HoS)</Box>
+<Box>Carcereiro</Box>
+<Box>Diretor de Pesquisa (RD)</Box>
+<Box>Diretor Médico-Chefe (CMO)</Box>
+<Box>Engenheiro-Chefe (CE)</Box>
+<Box>Intendente (QM)</Box>
+<Box>Oficial de Segurança</Box>
 <Box>~</Box>
 
-## Succession Decision Process
-The new Acting Captain should follow the same responsibilities and uphold the same duties as a normal Captain would. These can be found in the Captain SOP.
-The succession list is shown from [bold]top to bottom[/bold] and should be followed as such.
+## Processo de Sucessão
+O novo Capitão Interino deve assumir as mesmas responsabilidades e cumprir os mesmos deveres de um Capitão efetivo. Eles estão descritos no SOP do Capitão.
+Siga a lista de [bold]cima para baixo[/bold].
 
-If it is deemed necessary, or by wish of the Head of Staff that is being chosen, the next person in the succession may be skipped.
+Se necessário ou a pedido do Chefe escolhido, pule para a próxima pessoa.
 
-[bullet/]For choices where the Head of Staff is deemed necessary to skip by others, it should be put to a vote by successors (barring Security Officers).
+[bullet/]Se os demais considerarem necessário pular um Head of Staff, os sucessores devem decidir por votação, sem incluir Oficiais de Segurança.
 
-[bullet/]For choices where the Head of Staff chooses to not accept the title, they should have a valid reason for doing so and justify it if necessary.
+[bullet/]Chefe que recusar deve ter motivo válido e justificá-lo se necessário.
 
-## Choosing Security Officers
-When choosing Security Officers for Command Succession, it should be put to a vote by all those included if there is no [color=#1b67a5]Nanotrasen Representative[/color].
+## Escolhendo Oficiais de Segurança
+Se não houver um [color=#1b67a5]Representante da Nanotrasen[/color], a escolha de um Oficial de Segurança para a Sucessão do Comando deve ser votada por todos os envolvidos.
 
-When voting, it should be held as fast as possible. If a tie happens while voting, seniority should prevail.
+Vote o mais rápido possível; em empate, prevalece a antiguidade.
 
-## Procedure for Acquiring Access
-If at all possible, damage to station and Captain Quarter's should be minimized while acquiring accesses to ID during Command Succession procedures.
+## Obtendo Acesso
+Sempre que possível, minimize os danos à estação e aos Aposentos do Capitão ao obter os acessos de ID durante a Sucessão do Comando.
 
-AI should follow these procedures and assist in this process. If AI is not available, engineers should be utilized in opening the doors and ensuring they are properly secured when finished.
+A IA deve ajudar. Sem IA, Engenheiros abrem portas e as deixam seguras ao terminar.
 
 </Document>

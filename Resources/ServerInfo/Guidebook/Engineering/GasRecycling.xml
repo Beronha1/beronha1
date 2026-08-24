@@ -1,25 +1,25 @@
 <Document>
-  # Gas Recycling
-  Gas recycler is a machine that converts waste gasses into breathable ones.
+  # Reciclagem de gases
+  O reciclador de gases é uma máquina que converte gases residuais em gases respiráveis.
 
   <Box>
     <GuideEntityEmbed Entity="GasRecycler"/>
   </Box>
-  Specificaly it can recycle Carbon Dioxide and Nitrous Oxide into Oxygen and Nitrogen.
+  Especificamente, ele recicla Dióxido de Carbono e Óxido Nitroso em Oxigênio e Nitrogênio.
 
-  The machine has a two [textlink="pipenet" link="PipeNetworks"] connections, for gas input and output.
+  A máquina possui duas conexões de [textlink="pipenet" link="PipeNetworks"], uma para entrada e outra para saída.
 
-  For recycler to work, tha gas needs to be pressurized to [color=#a4885c]3000 kPa[/color] heated to [color=#a4885c]573,15K[/color], and the pressure at the inlet needs to be higher than outlet.
-  If these conditions are not met, the gases will just pass through without getting recycled (as will unrecyclable gases).
+  Para o reciclador funcionar, o gás precisa estar pressurizado a [color=#a4885c]3000 kPa[/color], aquecido a [color=#a4885c]573,15K[/color], e a pressão da entrada deve superar a da saída.
+  Se essas condições não forem atendidas, os gases apenas atravessarão a máquina sem serem reciclados — o mesmo vale para gases não recicláveis.
 
   <Box>
-    <GuideEntityEmbed Entity="GasRecyclerMachineCircuitboard" Caption="Gas recycler circuit board"/>
+    <GuideEntityEmbed Entity="GasRecyclerMachineCircuitboard" Caption="Placa de circuito do reciclador de gases"/>
   </Box>
 
-  The machine can be constructed using a circuit board, which can be made at a circuit imprinter.
-  It first needs to be researched by [textlink="science" link="Science"] though.
+  A máquina pode ser construída com uma placa de circuito impressa num circuit imprinter.
+  Antes disso, porém, [textlink="Ciência" link="Science"] precisa pesquisar a tecnologia.
 
-  Gas recycling can be used as an alternative to gas miners, or as a backup to build a redundancy in the atmospheric system.
-  [color=#a4885c]Just don't forget to cool the gas before releasing it into the station![/color]
+  A reciclagem pode substituir mineradores de gás ou servir como redundância do sistema atmosférico.
+  [color=#a4885c]Só não esqueça de resfriar o gás antes de soltá-lo na estação![/color]
 
 </Document>

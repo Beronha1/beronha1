@@ -6,17 +6,18 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Passive Gate
-  The passive gate is a simple one-way valve that prevents gasses from flowing backwards.
+  # Válvula passiva unidirecional
+  A válvula passiva é uma válvula simples de mão única que impede gases de fluírem no sentido contrário.
   <Box>
     <GuideEntityEmbed Entity="GasPassiveGate"/>
   </Box>
 
-  The valve's input is on the side of the [color=red]red[/color] circle.
-  The valve also shows the current flow rate of the pipe when examined.
+  A entrada fica no lado do círculo [color=red]vermelho[/color].
+  Ao ser examinada, a válvula também mostra a vazão atual da tubulação.
 
-  It's useful in many applications, for example:
-  - Preventing a pure gas from getting contaminated via a mixed gas flowing back through the pipe.
-  - Preventing pressure or temperature changes across two [textlink="pipenets" link="PipeNetworks"] in the opposite direction.
-  - Quickly checking the flow rate on a pipenet without needing a [textlink="gas analyzer" link="AtmosTools"].
+  Ela é útil em várias situações, por exemplo:
+  - Impedir que um gás puro seja contaminado por uma mistura retornando pela tubulação.
+  - Impedir mudanças de pressão ou temperatura no sentido oposto entre duas [textlink="pipenets" link="PipeNetworks"].
+  - Conferir rapidamente a vazão de uma pipenet sem precisar de um [textlink="analisador de gases" link="AtmosTools"].
+
 </Document>

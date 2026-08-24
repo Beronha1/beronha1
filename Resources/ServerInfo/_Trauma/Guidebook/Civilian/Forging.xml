@@ -1,42 +1,42 @@
 <Document>
-# Forging
-Forging takes a lot of setup but can create strong items that are otherwise difficult or impossible to get.
+# Forja
+Forjar exige bastante preparação, mas produz itens fortes, difíceis ou impossíveis de obter de outro modo.
 
-# Getting Started
-Start by getting some cement, either from maints or chem, and mixing it with water to make wet cement. This can be made into wet bricks, which after drying can be used to make bloomeries.
+# Primeiros passos
+Pegue cimento na manutenção ou química e misture com água para criar cimento molhado. Faça tijolos molhados; depois de secos, eles constroem bloomeries.
 
   <Box>
-    <GuideEntityEmbed Entity="ReagentContainerCement" Caption="Bag of Cement"/>
-    <GuideEntityEmbed Entity="WetCement" Caption="Cement"/>
-    <GuideEntityEmbed Entity="WetBrick" Caption="Wet Brick"/>
-    <GuideEntityEmbed Entity="Brick1" Caption="Brick"/>
+    <GuideEntityEmbed Entity="ReagentContainerCement" Caption="Saco de Cimento"/>
+    <GuideEntityEmbed Entity="WetCement" Caption="Cimento"/>
+    <GuideEntityEmbed Entity="WetBrick" Caption="Tijolo Molhado"/>
+    <GuideEntityEmbed Entity="Brick1" Caption="Tijolo"/>
   </Box>
 
 # Bloomery
-Bloomeries can be loaded with charcoal and metal scraps to make blooms, once they are finished firing; break them open to get the bloom.
+Carregue a bloomery com carvão e sucata de metal para fazer blooms. Ao terminar a queima, quebre-a e retire o bloom.
 
   <Box>
     <GuideEntityEmbed Entity="BloomeryCold" Caption="Bloomery"/>
-    <GuideEntityEmbed Entity="BloomeryLitSteel" Caption="Active Bloomery"/>
-    <GuideEntityEmbed Entity="BloomeryCompleteSteel" Caption="Finished Bloomery"/>
+    <GuideEntityEmbed Entity="BloomeryLitSteel" Caption="Bloomery Ativa"/>
+    <GuideEntityEmbed Entity="BloomeryCompleteSteel" Caption="Bloomery Pronta"/>
   </Box>
 
-# Forging
-To work the bloom into a usable ingot, deal enough blunt damage to it before it cools down! It can be kept warm with a charcoal forge, but be careful to not overheat it.
+# Forjamento
+Para transformar o bloom em lingote, cause dano contundente suficiente antes que esfrie! Uma forja a carvão mantém o calor, mas não deixe superaquecer.
 
-You should make an anvil next, it is required to make metal items.
+Depois faça uma bigorna, necessária para itens metálicos.
 
   <Box>
     <GuideEntityEmbed Entity="SteelBloom" Caption="Bloom"/>
-    <GuideEntityEmbed Entity="SteelIngot" Caption="Ingot"/>
+    <GuideEntityEmbed Entity="SteelIngot" Caption="Lingote"/>
   </Box>
 
-# Soft metals
+# Metais macios
 
-Pure and soft metals like [bold]silver and gold[/bold] can be used and are much faster to work with from their very low softening temperatures.
-Instead of using a bloomery, you can directly heat and work the scraps into an ingot by hand.
-However, instead of becoming brittle from overheating they will completely melt into a puddle! No refunds.
+Metais puros e macios como [bold]prata e ouro[/bold] amolecem em temperaturas baixas e são muito mais rápidos de trabalhar.
+Sem bloomery, aqueça a sucata e trabalhe diretamente até virar lingote.
+Porém, em vez de ficar quebradiços ao superaquecer, derretem completamente numa poça! Sem reembolso.
 
-Silver items will deal a nice amount of bonus damage to unholy creatures and gold items will sell for the best price, on top of being shiny.
+Itens de prata causam bom dano extra a criaturas profanas; itens de ouro vendem pelo melhor preço, além de brilhar.
 
 </Document>

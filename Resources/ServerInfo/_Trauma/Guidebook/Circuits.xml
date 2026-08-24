@@ -1,45 +1,45 @@
 <Document>
-# Circuits
+# Circuitos
 
-Circuits on Trauma Station let you easily make node-based programs that can run from a single item, while controlling up to 16 devices directly.
+Circuitos da Trauma Station permitem criar facilmente programas por nós que rodam num único item e controlam até 16 dispositivos diretamente.
 
-Compared to basic logic gate items, you can do far more of their basic operations in a single item, but also use strings and numbers instead of just booleans (on and off).
+Comparados a portas lógicas básicas, executam muito mais operações no mesmo item e usam strings e números, não apenas booleanos (ligado/desligado).
 
-They are heavily inspired by Stationeers' IC10 system, but using nodes instead of MIPS. If you've played around with IC10s you'll know how to use circuits already.
+A inspiração vem do sistema IC10 de Stationeers, mas com nós no lugar de MIPS. Quem já mexeu com IC10 saberá usar circuitos.
 
-The [bold]integrated circuit[/bold] item itself can be printed at a circuit printer.
+O item [bold]circuito integrado[/bold] pode ser impresso numa impressora de circuitos.
 
-## Housings
+## Carcaças
 
-An integrated circuit doesn't have any kind of power supply by itself, you need to print a [bold]circuit housing[/bold] at an autolathe.
+O circuito não tem fonte de energia própria; imprima uma [bold]carcaça de circuito[/bold] numa autolathe.
 
-The regular one uses LV power and must be anchored, it also has a power switch you can toggle by right clicking it.
+A versão comum usa energia LV, precisa ser presa e tem interruptor acessível pelo clique direito.
 
-The portable one uses a powercell and can go anywhere, even inside your chest cavity...
-As a result of its portability, it also has a much lower range. You may have to figure out how to relay signals to control far away devices, should you need that.
+A portátil usa uma célula e cabe em qualquer lugar, até dentro da sua cavidade torácica...
+Por ser portátil, seu alcance é bem menor. Talvez seja preciso retransmitir sinais para controlar dispositivos distantes.
 
-## Circuit Editor Console
+## Console Editor de Circuitos
 
-You will need this to actually put a program into a circuit.
-Print a board and build a computer like normal, then insert your circuit to begin.
+Você precisa dele para colocar um programa no circuito.
+Imprima uma placa, construa o computador normalmente e insira o circuito.
 
-# Ports
+# Portas
 
-On the left and right of the main workspace there are your Input and Output ports.
-These ports can send and receive signals from devices linked to the circuit's housing.
-You can link ports to gates by clicking one then clicking a pin on a gate, or directly to an output port should you need that.
+À esquerda e à direita da área de trabalho ficam portas de Entrada e Saída.
+Elas enviam e recebem sinais de dispositivos vinculados à carcaça.
+Vincule uma porta a uma gate clicando nela e depois num pino, ou diretamente a uma saída.
 
 # Gates
 
-In order to actually do anything you have to add gates. Click buttons on the left to add them to the circuit, then move them somewhere nice.
+Para fazer algo, adicione gates pelos botões à esquerda e organize-as na área.
 
-Like ports, gates have their outputs linked by clicking their pins with eachother. If you misclick a pin, just click it again to stop linking from it.
+Como nas portas, conecte saídas clicando nos pinos. Se clicar errado, clique no pino novamente para cancelar.
 
-Currently you are limited to 256 gates so you can pretty much go wild.
+O limite atual é de 256 gates, então dá para enlouquecer.
 
-# Importing / Exporting
+# Importar / Exportar
 
-You can click Export at the top to export your circuit to a .yml file on your computer.
-You can then import a circuit file later to load existing code onto a circuit, very handy.
+Clique em Exportar no topo para salvar o circuito como arquivo .yml no computador.
+Depois, importe o arquivo para carregar código existente — muito útil.
 
 </Document>

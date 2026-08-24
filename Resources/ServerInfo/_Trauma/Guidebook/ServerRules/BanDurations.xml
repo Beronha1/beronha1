@@ -1,17 +1,17 @@
 <Document>
-  # Ban Durations
+  # Duração dos Bans
 
   <!-- TODO: appeal information -->
 
-  ## Temporary
-  Temporary bans will be lifted automatically after a certain amount of time. If they are a game ban, they will tell you how much time is remaining when you try to connect.
+  ## Temporário
+  Bans temporários são removidos automaticamente depois de determinado tempo. Se for um ban de jogo, o tempo restante será informado quando você tentar se conectar.
 
-  ## Indefinite
-  These bans will only be removed on a successful appeal. Any ban which doesn't tell you when it expires and doesn't specify otherwise can be presumed to be an indefinite ban.
+  ## Indefinido
+  Estes bans só são removidos após uma apelação aceita. Se um ban não informar quando expira nem especificar outra condição, você pode presumir que ele é indefinido.
 
   ## Voucher
-  This is an indefinite ban which may only be appealed both with a successful appeal and which require a voucher of good behavior from the administrative team of a well-known or at least decently active SS13/SS14 server in order for the appeal to be considered. Voucher bans typically cannot be appealed for at least six months after being issued. Without a voucher, a player can only attempt to appeal a voucher ban once, and only if the ban was inappropriately placed. Voucher bans are typically only placed as a result of an unsuccessful appeal of an indefinite game ban by players with a history of bans and of causing issues.
+  Este é um ban indefinido cuja apelação, para ser analisada, exige um voucher de bom comportamento emitido pela equipe administrativa de um servidor conhecido — ou pelo menos razoavelmente ativo — de SS13/SS14, além de a própria apelação precisar ser aceita. Em geral, só é possível recorrer de um ban por voucher depois de pelo menos seis meses da sua aplicação. Sem um voucher, o jogador só pode tentar recorrer uma vez, e apenas se o ban tiver sido aplicado indevidamente. Bans por voucher costumam ser aplicados após uma apelação malsucedida contra um ban de jogo indefinido por jogadores que têm histórico de bans e de causar problemas.
 
-  ## Permanent
-  This is a ban that is only appealable if the ban was inappropriately placed, including if the ban should not have been permanent. If the result of the appeal is that the ban was appropriately placed, the ban may not be appealed again and will not be lifted. These bans are extremely rare, but are applied to players who continually cause problems even after a voucher ban or users who have completely unacceptable behavior may be permanently removed.
+  ## Permanente
+  Este ban só admite apelação se tiver sido aplicado indevidamente, inclusive quando não deveria ter sido permanente. Se a análise concluir que o ban foi aplicado corretamente, não será possível recorrer outra vez e ele não será removido. Esses bans são extremamente raros, mas podem remover permanentemente jogadores que continuam causando problemas mesmo depois de um ban por voucher, ou usuários cujo comportamento seja completamente inaceitável.
 </Document>

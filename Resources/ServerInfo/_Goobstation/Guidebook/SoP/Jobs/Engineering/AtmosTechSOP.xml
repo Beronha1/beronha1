@@ -6,28 +6,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Atmospheric Technician SOP
-This is the list of procedures, responsibilities, and duties of the [color=#c8a404][bold]Atmospheric Technician[/bold][/color] of this station.
+# SOP do Técnico Atmosférico
+Procedimentos, responsabilidades e deveres do [color=#c8a404][bold]Técnico Atmosférico[/bold][/color].
 
-1. Atmospheric Technicians are permitted to re-pipe their region to suit their needs but must maintain life support to distro.
+1. Pode refazer os canos da área conforme necessário, mas deve manter suporte de vida na distro.
 
-2. Atmospheric Technicians are permitted to make mixtures, but they must have a use and must be beneficial to the station and/or its engines.
-<Box>Failure to follow this may result in Termination or in severe cases Contract Nullification.</Box>
+2. Pode criar misturas, desde que tenham uso e beneficiem estação e/ou motores.
+<Box>Falhar pode causar Demissão ou, em casos graves, Anulação de Contrato.</Box>
 
-3. Atmospheric Technicians are permitted to cool Plasma and store it for later use in Radiation Collectors. Likewise, they are permitted to cool Nitrogen or Carbon Dioxide and store it for use as coolant for the Supermatter Engine;
+3. Pode resfriar Plasma para Coletores de Radiação e Nitrogênio ou Dióxido de Carbono para resfriar a Supermatéria;
 
-4. Atmospheric Technicians are not permitted to take the axe out of its case unless there is an immediate and urgent threat to their life or urgent access to crisis locations is necessary.
-<Box>The axe must be returned to the case afterwards, and the case locked.</Box>
+4. Só retire o machado da caixa diante de ameaça imediata à vida ou acesso urgente a uma crise.
+<Box>Depois, devolva e tranque a caixa.</Box>
 
-5. Atmospheric Technicians are not permitted to tamper with the default values on Air Alarms, but must fix them and/or change their values for emergency situations. [bold]This does not include isolated sections for burn chambers, mixture chambers, et cetera.[/bold]
-<Box>They are, however, permitted to create small, acclimatized rooms for species that require special atmospheric conditions (such as Vox), provided they receive express permission from the Chief Engineer.</Box>
+5. Não adultere padrões de Alarmes de Ar; corrija-os e/ou mude em emergências. [bold]Isso não inclui áreas isoladas para câmaras de queima, mistura etc.[/bold]
+<Box>Pode criar salas pequenas para espécies com atmosfera especial, como Vox, com autorização do Engenheiro-Chefe.</Box>
 
-6. Atmospheric Technicians must periodically check on the Central Alarms Computer, in periods of, at most, thirty (30) minutes.
+6. Verifique o Computador Central de Alarmes ao menos a cada trinta (30) minutos.
 
-7. Atmospheric Technicians must respond promptly to piping and station breaches.
-<Box>Failure to report within fifteen (15) minutes will be considered a breach of Standard Operating Procedure, unless there are no spare Atmospheric Technicians to report, or an Engineer has arrived on scene first.</Box>
-<Box>All Hazard Zones must be cordoned off with Engineering Tape or holobarriers, for the sake of everyone else.</Box>
+7. Responda prontamente a breaches de canos e da estação.
+<Box>Não chegar em quinze (15) minutos viola o SOP, salvo falta de Técnico livre ou Engenheiro já no local.</Box>
+<Box>Isole Zonas de Perigo com Fita de Engenharia ou holobarreiras.</Box>
 
-8. Atmospheric Technicians are held to the same guidelines and standards as [color=#c8a404][bold]Station Engineer[/bold][/color]s but have elevated access and their own rules for Atmospherics.
+8. Segue as mesmas diretrizes dos [color=#c8a404][bold]Engenheiros da Estação[/bold][/color], mas tem acesso elevado e regras próprias de Atmos.
 
 </Document>

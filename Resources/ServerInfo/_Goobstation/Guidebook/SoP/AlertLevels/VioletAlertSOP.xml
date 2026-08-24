@@ -6,40 +6,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Station Alert - Violet
+  # Alerta da Estação - Violeta
 
   <Box>
-    [italic]Called by: A viral threat aboard the station.[/italic]
+    [italic]Declarado por: ameaça viral a bordo.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Condições:[/bold]
 
-  There is a known viral threat aboard the station, and all hands on deck are required to combat it.
+  Há ameaça viral conhecida e todas as mãos são necessárias para combatê-la.
 
-  [bold]Security:[/bold]
+  [bold]Segurança:[/bold]
 
-  Security should fully arm themselves, and at their discretion may also hand out arms to trusted crewmembers and Command.
+  Arme-se completamente e, a critério da Segurança, distribua armas a tripulantes confiáveis e ao Comando.
 
-  Security personnel are to prioritize the safety of themselves and Command, and crewmembers as the next-highest priority.
+  Priorize a própria segurança e a do Comando, depois a dos demais tripulantes.
 
-  Security personnel should distance themselves from others in order to avoid the spread of unknown pathogens.
+  Mantenha distância para evitar espalhar patógenos desconhecidos.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Áreas Seguras:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Armazenamento EVA, Técnico, Gerador de Gravidade, Armazém Seguro da Engenharia, Upload da IA, Cofre, Gateway e áreas pouco usadas com acesso de Comando.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Recomenda-se baixar os bolts, salvo necessidade de uso;
 
-  The Gateway should be fully closed to avoid off-station spread of the virus.
+  Feche completamente o Gateway para impedir propagação fora da estação.
 
-  [bold]General Crew:[/bold]
+  [bold]Tripulação Geral:[/bold]
 
-  All personnel are required to maximize their Suit Sensors;
+  Maximize os Sensores do Traje;
 
-  Personnel are to distance themselves from other personnel where infection or carrier status is suspected.
+  Afaste-se de pessoas com suspeita de infecção ou estado de portador.
 
-  Personnel must exercise caution at all times. Following simple safety procedures (such as not going through Maintenance alone) can prevent needless accidents.
+  Tenha cautela sempre. Medidas simples, como não entrar sozinho na Manutenção, evitam acidentes.
 
-  Personnel are advised to secure a secluded location to ride out the viral threat in. Stock as much food and water as is possible.
+  Procure local isolado para esperar o fim da ameaça e estoque o máximo possível de comida e água.
 
 </Document>

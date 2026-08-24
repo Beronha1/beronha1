@@ -8,57 +8,58 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # I.P.C.
+  # IPC
   <GuideEntityEmbed Entity="AppearanceIPC" Caption=""/> <!-- Trauma -->
-  An IPC (short for Integrated Positronic Chassis) is a type of sentient robot and is considered an [color=yellow]independent individual[/color], meaning [color=red]they are not guided by any laws of robotics[/color]. IPCs cannot be hacked by Emags because they do not have to follow any predefined directives in their system. [color=red]IPCs are silicon-based beings, so they are usually healed by Science or Engineering instead of Medical.[/color]
-  They take 20% less Brute damage, 70% more Heat damage and 100% more Shock damage. Contrary to cyborgs, they take Radiation damage, but 60% less than humans.
-  They have no bones.
+  Um IPC (Integrated Positronic Chassis, ou Chassi Positrônico Integrado) é um robô senciente considerado um [color=yellow]indivíduo independente[/color]. Isso significa que [color=red]ele não é regido por leis da robótica[/color]. IPCs não podem ser hackeados com Emags porque não precisam obedecer a diretivas predefinidas no sistema. [color=red]Como IPCs são seres à base de silício, normalmente são tratados por Ciência ou Engenharia, e não pela Medicina.[/color]
+  Eles recebem 20% menos dano Brute, 70% mais dano Heat e 100% mais dano Shock. Ao contrário dos borgs, sofrem dano de Radiação, embora 60% menos que humanos.
+  IPCs não têm ossos.
 
   <Box>
-    <GuideEntityEmbed Entity="PositronicBrain" Caption="Positronic Brain"/>
+    <GuideEntityEmbed Entity="PositronicBrain" Caption="Cérebro positrônico"/>
   </Box>
-  Like borgs, IPCs have a positronic brain as their processing source. However, unlike them, IPCs can't be assembled. "It's cheaper to create a shell that obeys you than one that doesn't! *wink*"
+  Assim como borgs, IPCs usam um cérebro positrônico como unidade de processamento. Diferentemente deles, porém, IPCs não podem ser montados. "É mais barato fabricar uma carcaça que obedece do que uma que não obedece! *piscadinha*"
 
-  ## Recharging an IPC
+  ## Recarregando um IPC
    <Box>
-    <GuideEntityEmbed Entity="APCBasic" Caption="APC Terminal"/>
-    <GuideEntityEmbed Entity="BorgCharger" Caption="Borg Charger"/>
-    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Power Cells"/>
+    <GuideEntityEmbed Entity="APCBasic" Caption="Terminal de APC"/>
+    <GuideEntityEmbed Entity="BorgCharger" Caption="Carregador de borg"/>
+    <GuideEntityEmbed Entity="PowerCellMedium" Caption="Células de energia"/>
   </Box>
-  IPCs can be recharged in three different ways:
+  Um IPC pode ser recarregado de três maneiras:
 
-  APC Terminal: IPCs can use APC terminals to recharge. Press [color=yellow]Alt + left click[/color] on a terminal as many times as needed to fully recharge.
+  Terminal de APC: IPCs podem usar terminais de APC para recarregar. Pressione [color=yellow]Alt + clique esquerdo[/color] no terminal quantas vezes forem necessárias para completar a carga.
 
-  Borg Rechargers: IPCs can use borg rechargers to recharge. Always prioritize the ones outside of the Sci area to avoid headaches.
+  Carregadores de borg: IPCs podem usar carregadores de borg. Dê preferência aos que ficam fora da área de Sci para evitar dor de cabeça com o departamento.
 
-  Power Cells: IPCs can drink energy from power cells to charge their internal battery. [color=yellow]Right Click and select Drain[/color] on a power cell or battery powered device to drink from it.
+  Células de energia: IPCs podem drenar energia de células para carregar a bateria interna. Use [color=yellow]clique direito e selecione Drenar[/color] numa célula ou aparelho alimentado por bateria.
 
-  ## Integrated Radio
+  ## Rádio integrado
   <Box>
-    <GuideEntityEmbed Entity="EncryptionKeyScience" Caption="Encryption key"/>
+    <GuideEntityEmbed Entity="EncryptionKeyScience" Caption="Chave de criptografia"/>
   </Box>
 
-  IPCs do [bold]not[/bold] use external radios because they already have one built in. They only need to get an encryption key from a radio. By clicking on an IPC with a [color=yellow]wire cutter[/color], you can remove their keys.
-  You can find new keys around the station or remove one from a sector radio using a [color=yellow]screwdriver[/color].
+  IPCs [bold]não[/bold] usam rádios externos, pois já possuem um integrado. Só precisam retirar a chave de criptografia de um rádio. Ao clicar num IPC com um [color=yellow]cortador de fio[/color], você remove as chaves instaladas nele.
+  Novas chaves podem ser encontradas pela estação ou retiradas de um rádio departamental usando uma [color=yellow]chave de fenda[/color].
 
-  ## Repairing
+  ## Reparos
   <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Welder"/>
-    Welders can be used to repair [color=yellow]Brute[/color] damage.
+    <GuideEntityEmbed Entity="WelderIndustrialAdvanced" Caption="Maçarico"/>
+    Maçaricos reparam dano [color=yellow]Brute[/color].
   </Box>
   <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="CableApcStack" Caption="Cables (any type)"/>
-    Cables can be used to repair [color=yellow]Burns[/color].
+    <GuideEntityEmbed Entity="CableApcStack" Caption="Cabos (qualquer tipo)"/>
+    Cabos reparam [color=yellow]queimaduras[/color].
   </Box>
   <Box HorizontalAlignment="Stretch">
-    <GuideEntityEmbed Entity="SheetGlass" Caption="Glass Sheets (any type)"/>
-    Glass Sheets can be used to repair [color=yellow]Blindness[/color].
+    <GuideEntityEmbed Entity="SheetGlass" Caption="Folhas de vidro (qualquer tipo)"/>
+    Folhas de vidro reparam [color=yellow]cegueira[/color].
   </Box>
   <Box HorizontalAlignment="Stretch">
-    In the event an IPC dies, after being fully repaired, it should be restarted using the [color=yellow]"Restart"[/color] button (located by right-clicking).
+    Se um IPC morrer, repare-o por completo e use o botão [color=yellow]"Reiniciar"[/color] no menu de clique direito.
   </Box>
   <Box HorizontalAlignment="Stretch">
-    [color=red]NEVER ELECTROCUTE AN IPC with a defibrillator or in any other way while it is dead, as this will cause the battery to discharge energy rays outward![/color]
+    [color=red]NUNCA ELETROCUTE UM IPC morto, seja com desfibrilador ou de qualquer outra forma: isso fará a bateria disparar raios de energia ao redor![/color]
   </Box>
+
 
 </Document>

@@ -6,27 +6,27 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Pipes
-  Pipes are used to distribute gasses from one place to another.
-  There are a wide variety of pipes available to construct:
+  # Tubulações
+  Tubulações distribuem gases de um lugar para outro.
+  Há vários formatos disponíveis para construção:
 
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="straight"/>
-    <GuideEntityEmbed Entity="GasPipeHalf" Caption="half"/>
-    <GuideEntityEmbed Entity="GasPipeBend" Caption="bend"/>
-    <GuideEntityEmbed Entity="GasPipeTJunction" Caption="T junction"/>
-    <GuideEntityEmbed Entity="GasPipeFourway" Caption="fourway"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="reto"/>
+    <GuideEntityEmbed Entity="GasPipeHalf" Caption="meio tubo"/>
+    <GuideEntityEmbed Entity="GasPipeBend" Caption="curva"/>
+    <GuideEntityEmbed Entity="GasPipeTJunction" Caption="junção em T"/>
+    <GuideEntityEmbed Entity="GasPipeFourway" Caption="cruzamento"/>
   </Box>
 
-  Pipes will [color=#a4885c]automatically connect[/color] to other pipes when anchored (or wrenched) to the hull to form a [textlink="network of pipes." link="PipeNetworks"]
-  A network of pipes is commonly called a [textlink="pipenet" link="PipeNetworks"].
+  Tubos se [color=#a4885c]conectam automaticamente[/color] a outros tubos quando fixados ao casco com chave inglesa, formando uma [textlink="rede de tubulações." link="PipeNetworks"]
+  Essa rede costuma ser chamada de [textlink="pipenet" link="PipeNetworks"].
 
-  Pipes will [color=red]not connect[/color] to pipes that are already connected to a different pipe.
-  For example, building a bent pipe on top of a straight pipe to form a makeshift T-junction will not work.
+  Tubos [color=red]não se conectam[/color] a outros que já estejam ligados a uma tubulação diferente.
+  Por exemplo, colocar um tubo curvo sobre um tubo reto para improvisar uma junção em T não funciona.
 
-  However, two pipes can share a tile as long as one isn't obstructing the other's connection to another pipe.
-  For example, two bend pipes can be placed on the same tile, with one moving gas from north to east, and the other moving gas from west to south.
+  Porém, dois tubos podem ocupar o mesmo tile se nenhum bloquear a conexão do outro.
+  É possível colocar duas curvas no mesmo tile, por exemplo: uma leva gás do norte para leste, e a outra do oeste para sul.
 
-  You can color pipes (and most equipment that handles gasses) using a spray painter.
-  This is commonly done to distinguish the air and waste components of the station's Distro pipenet.
+  Você pode pintar tubulações — e quase todo equipamento que manipula gases — com um spray painter.
+  Isso normalmente diferencia os componentes de ar e resíduos da pipenet de Distro da estação.
 </Document>

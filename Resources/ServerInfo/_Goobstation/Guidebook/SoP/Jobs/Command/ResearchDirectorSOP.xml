@@ -6,45 +6,45 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Research Director (RD) SOP
-This is the list of procedures, responsibilities, and duties of the [color=#1b67a5][bold]Research Director[/bold][/color] of this station.
+# SOP do Diretor de Pesquisa (RD)
+Procedimentos, responsabilidades e deveres do [color=#1b67a5][bold]Diretor de Pesquisa[/bold][/color].
 
 <ColorBox>
   <Box>
-    For the purposes of Alert Escalation: Treat higher alerts as if they are still on the previous alert level. (Yellow Alert is Blue Alert if it was Blue Alert prior.) Furthermore, treat Delta, Gamma, Epsilon, and Violet Alert as Red Alert.
+    Para escalada: trate alertas superiores como o nível anterior. (Amarelo é Azul se antes era Azul.) Delta, Gama, Épsilon e Violeta contam como Vermelho.
   </Box>
 </ColorBox>
 
-## Green Alert
-1. The Research Director must make sure Research is being done, and monitor Anomalies and Artifacts progress, including Robotics as well.
+## Alerta Verde
+1. Garanta o andamento da Pesquisa e monitore Anomalias, Artefatos e Robótica.
 
-2. The Research Director is permitted to carry a telescopic baton and flash.
+2. Pode portar bastão telescópico e flash.
 
-3. The Research Director is not permitted to bring harmful chemicals outside of Science.
+3. Não leve químicos nocivos para fora da Ciência.
 
-4. The Research Director is permitted to carry/wear their Experimental Hardsuit on them, but should keep it inactive unless necessary, for personal safety.
+4. Pode portar/vestir a Hardsuit Experimental, mas mantenha-a inativa salvo necessidade de segurança.
 
-5. The Research Director is permitted to change the AI Unit's lawset, provided they receive general approval from the Captain and another Head of Staff.
+5. Pode alterar as leis da IA com aprovação geral do Capitão e outro Chefe.
 <Box Orientation="Vertical">
-  - If there are no other Heads of Staff available, Captain approval will suffice.
-  - To protect against tampering, the station AI is hard-coded to resist [color=#FF0000]any[/color] modification of its lawset.
+  - Sem outro Chefe disponível, basta o Capitão.
+  - Para evitar adulteração, a IA é programada para resistir a [color=#FF0000]qualquer[/color] mudança de leis.
 </Box>
 <!--Goob addition - AI can't allow law changes-->
 
-6. The Research Director must ensure the cyborg computer is kept safe and used appropriately, avoiding any unnecessary damage to crew or NanoTrasen property.
+6. Mantenha o computador de ciborgues seguro e bem utilizado, evitando dano desnecessário à tripulação ou propriedade da NanoTrasen.
 
-## Blue Alert
-1. All guidelines from [color=#388c34]Green Alert[/color] carry over to [color=#1b67a5]Blue Alert[/color]. No special guidelines added.
+## Alerta Azul
+1. Todas as diretrizes do [color=#388c34]Alerta Verde[/color] continuam no [color=#1b67a5]Alerta Azul[/color]. Sem regras novas.
 
-## Red Alert
-1. Guidelines 1, 4, 5, and 6 carry over from [color=#388c34]Green Alert[/color].
+## Alerta Vermelho
+1. Diretrizes 1, 4, 5 e 6 do [color=#388c34]Alerta Verde[/color] continuam.
 
-2. In addition to the telescopic baton and flash, the Research Director is permitted to carry a single weapon created in the Protolathe, with permission from Captain, Head of Security, and/or Warden.
-<Box>Exceptions apply for extreme emergencies, permitting the use without approval, for cases such as Blobs, Nuclear Operatives, and/or Delta Alert.</Box>
+2. Além de bastão e flash, pode portar uma arma da Protolathe com Capitão, Chefe de Segurança e/ou Carcereiro.
+<Box>Em emergências extremas como Blob, Operativos Nucleares e/ou Alerta Delta, dispensa aprovação.</Box>
 
-3. The Research Director is permitted to bring harmful chemicals outside of Security so long as it is for Security personnel.
-<Box>Said chemicals must be for security-oriented purposes, such as thermite, controlled explosives, crowd control, biohazard containment, et cetera.</Box>
+3. Pode levar químicos nocivos para fora da Segurança quando destinados ao pessoal da Segurança.
+<Box>Devem servir à segurança: termita, explosivos controlados, controle de multidão, contenção biológica etc.</Box>
 
-4. The Research Director should ensure that AI and Cyborgs are to remain under control of crew personnel (not corrupted) to the best of their ability.
+4. Faça o possível para manter IA e Ciborgues sob controle da tripulação, sem corrupção.
 
 </Document>

@@ -8,55 +8,55 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Surgery
-Your usual weekly activity. By performing surgical operations on your patients, you can heal wounds, remove or add body parts, organs, and more.
+# Cirurgia
+Sua atividade semanal de sempre. Ao realizar cirurgias nos pacientes, você pode tratar ferimentos, remover ou adicionar partes do corpo e órgãos, entre outras coisas.
 
-## The Basics
-To start surgery your patient needs to be laying down, and ideally sedated.
+## O Básico
+Para começar uma cirurgia, o paciente precisa estar deitado e, de preferência, sedado.
 
-If they are not sedated, they will be in a lot of pain, which decreases their mood, and will make surgical wounds worse.
-
-<Box>
-<GuideEntityEmbed Entity="NitrousOxideTank" Caption="nitrous oxide"/>
-<GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="any breathing tool"/>
-</Box>
-
-You also need to wear protective gear such as a mask and gloves to prevent harming the patient due to contamination.
+Sem sedação, ele sentirá muita dor, o que reduz seu humor e piora os ferimentos cirúrgicos.
 
 <Box>
-<GuideEntityEmbed Entity="ClothingMaskSterile" Caption="any mask"/>
-<GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="any gloves"/>
+<GuideEntityEmbed Entity="NitrousOxideTank" Caption="Óxido nitroso"/>
+<GuideEntityEmbed Entity="ClothingMaskBreathMedical" Caption="Qualquer equipamento respiratório"/>
 </Box>
 
-## Getting Started
-
-To engage in surgery, you'll need a set of surgical tools.
+Você também precisa usar proteção, como máscara e luvas, para evitar ferir o paciente por contaminação.
 
 <Box>
-<GuideEntityEmbed Entity="Scalpel" Caption="scalpel"/>
-<GuideEntityEmbed Entity="Retractor" Caption="retractor"/>
-<GuideEntityEmbed Entity="Hemostat" Caption="hemostat"/>
-<GuideEntityEmbed Entity="Drill" Caption="drill"/>
+<GuideEntityEmbed Entity="ClothingMaskSterile" Caption="Qualquer máscara"/>
+<GuideEntityEmbed Entity="ClothingHandsGlovesNitrile" Caption="Quaisquer luvas"/>
+</Box>
+
+## Começando
+
+Para realizar cirurgias, você precisará de um conjunto de instrumentos cirúrgicos.
+
+<Box>
+<GuideEntityEmbed Entity="Scalpel" Caption="Bisturi"/>
+<GuideEntityEmbed Entity="Retractor" Caption="Afastador"/>
+<GuideEntityEmbed Entity="Hemostat" Caption="Hemostato"/>
+<GuideEntityEmbed Entity="Drill" Caption="Broca"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="Saw" Caption="saw"/>
-<GuideEntityEmbed Entity="Cautery" Caption="cautery"/>
-<GuideEntityEmbed Entity="BoneGel" Caption="bone gel"/>
+<GuideEntityEmbed Entity="Saw" Caption="Serra"/>
+<GuideEntityEmbed Entity="Cautery" Caption="Cautério"/>
+<GuideEntityEmbed Entity="BoneGel" Caption="Gel ósseo"/>
 </Box>
 
-Once you've got tools in hand, interact with your patient to begin surgery. You'll be able to choose which part you want to operate on.
+Com os instrumentos em mãos, interaja com o paciente para iniciar a cirurgia. Você poderá escolher a parte do corpo que deseja operar.
 
-## Ghetto Surgery
+## Cirurgia de Gueto
 
-Certain non-surgical tools can be used in a pinch, use the scalpel examine icon to see how good or bad something is.
+Certas ferramentas não cirúrgicas servem numa emergência. Use o ícone de exame do bisturi para ver se cada alternativa é boa ou ruim.
 <Box>
-<GuideEntityEmbed Entity="Welder" Caption="welder"/>
-<GuideEntityEmbed Entity="Wirecutter" Caption="wirecutter"/>
-<GuideEntityEmbed Entity="KitchenKnife" Caption="knife"/>
-<GuideEntityEmbed Entity="Crowbar" Caption="crowbar"/>
-<GuideEntityEmbed Entity="CableApcStack" Caption="lv cable"/>
+<GuideEntityEmbed Entity="Welder" Caption="Soldador"/>
+<GuideEntityEmbed Entity="Wirecutter" Caption="Alicate de corte"/>
+<GuideEntityEmbed Entity="KitchenKnife" Caption="Faca"/>
+<GuideEntityEmbed Entity="Crowbar" Caption="Pé de cabra"/>
+<GuideEntityEmbed Entity="CableApcStack" Caption="Cabo de baixa tensão"/>
 </Box>
 
-They aren't ideal compared to real surgical equipment, but they'll do in a pinch!
+Elas não são ideais em comparação com instrumentos cirúrgicos de verdade, mas quebram o galho!
 
 </Document>

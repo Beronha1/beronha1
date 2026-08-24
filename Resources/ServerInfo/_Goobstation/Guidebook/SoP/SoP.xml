@@ -6,42 +6,42 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Standard Operating Procedure
-The Standard Operating Procedure, SOP, is the set of procedures for crew personnel to follow when there is (or isn't) an emergency on the station.
-These directives are here to assist you, as a valuable crew member on this station, with knowledge of what to do in these special scenarios.
+# Procedimento Operacional Padrão
+O Procedimento Operacional Padrão, SOP, reúne as regras que a tripulação segue havendo ou não emergência.
+Estas diretrizes ajudam você, valioso tripulante, a saber o que fazer em situações especiais.
 
-These procedures are a guideline to assure all actions follow Nanotrasen's best interest. Failure to follow these can result in dismissal and/or demotion from your job position.
+Elas orientam ações conforme o interesse da Nanotrasen. Descumprir pode causar demissão e/ou rebaixamento.
 
-<Box>It is [bold]highly advised[/bold] to read over the [bold]Standard Procedures[/bold], [bold]Legal[/bold], and your [bold]Job Department[/bold] SOP!</Box>
+<Box>É [bold]altamente recomendado[/bold] ler os SOPs de [bold]Procedimentos Padrão[/bold], [bold]Legal[/bold] e do seu [bold]Departamento[/bold]!</Box>
 
-## What Does This Define?
-The SOP outlines several procedures for alert levels, Chain of Command (command succession), treatment of prisoners, identification of threats, and much more.
-Adherence to these guidelines is expected but the guidelines are malleable to multiple scenarios. Should you choose to deviate from these guidelines, you must justify your actions when asked.
+## O que isto define?
+O SOP cobre níveis de alerta, Cadeia de Comando, tratamento de presos, identificação de ameaças e muito mais.
+Espera-se adesão, mas as diretrizes se adaptam ao cenário. Se desviar, justifique quando perguntado.
 
   <Box>
-    [bold]NOTE:[/bold] Blindly following SOP while ignoring context is a [italic]ridiciously bad idea[/italic] and is not suggested. [bold]Context is King![/bold]
+    [bold]NOTA:[/bold] Seguir o SOP cegamente e ignorar contexto é uma [italic]ideia ridiculamente ruim[/italic]. [bold]Contexto é Rei![/bold]
   </Box>
   <Box>
-    Further note that any references to "This Station" or "Station" are assumed to be the station you are working on during this shift. You may find this on your PDA.
+    Referências a "Esta Estação" ou "Estação" significam aquela onde você trabalha neste turno, visível no PDA.
   </Box>
 
-## General Station SOP
-The following links are for general knowledge of the station.
-- [textlink="Hiring, Promoting, Transferring" link="Hiring SOP"]
-- [textlink="Firing, Demoting, Terminating" link="Demoting SOP"]
-- [textlink="Chain of Command" link="Succession"]
+## SOP Geral da Estação
+Links de conhecimento geral:
+- [textlink="Contratar, Promover, Transferir" link="Hiring SOP"]
+- [textlink="Demitir, Rebaixar, Encerrar" link="Demoting SOP"]
+- [textlink="Cadeia de Comando" link="Succession"]
 - [textlink="Legal" link="Legal SOP"]
-- [textlink="Emergencies" link="Emergencies SOP"]
-- [textlink="Alert Levels" link="Alert Levels"]
+- [textlink="Emergências" link="Emergencies SOP"]
+- [textlink="Níveis de Alerta" link="Alert Levels"]
 
-## General Department
-The following links are for general department SOPs. These will guide you to the folder entry.
-- [textlink="Cargo Department" link="Cargo SOP"]
-- [textlink="Command Department" link="Command SOP"]
-- [textlink="Engineering Department" link="Engineering SOP"]
-- [textlink="Medical Department" link="Medical SOP"]
-- [textlink="Science Department" link="Science SOP"]
-- [textlink="Security Department" link="Security SOP"]
-- [textlink="Service Department" link="Service SOP"]
+## Departamentos
+Links para os SOPs gerais de cada departamento:
+- [textlink="Departamento de Carga" link="Cargo SOP"]
+- [textlink="Departamento de Comando" link="Command SOP"]
+- [textlink="Departamento de Engenharia" link="Engineering SOP"]
+- [textlink="Departamento Médico" link="Medical SOP"]
+- [textlink="Departamento de Ciência" link="Science SOP"]
+- [textlink="Departamento de Segurança" link="Security SOP"]
+- [textlink="Departamento de Serviço" link="Service SOP"]
 
 </Document>

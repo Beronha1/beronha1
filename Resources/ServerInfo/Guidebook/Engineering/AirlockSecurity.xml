@@ -10,78 +10,79 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Airlock Upgrades
-  It is not uncommon for plucky individuals to try and bypass an airlock by meddling with its internal wiring.
+  # Melhorias de Airlock
+  Não é raro que algum espertinho tente passar por um airlock mexendo na fiação interna.
 
-  Fortunately, certain countermeasures can be installed into airlocks to inconvenience any would-be trespassers.
+  Felizmente, certas contramedidas podem ser instaladas para dificultar a vida de invasores.
 
-  ## Medium security airlocks
-  The most basic form of intrusion deterrence is to install a secured steel plating that will prevent access to internal wiring of the airlock.
+  ## Airlocks de segurança média
+  A proteção mais básica é uma chapa de aço segura que impede o acesso à fiação interna do airlock.
 
-  To upgrade a basic airlock to a medium security airlock, you will require the following materials:
+  Para melhorar um airlock básico para segurança média, você precisará destes materiais:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetSteel" Caption="2 steel sheets"/>
+		  <GuideEntityEmbed Entity="SheetSteel" Caption="2 folhas de aço"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Chave de fenda"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Maçarico"/>
 	  </Box>
   </Box>
 
-  To upgrade a basic airlock:
-  -	Use the screwdriver to open the airlock maintenance panel.
-  -	Add the steel sheets to the airlock.
-  -	Weld the steel sheets into place.
-  -	Close the maintenance panel using the screwdriver.
+  Para melhorar um airlock básico:
+  -	Use a chave de fenda para abrir o painel de manutenção.
+  -	Adicione as folhas de aço ao airlock.
+  -	Solde as folhas de aço no lugar.
+  -	Feche o painel com a chave de fenda.
 
-  ## High security airlocks
-  For airlocks leading to the more sensitive areas of the space station, the use of stronger deterrents are advised. High security airlocks have improved armor plating to protect its internal wiring.
+  ## Airlocks de segurança alta
+  Para airlocks de áreas mais sensíveis da estação, recomenda-se uma proteção maior. Airlocks de segurança alta possuem blindagem reforçada sobre a fiação interna.
 
-  To upgrade a medium security airlock to a high security airlock, you will require the following materials:
+  Para melhorar um airlock de segurança média para alta, você precisará destes materiais:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 plasteel sheets"/>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 folhas de plasteel"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Chave de fenda"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Maçarico"/>
 	  </Box>
   </Box>
 
-  To upgrade a medium security airlock:
-  - Use the screwdriver to open the airlock maintenance panel.
-  - Add the plasteel sheets to the airlock.
-  - Weld the plasteel sheets into place.
-  - Close the maintenance panel using the screwdriver.
+  Para melhorar um airlock de segurança média:
+  - Use a chave de fenda para abrir o painel de manutenção.
+  - Adicione as folhas de plasteel ao airlock.
+  - Solde as folhas de plasteel no lugar.
+  - Feche o painel com a chave de fenda.
 
-  ## Maximum security airlocks
-  You can optionally upgrade a high security airlock to a maximum security airlock. Maximum security airlocks possess an additional layer of electrified wire mesh on top of its other protections, which can shock any unauthorized personnel attempting to tamper with the airlock.
+  ## Airlocks de segurança máxima
+  Opcionalmente, um airlock de segurança alta pode virar de segurança máxima. Essa versão recebe uma camada adicional de malha eletrificada sobre as outras proteções, dando choque em pessoal não autorizado que tente mexer no airlock.
 
-  To upgrade a high security airlock to a maximum security airlock, you will require the following materials:
+  Para melhorar um airlock de segurança alta para máxima, você precisará destes materiais:
   <Box HorizontalAlignment="Stretch">
 	  <Box>
-		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 plasteel sheets"/>
+		  <GuideEntityEmbed Entity="SheetPlasteel" Caption="2 folhas de plasteel"/>
 	  </Box>
     <Box>
-      <GuideEntityEmbed Entity="PartRodMetal" Caption="2 metal rods"/>
+      <GuideEntityEmbed Entity="PartRodMetal" Caption="2 hastes de metal"/>
     </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Screwdriver" Caption="Screwdriver"/>
+		  <GuideEntityEmbed Entity="Screwdriver" Caption="Chave de fenda"/>
 	  </Box>
 	  <Box>
-		  <GuideEntityEmbed Entity="Welder" Caption="Welder"/>
+		  <GuideEntityEmbed Entity="Welder" Caption="Maçarico"/>
 	  </Box>
   </Box>
 
-  To upgrade a high security airlock:
-  -	Use the screwdriver to open the airlock maintenance panel.
-  -	Add the plasteel sheets to the airlock.
-  -	Weld the plasteel sheets into place.
-  - Add the metal rods to the airlock.
-  -	Close the maintenance panel using the screwdriver.
+  Para melhorar um airlock de segurança alta:
+  -	Use a chave de fenda para abrir o painel de manutenção.
+  -	Adicione as folhas de plasteel ao airlock.
+  -	Solde as folhas de plasteel no lugar.
+  - Adicione as hastes de metal ao airlock.
+  -	Feche o painel com a chave de fenda.
+
 </Document>

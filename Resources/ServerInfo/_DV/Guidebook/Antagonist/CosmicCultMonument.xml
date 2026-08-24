@@ -1,23 +1,24 @@
 <Document>
-  ## Beckoning the Unknown
+  ## Convocando o Desconhecido
   <Box>
     <GuideEntityEmbed Entity="MonumentCosmicCult" Caption=""/>
   </Box>
 
-  Should you attain enough power, you will be able to call forth The Monument. Use the respective action to mark a spot, upon which the majority of the cult must agree for The Monument to appear.
+  Com poder suficiente, você pode invocar O Monumento. Use a ação para marcar um local; a maioria do culto precisa concordar para ele surgir.
 
-  Once the Monument is placed, it can be used to [bold]Beckon [color=#4cabb3]the Unknown[/bold][/color]. Any cultist may do so by interacting with the Monument.
+  Colocado, ele pode [bold]Convocar [color=#4cabb3]o Desconhecido[/bold][/color]. Qualquer cultista faz isso ao interagir.
 
-  Be prepared to defend the Monument during the Beckoning, as just one waylaid action from a single disruptive soul will bring this ritual to a sudden, unceremonious halt.
+  Prepare-se para defendê-lo: uma única ação interrompida por uma alma inconveniente encerra o ritual de forma súbita e nada cerimoniosa.
 
-  ## Fracturing
+  ## Fraturando
   <Box>
-    <GuideEntityEmbed Entity="MobCosmicShatteredForm" Caption="Shattered Form"/>
+    <GuideEntityEmbed Entity="MobCosmicShatteredForm" Caption="Forma Estilhaçada"/>
   </Box>
 
-  As long as the monument is active, you can bring crewmembers (or even fellow cultists) in critical condition close to The monument to [color=#4cabb3]fracture[/color] their physical form and accelerate the Beckoning.
+  Enquanto o Monumento estiver ativo, leve tripulantes — ou cultistas — em estado crítico até ele para [color=#4cabb3]fraturar[/color] sua forma física e acelerar a Convocação.
 
-  Doing so binds their mind and body to The Monument. They will stop suffocating, and their mind will be ripped out of their body, able to wander around the station. A rare act of mercy before the End.
+  Corpo e mente ficam presos ao Monumento. A asfixia cessa e a mente é arrancada do corpo para vagar pela estação. Um raro gesto de misericórdia antes do Fim.
 
-  Should the Beckoning be interrupted, they will immediately return back to normal, though their wounds will still be present.
+  Se a Convocação for interrompida, eles voltam imediatamente ao normal, mas mantêm os ferimentos.
+
 </Document>

@@ -1,45 +1,45 @@
 <Document>
-# Organ Manipulation
-These surgeries allow you to remove or replace organs from a patient for healthy ones. Which can help treat conditions on their bodies.
+# Manipulação de Órgãos
+Estas cirurgias permitem retirar órgãos de um paciente ou substituí-los por órgãos saudáveis, ajudando a tratar problemas do corpo.
 
-## Anatomy
-Normally a body has the following organs:
-
-<Box>
-<GuideEntityEmbed Entity="OrganHumanBrain" Caption="brain"/>
-<GuideEntityEmbed Entity="OrganHumanEyes" Caption="eyes"/>
-<GuideEntityEmbed Entity="OrganHumanHeart" Caption="heart"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="OrganHumanKidneys" Caption="kidneys"/>
-<GuideEntityEmbed Entity="OrganHumanLiver" Caption="liver"/>
-<GuideEntityEmbed Entity="OrganHumanLungs" Caption="lungs"/>
-<GuideEntityEmbed Entity="OrganHumanStomach" Caption="stomach"/>
-</Box>
-
-Certain species might have more or less organs, such as Diona having a combined organ that serves multiple functions, but this is the rough outline of what you'll see.
-To remove an organ, you'll need to apply the respective Organ Removal surgery on it, which will then remove it without harming the patient.
-
-However if you want to transplant an organ, you'll need to apply the respective Organ Transplant surgery where it originally was.
-
-## What does each organ transplant do?
-
-- Transplanting a [color=#a4885c]brain[/color] will allow the patient to take over another body. An excellent alternative to cloning if you can afford to spare another body.
-  A body without a brain, or [color=#a4885c]heart[/color], will quickly die.
-- Transplanting [color=#a4885c]eyes[/color] will allow the patient to see again, and heal any eye damage.
-- Certain organs can grant the patient special powers! A common example is the space carp's lungs and heart, providing breathing and pressure immunity respectively.
-
-## Where do I get more organs?
-
-Normally when your patients come in needing new organs, they'll need to get a new one, as their old ones will be either missing, or damaged beyond repair.
-For this you can use the Medical Biofabricator with some Biomass. Which can manufacture Biosynthetic organs for all species.
+## Anatomia
+Normalmente, um corpo possui os seguintes órgãos:
 
 <Box>
-<GuideEntityEmbed Entity="MedicalBiofabricator" Caption="medical biofabricator"/>
-<GuideEntityEmbed Entity="MedicalBiofabMachineBoard" Caption="biofabricator board"/>
-<GuideEntityEmbed Entity="MaterialBiomass" Caption="biomass"/>
+<GuideEntityEmbed Entity="OrganHumanBrain" Caption="Cérebro"/>
+<GuideEntityEmbed Entity="OrganHumanEyes" Caption="Olhos"/>
+<GuideEntityEmbed Entity="OrganHumanHeart" Caption="Coração"/>
+</Box>
+<Box>
+<GuideEntityEmbed Entity="OrganHumanKidneys" Caption="Rins"/>
+<GuideEntityEmbed Entity="OrganHumanLiver" Caption="Fígado"/>
+<GuideEntityEmbed Entity="OrganHumanLungs" Caption="Pulmões"/>
+<GuideEntityEmbed Entity="OrganHumanStomach" Caption="Estômago"/>
 </Box>
 
-If science didn't research it however, you'll have to be resourceful and "find" some organs from unsuspecting crewmembers or monkeys.
+Algumas espécies podem ter mais ou menos órgãos. Dionas, por exemplo, possuem um órgão combinado que realiza várias funções, mas este é um panorama geral do que você encontrará.
+Para retirar um órgão, aplique nele a cirurgia Organ Removal (Remoção de Órgão) correspondente; o órgão será removido sem ferir o paciente.
+
+Para transplantar um órgão, aplique no lugar original a cirurgia Organ Transplant (Transplante de Órgão) correspondente.
+
+## O que cada transplante faz?
+
+- Transplantar um [color=#a4885c]cérebro[/color] permite ao paciente assumir outro corpo. É uma ótima alternativa à clonagem quando você pode disponibilizar outro corpo.
+  Um corpo sem cérebro ou sem [color=#a4885c]coração[/color] morre rapidamente.
+- Transplantar [color=#a4885c]olhos[/color] permite ao paciente voltar a enxergar e cura qualquer dano ocular.
+- Certos órgãos concedem poderes especiais ao paciente! Um exemplo comum são os pulmões e o coração da carpa espacial, que fornecem imunidade à falta de ar e à pressão, respectivamente.
+
+## Onde consigo mais órgãos?
+
+Normalmente, quando pacientes precisam de órgãos novos, os antigos estão ausentes ou danificados além de qualquer reparo.
+Use uma Biofabricadora Médica com Biomassa para fabricar órgãos biossintéticos de qualquer espécie.
+
+<Box>
+<GuideEntityEmbed Entity="MedicalBiofabricator" Caption="Biofabricadora médica"/>
+<GuideEntityEmbed Entity="MedicalBiofabMachineBoard" Caption="Placa da biofabricadora"/>
+<GuideEntityEmbed Entity="MaterialBiomass" Caption="Biomassa"/>
+</Box>
+
+Se a Ciência ainda não tiver pesquisado a máquina, será preciso improvisar e "encontrar" órgãos em tripulantes desavisados ou macacos.
 
 </Document>

@@ -6,83 +6,83 @@
     <GuideEntityEmbed Entity="CapoeiraManual" Caption=""/>
   </Box>
 
-  Capoeira, the Syndicate's dance of war originating in Brazil, is a [textlink="martial art" link="MartialArts"] that disguises violence as beauty.
-  Swift attacks link into flowing combos, each move faster and harder than the last one, fueled by relentless momentum.
+  A Capoeira, dança de guerra do Sindicato originária do Brasil, é uma [textlink="arte marcial" link="MartialArts"] que disfarça violência como beleza.
+  Ataques rápidos se conectam em combos fluidos; cada movimento é mais veloz e forte que o anterior, alimentado por um impulso implacável.
 
-  ## Special abilities
+  ## Habilidades especiais
 
-  Capoeira users are better at Grab intent. Successfully grabbing an opponent grants user a brief speed boost and denies target from sprinting temporarily.
+  Capoeiristas são melhores no intent Grab. Agarrar um oponente com sucesso dá ao usuário um breve boost de velocidade e impede temporariamente o alvo de sprintar.
 
-  ### Capoeira Stance
+  ### Postura da Capoeira
 
-  You never stop moving while performing the ginga. This makes you very mobile while fighting.
+  Você nunca para de se mover durante a ginga, ganhando muita mobilidade na luta.
 
-  Through swift motion, Capoeira masters channel speed into energy, with combos being more deadly the faster they run.
-  Halt their flow, and their strength will vanish. Their combos, powered by movement, falter when they are prone.
+  Com movimentos rápidos, mestres da Capoeira transformam velocidade em energia; seus combos ficam mais mortais quanto mais rápido correm.
+  Interrompa o fluxo e sua força desaparecerá. Como os combos dependem do movimento, eles falham quando o usuário está caído.
 
-  ### Capoeira Momentum
+  ### Embalo da Capoeira
 
-  Through the flowing, relentless motion of Capoeira, each successful combo restores the user's stamina.
-  Every connected strike fuels their endurance, allowing them to fight longer, faster, and harder without pause.
+  Pelo movimento fluido e incansável da Capoeira, cada combo bem-sucedido restaura a Stamina do usuário.
+  Cada golpe conectado alimenta sua resistência, permitindo lutar por mais tempo, com mais velocidade e força, sem parar.
 
-  ### Capoeira Tempo
+  ### Tempo da Capoeira
 
-  Hit or miss, it's just part of the dance! And the best part is about to start!
+  Acertando ou errando, tudo faz parte da dança! E a melhor parte está prestes a começar!
 
-  A missed attack sharpens the next, reducing its recovery and increasing the damage.
+  Um ataque errado prepara o próximo, reduzindo sua recuperação e aumentando o dano.
 
-  ## Combo attacks
+  ## Ataques em combo
 
-  ### Push Kick
-
-  <Box>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
-  </Box>
-
-  Knocks down and pushes opponent away from the user. Doesn't force to drop held items.
-
-  ### Circle Kick
-
-  <Box>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
-  </Box>
-
-  Deals Blunt damage and also slows down the opponent significantly.
-
-  ### Sweep Kick
-
-  <Box>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
-    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
-  </Box>
-
-  Knocks down and deals Blunt and Stamina damage. Temporarily increases user's attack speed by a bit.
-  Cannot be performed if the user is moving too slow.
-
-  ### Spin Kick
+  ### Chute de Empurrão
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+  </Box>
+
+  Derruba e empurra o oponente para longe do usuário. Não o força a soltar os itens que segura.
+
+  ### Chute Circular
+
+  <Box>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Deals a lot of Blunt damage and knocks the opponent down. Also makes the user flip. Only works on standing opponents.
-  Cannot be performed if the user is moving too slow.
+  Causa dano Blunt e também desacelera bastante o oponente.
 
-  ### Kick Up
+  ### Rasteira
+
+  <Box>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
+  </Box>
+
+  Derruba e causa dano Blunt e de Stamina. Aumenta um pouco a velocidade de ataque do usuário por um tempo.
+  Não pode ser executada se o usuário estiver lento demais.
+
+  ### Chute Giratório
+
+  <Box>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
+    <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
+  </Box>
+
+  Causa muito dano Blunt, derruba o oponente e faz o usuário dar um mortal. Só funciona em oponentes de pé.
+  Não pode ser executado se o usuário estiver lento demais.
+
+  ### Levantada com Chute
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  Needs to be targeted at the user themselves. Can be performed while prone. Removes knock down status effect and forces the user to stand up instantly.
+  Precisa ter o próprio usuário como alvo. Pode ser executada enquanto ele está caído, removendo o efeito de knockdown e fazendo-o levantar imediatamente.
 
 </Document>

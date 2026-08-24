@@ -8,38 +8,38 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Part Manipulation
-  This is how you will turn Tajaran into humans, or vice versa if you're feeling particularly cruel.
+  # Manipulação de Partes do Corpo
+  É assim que você transforma Tajaran em humano — ou o contrário, se estiver se sentindo especialmente cruel.
 
-  ## Anatomy
-  Normally a body has 11 main parts. Those being:
+  ## Anatomia
+  Normalmente, um corpo possui 11 partes principais:
 
   <Box>
-<GuideEntityEmbed Entity="OrganHumanHead" Caption="head"/>
+<GuideEntityEmbed Entity="OrganHumanHead" Caption="Cabeça"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="OrganHumanHandRight" Caption="right hand"/>
-<GuideEntityEmbed Entity="OrganHumanArmRight" Caption="right arm"/>
-<GuideEntityEmbed Entity="OrganHumanTorso" Caption="torso"/>
-<GuideEntityEmbed Entity="OrganHumanArmLeft" Caption="left arm"/>
-<GuideEntityEmbed Entity="OrganHumanHandLeft" Caption="left hand"/>
+<GuideEntityEmbed Entity="OrganHumanHandRight" Caption="Mão direita"/>
+<GuideEntityEmbed Entity="OrganHumanArmRight" Caption="Braço direito"/>
+<GuideEntityEmbed Entity="OrganHumanTorso" Caption="Torso"/>
+<GuideEntityEmbed Entity="OrganHumanArmLeft" Caption="Braço esquerdo"/>
+<GuideEntityEmbed Entity="OrganHumanHandLeft" Caption="Mão esquerda"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="OrganHumanFootRight" Caption="right foot"/>
-<GuideEntityEmbed Entity="OrganHumanLegRight" Caption="right leg"/>
-<GuideEntityEmbed Entity="OrganHumanLegLeft" Caption="left leg"/>
-<GuideEntityEmbed Entity="OrganHumanFootLeft" Caption="left foot"/>
+<GuideEntityEmbed Entity="OrganHumanFootRight" Caption="Pé direito"/>
+<GuideEntityEmbed Entity="OrganHumanLegRight" Caption="Perna direita"/>
+<GuideEntityEmbed Entity="OrganHumanLegLeft" Caption="Perna esquerda"/>
+<GuideEntityEmbed Entity="OrganHumanFootLeft" Caption="Pé esquerdo"/>
 </Box>
 
-Certain species might have more or less parts, such as tails, wings, or extra limbs, but this is the rough outline of what you'll see.
-To detach a limb, you'll need to apply the Remove Part surgery on it, which will then remove it without harming the patient.
+Certas espécies podem ter mais ou menos partes, como caudas, asas ou membros extras, mas este é um panorama geral do que você encontrará.
+Para separar um membro, aplique nele a cirurgia Remove Part (Remover Parte); ele será retirado sem ferir o paciente.
 
-However if you want to reattach the limb, you'll need to apply the Attach Part surgery where you want it attached.
-Hands are attached to the arms, feet are attached to the legs. And everything else is attached to the torso.
+Para recolocar o membro, aplique a cirurgia Attach Part (Anexar Parte) no local desejado.
+Mãos são anexadas aos braços, pés são anexados às pernas e todo o resto se conecta ao torso.
 
-## I reattached my patient's limb, but it's not working?
+## Recoloquei o membro do paciente, mas ele não funciona. Por quê?
 
-Your patient has taken enough damage to the point that their limb's nerves were badly damaged, and they need to be healed properly before it can work again.
-For this you can try the Tend Wounds surgeries, or letting them use topicals on their wounds.
+O paciente sofreu dano suficiente para lesionar gravemente os nervos do membro. Será preciso curá-lo de forma adequada antes que volte a funcionar.
+Você pode usar as cirurgias Tend Wounds (Tratar Ferimentos) ou deixar que o paciente aplique medicamentos tópicos nos ferimentos.
 
 </Document>

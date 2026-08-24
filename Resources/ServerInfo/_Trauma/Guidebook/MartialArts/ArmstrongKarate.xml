@@ -1,16 +1,16 @@
 <Document>
 
-  # Armstrong Style Karate
+  # Karatê Estilo Armstrong
 
   <Box>
     <TextureEmbed Sprite="_Trauma/Interface/Misc/armstrongkarate.rsi" State="icon"/>
   </Box>
 
-  A style of Karate developed out of pain and self reflection.
+  Um estilo de karatê desenvolvido a partir da dor e da autorreflexão.
 
-  ## Combo attacks
+  ## Ataques em combo
 
-  ### Buster punches
+  ### Socos Buster
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
@@ -18,7 +18,7 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  An armstrong classic.
+  Um clássico Armstrong.
 
   ### Dropkick
 
@@ -29,9 +29,9 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  A flying double foot press.
+  Uma voadora com os dois pés.
 
-  ### Machine gun fist
+  ### Punho Metralhadora
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
@@ -40,9 +40,9 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  A flurry of punches.
+  Uma rajada de socos.
 
-  ### Fireball
+  ### Bola de Fogo
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
@@ -50,9 +50,9 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  A blast of flaming emotion.
+  Uma explosão de emoção flamejante.
 
-  ### Headbutt
+  ### Cabeçada
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
@@ -60,9 +60,9 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  A full force slam with your head.
+  Uma pancada com toda a força da sua cabeça.
 
-  ### Horse Stance
+  ### Postura do Cavalo
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
@@ -70,6 +70,6 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  Assume a sturdy Horse Stance.
+  Assuma uma firme Postura do Cavalo.
 
 </Document>

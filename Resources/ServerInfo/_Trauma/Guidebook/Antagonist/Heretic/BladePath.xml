@@ -1,99 +1,99 @@
 <Document>
 
-  # Path of Blade
+  # Caminho da Lâmina
 
-  Difficulty: [color=orange]Medium[/color]
+  Dificuldade: [color=orange]Média[/color]
 
-  The Path of Blade is as the name suggests.
-  You are highly competent at cutting your opponents to ribbons.
-  Pick this path if you want to fight, and you want to be the best at fighting.
+  O Caminho da Lâmina é exatamente o que o nome sugere.
+  Você é muito competente em picotar oponentes.
+  Escolha este caminho se quiser lutar e ser o melhor nisso.
 
-  ## Pros
+  ## Vantagens
 
-  - Capable of blocking incoming attacks, retaliating with a riposte.
-  - Rapidly deals damage through dual-wielded blades and channeled strikes.
-  - High defense against stuns and knockdowns.
-  - Highly lethal combatant in a direct combat with a single opponent.
+  - Bloqueia ataques recebidos e responde com uma riposta.
+  - Causa dano rápido com lâminas em dual-wield e golpes canalizados.
+  - Alta defesa contra stuns e knockdowns.
+  - Combatente extremamente letal em confronto direto contra um único oponente.
 
-  ## Cons
+  ## Desvantagens
 
-  - Requires a high degree of skill input.
-  - Without blades, the path loses most of its fighting power.
-  - Lacks mobility options.
-  - Lacks environmental protections.
+  - Exige muita habilidade do jogador.
+  - Sem lâminas, perde quase todo o poder de combate.
+  - Não possui opções de mobilidade.
+  - Não possui proteções ambientais.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">The Cutting Edge</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Two Knives</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a sundered blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">O Fio da Navalha</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Duas Facas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina rompida.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of the Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will stun targets that are lying down or facing away from you.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto da Lâmina</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto dá stun em alvos caídos ou de costas para você.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of the Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the blade mark, creating flying blades that protect you from attacks when active, throw with an empty hand to use then as a ranged attack.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Marca da Lâmina</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto passa a aplicar a marca da lâmina, criando lâminas voadoras que protegem de ataques enquanto ativas. Arremesse de mão vazia para usá-las à distância.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Champion Hook</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Alt-click target with your blade in combat mode to deal extra damage, knockdown and hook victim.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Gancho do Campeão</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Dê alt-click no alvo com sua lâmina em modo de combate para causar dano extra, knockdown e puxar a vítima.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Sacraments of Power</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Grants a spell that gives you total damage immunity and some damage reflect for 5 seconds, takes 1 second to start up. Cannot attack while active.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Sacramentos do Poder</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Concede um feitiço de imunidade total e alguma reflexão de dano por 5 segundos; leva 1 segundo para iniciar. Você não pode atacar enquanto estiver ativo.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Furious Steel</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons three flying blades to protect you.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aço Furioso</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca três lâminas voadoras para protegê-lo.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Empowered Blades</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">You can attack with two blades at once, you can also use your grasp to empower blades.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lâminas Fortalecidas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Você pode atacar com duas lâminas ao mesmo tempo e usar seu aperto para fortalecê-las.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Wolves Among Sheep</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons giant arena, forcing everyone trapped inside to fight each other in order to escape.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lobos entre Ovelhas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca uma arena gigante que força todos os presos nela a lutarem entre si para escapar.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Maelstrom of Silver</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three headless corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">You gain a regenerating ring of blades. Your Furious Steel ability cooldown is halved. You deal more damage with your blades and have lifesteal on attacks. Knockdown and stun time is halved, you also become immune to disarms.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Maelstrom de Prata</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Três cadáveres sem cabeça</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Você ganha um anel regenerável de lâminas. O cooldown de Aço Furioso é reduzido pela metade. Suas lâminas causam mais dano e os ataques têm lifesteal. O tempo de knockdown e stun cai pela metade, e você fica imune a disarms.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">You can perform a riposte every 20 seconds while wielding your blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Você pode executar uma riposta a cada 20 segundos enquanto empunha sua lâmina.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Shattered Panoply</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to electrical shocks and stun baton knockdown.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Panóplia Estilhaçada</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a choques elétricos e knockdown de stun baton.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to having your limbs dismembered, as well as wound resistance below 50% hp.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade ao desmembramento e resistência a feridas abaixo de 50% de HP.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Riposte cooldown lowered to 10 seconds.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cooldown de riposta reduzido para 10 segundos.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your Mansus Grasp will stun your opponent if they are attacked from behind or while they are prone. Triggering the mark will grant you a orbiting knife that will protect you from one melee or ranged attack.
-  - You are highly reliant on approaching opponents in melee. Slips and bolas are your worst enemy. You can counteract slips by crafting a pair of Greaves Of The Prophet, or remove restraints Realignment.
-  - Sacraments of Power makes you immune to damage, harming people trying to attack you but you cannot use melee or ranged weapons while it's active. Use it as an escape or rush tool.
-  - With Empowered Blades, your offensive power grows considerably. You are able to fight with dual-wielded blades, and can empower them by activating your Mansus Grasp while wielding your blades. Left click attack with empowered blade on living target triggers grasp effect and applies blade mark. Your blades also deal additional damage to structures.
-  - Maintaining a good offense also creates a good defense. With orbiting blades, you are able to block additional incoming attacks. Remember that you can use throw key with empty hand to throw the orbiting blades, dealing heavy damage and destroying structures.
-  - Use Wolves Among Sheep with caution. Not only does it have a significant cooldown, but it also arms anyone trapped in the effect with you with blades of their own. Use it either as a last ditch defense, or when you know you have the upper hand and need an extra edge. Just don't try to flee the area before taking someone out first.
+  - Seu Mansus Grasp dá stun no oponente quando atacado por trás ou enquanto está caído. Ativar a marca concede uma faca orbital que bloqueia um ataque melee ou à distância.
+  - Você depende muito de se aproximar para o melee. Escorregões e bolas são seus piores inimigos. Crafte Grevas do Profeta para evitar slips ou use Realinhamento para remover restrições.
+  - Sacramentos do Poder concede imunidade a dano e fere quem tenta atacar você, mas impede o uso de armas melee ou à distância enquanto está ativo. Use para fugir ou rushar.
+  - Lâminas Fortalecidas aumenta bastante seu poder ofensivo. Você luta em dual-wield e fortalece as lâminas ativando o Mansus Grasp enquanto as empunha. Dar ataque de clique esquerdo com lâmina fortalecida num alvo vivo aciona o aperto e aplica a marca da lâmina. As lâminas também causam dano adicional a estruturas.
+  - Uma boa ofensiva também cria uma boa defesa. Lâminas orbitais bloqueiam ataques adicionais. Use a tecla de arremesso com a mão vazia para lançá-las, causando dano pesado e destruindo estruturas.
+  - Use Lobos entre Ovelhas com cautela. Além do cooldown significativo, a habilidade arma com lâminas próprias todos os presos na arena. Use como último recurso defensivo ou quando tiver vantagem e precisar de um empurrão extra. Só não tente fugir antes de derrubar alguém.
 
 </Document>

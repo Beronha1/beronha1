@@ -1,20 +1,20 @@
 <Document>
 
-  # Close Quarters Combat
+  # Combate em Curta Distância
 
   <Box>
     <GuideEntityEmbed Entity="CQCManual" Caption=""/>
   </Box>
 
-  Close Quarters Combat, or simply CQC, is a [textlink="martial art" link="MartialArts"] that focuses on swiftly and efficiently
-  dispatching your target, with simple but powerful combos that lack the more outlandish moves of other martial arts.
-  CQC is primarily an aggressive fighting style that focuses on dealing stamina damage to targets - designed to quickly subdue
-  opponents and overpower them with pressure technique and crushing blows. This art requires a thorough knowledge of intents.
+  Close Quarters Combat, ou simplesmente CQC, é uma [textlink="arte marcial" link="MartialArts"] focada em neutralizar o alvo
+  com rapidez e eficiência, usando combos simples e poderosos sem os golpes mirabolantes de outras artes marciais.
+  O CQC é principalmente um estilo agressivo que causa dano de Stamina — feito para subjugar oponentes rapidamente
+  e dominá-los com técnicas de pressão e golpes esmagadores. Esta arte exige domínio completo dos intents.
 
-  It is usually used by Syndicate antagonists, however Chefs also get access to it. In Chef's case, CQC obviously stands
-  for Close Quarters Cooking, and Chefs don't cook outside of kitchen, so they are unable to use CQC away from it.
+  Normalmente é usado por antagonistas do Sindicato, mas Chefs também têm acesso. No caso do Chef, CQC obviamente significa
+  Cozinha em Curta Distância; como Chef não cozinha fora da cozinha, ele não consegue usar CQC longe dela.
 
-  ## Combo attacks
+  ## Ataques em combo
 
   ### Slam
 
@@ -23,36 +23,36 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Slams the opponent, knocking them down while dealing Blunt damage. Only works on standing opponents.
+  Arremessa o oponente ao chão, derrubando-o e causando dano Blunt. Só funciona em oponentes de pé.
 
-  ### Kick
+  ### Chute
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Knocks the opponent away and deals both Blunt and Stamina damage. If opponent is out of stamina, puts them to sleep.
+  Afasta o oponente e causa dano Blunt e de Stamina. Se ele estiver sem Stamina, faz com que durma.
 
-  ### Restrain
+  ### Imobilizar
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  Locks the opponent into a restraining position, knocking them down while dealing Stamina damage.
+  Prende o oponente em uma posição de imobilização, derrubando-o e causando dano de Stamina.
 
-  ### Pressure
+  ### Pressão
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  Deals Stamina damage and steals whatever item the opponent is currently holding in their active hand.
+  Causa dano de Stamina e rouba o item que o oponente estiver segurando na mão ativa.
 
-  ### Consecutive
+  ### Golpes Consecutivos
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
@@ -60,14 +60,14 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Deals a lot of Stamina damage and some Blunt damage to the opponent.
+  Causa muito dano de Stamina e um pouco de dano Blunt ao oponente.
 
-  ### Leg Sweep
+  ### Rasteira
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Can only be performed while prone. Knocks the opponent down and forces the user back on their feet, even if they are manually crawling.
+  Só pode ser executada enquanto você está caído. Derruba o oponente e força o usuário a se levantar, mesmo que estivesse rastejando manualmente.
 
 </Document>

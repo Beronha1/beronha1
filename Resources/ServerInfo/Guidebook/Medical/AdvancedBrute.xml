@@ -7,9 +7,9 @@ SPDX-License-Identifier: MIT
 
 <Document>
 
-  # Specialized Brute Chemicals
+  # Químicos Especializados para Dano Brute
 
-  Nanotrasen's greatest scientists have synthesized three more specific brute chemicals! Each one heals a specific damage subtype.
+  Os maiores cientistas da Nanotrasen sintetizaram mais três químicos específicos para dano físico, conhecido como brute! Cada um cura um subtipo de dano diferente.
 
   <GuideReagentEmbed Reagent="Bruizine"/>
   <GuideReagentEmbed Reagent="Puncturase"/>
@@ -17,19 +17,19 @@ SPDX-License-Identifier: MIT
 
   # Razorium
 
-  [color=red]USE CAUTION[/color] when using the aforementioned specialized brute chemicals. Should one mix together with a different type of brute chemical, the resulting mixture will create a dangerous chemical known as Razorium!
+  [color=red]TENHA CUIDADO[/color] ao usar os químicos especializados para dano brute citados acima. Se um deles for misturado a outro tipo de químico para dano brute, a mistura produzirá uma substância perigosa chamada Razorium!
   <GuideReagentEmbed Reagent="Razorium"/>
-  To avoid this, make sure the patient is done metabolizing one brute medication before giving them another. Keep an eye on the rate their health is changing.
+  Para evitar isso, espere o paciente terminar de metabolizar um medicamento para dano brute antes de administrar outro. Observe a velocidade com que a saúde dele muda.
 
-  [bold]Some examples of mixtures that create Razorium are as follows:[/bold]
+  [bold]Alguns exemplos de misturas que produzem Razorium:[/bold]
 
-  Bicaridine and Puncturase
+  Bicaridine e Puncturase
 
-  Puncturase and Lacerinol
+  Puncturase e Lacerinol
 
-  Bruizine and Bicaridine
+  Bruizine e Bicaridine
 
-  Lacerinol and Bruizine
+  Lacerinol e Bruizine
 
-  Please note that [bold]any[/bold] combination of these 4 chemicals will likely mix and create Razorium! Be careful when creating these chemicals, as they contain Bicaridine. Any leftover Bicaridine will likely mix to create Razorium!
+  Lembre-se: [bold]qualquer[/bold] combinação desses 4 químicos provavelmente reagirá e produzirá Razorium! Tenha cuidado ao prepará-los, pois eles contêm Bicaridine. Qualquer sobra de Bicaridine pode reagir e formar Razorium!
 </Document>

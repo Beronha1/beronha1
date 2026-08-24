@@ -1,37 +1,37 @@
 <Document>
-  # Nullrod Forms
-  Nullrods can be transformed to unique forms by using them on an altar.
+  # Formas da Nullrod
+  Nullrods podem ser transformadas em formas únicas ao serem usadas em um altar.
 
-  ## Altar replacement
-  Altars can be set to fit your desired look by applying a required item to the base altar, you can remove the applied item to return the altar to base form using a crowbar.
-  WARNING: Nullrod transformation is a non-reversible process, so choose wisely.
+  ## Transformação do altar
+  Altares podem assumir a aparência desejada quando você aplica o item necessário ao altar-base. Para voltar à forma original, remova o item aplicado usando uma crowbar.
+  AVISO: transformar a Nullrod é irreversível; escolha com sabedoria.
 
   ## Nullrod
-  Old reliable, the nullrod you will arrive on station with. Typically changed out from instantly due to having no special ability, but using it is a real flex of how robust you are.
+  A velha confiável, a nullrod com que você chega à estação. Costuma ser trocada na hora por não ter habilidade especial, mas usá-la é um belo flex do quanto você é robusto.
   <Box>
     <GuideEntityEmbed Entity="Nullrod"/>
     <GuideEntityEmbed Entity="AltarConvert"/>
     <GuideEntityEmbed Entity="Crowbar"/>
   </Box>
 
-  ## Arrythmic Knife
-  Provides the user with a randomized movespeed boost periodically. Could help you chase down an unholy enemy, but could also slow you to a crawl while you try to escape.
+  ## Faca Arrítmica
+  Periodicamente concede ao usuário um boost aleatório de velocidade. Pode ajudá-lo a perseguir um inimigo profano ou reduzi-lo a um rastejo durante a fuga.
   <Box>
     <GuideEntityEmbed Entity="ArrythmicKnife"/>
     <GuideEntityEmbed Entity="AltarFangs"/>
     <GuideEntityEmbed Entity="FoodMeatBacon"/>
   </Box>
 
-  ## Bulwark
-  Stand as the lord protector. A truely powerful shield capable of blocking all hostile attacks when positioned on a tile. Additonally can be used to dash a short distance periodically, which will knockback and harm anyone hit along the way.
+  ## Baluarte
+  Erga-se como o lorde protetor. Um escudo realmente poderoso, capaz de bloquear todos os ataques hostis quando posicionado em um tile. Também permite dar dash periodicamente por uma curta distância, causando knockback e dano em quem estiver no caminho.
   <Box>
     <GuideEntityEmbed Entity="Bulwark"/>
     <GuideEntityEmbed Entity="AltarConvertBlue"/>
     <GuideEntityEmbed Entity="MakeshiftShield"/>
   </Box>
 
-  ## Casul and Jackal
-  A pair of holy pistols and a snazzy belt to store them in. Can only be fired together. Pray to reload.
+  ## Casul e Jackal
+  Um par de pistolas sagradas e um cinto estiloso para guardá-las. Só podem ser disparadas juntas. Reze para recarregar.
   <Box>
     <GuideEntityEmbed Entity="ClothingBeltHolsterFilledChaplain"/>
     <GuideEntityEmbed Entity="WeaponPistolCasul"/>
@@ -40,48 +40,48 @@
     <GuideEntityEmbed Entity="MicroManipulatorStockPart"/>
   </Box>
 
-  ## Faith
-  A dinky pistol that heals people with bullets, don't ask. Applies holy damage to unholy enemies with the same bullets. Pray to reload.
+  ## Fé
+  Uma pistolinha que cura pessoas com balas — não pergunte. As mesmas balas causam dano sagrado a inimigos profanos. Reze para recarregar.
   <Box>
     <GuideEntityEmbed Entity="WeaponPistolFaith"/>
     <GuideEntityEmbed Entity="AltarConvertWhite"/>
     <GuideEntityEmbed Entity="IngotSilver1"/>
   </Box>
 
-  ## God Hand
-  God's blessing to his most trusted chaplain. Applies fire and holyfire stacks on attack. Has the same pry ability as a crowbar. Unremovable.
+  ## Mão de Deus
+  A bênção de Deus ao seu capelão mais confiável. Aplica stacks de fogo e fogo sagrado ao atacar. Abre coisas à força como uma crowbar. Irremovível.
   <Box>
     <GuideEntityEmbed Entity="GodHand"/>
     <GuideEntityEmbed Entity="AltarChaos"/>
     <GuideEntityEmbed Entity="SheetPlasma1"/>
   </Box>
 
-  ## Grey Emperor's Glove
-  Lead the tider's to gods light. An unremovable insulated hand with most every tool you would require to lead the greytide. Use item in-hand to cycle through tool selection.
+  ## Luva do Imperador Cinzento
+  Conduza os tiders à luz de Deus. Uma mão isolante irremovível com quase todas as ferramentas necessárias para liderar a greytide. Use o item na mão para alternar a ferramenta selecionada.
   <Box>
     <GuideEntityEmbed Entity="UristHand"/>
     <GuideEntityEmbed Entity="AltarConvertMaint"/>
     <GuideEntityEmbed Entity="ClothingHandsGlovesColorYellowBudget"/>
   </Box>
 
-  ## Honkmother's Maw
-  HONK! A huge clown mask imbued with the power of the honkmother. Knocks down on hit. Don't be surprised if the clown steals this from you.
+  ## Bocarra da Honkmother
+  HONK! Uma enorme máscara de palhaço imbuída com o poder da Honkmother. Derruba ao acertar. Não se surpreenda se o Clown roubá-la de você.
   <Box>
     <GuideEntityEmbed Entity="HonkmotherMaw"/>
     <GuideEntityEmbed Entity="AltarBananium"/>
     <GuideEntityEmbed Entity="MaterialBananium1"/>
   </Box>
 
-  ## Holy Chainsaw
-  An unremovable chainsaw. Must be wielded to attack. I mean, it's a chainsaw that does holy damage.
+  ## Motosserra Sagrada
+  Uma motosserra irremovível. Precisa ser empunhada com as duas mãos para atacar. Quer dizer... é uma motosserra que causa dano sagrado.
   <Box>
     <GuideEntityEmbed Entity="HolyChainsaw"/>
     <GuideEntityEmbed Entity="AltarToolbox"/>
     <GuideEntityEmbed Entity="ToolboxEmergency"/>
   </Box>
 
-  ## Holy Claywmore
-  DEUS VULT! Can fire a marking projectile, which upon being attacked will heal brute, asphyxiation and blododloss of the wielder.
+  ## Claymore Sagrada
+  DEUS VULT! Dispara um projétil marcador; ao atacar o alvo marcado, o portador cura dano Brute, Asphyxiation e Bloodloss.
   <Box>
     <GuideEntityEmbed Entity="HolyClaymore"/>
     <GuideEntityEmbed Entity="AltarHeaven"/>
@@ -89,31 +89,31 @@
   </Box>
 
   ## Iradomini
-  A powerful crossbow, must be weilded to fire. Fires a single VERY powerful holy arrow, which will disappear after a minute. Takes a long time to reload via prayer, position wisely.
+  Uma besta poderosa que precisa ser empunhada com as duas mãos para disparar. Atira uma única flecha sagrada MUITO poderosa, que desaparece após um minuto. Recarregar por meio de oração leva bastante tempo; posicione-se bem.
   <Box>
     <GuideEntityEmbed Entity="WeaponPistolIradomini"/>
     <GuideEntityEmbed Entity="AltarConvertOrange"/>
     <GuideEntityEmbed Entity="BowImprovised"/>
   </Box>
 
-  ## Monk Staff
-  In simple terms? A big stick. Launch a flurry of attacks to deal stamina damage on hit, very useful for chasing down the unholy.
+  ## Cajado de Monge
+  Em termos simples? Um bastão grande. Desfere uma rajada de ataques que causam dano de Stamina ao acertar, muito útil para perseguir profanos.
   <Box>
     <GuideEntityEmbed Entity="MonkStaff"/>
     <GuideEntityEmbed Entity="AltarDruid"/>
     <GuideEntityEmbed Entity="MaterialWoodPlank1"/>
   </Box>
 
-  ## Ratvarian Spear
-  Oh? Prefer the old gods? Well heres the nullrod for you. A one-handed spear imbued with the power of ratvar. Can store more chemicals than usual spears, and applies a large amount of holy damage when thrown.
+  ## Lança Ratvariana
+  Ah, prefere os deuses antigos? Então esta nullrod é para você. Uma lança de uma mão imbuída com o poder de Ratvar. Armazena mais químicos que lanças comuns e causa muito dano sagrado quando arremessada.
   <Box>
     <GuideEntityEmbed Entity="RatvarianSpear"/>
     <GuideEntityEmbed Entity="AltarClock"/>
     <GuideEntityEmbed Entity="PowerCellSmallPrinted"/>
   </Box>
 
-  ## Rosary
-  Support Mains rejoice. Area of Effect heal on pray, but also harms the unholy who are also nearby.
+  ## Rosário
+  Alegrem-se, mains de suporte. Cura em área ao rezar, mas também fere profanos próximos.
   <Box>
     <GuideEntityEmbed Entity="Rosary"/>
     <GuideEntityEmbed Entity="AltarSpaceChristian"/>

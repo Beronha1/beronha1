@@ -1,5 +1,5 @@
 <Document>
-  # Revolutionaries
+  # Revolucionários
 
   <Box>
     [color=#999999][italic]"Viva la revolución!!"[/italic][/color]
@@ -8,20 +8,20 @@
     <GuideEntityEmbed Entity="PosterContrabandRevolt" Caption=""/>
   </Box>
 
-  Revolutionaries are conversion antagonists composed of the Nanotrasen working class, they need to take control of the station by building giant war factories.
+  Revolucionários são antagonistas de conversão formados pela classe trabalhadora da Nanotrasen. Eles precisam tomar a estação construindo enormes fábricas de guerra.
 
-  ## The Most Important Thing of All!
-  As a head Revolutionary, you are a leader, not a frontliner, delegate tasks to your revolutionaries or they will not know what to do.
+  ## A coisa mais importante de todas!
+  Como Revolucionário-Chefe, você é líder, não frontliner. Delegue tarefas aos revolucionários ou eles não saberão o que fazer.
 
-  ## Objectives
-  You must kill, convert, or exile all of the [textlink="Command staff" link="Command"] on station in no particular order.
+  ## Objetivos
+  Você deve matar, converter ou exilar toda a [textlink="equipe de Comando" link="Command"] da estação, em qualquer ordem.
 
-  Your objective is not to destroy the station, but [italic]take it over[/italic], so try to minimize damage where possible.
+  Seu objetivo não é destruir a estação, mas [italic]tomá-la[/italic]; portanto, minimize os danos sempre que possível.
 
-  [bold]The revolution will fail[/bold] if all of the [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] die, and all [color=red]Revolutionaries[/color] will de-convert if this happens.
+  [bold]A revolução fracassará[/bold] se todos os [bold][color=#5e9cff]Revolucionários-Chefes[/color][/bold] morrerem; nesse caso, todos os [color=red]Revolucionários[/color] serão desconvertidos.
 
-  ## Headrevs & Conversion
-  [bold][color=#5e9cff]Head Revolutionaries[/color][/bold] are chosen at the start of the shift and begin with a [color=cyan]mace[/color], [color=cyan]two propaganda pamphlets[/color], [color=cyan]handcuffs[/color] and some starting [color=cyan]components[/color].
+  ## Headrevs e conversão
+  [bold][color=#5e9cff]Revolucionários-Chefes[/color][/bold] são escolhidos no começo do turno e começam com uma [color=cyan]maça[/color], [color=cyan]dois panfletos de propaganda[/color], [color=cyan]algemas[/color] e alguns [color=cyan]componentes[/color] iniciais.
 
   <Box>
     <GuideEntityEmbed Entity="RevMace"/>
@@ -30,38 +30,38 @@
     <GuideEntityEmbed Entity="RevGear"/>
   </Box>
 
-  You may have other headrevs working with you, use your unique radio implant to communicate on the [color=red]Head Revolutionary[/color] channel using [bold]:j[/bold].
+  Pode haver outros headrevs trabalhando com você. Use seu implante de rádio exclusivo para falar no canal dos [color=red]Revolucionários-Chefes[/color] com [bold]:j[/bold].
 
-  You can convert crew members to your side by stunning them with the [color=#ff0000]mace[/color], cuffing them, and reading [color=#ff0000]propaganda[/color] to them (by clicking them with propaganda in hand.)Be sure to take off the targets headset, otherwise they could call for help!
+  Você converte tripulantes dando stun com a [color=#ff0000]maça[/color], algemando-os e lendo [color=#ff0000]propaganda[/color] para eles — clique no alvo com o panfleto na mão. Tire o Headset da vítima, senão ela pode pedir ajuda!
 
-  Another hurdle in your way are [color=cyan]mindshield implanters[/color]. These will:
-  - Prevent the implanted person from being converted into a [color=red]Revolutionary[/color]
-  - De-convert Revolutionaries, and will make them no longer loyal to your cause
-  - Visibly change appearance upon being implanted into a [bold][color=#5e9cff]Head Revolutionary[/color][/bold], giving away his cover and disabling your convert ability
+  Outro obstáculo são os [color=cyan]implantadores MindShield[/color]. Eles:
+  - Impedem a pessoa implantada de ser convertida em [color=red]Revolucionária[/color]
+  - Desconvertem Revolucionários, fazendo com que deixem de ser leais à sua causa
+  - Mudam visivelmente de aparência ao serem implantados em um [bold][color=#5e9cff]Revolucionário-Chefe[/color][/bold], entregando seu disfarce e desativando a habilidade de conversão
 
-  Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already.
+  Presuma que toda a [color=#cb0000]Security[/color] e o [color=#1b67a5]Comando[/color] já têm MindShields.
 
-  You are able to remove mindshields with [color=red]Shield Rippers[/color] once you unlock them.
+  Você pode remover MindShields com [color=red]Shield Rippers[/color] depois de desbloqueá-los.
 
   <Box>
     <GuideEntityEmbed Entity="RevShieldRipper"/>
   </Box>
 
-  ## Factory Building and Tech
+  ## Construção de fábricas e tecnologia
 
-  The [bold][color=red]most important part[/color][/bold] of being a headrev is making proper factories, this allows you to expand your tech tree and get more [color=red]dangerous[/color] and powerful items to arm your revs with. Keep in mind that rev buildings are [color=red][bold]very loud[/bold][/color], and you will need to be isolated and have defenses before long!
+  A parte [bold][color=red]mais importante[/color][/bold] de ser headrev é montar fábricas de verdade. Elas expandem sua árvore tecnológica e liberam itens mais [color=red]perigosos[/color] e poderosos para armar os revs. Lembre-se de que construções revolucionárias fazem [color=red][bold]muito barulho[/bold][/color]: logo você precisará de isolamento e defesas!
 
-  ### Industrial Forge
+  ### Forja Industrial
 
-  You should [bold][color=red]ALWAYS[/color][/bold] start by making a forge, more than one if you can afford it. Good rev bases have 4-5 forges constantly producing parts.
+  Você deve [bold][color=red]SEMPRE[/color][/bold] começar construindo uma forja — mais de uma, se puder pagar. Boas bases rev têm 4-5 forjas produzindo peças sem parar.
 
   <Box>
     <GuideEntityEmbed Entity="RevForge"/>
   </Box>
 
-  It allows you to [color=cyan]create parts[/color] for other machines, as well as some basic armor and weaponry, this includes important items such as the mace, which is your primary stun weapon.
+  Ela permite [color=cyan]criar peças[/color] para outras máquinas, além de armaduras e armas básicas. Isso inclui itens importantes como a maça, sua principal arma de stun.
 
-  Here are some example items it can make:
+  Alguns exemplos do que ela fabrica:
   <Box>
     <GuideEntityEmbed Entity="RevGear"/>
     <GuideEntityEmbed Entity="RevNut"/>
@@ -70,15 +70,15 @@
     <GuideEntityEmbed Entity="RevSwordBlade"/>
   </Box>
 
-  ### Printing Press
+  ### Prensa de Impressão
 
-  The printing press is the second most important rev building, it allows the [color=cyan]creation of propaganda[/color], your conversion item. However, it takes very long to produce, so you should create more than one.
+  A prensa é a segunda construção rev mais importante; ela permite a [color=cyan]criação de propaganda[/color], seu item de conversão. A produção demora muito, então construa mais de uma.
 
  <Box>
     <GuideEntityEmbed Entity="RevPrintingPress"/>
   </Box>
 
-  To get paper, you can have your revs print nanotasks from their PDA, and then craft it into paper for the press, dont be afraid to delegate!
+  Para conseguir papel, mande seus revs imprimirem nanotasks pelo PDA e depois craftá-las em papel para a prensa. Não tenha medo de delegar!
 
   <Box>
     <GuideEntityEmbed Entity="PaperNanoTaskItem"/>
@@ -86,9 +86,9 @@
     <GuideEntityEmbed Entity="RevPropaganda"/>
   </Box>
 
-  ### Tier 2 Rev Tech
+  ### Tecnologia Rev Tier 2
 
-  After getting your basic factory setup, you can start branching out on the tech tree to get some T2 rev tech.
+  Depois de montar a fábrica básica, comece a expandir a árvore tecnológica para obter tecnologia rev T2.
 
   <Box>
     <GuideEntityEmbed Entity="RevPrinter"/>
@@ -101,9 +101,9 @@
     <GuideEntityEmbed Entity="RevBulletPress"/>
   </Box>
 
-  All of these buildings have unique requirements to make, such as a security encryption key for the telecommmunications workshop. Once you get these items you can use them to construct the said devices.
+  Cada uma dessas construções tem requisitos únicos, como uma chave de criptografia da Security para a oficina de telecomunicações. Ao conseguir os itens, use-os para construir os dispositivos.
 
-  These buildings give access to unique and powerfull items, here are a few examples:
+  Essas construções dão acesso a itens únicos e poderosos. Alguns exemplos:
 
   <Box>
     <GuideEntityEmbed Entity="PinpointerCommand"/>
@@ -112,9 +112,9 @@
     <GuideEntityEmbed Entity="EncryptionKeyRev"/>
   </Box>
 
-  ### Tier 3 Rev Tech
+  ### Tecnologia Rev Tier 3
 
-  Tier 3 Rev tech is the best technology revs can scrap together. They all provide access to the strongest items avalible to the revolutionaries.
+  Tecnologia Rev Tier 3 é o melhor que os revs conseguem improvisar. Todas essas máquinas liberam os itens mais fortes disponíveis aos revolucionários.
 
   <Box>
     <GuideEntityEmbed Entity="RevTelesphere"/>
@@ -122,7 +122,7 @@
     <GuideEntityEmbed Entity="RevPlasmaFoundry"/>
   </Box>
 
-  However; to make any of these you need to kill a head of staff! They all require unique items that no one but the heads of staff have access to.
+  Porém, para construir qualquer uma delas, você precisa matar um Head of Staff! Todas exigem itens únicos acessíveis apenas aos chefes.
 
   <Box>
     <GuideEntityEmbed Entity="HandTeleporter"/>
@@ -130,9 +130,9 @@
     <GuideEntityEmbed Entity="BoxFolderQmClipboard"/>
   </Box>
 
-  Consider sending a strike team of revolutionaries to assassinate these heads of staff and retrieve the said items, any of them can be a gamechanger!
+  Considere enviar uma equipe de ataque para assassinar esses Heads of Staff e recuperar os itens. Qualquer um deles pode virar o jogo!
 
-  Here are a few T3 rev tech items:
+  Alguns itens de tecnologia rev T3:
 
   <Box>
     <GuideEntityEmbed Entity="RevCircuitBoard"/>
@@ -140,11 +140,11 @@
     <GuideEntityEmbed Entity="CartridgeRocketRPG2HE"/>
   </Box>
 
-  ## Revolutionary
-  A [bold][color=red]Revolutionary[/color][/bold] is a crew member that has been converted by a [bold][color=#5e9cff]Head Revolutionary[/color][/bold].
+  ## Revolucionário
+  Um [bold][color=red]Revolucionário[/color][/bold] é um tripulante convertido por um [bold][color=#5e9cff]Revolucionário-Chefe[/color][/bold].
 
-  [bold][color=red]Revolutionaries[/color] can't convert people themselves,[/bold] but they're more than capable of doing dirty work and carrying out orders.
+  [bold][color=red]Revolucionários[/color] não conseguem converter pessoas sozinhos,[/bold] mas são mais que capazes de fazer o trabalho sujo e cumprir ordens.
 
-  As a [bold][color=red]Revolutionary[/color][/bold] listen to your headrevs!
+  Como [bold][color=red]Revolucionário[/color][/bold], escute seus headrevs!
 
 </Document>

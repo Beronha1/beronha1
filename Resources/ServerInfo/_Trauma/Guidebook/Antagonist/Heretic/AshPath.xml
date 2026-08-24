@@ -1,96 +1,96 @@
 <Document>
 
-  # Ashen Path
+  # Caminho das Cinzas
 
-  Difficulty: [color=lime]Easy[/color]
+  Dificuldade: [color=lime]Fácil[/color]
 
-  The Path of Ash revolves around fire, mobility and brutal crowd control against single opponents.
-  Play this path if you are new to Heretic, or really enjoy hit and run playstyles.
+  O Caminho das Cinzas gira em torno de fogo, mobilidade e controle brutal contra oponentes isolados.
+  Escolha este caminho se for novo de Herege ou gostar muito de estilos bate-e-corre.
 
-  ## Pros
+  ## Vantagens
 
-  - Very potent even from the beginning of the path.
-  - Easy access to a mobility spells.
-  - Strong mark effect.
+  - Muito potente desde o começo do caminho.
+  - Acesso fácil a feitiços de mobilidade.
+  - Efeito de marca forte.
 
-  ## Cons
+  ## Desvantagens
 
-  - Has less power than most heretics beyond their starting abilities.
-  - Lacks durability in long conflicts.
-  - Reliant on hitting fast and hard before their opponents can mount proper countermeasures.
+  - Depois das habilidades iniciais, tem menos poder que a maioria dos Hereges.
+  - Falta resistência em conflitos prolongados.
+  - Depende de atacar rápido e forte antes que oponentes preparem contramedidas.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Nightwatcher's Secret</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Matchstick</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates an ashen blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Segredo do Vigia Noturno</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, Fósforo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina de cinzas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Ash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will burn the eyes of victims, temporarily blinding them.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto das Cinzas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto queima os olhos das vítimas, cegando-as temporariamente.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Ash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the ashen mark, burning the target, reducing all your spell cooldowns, and hopping to a nearby target when activated.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Marca das Cinzas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto passa a aplicar a marca das cinzas, queimando o alvo, reduzindo todos os cooldowns de feitiço e saltando para um alvo próximo quando ativada.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ashen Shift</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Allows you to temporarily jaunt through walls. Has a very short range.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Deslocamento Cinéreo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Permite atravessar paredes temporariamente. Tem alcance muito curto.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Volcano Blast</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Fires a flaming beam to a nearby target, burning and setting them ablaze, if they do not extinguish themself, it will spread to others.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Explosão Vulcânica</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Dispara um feixe flamejante num alvo próximo, queimando-o e incendiando-o. Se ele não apagar o fogo, as chamas se espalham para outros.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Cracked Lantern</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Lantern, Flare, Ash, Lighter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates cracked lantern that acts as a flash which burns victims in area. Summons Hint when holding it in your hand.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lanterna Rachada</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Lanterna, Flare, Cinzas, Isqueiro</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lanterna rachada que funciona como flash e queima vítimas na área. Invoca Hint quando segurada.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Fiery Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now sets targets ablaze.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lâmina Flamejante</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sua lâmina agora incendeia os alvos.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Nightwatcher's Rebirth</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Extinguishes you, and intensifies nearby heathens flames, healing you for each victim.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Renascimento do Vigia Noturno</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Apaga suas chamas e intensifica o fogo dos profanos próximos, curando você por vítima.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ashlord's Rite</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three burning corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Gives you full pressure, temperature and fire immunity as well as 2 spells that spread fires around you. Upgrades your Volcano Blast and Nightwatcher's Rebirth spells.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rito do Senhor das Cinzas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Três cadáveres em chamas</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Concede imunidade total a pressão, temperatura e fogo, além de 2 feitiços que espalham chamas ao redor. Melhora Explosão Vulcânica e Renascimento do Vigia Noturno.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to high temperatures. Having 3 fire stacks or more on yourself will empower your ash spells.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a altas temperaturas. Ter 3 stacks de fogo ou mais em si fortalece seus feitiços de cinzas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Scorched Mantle</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to fire. Passive fire stack generation when already on fire.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Manto Chamuscado</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a fogo. Gera stacks de fogo passivamente quando você já está em chamas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Fire stacks speed you up when on fire.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Stacks de fogo aumentam sua velocidade enquanto você está em chamas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Temporary blindness and vision blur immunity.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a cegueira temporária e visão embaçada.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your Mansus Grasp applies a short blind and a mark that deals some heat damage and refreshes all your spells, either by 5 seconds or 20%, whichever is less. The mark can spread to nearby opponents.
-  - Selecting this path does not make you immune to fires. Remember, that your can still burn! If you want to protect yourself from your own fire, wear Scorched Mantle or carry a water bottle with you.
-  - All fire stacks applied by your abilities and blades have some fire protection penetration, allowing you to deal with fire-insulated enemies to some extent.
-  - Volcano blast can make short work of your enemies, should they be foolish enough to stick close to each other. Burn the heathens to ashes!
-  - Make sure to set as many enemies on fire as you possibly can! Nightwatcher's Rebirth will heal you and have its cooldown reduced based on how many mobs you siphon.
-  - Your ascension grants you complete immunity to environmental hazards! But you are still vulnerable to more conventional weaponry. Do not become overconfident.
+  - Seu Mansus Grasp causa cegueira breve e aplica uma marca que dá dano Heat e recarrega todos os feitiços em 5 segundos ou 20%, o que for menor. A marca pode se espalhar a oponentes próximos.
+  - Escolher este caminho não dá imunidade a incêndios. Lembre-se: você ainda pode queimar! Para se proteger do próprio fogo, vista o Manto Chamuscado ou carregue uma garrafa d'água.
+  - Todos os stacks de fogo aplicados por suas habilidades e lâminas penetram parcialmente proteção contra fogo, permitindo enfrentar até certo ponto inimigos isolados das chamas.
+  - Explosão Vulcânica acaba rápido com inimigos burros o bastante para ficarem juntos. Queime os profanos até virarem cinzas!
+  - Incendeie o máximo possível de inimigos! Renascimento do Vigia Noturno cura você e reduz o cooldown conforme a quantidade de mobs sifonados.
+  - Sua ascensão concede imunidade total a perigos ambientais! Você ainda é vulnerável a armas convencionais. Não fique confiante demais.
 
 </Document>

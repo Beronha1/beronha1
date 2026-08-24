@@ -1,15 +1,15 @@
 <Document>
-# Counterattack
+# Contra-ataque
 
-Active counterattack is a sheathed weapon combat mechanic.
+Contra-ataque ativo é uma mecânica de combate com armas embainhadas.
 
-When weapon is sheathed on your belt, you can [color=yellow]Alt-Click[/color] your opponent with empty hand while in [color=red]Combat Mode[/color] to prepare a counterattack against them.
+Com a arma na bainha do cinto, dê [color=yellow]Alt-Clique[/color] no oponente de mão vazia e em [color=red]Modo de Combate[/color] para preparar o contra-ataque.
 
-After preparing counterattack, you will have one second long window, during which, if your opponent attempts to melee attack you, their attack will be blocked and you will deliver an empowered strike against them, with extra damage, wounding and armor penetration.
+Você terá uma janela de um segundo. Se o alvo tentar um ataque corpo a corpo, ele será bloqueado e você responderá com golpe fortalecido, dano, ferimento e penetração de armadura extras.
 
-Preparing counterattack plays unique sound and shows popup.
+Preparar toca um som próprio e mostra um popup.
 
-If you fail to counterattack, this ability goes on cooldown - this does not happen if you have counterattacked successfully, which allows you to continue counterattacking.
+Se errar, a habilidade entra em cooldown; ao acertar, não, permitindo contra-atacar novamente.
 
 <Box>
   <GuideEntityEmbed Entity="ClothingBeltSheathKatanaFilled"/>
@@ -22,8 +22,8 @@ If you fail to counterattack, this ability goes on cooldown - this does not happ
   <GuideEntityEmbed Entity="ClothingBeltSheathHeadOfSecurityFilled"/>
 </Box>
 
-Different kind of sheaths/weapons have varying counterattack stats such as damage/wounding/armor penetration or cooldown on failed counterattack.
+Bainhas e armas variam em dano, ferimento, penetração e cooldown após falha.
 
-You cannot counterattack NPCs as they are too unpredictable.
+NPCs são imprevisíveis demais para serem contra-atacados.
 
 </Document>

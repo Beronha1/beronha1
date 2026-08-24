@@ -1,29 +1,29 @@
 <Document>
 
-# Service
+# Serviço
 <!-- Trauma - moved non-service jobs into Civilian guidebook -->
-[color=#9fed58]Service[/color] has perhaps the most important job of all: keeping the crew both fed and topped up on booze.
+O [color=#9fed58]Serviço[/color] talvez tenha o trabalho mais importante de todos: manter a tripulação alimentada e bem abastecida de bebida.
 
-## Personnel
-[color=#9fed58]Service[/color]'s staff is made up of Bartenders, Botanists, Chefs and Service Workers.
-Service is run by the [bold]Head of Personnel[/bold], who also manages [textlink="other minor jobs" link="Civilian"/] to a lesser degree.
+## Pessoal
+A equipe do [color=#9fed58]Serviço[/color] é formada por Bartenders, Botânicos, Cozinheiros e Funcionários do Serviço.
+O Serviço é liderado pelo [bold]Chefe dos Funcionários[/bold], que também administra, em menor grau, [textlink="outros trabalhos menores" link="Civilian"/].
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineBotanist" Caption="Botanist"/>
+    <GuideEntityEmbed Entity="ToyFigurineBotanist" Caption="Botânico"/>
     <GuideEntityEmbed Entity="ToyFigurineBartender" Caption="Bartender"/>
-    <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Chef"/>
-    <GuideEntityEmbed Entity="PlushieLizardJobServiceworker" Caption="Service Worker"/> <!-- TODO: replace with figurine if someone ever makes that -->
+    <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Cozinheiro"/>
+    <GuideEntityEmbed Entity="PlushieLizardJobServiceworker" Caption="Funcionário do Serviço"/> <!-- TODO: replace with figurine if someone ever makes that -->
     <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="HoP"/>
   </Box>
 
-## Working Together
-[color=#9fed58]Service[/color], tends to be the most [color=#a4885c]interlinked[/color] department by far.
-Most [color=#9fed58]Service[/color] jobs require [color=#a4885c]cooperation[/color] between workers.
-Chefs often need ingredients that only botanists can grow efficiently. The bartender may request bananas for special cocktails.
+## Trabalhando em Conjunto
+O [color=#9fed58]Serviço[/color] é, de longe, o departamento mais [color=#a4885c]interligado[/color].
+A maioria dos trabalhos do [color=#9fed58]Serviço[/color] exige [color=#a4885c]cooperação[/color] entre os funcionários.
+Cozinheiros frequentemente precisam de ingredientes que só Botânicos cultivam com eficiência. O Bartender pode pedir bananas para coquetéis especiais.
 
-A lot of [color=#a4885c]collaboration[/color] is necessary within and without [color=#9fed58]Service[/color]. Often times, [color=#9fed58]Service[/color] is required by other departments, so be on your toes.
+É preciso muita [color=#a4885c]colaboração[/color] dentro e fora do [color=#9fed58]Serviço[/color]. Outros departamentos também dependem do [color=#9fed58]Serviço[/color] com frequência, então fique atento.
 
 <!-- <Trauma> - added this -->
-By far the most common departments to work with [color=#9fed58]Service[/color] are [color=#a46106]Cargo[/color] and [color=#5b97bc]Medical[/color].
+Os departamentos que mais trabalham com o [color=#9fed58]Serviço[/color] são, de longe, a [color=#a46106]Carga[/color] e a [color=#5b97bc]Medicina[/color].
 <!-- </Trauma> -->
 </Document>

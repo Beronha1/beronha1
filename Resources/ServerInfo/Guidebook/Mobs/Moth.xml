@@ -7,18 +7,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Moth People
+  # Pessoas Mariposa (Moths)
 
   <Box>
     <GuideEntityEmbed Entity="AppearanceMoth" Caption=""/>
   </Box>
 
-  They can eat cotton, fabrics and clothing, but virtually none of the food that others would consider "edible". They prefer a somewhat lower temperature range than humans.
+  Moths podem comer algodão, tecidos e roupas, mas praticamente nada do que outras espécies chamariam de "comida". Preferem temperaturas um pouco mais baixas que humanos.
 
-  Their wings give them better acceleration if there is no gravity on the station, but they still can't move without equipment when floating out in space.
+  Suas asas dão aceleração melhor quando não há gravidade na estação, mas, flutuando no espaço, ainda precisam de equipamento para se mover.
 
-  They take [color=#1e90ff]30% less Cold damage[/color] but [color=#ffa500]30% more Heat and 6.5% more Brute damage, and catch on fire more easily[/color].
+  Elas recebem [color=#1e90ff]30% menos dano de Frio[/color], mas [color=#ffa500]30% mais dano de Calor, 6.5% mais dano Brute e pegam fogo com mais facilidade[/color].
 
-  They have innate [textlink="Tackle" link="Tackle"], allowing them to dash a short distance, as well as bonus to tackling with special gloves.
+  Moths possuem [textlink="Tackle (investida)" link="Tackle"] inato, que permite avançar uma curta distância, além de um bônus ao dar tackle usando luvas especiais.
+
 
 </Document>

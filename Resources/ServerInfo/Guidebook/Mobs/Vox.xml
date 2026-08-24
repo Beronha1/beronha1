@@ -5,29 +5,30 @@
     <GuideEntityEmbed Entity="MobVox" Caption=""/>
   </Box>
 
-  [color=#ffa500]Warning! This species is not recommended for new players due to their fatal allergy to oxygen![/color]
+  [color=#ffa500]Atenção! Esta espécie não é recomendada para jogadores novatos por causa de sua alergia fatal a oxigênio![/color]
 
-  Vox breathe nitrogen, and [color=#ffa500] oxygen is toxic to them.[/color]
-  Unfortunately, space stations tend to be full of oxygen,
-  so Vox must use an internal nitrogen supply at almost all times to avoid fatal exposure.
+  Vox respiram nitrogênio, e [color=#ffa500] oxigênio é tóxico para eles.[/color]
+  Infelizmente, estações espaciais costumam estar cheias de oxigênio;
+  por isso, Vox precisam manter internals de nitrogênio ligados quase o tempo todo para evitar uma exposição fatal.
 
-  Vox always spawn wearing working nitrogen internals equipment.
-  A spare breathing mask and an emergency nitrogen canister is provided in their survival box.
+  Vox sempre aparecem com equipamento funcional de internals de nitrogênio.
+  Sua caixa de sobrevivência contém uma máscara respiratória reserva e um cilindro emergencial de nitrogênio.
 
-  In addition to regular foods, Vox can also eat various snack packaging, banana peels, eggshells, and raw meat without any ill effects. They also like to drink welding fuel.
+  Além de alimentos comuns, Vox podem comer embalagens de salgadinhos, cascas de banana, cascas de ovo e carne crua sem sofrer efeitos negativos. Também gostam de beber combustível de solda.
 
-  Vox [color=#1e90ff]slowly recover from low levels of poison damage[/color] on their own,
-  so long as they are careful not to exceed 20 poison damage.
-  This allows them to endure breathing station air for up to thirty seconds at a time without lasting damage,
-  letting them quickly eat, drink, take oral medication, and so on.
-  A thirty second oxygen exposure takes them two minutes to recover from.
-  If their health does not seem to improve within a minute of oxygen exposure, they should seek medical attention.
+  Vox [color=#1e90ff]recuperam lentamente pequenas quantidades de dano de Veneno[/color] por conta própria,
+  desde que tenham cuidado para não ultrapassar 20 de dano de Veneno.
+  Isso permite respirar o ar da estação por até trinta segundos sem dano permanente,
+  tempo suficiente para comer, beber, tomar remédios por via oral e assim por diante.
+  Uma exposição de trinta segundos ao oxigênio leva dois minutos para ser curada.
+  Se a saúde não começar a melhorar até um minuto depois da exposição, procure atendimento médico.
 
   <!-- Trauma -->
-  Due to them being half-organic and half-silicon, they do not rot, but it's also impossible to clone them.
-  As indirect decendents of chickens, they have slightly stronger peripheral vision of a prey animal.
+  Como são parte orgânicos e parte silício, Vox não apodrecem, mas também não podem ser clonados.
+  Por descenderem indiretamente de galinhas, possuem visão periférica um pouco melhor, típica de um animal de presa.
   <!-- /Trauma -->
 
-  Vox deal Slash damage with their unarmed attack.
+  Ataques desarmados de Vox causam dano Cortante.
+
 
 </Document>

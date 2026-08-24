@@ -1,95 +1,95 @@
 <Document>
 
-  # Path of Void
+  # Caminho do Vazio
 
-  Difficulty: [color=lime]Easy[/color]
+  Dificuldade: [color=lime]Fácil[/color]
 
-  The Path of Void focuses on stealth, freezing cold, mobility and depressurization.
-  Pick this path if you enjoy being a highly mobile assassin who leaves their foes struggling to catch up.
+  O Caminho do Vazio foca em furtividade, frio congelante, mobilidade e despressurização.
+  Escolha este caminho se gosta de ser um assassino muito móvel, deixando os inimigos lutarem para alcançar você.
 
-  ## Pros
+  ## Vantagens
 
-  - Your spells apply a stacking debuff that chills and slows targets.
-  - Early mobility spell.
-  - Highly stealthy.
+  - Seus feitiços aplicam um debuff acumulável que esfria e desacelera alvos.
+  - Feitiço de mobilidade logo no início.
+  - Extremamente furtivo.
 
-  ## Cons
+  ## Desvantagens
 
-  - Has a difficult time fighting opponents immune to cold effects.
-  - Has a difficult time with silicon-based lifeforms.
+  - Tem dificuldade contra oponentes imunes a efeitos de frio.
+  - Tem dificuldade contra formas de vida à base de silício.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Glimmer of Winter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Cold atmosphere</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a void blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Vislumbre do Inverno</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, Atmosfera fria</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina do Vazio.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Void</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will mute and chill victims.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto silencia e esfria as vítimas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Void</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the void mark, freezing, muting, and applying void chill your target when activated.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Marca do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto passa a aplicar a marca do Vazio; quando ativada, congela, silencia e aplica frio do Vazio ao alvo.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Phase</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Teleports you to the target destination, damaging and muting nearby creatures.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Fase do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Teleporta você ao destino, causando dano e silenciando criaturas próximas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Prison</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Locks your target in a frozen ball, making them unable to act, speak, or be damaged. Applies a void chill when they thaw.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Prisão do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Prende o alvo numa esfera congelada, impedindo-o de agir, falar ou sofrer dano. Aplica frio do Vazio quando descongela.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Pull</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Pulls nearby heathens towards you, knocking them over, damaging, and applying void chill to them.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Puxão do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Puxa profanos próximos até você, derrubando-os, causando dano e aplicando frio do Vazio.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Seeking Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now freezes and applies void chill to enemies, as well as allowing you to teleport next to them by clicking them.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lâmina Perseguidora</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sua lâmina passa a congelar e aplicar frio do Vazio nos inimigos, além de permitir que você se teleporte ao lado deles clicando neles.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Void Conduit</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a void conduit that periodically pulses; breaking airlocks and windows, applying void chill to heathens, and granting heretics immunity to low pressures. Has a maximum of 1 charge, rechargeable by breaking heretic blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Conduto do Vazio</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca um conduto do Vazio que pulsa periodicamente, quebrando airlocks e janelas, aplicando frio do Vazio a profanos e concedendo imunidade a baixa pressão aos Hereges. Tem no máximo 1 carga, recarregada ao quebrar uma lâmina herege.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Waltz at the End of Time</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three corpses in a cold atmosphere</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a winter storm on the station. Everything around you gets frozen and cursed by void chill. All your spell cooldowns are halved. You get full pressure and temperature immunity as well as thermal and night vision. You waltz in air at quickened speed.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Valsa no Fim dos Tempos</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Três cadáveres em atmosfera fria</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca uma tempestade de inverno na estação. Tudo ao redor congela e recebe a maldição do frio do Vazio. Todos os cooldowns de feitiço caem pela metade. Você ganha imunidade total a pressão e temperatura, além de visão térmica e noturna. Você valsa pelo ar em alta velocidade.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to low temperatures.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a baixas temperaturas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Hollow Weave</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Immunity to space hazards. Getting melee attacked denies the attack and makes you invisible temporarily, after that ability goes on cooldown</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Trama Oca</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade a perigos espaciais. Sofrer um ataque melee anula o golpe e torna você invisível temporariamente; depois, a habilidade entra em cooldown.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Breathing immunity</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Imunidade à necessidade de respirar.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Slowdown resistance</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Resistência a lentidão.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your Mansus Grasp allows you to mute your targets, making it ideal for silent assassinations. The grasp also applies a mark that when triggered by the void blade will apply the maximum amount of stacks of void chill to your target, slowing them down to a crawl.
-  - Void Cloak side knowledge can be used to hide one of your blades and a Codex Cicatrix when the hood is down, while acting as a focus when it's up.
-  - Void chill is a debuff applied by your spells, your grasp, your mark and your blade once you unlock the upgrade. Each stack slows your target movement speed by roughly 5% and makes them gradually colder, up to a maximum of 5 stacks.
-  - At 5 stacks void chill will also prevent your target from heating up.
-  - Void prison can put a target in stasis for 5 seconds. Ideal if you are fighting multiple opponents and need to isolate one target at a time.
-  - Void Conduit is your signature ability. It slowly destroys windows and airlocks around its area of effect. Use it to depressurize the station and expand your domain.
+  - Seu Mansus Grasp silencia alvos, ideal para assassinatos discretos. Ele também aplica uma marca que, ao ser ativada pela lâmina do Vazio, coloca no alvo o máximo de stacks de frio do Vazio, reduzindo-o a um rastejo.
+  - O conhecimento paralelo Manto do Vazio esconde uma lâmina e um Codex Cicatrix quando o capuz está abaixado, e funciona como foco quando levantado.
+  - Frio do Vazio é um debuff aplicado por feitiços, aperto, marca e, após o upgrade, lâmina. Cada stack reduz a velocidade do alvo em cerca de 5% e o esfria gradualmente, até o máximo de 5 stacks.
+  - Com 5 stacks, frio do Vazio também impede que o alvo se aqueça.
+  - Prisão do Vazio coloca um alvo em estase por 5 segundos. Ideal para lutar contra vários oponentes isolando um por vez.
+  - Conduto do Vazio é sua habilidade característica. Ele destrói lentamente janelas e airlocks na área de efeito. Use para despressurizar a estação e expandir seu domínio.
 
 </Document>

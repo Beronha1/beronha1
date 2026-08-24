@@ -6,57 +6,58 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Mixing and Filtering
-  Gas mixers and filters are essential tools for manipulating the composition of gasses within a [textlink="pipe network" link="PipeNetworks"].
+  # Mistura e Filtragem
+  Misturadores e filtros de gás são essenciais para manipular a composição dos gases numa [textlink="rede de canos" link="PipeNetworks"].
   <Box>
     <GuideEntityEmbed Entity="GasMixer"/>
     <GuideEntityEmbed Entity="GasFilter"/>
   </Box>
 
-  ## Gas Mixer
-  Gas mixers are used to combine gasses in specific ratios within a [textlink="pipe network." link="PipeNetworks"]
-  They are essential for creating controlled gas mixtures for various applications.
+  ## Misturador de Gás
+  Misturadores combinam gases em proporções específicas dentro de uma [textlink="rede de canos." link="PipeNetworks"]
+  São essenciais para criar misturas controladas para diversas aplicações.
 
-  Gas mixers have 3 connections: 2 inputs and 1 output, as shown below:
+  Eles possuem 3 conexões: 2 entradas e 1 saída, como abaixo:
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Primary" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Principal" Rotation="90"/>
     <GuideEntityEmbed Entity="GasMixer" Caption="" Rotation="90"/>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Output" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Saída" Rotation="90"/>
   </Box>
 <Box>
-  <GuideEntityEmbed Entity="GasPipeStraight" Caption="Side"/>
+  <GuideEntityEmbed Entity="GasPipeStraight" Caption="Lateral"/>
 </Box>
 
-  Gas mixers will still respect the requested gas mixture even if one of the input gasses is not available. For example:
-  - If the requested mixture is 22% oxygen and 78% nitrogen, but there is no available oxygen, the mixer will not work until oxygen is available.
-  - If oxygen is available, but at a pressure lower than required to create the proper mixture at the requested pressure, the mixer will still create the mixture, but the output will be at a lower pressure than requested.
+  O misturador respeita a proporção pedida mesmo que um dos gases de entrada não esteja disponível. Por exemplo:
+  - Se a mistura for 22% de oxigênio e 78% de nitrogênio, mas não houver oxigênio, ele não funcionará até o gás chegar.
+  - Se houver oxigênio, mas com pressão insuficiente para criar a mistura correta na pressão solicitada, ele ainda fará a mistura, porém com pressão de saída menor.
 
-  Gas mixers also mix gasses based on pressure, not on mols. This can cause problems if the gasses are at different temperatures. For example:
-  - Presume a gas mixer was asked to mix Oxygen and Nitrogen at a ratio of 1:2 at a certain pressure.
-  - The Nitrogen in this case is double the temperature of the Oxygen.
-  - Hotter gas has more pressure, and thus fewer mols per volume than Oxygen.
-  - Because of this, Nitrogen will have half the mols compared to Oxygen when the gas mixer attempts to create the mix.
-  - The output will be 1:1 instead of 1:2. You'll have 1 mol of Nitrogen per 1 mol of Oxygen, instead of 2 mols of Nitrogen per 1 mol of Oxygen.
+  Misturadores calculam a proporção por pressão, não por mols. Isso pode causar problemas quando os gases têm temperaturas diferentes. Por exemplo:
+  - Imagine que o misturador receba a ordem de combinar Oxigênio e Nitrogênio na proporção 1:2 e em certa pressão.
+  - Nesse caso, o Nitrogênio está com o dobro da temperatura do Oxigênio.
+  - Gás mais quente exerce mais pressão e, portanto, tem menos mols por volume que o Oxigênio.
+  - Por isso, quando o misturador preparar a mistura, o Nitrogênio terá metade dos mols do Oxigênio.
+  - A saída será 1:1 em vez de 1:2: haverá 1 mol de Nitrogênio para 1 mol de Oxigênio, em vez de 2 mols de Nitrogênio para 1 mol de Oxigênio.
 
-  Gas mixers can be used in a variety of applications, for example:
-  - Mixing oxygen and nitrogen to create a breathable atmosphere
-  - Mixing oxygen and plasma for plasma burning to create Tritium
+  Misturadores servem para várias aplicações, por exemplo:
+  - Misturar oxigênio e nitrogênio para criar atmosfera respirável
+  - Misturar oxigênio e plasma numa queima de plasma para produzir Trítio
 
-  ## Gas Filter
-  Gas filters are used to separate gasses from a mixture within a [textlink="pipe network." link="PipeNetworks"]
+  ## Filtro de Gás
+  Filtros separam gases de uma mistura numa [textlink="rede de canos." link="PipeNetworks"]
 
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Input" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Entrada" Rotation="90"/>
     <GuideEntityEmbed Entity="GasFilter" Caption="" Rotation="90"/>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Output" Rotation="90"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Saída" Rotation="90"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Filtered Output"/>
+    <GuideEntityEmbed Entity="GasPipeStraight" Caption="Saída Filtrada"/>
   </Box>
 
-  Gas filters will become blocked and will not filter gas if either output is blocked.
+  Se qualquer saída estiver bloqueada, o filtro também ficará bloqueado e não filtrará gás.
 
-  Gas filters can be used in a variety of applications, for example:
-  - Filtering out unwanted gasses from a [textlink="pipe network" link="PipeNetworks"]
-  - Separating specific gasses for storage in a station's recyclernet
+  Filtros servem para várias aplicações, por exemplo:
+  - Remover gases indesejados de uma [textlink="rede de canos" link="PipeNetworks"]
+  - Separar gases específicos para armazená-los na recyclernet da estação
+
 </Document>

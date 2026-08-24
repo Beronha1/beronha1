@@ -1,136 +1,136 @@
 <Document>
-  # The Mansus Veil Weakens
-  So you're a Heretic? Well, get ready for magic and battle. Grab influences, complete sacrifices, accomplish rituals, and ascend to godhood.
+  # O Véu do Mansus Enfraquece
+  Então você é um Herege? Prepare-se para magia e batalha. Colete influências, complete sacrifícios, realize rituais e ascenda à divindade.
 
-  Your ultimate goal is to ascend and become all powerful, but to do that you must gain knowledge.
-  In order to ascend, you must complete your objectives, research final ascension knowledge and perform ascension ritual on transmutation rune.
+  Seu objetivo final é ascender e se tornar todo-poderoso, mas para isso precisa obter conhecimento.
+  Para ascender, cumpra os objetivos, pesquise o conhecimento final de ascensão e execute o ritual numa runa de transmutação.
 
-  To start, you need to choose a path, currently there are six paths:
-  - The [textlink="Ashen Path" link="AshPath"]: Focuses on fire, damage over time, and early mobility. Great for new heretics.
-  - The [textlink="Path of Void" link="VoidPath"]: Focuses on cold, silence, and stealth. Also great for new heretics.
-  - The [textlink="Path of Flesh" link="FleshPath"]: Focuses on necromancy and summoning. Good for heretics that want friends.
-  - The [textlink="Path of Lock" link="LockPath"]: Focuses on mobility, access, and stealth. Good for heretics that want to be sneaky.
-  - The [textlink="Rusted Path" link="RustPath"]: Focuses on area control, and rapid healing. Good for heretics that want to be extremely tanky.
-  - The [textlink="Path of Blade" link="BladePath"]: Focuses on sheer melee power. Good for heretics that want a bloodbath.
-  - The [textlink="Path of Cosmos" link="CosmosPath"]: Focuses on teleportation and confusion! A very difficult heretic path to master.
+  Para começar, escolha um caminho. Atualmente existem seis:
+  - O [textlink="Caminho das Cinzas" link="AshPath"]: foca em fogo, dano ao longo do tempo e mobilidade precoce. Ótimo para Hereges novos.
+  - O [textlink="Caminho do Vazio" link="VoidPath"]: foca em frio, silêncio e furtividade. Também ótimo para iniciantes.
+  - O [textlink="Caminho da Carne" link="FleshPath"]: foca em necromancia e invocações. Bom para Hereges que querem amigos.
+  - O [textlink="Caminho da Fechadura" link="LockPath"]: foca em mobilidade, acesso e furtividade. Bom para quem quer ser sorrateiro.
+  - O [textlink="Caminho da Ferrugem" link="RustPath"]: foca em controle de área e cura rápida. Bom para ficar extremamente tank.
+  - O [textlink="Caminho da Lâmina" link="BladePath"]: foca em poder melee puro. Bom para quem quer banho de sangue.
+  - O [textlink="Caminho do Cosmos" link="CosmosPath"]: foca em teletransporte e confusão! Um caminho muito difícil de dominar.
 
-  [textlink="Click here to see more information and list of starting and side knowledge" link="HereticRituals"]
+  [textlink="Clique aqui para mais informações e a lista de conhecimentos iniciais e paralelos" link="HereticRituals"]
 
-  After choosing your path; it's time to gather your first influences, this can be done in three ways.
-  - Sacrificing crew members your dark patrons hunger for.
-  - Automatically getting one knowledge point every 20 minutes.
-  - Draining influences that spawn randomly after you complete a sacrifice.
+  Depois de escolher o caminho, obtenha as primeiras influências de três formas:
+  - Sacrificando tripulantes desejados por seus patronos sombrios.
+  - Recebendo automaticamente um ponto de conhecimento a cada 20 minutos.
+  - Drenando influências que spawnam aleatoriamente após um sacrifício.
 
-  ## Eldritch Influences
+  ## Influências Eldritch
   <Box>
-    <GuideEntityEmbed Entity="EldritchInfluence" Caption="Eldritch Influence"/>
+    <GuideEntityEmbed Entity="EldritchInfluence" Caption="Influência Eldritch"/>
   </Box>
-  Influences are the easy way to gain power points. Anytime a heretic completes a sacrifice, influences will randomly spawn across the station.
-  They are not visible to the naked eye of a crew member, however they [bold]will[/bold] become visible after harvesting, aside from suddenly changing colors.
-  Influences give 1 knowledge point when harvested normally, and can be harvested with either [color=green]Codex Cicatrix[/color] or [color=green]Codex Morbus[/color] to get a knowledge point in addition to a side point.
+  Influências são a forma fácil de ganhar pontos de poder. Sempre que um Herege conclui um sacrifício, elas spawnam aleatoriamente pela estação.
+  Não são visíveis a olho nu para tripulantes, mas [bold]ficam[/bold] visíveis após a coleta, além de mudarem de cor repentinamente.
+  Coletadas normalmente, rendem 1 ponto de conhecimento. Use [color=green]Codex Cicatrix[/color] ou [color=green]Codex Morbus[/color] para obter também um ponto paralelo.
   <Box>
-    <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Harvested influence. Notice the glow."/>
+    <GuideEntityEmbed Entity="EldritchInfluenceSpent" Caption="Influência coletada. Observe o brilho."/>
   </Box>
 
-  Each influence can only be harvested once, so try to get them before other heretics, even if that means killing other heretics.
+  Cada influência só pode ser coletada uma vez. Pegue-a antes dos outros Hereges, mesmo que precise matá-los.
 
-  ## Transmutation is Key
-  Eventually, you'll need to start using proper magics. To draw a transmutation rune, you'll need a writing tool, such as a pen or crayon.
-  Activate [color=green]Mansus Grasp[/color] in your offhand and click on the floor to start drawing a rune.
-  These runes are highly noticeable and take up a 3x3 area.
-  You can freely remove runes by using your pen with the activated [color=green]Mansus Grasp[/color] on it, and you can also freely use other Heretic's runes.
+  ## Transmutação é a chave
+  Cedo ou tarde, você precisará de magia de verdade. Para desenhar uma runa de transmutação, use uma ferramenta de escrita, como caneta ou giz de cera.
+  Ative [color=green]Mansus Grasp[/color] na offhand e clique no chão para começar o desenho.
+  Essas runas chamam muita atenção e ocupam uma área de 3x3.
+  Remova runas livremente usando sua caneta nelas com [color=green]Mansus Grasp[/color] ativo. Você também pode usar runas de outros Hereges.
 
-  To [bold]transmute[/bold], simply click the rune with your empty hand to choose the needed ritual, after that use your [color=green]Mansus Grasp[/color] on the rune to see what objects you require for the ritual.
-  You can always see your chosen ritual by [bold]inspecting[/bold] the rune.
+  Para [bold]transmutar[/bold], clique na runa com a mão vazia e escolha o ritual. Depois, use [color=green]Mansus Grasp[/color] nela para ver os objetos exigidos.
+  Você sempre pode conferir o ritual escolhido [bold]inspecionando[/bold] a runa.
 
-  Transmutation Rituals allow you to create powerful artifacts, demonic monsters, and many useful tools that will help you progress towards ultimate power.
+  Rituais de Transmutação criam artefatos poderosos, monstros demoníacos e muitas ferramentas úteis para avançar rumo ao poder supremo.
 
-  ## Sacrifices
-  The primary method for getting knowledge is by sacrificing crewmates.
-  The Mansus desires only a select few Heathens (non-heretics) at any moment.
+  ## Sacrifícios
+  O principal método de obter conhecimento é sacrificar tripulantes.
+  O Mansus deseja apenas alguns Profanos específicos — não Hereges — por vez.
 
-  At the start of the round you will be assigned four-five sacrifice targets.
+  No início do round, você recebe quatro-cinco alvos de sacrifício.
 
-  - One target will be a Head of Staff.
-  - One target will be a member of Security.
-  - Other targets will be completely random crewmembers.
+  - Um alvo será Head of Staff.
+  - Um alvo será membro da Security.
+  - Os outros serão tripulantes completamente aleatórios.
 
-  Sacrificing a Head of Staff or member of security will reward you 3 knowledge points, sacrificing any other crewmember will reward 2. You cannot sacrifice regular non-target crewmembers.
+  Sacrificar um Head of Staff ou membro da Security rende 3 pontos de conhecimento; qualquer outro alvo rende 2. Tripulantes comuns que não sejam alvos não podem ser sacrificados.
 
-  Other heretics are an exception. You can always sacrifice another heretic and get 3 knowledge points for doing so.
+  Outros Hereges são exceção. Você sempre pode sacrificar um deles e receber 3 pontos de conhecimento.
 
-  Follow your [color=red]Living Heart[/color] to your target of choice and incapacitate them through any means necessary. If your target is incapacitated, they're ready to sacrifice.
-  Drag them over a transmutation rune and invoke the [color=yellow]Sacrifice[/color] to sacrifice them.
+  Siga seu [color=red]Coração Vivo[/color] até o alvo escolhido e incapacite-o como for necessário. Incapacitado, ele está pronto.
+  Arraste-o até uma runa de transmutação e invoque o [color=yellow]Sacrifício[/color].
 
-  First, drag a body on the rune, then select the ritual by clicking the rune with an empty hand. Then click on the rune with your Mansus Grasp to invoke the ritual and sacrifice the body.
+  Primeiro arraste o corpo até a runa; depois selecione o ritual clicando nela com a mão vazia. Por fim, clique com Mansus Grasp para invocar o ritual e sacrificar o corpo.
 
-  You can reroll your targets by invoking [color=yellow]Relentless Heartbeat[/color] ritual.
+  Você pode rerrolar os alvos invocando o ritual [color=yellow]Batimento Implacável[/color].
 
   ## Mansus Grasp
 
-  A powerful spell that garbles target speech, knocks them down and deals 40 stamina damage. It has additional effects based on your chosen path.
-  [color=red]Important:[/color] Mansus Grasp cannot be used by clicking a mob using context menu. But it works in [color=red]Combat Mode[/color], Left click in combat mode only affects mobs, and right click acts like left click, but affects everything. Note that Mansus Grasp cannot miss.
+  Um feitiço poderoso que embaralha a fala do alvo, derruba-o e causa 40 de dano de Stamina. Possui efeitos adicionais conforme o caminho escolhido.
+  [color=red]Importante:[/color] Mansus Grasp não pode ser usado clicando num mob pelo menu de contexto. Funciona no [color=red]Modo de Combate[/color]: clique esquerdo afeta apenas mobs, e clique direito age como o esquerdo, mas afeta tudo. Mansus Grasp não erra.
 
-  ## The Heretic Blade
+  ## A lâmina herege
 
-  The Sickly Blade will be your first unlocked research. It can be created by transmuting a common knife (this includes even Shivs, which are made by wrapping Glass Shards with Cloth) with a secondary ingredient based on your path, and serves as a powerful melee weapon as well as a one time use escape tool.
+  Lâmina Doentia será sua primeira pesquisa. Ela é criada transmutando uma faca comum — incluindo shivs feitas ao enrolar Tecido em Cacos de Vidro — com um ingrediente secundário do seu caminho. Serve como arma melee poderosa e ferramenta de fuga de uso único.
 
-  All paths have their own kind of blade, which only differ in appearance and name without any additional research. As with the Mansus Grasp, your blade will be upgraded by your research over time. Said upgrades will differ depending on the path you choose.
+  Todos os caminhos têm lâmina própria, diferente apenas em aparência e nome, sem pesquisa adicional. Assim como Mansus Grasp, a lâmina recebe upgrades conforme sua pesquisa, que variam de acordo com o caminho.
 
-  You are limited in the amounts of blades you can create at a time - most paths limit you to two blades, and Blade limits you to four.
+  Há limite para lâminas criadas por vez: a maioria dos caminhos permite duas, e o Caminho da Lâmina permite quatro.
 
-  Additionally, you can break your blade by activating it in-hand to teleport to a random, (mostly) safe location in a pinch. Better to lose your weapon and live another day than die fighting. The ability to blade break is lost once your Path Robes are crafted or you accrue 10 knowledge points or research Blade upgrade.
+  Além disso, ative a lâmina na mão para quebrá-la e se teleportar, num aperto, para um local aleatório e quase sempre seguro. Melhor perder a arma e viver mais um dia do que morrer lutando. Blade Break é perdido ao craftar as Vestes do Caminho, acumular 10 pontos de conhecimento ou pesquisar o upgrade da Lâmina.
 
-  ## Passive Abilities
+  ## Habilidades passivas
 
-  Upon selecting a path, the Heretic will receive a passive ability that can be upgraded a couple of times.
+  Ao escolher um caminho, o Herege recebe uma habilidade passiva que pode ser melhorada algumas vezes.
 
-  Crafting your robes upgrades your passive to Tier 2, which unlocks the Ritual of Knowledge. This ritual requires a set of random items; completing it grants 4 Knowledge Points and the final passive upgrade.
+  Craftar suas vestes melhora a passiva para Tier 2 e libera o Ritual do Conhecimento. O ritual exige itens aleatórios; concluí-lo concede 4 Pontos de Conhecimento e o upgrade passivo final.
 
-  ## Heretical Research
-  Once you have some power points, it's time to research! Open up your knowledge store using the action button.
-  The research menu forms a branching tree, and your first selection will be to commit to a path that defines your abilities and Final Ascension.
-  You can learn side knowledge available to all paths, but overall your chosen path will heavily influence your play-style.
+  ## Pesquisa herética
+  Com alguns pontos de poder, é hora de pesquisar! Abra a loja de conhecimento pelo botão de ação.
+  O menu forma uma árvore ramificada; a primeira escolha compromete você com um caminho que define habilidades e Ascensão Final.
+  Você pode aprender conhecimentos paralelos disponíveis a todos, mas o caminho escolhido moldará muito seu estilo de jogo.
 
-  ## Focus is Necessary
-  To cast more advanced spells, you must focus by wearing an [color=orange]Amber Focus[/color].
-  You can acquire Amber Focus using the eponymous ritual.
-  Some more powerful heretical equipment also functions as a focus - namely, the Ominous Armor from the Armorer's Ritual (when the hood is flipped up).
-  [color=yellow]Ascension[/color] disables the need for a focus.
+  ## Foco é necessário
+  Para conjurar feitiços avançados, use um [color=orange]Foco de Âmbar[/color].
+  Ele é obtido com o ritual de mesmo nome.
+  Equipamentos heréticos mais poderosos também servem como foco — em especial, a Armadura Ominosa do Ritual do Armeiro, com o capuz levantado.
+  A [color=yellow]Ascensão[/color] elimina a necessidade de foco.
 
-  ## Point of No Return: The Heretic Aura
+  ## Ponto sem retorno: a aura herege
 
-  This is the most important turning point for any Heretic. When you either craft your [bold]Path-Specific Robes[/bold] or accrue [bold]10 knowledge points[/bold] or researching [bold]Path-Specific Blade Upgrade[/bold] (whichever comes first), the following permanent changes occur:
+  Este é o ponto de virada mais importante para qualquer Herege. Ao craftar suas [bold]Vestes do Caminho[/bold], acumular [bold]10 pontos de conhecimento[/bold] ou pesquisar o [bold]Upgrade de Lâmina do Caminho[/bold] — o que vier primeiro — ocorrem mudanças permanentes:
 
-  - You lose the ability to Blade Break (emergency teleport by activating blade in-hand).
-  - You gain a permanent visible aura that identifies you as a Heretic to everyone. This makes you valid to kill.
+  - Você perde Blade Break, o teleporte de emergência ativado com a lâmina na mão.
+  - Você ganha uma aura visível permanente que o identifica como Herege para todos. Isso torna você válido para matar.
 
-  If you choose [color=yellow]Feast of Owls[/color] (reject ascension for points) or pick the [color=purple]Lock Path[/color], you will not receive the aura.
+  Se escolher [color=yellow]Banquete das Corujas[/color] — rejeitar a ascensão por pontos — ou o [color=purple]Caminho da Fechadura[/color], você não receberá a aura.
 
-Once the aura appears, there is no hiding what you are. Plan accordingly.
+Quando a aura aparecer, não haverá como esconder o que você é. Planeje-se.
 
-  ## The Chaplain
-  A powerful foe indeed, try to steer clear of the Chaplain! Their Null Rod and it's variants will block magic and deal holy damage to you while you're wielding heretical equipment!
+  ## O Capelão
+  Um inimigo poderoso: fique longe do Capelão! A Null Rod e suas variantes bloqueiam magia e causam dano sagrado enquanto você empunha equipamento herético!
 
-  Heretics can heal holy damage a few ways:
-  - Standing on a transmutation rune.
-  - Standing on rust as rusted path heretic.
-  - Being near raw prophets as flesh heretic.
-  - Drinking from the Eldritch Flask.
-  - Using Nightwatcher's Rebirth ashen path ability.
-  - Hitting living people with your blades as ascended blade heretic.
+  Hereges curam dano sagrado de algumas formas:
+  - Ficando sobre uma runa de transmutação.
+  - Ficando sobre ferrugem como Herege da Ferrugem.
+  - Permanecendo perto de Profetas Crus como Herege da Carne.
+  - Bebendo do Frasco Eldritch.
+  - Usando Renascimento do Vigia Noturno no Caminho das Cinzas.
+  - Acertando pessoas vivas com lâminas como Herege da Lâmina ascendido.
 
-  ## Tips
-  - All heretic blades penetrate armor to some extent, trigger marks, and can be used in hand to teleport away from danger.
-  - Your Mansus Grasp will temporarily garble the speech of people who you use it on. This can let you get away with murder while comms are online. It also breaks their suit sensors temporarily, making them invisible on crew monitors.
-  - Your blade and your mark act as surgery tools. You can use them to extract organs from people or heal yourself as a last resort.
-  - Your blade creation ritual has a limited amount of blades you can create. 2 for most paths and 4 for blade path. Performing this ritual again, while limit is reached, will instead teleport one of your lost blades on the transmutation rune.
-  - Need vomit for rituals? Spin or do a flip multiple times in a quick succession to make yourself vomit.
-  - You can enchant items using your Codex Cicatrix and Transmutation rune. [textlink="For more info on enchanting, click here." link="Enchanting"]
-  - Be wary of other heretics. They worship false gods, and will sacrifice you for knowledge just as easily as they would any other heathen. However, you can sacrifice them to the Mansus as well. Let the strongest god win.
-  - As a [color=purple]Raw Prophet[/color], your [color=green]Mansus Link[/color] ability is extremely useful for communication. When you use it on someone, they gain a hivemind similar to changelings with +m key to talk privately.
-  - [color=purple]Influences[/color] can spawn in almost any location on the station, ranging from the main hallways and public restrooms to [color=cyan]Command staff offices[/color] and [color=red]restricted security areas[/color] in the Brig. It's best to check every area you can access, public and department.
-  - Monkeys and other animals make for great, usually non-suspicious sources of organs or corpses for your heretical rituals.
-  - Most summoned ghouls will drop organs on death. While having them to die is not ideal, you can easily grab the parts and summon another.
-  - [color=yellow]Eldritch Flask[/color], a Tier 1 side path knowledge acts like a cryostasis beaker and has a total capacity of 100 units, meaning you can create deadly mixes that are easily triggered.
+  ## Dicas
+  - Todas as lâminas hereges penetram armadura até certo ponto, ativam marcas e podem ser usadas na mão para teleportar para longe do perigo.
+  - Mansus Grasp embaralha temporariamente a fala das vítimas. Isso pode deixar você escapar de um assassinato com as comms online. Também quebra temporariamente os sensores do traje, ocultando-as dos monitores da tripulação.
+  - Sua lâmina e sua marca funcionam como ferramentas cirúrgicas. Use para extrair órgãos ou se curar como último recurso.
+  - O ritual de criação tem limite de lâminas: 2 na maioria dos caminhos e 4 no Caminho da Lâmina. Se repetir o ritual no limite, ele teleportará para a runa uma lâmina perdida.
+  - Precisa de vômito para rituais? Gire ou dê vários flips rapidamente para vomitar.
+  - Encante itens com Codex Cicatrix e a runa de Transmutação. [textlink="Para mais informações sobre encantamento, clique aqui." link="Enchanting"]
+  - Cuidado com outros Hereges. Eles adoram falsos deuses e sacrificarão você por conhecimento tão facilmente quanto qualquer profano. Você também pode sacrificá-los ao Mansus. Que vença o deus mais forte.
+  - Como [color=purple]Profeta Cru[/color], [color=green]Elo do Mansus[/color] é extremamente útil para comunicação. Ao usá-lo em alguém, a pessoa ganha uma hivemind parecida com a dos Changelings e fala em privado com a tecla +m.
+  - [color=purple]Influências[/color] spawnam em quase qualquer ponto, de corredores e banheiros públicos a [color=cyan]escritórios do Comando[/color] e [color=red]áreas restritas da Security[/color] na Brig. Confira toda área pública e departamental que puder acessar.
+  - Macacos e outros animais são fontes excelentes e pouco suspeitas de órgãos ou cadáveres para rituais.
+  - A maioria dos carniçais invocados solta órgãos ao morrer. Perdê-los não é ideal, mas você pode pegar as partes e invocar outro.
+  - O [color=yellow]Frasco Eldritch[/color], conhecimento paralelo Tier 1, funciona como béquer de criostase e tem capacidade total de 100 unidades, permitindo misturas mortais fáceis de ativar.
 </Document>

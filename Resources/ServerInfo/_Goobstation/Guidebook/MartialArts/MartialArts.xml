@@ -1,82 +1,82 @@
 <Document>
 
-  # Martial Arts
+  # Artes Marciais
 
-  Martial Arts are combat styles that characters can learn and use in-game which grants them special combat abilities
-  that are usually done through a certain action combo, but can also be passive abilities or action-based.
+  Artes Marciais são estilos de combate que personagens aprendem e usam in-game, concedendo habilidades especiais
+  geralmente ativadas por um combo de ações, embora também possam ser passivas ou baseadas em ações próprias.
 
-  These abilities can range from new defensive measures such as deflecting projectiles to combo attacks
-  that can quickly incapacitate an assailant or deal significant damage in comparison to standard punches.
+  Essas habilidades variam de novas defesas, como desviar projéteis, a ataques em combo
+  capazes de incapacitar rapidamente um agressor ou causar muito mais dano que socos comuns.
 
-  How to acquire martial arts are just as variable as the forms that are available;
-  some martial arts are only available to certain antagonists, others are used by certain jobs.
+  As formas de adquirir artes marciais variam tanto quanto os estilos disponíveis;
+  algumas são exclusivas de certos antagonistas, enquanto outras pertencem a determinados jobs.
 
-  One can only know one martial art. If you already know one, you will fail to learn
-  another one, and some characters, like Changelings, are unable to use Martial Arts at all.
+  Uma pessoa só pode conhecer uma arte marcial. Se já souber uma, não conseguirá aprender
+  outra; certos personagens, como Changelings, são completamente incapazes de usar Artes Marciais.
 
   ## Intents
 
-  As said before, most martial arts rely on performing a certain action combo on the opponent.
-  There are essentially 4 types of "actions" in the game (most martial arts only use three), which will be referred to as intents.
-  Intents are a concept from Space Station 13, where instead of just one combat mod
-  players would have 4 modes to choose the type of interaction from.
-  Space Station 14 only has one mode, the combat one, but it utilizes other buttons to compensate for that.
-  The intents themselves are available to use for everyone, but martial artists can perform combos using them. Intents are:
+  Como dito antes, a maioria das artes marciais depende de executar certo combo de ações no oponente.
+  Existem basicamente 4 tipos de "ação" no jogo (a maioria das artes usa apenas três), chamados aqui de intents.
+  Intents vêm do Space Station 13, onde, em vez de um único modo de combate,
+  jogadores tinham 4 modos para escolher o tipo de interação.
+  Space Station 14 só possui um modo, o de combate, mas usa outros botões para compensar.
+  Os intents estão disponíveis para todos, porém artistas marciais conseguem formar combos com eles. Os intents são:
 
-  ### Help intent
+  ### Intent Help
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="help"/>
   </Box>
 
-  To perform help, simply press [bold] Left Mouse Button [/bold] on someone with [color=Red] Harm Mode [/color] turned OFF.
+  Para executar Help, pressione o [bold] Botão Esquerdo do Mouse [/bold] em alguém com o [color=Red] Modo Harm [/color] DESLIGADO.
 
-  Usually, if your target is a humanoid and your hands are free, this would make you hug them. If your hand is occupied,
-  this would make you interact with the target with your held item. This can be useful in combat with items like the
-  Heretic's Mansus Grasp, but is rarely used in martial art combos, and where it is, only unarmed actions (hugs) count.
+  Normalmente, se o alvo for humanoide e suas mãos estiverem livres, você o abraçará. Se a mão estiver ocupada,
+  você interagirá com o alvo usando o item segurado. Isso pode ser útil em combate com itens como o
+  Mansus Grasp do Herege, mas raramente aparece em combos; quando aparece, só ações desarmadas (abraços) contam.
 
-  ### Harm intent
+  ### Intent Harm
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  To perform harm, press [bold] Left Mouse Button [/bold] with [color=Red] Harm Mode [/color] turned ON.
+  Para executar Harm, pressione o [bold] Botão Esquerdo do Mouse [/bold] com o [color=Red] Modo Harm [/color] LIGADO.
 
-  Usually, you will attempt to punch at the place of your cursor, be it with your bare hands or with a held item.
-  If you are holding a gun, you will shoot at the place of your cursor with it.
-  Attacking with a melee weapon or shooting a gun does not count as a successful Harm action for combo purposes.
+  Normalmente, você tentará golpear o local do cursor, com as mãos vazias ou com o item segurado.
+  Se estiver com uma arma de fogo, atirará no local do cursor.
+  Atacar com arma corpo a corpo ou disparar uma arma não conta como ação Harm bem-sucedida para combos.
 
-  ### Disarm intent
+  ### Intent Disarm
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  To perform disarm, press [bold] Right Mouse Button [/bold] with [color=Red] Harm Mode [/color] turned ON.
+  Para executar Disarm, pressione o [bold] Botão Direito do Mouse [/bold] com o [color=Red] Modo Harm [/color] LIGADO.
 
-  If you are unarmed, you will try to shove at the place of your cursor. Shoving will push affected characters,
-  dealing some [color=Cyan] Stamina [/color] damage, and it has a chance to knock an item out of the opponent's hands.
-  If you are armed with a melee weapon, you will swing it, attacking everyone you hit and taking some stamina damage yourself.
-  Swinging a weapon is not a real "Disarm", and does not count as a successful Disarm action for combo purposes.
+  Se estiver desarmado, você tentará empurrar no local do cursor. O shove empurra os personagens atingidos,
+  causa um pouco de dano de [color=Cyan] Stamina [/color] e pode derrubar um item das mãos do oponente.
+  Com uma arma corpo a corpo, você fará um ataque em arco, acertando todos no caminho e sofrendo um pouco de dano de Stamina.
+  Balançar uma arma não é um "Disarm" de verdade e não conta como ação Disarm bem-sucedida para combos.
 
-  ### Grab intent
+  ### Intent Grab
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  To perform grab, press [bold] Left Mouse Button [/bold] on someone while holding [bold] CTRL [/bold] with [color=Red] Harm Mode [/color] turned ON.
+  Para executar Grab, pressione o [bold] Botão Esquerdo do Mouse [/bold] em alguém enquanto segura [bold] CTRL [/bold], com o [color=Red] Modo Harm [/color] LIGADO.
 
-  If you have a free hand, you will start grabbing the target. If you've already grabbed them, this will reinforce the grab.
-  Your chances of escaping from the grab rely on your and your opponent's weights. There are three stages of grabs:
+  Com uma mão livre, você começará a agarrar o alvo. Se já o agarrou, reforçará o grab.
+  A chance de escapar depende do seu peso e do peso do oponente. Existem três estágios de grab:
 
-  Soft grab is easy to escape from and works similar to regular pulling for the most part.
+  Soft grab é fácil de escapar e funciona quase como puxar normalmente.
 
-  Hard grab is relatively hard to escape. Martial artists will instantly hard grab you if you're knocked down.
-  You can throw someone you're holding in a hard grab the same way throw a regular item, dealing some stamina damage.
+  Hard grab é relativamente difícil de escapar. Artistas marciais aplicam hard grab instantâneo em você se estiver caído.
+  Você pode arremessar alguém preso em hard grab como arremessaria um item comum, causando um pouco de dano de Stamina.
 
-  Choke harm takes both your hands (you can still punch the opponent with your head), but mutes the opponent and is very hard to escape.
-  You can table-slam someone you're holding in a choke grab by performing a harm intent on a nearby table.
+  Choke grab ocupa as duas mãos (você ainda pode golpear com a cabeça), silencia o oponente e é muito difícil de escapar.
+  Você pode bater na mesa alguém preso em choke grab executando um intent Harm em uma mesa próxima.
 
 </Document>

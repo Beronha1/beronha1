@@ -1,51 +1,51 @@
 <Document>
   # Revenant
 
-  A Revenant is a telekinetically controlled corpse used by the Harbinger to temporarily gain a physical body. This is your peak form, a short burst of overwhelming power that lets you turn the station into a disaster zone.
+  Revenant é um cadáver controlado por telecinese pelo Harbinger para obter corpo temporário. É sua forma máxima: uma explosão breve de poder para transformar a estação em desastre.
 
-  Once you possess a corpse, you lose access to your usual wraith powers and instead gain a limited but much more destructive arsenal. You regenerate WP faster, but your health constantly drains and cannot be healed. When your time runs out, the body collapses into smoke and your spirit returns to the void.
+  Ao possuir cadáver, perde poderes comuns de wraith e recebe arsenal limitado, porém destrutivo. WP regenera mais rápido, mas vida cai sem cura. Ao acabar o tempo, o corpo vira fumaça e o espírito volta ao vazio.
 
-  Revenants are visually distinct, surrounded by a dark, swirling aura. When one appears, the station knows something terrible has happened.
+  A aura escura e giratória denuncia o Revenant. Quando aparece, a estação sabe que algo terrível aconteceu.
 
-  ## Push
+  ## Empurrão
 
-  - Shoves the targeted victim or object away with telekinetic force.
-  - Deals damage if the target hits a wall or another object.
-  - Useful for knocking enemies into hazards or clearing space in tight areas.
+  - Empurra vítima ou objeto com telecinese.
+  - Causa dano se o alvo bater em parede ou objeto.
+  - Joga inimigos em perigos e abre espaço apertado.
 
-  ## Mass Command
+  ## Comando em Massa
 
-  - Launches every nearby loose object toward a target at once. It's basically the base command action, but on steroids.
-  - Devastating in cluttered rooms like cargo or chemistry. The more sharp objects nearby, the better.
+  - Lança todos os objetos soltos próximos contra um alvo; é o comando básico com esteroides.
+  - Devastador em salas cheias como Carga ou Química. Quanto mais objetos afiados, melhor.
 
-  ## Shockwave
+  ## Onda de Choque
 
-  - Releases a massive blast of telekinetic energy that knocks everyone down, shatters windows, and rips plating off floors and walls.
-  - Can be used to disable entire rooms, breach areas, or make quick escapes.
+  - Explosão telecinética que derruba todos, estilhaça janelas e arranca plating de pisos e paredes.
+  - Desativa salas inteiras, abre breaches ou facilita fuga.
 
-  ## Touch of Evil
+  ## Toque do Mal
 
-  - Temporarily supercharges your physical attacks.
-  - Your punches deal enormous damage and send targets flying across the room.
+  - Fortalece ataques físicos temporariamente.
+  - Socos causam dano enorme e arremessam alvos pela sala.
 
-  ## Crush
+  ## Esmagar
 
-  - Focuses your full telekinetic might on a single target, slowly pulverizing them.
-  - Deals immense brute damage over time until the target explodes into gibs.
-  - The effect ends if you lose line of sight or are interrupted.
-  - Is extremely expensive to use, so make sure you don't waste it.
+  - Concentra telecinese num alvo e o pulveriza lentamente.
+  - Causa dano Brute imenso até explodir em gibs.
+  - Termina sem linha de visão ou ao ser interrompido.
+  - É caríssimo; não desperdice.
 
-  ### General Tips
+  ### Dicas Gerais
 
-  Revenant form is temporary, make every second count. You’re not here to survive; you’re here to devastate.
+  A forma é temporária. Você não veio sobreviver; veio devastar.
 
-  Use Shockwave first to scatter and disarm the crew, then pick off survivors with Touch of Evil or Crush.
+  Use Onda de Choque para espalhar e desarmar, depois finalize com Toque do Mal ou Esmagar.
 
-  Push and Mass Command can both be used to clear barricades or fling objects at fleeing crew.
+  Empurrão e Comando em Massa limpam barricadas ou lançam objetos em fugitivos.
 
-  Though the revenant has access to terrifying skills, the vessel is still mortal. Don't expect to just tank a bunch of bullets for no reason and make it out alive.
+  Apesar das habilidades, o receptáculo é mortal. Não espere tankar balas sem motivo e sair vivo.
 
-  Remember: once you die, you return to your wraith form. Don’t waste time trying to retreat, just go ham.
+  Ao morrer você volta a wraith. Não perca tempo recuando; vai com tudo.
 
-  [textlink="Back to Harbinger of the Void" link="Harbinger"]
+  [textlink="Voltar ao Arauto do Vazio" link="Harbinger"]
 </Document>

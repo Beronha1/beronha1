@@ -6,22 +6,22 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Station Engineer SOP
-This is the list of procedures, responsibilities, and duties of the [color=#c8a404][bold]Station Engineer[/bold][/color] and [color=#c8a404][bold]Technical Assistant[/bold][/color] of this station.
+# SOP do Engenheiro da Estação
+Procedimentos, responsabilidades e deveres do [color=#c8a404][bold]Engenheiro da Estação[/bold][/color] e [color=#c8a404][bold]Assistente Técnico[/bold][/color].
 
-1. Engineers are responsible for the proper activation and maintenance of the station's engines, alongside maintaining the Stations Power Network.
-<Box>Failure to do so is grounds for termination.</Box>
+1. Engenheiros ativam e mantêm corretamente os motores e a Rede Elétrica da estação.
+<Box>Falhar nisso é motivo para demissão.</Box>
 
-2. Engineers are not permitted to construct additional engines (such as additional SM/Tesla/Singularity engines, and/or solar panels) until at least one engine is correctly set up and powering the station.
+2. Não podem construir motores adicionais — outra SM/Tesla/Singularidade ou solares — antes de pelo menos um motor estar montado corretamente e alimentando a estação.
 
-3. Engineers must check each active engine at least once per 30 minutes to ensure safety and fueling.
+3. Verifique cada motor ativo ao menos uma vez a cada 30 minutos quanto a segurança e combustível.
 
-4. Engineers are permitted to carry out solo reconstruction/rebuilding/personal projects if there is no damage to the station that requires fixing.
-<Box>Large projects require approval from Captain and/or Chief Engineer. Resources must be accounted for and not deprived from other Departments.</Box>
+4. Projetos pessoais, reconstruções e obras solo são permitidos quando não houver dano pendente.
+<Box>Projetos grandes exigem Capitão e/ou Engenheiro-Chefe. Contabilize recursos sem privar outros Departamentos.</Box>
 
-5. Engineers must promptly respond to breaches within fifteen (15) minutes, and may hack doors to gain access should the location need repairs.
-<Box>All hazard zones must be cordoned off with Holofans or barriers.</Box>
+5. Responda a breaches em até quinze (15) minutos; portas podem ser hackeadas quando o reparo exigir acesso.
+<Box>Isole toda zona perigosa com Holofans ou barreiras.</Box>
 
-6. Engineers are required to respond to any emergency requested by Security/Command for perma brig, bridge, brig, etc. immediately.
+6. Responda imediatamente a emergências solicitadas por Segurança/Comando na perma, ponte, brig etc.
 
 </Document>

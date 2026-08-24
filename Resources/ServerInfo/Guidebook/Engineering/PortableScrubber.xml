@@ -6,23 +6,23 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Portable Scrubber
-  The portable scrubber is a portable machine that can be used to scrub the atmosphere in a room.
+  # Scrubber portátil
+  O scrubber portátil é uma máquina móvel usada para limpar a atmosfera de uma sala.
   <Box>
     <GuideEntityEmbed Entity="PortableScrubber"/>
   </Box>
 
-  It is invaluable for quickly removing unwanted gasses from a room when regular [textlink="scrubbers" link="AirScrubber"] are working too slow, or when a [textlink="scrubber" link="AirScrubber"] is not present.
+  Ele é indispensável para retirar gases indesejados rapidamente quando os [textlink="scrubbers" link="AirScrubber"] comuns trabalham devagar demais ou quando não há um [textlink="scrubber" link="AirScrubber"] no local.
 
-  The portable scrubber requires [textlink="power" link="Power"] through a nearby [textlink="LV cable" link="VoltageNetworks"] to function.
+  Para funcionar, o scrubber portátil precisa de [textlink="energia" link="Power"] fornecida por um [textlink="cabo LV" link="VoltageNetworks"] próximo.
 
-  The portable scrubber automatically starts removing all non-breathable gasses from the room when it is bolted (wrenched) to the floor.
+  Ao ser fixado no chão com uma chave inglesa, ele começa automaticamente a retirar da sala todos os gases não respiráveis.
 
-  It will stop scrubbing when unbolted (unwrenched) from the floor or when its internal volume is full. The scrubber has an internal capacity of [color=orange][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] liters[/color].
+  Ele para ao ser solto do chão ou quando seu volume interno fica cheio. Sua capacidade interna é de [color=orange][protodata="PortableScrubber" comp="PortableScrubber" member="Volume"/] litros[/color].
 
-  ## Dumping Waste and Storage
-  The scrubber's internal volume can be emptied by anchoring (wrenching) onto a [textlink="connector" link="GasCanisters"].
+  ## Descarte de resíduos e armazenamento
+  Para esvaziar o volume interno, fixe o scrubber com a chave inglesa sobre um [textlink="conector" link="GasCanisters"].
 
-  Stations commonly have a dedicated emptying point to quickly transfer the waste from the scrubber to the station's wastenet.
+  Estações costumam ter um ponto dedicado para transferir rapidamente os resíduos do scrubber à wastenet.
 
 </Document>

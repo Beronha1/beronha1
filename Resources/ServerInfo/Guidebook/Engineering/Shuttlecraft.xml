@@ -11,14 +11,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Shuttle-craft
+  # Construção de Shuttle
 
-  Shuttle construction is straightforward, albeit rather expensive and hard to pull off within an hour.
+  Construir uma shuttle é simples no conceito, mas caro e difícil de terminar em menos de uma hora.
 
-  It's a good activity if you have a significant amount of spare time on your hands and want a bit of a challenge.
+  É uma boa atividade se você tem bastante tempo livre e quer um desafio.
 
-  ## Getting started
-  <Box>Required parts:</Box>
+  ## Primeiros passos
+  <Box>Peças necessárias:</Box>
   <Box>
   <GuideEntityEmbed Entity="Thruster"/>
   <GuideEntityEmbed Entity="Gyroscope"/>
@@ -33,10 +33,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <GuideEntityEmbed Entity="APCBasic"/>
   </Box>
 
-  <Box>Optional parts:</Box>
+  <Box>Peças opcionais:</Box>
   <Box>
   <GuideEntityEmbed Entity="AirCanister"/>
-  <GuideEntityEmbed Entity="LightTube" Caption="lighting"/>
+  <GuideEntityEmbed Entity="LightTube" Caption="iluminação"/>
   <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
   <GuideEntityEmbed Entity="SMESBasic"/>
   </Box>
@@ -45,8 +45,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   <GuideEntityEmbed Entity="NuclearBomb"/>
   </Box>
 
-  ## Foundation
-  For this step you'll need steel sheets, metal rods, and floor tiles (optional).
+  ## Fundação
+  Você precisará de folhas de aço, hastes de metal e tiles de piso (opcionais).
 
   <Box>
     <GuideEntityEmbed Entity="SheetSteel" Caption=""/>
@@ -58,32 +58,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
   </Box>
 
-  Head out into space with steel sheets and metal rods in hand and click on the edge of the station to place lattice.
+  Vá ao espaço com aço e hastes e clique na borda da estação para colocar treliça.
 
-  Place a line of lattice about 3-4 tiles away from the station, then start building a platform with lattice.
+  Faça uma linha de treliça por cerca de 3-4 tiles e comece uma plataforma.
 
-  Keep doing this until you have a platform that is at least 3x3 in size, which is connected to the station via a single lattice line.
+  Continue até ter pelo menos 3x3, conectada à estação por uma única linha de treliça.
 
-  Once you're finished constructing the base of your shuttle, you can use wirecutters to snip the connecting lattice that joins your new ship and the station.
+  Ao terminar a base, use o alicate para cortar a treliça que liga a nave nova à estação.
 
-  This platform is considered a different grid from the station and thus will not have any gravity or be held in place by a station anchor — it can move around freely.
+  A plataforma passa a ser uma grid diferente, sem gravidade nem âncora da estação; ela pode se mover livremente.
 
-  You can expand your lattice platform further by clicking just off the edge with some rods in hand.
+  Expanda a plataforma clicando além da borda com hastes na mão.
 
-  ## Docking Ports
-  Shuttle airlocks serve as docking ports, where ships can dock to stations safely.
+  ## Portas de atracação
+  Airlocks de shuttle funcionam como portas de atracação para naves acoplarem com segurança.
 
-  The orientation of docking ports is important, as it determines on which face the shuttle will dock.
+  A orientação é importante: ela determina por qual face a shuttle atracará.
 
-  The little numb on the bottom of the docking port determines the direction of the docking port.
+  A pequena saliência na base da porta indica sua direção.
 
   <Box>
     <GuideEntityEmbed Entity="AirlockShuttle"/>
     <GuideEntityEmbed Entity="AirlockGlassShuttle"/>
   </Box>
 
-  ## Directional Control
-  From there, once you have the shape you want, bring out and install thrusters at the edges.
+  ## Controle direcional
+  Com o formato pronto, leve e instale propulsores nas bordas.
 
   <Box>
     <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="0"/>
@@ -92,28 +92,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="Thruster" Caption="" Rotation="270"/>
   </Box>
 
-  It's a good idea to install four thrusters, one on each side of the platform, to ensure you can move in any direction.
+  Uma boa ideia é usar quatro propulsores, um em cada lado, para mover em qualquer direção.
 
-  They must be pointing outward into space to function and will not fire if there's a tile in the way of the nozzle.
-  You can rotate thrusters—even anchored ones—using either [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] or [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color] to rotate clockwise or counterclockwise.
+  Eles devem apontar para fora, rumo ao espaço, e não disparam se houver um tile na frente do bocal.
+  Gire propulsores — mesmo presos — com [color=yellow][bold][keybind="RotateObjectClockwise"][/bold][/color] ou [color=yellow][bold][keybind="RotateObjectCounterclockwise"][/bold][/color].
 
-  Thrusters can be disabled or enabled using [color=yellow][bold][keybind="Use"][/bold][/color] with an empty hand or [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+  Ative ou desative um propulsor com [color=yellow][bold][keybind="Use"][/bold][/color] de mão vazia ou [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
 
-  ## Rotational Control
-  Now that you have directional control, you'll need to install a gyroscope to control your rotation.
+  ## Controle de rotação
+  Com o controle direcional pronto, instale um giroscópio para girar a nave.
 
   <Box>
     <GuideEntityEmbed Entity="Gyroscope"/>
   </Box>
-  The placement of the gyroscope is not as important as the thrusters, but it should be somewhere convenient for you to access and power.
+  A posição dele importa menos que a dos propulsores, mas deve ser acessível e fácil de energizar.
 
-  Note for large mass objects, you may need more than one gyroscope to rotate effectively.
+  Objetos muito pesados podem precisar de mais de um giroscópio para girar bem.
 
-  ## Power
-  Now that you have all the systems in place, you'll need to power them.
+  ## Energia
+  Com todos os sistemas instalados, forneça energia.
 
-  For small shuttles, a J.R.P.A.C.M.A.N.-type portable generator is a good choice. It provides straight LV power, so you don't have to worry about transformers.
-  Fuel for the generator is also commonly found in maintenance tunnels.
+  Para shuttles pequenas, um gerador portátil J.R.P.A.C.M.A.N. é uma boa escolha. Ele entrega LV direto, sem transformadores.
+  Combustível também é comum nos túneis de manutenção.
 
   <Box HorizontalAlignment="Stretch">
     <Box>
@@ -124,9 +124,9 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </Box>
   </Box>
 
-  Some stations, however, provide much better generators and compact solutions like the Shuttle APU or the static generator.
-  These output HV and will have to be stepped down to MV and LV.
-  Luckily, these stations also usually provide wallmount substation boards for this purpose.
+  Algumas estações oferecem geradores melhores e compactos, como a APU de Shuttle ou o gerador estático.
+  Eles fornecem HV, que precisa ser reduzido para MV e LV.
+  Felizmente, essas estações costumam trazer placas de subestação de parede.
 
   <Box HorizontalAlignment="Stretch">
     <Box>
@@ -140,9 +140,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </Box>
   </Box>
 
-  ## Piloting
-  Finally, install the shuttle computer wherever it is convenient and ensure all your thrusters and gyroscopes are receiving power (remember to wire the MV and LV networks!).
-  If they are, congratulations! You should have a functional shuttle!
+  ## Pilotagem
+  Por fim, instale o computador onde for conveniente e confirme que propulsores e giroscópios recebem energia (lembre de passar as redes MV e LV!).
+  Se tudo estiver certo, parabéns! Sua shuttle funciona!
 
-  Making it livable and good-looking is left as an exercise to the reader.
+  Torná-la habitável e bonita fica como exercício para o leitor.
+
 </Document>

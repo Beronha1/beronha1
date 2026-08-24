@@ -8,43 +8,43 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Medical Doctor
-It's time to heal. Or at least, try to heal, anyway. Medical Doctors are the primary caretakers of every boo boo and ouchie crewmembers get on the station, be it a small scratch, or boiled skin.
+# Médico
+Hora de curar. Ou, pelo menos, tentar. Médicos são os principais responsáveis por cuidar de cada dodói que os tripulantes sofrem na estação, seja um arranhão pequeno ou pele fervida.
 
-This guide will give you a basic outline of the treatment options you have available, triage, and other avenues of care.
+Este guia apresenta o básico das opções de tratamento disponíveis, da triagem e de outras formas de atendimento.
 
-## The Basics
-There are two ways to tell what's ailing someone: Taking a scan (with a health analyzer or a medical PDA), or examining them, with a shift-click, and clicking the heart symbol.
+## O Básico
+Existem duas maneiras de descobrir o problema de alguém: fazer um escaneamento — com um analisador de saúde ou PDA médico — ou examinar a pessoa com Shift+clique e selecionar o símbolo de coração.
 
-Using a health analyzer is often more powerful than examination, as some things (such as poison, or radiation) don't show up on examination. However, using an analyzer has its drawbacks, as it makes noise and uses up a battery.
+O analisador de saúde costuma oferecer mais informações do que o exame, pois certos problemas, como veneno ou radiação, não aparecem ao examinar. Ele também tem desvantagens: faz barulho e consome bateria.
 <Box>
-<GuideEntityEmbed Entity="SignExamroom" Caption="examine patient"/>
+<GuideEntityEmbed Entity="SignExamroom" Caption="Examinar paciente"/>
 <GuideEntityEmbed Entity="MedicalPDA"/>
-<GuideEntityEmbed Entity="MedicalInternPDA" Caption="intern PDA"/>
+<GuideEntityEmbed Entity="MedicalInternPDA" Caption="PDA de estagiário"/>
 <GuideEntityEmbed Entity="HandheldHealthAnalyzer"/>
 </Box>
 
-## Medication and Treatment Options
-Before we go any further, it's probably a good idea to go over damage types, and what will heal them. The wiki has more extensive info available, but these are commonly used.
+## Medicamentos e Opções de Tratamento
+Antes de continuar, é uma boa ideia revisar os tipos de dano e o que pode curá-los. A wiki possui informações mais completas, mas estas são as opções comuns.
 
-An important note: Most medication has an overdose level, which will cause harm to your patient. Chemicals also take time to metabolise in pill form, if you want things to act quickly, use a syringe.
+Observação importante: a maioria dos medicamentos possui um limite de overdose, que causará dano ao paciente. Químicos em comprimidos também levam tempo para serem metabolizados; se precisar de ação rápida, use uma seringa.
 
-- Brute Damage: Bicaridine or Bruise Packs
-- Burn Damage: Dermaline or Ointment
-- Toxin (Poison): Dylovene
-- Toxin (Radiation) Hyronalin or Arithrazine
-- Airloss: Dexaline or Inaprovaline
-- Bloodloss: Dexaline (Examine the patient, if pale, they still need blood or iron.)
-- Bleeding: Tranexamic acid and Gauze (Bleeding can also be cauterized with burn damage.)
+- Dano Brute (físico): Bicaridine ou Pacotes de Trauma
+- Dano de Queimadura: Dermaline ou Pomada
+- Toxina (veneno): Dylovene
+- Toxina (radiação): Hyronalin ou Arithrazine
+- Falta de ar: Dexaline ou Inaprovaline
+- Perda de sangue: Dexaline (Examine o paciente; se estiver pálido, ainda precisa de sangue ou ferro.)
+- Sangramento: Ácido Tranexâmico e Gaze (Também é possível cauterizar o sangramento causando dano de queimadura.)
 
-Many stations are stocked with kits in storage, and all medics have some equipment in their starting belt.
+Muitas estações possuem kits no depósito, e todos os médicos começam com alguns equipamentos no cinto.
 
 <Box>
 <GuideEntityEmbed Entity="MedkitFilled"/>
-<GuideEntityEmbed Entity="MedkitBruteFilled" Caption="brute kit"/>
-<GuideEntityEmbed Entity="MedkitRadiationFilled" Caption="radiation kit"/>
-<GuideEntityEmbed Entity="MedkitBurnFilled" Caption="burn kit"/>
-<GuideEntityEmbed Entity="MedkitToxinFilled" Caption="toxin kit"/>
+<GuideEntityEmbed Entity="MedkitBruteFilled" Caption="Kit de trauma"/>
+<GuideEntityEmbed Entity="MedkitRadiationFilled" Caption="Kit de radiação"/>
+<GuideEntityEmbed Entity="MedkitBurnFilled" Caption="Kit de queimadura"/>
+<GuideEntityEmbed Entity="MedkitToxinFilled" Caption="Kit de toxinas"/>
 </Box>
 
 <Box>
@@ -55,27 +55,27 @@ Many stations are stocked with kits in storage, and all medics have some equipme
 <GuideEntityEmbed Entity="Gauze"/>
 </Box>
 
-## Basic Treatment and Triage
-Examine your patient, and note down the important details: Are they alive? Bleeding? What type of damage?
+## Tratamento Básico e Triagem
+Examine o paciente e observe os detalhes importantes: está vivo? Está sangrando? Que tipo de dano sofreu?
 
-If alive, treat them as best as you can. Patients are in critical condition at 100 damage, and dead at 200. Keep this in mind when choosing how to treat them. Emergency Pens and Epinephrine are often used to keep patients stable.
+Se estiver vivo, trate-o da melhor forma possível. O paciente entra em estado crítico ao chegar a 100 de dano e morre aos 200. Leve isso em conta ao escolher o tratamento. Medipens de Emergência e Epinefrina costumam ser usados para manter pacientes estáveis.
 
-If possible, buckle them to a medical bed, if you need time to treat them, strap them to a stasis bed instead. Just keep in mind that metabolism (and by extension, healing chemicals) are slowed to a crawl when on stasis, they'll need to be taken off of it for the medicine to be effective. (But Blood Packs, Ointment, and Brute packs all work as normal.)
+Se possível, prenda o paciente a uma cama médica. Se precisar de tempo para tratá-lo, use uma cama de estase. Lembre-se de que a estase reduz o metabolismo — e, portanto, o efeito dos químicos de cura — a quase zero; será preciso retirá-lo da estase para o medicamento funcionar. Pacotes de Sangue, Pomadas e Pacotes de Trauma continuam funcionando normalmente.
 <Box>
 <GuideEntityEmbed Entity="MedicalBed"/>
 <GuideEntityEmbed Entity="StasisBed"/>
 </Box>
-## Assessing Corpses
-You can't save them all, sometimes, death happens. Depending on the [color=#a4885c]status[/color] of the body, there are a few things that can be done.
+## Avaliando Cadáveres
+Não é possível salvar todos; às vezes a morte acontece. Dependendo do [color=#a4885c]estado[/color] do corpo, existem algumas opções.
 
-1. Do they have a soul attached? You can tell if, when examining, the following phrase is displayed: "Their soul has departed." If this isn't displayed, there is still a player who can be revived.
+1. Ainda há uma alma ligada ao corpo? Ao examiná-lo, confira se aparece a frase "Their soul has departed." ("A alma partiu."). Se ela não aparecer, ainda há um jogador que pode ser reanimado.
 
-2. Is the body rotting? If it is, sadly, they'll have to be cloned. A rotting body can't be brought back with a defibrillator. (See Cloning)
+2. O corpo está apodrecendo? Nesse caso, infelizmente será preciso cloná-lo. Um corpo apodrecido não pode ser reanimado com desfibrilador. Consulte Clonagem.
 
-3. If they have a soul, and aren't rotten, it's possible to revive them. Consider storing the body in a morgue tray if you don't have enough time to revive someone, as the body will rot if you wait too long.
+3. Se o corpo possui alma e não está apodrecido, é possível reanimá-lo. Considere guardá-lo numa gaveta do necrotério se não tiver tempo para fazer isso, pois ele apodrecerá se você demorar demais.
 
-## Revival
-Not counting airloss, Defibrillators can be used to revive patients under 200 total damage. Chemicals don't metabolise in the dead, but brute packs and ointment can still patch them up. Use them to bring their numbers down enough for revival.
+## Reanimação
+Sem contar a falta de ar, desfibriladores podem reanimar pacientes com menos de 200 de dano total. Corpos mortos não metabolizam químicos, mas Pacotes de Trauma e Pomadas ainda podem tratá-los. Use esses itens para reduzir o dano o suficiente para a reanimação.
 
 <Box>
 <GuideEntityEmbed Entity="Brutepack"/>

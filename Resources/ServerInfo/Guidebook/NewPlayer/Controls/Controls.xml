@@ -13,185 +13,185 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Controls
+  # Controles
 
-  <Box>You can change your keybinds at any time here:</Box>
+  <Box>Você pode alterar seus atalhos a qualquer momento aqui:</Box>
   <Box Orientation="Vertical"><CommandButton Text="ui-options-tab-controls" Command="options 2"/></Box>
 
   ## Interface
-  At the top left you'll see all the [bold]menu buttons[/bold] with their corresponding hotkeys.
-  Take a look at what they do, especially the emotes menu.
-  Notably, the [color=red]Admin Help[/color] ([italic]ahelp[/italic]) menu button will become [color=red][bold]red[/bold][/color] if an admin is trying to contact you.
+  No canto superior esquerdo, você verá todos os [bold]botões de menu[/bold] e seus respectivos atalhos.
+  Dê uma olhada no que cada um faz, principalmente no menu de emotes.
+  Um detalhe importante: o botão do menu de [color=red]Ajuda Administrativa[/color] ([italic]ahelp[/italic]) ficará [color=red][bold]vermelho[/bold][/color] quando um admin estiver tentando falar com você.
 
-  ### Action bar
-  Below the menu buttons, there's the [bold]action bar[/bold] that shows buttons for generic and equipment-dependent [color=cyan]actions[/color] your character can perform.
-  Hover over them to learn their function.
+  ### Barra de ações
+  Abaixo dos botões de menu fica a [bold]barra de ações[/bold], que mostra botões para [color=cyan]ações[/color] gerais ou dependentes do equipamento que seu personagem pode realizar.
+  Passe o cursor sobre cada botão para descobrir sua função.
 
-  It's also a [bold]hotbar[/bold] — perform those actions by pressing their corresponding [color=yellow][bold]number keys[/bold][/color] on your keyboard.
-  Rearrange them by [bold]dragging[/bold] one icon over another, or remove icons temporarily by dragging them away.
+  Ela também é uma [bold]hotbar[/bold]: realize essas ações pressionando as [color=yellow][bold]teclas numéricas correspondentes[/bold][/color] no teclado.
+  Reorganize os botões [bold]arrastando[/bold] um ícone sobre outro, ou remova temporariamente um ícone arrastando-o para fora.
 
-  ### Status bar
-  Below the chat window on the right, there's the [bold]status bar[/bold] showing your character's statuses.
-  As with the action bar, hover over those icons to see what they mean.
+  ### Barra de status
+  Abaixo da janela de chat, à direita, fica a [bold]barra de status[/bold], que mostra os estados do seu personagem.
+  Assim como na barra de ações, passe o cursor sobre os ícones para ver o que significam.
 
-  Some of those icons can also be clicked.
-  For example, if your character ever [color=orangered]catches on fire[/color], a fire icon will appear.
-  You would click [color=yellow][bold][keybind="Use"][/bold][/color] on it to [color=cyan]drop and roll[/color].
-  The same applies to [color=cyan]breaking handcuffs[/color] if you need to escape restraint.
+  Alguns desses ícones também podem ser clicados.
+  Por exemplo, se seu personagem [color=orangered]pegar fogo[/color], aparecerá um ícone de chama.
+  Clique nele com [color=yellow][bold][keybind="Use"][/bold][/color] para [color=cyan]jogar-se no chão e rolar[/color].
+  O mesmo vale para [color=cyan]arrebentar algemas[/color] caso você precise escapar da contenção.
 
-  ### Inventory bar
-  Along the bottom you’ll find the [bold]inventory bar[/bold] that contains all the icons related to your equipment and storage, left to right:
-  - [color=cyan]clothing inventory[/color] (bottom left corner) — opened with [color=yellow][bold][keybind="OpenInventoryMenu"][/bold][/color] — has slots for eyes, head, neck, face, ears, body, external, hands, and shoes,
-  - [bold]PDA[/bold] slot — used to store a usable PDA that holds an ID and a pen,
-  - [bold]belt[/bold] slot — used for toolbelts and jetpacks,
-  - [bold]back[/bold] slot — normally used for satchels, backpacks and duffel bags, but it can also store medium to large weapons, and full-sized air tanks.
-  - [bold]hand[/bold] slots — you can think of them as transfer slots,
-  - [bold]pocket[/bold] slots — useful for storing small items for easy access,
-  - [bold]suit storage[/bold] slot — usable only when wearing a space suit, hardsuit or armor.
-  Meant for air tanks and jetpacks, but can also hold guns.
+  ### Barra de inventário
+  Na parte inferior fica a [bold]barra de inventário[/bold], com todos os ícones relacionados a equipamento e armazenamento. Da esquerda para a direita:
+  - [color=cyan]inventário de roupas[/color] (canto inferior esquerdo) — aberto com [color=yellow][bold][keybind="OpenInventoryMenu"][/bold][/color] — possui espaços para olhos, cabeça, pescoço, rosto, orelhas, corpo, traje externo, mãos e calçados,
+  - espaço do [bold]PDA[/bold] — guarda um PDA utilizável contendo um cartão de ID e uma caneta,
+  - espaço do [bold]cinto[/bold] — usado para cintos de ferramentas e jetpacks,
+  - espaço das [bold]costas[/bold] — normalmente usado para bolsas de ombro, mochilas e mochilas de viagem, mas também comporta armas médias ou grandes e tanques de ar de tamanho normal.
+  - espaços das [bold]mãos[/bold] — pense neles como espaços de transferência,
+  - espaços dos [bold]bolsos[/bold] — úteis para guardar itens pequenos e deixá-los ao alcance,
+  - espaço do [bold]traje[/bold] — só pode ser usado quando você veste um traje espacial, hardsuit ou armadura.
+  Destina-se a tanques de ar e jetpacks, mas também pode guardar armas de fogo.
 
-  [italic]Note: non-humanoid species may have slightly different slots.[/italic]
+  [italic]Observação: espécies não humanoides podem ter espaços um pouco diferentes.[/italic]
 
-  ## Movement
-  To move your character around, use [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
+  ## Movimento
+  Para mover seu personagem, use [color=yellow][bold][keybind="MoveUp"][keybind="MoveLeft"][keybind="MoveDown"][keybind="MoveRight"][/bold][/color].
 
-  Carried objects and afflictions influence your movement speed, but you can also hold [color=yellow][bold][keybind="Walk"][/bold][/color] to [color=cyan]walk[/color].
-  This reduces your speed and helps you avoid [color=cyan]slipping[/color] and falling over when walking over slippery hazards like banana peels or spills.
-  \n[italic]Note: walking can be switched to a [bolditalic]toggle[/bolditalic] in the controls menu.[/italic]
+  Os objetos carregados e as condições que afetam o personagem influenciam sua velocidade, mas você também pode segurar [color=yellow][bold][keybind="Walk"][/bold][/color] para [color=cyan]andar[/color].
+  Isso reduz sua velocidade e ajuda a evitar que você [color=cyan]escorregue[/color] e caia ao passar por perigos escorregadios, como cascas de banana ou líquidos derramados.
+  \n[italic]Observação: no menu de controles, andar pode ser configurado como uma [bolditalic]alternância[/bolditalic].[/italic]
 
-  ### Spacewalks
-  If you find yourself in [color=#EB2D3A]zero gravity[/color], you'll still be able to move — although with reduced friction — as long as you're within reach of any structure.
+  ### Caminhadas Espaciais
+  Se você estiver em [color=#EB2D3A]gravidade zero[/color], ainda poderá se mover — embora com menos atrito — desde que alcance alguma estrutura.
 
-  If you drift completely off station and into [color=#EB2D3A]space[/color], you'll need to use the laws of motion, such as by [bold]throwing[/bold] objects in the opposite direction.
+  Se acabar à deriva, completamente fora da estação e no [color=#EB2D3A]espaço[/color], terá de usar as leis do movimento, por exemplo [bold]arremessando[/bold] objetos na direção oposta.
 
-  ## Hands
-  Your character’s hands are represented by [bold]hand slots[/bold], which are centered along the bottom of the screen.
-  - One of your hands is always the [color=cyan]active hand[/color].
-  - [color=cyan]Swap[/color] hands with [color=yellow][bold][keybind="SwapHands"][/bold][/color] to control which one is active.
-  - [color=cyan]Take[/color] items into your active, empty hand with [color=yellow][bold][keybind="Use"][/bold][/color].
-  - Use [color=yellow][bold][keybind="Use"][/bold][/color] to [color=cyan]put[/color] a held item from your active hand somewhere else, or to [color=cyan]use it[/color] on something or someone, depending on the context.
-  - Pay attention to your active hand when interacting with the world to prevent accidentally using held items.
+  ## Mãos
+  As mãos do personagem são representadas pelos [bold]espaços das mãos[/bold], localizados no centro da parte inferior da tela.
+  - Uma de suas mãos sempre é a [color=cyan]mão ativa[/color].
+  - [color=cyan]Troque[/color] de mão com [color=yellow][bold][keybind="SwapHands"][/bold][/color] para escolher qual delas ficará ativa.
+  - [color=cyan]Pegue[/color] itens com a mão ativa e vazia usando [color=yellow][bold][keybind="Use"][/bold][/color].
+  - Use [color=yellow][bold][keybind="Use"][/bold][/color] para [color=cyan]colocar[/color] em outro lugar um item segurado na mão ativa ou para [color=cyan]usá-lo[/color] em algo ou alguém, dependendo do contexto.
+  - Preste atenção à mão ativa ao interagir com o mundo para não usar itens sem querer.
 
-  [bold]Items cannot be transferred by drag and drop.[/bold]
+  [bold]Itens não podem ser transferidos arrastando e soltando.[/bold]
 
-  ### Dropping and throwing
-  Use [color=yellow][bold][keybind="Drop"][/bold][/color] to [color=cyan]drop[/color] (or place) an item from your hand within arm's reach.
-  \n[color=cyan]Throw[/color] items to your cursor with [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color].
+  ### Soltar e arremessar
+  Use [color=yellow][bold][keybind="Drop"][/bold][/color] para [color=cyan]soltar[/color] (ou colocar) um item da sua mão ao alcance do braço.
+  \n[color=cyan]Arremesse[/color] itens na direção do cursor com [color=yellow][bold][keybind="ThrowItemInHand"][/bold][/color].
 
-  ### Pulling and pushing
-  You can pull movable [bold]entities[/bold] — items, objects, and mobs such as players, as long as you have an empty hand.
-  - Use [color=yellow][bold][keybind="TryPullObject"][/bold][/color] to start [color=cyan]pulling[/color].
-  - [color=cyan]Push[/color] pulled entities to your cursor with [color=yellow][bold][keybind="MovePulledObject"][/bold][/color].
-  - To [color=cyan]release[/color], press [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color] or pull the same entity again.
+  ### Puxar e empurrar
+  Você pode puxar [bold]entidades[/bold] móveis — itens, objetos e mobs, como jogadores — desde que tenha uma mão vazia.
+  - Use [color=yellow][bold][keybind="TryPullObject"][/bold][/color] para começar a [color=cyan]puxar[/color].
+  - [color=cyan]Empurre[/color] a entidade puxada na direção do cursor com [color=yellow][bold][keybind="MovePulledObject"][/bold][/color].
+  - Para [color=cyan]soltar[/color], pressione [color=yellow][bold][keybind="ReleasePulledObject"][/bold][/color] ou tente puxar a mesma entidade outra vez.
 
-  You can also use [color=yellow][bold][keybind="Drop"][/bold][/color] to release pulled entities from your active hand.
+  Você também pode usar [color=yellow][bold][keybind="Drop"][/bold][/color] para soltar da mão ativa uma entidade que esteja puxando.
 
-  ## Interactions
-  The game features [bold]six[/bold] types of context-sensitive interactions, accessible through different methods.
+  ## Interações
+  O jogo possui [bold]seis[/bold] tipos de interação que mudam conforme o contexto e são acessados de maneiras diferentes.
 
-  ### Standard and alternative
-  Clicking [color=yellow][bold][keybind="Use"][/bold][/color] performs [color=cyan]standard interactions[/color].
-  They heavily depend on the item you're holding and what you click on.
+  ### Padrão e alternativa
+  Clicar com [color=yellow][bold][keybind="Use"][/bold][/color] realiza [color=cyan]interações padrão[/color].
+  Elas dependem bastante do item que você segura e do alvo em que clica.
 
-  Standard interactions range from clicking [bold]tables[/bold] to put held items onto them, to [bold]using[/bold] objects in the world with empty hands, and most commonly, using held items to interact with mobs and with other items.
+  Interações padrão vão desde clicar em [bold]mesas[/bold] para colocar nelas o item segurado até [bold]usar[/bold] objetos do mundo com as mãos vazias; o uso mais comum é interagir com mobs e outros itens usando o que você tem na mão.
 
-  In some situations, you can directly [color=cyan]swap items[/color] by clicking on a machine while holding an item.
-  For example, while holding a beaker, click on a machine storing another beaker. This also works with air tanks and canisters.
+  Em algumas situações, você pode [color=cyan]trocar itens[/color] diretamente ao clicar em uma máquina enquanto segura um item.
+  Por exemplo, segurando um béquer, clique em uma máquina que contenha outro béquer. Isso também funciona com tanques e cilindros de gás.
 
-  Some items have [color=cyan]alternative interactions[/color] — use [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] to [bold]lock[/bold] lockers, [bold]eject[/bold] subitems such as batteries from other items, etc.
+  Alguns itens possuem [color=cyan]interações alternativas[/color]. Use [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] para [bold]trancar[/bold] armários, [bold]ejetar[/bold] subitens — como baterias dentro de outros itens — e assim por diante.
 
-  ### Activation
-  Interact with objects such as containers even when your hands are full by performing [color=cyan]activation interactions[/color] with [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
-  This allows you to, for example, [bold]open containers[/bold] without picking them up, [bold]open doors[/bold] without using the item you're holding, and to [bold]cycle guns[/bold].
+  ### Ativação
+  Interaja com objetos como recipientes mesmo quando suas mãos estiverem ocupadas, realizando [color=cyan]interações de ativação[/color] com [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color].
+  Isso permite, por exemplo, [bold]abrir recipientes[/bold] sem pegá-los, [bold]abrir portas[/bold] sem usar o item que você segura e [bold]engatilhar armas[/bold].
 
-  Notably, press [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] on a mob to open the [color=cyan]strip menu[/color], allowing you to view their inventory — which lets you try to take off or steal items from them.
+  Um detalhe importante: pressione [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] sobre um mob para abrir o [color=cyan]menu de strip (remoção de equipamento)[/color]. Nele, você pode ver o inventário do alvo e tentar remover ou roubar seus itens.
 
-  ### In-hand
-  Many items also have [color=cyan]use-in-hand interactions[/color], such as [bold]opening[/bold] bottles, [bold]wielding[/bold] two-handed guns and big melee weapons with both hands (clubs, spears, axes, mops, shotguns, etc.), [bold]cycling[/bold] guns, or [bold]toggling[/bold] syringes between injecting and drawing.
+  ### Na mão
+  Muitos itens também possuem [color=cyan]interações de uso na mão[/color], como [bold]abrir[/bold] garrafas, [bold]empunhar[/bold] com as duas mãos armas de fogo e armas brancas grandes (tacos, lanças, machados, esfregões, escopetas etc.), [bold]engatilhar[/bold] armas ou [bold]alternar[/bold] seringas entre injetar e aspirar.
 
-  You may just perform in-hand interactions by clicking [color=yellow][bold][keybind="Use"][/bold][/color] or [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] on your active hand, but it's worth remembering the hotkeys — [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] and [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] for [color=cyan]standard[/color] and [color=cyan]alternative[/color] in-hand interactions, respectively.
+  Você pode realizar interações na mão clicando com [color=yellow][bold][keybind="Use"][/bold][/color] ou [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] sobre sua mão ativa, mas vale a pena memorizar os atalhos: [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] e [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] para interações [color=cyan]padrão[/color] e [color=cyan]alternativas[/color] na mão, respectivamente.
 
-  ### Click and drag
-  You can "use" an entity on another entity by dragging one onto another with [color=yellow][bold][keybind="Use"][/bold][/color]. (Not to be confused with [italic]pulling[/italic].)
+  ### Clicar e arrastar
+  Você pode "usar" uma entidade em outra arrastando a primeira sobre a segunda com [color=yellow][bold][keybind="Use"][/bold][/color]. (Não confunda com [italic]puxar[/italic].)
 
-  Use it to:
-  - [color=cyan]Place[/color] or force a mob (player or NPC) on a chair, bed, into a cryogenic chamber, disposal unit, etc.
+  Use essa interação para:
+  - [color=cyan]Colocar[/color] ou forçar um mob (jogador ou NPC) sobre uma cadeira ou cama, dentro de uma câmara criogênica ou unidade de descarte etc.
 
-  - [color=cyan]Climb[/color] yourself onto a table — you can also click [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color] on the table.
+  - [color=cyan]Subir[/color] em uma mesa — outra opção é clicar na mesa com [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
 
-  - Open the [color=cyan]strip menu[/color] by dragging another mob onto your character — which is also doable with [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color], as mentioned earlier.
+  - Abrir o [color=cyan]menu de strip (remoção de equipamento)[/color] arrastando outro mob sobre seu personagem — isso também pode ser feito com [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color], como explicado antes.
 
-  - [color=cyan]Pour[/color] the contents of a liquid container (janitorial trolley, bucket, beaker) into another container, a drain, a machine, etc. But first, remember to place the container on the ground — you can't do it from your inventory.
+  - [color=cyan]Despejar[/color] o conteúdo de um recipiente de líquido (carrinho de zeladoria, balde ou béquer) em outro recipiente, ralo, máquina etc. Antes, lembre-se de colocar o recipiente no chão: não é possível fazer isso a partir do inventário.
 
-  ### Pointing
-  Use [color=yellow][bold][keybind="Point"][/bold][/color] to [color=cyan]point[/color] at a location in the world, creating a temporary arrow visible to everyone.
+  ### Apontar
+  Use [color=yellow][bold][keybind="Point"][/bold][/color] para [color=cyan]apontar[/color] para um local do mundo, criando uma seta temporária que todos podem ver.
 
-  ### Conclusion
-  The main interactions are:
-  - [bolditalic]standard[/bolditalic] ([color=yellow][bold][keybind="Use"][/bold][/color]),
-  - [italic]alternative[/italic] ([color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color]),
-  - [bold]activation[/bold] ([color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color]),
-  - [bolditalic]use-in-hand[/bolditalic] ([color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color]),
-  - [italic]alternative use-in-hand[/italic] ([color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color]),
-  - click and drag.
+  ### Conclusão
+  As principais interações são:
+  - [bolditalic]padrão[/bolditalic] ([color=yellow][bold][keybind="Use"][/bold][/color]),
+  - [italic]alternativa[/italic] ([color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color]),
+  - [bold]ativação[/bold] ([color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color]),
+  - [bolditalic]uso na mão[/bolditalic] ([color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color]),
+  - [italic]uso alternativo na mão[/italic] ([color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color]),
+  - clicar e arrastar.
 
-  Don't worry about having to memorize them — they're usually intuitive and consistent across entity categories, and you'll find that most entities only use one or two interactions.
+  Não se preocupe em decorar tudo: essas interações geralmente são intuitivas e consistentes dentro de cada categoria, e a maioria das entidades usa apenas uma ou duas delas.
 
-  [bold]Items stored in containers are still interactable.[/bold]
+  [bold]Ainda é possível interagir com itens guardados em recipientes.[/bold]
 
-  ## Context menus
-  Click [color=yellow][bold][keybind="UIRightClick"/][/bold][/color] on any interactive entity to open the [color=cyan]context menu[/color], which shows you additional interaction you can currently perform.
-  The context menu can offer interactions such as:
-  - [bold]transferring all contents[/bold] from a container held in your active hand to another container,
-  - [bold]splitting item stacks[/bold] using presets,
-  - choosing more precise [bold]transfer amounts[/bold] for chemicals,
-  - showing [bold]deconstruction steps[/bold] for objects.
+  ## Menus de contexto
+  Clique com [color=yellow][bold][keybind="UIRightClick"/][/bold][/color] em qualquer entidade interativa para abrir o [color=cyan]menu de contexto[/color], que mostra outras interações disponíveis naquele momento.
+  O menu de contexto pode oferecer ações como:
+  - [bold]transferir todo o conteúdo[/bold] de um recipiente na mão ativa para outro recipiente,
+  - [bold]dividir pilhas de itens[/bold] usando quantidades predefinidas,
+  - escolher [bold]quantidades de transferência[/bold] mais precisas para produtos químicos,
+  - mostrar as [bold]etapas de desmontagem[/bold] de objetos.
 
-  If you click [color=yellow][bold][keybind="UIRightClick"/][/bold][/color] on a pile of items, you'll open the [color=cyan]entity menu[/color], listing overlapping entities you can interact with normally.
+  Se você clicar com [color=yellow][bold][keybind="UIRightClick"/][/bold][/color] em uma pilha de itens, abrirá o [color=cyan]menu de entidades[/color], que lista as entidades sobrepostas com as quais você pode interagir normalmente.
 
-  ### Examining
-  If you're ever unsure about any entity, whether it's an object or a mob, [color=cyan]examine[/color] it with [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
-  You can also examine items listed in the entity menu.
+  ### Examinar
+  Sempre que tiver dúvida sobre uma entidade, seja objeto ou mob, [color=cyan]examine-a[/color] com [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
+  Você também pode examinar itens listados no menu de entidades.
 
-  Besides viewing the entity's description, you'll see some icons in the bottom right of the menu:
-  - a question mark icon that links to the appropriate guidebook section,
-  - a lightning icon to view the item's statistics,
-  - a heart icon to view a mob's health,
-  - and more.
+  Além da descrição da entidade, alguns ícones aparecem no canto inferior direito do menu:
+  - um ícone de interrogação que leva à seção correspondente do guia,
+  - um ícone de raio que mostra as estatísticas do item,
+  - um ícone de coração que mostra a saúde de um mob,
+  - entre outros.
 
-  ## Inventory and clothing
-  All items can be equipped/unequipped by using [color=yellow][bold][keybind="Use"][/bold][/color] on the appropriate slot.
+  ## Inventário e roupas
+  Todos os itens podem ser equipados ou desequipados usando [color=yellow][bold][keybind="Use"][/bold][/color] no espaço apropriado.
 
-  The easiest way to [color=cyan]wear[/color] (or equip) a piece of clothing is to [color=cyan]use[/color] it in your active hand with [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color].
-  Some items don't support this, so you may need to [color=cyan]manually equip them[/color] them in the appropriate slot.
+  A maneira mais fácil de [color=cyan]vestir[/color] (ou equipar) uma peça de roupa é [color=cyan]usá-la[/color] na mão ativa com [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color].
+  Alguns itens não são compatíveis com isso; nesses casos, talvez seja preciso [color=cyan]equipá-los manualmente[/color] no espaço apropriado.
 
-  [bold]Some clothes have internal inventories and behave like containers.[/bold]
+  [bold]Algumas roupas possuem inventários internos e funcionam como recipientes.[/bold]
 
-  ### Item stacks
-  To [color=cyan]halve[/color] a stack of items, use [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  ### Pilhas de itens
+  Para [color=cyan]dividir pela metade[/color] uma pilha de itens, use [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
 
-  ### Back and belt slots
-  If you have a bag or a belt, open their inventories with [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] or by clicking the mini-icons in the [bold]bottom right[/bold] of their icons.
-  You can also use the [color=yellow][bold][keybind="OpenBackpack"][/bold][/color] and [color=yellow][bold][keybind="OpenBelt"][/bold][/color] hotkeys for that.
+  ### Espaços das costas e do cinto
+  Se você tiver uma bolsa ou cinto, abra o inventário correspondente com [color=yellow][bold][keybind="ActivateItemInWorld"][/bold][/color] ou clicando nos pequenos ícones no [bold]canto inferior direito[/bold] do ícone do item.
+  Você também pode usar os atalhos [color=yellow][bold][keybind="OpenBackpack"][/bold][/color] e [color=yellow][bold][keybind="OpenBelt"][/bold][/color] para isso.
 
-  ### Smart-equipping
-  You can [color=cyan]quick-move[/color] items between your active hand and a corresponding slot. If that slot has a container in it, this action will [color=cyan]quick-store[/color] or [color=cyan]quick-take[/color] the most recent item from that container (signified with a golden star icon in the container).
+  ### Equipamento inteligente
+  Você pode [color=cyan]mover rapidamente[/color] itens entre a mão ativa e um espaço correspondente. Se houver um recipiente nesse espaço, a ação [color=cyan]guardará rapidamente[/color] o item ou [color=cyan]retirará rapidamente[/color] dele o item mais recente, indicado por um ícone de estrela dourada dentro do recipiente.
 
-  - [color=yellow][bold][keybind="SmartEquipBackpack"][/bold][/color] smart-equips the back slot.
-  - [color=yellow][bold][keybind="SmartEquipBelt"][/bold][/color] smart-equips the belt slot.
-  - [color=yellow][bold][keybind="SmartEquipPocket1"][/bold][/color], [color=yellow][bold][keybind="SmartEquipPocket2"][/bold][/color], and [color=yellow][bold][keybind="SmartEquipSuitStorage"][/bold][/color] smart-equip the left pocket, right pocket, and suit storage slots, respectively.
+  - [color=yellow][bold][keybind="SmartEquipBackpack"][/bold][/color] usa o equipamento inteligente no espaço das costas.
+  - [color=yellow][bold][keybind="SmartEquipBelt"][/bold][/color] usa o equipamento inteligente no espaço do cinto.
+  - [color=yellow][bold][keybind="SmartEquipPocket1"][/bold][/color], [color=yellow][bold][keybind="SmartEquipPocket2"][/bold][/color] e [color=yellow][bold][keybind="SmartEquipSuitStorage"][/bold][/color] usam o equipamento inteligente no bolso esquerdo, no bolso direito e no espaço do traje, respectivamente.
 
-  ### Organizing grid inventories
-  [color=cyan]Rearrange[/color] items by dragging them with [color=yellow][bold][keybind="MoveStoredItem"][/bold][/color].
-  While dragging, [color=cyan]rotate[/color] them with [color=yellow][bold][keybind="RotateStoredItem"][/bold][/color].
+  ### Organizando inventários em grade
+  [color=cyan]Reorganize[/color] os itens arrastando-os com [color=yellow][bold][keybind="MoveStoredItem"][/bold][/color].
+  Enquanto arrasta um item, [color=cyan]gire-o[/color] com [color=yellow][bold][keybind="RotateStoredItem"][/bold][/color].
 
-  Click [color=yellow][bold][keybind="SaveItemLocation"][/bold][/color] on an item inside a container to [color=cyan]save[/color] its position, so it always goes back to that position when stored.
-  View saved positions by [color=yellow][bold]hovering[/bold][/color] over items.
+  Clique com [color=yellow][bold][keybind="SaveItemLocation"][/bold][/color] em um item dentro de um recipiente para [color=cyan]salvar[/color] sua posição; assim, ele sempre voltará àquele lugar quando for guardado.
+  Veja as posições salvas [color=yellow][bold]passando o cursor[/bold][/color] sobre os itens.
 
-  ## Camera
-  [color=cyan]Zoom[/color] the camera with [color=yellow][bold][keybind="ZoomIn"][/bold][/color] and [color=yellow][bold][keybind="ZoomOut"][/bold][/color] and reset with [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
-  \n[color=cyan]Rotate[/color] it with [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] and [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color] and reset with [color=yellow][bold][keybind="CameraReset"][/bold][/color].
-  \n[italic]Note: maps are generally designed to be played with the default camera rotation.[/italic]
+  ## Câmera
+  [color=cyan]Aproxime ou afaste[/color] a câmera com [color=yellow][bold][keybind="ZoomIn"][/bold][/color] e [color=yellow][bold][keybind="ZoomOut"][/bold][/color], e restaure o zoom com [color=yellow][bold][keybind="ResetZoom"][/bold][/color].
+  \n[color=cyan]Gire[/color] a câmera com [color=yellow][bold][keybind="CameraRotateLeft"][/bold][/color] e [color=yellow][bold][keybind="CameraRotateRight"][/bold][/color], e restaure a rotação com [color=yellow][bold][keybind="CameraReset"][/bold][/color].
+  \n[italic]Observação: em geral, os mapas são projetados para jogar com a rotação padrão da câmera.[/italic]
 
-  For more details about controls, you can refer to the [color=cyan]Wiki[/color].
+  Para ver mais detalhes sobre os controles, consulte a [color=cyan]Wiki[/color].
 </Document>

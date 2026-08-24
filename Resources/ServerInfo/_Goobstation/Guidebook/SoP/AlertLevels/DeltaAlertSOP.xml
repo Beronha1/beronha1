@@ -6,40 +6,40 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Station Alert - Delta
+  # Alerta da Estação - Delta
 
   <Box>
-    [italic]Called by: Anyone with Command-Level Access at a working Communications Console, Malfunctioning AI Units, the Supermatter Delaminating, or a Nuclear Fission Device Activating On-Board.[/italic]
+    [italic]Declarado por: acesso de Comando num Console funcional, IA Defeituosa, delaminação da Supermatéria ou ativação de Dispositivo de Fissão Nuclear a bordo.[/italic]
   </Box>
 
-  [bold]Conditions:[/bold]
+  [bold]Condições:[/bold]
 
-  A Malfunctioning AI Unit has dropped all semblance of stealth and activated their Override Mechanism.
+  Uma IA Defeituosa abandonou a furtividade e ativou o Mecanismo de Sobrescrita.
 
-  [bold]OR[/bold]
+  [bold]OU[/bold]
 
-  The on-board Nuclear Fission Device has been activated by Command or Central Command personnel. Though it does not trigger Code Delta, Nuclear Operative Nuclear Operations should still be considered as a Code Delta situation.
+  O Dispositivo Nuclear foi ativado pelo Comando ou Comando Central. Operação de Operativos Nucleares também deve ser tratada como Delta, mesmo sem acionamento automático.
 
-  [bold]OR[/bold]
+  [bold]OU[/bold]
 
-  The supermatter is in the process of delaminating. This is a station-wide threat.
+  A Supermatéria está delaminando, ameaçando toda a estação.
 
-  [bold]Security:[/bold]
+  [bold]Segurança:[/bold]
 
-  In the case of a Malfunctioning AI Unit, all Security personnel are required to drop whatever it is they are doing, and proceed to neutralize the AI Unit. Any relevant help from station personnel (such as Engineers or Scientists) is not to be turned down;
+  Contra IA Defeituosa, abandone tudo e neutralize-a. Não recuse ajuda relevante de Engenheiros, Cientistas ou outros;
 
-  In the case of a Central Command-authorized activation of the on-board Nuclear Fission Device, all Security personnel are to stand down.
+  Se o Comando Central autorizou a ativação nuclear, toda a Segurança deve recuar.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Áreas Seguras:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Armazenamento EVA, Técnico, Gerador de Gravidade, Armazém Seguro da Engenharia, Upload da IA, Cofre, Gateway e áreas pouco usadas com acesso de Comando.
 
-  Procedures are irrelevant.
+  Procedimentos são irrelevantes.
 
-  [bold]General Crew:[/bold]
+  [bold]Tripulação Geral:[/bold]
 
-  In the case of a Malfunctioning AI Unit or Nuclear Operatives that have armed a nuclear device, all non-vital personnel are to evacuate off-station immediately;
+  Contra IA Defeituosa ou Operativos que armaram bomba nuclear, todo pessoal não essencial deve evacuar imediatamente;
 
-  In the case of a Central Command-authorized activation of the on-board Nuclear Fission Device, all personnel are to stand down.
+  Se a ativação nuclear foi autorizada pelo Comando Central, todos devem recuar.
 
 </Document>

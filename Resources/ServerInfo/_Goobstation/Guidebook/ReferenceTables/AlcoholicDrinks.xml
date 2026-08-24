@@ -1,8 +1,8 @@
 <Document>
+# Bebidas Alcoólicas
 
-# Alcoholic Drinks
-
-Drink too many of these and you're likely to end up in medbay.\nNot like that's ever stopped anyone!
+Beba demais e provavelmente acabará na enfermaria.
+Como se isso já tivesse impedido alguém!
 
 <GuideReagentGroupEmbed Group="AlcoholicDrinks"/>
 

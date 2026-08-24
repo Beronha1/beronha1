@@ -8,16 +8,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Dwarves
+  # Anões
 
   <Box>
     <GuideEntityEmbed Entity="MobDwarf" Caption=""/>
   </Box>
 
-  Dwarves are similar to humans in most respects, however,
-  They are not poisoned by alcohol and instead are even slightly healed by it.
-  Their mining instincts allow them to feel nearby ore in 3 tile radius.
-  They are slightly smaller than humans, though are also slightly heavier.
-  They suffocate two times faster.
+  Anões são parecidos com humanos na maioria dos aspectos. Porém:
+  álcool não os envenena; na verdade, chega a curá-los um pouco.
+  Seus instintos de mineração permitem sentir minérios próximos num raio de 3 tiles.
+  São um pouco menores que humanos, mas também ligeiramente mais pesados.
+  Eles sufocam duas vezes mais rápido.
+
 
 </Document>

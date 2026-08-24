@@ -1,24 +1,24 @@
 <Document>
-# Skills
+# Habilidades
 
-Skills are a thing innate to non-simple mobs. They're stored on the brain.
+Habilidades são naturais de mobs não simples e ficam armazenadas no cérebro.
 
-Skills determine several aspects of your character, such as innate toughness or quality crafting. Skills can be broken down into six distinct categories:
+Elas definem aspectos como resistência inata e qualidade de fabricação, divididos em seis categorias:
 
 <GuideKnowledgeMasteryEmbed/>
 
-You can buy skills at character creation, found under the skills tab, to improve your character.
+Compre habilidades na aba correspondente ao criar o personagem.
 
-It goes without saying, but skills can also be improved. If you practice what that skill does, you will gain experience in that skill. When you get enough, the game will automatically roll a new level.
+Elas também evoluem: pratique o que a habilidade faz para ganhar experiência. Ao acumular o bastante, o jogo sorteia automaticamente um nível novo.
 
-Different masteries unlocks different benefits and maluses to gameplay. Experiment and see what works.
+Domínios diferentes liberam benefícios e penalidades. Experimente.
 
-There are also skill chips:
+Também existem chips de habilidade:
 
 <Box>
   <GuideEntityEmbed Entity="SkillChipPassenger"/>
 </Box>
 
-Every job has one and they provide job specific skills. They can be inserted or removed from the body through surgery.
+Cada trabalho tem um chip com habilidades específicas. Eles podem ser inseridos ou removidos do corpo por cirurgia.
 
 </Document>

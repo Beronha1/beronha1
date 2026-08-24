@@ -1,66 +1,66 @@
 <Document>
-  # Plaguebringer
+  # Portador da Praga
   <Box>
     <GuideEntityEmbed Entity="MobWraithPlague" Caption=""/>
   </Box>
 
-  The Plaguebringer is a path focused around curses, diseases and filth. Most of your abilities involve applying debuffs to one of those clueless crewmembers, and then, once the time is right and their soul is ripe, collecting your dues.
+  O Portador da Praga é um caminho focado em maldições, doenças e imundície. A maioria das habilidades aplica debuffs a algum tripulante desavisado para, na hora certa e com a alma madura, cobrar o que lhe é devido.
 
-  # Curses
+  # Maldições
 
-  The Plaguebringer has access to four base curses, with one, final curse to rule them all.
+  O Portador da Praga tem acesso a quatro maldições básicas e uma maldição final para dominar todas elas.
 
-  ## Blindness
+  ## Cegueira
 
-  - Slowly damages the eyesight of the afflicted until they are rendered fully blind.
+  - Danifica lentamente a visão da vítima até deixá-la completamente cega.
 
-  ## Blood
+  ## Sangue
 
-  - Causes them to cough blood, sometimes a little, sometimes a lot. Mostly just an annoyance, but can get serious if left untreated.
-  - In an ideal world, this would also apply Hemophilia to the target, which makes them bleed for longer. However, that is not yet implemented.
+  - Faz a vítima tossir sangue, às vezes pouco, às vezes muito. Costuma ser apenas um incômodo, mas pode ficar grave sem tratamento.
+  - Num mundo ideal, também aplicaria Hemofilia ao alvo, prolongando sangramentos. Isso, porém, ainda não está implementado.
 
-  ## Enfeeblement
+  ## Enfraquecimento
 
-  - This one has several effects, such as draining the stamina of the afflicted, or making them drowsy and forcing them into a sudden nap.
+  - Tem vários efeitos, como drenar a Stamina da vítima, deixá-la sonolenta e forçá-la a tirar um cochilo repentino.
 
-  ## Rot
+  ## Podridão
 
-  - Causes the afflicted to randomly puke and cough all over the place. Great for spreading disease.
-  - Prevents them from eating at all. Combined with the fact that they are slowly puking out all the contents of their stomach, this will eventually leave them starving, unable to do anything about it.
+  - Faz a vítima vomitar e tossir aleatoriamente por toda parte. Excelente para espalhar doenças.
+  - Impede-a de comer. Como ela também vomita aos poucos todo o conteúdo do estômago, acabará morrendo de fome sem poder fazer nada.
 
-  ## Death
+  ## Morte
 
-  - The final of the curses. Can only be applied once all four other curses have been applied on the same person.
-  - Once applied, the target will have less than a minute to live. They will hear a dreadful song signifying that their end is near.
-  - During that time, they will begin to experience several effects, such as falling to the ground or shaking.
-  - This curse deals damage that ramps up over time. It starts small, but quickly enough, becomes so deadly that no medicine in the world can help them survive it.
-  - Once they die, their corpse will gib, and you will permanently gain increased WP regeneration. This will count as if you had absorbed their corpse.
+  - A última maldição. Só pode ser aplicada depois que as outras quatro estiverem na mesma pessoa.
+  - Ao recebê-la, o alvo terá menos de um minuto de vida. Ele ouvirá uma música terrível anunciando que o fim está próximo.
+  - Durante esse tempo, sofrerá vários efeitos, como cair no chão ou tremer.
+  - O dano da maldição cresce com o tempo. Começa pequeno, mas logo fica tão mortal que nenhum remédio no mundo consegue salvar a vítima.
+  - Quando ela morrer, o cadáver será gibado e você ganhará permanentemente mais regeneração de WP. Isso conta como se você tivesse absorvido o corpo.
 
-  Do note that if one curse is used, all other curses will go on cooldown. So there is a limit to how quickly you can reap someone's soul.
-  Also, important to mention, the Chaplain can [color=red]purge all of your curses with their bible by using it on the afflicted[/color], so don't expect this to be easy.
+  Ao usar uma maldição, todas as outras entram em cooldown; portanto, há um limite para a rapidez com que você pode colher uma alma.
+  E atenção: o Capelão pode [color=red]purgar todas as suas maldições usando a bíblia na vítima[/color]. Não espere vida fácil.
 
-  ## Defile
+  ## Profanar
 
-  This serves to fill up either some sort of drink, or to contaminate food with a chemical of your choosing (It's always poison). First, use the action on yourself to pick the reagent, then use it again on the food/drink to defile it.
+  Serve para encher algum tipo de bebida ou contaminar comida com uma substância química à sua escolha — é sempre veneno. Primeiro, use a ação em si mesmo para escolher o reagente; depois, use-a de novo na comida/bebida para profaná-la.
 
-  ## Summon Plague Rat
+  ## Invocar Rato da Praga
 
-  Creates a diseased rat on your position, a ghost role that can be taken over by someone else. The diseased rat can eat trash to grow into a larger form of itself, gaining new abilities in the process. It starts very weak, but once fully grown, can prove to be a real pain.
+  Cria em sua posição um rato doente, uma ghost role que outra pessoa pode assumir. Ele come lixo para crescer e ganhar novas habilidades. Começa muito fraco, mas, totalmente crescido, pode virar uma bela dor de cabeça.
 
-  ## Create Rot Hulk
+  ## Criar Hulk de Podridão
 
-  Uses nearby filth to summon a mass of filth and decay that attacks nearby crew and explodes on death. Try using this action at disposals, or near large amounts of trash if you can find something of the sort.
-  If you manage to find a pile of more than 30 pieces of trash, it will spawn a much stronger version of the rot hulk.
+  Usa a imundície próxima para invocar uma massa de sujeira e decomposição que ataca tripulantes por perto e explode ao morrer. Tente usar a ação no Disposals ou perto de grandes quantidades de lixo.
+  Se encontrar uma pilha com mais de 30 pedaços de lixo, uma versão muito mais forte do hulk de podridão será spawnada.
 
-  # Sick! But how do I do better as this?
+  # Doentio! Mas como jogar melhor com isso?
 
-  ## General tips
+  ## Dicas gerais
 
-  It takes some time for you to apply all four curses on someone. And even more so, they still have another full minute before the death curse does them in. Try to use your curses on targets that are far away from the chaplain, to reduce the chances of them wasting all of your effort.
+  Aplicar as quatro maldições leva tempo. Além disso, o alvo ainda tem um minuto inteiro antes que a maldição da morte o finalize. Amaldiçoe pessoas longe do Capelão para reduzir a chance de ele apagar todo seu trabalho.
 
-  Use actions such as Possess object or Spook to create more trash by breaking windows or lightbulbs. This will allow you to summon stronger rot hulks, and can even help diseased rats to evolve faster.
+  Use ações como Possuir Objeto ou Assombrar para criar mais lixo quebrando janelas ou lâmpadas. Assim você invoca hulks de podridão mais fortes e ainda ajuda ratos doentes a evoluírem mais rápido.
 
-  Defile leaves a very distinct taste in the mouth of whoever eats the contaminated food. You can use this to frame the chef or the bartender for trying to poison someone.
+  Profanar deixa um gosto muito característico na boca de quem come o alimento contaminado. Use isso para incriminar o Chef ou o Bartender por tentar envenenar alguém.
 
-  [textlink="Back to Wraith Evolutions" link="Wraiths"]
+  [textlink="Voltar às Evoluções do Wraith" link="Wraiths"]
 </Document>

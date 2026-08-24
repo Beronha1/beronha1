@@ -30,14 +30,23 @@ public sealed partial class MantoDeSombraSystem : EntitySystem
 
         if (deveValer)
         {
-            var furtividade = EnsureComp<StealthComponent>(uid);
-            _stealth.SetVisibility(uid, manto.VisibilidadeNoEscuro, furtividade);
-            EnsureComp<StealthOnMoveComponent>(uid);
+            // se a furtividade já veio de outro lugar, o manto não assume a posse
+            // dela nem sobrescreve o valor: quem chegou primeiro manda.
+            if (!HasComp<StealthComponent>(uid))
+            {
+                var furtividade = AddComp<StealthComponent>(uid);
+                _stealth.SetVisibility(uid, manto.VisibilidadeNoEscuro, furtividade);
+                manto.ConcedeuFurtividade = true;
+            }
+
+            if (!HasComp<StealthOnMoveComponent>(uid))
+                AddComp<StealthOnMoveComponent>(uid);
         }
-        else
+        else if (manto.ConcedeuFurtividade)
         {
             RemComp<StealthOnMoveComponent>(uid);
             RemComp<StealthComponent>(uid);
+            manto.ConcedeuFurtividade = false;
         }
 
         Dirty(uid, manto);

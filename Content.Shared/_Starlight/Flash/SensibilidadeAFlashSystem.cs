@@ -17,21 +17,21 @@ public sealed partial class SensibilidadeAFlashSystem : EntitySystem
 
         SubscribeLocalEvent<SensibilidadeAFlashComponent, FlashDurationMultiplierEvent>(AoCalcularDuracao);
 
-        // roda depois do SharedFlashSystem de propósito: a proteção cancela lá, e
-        // aqui a gente descancela. Sem essa ordem, o cancelamento viria por último
-        // e o efeito não valeria.
-        SubscribeLocalEvent<SensibilidadeAFlashComponent, FlashAttemptEvent>(AoTentarFlash,
-            after: new[] { typeof(SharedFlashSystem) });
+        // Whiskey: aqui existia um segundo tratador que rodava depois do
+        // SharedFlashSystem e fazia args.Cancelled = false, para "furar óculos".
+        // Foi retirado, e a crítica que motivou isso estava certa: Cancelled não
+        // guarda quem cancelou. Descancelar não significa "ignorar proteção de
+        // olho", significa "apagar QUALQUER motivo de cancelamento". Hoje
+        // coincidia com a proteção; amanhã furaria imunidade de antag, estado
+        // especial ou regra nova, sem ninguém perceber.
+        //
+        // Fazer isso direito exige provenance, ou seja o próprio SharedFlashSystem
+        // consultar uma marca antes de deixar a proteção cancelar. Isso é mudança
+        // em arquivo base e precisa de decisão de quem mantém o fork.
     }
 
     private void AoCalcularDuracao(Entity<SensibilidadeAFlashComponent> ent, ref FlashDurationMultiplierEvent args)
     {
         args.Multiplier *= ent.Comp.Multiplicador;
-    }
-
-    private void AoTentarFlash(Entity<SensibilidadeAFlashComponent> ent, ref FlashAttemptEvent args)
-    {
-        if (ent.Comp.AtravessaProtecao)
-            args.Cancelled = false;
     }
 }

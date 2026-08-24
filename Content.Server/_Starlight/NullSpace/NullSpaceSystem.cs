@@ -33,6 +33,28 @@ namespace Content.Server._Starlight.NullSpace;
 
 public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 {
+    /// <summary>
+    ///     Acrescenta o componente e anota que foi o NullSpace quem pôs. Se a
+    ///     entidade já tinha, não anota, e a saída não vai tirar.
+    /// </summary>
+    private void Conceder<T>(EntityUid uid, NullSpaceComponent component) where T : IComponent, new()
+    {
+        if (HasComp<T>(uid))
+            return;
+
+        AddComp<T>(uid);
+        component.Instalados.Add(typeof(T));
+    }
+
+    /// <summary> Tira o componente só se tiver sido o NullSpace que o concedeu. </summary>
+    private void Devolver<T>(EntityUid uid, NullSpaceComponent component) where T : IComponent
+    {
+        if (!component.Instalados.Remove(typeof(T)))
+            return;
+
+        RemComp<T>(uid);
+    }
+
     [Dependency] private SharedStealthSystem _stealth = default!;
     [Dependency] private EyeSystem _eye = default!;
     [Dependency] private NpcFactionSystem _factions = default!;
@@ -67,16 +89,17 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         _eye.RefreshVisibilityMask(uid);
 
-        var stealth = EnsureComp<StealthComponent>(uid);
-        _stealth.SetVisibility(uid, 0.8f, stealth);
+        Conceder<StealthComponent>(uid, component);
+        _stealth.SetVisibility(uid, 0.8f);
 
         SuppressFactions(uid, component, true);
 
         RemComp<KnockedDownComponent>(uid);
 
-        EnsureComp<PressureImmunityComponent>(uid);
-        EnsureComp<FTLSmashImmuneComponent>(uid);
-        EnsureComp<TemperatureImmunityComponent>(uid);
+        // Whiskey: anota o que foi realmente acrescentado, para a saída tirar só isso.
+        Conceder<PressureImmunityComponent>(uid, component);
+        Conceder<FTLSmashImmuneComponent>(uid, component);
+        Conceder<TemperatureImmunityComponent>(uid, component);
 
         if (TryComp<GravityAffectedComponent>(uid, out var grav))
             _gravity.RefreshWeightless((uid, grav), false);
@@ -126,14 +149,18 @@ public sealed partial class NullSpaceSystem : SharedNullSpaceSystem
 
         SuppressFactions(uid, component, false);
 
-        RemComp<StealthComponent>(uid);
-        RemComp<PressureImmunityComponent>(uid);
-        RemComp<FTLSmashImmuneComponent>(uid);
-
-        // Whiskey: no Starlight isto negava a imunidade a quem estivesse num culto
-        // cósmico de nível 3. Aquele culto não existe aqui, então a condição seria
-        // sempre verdadeira e a imunidade vale sempre.
-        EnsureComp<TemperatureImmunityComponent>(uid);
+        // Whiskey: antes daqui saía um RemComp cego de cada um, o que apagava também
+        // imunidade que a pessoa já tinha por traje, espécie ou outro sistema. Agora
+        // devolve só o que o NullSpace concedeu.
+        //
+        // E a imunidade térmica: tanto aqui quanto no Starlight a saída fazia
+        // EnsureComp, ou seja quem passasse pela escuridão ficava imune a
+        // temperatura PARA SEMPRE. Lá era condicionado a culto cósmico de nível 3, que
+        // este fork não tem. Isso é defeito, não regra, e virou devolução.
+        Devolver<PressureImmunityComponent>(uid, component);
+        Devolver<FTLSmashImmuneComponent>(uid, component);
+        Devolver<TemperatureImmunityComponent>(uid, component);
+        Devolver<StealthComponent>(uid, component);
 
         _virtualItem.DeleteInHandsMatching(uid, uid);
     }

@@ -1,3 +1,4 @@
+using Robust.Shared.Prototypes;
 // SPDX-FileCopyrightText: 2024-2026 Starlight
 // SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
 // SPDX-License-Identifier: MIT
@@ -18,6 +19,9 @@ namespace Content.Shared._Starlight.Shadekin;
 
 public sealed partial class ShadekinSystem
 {
+    /// <summary> Efeito aplicado por quem cai na armadilha. </summary>
+    private static readonly EntProtoId EfeitoDaEscuridao = "StatusEffectTheDark";
+
     public void InitializeAbilities()
     {
         SubscribeLocalEvent<BrighteyeComponent, BrighteyePortalActionEvent>(OnPortalAction);
@@ -113,12 +117,14 @@ public sealed partial class ShadekinSystem
         if (TryComp<EnsnaringComponent>(darknet, out var ensnaringComp) && _ensnareable.TryEnsnare(args.User.Value, darknet, ensnaringComp))
         {
             _popup.PopupPredicted(Loc.GetString("shadekinTrap-trigger", ("user", args.User.Value)), args.User.Value, args.User.Value, PopupType.LargeCaution);
-            if (TryComp<DarkTrapComponent>(darknet, out var darktrapcomp))
-            {
-                _stunSystem.TryUpdateStunDuration(args.User.Value, darktrapcomp.StunAmount);
-                _stunSystem.TryKnockdown(args.User.Value, darktrapcomp.StunAmount, force: true);
-                _status.TryAddStatusEffectDuration(args.User.Value, "StatusEffectTheDark", TimeSpan.FromSeconds(70));
-            }
+            // Whiskey: aqui o código lia DarkTrapComponent da NET recém criada, e a net
+            // só tem Ensnaring. O TryComp nunca passava, então atordoamento, derrube e
+            // efeito da escuridão eram código morto: a armadilha parecia funcionar
+            // porque prendia, mas metade do comportamento não acontecia.
+            // O dono da duração é a própria armadilha, ent.Comp.
+            _stunSystem.TryUpdateStunDuration(args.User.Value, ent.Comp.StunAmount);
+            _stunSystem.TryKnockdown(args.User.Value, ent.Comp.StunAmount, force: true);
+            _status.TryAddStatusEffectDuration(args.User.Value, EfeitoDaEscuridao, TimeSpan.FromSeconds(70));
 
             _audio.PlayPvs(ensnaringComp.EnsnareSound, args.User.Value);
         }

@@ -28,8 +28,6 @@
     - type: NightVision
     - type: SensibilidadeAFlash
       multiplicador: 2
-      # Por decisão da administração, óculos e máscara não seguram o flash dele.
-      atravessaProtecao: true
   - type: VisualOrgan
     layer: enum.HumanoidVisualLayers.Eyes
     data:

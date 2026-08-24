@@ -12,8 +12,7 @@ namespace Content.Shared._Starlight.Flash;
 ///     Multiplica a duração do flash em quem tem este componente, e opcionalmente
 ///     faz o flash atravessar proteção de olho.
 ///
-///     O olho do Shadekin enxerga no escuro e paga por isso: leva flash em dobro,
-///     e por decisão da administração leva mesmo usando óculos ou máscara.
+///     O olho do Shadekin enxerga no escuro e paga por isso: leva flash em dobro.
 ///
 ///     No Starlight isto era o FlashModifierComponent. Aqui o nome é outro para
 ///     não colidir, e o mecanismo é o FlashDurationMultiplierEvent, que este
@@ -26,10 +25,4 @@ public sealed partial class SensibilidadeAFlashComponent : Component
     [DataField]
     public float Multiplicador = 1f;
 
-    /// <summary>
-    ///     Se verdadeiro, proteção de olho não segura o flash. O olho dele é
-    ///     sensível demais para óculos resolverem.
-    /// </summary>
-    [DataField]
-    public bool AtravessaProtecao;
 }

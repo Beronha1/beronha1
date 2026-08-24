@@ -66,6 +66,15 @@ public sealed partial class DarkHubSystem : EntitySystem
             warps.Add(warpEnt);
         }
 
+        // Whiskey: sem esta guarda o Pick estoura. Nada garante que sobre um warp
+        // depois da lista negra e do filtro de localização: mapa de teste, mapa meio
+        // carregado ou estação sem ponto elegível zeram a lista.
+        if (warps.Count == 0)
+        {
+            args.Cancel();
+            return;
+        }
+
         var target = _random.Pick(warps);
 
         var coords = Transform(target).Coordinates;

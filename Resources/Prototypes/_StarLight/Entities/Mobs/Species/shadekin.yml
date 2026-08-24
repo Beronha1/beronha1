@@ -101,6 +101,13 @@
     - type: TypingIndicator
       proto: alien
     - type: PassiveDamage
+      # Whiskey: SEM isto a cura não acontece. O padrão é Split, que divide o valor
+      # entre as DEZ partes do corpo; com 0,1 por tipo cada parte receberia 0,01 e
+      # com qualquer coisa menor receberia zero, porque o dano é FixedPoint2 de duas
+      # casas. O SplitEnsureAll divide só entre as partes FERIDAS, então a cura
+      # chega onde precisa em vez de evaporar no arredondamento.
+      # Referência: a espécie Shattered, em _Goobstation/Heretic/Body/Species.
+      splitBehavior: SplitEnsureAll
       allowedStates:
         - Alive
       # Whiskey: os valores TÊM que ficar em 0,1 ou mais por tipo, e o motivo não é

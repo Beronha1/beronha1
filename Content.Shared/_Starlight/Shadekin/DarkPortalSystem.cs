@@ -194,7 +194,9 @@ public sealed partial class DarkPortalSystem : EntitySystem
         {
             Act = () =>
             {
-                if (!_shadekin.OnAttemptEnergyUse(user, brighteye, 50))
+                // Whiskey: era 50 cravado enquanto o verbo decidia por component.StabilizeCost.
+                // O DataField só mudava o texto do menu; o custo real ficava parado.
+                if (!_shadekin.OnAttemptEnergyUse(user, brighteye, component.StabilizeCost))
                     return;
 
                 _anomalySystem.ChangeAnomalyStability(uid, -0.15f, anomaly);

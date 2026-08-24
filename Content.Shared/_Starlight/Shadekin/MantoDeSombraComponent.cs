@@ -24,4 +24,14 @@ public sealed partial class MantoDeSombraComponent : Component
     /// <summary> Se o manto está valendo agora. Controlado pelo sistema. </summary>
     [ViewVariables]
     public bool Ativo;
+
+    /// <summary>
+    ///     Se foi o manto que pôs a furtividade nesta entidade.
+    ///
+    ///     Existe porque o NullSpace também concede Stealth, com outro valor. Sem
+    ///     esta marca, o manto apagaria a furtividade do NullSpace ao clarear, e
+    ///     vice-versa. Quem não concedeu não tira.
+    /// </summary>
+    [ViewVariables]
+    public bool ConcedeuFurtividade;
 }

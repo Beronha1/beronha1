@@ -22,11 +22,6 @@
   naming: First
   # Whiskey: o Vocal daqui não mapeia som por sexo; quem faz isso é este campo.
   # A ordem e masculino, feminino, sem sexo.
-  defaultSoundsBySex: [MaleShadekin, FemaleShadekin, MaleShadekin]
-  # E o voices precisa listar as mesmas, senão o servidor recusa a voz do perfil
-  # e cai na humana, que não tem marr nem wurble. O teste de integração
-  # HumanoidProfileTests cobra exatamente isso.
-  voices: [MaleShadekin, FemaleShadekin]
   minAge: 20
   youngAge: 100
   oldAge: 200

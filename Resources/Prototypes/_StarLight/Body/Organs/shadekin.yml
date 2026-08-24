@@ -115,7 +115,11 @@
 
 - type: entity
   id: OrganShadekinCore
-  parent: BaseItem
+  # Whiskey: no Starlight o núcleo herda BaseItem direto. Aqui órgão precisa da
+  # base de órgão, que traz Damageable, Injurable e Destructible, e que já herda
+  # de BaseItem. Sem isso o servidor cospe "Can't resolve DamageableComponent"
+  # a cada tique: eram 1591 linhas de erro numa rodada só.
+  parent: OrganBase
   name: shadekin core
   suffix: Shadekin
   description: A core of a Shadekin, a mysterious and powerful organ that seems to be the source of their energy.

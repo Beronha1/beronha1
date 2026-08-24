@@ -1,0 +1,20 @@
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Habilidades acrescentadas pela Whiskey, para o Shadekin comum ter decisão
+# ativa e não só sofrer ou se curar conforme onde está.
+
+- type: entity
+  id: ShadekinApagarLuzAction
+  name: shadekin-acao-apagar-luz-nome
+  description: shadekin-acao-apagar-luz-descricao
+  categories: [HideSpawnMenu]
+  components:
+    - type: Action
+      useDelay: 45
+      itemIconStyle: BigItem
+    - type: Sprite
+      sprite: _Starlight/Interface/Actions/shadekin32.rsi
+      state: phase_shift
+    - type: InstantAction
+      event: !type:ApagarLuzActionEvent

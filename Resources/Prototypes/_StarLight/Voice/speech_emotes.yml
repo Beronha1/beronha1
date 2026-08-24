@@ -8,6 +8,9 @@
 
 - type: emote
   id: Marr
+  # Whiskey: o Starlight não dá ícone a estes dois, e no menu radial isso vira
+  # botão em branco. Reaproveitei a pegada do felionoid, que já veio no porte.
+  icon: { sprite: _Starlight/Actions/felionoid.rsi, state: cat_print }
   name: chat-emote-name-marr
   category: Vocal
   available: false
@@ -57,6 +60,7 @@
 
 - type: emote
   id: Wurble
+  icon: { sprite: _Starlight/Actions/felionoid.rsi, state: cat_print }
   name: chat-emote-name-wurble
   category: Vocal
   available: false

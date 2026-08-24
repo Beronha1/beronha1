@@ -51,6 +51,7 @@ namespace Content.Shared._Starlight.Shadekin;
 
 public sealed partial class ShadekinSystem : EntitySystem
 {
+    [Dependency] private MantoDeSombraSystem _manto = default!;
     [Dependency] private IGameTiming _timing = default!;
     [Dependency] private AlertsSystem _alerts = default!;
     [Dependency] private SharedTransformSystem _transform = default!;
@@ -394,6 +395,10 @@ public sealed partial class ShadekinSystem : EntitySystem
 
             ToggleNightVision(uid, component.CurrentState);
             SetPassiveBuff(uid, component.CurrentState);
+
+            // Whiskey: o manto de sombra acompanha o mesmo estado de luz.
+            if (TryComp<MantoDeSombraComponent>(uid, out var manto))
+                _manto.Atualizar(uid, manto, component.CurrentState);
             _speed.RefreshMovementSpeedModifiers(uid);
 
             if (component.CurrentState == ShadekinState.Extreme)

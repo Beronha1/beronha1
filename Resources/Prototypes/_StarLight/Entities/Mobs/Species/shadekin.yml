@@ -38,6 +38,17 @@
       # que este fork já tem, e emote duplicado quebra o chat. Ficou o Hiss daqui.
       allowedEmotes: ["Marr", "Wurble", "Hiss", "Growl", "Purr"]
     - type: Vocal
+    # Whiskey: o som do emote não fica no emote nesta base, vem do conjunto que o
+    # Vocal aponta, e por padrão esse conjunto é a voz que o jogador escolheu.
+    # Este componente dá ao Shadekin o som dele sem encostar no seletor de voz.
+    - type: SomDeEmoteProprio
+      masculino: MaleShadekin
+      feminino: FemaleShadekin
+    # Whiskey: duas habilidades acrescentadas por nós, as duas apagadas na luz.
+    # O manto some quando a luz sobe; apagar luz é a forma de a raça fabricar o
+    # escuro dela, ao preço de deixar rastro de sabotagem.
+    - type: MantoDeSombra
+    - type: ApagarLuz
       # Whiskey: o Vocal daqui não mapeia por sexo. Quem faz isso é o campo
       # defaultSoundsBySex do species.
     - type: MeleeWeapon

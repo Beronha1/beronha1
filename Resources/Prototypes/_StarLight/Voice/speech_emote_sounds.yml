@@ -10,7 +10,6 @@
 
 - type: emoteSounds
   id: MaleShadekin
-  voiceSelectorName: humanoid-profile-editor-voice-masculine
   params:
     variation: 0.125
   sounds:
@@ -47,9 +46,6 @@
 
 - type: emoteSounds
   id: FemaleShadekin
-  # Whiskey: sem este campo o seletor de voz mostra "Voz sem nome", porque o
-  # padrão do EmoteSoundsPrototype é humanoid-profile-editor-voice-none.
-  voiceSelectorName: humanoid-profile-editor-voice-feminine
   params:
     variation: 0.125
   sounds:

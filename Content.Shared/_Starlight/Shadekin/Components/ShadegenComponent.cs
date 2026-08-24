@@ -1,0 +1,25 @@
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
+using Robust.Shared.GameStates;
+
+namespace Content.Shared._Starlight.Shadekin.Components;
+
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentPause, AutoGenerateComponentState]
+public sealed partial class ShadegenComponent : Component
+{
+    [DataField, AutoNetworkedField]
+    public float Range = 8f;
+
+    [DataField]
+    public bool DestroyLights;
+
+    [ViewVariables(VVAccess.ReadOnly), AutoPausedField]
+    public TimeSpan NextUpdate = TimeSpan.Zero;
+
+    [DataField]
+    public TimeSpan UpdateCooldown = TimeSpan.FromSeconds(1f);
+}

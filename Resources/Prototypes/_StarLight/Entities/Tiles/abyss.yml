@@ -1,0 +1,62 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Piso de abismo, usado como fundo dos mapas da escuridão.
+
+- type: entity
+  id: AbyssOne
+  name: abyss
+  description: Rock.
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Clickable
+    - type: Sprite
+      sprite: /Textures/_Starlight/Tiles/Planet/abyss.rsi
+      layers:
+        - state: abyss1
+          shader: unshaded
+      drawdepth: LowFloors
+    - type: SyncSprite
+    - type: RequiresTile
+    - type: Transform
+      anchored: true
+    - type: Tag
+      tags:
+        - HideContextMenu
+
+- type: entity
+  id: AbyssTwo
+  parent: AbyssOne
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      layers:
+        - state: abyss2
+          shader: unshaded
+
+- type: entity
+  id: AbyssThree
+  parent: AbyssOne
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      layers:
+        - state: abyss3
+          shader: unshaded
+
+- type: entity
+  id: AbyssFour
+  parent: AbyssOne
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: Sprite
+      layers:
+        - state: abyss4
+          shader: unshaded

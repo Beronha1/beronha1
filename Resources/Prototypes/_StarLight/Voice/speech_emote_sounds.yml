@@ -1,0 +1,81 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: as coleções Felionoid* são do Starlight e não existem aqui. O
+# Hisses saiu porque colide com o Hiss deste fork, e o ronronar ficou sem som
+# porque não há coleção equivalente.
+
+- type: emoteSounds
+  id: MaleShadekin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: ShadekinMaleScreams
+    Laugh:
+      collection: MaleLaugh
+    Sneeze:
+      collection: MaleSneezes
+    Cough:
+      collection: MaleCoughs
+    Yawn:
+      collection: MaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: MaleSigh
+    Crying:
+      collection: MaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: MaleGasp
+    DefaultDeathgasp:
+      collection: MaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg
+
+- type: emoteSounds
+  id: FemaleShadekin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: ShadekinFemaleScreams
+    Laugh:
+      collection: FemaleLaugh
+    Sneeze:
+      collection: FemaleSneezes
+    Cough:
+      collection: FemaleCoughs
+    Yawn:
+      collection: FemaleYawn
+    Snore:
+      collection: Snores
+    Sigh:
+      collection: FemaleSigh
+    Crying:
+      collection: FemaleCry
+    Whistle:
+      collection: Whistles
+    Weh:
+      collection: Weh
+    Hew:
+      collection: Hew
+    Gasp:
+      collection: FemaleGasp
+    DefaultDeathgasp:
+      collection: FemaleDeathGasp
+    Marr:
+      path: /Audio/_Starlight/Voice/Shadekin/mar.ogg
+    Wurble:
+      path: /Audio/_Starlight/Voice/Shadekin/wurble.ogg

@@ -1,0 +1,52 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: aqui vivia um "type: body" com slots e connections, que este fork não
+# tem mais. A montagem agora é o InitialBody, um mapa de categoria de órgão para
+# prototype, e ele mora na entidade de aparência da espécie.
+# Molde seguido: AppearanceHuman, em Resources/Prototypes/Body/Species/human.yml
+
+# O núcleo é órgão exclusivo do Shadekin, então precisa de categoria própria e de
+# um encaixe no torso dele, que o OrganShadekinTorso acrescenta.
+- type: organCategory
+  id: ShadekinCore
+
+- type: entity
+  parent: BaseSpeciesAppearance
+  id: AppearanceShadekin
+  categories: [ HideSpawnMenu ]
+  name: shadekin appearance
+  components:
+  - type: InitialBody
+    organs:
+      Torso: OrganShadekinTorso
+      Head: OrganShadekinHead
+      ArmLeft: OrganShadekinArmLeft
+      ArmRight: OrganShadekinArmRight
+      HandLeft: OrganShadekinHandLeft
+      HandRight: OrganShadekinHandRight
+      LegLeft: OrganShadekinLegLeft
+      LegRight: OrganShadekinLegRight
+      FootLeft: OrganShadekinFootLeft
+      FootRight: OrganShadekinFootRight
+      Brain: OrganShadekinBrain
+      Eyes: OrganShadekinEyes
+      Tongue: OrganShadekinTongue
+      Appendix: OrganShadekinAppendix
+      Heart: OrganShadekinHeart
+      Stomach: OrganShadekinStomach
+      Liver: OrganShadekinLiver
+      Kidneys: OrganShadekinKidneys
+      ShadekinCore: OrganShadekinCore
+      Tail: OrganShadekinTail
+      # Pulmão e orelha ficam com o órgão humano de propósito: o corpo do
+      # Starlight não listava nenhum dos dois, mas aqui o Shadekin herda o
+      # MobAtmosStandard, que dá respirador, e sem pulmão ele sufocaria ao
+      # nascer. O RSI de órgãos dele também não tem desenho para esses dois.
+      Lungs: OrganHumanLungs
+      Ears: OrganHumanEars
+  - type: HumanoidProfile
+    species: Shadekin

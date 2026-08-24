@@ -1,0 +1,43 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+
+- type: entity
+  abstract: true
+  parent: BaseObjective
+  id: BaseBrighteyeObjective
+  components:
+  - type: Objective
+    difficulty: 1.5
+    issuer: Brighteye
+  - type: RoleRequirement
+    roles:
+    - BrighteyeRole
+
+- type: entity
+  parent: [BaseBrighteyeObjective]
+  id: BrighteyeSurviveObjective
+  name: Protect your core
+  description: Ensure your core is not damaged or removed!
+  components:
+  - type: BrighteyeSurviveCondition
+  - type: Objective
+    unique: true
+    icon:
+      sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+      state: core
+
+- type: entity
+  parent: [BaseBrighteyeObjective]
+  id: BrighteyePortalObjective
+  name: Open a portal to the dark
+  description: Open and keep a portal open to the dark.
+  components:
+  - type: BrighteyePortalCondition
+  - type: Objective
+    unique: true
+    icon:
+      sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
+      state: portal

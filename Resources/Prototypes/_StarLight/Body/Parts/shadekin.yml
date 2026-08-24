@@ -1,0 +1,135 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Whiskey: o Starlight define parte de corpo como entidade "Part" e monta o
+# corpo com um prototype "type: body", que este fork não tem mais. Aqui parte de
+# corpo É órgão, então cada parte virou um OrganShadekin* herdando o OrganBase*
+# equivalente, e a montagem foi para o InitialBody do AppearanceShadekin.
+# Molde seguido: Resources/Prototypes/Body/Species/human.yml
+
+- type: entity
+  parent: OrganBaseOrganic
+  id: OrganShadekin
+  abstract: true
+  suffix: shadekin
+
+- type: entity
+  parent: OrganShadekin
+  id: OrganShadekinExternal
+  abstract: true
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+  - type: VisualOrgan
+    data:
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+  - type: VisualOrganMarkings
+    markingData:
+      group: Shadekin
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: DarkBlood
+        Quantity: 10
+
+- type: entity
+  parent: [ OrganBaseTorsoSexed, OrganBaseTorso, OrganShadekinExternal ]
+  id: OrganShadekinTorso
+  components:
+  # a lista de slots é reescrita inteira porque YAML substitui, e o Shadekin
+  # precisa do encaixe do núcleo, que humano nenhum tem
+  - type: BodyPart
+    partType: Torso
+    slots:
+    - Head
+    - ArmLeft
+    - ArmRight
+    - LegLeft
+    - LegRight
+    - Appendix
+    - Lungs
+    - Heart
+    - Stomach
+    - Liver
+    - Kidneys
+    - ShadekinCore
+    - Tail
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: DarkBlood
+        Quantity: 20
+
+- type: entity
+  parent: [ OrganBaseHeadSexed, OrganBaseHead, OrganShadekinExternal ]
+  id: OrganShadekinHead
+  components:
+  - type: VisualOrganMarkings
+    hideableLayers:
+    - enum.HumanoidVisualLayers.Hair
+    - enum.HumanoidVisualLayers.Snout
+    - enum.HumanoidVisualLayers.FacialHair
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: DarkBlood
+        Quantity: 10
+
+- type: entity
+  parent: [ OrganBaseArmLeft, OrganShadekinExternal ]
+  id: OrganShadekinArmLeft
+
+- type: entity
+  parent: [ OrganBaseArmRight, OrganShadekinExternal ]
+  id: OrganShadekinArmRight
+
+- type: entity
+  parent: [ OrganBaseHandLeft, OrganShadekinExternal ]
+  id: OrganShadekinHandLeft
+
+- type: entity
+  parent: [ OrganBaseHandRight, OrganShadekinExternal ]
+  id: OrganShadekinHandRight
+
+- type: entity
+  parent: [ OrganBaseLegLeft, OrganShadekinExternal ]
+  id: OrganShadekinLegLeft
+
+- type: entity
+  parent: [ OrganBaseLegRight, OrganShadekinExternal ]
+  id: OrganShadekinLegRight
+
+- type: entity
+  parent: [ OrganBaseFootLeft, OrganShadekinExternal ]
+  id: OrganShadekinFootLeft
+
+- type: entity
+  parent: [ OrganBaseFootRight, OrganShadekinExternal ]
+  id: OrganShadekinFootRight
+
+# Whiskey: o Shadekin usa marcação de cauda, e o teste BodyMarkingsTest cobra que
+# alguma parte do corpo hospede a camada Tail. Sem este órgão a marcação existia
+# sem lugar para aparecer. Molde: OrganVulpkaninTail, em _Trauma/Body/Species.
+- type: entity
+  parent: [ OrganBaseTail, OrganShadekinExternal ]
+  id: OrganShadekinTail
+  components:
+  # o OrganBaseTail pede state 'tail', e o OrganShadekinExternal aponta o Sprite
+  # para a parts.rsi, que não tem esse state. Aqui a cauda não tem desenho
+  # próprio, quem desenha é a marcação, então as duas camadas vão para o vazio.
+  - type: Sprite
+    sprite: _Trauma/empty.rsi
+    state: empty
+  - type: VisualOrgan
+    data:
+      sprite: _Trauma/empty.rsi
+      state: empty # sem sprite próprio: quem desenha é a marcação

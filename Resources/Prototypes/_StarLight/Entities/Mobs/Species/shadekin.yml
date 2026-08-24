@@ -1,0 +1,199 @@
+- type: entity
+  save: false
+  name: Urist McShadow
+  # Whiskey: BaseMobSpecies e BaseSpeciesPickupableHuge são do Starlight. Aqui o
+  # equivalente é BaseSpeciesMobOrganic, e a aparência entra como pai, igual o
+  # MobHuman faz com AppearanceHuman.
+  parent: [AppearanceShadekin, MobBloodstream, MobAtmosStandard, MobFlammable, BaseSpeciesMobOrganic]
+  id: BaseMobShadekin
+  abstract: true
+  components:
+    # Whiskey: o componente daqui é LanguageSpeaker, com a mesma forma de listas.
+    # O comum da estação é TauCetiBasic, não GalacticCommon, e o Empathy é
+    # exclusivo do Starlight, então ficou de fora.
+    - type: LanguageSpeaker
+      speaks:
+        - TauCetiBasic
+        - Marish
+      understands:
+        - TauCetiBasic
+        - Marish
+    - type: Inventory
+      speciesId: shadekin
+    - type: Shadekin
+      thresholds:
+        0.8: Low
+        5: Annoying
+        10: High
+        15: Extreme
+    - type: Absorbable
+    - type: Hunger
+    - type: Thirst
+    - type: Icon
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+      state: full
+    - type: Body # Whiskey: sem campo; quem monta é o InitialBody do AppearanceShadekin
+    - type: Speech
+      # Whiskey: o Hisses do Starlight tem as mesmas palavras-gatilho do Hiss
+      # que este fork já tem, e emote duplicado quebra o chat. Ficou o Hiss daqui.
+      allowedEmotes: ["Marr", "Wurble", "Hiss", "Growl", "Purr"]
+    - type: Vocal
+    # Whiskey: o som do emote não fica no emote nesta base, vem do conjunto que o
+    # Vocal aponta, e por padrão esse conjunto é a voz que o jogador escolheu.
+    # Este componente dá ao Shadekin o som dele sem encostar no seletor de voz.
+    - type: SomDeEmoteProprio
+      masculino: MaleShadekin
+      feminino: FemaleShadekin
+    # Whiskey: duas habilidades acrescentadas por nós, as duas apagadas na luz.
+    # O manto some quando a luz sobe; apagar luz é a forma de a raça fabricar o
+    # escuro dela, ao preço de deixar rastro de sabotagem.
+    - type: MantoDeSombra
+      # 0 é sumir de vez, 1 é normal. Quanto menor, menos o shader desenha, e
+      # o vulto fica mais discreto. Fica aqui no prototype de propósito, para
+      # dar para ajustar no balanceamento sem recompilar.
+      visibilidadeNoEscuro: 0.2
+      # Whiskey: o Vocal daqui não mapeia por sexo. Quem faz isso é o campo
+      # defaultSoundsBySex do species.
+    - type: MeleeWeapon
+      soundHit:
+        collection: AlienClaw
+      angle: 30
+      animation: WeaponArcClaw
+      damage:
+        types:
+          Slash: 5
+    - type: Damageable
+      damageModifierSet: Shadekin
+    # Whiskey: o damageContainer saiu do Damageable e vive no Injurable,
+    # que é do Shitmed. Ver Resources/Prototypes/Body/base_organs.yml.
+    - type: Injurable
+      damageContainer: Biological
+    - type: Deathgasp
+      # Whiskey: o Deathgasp daqui não tem damageType.
+    - type: Reactive
+      groups:
+        Flammable: [Touch]
+        Extinguish: [Touch]
+        Acidic: [ Touch, Ingestion ]
+      reactions:
+        - reagents: [Water, SpaceCleaner]
+          methods: [Touch]
+          effects:
+            - !type:WashCreamPie
+            - !type:Emote
+              emote: Hiss
+              showInChat: false
+    - type: Bloodstream
+      bloodlossDamage:
+        types:
+          Bloodloss: 1
+      bloodlossHealDamage:
+        types:
+          Bloodloss: -0.25
+      bloodReferenceSolution:
+        reagents:
+          - ReagentId: DarkBlood
+            Quantity: 300
+    - type: Flammable
+      damage:
+        types:
+          Heat: 1.5
+    - type: TypingIndicator
+      proto: alien
+    - type: PassiveDamage
+      # Whiskey: SEM isto a cura não acontece. O padrão é Split, que divide o valor
+      # entre as DEZ partes do corpo; com 0,1 por tipo cada parte receberia 0,01 e
+      # com qualquer coisa menor receberia zero, porque o dano é FixedPoint2 de duas
+      # casas. O SplitEnsureAll divide só entre as partes FERIDAS, então a cura
+      # chega onde precisa em vez de evaporar no arredondamento.
+      # Referência: a espécie Shattered, em _Goobstation/Heretic/Body/Species.
+      splitBehavior: SplitEnsureAll
+      allowedStates:
+        - Alive
+      # Whiskey: os valores TÊM que ficar em 0,1 ou mais por tipo, e o motivo não é
+      # gosto. O dano e guardado em FixedPoint2, que tem duas casas decimais, e o
+      # SplitDamageBehavior.Split ainda divide o valor entre as 10 partes do corpo.
+      # Com 0,0175 por tipo, cada parte recebia 0,002, que arredonda para ZERO: a
+      # cura do porte nunca funcionou, em estado nenhum. Com 0,1, cada parte recebe
+      # 0,01, que é o mínimo representável.
+      #
+      # Quatro tipos a 0,1 dao 0,4 por segundo, ou 24 por minuto. Para comparar, o
+      # slime cura cerca de 8 por minuto, e o humano não cura sozinho.
+      damage:
+        types:
+          Blunt: -0.1
+          Slash: -0.1
+          Piercing: -0.1
+          Heat: -0.1
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTypeTrigger
+            damageType: Blunt
+            damage: 400
+          behaviors:
+            - !type:GibBehavior {}
+            - !type:SpawnEntitiesBehavior
+              spawn:
+                ShadekinShadow:
+                  min: 1
+                  max: 1
+        - trigger: !type:DamageTypeTrigger
+            damageType: Heat
+            damage: 1500
+          behaviors:
+            - !type:SpawnEntitiesBehavior
+              spawnInContainer: true
+              spawn:
+                Ash:
+                  min: 1
+                  max: 1
+                ShadekinShadow:
+                  min: 1
+                  max: 1
+            - !type:BurnBodyBehavior {}
+
+    # BaseMobSpeciesOrganic // Because we dont want respirator to be used.
+    - type: Barotrauma
+      damage:
+        types:
+          Blunt: 0.85 #per second, scales with pressure and other constants.
+          Heat: 0.1
+    - type: Fingerprint
+    - type: Blindable
+    # Whiskey: DarkenedVision é sobreposição de cliente do Starlight. Nem lá o
+    # Shadekin mexia nela, a força nasce zero e nenhum sistema levanta, então
+    # ela era inerte de qualquer jeito.
+    # Other
+    - type: TemperatureDamage
+      heatDamageThreshold: 325
+      coldDamageThreshold: 260
+      coldDamage:
+        types:
+          Cold: 0.1 #per second, scales with temperature & other constants
+      heatDamage:
+        types:
+          Heat: 1.5 #per second, scales with temperature & other constants
+    - type: Temperature
+      temperature: 310.15
+      specificHeat: 42
+    - type: TemperatureSpeed
+      thresholds:
+        293: 0.8
+        280: 0.6
+        260: 0.4
+    - type: ThermalRegulator
+      metabolismHeat: 800
+      radiatedHeat: 100
+      implicitHeatRegulation: 500
+      sweatHeatRegulation: 2000
+      shiveringHeatRegulation: 2000
+      normalBodyTemperature: 310.15
+      thermalRegulationTemperatureThreshold: 2
+    - type: Perishable
+    - type: Butcherable
+      # Whiskey: o Butcherable daqui não tem butcheringType.
+      spawned:
+        - id: FoodMeat
+          amount: 5
+    - type: FireVisuals
+      alternateState: Standing

@@ -1,0 +1,63 @@
+using Content.Shared._Starlight.Capacidades;
+// SPDX-FileCopyrightText: 2024-2026 Starlight
+// SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+// SPDX-License-Identifier: MIT
+//
+// Portado de https://github.com/ss14Starlight/space-station-14
+
+using Content.Shared._Starlight.NullSpace.Components;
+using Content.Shared._Starlight.Shadekin.Components;
+using Content.Shared.Clothing.Components;
+using Content.Shared.Inventory.Events;
+using Content.Shared.Popups;
+using Content.Shared.Research.Components;
+
+namespace Content.Shared._Starlight.NullSpace.Systems;
+
+public sealed partial class NullSpaceDrainerSystem : EntitySystem
+{
+    [Dependency] private FontesDeCapacidadeSystem _capacidades = default!;
+    [Dependency] private SharedPopupSystem _popup = default!;
+    public override void Initialize()
+    {
+        SubscribeLocalEvent<NullSpaceDrainerComponent, OnAttemptEnergyUseEvent>(OnAttempt);
+
+        SubscribeLocalEvent<NullSpaceDrainerComponent, ResearchServerGetPointsPerSecondEvent>(OnGetPointsPerSecond);
+
+        SubscribeLocalEvent<NullSpaceDrainerComponent, GotEquippedEvent>(OnEquipped);
+        SubscribeLocalEvent<NullSpaceDrainerComponent, GotUnequippedEvent>(OnUnequipped);
+    }
+
+    private void OnAttempt(EntityUid uid, NullSpaceDrainerComponent component, CancellableEntityEventArgs args)
+    {
+        _popup.PopupEntity(Loc.GetString("shadekin-fail-generic"), uid, uid, PopupType.LargeCaution);
+        args.Cancel();
+    }
+
+    private void OnEquipped(EntityUid uid, NullSpaceDrainerComponent component, GotEquippedEvent args)
+    {
+        if (!TryComp<ClothingComponent>(uid, out var clothing)
+            || !clothing.Slots.HasFlag(args.SlotFlags))
+            return;
+
+        _capacidades.Conceder<NullSpaceDrainerComponent>(args.EquipTarget, uid);
+        component.Target = args.EquipTarget;
+    }
+
+    private void OnUnequipped(EntityUid uid, NullSpaceDrainerComponent component, GotUnequippedEvent args)
+    {
+        _capacidades.Devolver<NullSpaceDrainerComponent>(args.EquipTarget, uid);
+        component.Target = null;
+    }
+
+    // You fucking monster... coding this makes me sad for my kins.
+    private void OnGetPointsPerSecond(EntityUid uid, NullSpaceDrainerComponent component, ref ResearchServerGetPointsPerSecondEvent args)
+    {
+        if (component.Target is not null && TryComp<BrighteyeComponent>(component.Target.Value, out var brighteye) && brighteye.Energy > 0)
+        {
+            brighteye.Energy -= 1;
+            args.Points += component.Points;
+            Dirty(component.Target.Value, brighteye);
+        }
+    }
+}

@@ -1,0 +1,25 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+# Só os blocos que o Shadekin usa, extraídos um a um em vez de copiar os
+# arquivos inteiros do Starlight, que trariam conteúdo sem relação.
+
+- type: entity
+  parent: [ClothingEyesBase, BaseSecurityScienceCommandContraband]
+  id: ClothingEyesGlassesNullSpace
+  name: nullspace goggles
+  description: An unusual pair of goggles developed during a time of inhumane experimentation involving Shadekin. They are designed to allow the wearer to peer into NullSpace.
+  components:
+  - type: Sprite
+    sprite: _Starlight/Clothing/Eyes/Glasses/nullspacegoogles.rsi
+  - type: Clothing
+    sprite: _Starlight/Clothing/Eyes/Glasses/nullspacegoogles.rsi
+  - type: ShowNullSpace
+    showShader: true
+  # Whiskey: aqui roupa concede visão noturna com o NightVision direto.
+  - type: NightVision
+  - type: Construction
+    graph: ClothingGlassesNullSpace
+    node: glasses

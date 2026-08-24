@@ -1,0 +1,154 @@
+- type: entity
+  id: OrganShadekinBrain
+  parent: OrganHumanBrain
+  name: shadekin brain
+  suffix: Shadekin
+  description: "The source of incredible, unending intelligence. Marr."
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    state: brain
+
+- type: entity
+  id: OrganShadekinEyes
+  parent: OrganHumanEyes
+  name: shadekin eyes
+  suffix: Shadekin
+  description: "Eyes of a Black-eye Shadekin that can never see their home reality again. These eyes have excellent night vision, but are very sensitive to bright flashes as a result."
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    layers:
+      - state: eyes
+  # Whiskey: FunctionalOrgan do Starlight equivale ao OrganComponents daqui, e
+  # OrganVisualization equivale ao VisualOrgan. O FlashModifier virou
+  # SensibilidadeAFlash, que usa o FlashDurationMultiplierEvent deste fork.
+  - type: OrganComponents
+    onAdd:
+    - type: NightVision
+    - type: SensibilidadeAFlash
+      multiplicador: 2
+  - type: VisualOrgan
+    layer: enum.HumanoidVisualLayers.Eyes
+    data:
+      sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
+      state: eyes
+  - type: Tag
+    tags:
+      - ShadekinEyes
+
+- type: entity
+  id: OrganShadekinTongue
+  parent: OrganHumanTongue
+  name: shadekin tongue
+  suffix: Shadekin
+  description: "Used to marr and occasionally wurble."
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    state: tongue
+
+- type: entity
+  id: OrganShadekinAppendix
+  parent: OrganHumanAppendix
+  name: shadekin appendix
+  suffix: Shadekin
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    layers:
+      - state: appendix
+
+- type: entity
+  id: OrganShadekinHeart
+  parent: OrganHumanHeart
+  name: shadekin heart
+  suffix: Shadekin
+  components:
+  # Whiskey: o OrganBaseHeart daqui declara layers com o estado heart-on, do
+  # coração batendo, e camada herdada vence o campo state solto. O RSI do
+  # Shadekin só tem heart, então a camada precisa ser sobrescrita inteira.
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    layers:
+    - state: heart
+
+- type: entity
+  id: OrganShadekinStomach
+  parent: OrganHumanStomach
+  name: shadekin stomach
+  suffix: Shadekin
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    state: stomach
+  # Whiskey: o Starlight sobrescrevia a solução aqui pelo SolutionContainerManager,
+  # que este fork aposentou em favor do SolutionManager com prototype nomeado. Os
+  # números também não traduzem: o estômago base do Starlight é menor que o daqui,
+  # que tem maxVol 150, então o 40 deles seria um corte enorme sem motivo. O
+  # Shadekin usa o estômago padrão, e o único traço próprio que sobra é o sprite.
+
+- type: entity
+  id: OrganShadekinLiver
+  parent: OrganHumanLiver
+  name: shadekin liver
+  suffix: Shadekin
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    state: liver
+
+- type: entity
+  id: OrganShadekinKidneys
+  parent: OrganHumanKidneys
+  name: shadekin kidneys
+  suffix: Shadekin
+  components:
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    layers:
+      - state: kidneys
+
+- type: entity
+  id: OrganShadekinCore
+  # Whiskey: no Starlight o núcleo herda BaseItem direto. Aqui órgão precisa da
+  # base de órgão, que traz Damageable, Injurable e Destructible, e que já herda
+  # de BaseItem. Sem isso o servidor cospe "Can't resolve DamageableComponent"
+  # a cada tique: eram 1591 linhas de erro numa rodada só.
+  parent: OrganBase
+  name: shadekin core
+  suffix: Shadekin
+  description: A core of a Shadekin, a mysterious and powerful organ that seems to be the source of their energy.
+  components:
+  - type: OrganShadekinCore
+  - type: Organ
+    category: ShadekinCore
+  # Whiskey: sem isto o BodyRestoreTest quebra com "Can't resolve ChildOrgan".
+  # Todo órgão que mora dentro de uma parte precisa dizer de quem é filho, e o
+  # OrganBase sozinho não traz esse componente.
+  - type: ChildOrgan
+    parents: [ Torso ]
+  - type: Sprite
+    sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
+    layers:
+      - state: core
+  - type: Tag
+    tags:
+      - DamagedShadekinCore
+  - type: StaticPrice
+    price: 200
+
+
+- type: entity
+  id: OrganShadekinCoreUndamaged
+  parent: OrganShadekinCore
+  name: bright-eye core
+  suffix: Bright-eye
+  components:
+  - type: OrganShadekinCore
+    damaged: false
+  - type: Tag
+    tags:
+      - ShadekinCore
+  - type: StaticPrice
+    price: 50000

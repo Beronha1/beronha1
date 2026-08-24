@@ -58,6 +58,7 @@
     - Liver
     - Kidneys
     - ShadekinCore
+    - Tail
   - type: Extractable
     juiceSolution:
       reagents:
@@ -114,3 +115,15 @@
 - type: entity
   parent: [ OrganBaseFootRight, OrganShadekinExternal ]
   id: OrganShadekinFootRight
+
+# Whiskey: o Shadekin usa marcação de cauda, e o teste BodyMarkingsTest cobra que
+# alguma parte do corpo hospede a camada Tail. Sem este órgão a marcação existia
+# sem lugar para aparecer. Molde: OrganVulpkaninTail, em _Trauma/Body/Species.
+- type: entity
+  parent: [ OrganBaseTail, OrganShadekinExternal ]
+  id: OrganShadekinTail
+  components:
+  - type: VisualOrgan
+    data:
+      sprite: _Trauma/empty.rsi
+      state: empty # sem sprite próprio: quem desenha é a marcação

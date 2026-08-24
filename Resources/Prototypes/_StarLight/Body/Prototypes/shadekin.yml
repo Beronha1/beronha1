@@ -41,6 +41,7 @@
       Liver: OrganShadekinLiver
       Kidneys: OrganShadekinKidneys
       ShadekinCore: OrganShadekinCore
+      Tail: OrganShadekinTail
       # Pulmão e orelha ficam com o órgão humano de propósito: o corpo do
       # Starlight não listava nenhum dos dois, mas aqui o Shadekin herda o
       # MobAtmosStandard, que dá respirador, e sem pulmão ele sufocaria ao

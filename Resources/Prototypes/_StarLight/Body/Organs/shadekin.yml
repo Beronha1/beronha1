@@ -127,6 +127,11 @@
   - type: OrganShadekinCore
   - type: Organ
     category: ShadekinCore
+  # Whiskey: sem isto o BodyRestoreTest quebra com "Can't resolve ChildOrgan".
+  # Todo órgão que mora dentro de uma parte precisa dizer de quem é filho, e o
+  # OrganBase sozinho não traz esse componente.
+  - type: ChildOrgan
+    parents: [ Torso ]
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     layers:

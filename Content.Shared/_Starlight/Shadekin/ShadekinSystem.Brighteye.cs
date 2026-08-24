@@ -49,7 +49,11 @@ public sealed partial class ShadekinSystem
 
         RemCompDeferred<MindShieldComponent>(uid);
 
-        _language.AddLanguage(uid, "Empathy");
+        // Whiskey: o Starlight dava o idioma Empathy ao Brighteye. Esse idioma não
+        // existe aqui, e o sistema de conhecimento monta LanguageEmpathy a partir do
+        // nome, não acha, e estoura DebugAssert. Só dispara em build Debug, que é o
+        // que o CI roda, por isso passou no Release local. O Shadekin já fala Marish,
+        // que é o idioma próprio dele e esse foi portado.
 
         _alerts.ShowAlert(uid, component.BrighteyeAlert);
         _alerts.ShowAlert(uid, component.PortalAlert);
@@ -122,8 +126,6 @@ public sealed partial class ShadekinSystem
 
     private void OnShutdown(EntityUid uid, BrighteyeComponent component, ComponentShutdown args)
     {
-        _language.RemoveLanguage(uid, "Empathy", removeUnderstood: false);
-
         _alerts.ClearAlert(uid, component.BrighteyeAlert);
         _alerts.ClearAlert(uid, component.PortalAlert);
         _alerts.ClearAlert(uid, component.RejuvenationAlert);

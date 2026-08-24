@@ -67,12 +67,6 @@ entities:
         immutable: True
         temperature: 293.2
         moles: {}
-    - type: WorldController
-      chunks: {}
-    - type: BiomeSelection
-      biomes:
-      - TheDarkStandard
-      - Failsafe
   - uid: 2
     components:
     - type: MetaData

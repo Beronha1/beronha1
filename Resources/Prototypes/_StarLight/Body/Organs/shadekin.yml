@@ -82,15 +82,11 @@
   - type: Sprite
     sprite: _Starlight/Mobs/Species/Shadekin/organs.rsi
     state: stomach
-  - type: SolutionContainerManager
-    solutions:
-      stomach:
-        maxVol: 40
-      food:
-        maxVol: 5
-        reagents:
-        - ReagentId: UncookedAnimalProteins
-          Quantity: 5
+  # Whiskey: o Starlight sobrescrevia a solução aqui pelo SolutionContainerManager,
+  # que este fork aposentou em favor do SolutionManager com prototype nomeado. Os
+  # números também não traduzem: o estômago base do Starlight é menor que o daqui,
+  # que tem maxVol 150, então o 40 deles seria um corte enorme sem motivo. O
+  # Shadekin usa o estômago padrão, e o único traço próprio que sobra é o sprite.
 
 - type: entity
   id: OrganShadekinLiver

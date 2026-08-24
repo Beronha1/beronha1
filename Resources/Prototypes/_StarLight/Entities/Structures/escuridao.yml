@@ -148,7 +148,7 @@
       canTeleportToOtherMaps: true
       randomTeleport: false
     - type: WarpPoint
-      location: The Dark
+      location: location-the-dark  # Whiskey: aqui location é chave de locale, não texto
       blacklist:
         tags:
           - GhostOnlyWarp

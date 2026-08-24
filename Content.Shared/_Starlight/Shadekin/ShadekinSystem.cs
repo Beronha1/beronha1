@@ -246,32 +246,45 @@ public sealed partial class ShadekinSystem : EntitySystem
         return illumination;
     }
 
-    private void SetPassiveBuff(EntityUid uid, ShadekinState shadekinState)
+    /// <summary>
+    ///     Ajusta a cura passiva conforme a luz.
+    ///
+    ///     Whiskey: o original mexia no campo Interval, que ninguém lê, porque o
+    ///     PassiveDamageSystem crava um segundo. Então "cura mais rápida no escuro"
+    ///     não fazia nada. Agora quem muda é a quantidade, que tem efeito de verdade
+    ///     e não exige tocar em sistema base do jogo.
+    ///
+    ///     E o ramo de luz forte estava VAZIO, ou seja a cura nunca era desligada e o
+    ///     Shadekin se curava debaixo de holofote. Agora a lista de estados fica vazia.
+    /// </summary>
+    private void SetPassiveBuff(EntityUid uid, ShadekinComponent component, ShadekinState shadekinState)
     {
         if (!TryComp<PassiveDamageComponent>(uid, out var passive))
             return;
 
-        if (shadekinState is ShadekinState.Annoying or
-            ShadekinState.High or
-            ShadekinState.Extreme)
+        // guarda o valor que veio do prototype na primeira passada
+        component.CuraBase ??= new DamageSpecifier(passive.Damage);
+
+        switch (shadekinState)
         {
-            // Whiskey: este ramo estava VAZIO no original, então a cura nunca era
-            // desligada e o Shadekin se curava também debaixo de luz forte. Agora a
-            // lista de estados fica vazia, que é o jeito de não curar em estado nenhum.
-            passive.AllowedStates = new List<MobState>();
+            case ShadekinState.Annoying:
+            case ShadekinState.High:
+            case ShadekinState.Extreme:
+                passive.AllowedStates = new List<MobState>();
+                break;
+
+            case ShadekinState.Low:
+                passive.AllowedStates = new List<MobState> { MobState.Alive };
+                passive.Damage = new DamageSpecifier(component.CuraBase);
+                break;
+
+            case ShadekinState.Dark:
+                passive.AllowedStates = new List<MobState> { MobState.Alive, MobState.Critical, MobState.Dead };
+                passive.Damage = component.CuraBase * 2f;
+                break;
         }
-        else if (shadekinState == ShadekinState.Low)
-        {
-            // Whiskey: expressão de coleção compila para CollectionsMarshal.SetCount, que
-            // o sandbox do engine recusa na hora de carregar, sem o build reclamar.
-            passive.AllowedStates = new List<MobState> { MobState.Alive };
-            passive.Interval = 1f;
-        }
-        else if (shadekinState == ShadekinState.Dark)
-        {
-            passive.AllowedStates = new List<MobState> { MobState.Alive, MobState.Critical, MobState.Dead };
-            passive.Interval = 0.5f;
-        }
+
+        Dirty(uid, passive);
     }
 
     private void ApplyLightDamage(EntityUid uid, float dmg)
@@ -398,7 +411,7 @@ public sealed partial class ShadekinSystem : EntitySystem
             CheckThresholds(uid, component, lightExposure);
 
             ToggleNightVision(uid, component.CurrentState);
-            SetPassiveBuff(uid, component.CurrentState);
+            SetPassiveBuff(uid, component, component.CurrentState);
 
             // Whiskey: o manto de sombra acompanha o mesmo estado de luz.
             if (TryComp<MantoDeSombraComponent>(uid, out var manto))

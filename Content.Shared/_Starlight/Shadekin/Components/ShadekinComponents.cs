@@ -8,6 +8,7 @@ using Content.Shared.Actions;
 using Content.Shared.Alert;
 using Content.Shared.DoAfter;
 using Content.Shared.FixedPoint;
+using Content.Shared.Damage;
 using Robust.Shared.GameStates;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
@@ -37,6 +38,18 @@ public sealed partial class ShadekinComponent : Component
     /// whether to flicker lights or not. default on
     /// </summary>
     [DataField] public bool DoLightFlicker = true;
+
+    /// <summary>
+    ///     Whiskey: guarda a cura passiva que veio do prototype, para o sistema poder
+    ///     multiplicar conforme o estado de luz sem perder o valor original.
+    ///
+    ///     Existe porque o campo Interval do PassiveDamage não é lido por ninguém: o
+    ///     PassiveDamageSystem crava um segundo. Ajustar o intervalo, que era o que o
+    ///     código do Starlight fazia, não tinha efeito nenhum. Mexer na quantidade tem,
+    ///     e não exige tocar em sistema base do jogo.
+    /// </summary>
+    [ViewVariables]
+    public DamageSpecifier? CuraBase;
 }
 
 [Serializable, NetSerializable]

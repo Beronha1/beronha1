@@ -123,6 +123,12 @@
   parent: [ OrganBaseTail, OrganShadekinExternal ]
   id: OrganShadekinTail
   components:
+  # o OrganBaseTail pede state 'tail', e o OrganShadekinExternal aponta o Sprite
+  # para a parts.rsi, que não tem esse state. Aqui a cauda não tem desenho
+  # próprio, quem desenha é a marcação, então as duas camadas vão para o vazio.
+  - type: Sprite
+    sprite: _Trauma/empty.rsi
+    state: empty
   - type: VisualOrgan
     data:
       sprite: _Trauma/empty.rsi

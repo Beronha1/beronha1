@@ -6,25 +6,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Command Department SOP
-These are the list of SOPs that Command Personnel should follow. These are, as stated before, [bold]not checklists[/bold] and should be treated as guidelines.
+# SOP do Departamento de Comando
+Lista de SOPs do Comando. Como dito antes, [bold]não são checklists[/bold], e sim orientações.
 
-Below are the list of guidelines [bold]all of Command should follow[/bold]:
+Diretrizes que [bold]todo o Comando deve seguir[/bold]:
 
-1. The Command Personnel, excluding Head of Security, should not act as Security. Their job is to maintain their own Departments and assist the station.
+1. Exceto o Chefe de Segurança, membros do Comando não devem agir como Segurança. Devem manter seus Departamentos e ajudar a estação.
 
-2. The Command Personnel may defend themselves and perform arrests as needed in self-defense, but may not try, place times, or perform any other Security activities except hand-off arrested personnel to Security.
+2. Podem se defender e prender quando necessário em legítima defesa, mas não julgam, definem penas nem fazem outras tarefas da Segurança além de entregar o preso.
 
-3. The Command Personnel may not, under any circumstances, promote station personnel to Central Command VIP Positions (e.g. [color=#1b67a5][bold]Nanotrasen Representative[/bold][/color]) without authorization from Central Command.
+3. Sob nenhuma circunstância podem promover alguém a cargo VIP do Comando Central, como [color=#1b67a5][bold]Representante da Nanotrasen[/bold][/color], sem autorização do Comando Central.
 
-The following jobs have entries in this Department, the Chain of Command being linked at the top, the Central Command VIP being separated in terms of Chain of Command, the Captain being the top of Chain of Command, and all Heads of Staff on equal footing:
-- [textlink="Chain of Command" link="Succession"]
-- [textlink="Nanotrasen Representative" link="NanotrasenRep SOP"]
-- [textlink="Head of Personnel" link="HeadOfPersonnel SOP"]
-- [textlink="Head of Security" link="HeadOfSecurity SOP"]
-- [textlink="Research Director" link="ResearchDirector SOP"]
-- [textlink="Chief Medical Officer" link="ChiefMedicalOfficer SOP"]
-- [textlink="Chief Engineer" link="ChiefEngineer SOP"]
-- [textlink="Quartermaster" link="Quartermaster SOP"]
+Entradas do Departamento: a Cadeia de Comando está no topo; o VIP do Comando Central fica separado; Capitão ocupa o topo e todos os Chefes têm nível igual:
+- [textlink="Cadeia de Comando" link="Succession"]
+- [textlink="Representante da Nanotrasen" link="NanotrasenRep SOP"]
+- [textlink="Chefe de Pessoal" link="HeadOfPersonnel SOP"]
+- [textlink="Chefe de Segurança" link="HeadOfSecurity SOP"]
+- [textlink="Diretor de Pesquisa" link="ResearchDirector SOP"]
+- [textlink="Diretor Médico-Chefe" link="ChiefMedicalOfficer SOP"]
+- [textlink="Engenheiro-Chefe" link="ChiefEngineer SOP"]
+- [textlink="Intendente" link="Quartermaster SOP"]
 
 </Document>

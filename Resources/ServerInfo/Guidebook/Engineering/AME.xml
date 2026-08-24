@@ -14,28 +14,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Antimatter Engine (AME)
-  The Antimatter Engine is a short-term support generator for the station, providing a sizable chunk of power for a limited time.
+  # Motor de Antimatéria (AME)
+  O Motor de Antimatéria é um gerador temporário de apoio que entrega uma boa quantidade de energia à estação por tempo limitado.
 
-  It's mainly used to assist engineers in starting up bigger engines like the [textlink="Singularity Engine" link="SingularityEngine"] or [textlink="Tesla Engine" link="TeslaEngine"], by supplementing the station's [textlink="batteries" link="PowerStorage"] with partial power to extend their runtime.
+  Seu principal uso é ajudar Engenheiros a ligar motores maiores, como o [textlink="Motor de Singularidade" link="SingularityEngine"] ou o [textlink="Motor de Tesla" link="TeslaEngine"], complementando as [textlink="baterias" link="PowerStorage"] da estação para prolongar sua duração.
 
-  ## Construction
-  <Box>Required parts:</Box>
+  ## Construção
+  <Box>Peças necessárias:</Box>
   <Box>
   <GuideEntityEmbed Entity="AmeController"/>
   <GuideEntityEmbed Entity="AmePartFlatpack"/>
   <GuideEntityEmbed Entity="AmeJar"/>
   </Box>
 
-  The AME Controller is the part of the AME that outputs power to the station's grid through an [textlink="HV connection" link="VoltageNetworks"].
-  Because of this, you'll want to start your AME construction with the controller on top of an [color=orange]HV wire[/color].
+  O Controlador do AME é a peça que envia energia para a rede da estação por uma [textlink="conexão HV" link="VoltageNetworks"].
+  Por isso, comece a construção colocando o controlador sobre um [color=orange]fio HV[/color].
 
-  Most stations have exposed [color=orange]HV wiring[/color] or designated spots to wrench an AME controller, so that it connects to the grid.
+  Na maioria das estações há fiação [color=orange]HV exposta[/color] ou locais preparados para prender o controlador do AME à rede.
 
-  AME shielding is the physical structure that makes the antimatter engine. It's made by converting AME flatpacks into shielding using a multitool.
+  A blindagem forma a estrutura física do motor. Ela é criada convertendo flatpacks do AME com um multitool.
 
-  To construct an AME, start putting down a 3x3 or larger square of AME flatpacks in preparation for construction, making sure to maximize the number of "center" pieces that are surrounded on all eight sides.
-  The greater amount of center pieces, the more cores your AME will have, and the more power it will be able to output safely.
+  Para construir um AME, disponha os flatpacks num quadrado de 3x3 ou maior. Tente maximizar as peças "centrais", cercadas nos oito lados.
+  Quanto mais peças centrais, mais núcleos o AME terá e maior será a potência que poderá fornecer com segurança.
 
   <Box>
     <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
@@ -53,7 +53,7 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="AmePartFlatpack" Caption=""/>
   </Box>
 
-  Once this is done, you can use a multitool to convert each AME flatpack into shielding, which should form a finished AME configuration.
+  Depois, use o multitool em cada flatpack para convertê-lo em blindagem e formar a configuração final do AME.
 
   <GuideEntityEmbed Entity="AmeController" Caption=""/>
   <Box>
@@ -72,20 +72,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="AmeShielding" Caption="" Margin="0"/>
   </Box>
   <Box>
-    [color=#999999][italic]An example of a one core setup[italic][/color]
+    [color=#999999][italic]Exemplo de configuração com um núcleo[italic][/color]
   </Box>
 
-  ## Operation
-  To start the AME, insert a fuel jar into the AME controller, and set the safe injection rate.
+  ## Operação
+  Para ligar o AME, insira um jarro de combustível no controlador e ajuste uma taxa segura de injeção.
 
-  The safe injection rate is the point where the AME can safely run without overheating, while maximizing power output.
+  A taxa segura permite que o AME funcione sem superaquecer enquanto maximiza a geração.
 
-  This rate is always twice the core count.
+  Ela é sempre o dobro do número de núcleos.
 
-  For example, an AME with one core will have a safe injection rate of 2. With two cores, the safe injection rate would be 4, and so on.
+  Por exemplo, um AME com um núcleo tem taxa segura de 2. Com dois núcleos, a taxa é 4, e assim por diante.
 
-  Any more than this ratio will eventually result in the engine [color=#ff0000]overheating[/color] and, shortly afterwards, [color=#ff0000]exploding[/color].
+  Qualquer valor acima dessa proporção fará o motor [color=#ff0000]superaquecer[/color] e, pouco depois, [color=#ff0000]explodir[/color].
 
-  The AME controller will [textlink="report" link="InspectingPower"] on both the amount of power it is providing to the grid, and the theoretical maximum power it could provide if demanded.
+  O controlador do AME [textlink="informa" link="InspectingPower"] tanto a energia que fornece à rede quanto a potência máxima teórica que entregaria se houvesse demanda.
 
 </Document>

@@ -1,94 +1,94 @@
 <Document>
 
-  # Path of Lock
+  # Caminho da Fechadura
 
-  Difficulty: [color=orange]Medium[/color]
+  Dificuldade: [color=orange]Média[/color]
 
-  The Path of Lock revolves around access, area denial, theft and gadgets.
-  Pick this path if you want a less confrontational playstyle and more interested in being a slippery rat.
+  O Caminho da Fechadura gira em torno de acesso, controle de área, roubo e gadgets.
+  Escolha este caminho se quer um estilo menos confrontacional e prefere ser um rato escorregadio.
 
-  ## Pros
+  ## Vantagens
 
-  - Your mansus grasp can open any lock, unlock every terminal and bypass any access restriction.
-  - Lock heretics get some side knowledge for free, making it the perfect path if you want to experiment with the various trinkets the shop has to offer.
-  - Lock heretics don't gain visible aura after losing the ability to break blades, making it perfect for being stealthy at latter stages.
+  - Seu Mansus Grasp abre qualquer fechadura, destrava todos os terminais e ignora qualquer restrição de acesso.
+  - Hereges da Fechadura recebem conhecimentos paralelos gratuitos, ideal para experimentar as várias bugigangas da loja.
+  - Hereges da Fechadura não ganham aura visível após perder a capacidade de quebrar lâminas, perfeito para manter a furtividade nos estágios finais.
 
-  ## Cons
+  ## Desvantagens
 
-  - The weakest heretic path in direct combat, period.
-  - Very limited direct combat benefits.
-  - You have no defensive benefits or immunities.
-  - No mobility or direct additional teleportation
-  - Highly reliant on sourcing power from other departments, players and the game world.
+  - O caminho de Herege mais fraco em combate direto, ponto final.
+  - Benefícios muito limitados em combate direto.
+  - Nenhum benefício defensivo nem imunidade.
+  - Sem mobilidade ou teletransporte direto adicional.
+  - Depende muito de obter poder de outros departamentos, jogadores e do mundo do jogo.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">A Steward's Secret</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Crowbar</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a key blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Segredo do Mordomo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, Crowbar</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina-chave.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Lock</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can unlock anything.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto da Fechadura</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto destrava qualquer coisa.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Key Keepers Burden</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Door, ID Card, Iron rod</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a Eldritch Card, allows you to link two doors to be portals for heretics, but randomly teleport heathens. It can also absorb access from id card by eating them.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Fardo do Guardião das Chaves</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Porta, Cartão de ID, Haste de ferro</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria um Cartão Eldritch que liga duas portas como portais para Hereges, mas teleporta profanos aleatoriamente. Também absorve acessos ao devorar cartões de ID.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Concierge's Rite</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Crayon, Wooden plank, Multitool</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a labyrinth handbook, a magic item that can materialize barricades that noone can pass.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rito do Concierge</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Giz de cera, Tábua de madeira, Multitool</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria um manual do labirinto, item mágico capaz de materializar barricadas que ninguém atravessa.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Burglar's Finesse</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Alt-click target with your blade in combat mode to steal their held item.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Destreza do Ladrão</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Dê alt-click no alvo com a lâmina em modo de combate para roubar o item que ele segura.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Opening Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade is now better at wounding and can cause weeping avulsion on attack.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lâmina de Abertura</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sua lâmina passa a causar feridas melhores e pode provocar avulsão lacrimejante ao atacar.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Wrong Key</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Screwdriver, insulated gloves, wirecutter</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">An item that traps doors causing them to pull and crush heathens.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Chave Errada</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Screwdriver, luvas isolantes, wirecutter</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Um item que arma portas para puxar e esmagar profanos.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Unlock the Labyrinth</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three corpses with removed hearts</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a labyrinth portal that rapidly summons creatures from Mansus, loyal to you. You get pressure and temperature immunity. Your blades are even deadlier. You can shapeshift into empowered creatures of Mansus.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Destrancar o Labirinto</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Três cadáveres sem coração</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria um portal do labirinto que invoca rapidamente criaturas do Mansus leais a você. Concede imunidade a pressão e temperatura. Suas lâminas ficam ainda mais mortais. Você pode se transformar em criaturas fortalecidas do Mansus.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Grants you one free side knowledge for every tier.</ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Concede um conhecimento paralelo gratuito por tier.</ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Shifting Guise</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Hides you from camera vision and from people far away, muffles footsteps and conceals your voice.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Disfarce Cambiante</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Esconde você de câmeras e pessoas distantes, abafa passos e disfarça sua voz.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp no longer goes on cooldown from opening locks.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Abrir fechaduras não coloca mais seu aperto em cooldown.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">X-ray vision.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Visão de raio X.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your mansus grasp allows you to access everything, from airlocks, consoles and even exosuits, but it has no additional effects on players. It will however leave a mark that when triggered will make your victim unable to leave the room you are in.
-  - Your blade also functions as a crowbar! You can store it in utility belts And, in a pitch, use it to force open an airlock.
-  - Weeping avulsion triggered by your blade cannot be healed by topicals and chemicals, requiring surgery to heal.
-  - Triggering weeping avulsion on mangled torso force opens its ribcage, allowing you to easier ascend by removing heart via surgery.
-  - Your Eldritch ID can create a portal between 2 different airlocks. Useful if you want to establish a secret base.
-  - Use your labyrinth book to shake off pursuers. It creates impassible walls to anyone.
+  - Seu Mansus Grasp dá acesso a tudo — airlocks, consoles e até exosuits —, mas não tem efeito adicional em jogadores. Ainda assim, deixa uma marca que, quando ativada, impede a vítima de sair da sala onde vocês estão.
+  - Sua lâmina também funciona como crowbar! Guarde-a em cintos utilitários e, num aperto, use-a para forçar um airlock.
+  - Avulsão lacrimejante causada pela lâmina não pode ser curada com tópicos nem químicos; exige cirurgia.
+  - Ativar avulsão lacrimejante num torso mutilado abre a caixa torácica à força, facilitando a ascensão ao remover o coração por cirurgia.
+  - Seu ID Eldritch cria um portal entre 2 airlocks diferentes. Útil para montar uma base secreta.
+  - Use o livro do labirinto para despistar perseguidores. Ele cria paredes intransponíveis para todos.
 
 </Document>

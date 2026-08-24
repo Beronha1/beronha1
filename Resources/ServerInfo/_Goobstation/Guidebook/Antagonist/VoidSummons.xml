@@ -1,92 +1,92 @@
 <Document>
-  # Void Summons
+  # Invocações do Vazio
 
-  Void summons are special minions summoned by the Wraith with skills that can put even robust crewmembers to shame. Fighting one alone is generally never recommended.
-  While not entirely meant for being killing machines by themselves, together with the Wraith and their lesser minions, a void summon can easily become a major pain in the neck.
+  Invocações do Vazio são lacaios especiais chamados pelo Wraith, com habilidades capazes de humilhar até tripulantes robustos. Enfrentar uma sozinho quase nunca é boa ideia.
+  Embora não sejam feitas para agir como máquinas de matar por conta própria, ao lado do Wraith e dos lacaios menores uma invocação vira facilmente uma enorme dor de cabeça.
 
-  # Skeleton Commander
+  # Comandante Esqueleto
   <Box>
     <GuideEntityEmbed Entity="MobSkeletonCommander" Caption=""/>
   </Box>
 
-  The tanky backbone of your army, skeleton commanders can hold the line and boost nearby minions.
+  Espinha dorsal tank do seu exército, comandantes esqueletos seguram a linha e fortalecem lacaios próximos.
 
-  ## Skills
+  ## Habilidades
 
-  Don't expect to do much yourself to the crewmembers. You actions mostly rely on sending others to do the work for you.
+  Não espere fazer muita coisa diretamente contra tripulantes. Suas ações consistem, em geral, em mandar outros fazerem o trabalho por você.
 
-  ### Rally
+  ### Reagrupar
 
-  - Buffs all surrounding allied critters, giving them a temporary boost in combat.
+  - Buffa todas as criaturas aliadas ao redor, dando a elas um boost temporário em combate.
 
-  Best used when multiple summons are grouped together to maximize your army’s impact.
+  Funciona melhor com várias invocações agrupadas, maximizando o impacto do exército.
 
-  ### Summon Lesser Skeleton
+  ### Invocar Esqueleto Menor
 
-  - Spawns in a singular lesser skeleton to help you in whatever you are doing. The skeleton is mindless, and should generally be used right before a scuffle.
-  - The lesser skeleton does not have a lot of health, but they can cause a lot of damage while rallied.
+  - Spawna um único esqueleto menor para ajudar no que você estiver fazendo. Ele não tem mente e deve ser invocado pouco antes de uma briga.
+  - O esqueleto menor não tem muita vida, mas pode causar bastante dano enquanto estiver buffado por Reagrupar.
 
-  # Tentacle Fiend
+  # Demônio Tentacular
   <Box>
     <GuideEntityEmbed Entity="MobVoidSpiker" Caption=""/>
   </Box>
 
-  Fast, ranged, and unpredictable. These fiends excel at controlling space and abducting targets to secure an easy kill for the Wraith.
-  Their meelee attacks, while extremely weak damage wise, quickly cause the target to be knocked out.
+  Rápidos, imprevisíveis e com alcance. Esses demônios dominam espaços e sequestram alvos para garantir uma morte fácil ao Wraith.
+  Seus ataques corpo a corpo causam pouquíssimo dano, mas rapidamente deixam o alvo desacordado.
 
-  ## Skills
+  ## Habilidades
 
-  You have the perfect set of tools for kidnapping.
+  Você tem o kit perfeito para sequestros.
 
-  ### Tentacle Hook
+  ### Gancho Tentacular
 
-  - Launch a tentacle at a target and drag them toward the fiend.
-  - While the target can try and run from the hook, it will always, inevitable, drag them into the fiend.
+  - Lança um tentáculo no alvo e o arrasta até o demônio.
+  - O alvo pode tentar fugir do gancho, mas inevitavelmente será puxado até o demônio.
 
-  ### Shuffle
+  ### Contorção
 
-  - Compress your body to slip through doors, cancel stuns, and escape attacks.
-  - Prevents using other skills during the usage of this skill, so is generally only meant for evading rather than for engaging.
+  - Comprime seu corpo para passar por portas, cancelar stuns e escapar de ataques.
+  - Impede o uso de outras habilidades enquanto está ativa; serve mais para evasão do que para iniciar combate.
 
-  ### Lash
+  ### Açoitar
 
-  - Stun a target, cause them to bleed, and do considerable damage.
-  - Best used together with the tentacle hook. As soon as the target is within reach, lash them, and abduct them into maints, never to be seen again.
+  - Dá stun no alvo, causa sangramento e um dano considerável.
+  - Use junto com Gancho Tentacular. Assim que o alvo estiver ao alcance, açoite-o e arraste-o para as maints, para nunca mais ser visto.
 
-  # Void Hound
+  # Cão do Vazio
   <Box>
     <GuideEntityEmbed Entity="MobVoidHound" Caption=""/>
   </Box>
 
-  Stealthy, fast, and deadly in close quarters. Void hounds are ideal for hit-and-run attacks and disruption.
-  The only minion from the Wraith capable of sprinting.
+  Furtivos, rápidos e mortais de perto. Cães do Vazio são ideais para ataques bate-e-corre e para causar confusão.
+  É o único lacaio do Wraith capaz de sprintar.
 
-  ## Skills
+  ## Habilidades
 
-  Your actions are centered around catching people by surprise.
+  Suas ações giram em torno de pegar os outros de surpresa.
 
-  ### Cloak
+  ### Camuflagem
 
-  - Become partially invisible and difficult to detect.
-  - Doesn't last for very long, but is good for sneaking up on targets.
-  - Can be used for retreating into the shadows as well.
+  - Torna você parcialmente invisível e difícil de detectar.
+  - Não dura muito, mas é ótima para se aproximar furtivamente dos alvos.
+  - Também pode ser usada para recuar até as sombras.
 
-  ### Rush Down
+  ### Investida
 
-  - Leap forward, knocking down the first person in your path and stunning in a large radius around where you land.
-  - Has a lenghthy cooldown, so use it to secure kills or to escape dire situations.
+  - Salta para a frente, derruba a primeira pessoa no caminho e dá stun em uma grande área ao redor do ponto de aterrissagem.
+  - Tem um cooldown longo; use para garantir mortes ou escapar de situações desesperadoras.
 
-  ### General Tips
+  ### Dicas gerais
 
-  Skeleton commanders are capable of soaking a lot of shots, but their rallying action is quite invaluable for the other minions. Choose wisely whether you wish to tank for them, or to stay behind buffing them from the backline.
+  Comandantes esqueletos aguentam muitos tiros, mas sua ação de Reagrupar é valiosa demais para os outros lacaios. Escolha com cuidado entre tankar por eles ou ficar atrás, buffando a retaguarda.
 
-  Tentacle fiends excel at picking off targets from afar and killing them while they are incapable of fighting back. Once the deed is done, call over the Wraith to absorb the corpse, and rinse and repeat.
+  Demônios tentaculares são ótimos para arrancar alvos de longe e matá-los sem chance de reação. Quando terminar, chame o Wraith para absorver o cadáver; enxágue e repita.
 
-  Void hounds are your mobile assassins, but not very tanky. While your stun is extremely potent, it can leave you right in the lion's den if unprepared.
+  Cães do Vazio são seus assassinos móveis, mas não são muito tanks. O stun é extremamente forte, porém pode deixá-los no meio da cova dos leões se estiverem despreparados.
 
-  Always consider positioning and timing. Summons can be fragile and die quickly if left unsupported.
+  Sempre considere posicionamento e timing. Invocações podem ser frágeis e morrer rápido sem suporte.
 
-  The Wraith should aim to combine minions with portals to maintain constant pressure and cause death en masse.
+  O Wraith deve combinar lacaios e portais para manter pressão constante e causar mortes em massa.
 
-  [textlink="Back to Harbinger of the Void" link="Harbinger"]
+  [textlink="Voltar ao Arauto do Vazio" link="Harbinger"]
 </Document>

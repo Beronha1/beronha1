@@ -1,16 +1,17 @@
 <Document>
-  # Vulpkanin
+  # Vulpcaninas
 
   <Box>
     <GuideEntityEmbed Entity="MobVulpkanin" Caption=""/>
   </Box>
 
-  Vulpkanin, due to their dense fur, [color=#1e90ff]prefer colder temperatures[/color] and [color=#ffa500]heat up faster.[/color]
-  Their agile (but clumsy) legs allow them to leap short distances, be careful not to bump into anything!
+  Por causa da pelagem densa, Vulpcaninas [color=#1e90ff]preferem temperaturas mais baixas[/color] e [color=#ffa500]aquecem mais rápido.[/color]
+  Suas pernas ágeis — embora meio desajeitadas — permitem saltar pequenas distâncias. Cuidado para não bater em nada!
 
-  Their diet allows them to safely eat raw meat but they get poisoned by theobromine.
+  Sua dieta permite comer carne crua com segurança, mas teobromina as envenena.
 
-  Their weirdly shaped muzzle leads to difficulties drinking, making them sometimes spill small amounts of whatever they drank onto the ground.
+  O formato incomum do focinho dificulta beber, fazendo com que às vezes derramem no chão um pouco do que consumiram.
 
-  They take [color=#1e90ff]15% less Cold damage[/color] but [color=#ffa500]15% more Heat damage.[/color].
+  Elas recebem [color=#1e90ff]15% menos dano de Frio[/color], mas [color=#ffa500]15% mais dano de Calor.[/color].
+
 </Document>

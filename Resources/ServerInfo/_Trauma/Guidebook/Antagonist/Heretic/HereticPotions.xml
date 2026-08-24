@@ -1,34 +1,34 @@
 <Document>
-  # Heretic Potions
+  # Poções de Herege
 
-  ## Mawed Crucible
+  ## Cadinho Dentado
 
   <Box>
     <GuideEntityEmbed Entity="MawedCrucible"/>
   </Box>
 
-  Mawed Crucible allows you to brew potions as heretic. Click on it and choose one of 3 potions to brew. You can also refill your eldritch flask with it by clicking on crucible with it.
-  Crucible functions based on internal mass which slowly refills automatically and can be refilled manually by feeding the crucible organs or body parts.
-  Crucible can be anchored and unanchored with Mansus Grasp or codex.
+  Permite fabricar poções como Herege. Clique e escolha uma entre 3. Também recarrega seu frasco eldritch ao clicar nele com o frasco.
+  Usa massa interna, recuperada devagar automaticamente ou ao alimentar o cadinho com órgãos e partes do corpo.
+  Pode ser preso ou solto com Mansus Grasp ou códice.
 
-  ## Potions
+  ## Poções
 
   <Box>
     <GuideEntityEmbed Entity="PotionCrucibleSoul"/>
   </Box>
 
-  Brew of Crucible Soul allows you to walk through walls. After expiring, you are teleported to your original location. You can end the effect early by clicking on the alert. Has a cooldown between uses.
+  A Alma do Cadinho permite atravessar paredes. Ao terminar, você volta ao local original. Clique no alerta para encerrar cedo. Há cooldown entre usos.
 
   <Box>
     <GuideEntityEmbed Entity="PotionDuskDawn"/>
   </Box>
 
-  Brew of Dusk and Dawn gives you temporary x-ray vision.
+  Crepúsculo e Aurora concede visão de raio X temporária.
 
   <Box>
     <GuideEntityEmbed Entity="PotionWoundedSoldier"/>
   </Box>
 
-  Brew of Wounded Soldier Increases your physical strength, making your attacks more furious and making you take less damage, the more damaged you are. Your melee attacks heal your health and stamina but you take damage overtime, the healthier you are - the more overtime damage you take.
+  Soldado Ferido aumenta força física: ataques ficam mais furiosos e você sofre menos dano quanto mais ferido estiver. Ataques corpo a corpo curam vida e stamina, mas você sofre dano contínuo; quanto mais saudável, maior esse dano.
 
 </Document>

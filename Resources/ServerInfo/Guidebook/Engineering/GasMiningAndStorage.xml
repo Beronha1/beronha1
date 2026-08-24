@@ -6,24 +6,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Gas Mining and Storage
-  Gasses are often permanently used. Whether they are lost to [textlink="space" link="Spacing"] or used in a burn chamber, the station needs to be able to produce more gas to replace what is lost.
-  It also needs to store this gas in a safe and efficient manner.
+  # Mineração e Armazenamento de Gases
+  Gases são consumidos o tempo todo. Seja porque escaparam para o [textlink="espaço" link="Spacing"] ou porque foram usados numa câmara de queima, a estação precisa repor o que perdeu.
+  Também precisa armazená-los com segurança e eficiência.
 
-  ## Gas Miners
-  Gas miners are used to replenish the station's gas supply. They are found in the gas storage tanks in Atmospherics.
+  ## Mineradores de Gás
+  Mineradores repõem o estoque de gases da estação. Eles ficam nos tanques de armazenamento da Atmosférica.
 
   <Box>
     <GuideEntityEmbed Entity="GasMinerOxygenStation"/>
     <GuideEntityEmbed Entity="GasMinerNitrogenStation"/>
   </Box>
 
-  Gas miners constantly produce room temperature gas and push it into the exposed atmosphere. They require no power to function, and never stop working unless they have reached the defined [bold]cutoff pressure[/bold].
+  Eles produzem continuamente gás em temperatura ambiente e o empurram para a atmosfera exposta. Não precisam de energia e só param ao alcançar a [bold]pressão de corte[/bold] definida.
 
-  You can see more information about the gas miners by inspecting them using [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
-  Try inspecting the gas miners presented above.
+  Para ver mais informações, examine-os usando [color=yellow][bold][keybind="ExamineEntity"][/bold][/color].
+  Experimente examinar os mineradores mostrados acima.
 
-  Gas miners come in tiers, with the larger versions having a higher pressure cutoff than the smaller versions.
+  Mineradores possuem níveis; as versões maiores têm pressão de corte mais alta que as menores.
 
   <Box>
     <GuideEntityEmbed Entity="GasMinerNitrogen" Caption="300 kPa"/>
@@ -31,10 +31,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="GasMinerNitrogenStationLarge" Caption="4500 kPa"/>
   </Box>
 
-  If gas miners are ever unanchored from the station, they can be reanchored using a regular wrench.
+  Se forem soltos do chão, podem ser presos novamente com uma chave inglesa comum.
 
-  ## Gas Storage
-  Gas storage tanks are used to store gas produced by the gas miners, and to make it available to other processes. They are found in Atmospherics.
+  ## Armazenamento de Gases
+  Tanques de armazenamento guardam o gás dos mineradores e o disponibilizam a outros processos. Eles ficam na Atmosférica.
 
   <Box>
     <GuideEntityEmbed Entity="WallReinforced" Rotation="0" Caption="" Margin="0"/>
@@ -59,15 +59,16 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   </Box>
 
   <Box>
-    [color=#999999][italic]An example of a small gas holding tank[italic][/color]
+    [color=#999999][italic]Exemplo de um pequeno tanque de armazenamento[italic][/color]
   </Box>
 
-  Various atmos processes insert and remove gasses from the gas storage tanks.
-  For example:
-  - The gas miner provides fresh gasses to the gas storage tanks, if there is room.
-  - The recyclernet injects reclaimed gasses into the gas storage tanks for reuse.
-  - Setups like the distronet and burn chamber remove gasses from the gas storage tanks.
+  Vários processos de Atmos inserem e retiram gases desses tanques.
+  Por exemplo:
+  - O minerador fornece gases novos ao tanque enquanto houver espaço.
+  - A recyclernet injeta gases recuperados para serem reutilizados.
+  - Sistemas como a distronet e a câmara de queima retiram gases dos tanques.
 
-  Gas storage tanks are designed to be able to be measured using a [textlink="Gas Analyzer" link="AtmosTools"].
-  Because the outflow vent is a [textlink="passive vent" link="PassiveVent"], you can use a [textlink="gas analyzer" link="AtmosTools"] to measure the gas content of the [textlink="pump's" link="Pumps"] input, which is drawing from the gas storage tank.
+  O conteúdo dos tanques foi projetado para ser medido com um [textlink="Analisador de Gases" link="AtmosTools"].
+  Como o vent de saída é um [textlink="vent passivo" link="PassiveVent"], use um [textlink="analisador" link="AtmosTools"] para medir o gás na entrada da [textlink="bomba" link="Pumps"], que puxa diretamente do tanque.
+
 </Document>

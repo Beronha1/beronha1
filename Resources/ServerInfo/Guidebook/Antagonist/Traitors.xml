@@ -19,101 +19,101 @@ SPDX-License-Identifier: AGPL-3.0-or-later
   # Traitors
 
   <Box>
-    [color=#999999][italic]"WHISKEY. ECHO. WHISKEY. LIMA. ALPHA. DELTA. AGENT, YOU HAVE BEEN ACTIVATED."[/italic][/color]
+    [color=#999999][italic]"WHISKEY. ECHO. WHISKEY. LIMA. ALPHA. DELTA. AGENTE, VOCÊ FOI ATIVADO."[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
   </Box>
-  Traitors are antagonists employed by the [color=#ff0000]Syndicate.[/color] You are a sleeper agent who has access to various tools and weapons through your [bold]uplink[/bold].
-  You also receive [bold]codewords[/bold] to identify other agents, and a coordinated team of traitors can have [italic]brutal results.[/italic]
+  Traitors são antagonistas empregados pelo [color=#ff0000]Sindicato.[/color] Você é um agente adormecido com acesso a várias ferramentas e armas por meio do [bold]uplink[/bold].
+  Também recebe [bold]palavras-código[/bold] para identificar outros agentes; uma equipe coordenada de Traitors pode produzir [italic]resultados brutais.[/italic]
 
-  Anyone besides [textlink="department heads" link="Command"] or members of [textlink="Security" link="Security"] can be a traitor.
+  Qualquer pessoa, exceto [textlink="Heads de Departamento" link="Command"] ou membros da [textlink="Security" link="Security"], pode ser Traitor.
 
-  ## Uplink & Activation
-  The [color=cyan]uplink[/color] is your most important tool as a traitor. You can exchange the 100 [color=red]telecrystals[/color] (TC) you start with for items that will help you with your objectives.
+  ## Uplink e ativação
+  O [color=cyan]uplink[/color] é sua ferramenta mais importante como Traitor. Troque os 100 [color=red]telecristais[/color] (TC) iniciais por itens que ajudarão nos objetivos.
 
-  By pressing [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], you'll see your personal uplink code. To activate your uplink, set your PDA's ringtone to the code. This can be used with [bold]any PDA, and by anyone[/bold], so be wary of sharing it!
-  Pressing [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color] also lets you view your objectives and the codewords.
+  Pressione [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color] para ver seu código pessoal de uplink. Para ativá-lo, coloque o toque do PDA nesse código. Isso funciona em [bold]qualquer PDA e com qualquer pessoa[/bold]; cuidado ao compartilhá-lo!
+  Pressionar [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color] também mostra seus objetivos e as palavras-código.
 
-  If you do not have a PDA when you are activated, an [color=cyan]uplink implant[/color] is provided [bold]for the full [color=red]TC[/color] price of the implant.[/bold]
-  It can be accessed from your hotbar.
+  Se você não tiver PDA ao ser ativado, receberá um [color=cyan]implante de uplink[/color] [bold]pelo preço integral do implante em [color=red]TC[/color].[/bold]
+  Ele é acessado pela hotbar.
   <Box>
     <GuideEntityEmbed Entity="PassengerPDA" Caption="PDA"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="Telecrystals"/>
-    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Uplink Implant"/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Telecristais"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Implante de Uplink"/>
   </Box>
 
-  [bold]Make sure to close your PDA uplink to prevent anyone else from seeing it.[/bold] You don't want [color=#cb0000]Security[/color] to notice you have it and confiscate it from you!
+  [bold]Feche o uplink do PDA para ninguém vê-lo.[/bold] Você não quer que a [color=#cb0000]Security[/color] perceba e o confisque!
 
-  Implanted uplinks are not normally accessible to other people, so they do not have any security measures. They can, however, be removed from you with an empty implanter.
+  Uplinks implantados normalmente não são acessíveis a outras pessoas, portanto não possuem medidas de segurança. Ainda assim, podem ser removidos com um implantador vazio.
 
   <Box>
-    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Guns"/>
+    <GuideEntityEmbed Entity="WeaponPistolViper" Caption="Armas de fogo"/>
     <GuideEntityEmbed Entity="FireAxe" State="icon" Caption="Melee"/>
-    <GuideEntityEmbed Entity="C4" Caption=" Explosives"/>
-    <GuideEntityEmbed Entity="Syringe" Caption="Implants"/>
-    <GuideEntityEmbed Entity="ClothingBackpackDuffelSyndicate" Caption="Bundles"/>
+    <GuideEntityEmbed Entity="C4" Caption=" Explosivos"/>
+    <GuideEntityEmbed Entity="Syringe" Caption="Implantes"/>
+    <GuideEntityEmbed Entity="ClothingBackpackDuffelSyndicate" Caption="Pacotes"/>
   </Box>
 
-  The purchases that you make should be to help you with your objectives. Some gear may not be of use to you, and you'll have to choose between being sneaky or going loud.
+  Suas compras devem ajudar nos objetivos. Alguns equipamentos podem ser inúteis para você; escolha entre jogar furtivo ou partir para o loud.
 
-  ## Coordination
-  Codewords are words or phrases that every traitor will know. They provide a discreet way to identify or establish contact with a fellow traitor, which can be useful if your objectives include [italic][color=cyan]helping them with their objectives.[/color][/italic]
+  ## Coordenação
+  Palavras-código são palavras ou frases conhecidas por todo Traitor. Elas permitem identificar ou contatar discretamente outro agente, algo útil se seus objetivos incluírem [italic][color=cyan]ajudá-lo nos objetivos dele.[/color][/italic]
 
-  When you find some friends, [bold]you can withdraw [color=red]telecrystals[/color] from your uplink to give to them.[/bold] They can put these in their own uplink to spend for themselves.
+  Ao encontrar aliados, [bold]você pode retirar [color=red]telecristais[/color] do uplink e entregá-los.[/bold] Eles podem depositá-los no próprio uplink para gastar.
 
-  Some offers available on your uplink require more than 20 TC to purchase, so if you want them you'll have to share.
+  Algumas ofertas do uplink custam mais de 20 TC; para comprá-las, vocês terão de compartilhar.
 
-  ## Assassination
-  One of your objectives may be to [italic][color=cyan]kill or maroon a crewmember.[/color][/italic]
+  ## Assassinato
+  Um de seus objetivos pode ser [italic][color=cyan]matar ou abandonar um tripulante.[/color][/italic]
 
-  You can [color=cyan]maroon[/color] your target by [bold]preventing them from reaching CentComm[/bold] via the evacuation shuttle or an escape pod.
+  Para [color=cyan]abandonar[/color] o alvo, [bold]impeça que ele chegue à CentComm[/bold] pelo shuttle de evacuação ou por um pod de fuga.
 
-  If you can't maroon your target or they're too important to leave alive, you'll have to get your hands dirty and [color=cyan]murder[/color] them. Make sure your target is not alive when the [bold]evacuation shuttle gets to CentComm,[/bold] and don't let them be resuscitated.
+  Se não puder abandonar o alvo, ou se for importante demais para ficar vivo, você terá de sujar as mãos e [color=cyan]assassiná-lo[/color]. Garanta que esteja morto quando o [bold]shuttle de evacuação chegar à CentComm[/bold] e não deixe que seja ressuscitado.
 
-  Remember, the Syndicate want only your targets dead. [color=red]Try to avoid mass murder or major damage to the station,[/color] as the more innocent lives you take, the more of a liability you become.
+  Lembre-se: o Sindicato quer apenas seus alvos mortos. [color=red]Evite assassinato em massa ou grandes danos à estação,[/color] pois quanto mais inocentes matar, maior será o problema que você representa.
 
-  ## Evasion & Self-Termination
-  Your objectives may require you to [italic][color=cyan]make it to CentComm without being killed or captured.[/color][/italic] Don't let [color=#cb0000]Security[/color] stop you, complete your other objectives and [bold]come back alive.[/bold]
+  ## Evasão e autoextermínio
+  Seus objetivos podem exigir que [italic][color=cyan]chegue à CentComm sem morrer nem ser capturado.[/color][/italic] Não deixe a [color=#cb0000]Security[/color] detê-lo; cumpra os outros objetivos e [bold]volte vivo.[/bold]
 
-  Alternatively, your objectives may require you to [italic][color=cyan]die a glorious death.[/color][/italic] [bold]Make sure you don't come back from the dead,[/bold] or else you may wake up in cuffs.
+  Ou talvez exijam que você [italic][color=cyan]tenha uma morte gloriosa.[/color][/italic] [bold]Garanta que não voltará dos mortos,[/bold] senão pode acordar algemado.
 
-  ## Appropriation
-  More often than not, you'll have to [italic][color=cyan]steal a possession of a department head.[/color][/italic]
+  ## Apropriação
+  Na maioria das vezes, você terá de [italic][color=cyan]roubar um pertence de um Head de Departamento.[/color][/italic]
 
-  The target may be in their office, or on their person. It may become necessary to kill whoever is carrying it, if you cannot pickpocket them.
+  O item pode estar no escritório ou com a pessoa. Talvez seja necessário matar quem o carrega, caso não consiga bater a carteira.
 
-  Some of the things you may be tasked with include:
-  - Stealing the [color=yellow]Captain[/color]'s [bold]ID Card[/bold], [bold]antique laser pistol[/bold], [bold]jetpack[/bold], or [bold]nuclear authentication disk[/bold].
+  Entre as tarefas possíveis estão:
+  - Roubar do [color=yellow]Capitão[/color] o [bold]cartão de ID[/bold], a [bold]pistola laser antiga[/bold], o [bold]jetpack[/bold] ou o [bold]disco de autenticação nuclear[/bold].
   <Box>
     <GuideEntityEmbed Entity="CaptainIDCard" Caption=""/>
     <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption=""/>
     <GuideEntityEmbed Entity="JetpackCaptainFilled" Caption=""/>
     <GuideEntityEmbed Entity="NukeDisk" Caption=""/>
   </Box>
-  - Stealing the [color=#5b97bc]Chief Medical Officer[/color]'s [bold]hypospray[/bold] or [bold]rapid syringe gun[/bold].
+  - Roubar do [color=#5b97bc]Chief Medical Officer[/color] o [bold]hypospray[/bold] ou a [bold]arma de seringas rápida[/bold].
   <Box>
     <GuideEntityEmbed Entity="Hypospray" Caption=""/>
     <GuideEntityEmbed Entity="RapidSyringeGun" Caption=""/>
   </Box>
-  - Stealing the [color=#c96dbf]Research Director[/color]'s [bold]experimental hardsuit[/bold] or [bold]hand teleporter[/bold].
+  - Roubar do [color=#c96dbf]Research Director[/color] a [bold]hardsuit experimental[/bold] ou o [bold]teletransportador portátil[/bold].
   <Box>
     <GuideEntityEmbed Entity="ClothingOuterHardsuitRd" Caption=""/>
     <GuideEntityEmbed Entity="HandTeleporter" Caption=""/>
   </Box>
-  - Stealing the [color=#cb0000]Head of Security[/color]'s [bold]energy magnum[/bold].
+  - Roubar do [color=#cb0000]Head of Security[/color] a [bold]magnum de energia[/bold].
   <Box>
     <GuideEntityEmbed Entity="WeaponEnergyMagnum" Caption=""/>
   </Box>
-  - Stealing the [color=#f39f27]Chief Engineer[/color]'s [bold]advanced magboots[/bold].
+  - Roubar do [color=#f39f27]Chief Engineer[/color] as [bold]magboots avançadas[/bold].
   <Box>
     <GuideEntityEmbed Entity="ClothingShoesBootsMagAdv" Caption=""/>
   </Box>
-  - Stealing the [color=#b18644]Quartermaster[/color]'s [bold]requisition digi-board[/bold].
+  - Roubar do [color=#b18644]Quartermaster[/color] a [bold]prancheta digital de requisições[/bold].
   <Box>
     <GuideEntityEmbed Entity="BoxFolderQmClipboard" Caption=""/>
   </Box>
-  - Butchering Ian, the [color=#9fed58]Head of Personnel[/color]'s dog, and obtaining the [bold]corgi meat[/bold].
+  - Abater Ian, o cachorro do [color=#9fed58]Head of Personnel[/color], e obter a [bold]carne de corgi[/bold].
   <Box>
     <GuideEntityEmbed Entity="MobCorgiIan" Caption=""/>
     <GuideEntityEmbed Entity="FoodMeatCorgi" Caption=""/>

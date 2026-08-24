@@ -1,224 +1,224 @@
 <Document>
-  ## Mortality
+  ## Mortalidade
   <Box>
-    [color=#999999][italic]-135 Weight[/italic][/color]
+    [color=#999999][italic]-135 de Peso[/italic][/color]
   </Box>
 
-  - Grants the target an unlimited amount of self revives.
+  - Concede ao alvo uma quantidade ilimitada de autorrevives.
 
-  ## Weakness
+  ## Fraqueza
   <Box>
-    [color=#999999][italic]-35 Weight[/italic][/color]
+    [color=#999999][italic]-35 de Peso[/italic][/color]
   </Box>
 
-  - Cuts all damage the contractee takes in half.
-  - Increases holy damage taken.
+  - Reduz pela metade todo o dano sofrido pelo contratante.
+  - Aumenta o dano sagrado recebido.
 
-  ## Fear of Death
+  ## Medo da Morte
   <Box>
-    [color=#999999][italic]-25 Weight[/italic][/color]
+    [color=#999999][italic]-25 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee have no critical state. You stand, or you die.
+  - Remove o estado crítico do contratante. Ou fica de pé, ou morre.
 
-  ## Death
+  ## Morte
   <Box>
-    [color=#999999][italic]-25 Weight[/italic][/color]
+    [color=#999999][italic]-25 de Peso[/italic][/color]
   </Box>
 
-  - Allows the contractee to revive themselves exactly once on death.
-  - Default on every contract.
+  - Permite que o contratante reviva sozinho exatamente uma vez ao morrer.
+  - Padrão em todos os contratos.
 
-  ## Shadows
+  ## Sombras
   <Box>
-    [color=#999999][italic]-25 Weight[/italic][/color]
+    [color=#999999][italic]-25 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee invisible.
+  - Torna o contratante invisível.
 
-  ## Brokeness
+  ## Quebradeira
   <Box>
-    [color=#999999][italic]-20 Weight[/italic][/color]
+    [color=#999999][italic]-20 de Peso[/italic][/color]
   </Box>
 
-  - Grants the contractee a pair of sick fucking jays, signed by Micheal Jordan himself.
+  - Dá ao contratante um par de tênis foda pra caralho, autografado pelo próprio Micheal Jordan.
 
-  ## Fear of Fire
+  ## Medo do Fogo
   <Box>
-    [color=#999999][italic]-20 Weight[/italic][/color]
+    [color=#999999][italic]-20 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to fire, and immune to being lit on fire.
+  - Torna o contratante imune a fogo e a ser incendiado.
 
-  ## Chance
+  ## Sorte
   <Box>
-    [color=#999999][italic]-15 Weight[/italic][/color]
+    [color=#999999][italic]-15 de Peso[/italic][/color]
   </Box>
 
-  - Grants the contractee a completely random clause. Want to try your luck?
+  - Concede ao contratante uma cláusula completamente aleatória. Quer tentar a sorte?
 
-  ## Fear of Light
+  ## Medo da Luz
   <Box>
-    [color=#999999][italic]-15 Weight[/italic][/color]
+    [color=#999999][italic]-15 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to flashes.
+  - Torna o contratante imune a flashes.
 
 
-  ## Fear of Electricity
+  ## Medo da Eletricidade
   <Box>
-    [color=#999999][italic]-15 Weight[/italic][/color]
+    [color=#999999][italic]-15 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to electrical shocks.
+  - Torna o contratante imune a choques elétricos.
 
-  ## Gluttony
+  ## Gula
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee not need food or water.
+  - Faz o contratante não precisar de comida nem água.
 
-  ## Fear of Drowning
+  ## Medo de Afogamento
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Disables the contractees need to breathe.
+  - Remove a necessidade de respirar do contratante.
 
-  ## Fear of Clowns
+  ## Medo de Palhaços
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Disables the contractees ability to slip.
+  - Remove a capacidade do contratante de escorregar.
 
-  ## Fear of Crushing
+  ## Medo de Esmagamento
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to pressure damage.
+  - Torna o contratante imune a dano de pressão.
 
-  ## Fear of Freezing
+  ## Medo de Congelar
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee immune to low temperatures.
+  - Torna o contratante imune a baixas temperaturas.
 
-  ## Greed
+  ## Ganância
   <Box>
-    [color=#999999][italic]-10 Weight[/italic][/color]
+    [color=#999999][italic]-10 de Peso[/italic][/color]
   </Box>
 
-  - Grants the target a ton of cash-money.
+  - Dá ao alvo uma montanha de grana viva.
 
-  ## Pain
+  ## Dor
   <Box>
-    [color=#999999][italic]-5 Weight[/italic][/color]
+    [color=#999999][italic]-5 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee feel no pain, and suffer no negatives from pain.
+  - Faz o contratante não sentir dor nem sofrer efeitos negativos dela.
 
-  ## Inner Peace
+  ## Paz Interior
   <Box>
-    [color=#999999][italic]5 Weight[/italic][/color]
+    [color=#999999][italic]5 de Peso[/italic][/color]
   </Box>
 
-  - Grants the target peace. Everlasting.
+  - Concede paz ao alvo. Eterna.
 
-  ## Voice
+  ## Voz
   <Box>
-    [color=#999999][italic]20 Weight[/italic][/color]
+    [color=#999999][italic]20 de Peso[/italic][/color]
   </Box>
 
-  - Permanently mutes the contractee.
+  - Silencia permanentemente o contratante.
 
-  ## A hand
+  ## Uma mão
   <Box>
-    [color=#999999][italic]20 Weight[/italic][/color]
+    [color=#999999][italic]20 de Peso[/italic][/color]
   </Box>
 
-  - Immediately severs one of the contractees hands.
+  - Arranca imediatamente uma das mãos do contratante.
 
-  ## A leg
+  ## Uma perna
   <Box>
-    [color=#999999][italic]20 Weight[/italic][/color]
+    [color=#999999][italic]20 de Peso[/italic][/color]
   </Box>
 
-  - Immediately severs one of the contractees legs.
+  - Arranca imediatamente uma das pernas do contratante.
 
-  ## Soul Ownership
+  ## Posse da Alma
   <Box>
-    [color=#999999][italic]25 Weight[/italic][/color]
+    [color=#999999][italic]25 de Peso[/italic][/color]
   </Box>
 
-  - Transfers ownership of a soul to the contractor.
-  - Default on every contract.
+  - Transfere a posse de uma alma ao contratado.
+  - Padrão em todos os contratos.
 
-  ## Strength
+  ## Força
   <Box>
-    [color=#999999][italic]30 Weight[/italic][/color]
+    [color=#999999][italic]30 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee take double damage.
+  - Faz o contratante sofrer o dobro de dano.
 
-  ## Coherence
+  ## Coerência
   <Box>
-    [color=#999999][italic]30 Weight[/italic][/color]
+    [color=#999999][italic]30 de Peso[/italic][/color]
   </Box>
 
-  - Makes the contractee clumsy and messes up their speech.
+  - Torna o contratante desastrado e bagunça sua fala.
 
-  ## Awake
+  ## Vigília
   <Box>
-    [color=#999999][italic]35 Weight[/italic][/color]
+    [color=#999999][italic]35 de Peso[/italic][/color]
   </Box>
 
-  - Turns the target narcoleptic.
+  - Torna o alvo narcoléptico.
 
-  ## An organ
+  ## Um órgão
   <Box>
-    [color=#999999][italic]30 Weight[/italic][/color]
+    [color=#999999][italic]30 de Peso[/italic][/color]
   </Box>
 
-  - Dumps one of the contractees organs on the ground.
-  - This is most likely the heart.
+  - Joga um dos órgãos do contratante no chão.
+  - Provavelmente será o coração.
 
-  ## Legs
+  ## Pernas
   <Box>
-    [color=#999999][italic]40 Weight[/italic][/color]
+    [color=#999999][italic]40 de Peso[/italic][/color]
   </Box>
 
-  - Permanently paralyzes both of the contractees legs.
+  - Paralisa permanentemente as duas pernas do contratante.
 
-  ## Sight
+  ## Visão
   <Box>
-    [color=#999999][italic]60 Weight[/italic][/color]
+    [color=#999999][italic]60 de Peso[/italic][/color]
   </Box>
 
-  - Permanently blinds the contractee.
+  - Cega permanentemente o contratante.
 
-  ## Will to fight
+  ## Vontade de Lutar
   <Box>
-    [color=#999999][italic]60 Weight[/italic][/color]
+    [color=#999999][italic]60 de Peso[/italic][/color]
   </Box>
 
-  - Permanently pacifies the contractee.
+  - Pacífica permanentemente o contratante.
 
-  ## Humanity
+  ## Humanidade
   <Box>
-    [color=#999999][italic]80 Weight[/italic][/color]
+    [color=#999999][italic]80 de Peso[/italic][/color]
   </Box>
 
-  - Turns the contractee into a frog.
-  - This is permanent.
+  - Transforma o contratante em sapo.
+  - É permanente.
 
-  ## Time
+  ## Tempo
   <Box>
-    [color=#999999][italic]150 Weight[/italic][/color]
+    [color=#999999][italic]150 de Peso[/italic][/color]
   </Box>
 
-  - Kills the contractee after five minutes.
+  - Mata o contratante após cinco minutos.
 </Document>

@@ -1,31 +1,32 @@
 <Document>
-# Civilian
-[color=#6c6a78]Civilian[/color] is a catchall "department" for jobs that don't fit well into any other area.
+# Civil
+[color=#6c6a78]Civil[/color] é o "departamento" coringa para trabalhos que não cabem em outro lugar.
 
-These jobs tend to have little to no responsibility, with the only expectation being that you aren't a complete shitter.
+Esses cargos têm pouca ou nenhuma responsabilidade; só se espera que você não seja um shitter completo.
 
-## Personnel
-Roughly in order of how real of a job they are. Results may vary.
+## Pessoal
+Mais ou menos na ordem de quanto parecem trabalho de verdade. Resultados variam.
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineJanitor" Caption="Janitor"/>
-    <GuideEntityEmbed Entity="ToyFigurineChaplain" Caption="Chaplain"/>
-    <GuideEntityEmbed Entity="ToyFigurineLibrarian" Caption="Librarian"/>
-    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Lawyer"/>
+    <GuideEntityEmbed Entity="ToyFigurineJanitor" Caption="Zelador"/>
+    <GuideEntityEmbed Entity="ToyFigurineChaplain" Caption="Capelão"/>
+    <GuideEntityEmbed Entity="ToyFigurineLibrarian" Caption="Bibliotecário"/>
+    <GuideEntityEmbed Entity="ToyFigurineLawyer" Caption="Advogado"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineMime" Caption="Mime"/>
-    <GuideEntityEmbed Entity="ToyFigurineClown" Caption="Clown"/>
-    <GuideEntityEmbed Entity="ToyFigurineMusician" Caption="Musician"/>
-    <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Assistant"/>
+    <GuideEntityEmbed Entity="ToyFigurineMime" Caption="Mímico"/>
+    <GuideEntityEmbed Entity="ToyFigurineClown" Caption="Palhaço"/>
+    <GuideEntityEmbed Entity="ToyFigurineMusician" Caption="Músico"/>
+    <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Assistente"/>
   </Box>
 
-## Greytide Worldwide
-If you want to play [color=#6c6a78]Assistant[/color] to break shit for no reason, Trauma Station is not as tolerant as other servers.
-Instead, opt in for the [textlink="Insurgent" link="RuleS5"/] antagonist, which is essentially an assistant with a free license to be a shitter [green]to your hearts content[/bold].
+## Greytide Mundial
+Se quer jogar de [color=#6c6a78]Assistente[/color] para quebrar tudo sem motivo, a Trauma Station tolera menos que outros servidores.
+Prefira o antagonista [textlink="Insurgente" link="RuleS5"/], basicamente um assistente com licença para ser shitter [green]à vontade[/bold].
 
-## Apes Together Strong
-Being somewhat outcast, making friends with fellow [color=#6c6a78]Civilians[/color] can be crucial to your prosperity, or even survival.
-Maybe laughing at the clown's jokes will convince him to break you out of prison later on...
-Sometimes when the going gets tough, even the poor janitors have to fend off xenomorph infestations.
+## Macacos Juntos Fortes
+Por serem meio excluídos, fazer amizade com outros [color=#6c6a78]Civis[/color] pode ser essencial à prosperidade ou sobrevivência.
+Talvez rir da piada do Palhaço faça ele tirar você da prisão mais tarde...
+Quando a situação aperta, até pobres Zeladores precisam combater infestações xenomorfas.
+
 </Document>

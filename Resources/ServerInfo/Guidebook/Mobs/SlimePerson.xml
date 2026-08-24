@@ -14,27 +14,28 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Slime People
+  # Pessoas Slime
 
   <Box>
     <GuideEntityEmbed Entity="MobSlimePerson" Caption=""/>
   </Box>
 
-  They breathe nitrogen instead of oxygen, which is abundant in the station air, but harder to find compressed into gas tanks. They take significant damage if they are sprayed or splashed with water, but can
-  (and like other species, need to) drink it safely to stay hydrated.
-  They exhale nitrous oxide and are unaffected by it.
-  Their body processes only two toxins at a time compared to three.
+  Pessoas Slime respiram nitrogênio em vez de oxigênio. Nitrogênio é abundante no ar da estação, mas é mais difícil encontrá-lo comprimido em tanques. Elas sofrem dano significativo ao serem borrifadas ou atingidas por água, mas podem
+  — e, como as outras espécies, precisam — bebê-la com segurança para se manter hidratadas.
+  Elas exalam óxido nitroso e não são afetadas por ele.
+  Seu corpo processa somente duas toxinas por vez, em vez de três.
 
-  Slimepeople have an [bold]internal 2x3 storage inventory[/bold] inside of their slime membrane. Anyone can see what's inside and take it out of you without asking,
-  so be careful.
+  Pessoas Slime têm um [bold]inventário interno de 2x3 espaços[/bold] dentro da membrana. Qualquer pessoa pode ver o conteúdo e retirá-lo sem pedir,
+  então tome cuidado.
 
-  Slimepeople have roughly [color=#1e90ff]double[/color] regeneration compared to other humanoids and can regenerate from far greater wounds up to [color=#1e90ff]triple[/color] compared to others.
+  Pessoas Slime têm regeneração aproximadamente [color=#1e90ff]duas vezes maior[/color] que outros humanoides e conseguem se recuperar de ferimentos até [color=#1e90ff]três vezes[/color] mais graves que os demais.
 
-  Slime people have no bones and their limbs come off easier.
+  Elas não têm ossos, e seus membros se soltam com mais facilidade.
 
-  Slime Blood is technically a source of moderately filling food for other species, although drinking the blood of your coworkers is usually frowned upon.
-  They suffocate 80% slower, but take pressure damage 9% faster. This makes them by far the species most capable to survive in hard vacuum. For a while.
+  Sangue de Slime é tecnicamente uma comida razoavelmente nutritiva para outras espécies, embora beber o sangue de colegas de trabalho costume ser malvisto.
+  Elas sufocam 80% mais devagar, mas recebem dano de pressão 9% mais rápido. Isso as torna, de longe, a espécie mais capaz de sobreviver no vácuo extremo — por algum tempo.
 
-  They take [color=#1e90ff]80% less Cellular damage, 40% less Blunt damage and 20% less Poison damage[/color], but [color=#ffa500]50% more Cold damage, 15% more Slash damage and 15% more Piercing damage[/color]. <!-- Trauma - 80% cellular -->
+  Elas recebem [color=#1e90ff]80% menos dano Celular, 40% menos dano Brute e 20% menos dano de Veneno[/color], mas [color=#ffa500]50% mais dano de Frio, 15% mais dano Cortante e 15% mais dano Perfurante[/color]. <!-- Trauma - 80% cellular -->
+
 
 </Document>

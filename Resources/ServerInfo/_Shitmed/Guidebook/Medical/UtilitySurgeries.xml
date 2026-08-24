@@ -6,26 +6,26 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Utility Surgeries
+# Cirurgias Utilitárias
 
-## Tend Wounds
+## Tend Wounds (Tratar Ferimentos)
 
-Tend Wounds is a surgery that allows you to heal brute or burn damage from a patient without the need for topicals.
-To begin you need to open an incision on the patient's body, and then apply a Hemostat to it until the part is fully healed.
-At which point then you can close the incision with a Cautery.
+Tend Wounds é uma cirurgia que permite curar dano brute ou de queimadura sem medicamentos tópicos.
+Para começar, abra uma incisão no corpo do paciente e use nela um Hemostato até que a parte esteja totalmente curada.
+Depois, feche a incisão com um Cautério.
 
 <Box>
-<GuideEntityEmbed Entity="Scalpel" Caption="scalpel"/>
-<GuideEntityEmbed Entity="Hemostat" Caption="hemostat"/>
-<GuideEntityEmbed Entity="Cautery" Caption="cautery"/>
+<GuideEntityEmbed Entity="Scalpel" Caption="Bisturi"/>
+<GuideEntityEmbed Entity="Hemostat" Caption="Hemostato"/>
+<GuideEntityEmbed Entity="Cautery" Caption="Cautério"/>
 </Box>
 
-This surgery performs best the more damaged your patient is, especially if they are still alive. And allows you to bring otherwise unrecoverable
-patients, such as the dumb Technical Assistant that just walked into the burn chamber.
+A cirurgia funciona melhor quanto mais ferido estiver o paciente, principalmente se ele ainda estiver vivo. Ela permite recuperar pacientes que pareciam perdidos,
+como o Assistente Técnico tapado que acabou de entrar na câmara de queimadura.
 
-## Cavity Implant
+## Cavity Implant (Implante em Cavidade)
 
-This surgery allows you to implant any Tiny or Small item into a patient's torso. To begin you need to open an incision, and then open their ribcage.
-Your patient cannot access the implanted item normally, though there may be uses for this, such as hiding the Nuclear Authentication Disk.
+Esta cirurgia permite implantar qualquer item Tiny ou Small no torso do paciente. Primeiro, abra uma incisão e depois a caixa torácica.
+O paciente não consegue acessar o item implantado normalmente, mas isso pode ser útil, por exemplo, para esconder o Disco de Autenticação Nuclear.
 
 </Document>

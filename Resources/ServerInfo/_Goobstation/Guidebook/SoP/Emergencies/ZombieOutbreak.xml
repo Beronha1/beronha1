@@ -6,25 +6,25 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Zombie Outbreak Procedures
-During a zombie outbreak, namely defined when a virus/bacteria is confirmed to have inflicted several station personnel with a deadly pathogen, the station should be alerted immediately.
-<Box>Procedures are in place for an automatic notification system, but only sound off when a [italic]significant[/italic] portion of crew or inflicted.</Box>
+# Procedimentos para Surto Zumbi
+Durante um surto — vírus/bactéria confirmado infectando vários tripulantes com patógeno letal — avise a estação imediatamente.
+<Box>Há notificação automática, mas ela só toca quando uma parte [italic]significativa[/italic] da tripulação está infectada.</Box>
 
-Command should immediately set the alert to [color=#cc74fc]Violet Alert[/color] when notified and follow Violet Alert procedures.
+O Comando deve declarar [color=#cc74fc]Alerta Violeta[/color] e seguir seus procedimentos.
 
-1. All infected personnel are to make their way to Virology/Medical to be treated, if possible.
+1. Infectados devem ir à Virologia/Medicina para tratamento, se possível.
 
-2. All medical personnel are to contribute in fighting the viral outbreak if there are no critical patients requiring treatment.
-<Box>Eliminating the threat is [bold]top priority[/bold]</Box>
+2. Sem pacientes críticos, todo pessoal Médico deve ajudar a combater o surto.
+<Box>Eliminar a ameaça é [bold]prioridade máxima[/bold]</Box>
 
-3. All infected personnel, if untreatable (lacking treatment/vaccination), should be confined in isolation to prevent further contamination.
-<Box>They should be vaccinated as soon as possible prior to critical severity of the virus.</Box>
+3. Infectados sem tratamento/vacina devem ficar isolados para evitar contaminação.
+<Box>Vacine-os o quanto antes, antes que a doença chegue à gravidade crítica.</Box>
 
-4. As soon as a vaccination is available, it should be administered to those that are curable.
+4. Assim que houver vacina, aplique em todos que ainda possam ser curados.
 
-5. Complete zombified personnel, animals, creatures, et cetera; should be dealt with lethally and confirmed to be dead.
-<Box>All station personnel are permitted to eliminate confirmed, zombified personnel; regardless of status.</Box>
+5. Pessoas, animais e criaturas totalmente zumbificados devem ser eliminados com força letal e ter a morte confirmada.
+<Box>Todo tripulante pode eliminar zumbificados confirmados, independentemente do cargo.</Box>
 
-6. Once the zombie outbreak is contained, zombified entities should be removed and the station should resume normal activities (switching off of [color=#cc74fc]Violet Alert[/color]).
+6. Contido o surto, remova entidades zumbificadas, encerre o [color=#cc74fc]Alerta Violeta[/color] e retome o turno.
 
 </Document>

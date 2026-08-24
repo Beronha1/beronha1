@@ -1,55 +1,55 @@
 <Document>
-# Fishing
-Fishing is a way to get renewable resources as well as a decent amount of food! It also has access to some items otherwise unavalible...
+# Pesca
+Pescar é uma forma de obter recursos renováveis e uma boa quantidade de comida! Também dá acesso a alguns itens que não seriam encontrados de outro jeito...
 
 
   <Box>
-    <GuideEntityEmbed Entity="FishBass" Caption="REAL FISH"/>
-    <GuideEntityEmbed Entity="FishTropical" Caption="REAL FISH"/>
-    <GuideEntityEmbed Entity="FishFatFuckingCunt" Caption="STUPID"/>
+    <GuideEntityEmbed Entity="FishBass" Caption="PEIXE DE VERDADE"/>
+    <GuideEntityEmbed Entity="FishTropical" Caption="PEIXE DE VERDADE"/>
+    <GuideEntityEmbed Entity="FishFatFuckingCunt" Caption="IMBECIL"/>
   </Box>
 
-# Getting Started
-Start by getting a fishing rod. You can craft rods, or order them from cargo. Not all rods perform the same.
+# Começando
+Comece conseguindo uma vara de pesca. Você pode craftar uma ou pedi-la na Cargo. Nem todas as varas têm o mesmo desempenho.
 
   <Box>
-    <GuideEntityEmbed Entity="FishingRodMakeshift" Caption="Crafted rod"/>
-    <GuideEntityEmbed Entity="FishingRod" Caption="Ordered rod"/>
-    <GuideEntityEmbed Entity="FishingRodGolden" Caption="Secret rod..."/>
+    <GuideEntityEmbed Entity="FishingRodMakeshift" Caption="Vara craftada"/>
+    <GuideEntityEmbed Entity="FishingRod" Caption="Vara encomendada"/>
+    <GuideEntityEmbed Entity="FishingRodGolden" Caption="Vara secreta..."/>
   </Box>
 
-Once you have a rod, find a fishing spot. You can currently fish in the following structures:
+Depois de conseguir uma vara, encontre um ponto de pesca. Atualmente, você pode pescar nas seguintes estruturas:
 
   <Box>
-    <GuideEntityEmbed Entity="WaterFishingPool" Caption="Ordered from cargo"/>
-    <GuideEntityEmbed Entity="LavaFishingPool" Caption="Ordered from cargo"/>
-    <GuideEntityEmbed Entity="PlasmaFishingPool" Caption="Ordered from cargo"/>
+    <GuideEntityEmbed Entity="WaterFishingPool" Caption="Encomendada na Cargo"/>
+    <GuideEntityEmbed Entity="LavaFishingPool" Caption="Encomendada na Cargo"/>
+    <GuideEntityEmbed Entity="PlasmaFishingPool" Caption="Encomendada na Cargo"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="FloorWaterEntity" Caption="Found Nautrally"/>
-    <GuideEntityEmbed Entity="FloorLavaEntity" Caption="Found Nautrally"/>
-    <GuideEntityEmbed Entity="FloorLiquidPlasmaEntity" Caption="Found Nautrally"/>
+    <GuideEntityEmbed Entity="FloorWaterEntity" Caption="Encontrada naturalmente"/>
+    <GuideEntityEmbed Entity="FloorLavaEntity" Caption="Encontrada naturalmente"/>
+    <GuideEntityEmbed Entity="FloorLiquidPlasmaEntity" Caption="Encontrada naturalmente"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="ToiletDirtyWater" Caption="Ew!"/>
+    <GuideEntityEmbed Entity="ToiletDirtyWater" Caption="Eca!"/>
   </Box>
 
 # Minigame
 
-Once you hook a fish, spam the "Z" button to reel it in! It's that simple.
+Quando fisgar um peixe, spame a tecla "Z" para puxá-lo! É simples assim.
 
   <Box>
-    <GuideEntityEmbed Entity="BloodWritingZ" Caption="This is what the letter Z looks like."/>
+    <GuideEntityEmbed Entity="BloodWritingZ" Caption="É assim que a letra Z se parece."/>
   </Box>
 
 # Loot
 
-Every fishing spot has different loot to get, most will give you fish, but some have special secret items or other useful things. Make sure to butcher rare fish to extract their special items!
+Cada ponto de pesca tem um loot diferente. A maioria rende peixes, mas alguns escondem itens secretos ou outras coisas úteis. Não se esqueça de abater os peixes raros para extrair os itens especiais deles!
 
   <Box>
     <GuideEntityEmbed Entity="Wonderprod" Caption=" "/>
     <GuideEntityEmbed Entity="ClothingHeadHelmetAbductor" Caption=" "/>
-    <GuideEntityEmbed Entity="FishAbductor" Caption="Rare fish have many treasures for you..."/>
+    <GuideEntityEmbed Entity="FishAbductor" Caption="Peixes raros guardam muitos tesouros para você..."/>
     <GuideEntityEmbed Entity="ClothingOuterCoatAbductor" Caption=" "/>
     <GuideEntityEmbed Entity="WeaponAlien" Caption=" "/>
   </Box>

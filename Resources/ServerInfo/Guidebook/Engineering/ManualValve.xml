@@ -6,17 +6,17 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Manual Valve
-  The manual valve is as simple as it gets.
-  Allows or blocks the flow of gasses depending on if it's open or closed.
+  # Válvula manual
+  A válvula manual é o dispositivo mais simples possível.
+  Dependendo de estar aberta ou fechada, ela permite ou bloqueia o fluxo de gases.
   <Box>
     <GuideEntityEmbed Entity="GasValve"/>
   </Box>
 
-  Gas can freely flow between both sides with no restrictions.
+  Quando aberta, o gás flui livremente entre os dois lados, sem restrições.
 
-  Manual valves are used in a variety of applications, for example:
-  - Allowing or blocking the bypass of a recyclernet, to space waste gas directly
-  - Connecting or isolating heaters/coolers from the station's distro
+  Válvulas manuais servem para várias aplicações, por exemplo:
+  - Permitir ou bloquear o bypass da rede de reciclagem, mandando gases residuais diretamente ao espaço
+  - Conectar aquecedores/resfriadores à distro da estação ou isolá-los dela
 
 </Document>

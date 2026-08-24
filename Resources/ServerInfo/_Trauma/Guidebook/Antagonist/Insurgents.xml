@@ -1,28 +1,29 @@
 <Document>
-  # Insurgents
+  # Insurgentes
 
   <Box>
     <GuideEntityEmbed Entity="ClothingMaskGas" Caption=""/>
     <GuideEntityEmbed Entity="ClothingNeckBombCollarBroken" Caption=""/>
   </Box>
 
-  Insurgents spawn in a small shuttle every round, their goal is just to be shitters and mess around.
+  Insurgentes spawnam numa shuttle pequena em toda rodada; o objetivo é ser shitter e causar confusão.
 
-  There are currently no real objectives, so you have the freedom to be creative! Make a shotgun factory in maints, take science hostage, smash up the bar, etc.
+  Não existem objetivos fixos, então seja criativo! Monte fábrica de escopetas nos maints, faça a Ciência refém, destrua o bar etc.
 
-  # Bomb collar
+  # Coleira explosiva
 
   <Box>
     <GuideEntityEmbed Entity="ClothingNeckBombCollarBroken"/>
   </Box>
 
-  Insurgents are rebel D-class subjects who once had bomb collars. These collars are now disabled, but they cannot be removed.
-  Seeing a [color=red]bomb collar[/color] is [italic]usually[/italic] definitive proof someone is an [color=red]insurgent[/color]!
+  Insurgentes são sujeitos rebeldes de classe D que usavam coleiras explosivas. Elas estão desativadas, mas não podem ser removidas.
+  Ver uma [color=red]coleira explosiva[/color] é [italic]geralmente[/italic] prova definitiva de [color=red]insurgente[/color]!
 
-  # Special Rules
+  # Regras Especiais
 
-  Insurgents have to follow special rules, from [bold]Rule S5[/bold]:
-  - Unlike other antagonists, [bold]you still have to escalate in violence[/bold].
-  - Don't mass murder unless it is extremely justified or creative / funny.
-  - Don't AHelp about being killed, it's part of this role and will happen very often.
+  Insurgentes seguem regras especiais da [bold]Regra S5[/bold]:
+  - Ao contrário de outros antagonistas, [bold]você ainda precisa escalar a violência[/bold].
+  - Não faça massacre, salvo justificativa extrema ou algo criativo/divertido.
+  - Não mande AHelp por ter sido morto; faz parte do papel e acontecerá com frequência.
+
 </Document>

@@ -6,20 +6,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Atmospheric Upsets
-  Atmospheric upsets are deviations from the normal atmospheric conditions that should be maintained on the station.
+  # Incidentes atmosféricos
+  Incidentes atmosféricos são desvios das condições normais que devem ser mantidas na estação.
 
-  These upsets can be caused by a variety of factors, such as [textlink="fires" link="Fires"], [textlink="spacing" link="Spacing"], or other events that can quickly spread throughout the station and make the atmosphere uninhabitable for the crew.
+  Podem ser causados por vários fatores, como [textlink="incêndios" link="Fires"], [textlink="spacing" link="Spacing"] ou outros eventos capazes de se espalhar depressa e tornar o ar inabitável para a tripulação.
 
-  For reference, the normal atmospheric conditions on the station are 101.3 kPa of pressure and 293.15 K (20°C) of temperature.
-  The standard station mix is also 78% nitrogen, 22% oxygen.
+  Como referência, as condições normais da estação são pressão de 101.3 kPa e temperatura de 293.15 K (20°C).
+  A mistura padrão também contém 78% de nitrogênio e 22% de oxigênio.
 
-  ## Damage Control
-  For all atmospheric emergencies, it's important to act quickly to prevent the spread of dangerous conditions, and to contain the spread as much as possible.
+  ## Controle de danos
+  Em toda emergência atmosférica, aja rapidamente para conter as condições perigosas e impedir que se espalhem.
 
-  Opening [textlink="firelocks" link="FireAndGasControl"] to the exposed area will often lead to you having to fix [italic]two[/italic] problems instead of one.
+  Abrir os [textlink="firelocks" link="FireAndGasControl"] para a área exposta costuma deixar você com [italic]dois[/italic] problemas em vez de um.
 
-  Be sure to use your [textlink="holofan projector" link="AtmosTools"] to prevent the spread of dangerous conditions between [textlink="firelock buffers" link="FireAndGasControl"].
+  Use o [textlink="projetor de holofan" link="AtmosTools"] para bloquear a propagação entre [textlink="zonas protegidas por firelocks" link="FireAndGasControl"].
 
   <Box>
     <GuideEntityEmbed Entity="HolofanProjector"/>

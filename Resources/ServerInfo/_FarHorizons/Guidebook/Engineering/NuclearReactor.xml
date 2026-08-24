@@ -1,178 +1,178 @@
 <Document>
-  # Nuclear Generator
+  # Gerador Nuclear
 
-  The Nuclear Generator generates power by heating a gas through fission reactions in a Nuclear Reactor, which then spins a Gas Turbine.
+  O Gerador Nuclear produz energia aquecendo um gás por meio de reações de fissão em um Reator Nuclear; esse gás então movimenta uma Turbina a Gás.
 
-  ## The Nuclear Reactor
+  ## O Reator Nuclear
   <Box>
     <GuideEntityEmbed Entity="NuclearReactorCrew"/>
   </Box>
 
-  The Nuclear Reactor is the primary source of heat the generator uses to make power.
+  O Reator Nuclear é a principal fonte do calor que o gerador usa para produzir energia.
 
-  It is represented as a grid of Reactor Rod ports, which engineers can insert different fabricated rods into.
+  Ele é representado por uma grade de encaixes para Barras de Reator, nos quais engenheiros podem inserir diferentes barras fabricadas.
 
-  Heat is generated through fission reactions inside fuel rods and transferred into the coolant gas by gas channels.
+  O calor é gerado por reações de fissão dentro das barras de combustível e transferido ao gás refrigerante pelos canais de gás.
 
-  ## Reactor Rods
+  ## Barras de Reator
   <Box>
     <GuideEntityEmbed Entity="NuclearFabricator"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="CerenkiteReactorFuelRod" Caption="fuel rod"/>
-    <GuideEntityEmbed Entity="BohrumReactorReflector" Caption="neutron reflector"/>
-    <GuideEntityEmbed Entity="SteelReactorGasChannel" Caption="gas channel"/>
-    <GuideEntityEmbed Entity="SteelReactorHeatExchanger" Caption="heat exchanger"/>
+    <GuideEntityEmbed Entity="CerenkiteReactorFuelRod" Caption="barra de combustível"/>
+    <GuideEntityEmbed Entity="BohrumReactorReflector" Caption="refletor de nêutrons"/>
+    <GuideEntityEmbed Entity="SteelReactorGasChannel" Caption="canal de gás"/>
+    <GuideEntityEmbed Entity="SteelReactorHeatExchanger" Caption="trocador de calor"/>
   </Box>
 
-  Reactor Rods are the parts that go into the Reactor grid and cause it to function.
+  Barras de Reator são as peças inseridas na grade do Reator que permitem seu funcionamento.
 
-  They transfer heat and interact with neutrons within the Reactor.
+  Elas transferem calor e interagem com os nêutrons dentro do Reator.
 
-  If a Reactor Rod's [bold]Temperature[/bold] reaches 1426C (1700k), it will begin to melt.
+  Se a [bold]Temperatura[/bold] de uma Barra de Reator chegar a 1426C (1700k), ela começará a derreter.
 
-  Once melted it will become much more active and able to transfer heat into the Reactor, which may cause a total meltdown.
+  Depois de derretida, ela ficará muito mais ativa e transferirá calor ao Reator com mais facilidade, o que pode causar um meltdown completo.
 
-  Handling hot Reactor Rods can cause serious burns.
+  Manusear Barras de Reator quentes pode causar queimaduras graves.
 
-  If it is hotter than 80C you'll need gloves to be able to handle them. At 400C, not even gloves will protect you.
+  Se estiverem acima de 80C, você precisará de luvas para manuseá-las. A 400C, nem mesmo as luvas vão proteger você.
 
-  There are four different types of Reactor Rods that can be manufactured from a variety of [textlink="materials" link="NuclearMaterials"] and placed into the Reactor grid: Fuel Rods, Neutron Reflectors, Gas Channels, and Heat Exchangers.
+  Há quatro tipos de Barras de Reator que podem ser fabricadas com diversos [textlink="materiais" link="NuclearMaterials"] e colocadas na grade do Reator: Barras de Combustível, Refletores de Nêutrons, Canais de Gás e Trocadores de Calor.
 
-  ### Fuel Rods
-  Fuel Rods are the source of neutrons and heat within the Reactor.
+  ### Barras de Combustível
+  Barras de Combustível são a fonte de nêutrons e calor dentro do Reator.
 
-  They can emit neutrons through spontaneous decay or from interacting with existing neutrons, creating heat.
+  Elas podem emitir nêutrons por decaimento espontâneo ou pela interação com nêutrons já existentes, gerando calor.
 
-  They have two statistics that determine their effectiveness and volatility:
-  - [bold]Neutron Radioactivity[/bold]: Creates high-energy neutrons and large amounts of heat. Decays into Radioactivity.
-  - [bold]Radioactivity[/bold]: Creates neutrons and heat. Decays into Spent Fuel.
+  Elas possuem duas estatísticas que determinam sua eficácia e instabilidade:
+  - [bold]Radioatividade de Nêutrons[/bold]: cria nêutrons de alta energia e grandes quantidades de calor. Decai em Radioatividade.
+  - [bold]Radioatividade[/bold]: cria nêutrons e calor. Decai em Combustível Gasto.
 
-  Every fuel rod assembly contains control rods which start out fully inserted.
+  Todo conjunto de barras de combustível contém barras de controle, que começam totalmente inseridas.
 
-  Retracting the control rods allows neutrons to pass through the fissile fuel and start nuclear chain reactions.
+  Retrair as barras de controle permite que nêutrons atravessem o combustível físsil e iniciem reações nucleares em cadeia.
 
-  Be careful to not retract them too quickly, lest you create another Chernobyl disaster.
+  Tome cuidado para não retraí-las rápido demais, ou você pode recriar o desastre de Chernobyl.
 
-  They also keep track of how much [bold]Spent Fuel[/bold] they contain, which does not affect the Fuel Rod's performance, but can indicate when it is time to replace it.
+  Elas também registram quanto [bold]Combustível Gasto[/bold] contêm. Isso não afeta o desempenho da Barra de Combustível, mas indica quando chegou a hora de substituí-la.
 
   <Box>
     <GuideEntityEmbed Entity="NuclearCentrifuge"/>
     <GuideEntityEmbed Entity="IngotPlutonium"/>
   </Box>
 
-  Once a Fuel Rod contains enough [bold]Spent Fuel[/bold], it can be reprocessed by a nuclear centrifuge to create plutonium, which can be used to make plutonium fuel rods.
+  Quando uma Barra de Combustível acumular [bold]Combustível Gasto[/bold] suficiente, ela poderá ser reprocessada em uma centrífuga nuclear para produzir plutônio, usado na fabricação de barras de combustível de plutônio.
 
-  ### Neutron Reflectors
-  Neutron reflectors reflect neutrons usually in the direction they were emitted from.
+  ### Refletores de Nêutrons
+  Refletores de nêutrons refletem nêutrons, normalmente de volta à direção de onde vieram.
 
-  Some materials are better than others, with [bold]graphite[/bold] reflectors reflecting almost all neutrons.
+  Alguns materiais funcionam melhor do que outros; refletores de [bold]grafite[/bold] refletem quase todos os nêutrons.
 
-  Reflectors allow you to decrease the critical mass for your fuel, so don't let your screwdriver slip.
+  Refletores permitem reduzir a massa crítica do combustível, então não deixe a chave de fenda escapar.
 
-  ### Gas Channels
-  Gas Channels transfer heat from themselves into the coolant gas that flows through them.
+  ### Canais de Gás
+  Canais de Gás transferem seu próprio calor ao gás refrigerante que passa por eles.
 
-  Each Gas Channel will increase the flow rate by [bold]100 L/s[/bold], allowing the Reactor to process more gas at once.
+  Cada Canal de Gás aumenta a vazão em [bold]100 L/s[/bold], permitindo que o Reator processe mais gás de uma só vez.
 
-  ### Heat Exchangers
-  Heat Exchangers guide the spread of heat within the Reactor.
+  ### Trocadores de Calor
+  Trocadores de Calor conduzem a propagação de calor dentro do Reator.
 
-  They are exceptionally good at transferring heat and don't interact with neutrons, making them ideal for getting heat from a Fuel Rod into a Gas Channel without interfering with the fission process.
+  Eles transferem calor excepcionalmente bem e não interagem com nêutrons, sendo ideais para levar calor de uma Barra de Combustível até um Canal de Gás sem interferir no processo de fissão.
 
-  ## Controlling the Reactor
-  The Reactor is controlled and modified through its UI, which also provides information on the Reactor's status.
+  ## Controlando o Reator
+  O Reator é controlado e configurado por sua interface, que também fornece informações sobre seu estado.
 
-  The Reactor UI has three major panels: Targeting, Grid View, Status Panel
+  A interface do Reator possui três painéis principais: Alvo, Visão da Grade e Painel de Estado.
 
-  ### Targeting
-  The targeting panel has controls for inserting and removing rods into and out of the Reactor grid.
+  ### Alvo
+  O painel de alvo possui controles para inserir e remover barras da grade do Reator.
 
-  The position of the target are adjusted through the arrow buttons buttons, with the exact coordinate shown in the center.
+  A posição do alvo é ajustada pelos botões de seta, e a coordenada exata aparece no centro.
 
-  Reactor Rods can be inserted or removed through the Insert/Remove button below the position buttons.
+  Barras de Reator podem ser inseridas ou removidas pelo botão Inserir/Remover, abaixo dos botões de posição.
 
-  If there is a Reactor Rod at the target position, it will show information on that Reactor Rod, including its:
-  - Name
-  - Temperature (T)
-  - Neutron Radioactivity (N)
-  - Radioactivity (R)
-  - Spent Fuel (S)
+  Se houver uma Barra de Reator na posição selecionada, serão exibidas informações sobre ela, incluindo:
+  - Nome
+  - Temperatura (T)
+  - Radioatividade de Nêutrons (N)
+  - Radioatividade (R)
+  - Combustível Gasto (S)
 
-  The bottom of the panel displays the name of the part that in the Reactor's inventory, which is ready to be inserted into the grid or taken out of the Reactor.
+  A parte inferior do painel exibe o nome da peça no inventário do Reator, pronta para ser inserida na grade ou retirada do Reator.
 
-  ### Grid View
-  The grid view gives a graphic visualization of the status of the Reactor grid.
+  ### Visão da Grade
+  A visão da grade apresenta uma representação gráfica do estado da grade do Reator.
 
-  The Change View button can be used to alternate between the different views:
-  - Temperature View: shows the temperature of the components
-  - Neutron View: shows the number of neutrons at any given position
-  - Target View: shows the current target location
-  - Fuel View: shows the fuel level of the components
+  O botão Alterar Visão permite alternar entre diferentes modos:
+  - Visão de Temperatura: mostra a temperatura dos componentes
+  - Visão de Nêutrons: mostra a quantidade de nêutrons em cada posição
+  - Visão do Alvo: mostra a posição selecionada no momento
+  - Visão de Combustível: mostra o nível de combustível dos componentes
 
-  ### Status Panel
-  The status panel gives information on the Reactor as a whole and provides control of the control rods.
+  ### Painel de Estado
+  O painel de estado fornece informações sobre o Reator como um todo e permite controlar as barras de controle.
 
-  The [bold]Temperature Gauge[/bold] shows the current temperature of the Reactor, in a range between -273C and 1726C (0k to 2000k).
+  O [bold]Medidor de Temperatura[/bold] mostra a temperatura atual do Reator, em uma faixa entre -273C e 1726C (0k a 2000k).
 
-  If the Reactor ever reaches 1726C (2000k), it will [color=red]meltdown[/color].
+  Se o Reator chegar a 1726C (2000k), ele sofrerá um [color=red]meltdown[/color].
 
-  The [bold]Radiation Gauge[/bold] shows the current radiation being emitted by the Reactor, in a range between 0 and 50 rads.
+  O [bold]Medidor de Radiação[/bold] mostra a radiação emitida pelo Reator, em uma faixa entre 0 e 50 rads.
 
-  The [bold]Thermal Power Gauge[/bold] shows an estimation of the amount of thermal power being made by the Reactor, in a range between 0 and 10 000 000 thermal watts (Wt).
+  O [bold]Medidor de Potência Térmica[/bold] estima a potência térmica produzida pelo Reator, em uma faixa entre 0 e 10 000 000 watts térmicos (Wt).
 
-  Thermal Power is a decent estimation of how much power can be extracted from the gas by the [bold]Turbine[/bold].
+  A Potência Térmica é uma boa estimativa de quanta energia a [bold]Turbina[/bold] poderá extrair do gás.
 
-  Thermal Power has a tendency to increase and decrease as the Reactor runs, rarely remaining stable.
+  A Potência Térmica tende a subir e descer durante o funcionamento do Reator, raramente permanecendo estável.
 
-  The [bold]Control Rod Gauges[/bold] show the actual and set insertion levels of the control rods within the Reactor, and provide buttons to change the insertion level.
+  Os [bold]Medidores das Barras de Controle[/bold] mostram os níveis real e definido de inserção das barras de controle no Reator, além de oferecer botões para alterar esse nível.
 
-  100% insertion means the control rods are as effective as possible and 0% insertion means the control rods are functionally disabled.
+  Inserção de 100% significa que as barras de controle estão na eficiência máxima; inserção de 0% significa que elas estão, na prática, desativadas.
 
-  ### Circuit control
+  ### Controle por circuitos
 
-  Integrated circuits can work well with reactors.
+  Circuitos integrados funcionam bem com reatores.
 
-  You can read the current control rod insertion percentage, casing temperature and thermal power generation as integer inputs.
+  É possível ler a porcentagem atual de inserção das barras de controle, a temperatura da carcaça e a geração de potência térmica como entradas inteiras.
 
-  You can write the target control rod insertion percentage too, allowing you to indirectly control the fission rate.
+  Também é possível escrever a porcentagem-alvo de inserção das barras de controle, permitindo controlar indiretamente a taxa de fissão.
 
-  ## Cooling the Reactor
-  The Reactor is cooled through the use of gasses, but some gasses have effects on the Reactor when in sufficient quantities:
+  ## Resfriando o Reator
+  O Reator é resfriado com gases, mas alguns deles afetam o Reator quando presentes em quantidade suficiente:
 
   <Box>
     <GuideEntityEmbed Entity="PlasmaCanister" Caption=""/>
   </Box>
-  [color=#ff3300][bold]Plasma[/bold][/color] has a reactive effect, creating more neutrons and decaying into [color=#13ff4b][bold]Tritium[/bold][/color].
+  O [color=#ff3300][bold]Plasma[/bold][/color] possui efeito reativo, criando mais nêutrons e decaindo em [color=#13ff4b][bold]Trítio[/bold][/color].
 
-  If there is enough plasma within the Reactor, it may end up going into a runaway reaction and [color=red]melting down[/color].
+  Se houver plasma suficiente dentro do Reator, ele poderá entrar em uma reação descontrolada e sofrer um [color=red]meltdown[/color].
 
   <Box>
     <GuideEntityEmbed Entity="CarbonDioxideCanister" Caption=""/>
   </Box>
-  [color=#4e4e4e][bold]Carbon Dioxide[/bold][/color] has a moderative effect, removing neutrons that come into contact with it.
+  O [color=#4e4e4e][bold]Dióxido de Carbono[/bold][/color] possui efeito moderador, removendo os nêutrons que entram em contato com ele.
 
-  This can be used to regulate a plasma reaction or slow down the Reactor.
+  Isso pode ser usado para regular uma reação de plasma ou desacelerar o Reator.
 
   <Box>
     <GuideEntityEmbed Entity="TritiumCanister" Caption=""/>
   </Box>
-  [color=#13ff4b][bold]Tritium[/bold][/color] transmutes within a Reactor, randomly decaying into a wide variety of gasses:
-  - [color=#2887e8][bold]Oxygen[/bold][/color]
-  - [color=#FF0000][bold]Nitrogen[/bold][/color]
-  - [color=#56941e][bold]Ammonia[/bold][/color]
-  - [color=#8f00ff][bold]Nitrous Oxide[/bold][/color]
+  O [color=#13ff4b][bold]Trítio[/bold][/color] sofre transmutação dentro do Reator, decaindo aleatoriamente em vários gases:
+  - [color=#2887e8][bold]Oxigênio[/bold][/color]
+  - [color=#FF0000][bold]Nitrogênio[/bold][/color]
+  - [color=#56941e][bold]Amônia[/bold][/color]
+  - [color=#8f00ff][bold]Óxido Nitroso[/bold][/color]
   - [color=#3a758c][bold]Frezon[/bold][/color]
 
-  In the presence of [color=#2887e8][bold]Oxygen[/bold][/color] and at the temperatures of the Reactor, [color=#13ff4b][bold]Tritium[/bold][/color] will begin to burn, [color=red]creating large amounts of heat[/color].
+  Na presença de [color=#2887e8][bold]Oxigênio[/bold][/color] e sob as temperaturas do Reator, o [color=#13ff4b][bold]Trítio[/bold][/color] começará a queimar, [color=red]gerando enormes quantidades de calor[/color].
 
-  ## Reactor Radiation
+  ## Radiação do Reator
   <Box>
     <GuideEntityEmbed Entity="SignRadiation" Caption=""/>
   </Box>
-  The Reactor sometimes allows some radiation to leak out, which can pose a danger to unprotected crew.
+  O Reator às vezes deixa escapar radiação, o que representa perigo para tripulantes sem proteção.
 
-  The radiation level of the Reactor is determined by how many neutrons are escaping the Reactor grid.
+  O nível de radiação do Reator é determinado pela quantidade de nêutrons que escapa de sua grade.
 
   <Box>
     <GuideEntityEmbed Entity="ClosetRadiationSuit"/>
@@ -180,113 +180,113 @@
     <GuideEntityEmbed Entity="GeigerCounter"/>
   </Box>
 
-  Proper protection and shielding are highly recommended when working near the Reactor.
+  Proteção e blindagem adequadas são altamente recomendadas ao trabalhar perto do Reator.
 
 
-  ## The Gas Turbine
+  ## A Turbina a Gás
   <Box>
     <GuideEntityEmbed Entity="Turbine"/>
   </Box>
 
-  The Gas Turbine is where the power actually gets made.
+  É na Turbina a Gás que a energia é realmente produzida.
 
-  It takes in hot gas from the Reactor and outputs electricity and sends colder gas back to the Reactor.
+  Ela recebe o gás quente do Reator, produz eletricidade e devolve ao Reator um gás mais frio.
 
-  The amount of energy made by the Turbine is affected by its RPM, which is adjusted through Flow Rate and Stator Load.
+  A quantidade de energia produzida pela Turbina depende de seu RPM, ajustado por meio da Vazão e da Carga do Estator.
 
-  ### Flow Rate
-  The Flow Rate determines how much gas goes through the Turbine every second.
+  ### Vazão
+  A Vazão determina quanto gás atravessa a Turbina a cada segundo.
 
-  The higher the Flow Rate, the higher the RPM of the Turbine.
+  Quanto maior a Vazão, maior o RPM da Turbina.
 
-  Flow Rate is usually set to allow maximum flow through the Reactor core, which can be found by the following equation: 100 * number of gas channels + 200.
+  A Vazão costuma ser definida para permitir o fluxo máximo pelo núcleo do Reator, calculado pela seguinte equação: 100 * número de canais de gás + 200.
 
-  ### Stator Load
-  The Stator Load determines how much power is made by each revolution of the Turbine.
+  ### Carga do Estator
+  A Carga do Estator determina quanta energia é produzida a cada volta da Turbina.
 
-  The higher the Stator Load, the lower the RPM of the Turbine.
+  Quanto maior a Carga do Estator, menor o RPM da Turbina.
 
-  Stator Load is usually adjusted to ensure the Turbine stays at optimal RPM.
+  A Carga do Estator costuma ser ajustada para manter a Turbina no RPM ideal.
 
   ### RPM
-  The RPM (Rotations Per Minute) represents how fast the Turbine is spinning.
+  O RPM (Rotações Por Minuto) representa a velocidade de giro da Turbina.
 
-  The Turbine has an optimal RPM, where it will produce the most power.
+  A Turbina possui um RPM ideal, no qual produz o máximo de energia.
 
-  Going faster or slower than optimal will result in poor performance.
+  Girar acima ou abaixo desse ponto reduz o desempenho.
 
-  ### Circuit control
+  ### Controle por circuitos
 
-  Like a reactor, turbines can be controlled by integrated circuits.
+  Assim como um reator, turbinas podem ser controladas por circuitos integrados.
 
-  Both the flow rate and stator load can be set to integer values.
+  Tanto a vazão quanto a carga do estator podem ser definidas com valores inteiros.
 
-  You can read the current speed as well as the power generated and being used.
+  É possível ler a velocidade atual, além da energia produzida e utilizada.
 
-  ## Turbine Status Indicators
-  The Turbine has a set of status indicators to warn operators of dangerous conditions or faults.
+  ## Indicadores de Estado da Turbina
+  A Turbina possui indicadores de estado que alertam os operadores sobre condições perigosas ou falhas.
 
-  ### Overspeed
-  The Turbine RPM is too high.
+  ### Velocidade Excessiva
+  O RPM da Turbina está alto demais.
 
-  If the Turbine RPM gets too high, it will start to take damage.
+  Se o RPM da Turbina subir demais, ela começará a sofrer dano.
 
-  Prolonged time spent at overspeed or excessive overspeed will cause the Turbine to [color=red]tear itself apart[/color].
+  Permanecer em velocidade excessiva por muito tempo — ou atingir uma velocidade absurda — fará a Turbina [color=red]se despedaçar[/color].
 
-  Damage to the Turbine can be repaired with a [color=yellow]welder[/color], though it will likely take multiple attempts to fully repair it.
+  O dano à Turbina pode ser reparado com um [color=yellow]maçarico[/color], embora provavelmente sejam necessárias várias tentativas para consertá-la por completo.
 
-  ### Overtemp
-  The gas going into the Turbine is too hot.
+  ### Temperatura Excessiva
+  O gás que entra na Turbina está quente demais.
 
-  If the gas coming into the Turbine is hotter than 2726C (3000k), it will trigger an emergency purge valve and dump the gas into the room.
+  Se o gás que entra na Turbina estiver acima de 2726C (3000k), uma válvula de purga de emergência será acionada e despejará o gás na sala.
 
-  This hot gas can cause serious burns to personnel or even a fire, if the gas is flammable.
+  Esse gás quente pode causar queimaduras graves no pessoal ou até um incêndio, caso seja inflamável.
 
-  ### Stalling
-  The gas is not hot enough for the set stator load.
+  ### Perda de Rotação
+  O gás não está quente o bastante para a carga definida no estator.
 
-  Stalling is where the gas going into the Turbine isn't "pushing" hard enough to overcome the stator load's resistance.
+  A perda de rotação ocorre quando o gás que entra na Turbina não "empurra" com força suficiente para vencer a resistência da carga do estator.
 
-  ### Undertemp
-  The gas going into the Turbine is too cold.
+  ### Temperatura Insuficiente
+  O gás que entra na Turbina está frio demais.
 
-  If the gas is at or below room temperature (20C), there is no energy for the Turbine to take out of it.
+  Se o gás estiver na temperatura ambiente ou abaixo dela (20C), não haverá energia para a Turbina extrair.
 
-  ## Turbine Parts
+  ## Peças da Turbina
   <Box>
     <GuideEntityEmbed Entity="NuclearFabricator"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="SteelGasTurbineBlade" Caption="turbine blade"/>
-    <GuideEntityEmbed Entity="SteelGasTurbineStator" Caption="stator"/>
+    <GuideEntityEmbed Entity="SteelGasTurbineBlade" Caption="pá da turbina"/>
+    <GuideEntityEmbed Entity="SteelGasTurbineStator" Caption="estator"/>
   </Box>
 
-  Turbine parts are what define how well the turbine functions.
+  As peças da turbina definem a qualidade de seu funcionamento.
 
-  Turbine parts are made in the Nuclear Fabricator from a set of [textlink="materials" link="NuclearMaterials"].
+  Peças da turbina são produzidas no Fabricador Nuclear a partir de diversos [textlink="materiais" link="NuclearMaterials"].
 
-  The Turbine is capable of accepting two different types of parts: Blades and Stators
+  A Turbina aceita dois tipos de peças: Pás e Estatores.
 
-  ### Turbine Blades
-  Turbine blades govern the integrity and inertia of the turbine.
+  ### Pás da Turbina
+  As pás determinam a integridade e a inércia da turbina.
 
-  Higher integrity means it can take more damage before failing, making it generally safer.
+  Maior integridade significa que ela suporta mais dano antes de falhar, tornando-a mais segura no geral.
 
-  Higher inertia means it will take more energy to change the RPM, which leads to smoother operation.
+  Maior inércia significa que será preciso mais energia para alterar o RPM, resultando em uma operação mais estável.
 
-  ### Stators
-  Stators affect the power efficiency and output of the Turbine.
+  ### Estatores
+  Estatores afetam a eficiência energética e a potência de saída da Turbina.
 
 
-  # Starting the Nuclear Generator
-  To start the Nuclear Generator, engineers must follow these steps:
-  - Fill the coolant loop with a gas.
-  - Set the Turbine's Flow Rate according to the Reactor setup.
-  - Insert the Fuel Rods into the empty spots in the Reactor grid, typically by a control rod(s) and surrounded by heat exchangers and gas channels.
-  - Retract the Control Rods to start warming up the Reactor.
-  - As the Reactor warms up, engineers will want to keep adjusting the Turbine's Stator Load to maintain optimal RPM.
-  - Once the Turbine is making enough power for the station, the Control Rods should be inserted to the point of maintaining Reactor temperature.
+  # Ligando o Gerador Nuclear
+  Para ligar o Gerador Nuclear, engenheiros devem seguir estas etapas:
+  - Encha o circuito de refrigeração com um gás.
+  - Defina a Vazão da Turbina de acordo com a montagem do Reator.
+  - Insira as Barras de Combustível nos espaços vazios da grade do Reator, normalmente ao lado de uma ou mais barras de controle e cercadas por trocadores de calor e canais de gás.
+  - Retraia as Barras de Controle para começar a aquecer o Reator.
+  - Conforme o Reator aquece, ajuste continuamente a Carga do Estator da Turbina para manter o RPM ideal.
+  - Quando a Turbina estiver produzindo energia suficiente para a estação, insira as Barras de Controle até o ponto em que a temperatura do Reator se mantenha estável.
 
-  Over time, the Fuel Rods will lose radioactivity, meaning the Control Rods should be retracted further or the fuel rods replaced.
+  Com o tempo, as Barras de Combustível perderão radioatividade; será preciso retrair mais as Barras de Controle ou substituir as barras de combustível.
 
 </Document>

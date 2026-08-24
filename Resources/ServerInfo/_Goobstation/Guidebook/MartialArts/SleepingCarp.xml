@@ -1,38 +1,38 @@
 <Document>
 
-  # Way of The Sleeping Carp
+  # Caminho da Carpa Adormecida
 
   <Box>
     <GuideEntityEmbed Entity="SleepingCarpScroll" Caption=""/>
   </Box>
 
-  The Way of The Sleeping Carp, or simply the Sleeping Carp, is an ancient [textlink="martial art" link="MartialArts"] learned through intense study and meditation.
-  It is modeled after the graceful movement, combat, and flow of Space Carp. Ancient masters of this art are rumored to have studied among great schools of space carp
-  and survived, some have even befriended the aggressive creatures. This art is often utilized by zealots and extremists especially among The Syndicate.
+  O Caminho da Carpa Adormecida, ou simplesmente Carpa Adormecida, é uma antiga [textlink="arte marcial" link="MartialArts"] aprendida por meio de estudo intenso e meditação.
+  Ela imita os movimentos graciosos, o combate e o fluxo das Carpas Espaciais. Dizem que antigos mestres estudaram entre grandes cardumes de carpas espaciais
+  e sobreviveram; alguns chegaram a fazer amizade com essas criaturas agressivas. Esta arte é comum entre fanáticos e extremistas, especialmente no Sindicato.
 
-  ## Special abilities
+  ## Habilidades especiais
 
-  Sleeping Carp users are better at Harm intent, as their unarmed attacks will deal extra damage to the opponent.
+  Usuários da Carpa Adormecida são melhores no intent Harm, pois seus ataques desarmados causam dano extra ao oponente.
 
-  ### Riptide Reflection
+  ### Reflexo da Correnteza
 
-  Due to the graceful nature of this martial art, Sleeping Carp users are able to completely deflect almost all incoming
-  projectiles. Whether ballistic or energy-based projectiles, hitscan shots or bolas, they effortlessly reflect them.
-  However, explosives, knives, and syringes remain outside their control, slipping through the serene flow of their defense.
+  Pela natureza graciosa desta arte marcial, usuários da Carpa Adormecida conseguem desviar por completo quase todos os
+  projéteis recebidos. Sejam balísticos, de energia, tiros hitscan ou bolas, eles os refletem sem esforço.
+  Explosivos, facas e seringas, porém, escapam do seu controle e atravessam o fluxo sereno da defesa.
 
-  ### Fellow Fish?
+  ### Peixe Companheiro?
 
-  Inspite of your carp-like nature, all fish remain hostile towards you.
+  Apesar da sua natureza de carpa, todos os peixes continuam hostis a você.
 
-  ### Gun Gainsay
+  ### Renúncia às Armas
 
-  Part of becoming a Master of Sleeping Carp is to take an oath to abstain from using guns. This includes regular guns
-  and firearms attached to equipment such as mechs. It isn't quite clear why, however, it is thought that it allows the
-  user to intensify their focus on perfect flow and deflection. Others believe that it is part of the drive of the master
-  to further emulate the way of the Carp, to completely focus on the attack of the Carp: its [bold] Bite [/bold]. This does not prevent
-  the practitioners of Sleeping Carp from throwing items, bolas, floor tiles, or even people, all useful ranged weapons.
+  Para se tornar Mestre da Carpa Adormecida, é preciso jurar não usar armas de fogo. Isso inclui armas comuns
+  e armamentos acoplados a equipamentos como mechs. Ninguém sabe bem por quê, mas acredita-se que isso permita ao
+  usuário concentrar-se no fluxo e na deflexão perfeitos. Outros dizem que é parte da busca do mestre para
+  imitar ainda mais o caminho da Carpa, focando totalmente no ataque dela: sua [bold] Mordida [/bold]. Isso não impede
+  praticantes da Carpa Adormecida de arremessar itens, bolas, tiles ou até pessoas — ótimas armas à distância.
 
-  ## Combo attacks
+  ## Ataques em combo
 
   ### Keelhaul
 
@@ -41,25 +41,25 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  Kicks an opponent in the head, knocking them down and dealing both Slash and Stamina damage to them,
-  unless they are already stunned. In that case, it will as well completely disarm the opponent.
+  Chuta a cabeça do oponente, derrubando-o e causando dano Slash e de Stamina,
+  a menos que ele já esteja atordoado. Nesse caso, também o desarma por completo.
 
-  ### Crashing Waves Kick
+  ### Chute das Ondas Quebrando
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  Kicks the opponent square in the chest, sending them flying and dealing Slash damage. Only works on standing opponents.
+  Chuta o oponente bem no peito, arremessando-o e causando dano Slash. Só funciona em oponentes de pé.
 
-  ### Gnashing Teeth
+  ### Ranger de Dentes
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Deals extra Slash damage, and makes the user shout to strike fear into their opponent's heart.
+  Causa dano Slash extra e faz o usuário gritar para meter medo no coração do oponente.
 
 </Document>

@@ -6,15 +6,15 @@
 <GuideEntityEmbed Entity="BaseGasCondenser"/>
 </Box>
 
-Modern technology allows space creatures like you and I to automate the movement of liquids.
+A tecnologia moderna permite que criaturas espaciais como nós automatizem o movimento de líquidos.
 
-Research and build a liquid pump and some automation upgrade kits.
-You can upgrade certain liquid handling machines like ChemMasters and industrial reagent grinders.
-Link the pump to the Plumbing Input/Output ports and it will start pumping.
+Pesquise e construa uma bomba de líquido e kits de automação.
+Você pode melhorar certas máquinas, como ChemMasters e trituradores industriais de reagentes.
+Vincule a bomba às portas de Entrada/Saída de Plumbing e ela começará a bombear.
 
-Pumps can only transfer between 2 machines, but you can click them to assign a filter. Only that filtered reagent will be moved by the pump.
-Use multiple pumps for advanced stuff.
+Cada bomba conecta apenas 2 máquinas, mas pode receber um filtro ao ser clicada. Só o reagente filtrado será transferido.
+Use várias bombas para sistemas avançados.
 
-Because it's just multitool based you don't need to build any pipes or anything, just link pumps to machines and watch the liquids move!
+Como tudo usa multitool, não é preciso construir canos: vincule as bombas às máquinas e veja o líquido andar!
 
 </Document>

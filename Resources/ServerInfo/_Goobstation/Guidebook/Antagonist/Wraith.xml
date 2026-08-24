@@ -3,104 +3,104 @@
   <Box>
     <GuideEntityEmbed Entity="MobWraith" Caption=""/>
   </Box>
-  Where most other antagonist roles exist to make you afraid of some maniac with a fire extinguisher coming to get you,
-  the Wraith exists to make you afraid of the station itself.
+  Enquanto a maioria dos antagonistas faz você temer algum maníaco vindo atrás de você com um extintor,
+  o Wraith existe para fazer você temer a própria estação.
 
-  Given enough time and corpses (and given that they almost always appear with other antagonists, there will be corpses), they can progress from an inconvenience to a terrifying juggernaut of murder.
+  Com tempo e cadáveres suficientes — e, como quase sempre aparece junto de outros antagonistas, haverá cadáveres — ele passa de incômodo a uma aterrorizante máquina de matar.
 
-  They have their downsides, though, and a clever chef with some salt can be far more dangerous to a wraith than an army of supercops armed to the teeth.
+  Porém, tem suas fraquezas: um Chef esperto com sal pode ser muito mais perigoso para um Wraith que um exército de supertiras armados até os dentes.
 
-  ## So I've been reborn as a Wraith, now what?
+  ## Renasci como Wraith, e agora?
 
-  First and foremost, wraiths are ghosts. They cannot be seen by the living unless manifested, they can hear everything on the station, they can talk to and see normal ghosts, fly through walls, all of it.
-  They can use their powers while incorporeal as well, and are effectively invulnerable in this state.
+  Antes de tudo, Wraiths são fantasmas. Os vivos não conseguem vê-los quando não estão manifestados; eles ouvem tudo na estação, falam com fantasmas comuns, enxergam-nos, atravessam paredes e por aí vai.
+  Também usam poderes enquanto incorpóreos e são, na prática, invulneráveis nesse estado.
 
-  When wraiths use the Haunt ability, they manifest in a physical form for about minute, able to be injured and even killed.
+  Ao usar Assombrar, o Wraith manifesta forma física por cerca de um minuto, podendo ser ferido e até morto.
 
-  If killed while manifested, though, a wraith isn't necessarily dead. Wraiths can survive being banished from physical form once - the second time kills them for good.
-  Moreover, there's strings attached: when banished, they lose all of their built-up WP and, far more cripplingly, any WP regeneration bonuses from Absorb Corpse. The consolation prize is that Absorb Corpse's cooldown is reset as well.
+  Contudo, morrer manifestado não significa necessariamente o fim. Wraiths sobrevivem uma vez ao banimento da forma física; a segunda morte é definitiva.
+  Há um preço: ao ser banido, perde todo o WP acumulado e, pior ainda, todos os bônus de regeneração de WP obtidos com Absorver Cadáver. Como consolo, o cooldown de Absorver Cadáver também é resetado.
 
-  Wraiths can also move items by pulling them around.
+  Wraiths também movem itens puxando-os por aí.
 
-  ## Wraith Points
+  ## Pontos de Wraith
 
-  Wraith abilities work off the creatively named Wraith Points, or WP, a resource that passively increases over time. The rate of regeneration can be permanently increased by absorbing corpses, or temporarily increased by using Haunt near a crowd or possessing a Revenant.
-  There's no upper limit to banked points or regeneration rate, but banishment resets both.
+  As habilidades usam os criativamente nomeados Pontos de Wraith, ou WP, recurso que cresce passivamente. A taxa de regeneração aumenta permanentemente ao absorver cadáveres ou temporariamente ao usar Assombrar perto de uma multidão ou possuir um Revenant.
+  Não há limite máximo para pontos guardados nem para a regeneração, mas o banimento reseta ambos.
 
-  ### Ok, that's good and all, but how do I work this thing?
+  ### Certo, tudo muito bom, mas como uso isso?
 
-  At the beginning, you are fairly weak. Not necessarily in the literal sense, but without WP (Wraith Points!),
-  you are incapable of using most of your skills to cause actual harm. Your two most important abilities are:
+  No começo, você é bem fraco. Não necessariamente no sentido literal, mas, sem WP (Pontos de Wraith!),
+  é incapaz de usar a maioria das habilidades para causar dano de verdade. Suas duas habilidades principais são:
 
-  ### Haunt
+  ### Assombrar
 
-  - Makes you corporeal, allowing others to see you. While this does leave you vulnerable to being attacked, it also increases the rate at which you gain WP based on the number of witnesses to your spooky presence.
-  - Some actions may only be used while corporeal, so this is your way of doing that.
+  - Torna você corpóreo e visível. Embora o deixe vulnerável a ataques, também aumenta o ganho de WP conforme o número de testemunhas da sua presença assustadora.
+  - Algumas ações só podem ser usadas enquanto corpóreo; esta é a forma de fazer isso.
 
-  ### Absorb Corpse
+  ### Absorver Cadáver
 
-  - Consumes a corpse (so long as they aren't rotting), giving you some extra WP regeneration permanently, as well as a nice chunk of WP in the process.
-  - Once this action is used, it will rot the target and create some nasty black smoke, so it isn't exactly subtle.
-  - Be warned! If you attempt to absorb a corpse that has at least 25 units of Formaldehyde inside it, while the chemical will be removed in the process, you will be left severely harmed! Avoid targetting corpses inside the morgue that may have been injected with this embalming chemical.
+  - Consome um cadáver, desde que não esteja apodrecendo, concedendo permanentemente regeneração extra e uma boa quantidade de WP.
+  - A ação apodrece o alvo e cria uma fumaça preta nojenta; não é exatamente discreta.
+  - Cuidado! Se tentar absorver um cadáver com pelo menos 25 unidades de Formaldeído, o químico será removido no processo, mas você sofrerá dano grave! Evite corpos da morgue que possam ter recebido esse fluido de embalsamamento.
 
-  These are your bread and butter. Once you absorb enough corpses, you will be allowed to...
+  Esse é seu feijão com arroz. Depois de absorver cadáveres suficientes, você poderá...
 
-  ## Evolve
+  ## Evoluir
 
-  Past the basic wraith form, three unique paths are available in the form of an ability in its original power set. Each has their own ability set granted on top of the base wraith's, allowing for different styles of gameplay. The different forms also have their own weaknesses to go along with their individual strengths.
+  Além da forma básica, três caminhos únicos aparecem como habilidade no conjunto original de poderes. Cada um acrescenta habilidades próprias às do Wraith base, permitindo estilos de jogo diferentes. As formas também possuem fraquezas específicas junto de suas vantagens.
 
-  ### Be careful around these...
-    [color=red]Salt![/color]
-  - If you walk over salt, you will lose [color=red]all of your skills, and be made corporeal in the process against your will.[/color] This usually is a death sentence for your average Wraith, so always keep an eye out for any lines of salt or ore rocks lying around!
-  - Salt can be hidden under objects, or even inside doorways.
+  ### Cuidado com isto...
+    [color=red]Sal![/color]
+  - Se passar sobre sal, você perderá [color=red]todas as habilidades e será forçado a ficar corpóreo.[/color] Isso costuma ser sentença de morte para o Wraith médio; fique de olho em linhas de sal ou pedras de minério pelo chão!
+  - Sal pode estar escondido sob objetos ou até em vãos de portas.
 
-    [color=red]That pesky chaplain![/color]
-  - The chaplain is immune to most of your actions. In some cases, attempting to interact with them may even end up harming you, instead!
-  - However, the chaplain is not immortal. You can still find ways to kill him indirectly. His corpse will be quite delicious, I promise you that...
+    [color=red]Aquele Capelão irritante![/color]
+  - O Capelão é imune à maioria das suas ações. Em alguns casos, tentar interagir com ele pode acabar ferindo você!
+  - Mas o Capelão não é imortal. Ainda há formas indiretas de matá-lo. O cadáver será uma delícia, eu prometo...
 
-  ## Fighting a Wraith
+  ## Combatendo um Wraith
 
 
-  The Wraith may seem powerful at first, but once you know their weakness, it is quite easy to deal with them.
+  O Wraith pode parecer poderoso no início, mas fica fácil lidar com ele quando você conhece suas fraquezas.
 
-  - Use salt! [bold]You can make salt lines with salt shakers and salt packets[/bold]! Leave salt spread all over areas of interest for the Wraith.
-  - Get rid of corpses! Without corpses to absorb, the Wraith cannot evolve, which will significantly decrease the amount of harm it can cause. Gib corpses, recycle them, space them. Anything works, so long as there is nothing left to absorb.
-  - Formaldehyde! It is a chemical used to prevent rotting in corpses. It can be bought in cargo or easily synthesized in the Chemistry lab. Injecting a corpse with more than 25 units of Formaldehyde will cause the body to be tainted if the Wraith ever tries to absorb it, hurting them in the process.
-  - Spirit Candles. Although rare, they can be used to reveal wraith in a 12x12 tile area. [bold]If you activate them once Wraith appears, you can make them corporeal![/bold]. Craft one by placing a candle on a skull.
+  - Use sal! [bold]Você pode criar linhas de sal com saleiros e pacotes de sal[/bold]! Espalhe-o por áreas interessantes para o Wraith.
+  - Livre-se dos cadáveres! Sem corpos para absorver, o Wraith não evolui, reduzindo muito o estrago que causa. Gibe, recicle ou spaceie os corpos. Qualquer coisa serve, desde que não sobre nada para absorver.
+  - Formaldeído! Esse químico impede cadáveres de apodrecer. Pode ser comprado na Cargo ou sintetizado facilmente no laboratório de Chemistry. Injetar mais de 25 unidades de Formaldeído contamina o corpo; se o Wraith tentar absorvê-lo, sofrerá dano.
+  - Velas Espirituais. Embora raras, revelam Wraiths numa área de 12x12 tiles. [bold]Se ativá-las quando o Wraith aparecer, você pode torná-lo corpóreo![/bold]. Crafte uma colocando uma vela sobre um crânio.
 
-  ## Plaguebringer
+  ## Portador da Praga
 
-  [textlink="Learn about the Plaguebringer." link="Plaguebringer"]
+  [textlink="Conheça o Portador da Praga." link="Plaguebringer"]
 
-  ## Harbinger of the Void
+  ## Arauto do Vazio
 
-  [textlink="Learn about the Harbinger of the Void." link="Harbinger"]
+  [textlink="Conheça o Arauto do Vazio." link="Harbinger"]
 
   ## Trickster
 
-  [textlink="Learn about the Trickster." link="Trickster"]
+  [textlink="Conheça o Trickster." link="Trickster"]
 
-  # Being the Ghost with the Most (Evil)
+  # Sendo o Fantasma Mais (Maligno)
 
-  ## Making the Most of Base Abilities
+  ## Aproveitando ao máximo as habilidades básicas
 
-  - You can't use Decay on a Cyborg to remove its laws, nor can you use it on a cyborg frame to make the borg it's built from have no laws.
-    With Decay you are able to emag stuff without the usual risk of being seen by others, and that can be extremely helpful for setting up traps and ambushes.
-  - Haunt can give you a ton of WP when used in a large crowd, but a large crowd is also in prime position to wreck you when you're at your most vulnerable.
-  - Whenever someone has a gun drawn, use Command to knock them down, immediately use Possess Object on the gun, and shoot them with it.
-  - Is the chaplain pissing you off? Command and Mass Command may not work on them when you click them directly, but if they're stunned, standing still, or distracted by animated objects, targeting the floor under them works just as well.
-  - Spook may seem harmless, but some cunning applications can save your ass or cause mass chaos in a clutch.
-  - Try using Possess Object on the fire extinguisher in Toxins Storage, bashing open a plasma tank. Then, use Spook to flip lights and cause a fire.
-  - Has Security recently confiscated some guns/weapons? Pop open the contraband safe with the Open doors, lockers, crates option from Spook.
+  - Você não pode usar Decadência em um Cyborg para remover suas leis nem num frame para deixar sem leis o borg construído a partir dele.
+    Com Decadência, você consegue emagar coisas sem o risco comum de ser visto, o que ajuda muito a preparar armadilhas e emboscadas.
+  - Assombrar rende muito WP numa multidão, mas ela também estará na posição perfeita para acabar com você no momento de maior vulnerabilidade.
+  - Quando alguém sacar uma arma, use Comandar para derrubá-lo, aplique imediatamente Possuir Objeto na arma e atire nele.
+  - O Capelão está enchendo o saco? Comandar e Comando em Massa podem falhar ao clicar diretamente nele, mas mirar o chão sob seus pés funciona se estiver atordoado, parado ou distraído por objetos animados.
+  - Assustar parece inofensivo, porém usos espertos podem salvar sua bunda ou causar caos em massa num aperto.
+  - Tente usar Possuir Objeto no extintor do Armazenamento de Toxinas e arrebente um tanque de plasma. Depois, use Assustar para ligar/desligar luzes e provocar um incêndio.
+  - A Security confiscou armas recentemente? Abra o cofre de contrabando com a opção Abrir portas, armários e caixotes de Assustar.
 
-  ## In General
-  [bold]You are not invincible[/bold], no matter how much it may seem like it sometimes. It only takes one twitchy crew member with a weapon and a salt shaker to ruin you.
+  ## No geral
+  [bold]Você não é invencível[/bold], por mais que às vezes pareça. Basta um tripulante nervosinho com uma arma e um saleiro para acabar com você.
 
-  Wraiths don't appear alone, so try to lay low for a little while and look for the other antagonists. Scavenge the corpses they'll inevitably leave in their wake for more WP regeneration, or try to strike deals with them with Whisper. A wraith with someone to feed it a steady stream of corpses can get very, very scary, but be warned that some antagonists might not trust you to not murder them and raise the alarm on you.
+  Wraiths não aparecem sozinhos; fique low profile por um tempo e procure os outros antagonistas. Vasculhe os cadáveres que inevitavelmente deixarão para trás e ganhe regeneração de WP, ou tente negociar com eles usando Sussurro. Um Wraith alimentado por um fluxo constante de corpos fica muito, muito assustador, mas alguns antagonistas talvez não confiem que você deixará de matá-los e podem soar o alarme.
 
-  Plan for things going terribly. You may not want to absorb every corpse you find just in case you get banished, but you may not want to leave any corpses undrained either in case the crew gets wise and starts spacing/gibbing/reclaiming corpses immediately.
+  Planeje para tudo dar terrivelmente errado. Talvez você não queira absorver todo cadáver encontrado, caso seja banido; mas também não queira deixar corpos intactos se a tripulação sacar o plano e começar a spacear/gibar/recuperar tudo na hora.
 
-You're not that great at outright killing people without isolating someone or being lucky. Be a scavenger; try to make a bad situation worse for someone already pretty fucked up rather than try to kill a healthy person. The crew will amaze you with how many ways they can kill themselves.
+Você não é tão bom em matar gente diretamente sem isolar alguém ou contar com sorte. Seja um carniceiro: piore a situação de quem já está bem fodido, em vez de tentar matar uma pessoa saudável. A tripulação vai surpreender você com quantas maneiras encontra de se matar sozinha.
 
 
 </Document>

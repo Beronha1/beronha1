@@ -6,85 +6,85 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Thieves
+  # Ladrões
 
   <Box>
-    [color=#999999][italic]"Yoink! I'll be taking that! And that! Ooh, don't mind if I do!"[/italic][/color]
+    [color=#999999][italic]"Yoink! Vou levar isso! E aquilo! Opa, não se importa, né?"[/italic][/color]
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ClothingNeckCloakVoid" Caption=""/>
   </Box>
 
-  Thieves are petty yet crafty [color=green]criminals[/color] who can't keep their hands to themselves. You were forcefully given a [bold]pacifism implant[/bold] after your last arrest, but you won't let that stop you from trying to add to your collection.
+  Ladrões são [color=green]criminosos[/color] pequenos, porém espertos, que não conseguem manter as mãos quietas. Após sua última prisão, enfiaram em você um [bold]implante de pacifismo[/bold] à força, mas nem isso impedirá que aumente sua coleção.
 
 
-  ## Art of the Steal
-  Unlike other antagonists, it's important to [bold]stay out of trouble[/bold] because of your pacifism implant.
-  While you can still use [color=yellow]stun weapons[/color] in a pinch, you should run if [color=#cb0000]Security[/color] picks a fight with you.
-  You work alone, and you don't have any friends to pull you out of danger.
+  ## A arte do roubo
+  Ao contrário de outros antagonistas, é importante [bold]ficar longe de confusão[/bold] por causa do implante de pacifismo.
+  Você ainda pode usar [color=yellow]armas de stun[/color] no aperto, mas corra se a [color=#cb0000]Security[/color] comprar briga.
+  Você trabalha sozinho e não tem amigos para tirá-lo do perigo.
 
-  But against all odds, you'll successfully swipe what you want using determination, sleight of hand, a few tools, and your [color=cyan]pickpocketing skills[/color].
+  Contra todas as probabilidades, você surrupiará o que quiser usando determinação, mãos leves, algumas ferramentas e suas [color=cyan]habilidades de batedor de carteira[/color].
 
-  The pickpocketing skills you have give you a major advantage: [bold]the ability to take things from people without them even noticing[/bold]. With a little practice, you can steal their wallet and keep up a conversation at the same time.
+  Sua habilidade de bater carteiras dá uma enorme vantagem: [bold]tirar coisas das pessoas sem que sequer percebam[/bold]. Com alguma prática, você rouba a carteira de alguém enquanto continua a conversa.
 
-  It is advised to get a pair of gloves, as your fingerprints could still be traced back to the stolen goods if they're found.
+  Recomenda-se conseguir luvas, pois suas impressões digitais ainda podem ligá-lo aos bens roubados caso sejam encontrados.
 
 
-  ## Tools of the Trade
-  You've got two more aces up your stolen sleeves: your [color=cyan]thieving beacon[/color] and your [color=cyan]thieving satchel[/color].
+  ## Ferramentas do ofício
+  Você tem mais dois ases nas mangas roubadas: seu [color=cyan]beacon de ladrão[/color] e sua [color=cyan]satchel de ladrão[/color].
 
-  Your [color=cyan]thieving beacon[/color] provides safe passage home for trinkets that may not be easy to carry with you on the evac shuttle. Simply find a secluded part of the station to unfold the thieving beacon, then set its coordinates to your hideout.
-  Any shinies near it will be [bold]teleported to your vault when the shift ends[/bold], fulfilling your objectives.
+  O [color=cyan]beacon de ladrão[/color] envia em segurança para casa os trambolhos difíceis de carregar no shuttle de evacuação. Encontre um canto isolado da estação, abra o beacon e configure as coordenadas do esconderijo.
+  Qualquer coisa brilhante ao redor será [bold]teleportada para seu cofre ao fim do turno[/bold], cumprindo seus objetivos.
 
-  However, this will instantly out you if found and make it extremely easy for people to reclaim their "missing" possessions. [bold]Make sure to hide it well![/bold]
+  Porém, se o encontrarem, seu disfarce acaba na hora e fica muito fácil recuperar os pertences "desaparecidos". [bold]Esconda muito bem![/bold]
 
   <Box>
     <GuideEntityEmbed Entity="ThiefBeacon"/>
   </Box>
 
-  Your [color=cyan]thieving satchel[/color] contains... well, whatever you remembered to pack. [bold]You can select two pre-made kits[/bold] to help you complete grander heists.
+  Sua [color=cyan]satchel de ladrão[/color] contém... bem, o que você lembrou de guardar. [bold]Você pode escolher dois kits prontos[/bold] para ajudar nos golpes maiores.
 
   <Box>
     <GuideEntityEmbed Entity="SatchelThief"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="Implanter" Caption="Anatomy"/>
-    <GuideEntityEmbed Entity="C4" Caption="Breacher"/>
-    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Chameleon"/>
-    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Communicator"/>
+    <GuideEntityEmbed Entity="Implanter" Caption="Anatomia"/>
+    <GuideEntityEmbed Entity="C4" Caption="Arrombador"/>
+    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Camaleão"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Comunicador"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Sleeper"/>
-    <GuideEntityEmbed Entity="Fulton" Caption="Smuggler"/>
+    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Dorminhoco"/>
+    <GuideEntityEmbed Entity="Fulton" Caption="Contrabandista"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Syndie"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ClothingBackpackSatchelSmugglerUnanchored"/>
   </Box>
 
-  After approving your selection, the kits will fold out into a [color=cyan]smuggler's satchel[/color].
-  Larger kits will fall onto the floor around you.
-  [bold]Don't let anyone see your kits or smuggler's satchel[/bold], as they will recognize it as contraband!
-  The smuggler's satchel can be wrenched to the hull plating underneath floor tiles if you need to hide items from prying eyes.
+  Após confirmar a escolha, os kits se abrirão em uma [color=cyan]satchel de contrabandista[/color].
+  Kits maiores cairão no chão ao seu redor.
+  [bold]Não deixe ninguém ver seus kits nem a satchel de contrabandista[/bold]: eles serão reconhecidos como contrabando!
+  A satchel pode ser presa com wrench ao revestimento do casco sob os tiles, caso precise esconder itens de olhos curiosos.
 
 
-  ## Centerpiece of the Collection
-  Your kleptomania will take you places. One day, you'll feel like stealing a few figurines. Another day, you'll feel like stealing an industrial machine.
+  ## A peça central da coleção
+  Sua cleptomania o levará longe. Num dia, você desejará roubar algumas miniaturas. No outro, uma máquina industrial.
 
-  No matter. They'll all be a part of your collection within a matter of time.
+  Não importa. Logo tudo fará parte da sua coleção.
 
-  You can steal items by [bold]having them on your person[/bold] when you get to CentComm. Failing this, you can steal larger items by [bold]leaving them by your thieving beacon.[/bold]
+  Para roubar itens, [bold]carregue-os consigo[/bold] ao chegar à CentComm. Se isso não der, roube itens maiores [bold]deixando-os junto do beacon de ladrão.[/bold]
 
-  Some of the more [italic]animate[/italic] objectives may not cooperate with you. Make sure they're alive and with you or your thieving beacon when the shift ends.
-  A [color=cyan]pet carrier[/color] is optional, but might make the critters easier to handle.
+  Alguns objetivos mais [italic]animados[/italic] talvez não cooperem. Garanta que estejam vivos e junto de você ou do beacon quando o turno acabar.
+  Uma [color=cyan]caixa de transporte para pets[/color] é opcional, mas pode facilitar o manejo das criaturas.
 
-  Things that you may desire include but are not limited to:
+  Coisas que você pode desejar incluem, sem se limitar a:
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurines"/>
-    <GuideEntityEmbed Entity="PassengerIDCard" Caption="ID cards"/>
-    <GuideEntityEmbed Entity="ChemDispenser" Caption="Structures"/>
-    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animals/Pets"/>
+    <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Miniaturas"/>
+    <GuideEntityEmbed Entity="PassengerIDCard" Caption="Cartões de ID"/>
+    <GuideEntityEmbed Entity="ChemDispenser" Caption="Estruturas"/>
+    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animais/Pets"/>
   </Box>
 
 </Document>

@@ -1,134 +1,134 @@
 <Document>
 
-# Solids
+# Sólidos
 
-Recipes here are solid items that are created using chemistry.
+As receitas desta página produzem itens sólidos usando a química.
 
-## Aloe Cream
+## Creme de Babosa
   <Box>
-    <GuideEntityEmbed Entity="FoodAloe" Caption="Raw Aloe"/>
-    <GuideEntityEmbed Entity="AloeCream" Caption="Aloe Cream"/>
+    <GuideEntityEmbed Entity="FoodAloe" Caption="Babosa crua"/>
+    <GuideEntityEmbed Entity="AloeCream" Caption="Creme de babosa"/>
   </Box>
 
-Aloe Cream can be created by microwaving raw aloe for 10 seconds.
+O creme de babosa pode ser produzido aquecendo babosa crua no micro-ondas por 10 segundos.
 
-## Crystals
+## Cristais
   <Box>
-    <GuideEntityEmbed Entity="ShardCrystalBlue" Caption="Crystal"/>
+    <GuideEntityEmbed Entity="ShardCrystalBlue" Caption="Cristal"/>
   </Box>
 
-A crystal can be created by combining the following ingredients:
-- 15 Sugar
-- 15 Water
-- 5 Ethanol
+Um cristal pode ser produzido combinando os seguintes ingredientes:
+- 15 de Açúcar
+- 15 de Água
+- 5 de Etanol
 
 ## EMP
   <Box>
     <GuideEntityEmbed Entity="EmpGrenade" Caption="EMP"/>
   </Box>
 
-An EMP blast can be created by combining the following ingredients:
-- 1 Uranium
-- 1 Iron
-- 1 Aluminum
+Uma explosão de EMP pode ser produzida combinando os seguintes ingredientes:
+- 1 de Urânio
+- 1 de Ferro
+- 1 de Alumínio
 
-## Foam
+## Espuma
   <Box>
-    <GuideEntityEmbed Entity="CleanerGrenade" Caption="Foam"/>
+    <GuideEntityEmbed Entity="CleanerGrenade" Caption="Espuma"/>
   </Box>
 
-A cloud of foam can be created by combining the following ingredients:
-- 1 Water
-- 1 Fluorosurfactant
+Uma nuvem de espuma pode ser produzida combinando os seguintes ingredientes:
+- 1 de Água
+- 1 de Fluorosurfactante
 
-Foam works the same as smoke, holding chems up to the limit it was made with.
+A espuma funciona como a fumaça, carregando substâncias químicas até o limite da quantidade produzida.
 
-## Gunpowder
+## Pólvora
   <Box>
-    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Gunpowder"/>
+    <GuideEntityEmbed Entity="MaterialGunpowder" Caption="Pólvora"/>
   </Box>
 
-Gunpowder can be created by combining the following ingredients:
-- 6 Potassium
-- 2 Sulfur
-- 2 Charcoal
+A pólvora pode ser produzida combinando os seguintes ingredientes:
+- 6 de Potássio
+- 2 de Enxofre
+- 2 de Carvão
 
-## Plastic
+## Plástico
   <Box>
-    <GuideEntityEmbed Entity="SheetPlastic" Caption="Plastic Sheets"/>
+    <GuideEntityEmbed Entity="SheetPlastic" Caption="Folhas de plástico"/>
   </Box>
 
-10 Plastic Can be created by combining the following ingredients:
-- 10 Oil
-- 6 Ash
-- 4 Sulfuric Acid
-- Heating the solution to 374 degrees
+10 unidades de Plástico podem ser produzidas combinando os seguintes ingredientes:
+- 10 de Óleo
+- 6 de Cinzas
+- 4 de Ácido Sulfúrico
+- Aquecer a solução até 374 graus
 
-## Regenerative Mesh
+## Tela Regenerativa
   <Box>
-    <GuideEntityEmbed Entity="RegenerativeMesh" Caption="Mesh"/>
+    <GuideEntityEmbed Entity="RegenerativeMesh" Caption="Tela"/>
   </Box>
 
-Meshes can be created by microwaving the following ingredients for 10 seconds:
+Telas podem ser produzidas aquecendo os seguintes ingredientes no micro-ondas por 10 segundos:
 
   <Box>
-    <GuideEntityEmbed Entity="FoodAloe" Caption="Raw Aloe"/>
-    <GuideEntityEmbed Entity="Ointment" Caption="Ointment"/>
-    <GuideEntityEmbed Entity="MaterialCloth" Caption="Cloth"/>
+    <GuideEntityEmbed Entity="FoodAloe" Caption="Babosa crua"/>
+    <GuideEntityEmbed Entity="Ointment" Caption="Pomada"/>
+    <GuideEntityEmbed Entity="MaterialCloth" Caption="Tecido"/>
   </Box>
 
-- 1 Raw Aloe
-- 1 Ointment
-- 1 Cloth
-- 20 units of Sigynate
-- 20 units of Dermaline
+- 1 Babosa Crua
+- 1 Pomada
+- 1 Tecido
+- 20 unidades de Sigynate
+- 20 unidades de Dermaline
 
 
-## Smoke
+## Fumaça
   <Box>
-    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Smoke"/>
+    <GuideEntityEmbed Entity="SmokeGrenade" Caption="Fumaça"/>
   </Box>
 
-A cloud of smoke can be created by combining the following ingredients:
-- 1 Sugar
-- 1 Potassium
-- 1 Phosphorus
+Uma nuvem de fumaça pode ser produzida combinando os seguintes ingredientes:
+- 1 de Açúcar
+- 1 de Potássio
+- 1 de Fósforo
 
-Smoke carries any extra chems in its reaction medium up to the amount of smoke you make, for example;
+A fumaça carrega as substâncias químicas extras presentes no meio da reação até a quantidade de fumaça produzida. Por exemplo:
 
-a 5-5-5 mix can carry 5u of mutagen and pass it onto anyone who enters the smoke cloud.
+uma mistura 5-5-5 pode carregar 5u de mutágeno e transferi-lo a qualquer pessoa que entrar na nuvem de fumaça.
 
-## Suture
+## Sutura
   <Box>
-    <GuideEntityEmbed Entity="MedicatedSuture" Caption="Suture"/>
+    <GuideEntityEmbed Entity="MedicatedSuture" Caption="Sutura"/>
   </Box>
 
-Sutures can be created by microwaving the following ingredients for 10 seconds:
+Suturas podem ser produzidas aquecendo os seguintes ingredientes no micro-ondas por 10 segundos:
 
   <Box>
-    <GuideEntityEmbed Entity="FoodPoppy" Caption="Poppy"/>
-    <GuideEntityEmbed Entity="MaterialCloth" Caption="Cloth"/>
-    <GuideEntityEmbed Entity="Brutepack" Caption="Brute Packs"/>
+    <GuideEntityEmbed Entity="FoodPoppy" Caption="Papoula"/>
+    <GuideEntityEmbed Entity="MaterialCloth" Caption="Tecido"/>
+    <GuideEntityEmbed Entity="Brutepack" Caption="Pacote de trauma"/>
   </Box>
 
-- 1 Poppy
-- 1 Brute Pack
-- 1 Cloth
-- 20 units of Tranexamic Acid
-- 20 units of Cryptobiolin
+- 1 Papoula
+- 1 Pacote de Trauma
+- 1 Tecido
+- 20 unidades de Ácido Tranexâmico
+- 20 unidades de Cryptobiolin
 
-  ## Synthmeat
+  ## Carne Sintética
     <Box>
-      <GuideEntityEmbed Entity="FoodSynthMeat" Caption="Synthmeat"/>
+      <GuideEntityEmbed Entity="FoodSynthMeat" Caption="Carne sintética"/>
     </Box>
 
-  Synthmeat can be created by combining the following ingredients
-  - 10 Sodium Polyacrylate
-  - 5 Phenol
-  - 5 Blood
-  - 10 Carbon
+  A carne sintética (synthmeat) pode ser produzida combinando os seguintes ingredientes:
+  - 10 de Poliacrilato de Sódio
+  - 5 de Fenol
+  - 5 de Sangue
+  - 10 de Carbono
 
-  Once created you can grind synthmeat into synthflesh to then be centrifuged into synthcells which are an extremely effective treatment for toxin damage when sprayed upon someone
+  Depois de pronta, você pode moer a synthmeat para obter synthflesh e centrifugá-la em seguida para produzir synthcells, um tratamento extremamente eficaz contra dano de toxina quando borrifado em alguém.
 
   <GuideReagentGroupEmbed Group="Solids"/>
 

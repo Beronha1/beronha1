@@ -2,28 +2,29 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 
 <Document>
-  # Species
+  # Espécies
 
-  Nanotrasen employs a variety of sapient species.
+  A Nanotrasen emprega várias espécies sencientes.
 
   <!-- Trauma - Completely rewritten -->
   <Box>
-    <GuideEntityEmbed Entity="AppearanceHuman" Caption="Human"/>
+    <GuideEntityEmbed Entity="AppearanceHuman" Caption="Humano"/>
     <GuideEntityEmbed Entity="AppearanceVox" Caption="Vox"/>
-    <GuideEntityEmbed Entity="AppearanceMoth" Caption="Moth Person"/>
-    <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Reptilian"/>
+    <GuideEntityEmbed Entity="AppearanceMoth" Caption="Pessoa Mariposa"/>
+    <GuideEntityEmbed Entity="AppearanceReptilian" Caption="Reptiliano"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="AppearanceArachnid" Caption="Arachnid"/>
-    <GuideEntityEmbed Entity="AppearanceDiona" Caption="Diona"/>
-    <GuideEntityEmbed Entity="AppearanceDwarf" Caption="Dwarf"/>
-    <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Slime Person"/>
+    <GuideEntityEmbed Entity="AppearanceArachnid" Caption="Aracnídeo"/>
+    <GuideEntityEmbed Entity="AppearanceDiona" Caption="Dione"/>
+    <GuideEntityEmbed Entity="AppearanceDwarf" Caption="Anão"/>
+    <GuideEntityEmbed Entity="AppearanceSlimePerson" Caption="Pessoa Slime"/>
   </Box>
   <Box>
     <GuideEntityEmbed Entity="AppearanceIPC" Caption="IPC"/>
     <GuideEntityEmbed Entity="MobDecapoid" Caption="Decapoid"/>
-    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpkanin"/>
+    <GuideEntityEmbed Entity="AppearanceVulpkanin" Caption="Vulpcanina"/>
     <GuideEntityEmbed Entity="AppearanceOvinia" Caption="Ovinia"/>
     <GuideEntityEmbed Entity="AppearanceKodepiia" Caption="Kodepiia"/>
   </Box>
+
 </Document>

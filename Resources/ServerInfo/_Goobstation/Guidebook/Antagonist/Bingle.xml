@@ -8,39 +8,39 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 <Document>
 # Bingle
 
-A bingle is a disgusting fungus that rapidly grows and takes over stations. Very weak on its own, their strength is in numbers.
+Bingle é um fungo nojento que cresce depressa e domina estações. Sozinho é fraco; a força está nos números.
 
   <Box>
     <GuideEntityEmbed Entity="MobBingle" Caption="Bingle"/>
-	  <GuideEntityEmbed Entity="BinglePit" Caption="Bingle Pit"/>
+	  <GuideEntityEmbed Entity="BinglePit" Caption="Poço de Bingle"/>
   </Box>
 
-A bingle is a midround antagonist that spawns alone, but can quickly grow in numbers
+Bingle é antagonista de meio de rodada que spawna sozinho, mas se multiplica rapidamente.
 
-## Playing As A Bingle
+## Jogando de Bingle
 
-- The most difficult part of a bingle pit's development is the beginning, when it is very weak. As the first bingle you should prioritize dragging as many items to the pit as fast as you can.
-Bingles are very strong in melee combat, stunning in a few hits. Try to take out any lone witnesses before they can call out the pits location.
+- O começo é a fase mais difícil, quando o poço é fraco. Como primeiro bingle, arraste o máximo de itens para ele o mais rápido possível.
+Bingles são fortes no corpo a corpo e dão stun em poucos golpes. Elimine testemunhas sozinhas antes que revelem o local do poço.
 
-- Once there are a few bingles, you should focus on dragging items in, as well as protecting the pit. If it breaks, you wont be able to make any more bingles and the colony will die out.
+- Com alguns bingles, arraste itens e proteja o poço. Se quebrar, a colônia não produz mais bingles e morrerá.
 
-- The bingle pit is the home of bingles, when several items are drug into it and fall down a new bingle is made. After quite a large number of items are drug into it, bingles are upgraded into armored bingles, which have far more health than the normal ones. The bingle pit also grows to larger than before, allowing for corpses to be dropped into the pit.
+- O poço é o lar dos bingles: após engolir vários itens, cria um novo. Com muitos itens, melhora a colônia para bingles blindados, muito mais resistentes, e cresce o bastante para aceitar cadáveres.
 
-## Playing Against Bingles
+## Combatendo Bingles
 
-The most best way to play against bingles is to avoid melee combat. Instead; Use ranged weapons to deal with them and thin their numbers from afar.
+A melhor estratégia é evitar corpo a corpo. Use armas à distância e reduza seus números de longe.
   <Box>
     <GuideEntityEmbed Entity="WeaponRifleLecter"/>
 	  <GuideEntityEmbed Entity="WeaponLaserCarbine"/>
   </Box>
-The bingle pit itself can only be damaged by melee weapons and explosives. When attacking the pit directly be careful to avoid falling into it, as you can do so even while alive. It is typically best to deal with the bingles themselves before attacking the pit.
+O poço só sofre dano de armas corpo a corpo e explosivos. Cuidado para não cair nele vivo; geralmente é melhor matar os bingles antes de atacar o poço.
 
-If a bingle infestation is growing out of hand, consider shutting down gravity, bingles cannot drop items into a pit without gravity and therefor cannot multiply.
+Se a infestação sair do controle, desligue a gravidade. Sem ela, bingles não jogam itens no poço e não se multiplicam.
 
   <Box>
     <GuideEntityEmbed Entity="GravityGenerator"/>
   </Box>
 
-All items (and people) lost to the pit will be spat out when destroyed!
+Todo item — e pessoa — perdido será cuspido quando o poço for destruído!
 
 </Document>

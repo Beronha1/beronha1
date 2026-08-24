@@ -1,101 +1,101 @@
 <Document>
 
-  # Path of Flesh
+  # Caminho da Carne
 
-  Difficulty: [color=yellow]Varies[/color]
+  Dificuldade: [color=yellow]Variável[/color]
 
-  The Path of Flesh revolves around summoning ghouls and monstrosities to do your bidding.
-  Pick this path if you enjoy the fantasy of being a necromancer commanding legions of allies.
+  O Caminho da Carne gira em torno de invocar carniçais e monstruosidades para cumprir suas ordens.
+  Escolha este caminho se gosta da fantasia de ser um necromante comandando legiões de aliados.
 
-  ## Pros
+  ## Vantagens
 
-  - Can turn dead humanoids into fragile but loyal ghouls.
-  - Strong mark effect.
-  - Access to a versatile list of summoned minions.
-  - Your summons are very versatile and can quickly overwhelm the crew should you coordinate your attacks
-  - Eating organs and body parts grants various boons (depending on your path stage).
+  - Transforma humanoides mortos em carniçais frágeis, porém leais.
+  - Efeito de marca forte.
+  - Acesso a uma lista versátil de lacaios invocados.
+  - Suas invocações são muito versáteis e podem sobrecarregar a tripulação rapidamente se os ataques forem coordenados.
+  - Comer órgãos e partes do corpo concede diversos bônus, dependendo do estágio no caminho.
 
-  ## Cons
+  ## Desvantagens
 
-  - A high degree of your progression is obtaining additional summoned monsters.
-  - You have very little utility beyond your summoned monsters.
-  - You gain no inherent access to defensive, offensive or mobility spells.
-  - You are mostly focused around supporting your minions.
+  - Grande parte da progressão consiste em obter mais monstros invocados.
+  - Você tem pouquíssima utilidade além dessas invocações.
+  - Não recebe acesso inerente a feitiços defensivos, ofensivos ou de mobilidade.
+  - Seu foco principal é apoiar os lacaios.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Principle of Hunger</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Blood</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a bloody blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Princípio da Fome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, Sangue</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina ensanguentada.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can raise the dead as loyal ghouls.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto da Carne</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto ergue os mortos como carniçais leais.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the flesh mark, creating flesh mimic of the victim that attack them when triggered.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Marca da Carne</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto passa a aplicar a marca da carne; quando ativada, cria um mímico de carne da vítima que a ataca.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Imperfect Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Corpse, Muzzle</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Raises the corpse as a Voiceless Dead, a strong, but silent minion.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ritual Imperfeito</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cadáver, Mordaça</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ergue o cadáver como Morto sem Voz, um lacaio forte, porém silencioso.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Knitting of Flesh</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Grants a spell that works as all surgical tools, heals minions, and provides health analysis and hud.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Sutura da Carne</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Concede um feitiço que funciona como todas as ferramentas cirúrgicas, cura lacaios e fornece análise de saúde e HUD.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Raw Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Eyes, Stomach, Blood</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a raw prophet, an entity that can link your summons minds via the mansus link. It is also a strong scout and heals heretics and monsters around it.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ritual Cru</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Olhos, Estômago, Sangue</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca um profeta cru, entidade capaz de ligar as mentes das invocações pelo elo do Mansus. Também é um ótimo batedor e cura Hereges e monstros ao redor.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Bleeding Steel</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your bloody blades now cause heavy bleeding on attack.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aço Sangrento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Suas lâminas ensanguentadas passam a causar sangramento pesado ao atacar.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lonely Ritual</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Heart, Stomach, Lung, Pen</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Summons a flesh stalker, a strong combat summon with shapeshift and cleave.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Ritual Solitário</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Coração, Estômago, Pulmão, Caneta</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Invoca um perseguidor de carne, forte em combate e capaz de shapeshift e cleave.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Priest's Final Hymn</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Four corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">You can now shapeshift into extremely powerful creature. Ghoul limit increased. Knit Flesh can now be used in hand to heal ghouls in area.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Hino Final do Sacerdote</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Quatro cadáveres</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Você pode se transformar numa criatura extremamente poderosa. O limite de carniçais aumenta. Sutura da Carne pode ser usada na mão para curar carniçais em área.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"> You heal from eating raw meat and organs, as well as become immune to diseases and damage from poisons.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"> Você se cura ao comer carne crua e órgãos, além de ficar imune a doenças e dano de venenos.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Writhing Embrace</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Chance to split into loyal flesh mimic upon taking damage.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Abraço Contorcido</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Chance de se dividir em um mímico de carne leal ao sofrer dano.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ghoul limit increased.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Limite de carniçais aumentado.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Medical hud.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">HUD médico.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your Mansus Grasp allows you to turn dead humanoids into ghouls (even mindshielded humanoids like security officers and the captain). It also Leaves a mark that spawns a loyal flesh mimic when triggered by your bloody blade.
-  - As a Flesh Heretic, organs and dead bodies are your best friends! You can use them for rituals, to heal or to gain buffs.
-  - You can recall your ghouls or summonned creatures by [color=yellow]Alt-Clicking[/color] the ritual rune using your mansus grasp.
-  - Your Flesh Surgery spell can heal your summons. It also acts like a good surgery tool that bypasses surgery steps and works through clothes.
-  - Raw Prophets can link you and other summons in a telepathic network, allowing for long distance co-ordination. They also have healing aura for you and your minions.
-  - Flesh Stalkers are decent combatants with the ability to disguise themselves as various creatures. They can also utilize the Crimson Cleave spell.
-  - Your success with this path is reliant on how knowledgable or robust your minions are. However, there is always power in numbers; the more minions, the higher your chances of success.
-  - Your minions are more expendable than you are. Do not be afraid to tell them to go to their deaths. You can just recover them later... maybe.
+  - Seu Mansus Grasp transforma humanoides mortos em carniçais, até os que tinham MindShield, como Oficiais da Segurança e o Capitão. Também deixa uma marca que spawna um mímico de carne leal quando ativada por sua lâmina ensanguentada.
+  - Como Herege da Carne, órgãos e cadáveres são seus melhores amigos! Use-os em rituais, para se curar ou ganhar buffs.
+  - Você pode chamar de volta carniçais ou criaturas invocadas dando [color=yellow]Alt-Click[/color] na runa ritual com o Mansus Grasp.
+  - Cirurgia da Carne cura suas invocações. Também funciona como uma boa ferramenta cirúrgica, ignora etapas da cirurgia e atravessa roupas.
+  - Profetas Crus conectam você e outras invocações numa rede telepática, permitindo coordenação a longa distância. Também possuem uma aura que cura você e seus lacaios.
+  - Perseguidores de Carne são combatentes decentes e podem se disfarçar como várias criaturas. Também usam o feitiço Fenda Carmesim.
+  - Seu sucesso depende do conhecimento e da robustez dos lacaios. Ainda assim, há poder nos números: quanto mais lacaios, maior a chance de vencer.
+  - Seus lacaios são mais descartáveis que você. Não tenha medo de mandá-los para a morte. Dá para recuperá-los depois... talvez.
 
 </Document>

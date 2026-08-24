@@ -6,20 +6,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Job Standards
-Attached below this are several different categories for Job-Specific Standard Operating Procedures (SOP). These are here to help clarify different goals in your job or department.
+# Padrões de Trabalho
+Abaixo estão categorias de Procedimentos Operacionais Padrão (SOP) específicos para trabalhos. Elas esclarecem objetivos do cargo ou departamento.
 
 <Box>
-[bold][color=#f0e4b4]To be clear:[/color][/bold] these are not a [italic]checklist[/italic] for you to follow. They can be used as such, but should be used more as guidelines.
+[bold][color=#f0e4b4]Para deixar claro:[/color][/bold] isto não é uma [italic]checklist[/italic] obrigatória. Pode ser usada assim, mas funciona melhor como orientação.
 </Box>
 
-The following folders are listed underneath this folder:
-- [textlink="Cargo Department" link="Cargo SOP"]
-- [textlink="Command Department" link="Command SOP"]
-- [textlink="Engineering Department" link="Engineering SOP"]
-- [textlink="Medical Department" link="Medical SOP"]
-- [textlink="Science Department" link="Science SOP"]
-- [textlink="Security Department" link="Security SOP"]
-- [textlink="Service Department" link="Service SOP"]
+Pastas listadas:
+- [textlink="Departamento de Carga" link="Cargo SOP"]
+- [textlink="Departamento de Comando" link="Command SOP"]
+- [textlink="Departamento de Engenharia" link="Engineering SOP"]
+- [textlink="Departamento Médico" link="Medical SOP"]
+- [textlink="Departamento de Ciência" link="Science SOP"]
+- [textlink="Departamento de Segurança" link="Security SOP"]
+- [textlink="Departamento de Serviço" link="Service SOP"]
 
 </Document>

@@ -1,99 +1,99 @@
 <Document>
 
-  # Rusted Path
+  # Caminho da Ferrugem
 
-  Difficulty: [color=orange]Medium[/color]
+  Dificuldade: [color=orange]Média[/color]
 
-  The Path of Rust revolves around durability, corruption and brute forcing your way through obstacles.
-  Pick this path if you enjoy a standing your ground and letting the fight come to you.
+  O Caminho da Ferrugem gira em torno de resistência, corrupção e atravessar obstáculos na força bruta.
+  Escolha este caminho se gosta de manter posição e deixar a luta vir até você.
 
-  ## Pros
+  ## Vantagens
 
-  - Standing on rusted tiles makes you highly durable; regenerating wounds and removing stuns.
-  - You are able to destroy walls, objects, mechs, structures and airlocks using your grasp with ease.
-  - You can instantly obliterate silicons or synthetic crew members with your Mansus Grasp.
-  - You have a high amount of disruption abilities to make it easier to fight in your territory.
+  - Ficar sobre tiles enferrujados torna você muito resistente, regenerando feridas e removendo stuns.
+  - Seu aperto destrói facilmente paredes, objetos, mechs, estruturas e airlocks.
+  - Seu Mansus Grasp oblitera instantaneamente silicons ou tripulantes sintéticos.
+  - Muitas habilidades de disrupção facilitam a luta em seu território.
 
-  ## Cons
+  ## Desvantagens
 
-  - Extremely overt; throws stealth completely out as an option.
-  - If you are not on rusted tiles, you become significantly more vulnerable.
-  - Being locked to a territorial conflict makes it much easier to use destructive tools (like bombs) against you.
-  - Your high amount of defensive power is at the cost of offensive power.
+  - Extremamente óbvio; furtividade deixa de ser uma opção.
+  - Fora de tiles enferrujados, você fica muito mais vulnerável.
+  - Ficar preso a um conflito territorial facilita o uso de ferramentas destrutivas, como bombas, contra você.
+  - Seu enorme poder defensivo vem às custas do poder ofensivo.
 
-  ## Knowledge
+  ## Conhecimentos
 
   <Table Columns="3">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Knowledge Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredients/Type</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Description</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome do Conhecimento</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Ingredientes/Tipo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Descrição</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Blacksmith's Tale</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Knife, Trash</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Creates a rusty blade.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Conto do Ferreiro</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, Lixo</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma lâmina enferrujada.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Grasp of Rust</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp can destroy most things non-living. It can also rust tiles or walls.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aperto da Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto destrói a maioria das coisas não vivas e enferruja tiles ou paredes.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Mark of Rust</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your grasp will now apply the rust mark, making victims vomit uncontrollably.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Marca da Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Seu aperto passa a aplicar a marca da ferrugem, fazendo as vítimas vomitarem sem controle.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Aggressive Spread</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Spreads rust in a large area around you.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Propagação Agressiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Espalha ferrugem por uma grande área ao seu redor.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rust Construction</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Raises a wall of rust out of any rusted tile, knocking heathens away.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Construção de Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ergue uma parede de ferrugem a partir de qualquer tile enferrujado, afastando profanos.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Entropic Plume</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sends out a wave of rust, blinding, poisoning, and forcing anyone caught in it to attack nearby non-heretics. Also spreads rust.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Pluma Entrópica</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Lança uma onda de ferrugem que cega, envenena e força os atingidos a atacarem não Hereges próximos. Também espalha ferrugem.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Toxic Blade</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Passive Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Your blade now deals toxic damage and rots corpses it hits. Additionally, your grasp can now break reinforced walls.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Lâmina Tóxica</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Passiva</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Sua lâmina passa a causar dano tóxico e apodrece cadáveres atingidos. Além disso, seu aperto agora quebra paredes reforçadas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rust Charge</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Active Ability</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Charges from a rusted tile, rusting any tile you come across, destroying walls, and hurting people.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Investida de Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Habilidade Ativa</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Investe a partir de um tile enferrujado, enferrujando todos os tiles no caminho, destruindo paredes e ferindo pessoas.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rustbringer's Oath</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Three rotten or silicon corpses</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust spread from your ritual rune. Your rust healing is even stronger.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Juramento do Portador da Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Três cadáveres podres ou de silicons</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">A ferrugem se espalha da sua runa ritual. A cura da ferrugem fica ainda mais forte.</Box></ColorBox>
   </Table>
 
 
-  ## Armor and Passive Ability
+  ## Armadura e habilidade passiva
 
   <Table Columns="2">
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Name</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Effect</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Stretch" Margin="5">Nome</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">Efeito</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T1 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Standing on rust grants you regeneration, chem resistance, and stun resistance.</ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5"></Box>Ficar sobre ferrugem concede regeneração, resistência química e resistência a stun.</ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Salvaged Remains</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Much greater resistances and tackle immunity when standing on rust.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Restos Recuperados</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Resistências muito maiores e imunidade a tackle quando estiver sobre ferrugem.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T2 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust heals your bones. Healing increased.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ferrugem cura seus ossos. Cura aumentada.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">T3 Passive</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Rust restores your lost body parts. Healing increased.</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Passiva T3</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Ferrugem restaura partes perdidas do corpo. Cura aumentada.</Box></ColorBox>
   </Table>
 
 
-  ## Tips
+  ## Dicas
 
-  - Your Mansus Grasp will instantly destroy mechs, silicons and androids. Hitting a marked target with your blade will cause heavy disgust and make them vomit, knocking them down briefly.
-  - Your Mansus Grasp and your spells are capable of rusting walls and floors, making them beneficial to you. Spread rust as much as possible.
-  - Rusted turfs will heal you, regulate your blood temperature, make you resistant to batons knockdown, regenerate your stamina and blood and heal your wound and limbs once you ascend.
-  - Always fight on your turf. Your opponent entering your turf are at a significant disadvantage.
-  - Your ability to destroy objects and walls improves as you progress; eventually you will be able to melt through airlocks and reinforced walls.
-  - Spreading rust can be fairly slow, especially early on. Consider summoning a few rust walkers to help you expand your domain.
-  - Rust Construction allows you to produce barriers for cover or escape, or even block off someone else's escape in a pinch. Make the most of it to manipulate the environment to your needs.
+  - Seu Mansus Grasp destrói instantaneamente mechs, silicons e androides. Acertar um alvo marcado com a lâmina causa nojo intenso e vômito, derrubando-o brevemente.
+  - Seu Mansus Grasp e seus feitiços enferrujam paredes e pisos, tornando-os benéficos. Espalhe ferrugem o máximo possível.
+  - Turfs enferrujados curam você, regulam a temperatura do sangue, aumentam a resistência a knockdown de batons, regeneram Stamina e sangue e, após a ascensão, curam feridas e membros.
+  - Sempre lute em seu turf. Oponentes que entrarem nele estarão em grande desvantagem.
+  - Sua capacidade de destruir objetos e paredes melhora com a progressão; no fim, você derreterá airlocks e paredes reforçadas.
+  - Espalhar ferrugem pode ser lento, principalmente no começo. Considere invocar alguns caminhantes da ferrugem para expandir seu domínio.
+  - Construção de Ferrugem cria barreiras para cobertura ou fuga e pode bloquear a fuga de outra pessoa num aperto. Use-a para moldar o ambiente às suas necessidades.
 
 </Document>

@@ -6,33 +6,33 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Scientist SOP
-This is the list of procedures, responsibilities, and duties of the [color=#cc74fc]Scientist[/color] of this station.
+# SOP do Cientista
+Procedimentos, responsabilidades e deveres do [color=#cc74fc]Cientista[/color].
 
 <ColorBox>
   <Box>
-    For the purposes of Alert Escalation: Treat higher alerts as if they are still on the previous alert level. (Yellow Alert is Blue Alert if it was Blue Alert prior.) Furthermore, treat Delta, Gamma, Epsilon, and Violet Alert as Red Alert.
+    Para escalada: trate alertas superiores como o nível anterior. (Amarelo é Azul se antes era Azul.) Delta, Gama, Épsilon e Violeta contam como Vermelho.
   </Box>
 </ColorBox>
 
-## Green Alert
-1. Scientists are not permitted to bring grenades, harmful chemicals, nor Toxin bombs outside of the Science Department.
-<Box>[bullet/]Exceptions for the Toxin bombs if being handed over to the Cargo Department for Salvaging operations.</Box>
+## Alerta Verde
+1. Não leve granadas, químicos nocivos nem bombas de Toxinas para fora da Ciência.
+<Box>[bullet/]Bombas de Toxinas podem ser entregues à Carga para operações de Salvagem.</Box>
 
-2. Scientists should give a warning over the Commons Channel and Science Channel before generating an anomaly.
+2. Avise pelos canais Comum e de Ciência antes de gerar anomalia.
 
-3. Scientists are not permitted to create AI Console Boards nor AI Control Boards without permission from Research Director and/or Captain.
+3. Placas do Console ou Controle da IA exigem Diretor de Pesquisa e/ou Capitão.
 
-## Blue Alert
-1. Scientists are not permitted to bring harmful chemicals outside of the Science Department.
+## Alerta Azul
+1. Não leve químicos nocivos para fora da Ciência.
 
-2. Scientists should give a warning over the Commons Channel and Science Channel before generating an anomaly.
+2. Avise pelos canais Comum e de Ciência antes de gerar anomalia.
 
-3. Scientists are permitted to bring grenades outside of the Science Department, but must justify their uses.
+3. Pode levar granadas para fora, mas precisa justificar o uso.
 
-4. Scientists are permitted to bring Toxin bombs outside of the Science Department, but only to deliver to Armory and/or Cargo Department for Salvage operations.
+4. Bombas de Toxinas só podem sair para entrega ao Arsenal e/ou Carga em operação de Salvagem.
 
-## Red Alert
-1. All Guidelines from [color=#388c34]Green Alert[/color] and [color=#1b67a5]Blue Alert[/color] carry over. No special guidelines in [color=#ba292c]Red Alert[/color].
+## Alerta Vermelho
+1. Todas as Diretrizes do [color=#388c34]Alerta Verde[/color] e [color=#1b67a5]Alerta Azul[/color] continuam. O [color=#ba292c]Alerta Vermelho[/color] não acrescenta regras.
 
 </Document>

@@ -1,45 +1,45 @@
 <Document>
 
-  # Corporate Judo
+  # Judô Corporativo
 
   <Box>
     <GuideEntityEmbed Entity="ClothingBeltCorporateJudo" Caption=""/>
   </Box>
 
-  Corporate Judo, or simply Judo, is a [textlink="martial art" link="MartialArts"] that focuses on restraining your opponent with more
-  complex but effective moves. You will see this style most used by Security Officers, as they get access to the belts in their department.
-  Harness the art and strike any tider that gets in your way. A good understanding of intents is required.
+  O Judô Corporativo, ou simplesmente Judô, é uma [textlink="arte marcial" link="MartialArts"] focada em imobilizar o oponente com golpes
+  mais complexos, porém eficazes. Você verá este estilo sobretudo entre Oficiais da Segurança, que têm acesso aos cintos no departamento.
+  Domine a arte e derrube qualquer tider no seu caminho. É necessário entender bem os intents.
 
-  ## Special abilities
+  ## Habilidades especiais
 
-  Judo users are better at Harm intent, as their unarmed attacks will deal extra damage to the opponent.
+  Usuários de Judô são melhores no intent Harm, pois seus ataques desarmados causam dano extra ao oponente.
 
-  ### Stunbaton Scorn
+  ### Desprezo pelo Stunbaton
 
-  A Judo user is unable to use stunbatons. A true master relies on technique, using the
-  body’s leverage and strength to subdue, leaving the need for electrified force behind.
+  Um judoca não consegue usar stunbatons. Um verdadeiro mestre confia na técnica, usando a
+  alavanca e a força do corpo para subjugar, sem depender de força eletrificada.
 
-  ## Combo attacks
+  ## Ataques em combo
 
-  ### Discombobulate
+  ### Desnortear
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  Slows the opponent down and reduces their stamina resistance temporarily.
+  Desacelera o oponente e reduz temporariamente sua resistência a Stamina.
 
-  ### Eye Poke
+  ### Dedada no Olho
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Blinds the opponent and blurs their vision, regardless of eye protection, and deals some Blunt damage.
+  Cega o oponente e embaça sua visão, independentemente da proteção ocular, além de causar um pouco de dano Blunt.
 
-  ### Judo Throw
+  ### Arremesso de Judô
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
@@ -47,10 +47,10 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  Can only be perfomed while standing. Only works on standing opponents, dealing Stamina damage and knocking them down.
-  Knockdown duration is affected by their Stamina resistance.
+  Só pode ser executado enquanto você está de pé e só funciona em oponentes de pé, causando dano de Stamina e derrubando-os.
+  A duração do knockdown depende da resistência a Stamina deles.
 
-  ### Armbar
+  ### Chave de Braço
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
@@ -58,10 +58,10 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
   </Box>
 
-  Only works on downed opponents. Inflicts Stamina damage, disarms them, and locks them in an armbar until they manage to stand up.
-  Armbar works similarly to a knockdown and choke grab, and its duration is affected by their Stamina resistance.
+  Só funciona em oponentes caídos. Causa dano de Stamina, desarma e prende o alvo em uma chave de braço até ele conseguir se levantar.
+  A chave funciona como um knockdown e um choke grab; sua duração depende da resistência a Stamina do alvo.
 
-  ### Wheel Throw
+  ### Arremesso em Roda
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="grab"/>
@@ -69,7 +69,7 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Only works on opponents locked in an armbar. Flips the opponent over the shoulder,
-  inflicting massive Stamina damage, and forces the user back on their feet.
+  Só funciona em oponentes presos em uma chave de braço. Vira o oponente por cima do ombro,
+  causando dano massivo de Stamina, e força o usuário a ficar de pé novamente.
 
 </Document>

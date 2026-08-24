@@ -1,55 +1,55 @@
 <Document>
 # Hyposprays
 
-On Trauma Station, hyposprays aren't magic and need the target to have a [bold]Hypoport[/bold] surgically installed in their neck to transfer liquids.
+Na Trauma Station, hyposprays não são mágicos: para transferir líquidos, o alvo precisa ter um [bold]Hypoport[/bold] instalado cirurgicamente no pescoço.
 
-You will also need to be [bold]soft-grabbing[/bold] (pulling) the target if you want to inject someone else.
+Para injetar outra pessoa, você também precisa segurá-la com um [bold]soft-grab[/bold], isto é, puxá-la.
 
-However since they are now more in depth, medical has vial-fed [color=cyan]medical hyposprays[/color] roundstart. The CMO's [color=red]prototype hypospray[/color] holds 50u and can draw from containers directly, keeping it as the superior tool.
+Como agora são mais complexos, a Medicina começa a rodada com [color=cyan]hyposprays médicos[/color] alimentados por frascos. O [color=red]hypospray protótipo[/color] do CMO armazena 50u e pode aspirar diretamente de recipientes, portanto continua sendo a ferramenta superior.
 
 <GuideEntityEmbed Entity="MedicalHyposprayFilled"/>
 
-Medical hyposprays can be cheaply made and got from any Nanomed Plus vending machine.
-They have no internal reservoir, instead feeding from vials like in RMC14.
-Very useful to have for patients that have hypoports!
+Hyposprays médicos são baratos de fabricar e podem ser obtidos em qualquer máquina de venda NanoMed Plus.
+Eles não têm reservatório interno; são alimentados por frascos, como no RMC14.
+São muito úteis para pacientes que possuem hypoports!
 
 # Hypoports
 
 <Box>
   <GuideEntityEmbed Entity="Hypoport"/>
   <GuideEntityEmbed Entity="HypoportSecure"/>
-  <GuideEntityEmbed Entity="HypoportSecureNukie" Caption="Nukie-locked version"/>
+  <GuideEntityEmbed Entity="HypoportSecureNukie" Caption="Versão bloqueada para nukies"/>
 </Box>
 
-You can use the detailed health examine button to see if someone has a hypoport installed.
+Use o botão de exame detalhado de saúde para descobrir se alguém possui um hypoport instalado.
 
-The standard hypoport can be made at a medfab or exofab roundstart and allows anyone with a hypospray to easily inject you with medicines.
-This hypoport is what you get for free as a station role, unless you enable the [bold]No Hypoport[/bold] trait or remove it in-round.
+O hypoport padrão pode ser produzido numa medfab ou exofab desde o início da rodada e permite que qualquer pessoa com um hypospray injete medicamentos em você com facilidade.
+É esse hypoport que funções da estação recebem gratuitamente, a menos que você habilite o traço [bold]No Hypoport[/bold] ou o remova durante a rodada.
 
-[color=#c96dbf]Science[/color] is able to research [bold]secure hypoports[/bold] which check the user's ID.
-The access needed starts out as Medical, but can be changed using a multitool.
-When using this remember that if you lose your id, or someone steals it, you won't be able to inject yourself anymore, and they will!
-Keep this tradeoff in mind before rushing to replace your standard one.
+A [color=#c96dbf]Ciência[/color] pode pesquisar [bold]hypoports seguros[/bold], que verificam o cartão de ID de quem os utiliza.
+O acesso necessário começa definido como Medicina, mas pode ser alterado com uma multiferramenta.
+Lembre-se: se você perder sua ID ou alguém roubá-la, não conseguirá mais se injetar, e o ladrão conseguirá!
+Considere essa troca antes de correr para substituir o hypoport padrão.
 
 # Nukies
 
-The team all starts with nukie-locked secure hypoports. As long as nobody loses their IDs, you will be safe from validhunters with hyposprays.
+Toda a equipe começa com hypoports seguros bloqueados para nukies. Enquanto ninguém perder a ID, vocês estarão protegidos de validhunters com hyposprays.
 
-Should you buy reinforcements, even kobolds and monkeys, they won't have hypoports. You can choose to buy a 10TC nukie hypoport for them and install it.
+Reforços comprados, até kobolds e macacos, não terão hypoports. Você pode comprar por 10TC um hypoport de nukie e instalá-lo neles.
 
-Discuss with your commander and corpsman whether you should extract the hypoport from anyone going undercover, as it could arouse suspicion from astute metagamers.
+Converse com o comandante e o corpsman sobre retirar o hypoport de quem for atuar disfarçado, pois ele pode despertar a suspeita de metagamers atentos.
 
-# Installation
+# Instalação
 
-First print or buy a hypoport of choice. Change its access if needed and start operating on the target's head.
+Primeiro, imprima ou compre o hypoport desejado. Altere o acesso se necessário e comece a operar a cabeça do alvo.
 
-The first surgery to do is opening a hypoport cavity. Once you've done that you can install the hypoport separately.
+A primeira cirurgia consiste em abrir uma cavidade para hypoport. Depois disso, você pode instalá-lo separadamente.
 
-# Hypoports as a traitor
+# Hypoports para Traidores
 
-Because some players may choose to not have a hypoport, you can no longer rely on hypopen with nocturine being a guaranteed KO. As a result it's much cheaper (and you can just get a regular hypo anyway)
+Como alguns jogadores podem optar por não ter um hypoport, uma hypopen com nocturine deixou de ser garantia de nocaute. Por isso, ela ficou muito mais barata — e você também pode simplesmente conseguir um hypo comum.
 
-If you are a traitor with a hypoport you can use it to easily heal yourself on the go. If you change a secure hypoport's access to Syndicate, an Agent ID will allow you alone to use it.
-Very handy if the doctors are carrying poisons on them, "just in case".
+Se você for um traidor com hypoport, poderá usá-lo para se curar facilmente enquanto se desloca. Se mudar o acesso de um hypoport seguro para Sindicato, somente você, usando uma ID de Agente, poderá utilizá-lo.
+É muito útil quando os médicos carregam venenos consigo, "só por garantia".
 
 </Document>

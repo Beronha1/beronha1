@@ -9,11 +9,11 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-# Janitorial
+# Zeladoria
 
-You keep things clean, it's a rough job sometimes, but someone's gotta do it. This will walk you through the tools of the trade, and how they're used.
+Você mantém tudo limpo. Às vezes é um trabalho pesado, mas alguém precisa fazê-lo. Este guia apresenta as ferramentas da profissão e como usá-las.
 
-## Basic Equipment
+## Equipamento Básico
 <Box>
 <GuideEntityEmbed Entity="MopItem"/>
 <GuideEntityEmbed Entity="JanitorialTrolley"/>
@@ -28,54 +28,54 @@ You keep things clean, it's a rough job sometimes, but someone's gotta do it. Th
 <GuideEntityEmbed Entity="Mousetrap"/>
 </Box>
 
-## Additional Equipment
+## Equipamento Adicional
 <Box>
 <GuideEntityEmbed Entity="WetFloorSign"/>
-<GuideEntityEmbed Entity="Holoprojector" Caption="holosign projector"/>
+<GuideEntityEmbed Entity="Holoprojector" Caption="Projetor de placas holográficas"/>
 <GuideEntityEmbed Entity="LightReplacer"/>
 <GuideEntityEmbed Entity="WireBrush"/>
 </Box>
 <Box>
-<GuideEntityEmbed Entity="AdvMopItem" Caption="Advanced mop, ask in R&D"/>
+<GuideEntityEmbed Entity="AdvMopItem" Caption="Esfregão avançado, peça ao P&amp;D"/>
 </Box>
 
-## Fluid Acquisition and Disposal
+## Obtenção e Descarte de Líquidos
 <Box>
 <GuideEntityEmbed Entity="WaterTankFull"/>
 <GuideEntityEmbed Entity="Sink"/>
 <GuideEntityEmbed Entity="FloorDrain"/>
 </Box>
 
-## Tidying up.
-Now, onto the (figurative) meat and potatoes. We're here to clean, right? Lets keep it simple. The main tools you'll be putting to use are the trusty mop, a trash bag, space cleaner, and one of the three different buckets.
+## Colocando Tudo em Ordem
+Agora vamos ao arroz com feijão — em sentido figurado. Estamos aqui para limpar, certo? Sem complicar: suas principais ferramentas serão o velho e confiável esfregão, um saco de lixo, o limpador espacial e um dos três tipos de balde.
 
-Mopping: Fill your cart up with water, then, find some puddles! Wet your mop, and wipe them up, the resulting water puddle will dry after a short time. Don't forget the wet floor signs!
-- To drain your cart, drag it (with your cursor) onto a floor drain. This will dump all the fluids inside! Floor drains can usually be found somewhere in medical, the kitchen freezer, and of course, the janitor closet.
+Esfregar: encha o carrinho com água e procure poças! Molhe o esfregão e limpe-as; a poça de água resultante secará depois de pouco tempo. Não se esqueça das placas de piso molhado!
+- Para drenar o carrinho, arraste-o com o cursor até um ralo de piso. Isso despejará todo o líquido! Geralmente há ralos em algum lugar da Medicina, no congelador da cozinha e, claro, no armário da Zeladoria.
 
-Trash: Place it in the bag directly, or hold it in your hand. Click -near- trash to scoop -all- nearby junk up, or click on each piece individually. Using the bag on a disposal will empty it.
-- Cargo might want some of your trash, it might be worthwhile to check in from time to time!
+Lixo: coloque-o diretamente no saco ou segure o saco na mão. Clique -perto- do lixo para recolher -toda- a sujeira próxima, ou clique em cada peça individualmente. Use o saco numa unidade de descarte para esvaziá-lo.
+- Talvez a Carga queira parte do seu lixo; vale a pena perguntar de vez em quando!
 
-Space Cleaner: This miracle spray can do two things, clean graffiti, and in a pinch, clean up puddles!
-- You might be able to get more of this from chemistry.
+Limpador Espacial: este spray milagroso faz duas coisas: remove grafites e, numa emergência, limpa poças!
+- Talvez você consiga mais produto com a Química.
 
-Light Replacer: Just point at broken bulbs and click!
-- Replace enough broken ones, get a bulb for free!
+Substituidor de Lâmpadas: aponte para lâmpadas quebradas e clique!
+- Troque lâmpadas quebradas suficientes e ganhe uma de graça!
 
-Janitorial Keyring: Your trusty keys, hundreds of them on a single ring. If only you could remember which goes where...
-- At the start of the round, the keyring will spawn with a few randomized access levels. It could open cargo, it could open medical, who knows?
+Chaveiro da Zeladoria: suas chaves confiáveis, centenas delas num único aro. Se ao menos você lembrasse qual abre o quê...
+- No começo da rodada, o chaveiro aparece com alguns acessos aleatórios. Pode abrir a Carga, pode abrir a Medicina... quem sabe?
 
-## Dealing with footprints and trails.
-It gets a little tedious cleaning [italic]every[/italic] little footprint left behind by those pesky doctors.
-The solution? A little bit of elbow grease!
+## Lidando com Pegadas e Rastros
+Fica um pouco cansativo limpar [italic]cada[/italic] pegadinha deixada por aqueles médicos irritantes.
+A solução? Um pouco de trabalho braçal!
 
-There's two ways of going about this:
-- Using a mop on the floor near footprints will scrub the area of footprints and trails. [bold]Although slow, this has the benefit of not gunking up your mop.[/bold]
-- You can use a bar of soap or a damp rag for the same effect, albeit worse.
+Existem duas maneiras de fazer isso:
+- Usar o esfregão no chão perto das pegadas limpa a área de pegadas e rastros. [bold]Embora seja lento, isso tem a vantagem de não sujar seu esfregão.[/bold]
+- Uma barra de sabão ou um pano úmido produz o mesmo efeito, embora de forma pior.
 
-## Extra Duties
-A good janitor is always on the lookout for a bit more to do, and there are plenty of tools at your disposal. Keep an eye out for broken lights, help the chef take care of mice in the kitchen, and if you're feeling -really- generous, try to restock the vending machines and emergency closets around the station!
+## Tarefas Extras
+Um bom Zelador está sempre procurando algo a mais para fazer, e há muitas ferramentas disponíveis. Fique atento a lâmpadas quebradas, ajude o Cozinheiro a cuidar dos ratos na cozinha e, se estiver se sentindo -muito- generoso, tente reabastecer as máquinas de venda e os armários de emergência pela estação!
 
-##Additional Information:
+## Informações Adicionais:
 <GuideReagentEmbed Reagent="SpaceCleaner"/>
 <GuideReagentEmbed Reagent="Ammonia"/>
 

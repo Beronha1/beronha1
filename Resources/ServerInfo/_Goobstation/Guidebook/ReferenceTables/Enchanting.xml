@@ -1,77 +1,77 @@
 <Document>
-# Enchanting
+# Encantamentos
 
-Those with magical literacy, through years of study or a magical gift, have access to the arcane art of Enchanting.
+Pessoas com conhecimento mágico, por anos de estudo ou dom natural, acessam a arte arcana de Encantar.
 
-# Equipment
+# Equipamentos
 
 <Box>
   <GuideEntityEmbed Entity="BloodEnchanter"/>
   <GuideEntityEmbed Entity="EnchantingRune"/>
 </Box>
 
-A holy bible must be [bold]defaced[/bold] to enchant items, atop a [bold]Enchantment Rune[/bold] carved into the floor.
+Uma bíblia sagrada precisa ser [bold]profanada[/bold] para encantar itens sobre uma [bold]Runa de Encantamento[/bold] gravada no chão.
 
-# Enchanting an item
+# Encantando um item
 
-To enchant an item, you need a sacrificial offering and an item to enchant. Most often these are the cores of anomalies, but are occasionally more mundane components like Diamonds.
+Você precisa de uma oferenda e do item a encantar. Geralmente são núcleos de anomalia, mas às vezes componentes comuns, como Diamantes.
 
-Enchanting scrolls can be scribed using magical inks.
+Pergaminhos podem ser escritos com tintas mágicas.
 
-Place an item on your enchanting rune alongside the offering and hit the item with your magical tome. For wizards, this is their Wizard's Grimoire. For Chaplain, their Bible or other religious texts. For Heretics, their Codex Cicatrix.
+Coloque item e oferenda na runa e bata no item com o tomo mágico: Grimório para magos, Bíblia ou texto religioso para Capelães, Codex Cicatrix para Hereges.
 
-If the item and offering are compatible, the offering will be consumed and the item will become enchanted. If you use an anomaly core, those from critical anomalies are more potent than inert cores, and empower your item more effectively.
+Se forem compatíveis, a oferenda é consumida e o item recebe o encanto. Núcleos de anomalias críticas são mais fortes que núcleos inertes e concedem mais poder.
 
-# Enchantment limits
+# Limites de encantamento
 
-An item can only be enchanted with two kinds of enchantment, unless you perform a ritual. By killing any living entity with a soul on top of a rune alongside your enchanted item, their soul will be consumed and increase the enchantment limit.
+Um item aceita apenas dois tipos, a menos que você faça um ritual. Mate sobre a runa uma entidade viva com alma ao lado do item encantado; a alma será consumida e aumentará o limite.
 
-The sacrifice will be possible to revive, but have the ill effects of losing their soul, akin to selling their soul to a Devil.
+A vítima pode ser revivida, mas sofrerá os efeitos de perder a alma, como quem a vendeu a um Diabo.
 
-Sacrafices can be made up to 10 enchantments worth.
+Sacrifícios podem elevar o limite até 10 encantamentos.
 
-# Types of enchantments
+# Tipos de encantamento
 
-  ### Fire Aspect
-Fire Aspect causes your weapon to set your foes on fire. Obtainable from Pyroclastic Anomaly cores.
+  ### Aspecto Flamejante
+Incendeia inimigos atingidos. Obtido de núcleos de Anomalia Piroclástica.
 
-  ### Lavaforged
-Lavaforged grants your equipment the ability to protect you from lava. Obtainable from Pyroclastic Anomaly cores.
+  ### Forjado em Lava
+Dá ao equipamento proteção contra lava. Obtido de núcleos de Anomalia Piroclástica.
 
-  ### Knockback
-Knockback causes your weapon to knock people back on hit. Obtainable from Gravity Anomaly cores.
+  ### Repulsão
+Empurra pessoas atingidas pela arma. Obtido de núcleos de Anomalia Gravitacional.
 
-  ### Fire Protection
-Fire Protection grants your armor protection from... Fire. Obtainable from Ice Anomaly cores.
+  ### Proteção contra Fogo
+Protege a armadura de... fogo. Obtido de núcleos de Anomalia de Gelo.
 
-  ### Sharpness
-Sharpness sharpens your weapon and grants four bonus Slash damage per level. Obtainable from Flesh Anomaly cores.
+  ### Afiação
+Afia a arma e concede quatro pontos extras de dano Slash por nível. Obtido de núcleos de Anomalia de Carne.
 
-  ### Unbreaking
-Unbreaking reduces all damage by 50%. Due to complicated magical law restrictions, this is only applicable to mice. Obtainable from Rock Anomaly cores.
+  ### Inquebrável
+Reduz todo dano em 50%. Por restrições complicadas da lei mágica, só se aplica a ratos. Obtido de núcleos de Anomalia Rochosa.
 
-  ### Protection
-Protection grants your equipment damage resistance. Obtainable from Rock Anomaly cores.
+  ### Proteção
+Dá resistência a dano ao equipamento. Obtido de núcleos de Anomalia Rochosa.
 
-  ### Slippery
-Slippery makes any item slip people. Obtainable from Liquid Anomaly cores.
+  ### Escorregadio
+Faz qualquer item derrubar pessoas. Obtido de núcleos de Anomalia Líquida.
 
-  ### Unslippable
-Unslippable makes any shoes grant immunity to slipping. Obtainable from Liquid Anomaly cores.
+  ### Antiderrapante
+Faz sapatos concederem imunidade a escorregões. Obtido de núcleos de Anomalia Líquida.
 
-  ### Insulated?
-Insulated? grants a chance to not be shocked by sources of electricity to gloves. Obtainable from inert Elecricity Anomaly cores.
+  ### Isolado?
+Dá às luvas uma chance de evitar choque elétrico. Obtido de núcleos inertes de Anomalia Elétrica.
 
-  ### Insulated
-Insulated grants gloves full insulation from electricity. Obtainable from critical Elecricity Anomaly cores.
+  ### Isolado
+Dá isolamento elétrico completo às luvas. Obtido de núcleos críticos de Anomalia Elétrica.
 
-  ### Thorns
-Thorns can be applied to armor, and damages melee attackers with 4 slash damage per level. Obtainable from Floral Anomaly cores.
+  ### Espinhos
+Aplicado a armaduras, causa 4 de dano Slash por nível a atacantes corpo a corpo. Obtido de núcleos de Anomalia Floral.
 
-  ### Fortune
-Fortune has a chance to increase ore yield for drills and pickaxes, chance proportional to enchantment level. Obtainable from Santa Anomaly cores and diamonds.
+  ### Fortuna
+Pode aumentar o rendimento de minério de brocas e picaretas; a chance cresce com o nível. Obtido de núcleos de Anomalia do Papai Noel e diamantes.
 
-  ### More...
-There are many other enchantments and curses, perhaps creatures from the underworld could provide them?
+  ### Mais...
+Existem muitos outros encantamentos e maldições. Talvez criaturas do submundo possam fornecê-los?
 
 </Document>

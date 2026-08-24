@@ -1,38 +1,39 @@
 <Document>
-# Зависимости
+# Dependências
 
-Алкоголь, сигареты и наркотики не проходят бесследно. Чем больше ты употребляешь, тем сильнее организм привыкает, и однажды без дозы станет по-настоящему плохо.
+Álcool, cigarros e drogas deixam marcas. Quanto mais você usa, mais o corpo se acostuma; um dia, ficar sem a dose fará muito mal.
 
-## Как это работает
+## Como funciona
 
-У каждого есть скрытый уровень привыкания к алкоголю, никотину и наркотикам. Он растёт, пока ты употребляешь, и медленно спадает, когда ты держишься. Когда уровень превышает половину шкалы, ты зависим: теперь без дозы не обойтись.
+Todos têm um nível oculto de hábito para álcool, nicotina e drogas. Ele sobe com o uso e cai devagar durante a abstinência. Acima da metade da escala, você fica dependente e passa a precisar da dose.
 
-Подсесть может кто угодно: пара бутылок за смену, несколько сигарет или укол наркоты, и вот уже организм требует своё.
+Qualquer pessoa pode se viciar: algumas garrafas num turno, vários cigarros ou uma injeção, e o corpo já começa a cobrar.
 
-## Ломка
+## Abstinência
 
-Если зависимый долго не получает дозу (около 10 минут), начинается ломка. Она проходит три стадии, и с каждой становится хуже:
+Se a pessoa dependente ficar cerca de 10 minutos sem a dose, a abstinência começa. Ela tem três fases, cada vez piores:
 
-- Лёгкая стадия: руки трясутся, мысли крутятся вокруг дозы.
-- Средняя стадия: к дрожи добавляется косноязычие, слова путаются.
-- Тяжёлая стадия: тело слабеет, движения замедляются, а у наркоманов начинаются галлюцинации.
+- Leve: mãos tremem e os pensamentos ficam presos na dose.
+- Média: além dos tremores, a fala se embaralha.
+- Grave: o corpo enfraquece, os movimentos ficam lentos e usuários de drogas têm alucinações.
 
-Доза снимает ломку, но одновременно поднимает привыкание ещё выше. Замкнутый круг.
+Uma dose interrompe os sintomas, mas aumenta ainda mais o hábito. Um ciclo vicioso.
 
-## Лечение
+## Tratamento
 
-Зависимость лечится двумя способами:
+Há duas formas:
 
-- Воздержание. Уровень привыкания медленно спадает сам, и примерно через час трезвости зависимость отпускает.
-- Детоксин. Лекарство, которое быстро снижает привыкание. Синтезируется из древесного угля и диловена: смешай 1 часть Charcoal и 1 часть Dylovene, получишь 2 единицы детоксина.
+- Abstinência. O hábito diminui naturalmente; depois de cerca de uma hora sóbrio, a dependência passa.
+- Detoxina. Medicamento que reduz o hábito depressa. Misture 1 parte de Charcoal e 1 parte de Dylovene para obter 2 unidades de detoxina.
 
-## Трайты персонажа
+## Traits do personagem
 
-В редакторе персонажа можно взять трайт зависимости и начать раунд уже зависимым:
+No editor, você pode escolher um trait de dependência e começar a rodada viciado:
 
-- Алкогольная зависимость: организм требует выпивку.
-- Никотиновая зависимость: без сигареты никуда.
-- Наркозависимость: нужна постоянная доза.
+- Dependência de álcool: o corpo exige bebida.
+- Dependência de nicotina: não dá para ficar sem cigarro.
+- Dependência de drogas: precisa de doses constantes.
 
-Трайты дают очки персонажа и сочетаются между собой. Не подходят расам без органического метаболизма.
+Os traits dão pontos de personagem e podem ser combinados. Não servem para espécies sem metabolismo orgânico.
+
 </Document>

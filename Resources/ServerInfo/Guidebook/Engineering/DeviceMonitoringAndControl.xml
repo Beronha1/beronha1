@@ -6,30 +6,30 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Device Monitoring and Control
-  Given the station-wide nature of the atmospherics network, it is important to have a way to monitor and control devices from a central location.
+  # Monitoramento e controle de dispositivos
+  Como a rede atmosférica cobre a estação inteira, é importante monitorar e controlar dispositivos a partir de um ponto central.
 
-  Using these systems, Atmospherics can monitor and control the atmosphere across the entire station.
+  Com esses sistemas, Atmos consegue acompanhar e controlar a atmosfera de toda a estação.
 
   <Box>
     <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
     <GuideEntityEmbed Entity="AirSensor" Caption=""/>
   </Box>
   <Box>
-    ## Air Alarms
+    ## Alarmes de ar
   </Box>
   <Box>
-    [color=#999999][italic]Wide area monitoring and control over atmos devices[italic][/color]
+    [color=#999999][italic]Monitoramento e controle de dispositivos atmos numa área ampla[italic][/color]
   </Box>
 
   <Box>
     <GuideEntityEmbed Entity="ComputerAlert" Caption=""/>
   </Box>
   <Box>
-    ## Atmospheric Alerts Computer
+    ## Computador de alertas atmosféricos
   </Box>
   <Box>
-    [color=#999999][italic]Station-wide monitoring of air alarms[italic][/color]
+    [color=#999999][italic]Monitoramento dos alarmes de ar da estação inteira[italic][/color]
   </Box>
 
   <Box>
@@ -37,10 +37,10 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="GasPipeSensor" Caption=""/>
   </Box>
   <Box>
-    ## Atmospheric Network Monitor
+    ## Monitor de rede atmosférica
   </Box>
   <Box>
-    [color=#999999][italic]Monitoring of whole pipe networks[italic][/color]
+    [color=#999999][italic]Monitoramento de redes inteiras de tubulação[italic][/color]
   </Box>
 
 </Document>

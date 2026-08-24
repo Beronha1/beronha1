@@ -1,68 +1,68 @@
 <Document>
-# Genetics
+# Genética
 
-Genetics on Trauma Station is based off of /tg/station with some slight differences in gameplay.
+A Genética da Trauma Station é baseada na /tg/station, com algumas pequenas diferenças de gameplay.
 
-All mutations from tg are implemented here!
+Todas as mutações da tg estão implementadas aqui!
 
-# Disks
+# Discos
 
 <Box>
   <GuideEntityEmbed Entity="GeneticsDisk"/>
 </Box>
 
-Rather than the genetics console having infinite storage, you have to store each mutation on a genetics disk. A hand labeler will save your life here.
+Em vez de a console de genética ter armazenamento infinito, você precisa guardar cada mutação em um disco genético. Uma etiquetadora de mão vai salvar sua vida aqui.
 
-Your locker will have a box of disks but you can print more in the sci techfab.
+Seu armário terá uma caixa de discos, mas você pode imprimir mais na techfab da Science.
 
-# Sequencing
+# Sequenciamento
 
-To sequence a mutation, unlocking it and activating it in the subject, solve the gene puzzle so that every A is paired with a T, every C with a G.
+Para sequenciar uma mutação, desbloqueando-a e ativando-a no paciente, resolva o quebra-cabeça genético de modo que cada A forme par com T e cada C, com G.
 
-For single missing bases this is trivial, but with missing pairs you will need to do some thinking. Or just brute force it and torture your poor monkeys.
+Com uma única base faltando isso é trivial, mas pares ausentes exigem um pouco de raciocínio. Ou você pode ir na força bruta e torturar os pobres macacos.
 
-Any incorrect guess when sequencing will severely damage the subject's genome. Get some medicine from chem or more monkey cubes to prepare for this.
+Cada tentativa errada durante o sequenciamento danifica gravemente o genoma do paciente. Pegue remédios na Chem ou mais cubos de macaco antes de começar.
 
-# Solving missing base pairs
+# Resolvendo pares de bases ausentes
 
 <Box>
   <GuideEntityEmbed Entity="HandheldGeneticsScanner"/>
 </Box>
 
-There is no joker button. Go outside of your lab and scan people, or Pun Pun, with your [bold]handheld genome scanner[/bold]. You can use logic to deduce what missing bases in your subjects are by finding multiple people with the same dormant mutation.
+Não existe botão coringa. Saia do laboratório e escaneie pessoas, ou o Pun Pun, com seu [bold]scanner genômico portátil[/bold]. Você pode deduzir as bases ausentes dos pacientes encontrando várias pessoas com a mesma mutação dormente.
 
-Every mutation in the game has a random number assigned each round, however they stay the same between different subjects with the same mutation.
+Cada mutação recebe um número aleatório por round, mas ele permanece igual entre pacientes diferentes com a mesma mutação.
 
-For example, if you have a monkey in the lab with a genome with an unknown first pair, then scan someone with that mutation and a known first pair, you can use that pair to finish the sequence.
+Por exemplo: se um macaco no laboratório tem o primeiro par desconhecido, escaneie alguém com a mesma mutação e esse primeiro par conhecido; então use o par para concluir a sequência.
 
-# Biomass
+# Biomassa
 
-Biomass is needed to print mutators, activators and cleansers. Source it from botany, loose corpses, etc. then put it in your console.
-Think carefully if you need to give every lowly assistant hulk, you won't have any biomass left to print anything else!
+Biomassa é necessária para imprimir mutadores, ativadores e limpadores. Consiga-a na Botany, em cadáveres largados por aí etc., e coloque-a na console.
+Pense bem antes de dar Hulk a cada Assistant pé-rapado: não vai sobrar biomassa para imprimir mais nada!
 
-# Removing Mutations
+# Removendo mutações
 
-To remove mutations instead of using mutadone, you print a cleanser from the storage tab using a disk with the mutation you want to remove. Inject it and the mutation is gone!
+Para remover uma mutação sem usar mutadone, imprima um limpador na aba de armazenamento usando um disco com a mutação desejada. Injete-o e a mutação sumirá!
 
-# Scrambling DNA
+# Embaralhando o DNA
 
-If monkeys are in extra short supply and you are having bad luck, you can use the [bold]Scramble DNA[/bold] button to reroll any dormant mutations the subject has.
-It will receive a lot of damage though, so get some meds.
+Se estiver faltando macaco e o azar bater, use o botão [bold]Embaralhar DNA[/bold] para rerrolar as mutações dormentes do paciente.
+Ele sofrerá muito dano, então prepare os remédios.
 
-# Combining
+# Combinação
 
-Combining mutations is done with a "catalyst" mutation stored on the current disk, and any mutation the subject already has.
+Para combinar mutações, use uma mutação "catalisadora" armazenada no disco atual e qualquer mutação que o paciente já possua.
 
-If you pick a correct combination the result is added, but it is not sequenced! You will need to combine it with many subjects for the complex mutations in order to get enough bases.
+Ao escolher uma combinação correta, o resultado é adicionado, mas não vem sequenciado! Para mutações complexas, você terá de combiná-lo em vários pacientes até obter bases suficientes.
 
-# Research
+# Pesquisa
 
-One of the biggest differences from tg is that [bold]you actually contribute to research![/bold]. You get 8000 points for sequencing most mutations, with more complex ones having higher rewards.
+Uma das maiores diferenças em relação à tg é que [bold]você realmente contribui para a pesquisa![/bold]. A maioria das mutações rende 8000 pontos ao ser sequenciada; as mais complexas dão recompensas maiores.
 
-# Unique Enzymes
+# Enzimas únicas
 
-Disks can also store a person's [bold]unique enzymes[/bold] which can be used to copy their name, sex, fingerprints and eye/skin color to another subject.
+Os discos também podem armazenar as [bold]enzimas únicas[/bold] de uma pessoa, usadas para copiar nome, sexo, impressões digitais e cor dos olhos/pele para outro paciente.
 
-This won't copy their DNA or current hair styles. Get a pair of scissors and set up a barbershop!
+Isso não copia o DNA nem o penteado atual. Pegue uma tesoura e monte uma barbearia!
 
 </Document>

@@ -1,159 +1,159 @@
 <Document>
 # ChemiCompiler
 
-The ChemiCompiler is a chemistry machine you program instead of click. It holds ten beakers, and runs
-short programs that move reagents between them, heat them, and package the results into pills, vials or
-medical patches.
+O ChemiCompiler é uma máquina de química que você programa em vez de ficar clicando. Ele comporta dez béqueres e executa
+programas curtos que movem reagentes entre eles, aquecem-nos e embalam o resultado em comprimidos, frascos ou
+patches médicos.
 
-Build one from a [bold]ChemiCompiler M7 machine board[/bold], printed at a medical lathe.
+Construa um usando uma [bold]placa de máquina ChemiCompiler M7[/bold], impressa num lathe médico.
 
-# The Interface
+# A interface
 
-The big box at the top is where you write code. It is not saved anywhere until you put it in a slot.
+A caixa grande no topo é onde você escreve código. Nada é salvo até colocá-lo em um slot.
 
-Below it are [bold]Save[/bold], [bold]Load[/bold], and six numbered slots. The slot buttons do whatever the
-Save and Load buttons say they do:
+Abaixo ficam [bold]Save[/bold], [bold]Load[/bold] e seis slots numerados. Os botões dos slots fazem o que os
+botões Save e Load indicarem:
 
-- With neither pressed, clicking a slot [bold]runs[/bold] the program in it.
-- With Save pressed, clicking a slot stores the code from the editor into it.
-- With Load pressed, clicking a slot pulls its code back into the editor.
+- Sem nenhum dos dois pressionado, clicar num slot [bold]executa[/bold] o programa contido nele.
+- Com Save pressionado, clicar num slot salva nele o código do editor.
+- Com Load pressionado, clicar num slot traz o código de volta ao editor.
 
-Slots holding a program are highlighted green. The Halt button stops a running program early.
+Slots que contêm programa ficam verdes. O botão Halt interrompe antes da hora um programa em execução.
 
-Below those are the ten reservoirs, r1 to r10. Click one with a beaker in hand to load it, click it
-empty-handed to take the beaker back. Full reservoirs are highlighted blue. Under them are the registers,
-which only update when a program stops. That makes them a debugger of last resort: run a program, see
-where the registers ended up, work out where it went wrong.
+Abaixo ficam os dez reservatórios, r1 a r10. Clique em um com um béquer na mão para carregá-lo; clique
+de mãos vazias para retirar o béquer. Reservatórios ocupados ficam azuis. Sob eles estão os registradores,
+que só atualizam quando o programa para. Isso os torna um debugger de último recurso: execute o programa, veja
+onde os registradores terminaram e descubra o que deu errado.
 
-The right-hand corner lists the materials loaded into the machine.
+O canto direito lista os materiais carregados na máquina.
 
-While a program is running everything is locked, including the beakers.
+Enquanto um programa está em execução, tudo fica travado, inclusive os béqueres.
 
-# Memory
+# Memória
 
-A program has 1024 memory cells, each holding a number from 0 to 255, and a pointer that starts at the first
-one. Almost every instruction works on whichever cell the pointer is currently sitting on.
+Um programa possui 1024 células de memória, cada qual guardando um número de 0 a 255, e um ponteiro que começa na primeira
+célula. Quase toda instrução atua sobre a célula onde o ponteiro está naquele momento.
 
-There is no way to type a number directly. If you want a cell to hold 25, you write twenty-five [bold]+[/bold]
-signs. This is not a mistake, it is the whole personality of the language. Copy and paste is your friend.
+Não há como digitar um número diretamente. Para guardar 25 em uma célula, escreva vinte e cinco sinais de [bold]+[/bold].
+Não é engano; essa é toda a personalidade da linguagem. Copiar e colar é seu amigo.
 
-# Registers
+# Registradores
 
-Three registers decide what the chemistry instructions actually do:
+Três registradores decidem o que as instruções químicas realmente fazem:
 
-- [bold]sx[/bold], the source. Which reservoir, 1 to 10, an instruction reads from.
-- [bold]tx[/bold], the target. Where things go. 1 to 10 for a reservoir, 11 for the pill generator,
-  12 for the vial generator, 13 to throw it away, and 14 to 17 for the patch generators:
-  14 a patch, 15 a rapid patch, 16 a large patch, 17 a therapeutic patch.
-- [bold]ax[/bold], the amount. How many units to move, and how far to heat.
+- [bold]sx[/bold], a fonte. De qual reservatório, 1 a 10, a instrução lê.
+- [bold]tx[/bold], o destino. Para onde as coisas vão. 1 a 10 para reservatórios, 11 para o gerador de comprimidos,
+  12 para o gerador de frascos, 13 para descartar e 14 a 17 para os geradores de patch:
+  14 é um patch, 15 um patch rápido, 16 um patch grande e 17 um patch terapêutico.
+- [bold]ax[/bold], a quantidade. Quantas unidades mover e quanto aquecer.
 
-You set them by putting a number in a memory cell and then copying that cell into the register.
+Para configurá-los, coloque um número numa célula de memória e copie a célula para o registrador.
 
-# Materials
+# Materiais
 
-The pill generator is free, but everything else the machine prints costs the same materials it would cost
-to print at a lathe. Load sheets into the machine by hand; what it is holding shows in the corner of the
+O gerador de comprimidos é gratuito, mas todo o resto impresso custa os mesmos materiais que custaria
+num lathe. Carregue sheets manualmente; o que a máquina contém aparece no canto da
 interface.
 
-- A vial costs 1 glass.
-- Any patch costs 1 cloth and 1 plastic.
+- Um frasco custa 1 vidro.
+- Qualquer patch custa 1 tecido e 1 plástico.
 
-Each of those makes one container per instruction,with however much you sent it. Anything that will not
-fit goes back to the reservoir it came from. If the materials aren't there the instruction fails like any
-other: the machine buzzes, your reagents stay where they were, and the program carries on regardless.
+Cada opção cria um recipiente por instrução, com a quantidade enviada. O que não
+couber volta ao reservatório de origem. Se faltarem materiais, a instrução falha como qualquer
+outra: a máquina zumbe, os reagentes ficam onde estavam e o programa continua mesmo assim.
 
-# Instructions
+# Instruções
 
-Anything that isn't an instruction is ignored, so you can leave spaces and notes in your programs.
+Tudo que não for instrução é ignorado; portanto, você pode deixar espaços e anotações nos programas.
 
-## Pointer and arithmetic
+## Ponteiro e aritmética
 
-- [bold]\>[/bold] move the pointer one cell right
-- [bold]\<[/bold] move the pointer one cell left
-- [bold]+[/bold] add one to the current cell
-- [bold]-[/bold] subtract one from the current cell
+- [bold]\>[/bold] move o ponteiro uma célula para a direita
+- [bold]\<[/bold] move o ponteiro uma célula para a esquerda
+- [bold]+[/bold] soma um à célula atual
+- [bold]-[/bold] subtrai um da célula atual
 
 ## Loops
 
-- [bold]\[[/bold] if the current cell is zero, skip past the matching \]
-- [bold]\][/bold] if the current cell is not zero, jump back to the matching \[
+- [bold]\[[/bold] se a célula atual for zero, pula até depois do \] correspondente
+- [bold]\][/bold] se a célula atual não for zero, volta ao \[ correspondente
 
-Loops nest. A program with brackets that don't pair up is refused rather than run, so a stray \] will not
-brick the machine. A program that loops forever is abandoned after ten minutes.
+Loops podem ser aninhados. Um programa com colchetes sem par é recusado em vez de executado; um \] perdido não
+vai brickar a máquina. Um programa em loop infinito é abandonado após dez minutos.
 
-## Registers
+## Registradores
 
-Each register has one instruction to write it from the current cell, and one to read it back into the cell.
+Cada registrador tem uma instrução para receber o valor da célula atual e outra para devolver o valor à célula.
 
-- [bold]}[/bold] and [bold]{[/bold] write and read [bold]sx[/bold]
-- [bold])[/bold] and [bold]([/bold] write and read [bold]tx[/bold]
-- [bold]'[/bold] and [bold]^[/bold] write and read [bold]ax[/bold]
+- [bold]}[/bold] e [bold]{[/bold] escrevem e leem [bold]sx[/bold]
+- [bold])[/bold] e [bold]([/bold] escrevem e leem [bold]tx[/bold]
+- [bold]'[/bold] e [bold]^[/bold] escrevem e leem [bold]ax[/bold]
 
-The brace-style symbol of each pair writes the register from memory; the other reads it back. A program that
-appears to run cleanly but moves nothing has almost always got one of these pairs the wrong way round.
+O símbolo em forma de fechamento de cada par escreve a memória no registrador; o outro lê de volta. Um programa que
+parece rodar sem erros, mas não move nada, quase sempre inverteu um desses pares.
 
-## Chemistry
+## Química
 
-- [bold],[/bold] measure how full reservoir sx is and put that number in ax
-- [bold]$[/bold] bring reservoir sx to (273 - tx) + ax Kelvin. Takes a few seconds.
-  To heat rather than cool, leave tx at 0 and put the temperature above freezing in ax.
-- [bold]@[/bold] move ax units from reservoir sx to wherever tx points
-- [bold]#[/bold] move ax units of one single reagent from sx to tx. Which reagent is taken from the current
-  memory cell, counting from 1, in the order they are listed in the beaker.
+- [bold],[/bold] mede quanto há no reservatório sx e coloca o número em ax
+- [bold]$[/bold] leva o reservatório sx a (273 - tx) + ax Kelvin. Leva alguns segundos.
+  Para aquecer em vez de resfriar, deixe tx em 0 e coloque em ax a temperatura acima do ponto de congelamento.
+- [bold]@[/bold] move ax unidades do reservatório sx para onde tx apontar
+- [bold]#[/bold] move ax unidades de um único reagente de sx para tx. O reagente é escolhido pela célula
+  de memória atual, contando a partir de 1, na ordem em que aparecem no béquer.
 
-Anything that will not fit in the target goes back where it came from. Reagents are never quietly lost,
-except at the ejection port, which is what the ejection port is for.
+Tudo que não couber no destino volta à origem. Reagentes nunca desaparecem em silêncio,
+exceto na porta de ejeção — afinal, é para isso que ela serve.
 
-## Everything else
+## Todo o resto
 
-- [bold].[/bold] add the current cell to a line of text, as a character. Writing a newline (10) makes the
-  machine say the line out loud; anything still unsaid is spoken when the program stops.
-- [bold]~[/bold] lock this program so Load can no longer read it back. It can still be overwritten.
-- [bold]*[/bold] pauses briefly, for reactions that take time.
+- [bold].[/bold] adiciona a célula atual a uma linha de texto como caractere. Escrever uma quebra de linha (10) faz a
+  máquina dizer a linha em voz alta; qualquer texto ainda não dito é falado quando o programa para.
+- [bold]~[/bold] trava o programa para que Load não possa mais lê-lo. Ainda pode ser sobrescrito.
+- [bold]*[/bold] faz uma pausa breve, para reações que levam tempo.
 
-# Speed
+# Velocidade
 
-Instructions are not free. Moving the pointer and counting up and down are quick, shuffling registers costs
-a little more, and anything that reaches into a beaker — transferring, isolating, measuring — takes about
-half a second on its own. Standing still on purpose with [bold]*[/bold] is the slowest single instruction
-there is, at a full second.
+Instruções têm custo. Mover o ponteiro e contar para cima ou para baixo é rápido; manipular registradores custa
+um pouco mais; qualquer coisa que mexa num béquer — transferir, isolar, medir — leva cerca de
+meio segundo sozinha. Ficar parado de propósito com [bold]*[/bold] é a instrução individual mais lenta:
+um segundo inteiro.
 
-That means the expensive part of a program is the chemistry, not the arithmetic, which is how it should be.
-Don't agonise over shaving \+ signs off your constants; think about how many times you're moving reagents.
+Isso significa que a parte cara do programa é a química, não a aritmética — como deve ser.
+Não sofra para eliminar sinais de \+ das constantes; pense em quantas vezes está movendo reagentes.
 
-Heating is slower still. The machine pushes heat at the same rate a hotplate does, so bringing a full beaker
-up to reaction temperature takes the better part of a minute. Automating chemistry saves you clicking, not
-time.
+Aquecer é ainda mais lento. A máquina transfere calor na mesma taxa que uma hotplate; levar um béquer cheio
+à temperatura de reação demora quase um minuto. Automatizar química economiza cliques, não
+tempo.
 
-# Sounds
+# Sons
 
-You cannot see the registers while a program runs, so listening to the machine is how you follow it.
+Você não enxerga os registradores durante a execução; acompanhe o programa ouvindo a máquina.
 
-- Two beeps as a program starts.
-- One beep every time reagents leave a reservoir, whether they go to another beaker, a pill, a vial, a patch
-  or the bin. Count them against your plan and you know how far it has got.
-- A low beep when heating begins, and the same low beep again once the reservoir is up to temperature.
-  Silence between the two is normal; heating is slow.
-- A high beep when the program finishes and the beakers unlock.
-- A buzzer when an instruction could not be carried out. This is the one to listen for.
+- Dois bipes quando o programa começa.
+- Um bipe sempre que reagentes saem de um reservatório, indo para outro béquer, comprimido, frasco, patch
+  ou lixeira. Compare a contagem ao plano para saber até onde chegou.
+- Um bipe grave quando o aquecimento começa e o mesmo bipe quando o reservatório atinge a temperatura.
+  O silêncio entre os dois é normal; aquecer é lento.
+- Um bipe agudo quando o programa termina e os béqueres destravam.
+- Um alarme quando uma instrução não pôde ser executada. É neste que você precisa prestar atenção.
 
-# Failures
+# Falhas
 
-If an instruction can't be carried out, usually because sx or tx points at a reservoir with no beaker in it,
-or because the machine has run out of the materials a vial or patch needs, it beeps loudly and carries
-straight on to the next instruction. It does not stop. A program that
-buzzes repeatedly is a program that is doing nothing at all, very confidently.
+Se uma instrução não puder ser executada — geralmente porque sx ou tx aponta para um reservatório sem béquer,
+ou porque acabaram os materiais necessários para um frasco ou patch — a máquina apita alto e segue
+direto para a próxima. Ela não para. Um programa que
+dispara o alarme repetidamente não está fazendo absolutamente nada, mas faz isso com muita confiança.
 
-# Writing a program
+# Escrevendo um programa
 
-Plan on paper first. Seriously. Write down every beaker, what is in it, how full it is, and every transfer
-in order, before you write a single symbol. Then translate the plan one line at a time.
+Planeje no papel primeiro. Sério. Anote cada béquer, o que contém, o quanto está cheio e todas as transferências
+em ordem antes de escrever um único símbolo. Depois, transforme o plano em código, uma linha por vez.
 
-A useful opening move is to fill the first several cells with small numbers you'll need later:
+Uma boa abertura é preencher as primeiras células com números pequenos que serão usados depois:
 
 [bold]+\>++\>+++\>++++\>+++++[/bold]
 
-That leaves 1, 2, 3, 4 and 5 in the first five cells, which are exactly the reservoir numbers you will be
-loading into sx and tx all program. Add whatever transfer amounts you need on the end, and from then on
-setting a register is just walking the pointer to the right cell and copying it.
+Isso deixa 1, 2, 3, 4 e 5 nas cinco primeiras células, exatamente os números de reservatório que você
+carregará em sx e tx durante o programa. Adicione ao final as quantidades de transferência necessárias; daí em diante,
+configurar um registrador é só levar o ponteiro até a célula certa e copiá-la.
 </Document>

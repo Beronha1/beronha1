@@ -6,54 +6,54 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-# Dismissal/Demotion Policies
-These are the policies/procedures that should be followed when dismissing or demoting personnel from a position.
+# Políticas de Demissão/Rebaixamento
+Estas são as políticas e os procedimentos a seguir ao demitir ou rebaixar alguém de um cargo.
 
-1. In the event of a full dismissal from a position, the personnel should have their ID marked as "Terminated" and set to an Assistant in terms of accesses (only Maintenance).
-<Box>[bullet/]Extra access should not be permitted except for special cases with approval from Captain or a relevant Head of Staff (when giving access to a Department).</Box>
-<Box>[bullet/]If dismissed by Central Command orders, authorization for extra access should be given by Central Command.</Box>
+1. Em caso de demissão completa do cargo, o ID da pessoa deve ser marcado como "Demitido" e seus acessos reduzidos aos de Assistant (apenas Manutenção).
+<Box>[bullet/]Acessos extras só devem ser permitidos em casos especiais, com aprovação do Capitão ou do Head of Staff responsável (ao conceder acesso a um Departamento).</Box>
+<Box>[bullet/]Se a demissão ocorrer por ordem do Comando Central, a autorização para acessos extras deve vir do Comando Central.</Box>
 
-2. In the event of a demotion, the relevant Head of Staff must choose whether to demote them to a lower rank in the Department or have them transferred to a Service position (with HoP approval).
-<Box>[bullet/]It is recommended that the personnel, when demoted out of a Department, be granted access to a Service job of their choice, or demoted to an Assistant (and marked as such).</Box>
+2. Em caso de rebaixamento, o Head of Staff responsável deve decidir entre mover a pessoa para um posto inferior no Departamento ou transferi-la para um cargo de Serviço (com aprovação do HoP).
+<Box>[bullet/]Quando alguém for removido de um Departamento, recomenda-se conceder acesso ao cargo de Serviço escolhido ou rebaixá-lo a Assistant (com o ID devidamente marcado).</Box>
 
-3. Dismissals and Demotions should not be performed without authorization from the relevant Head of Staff or Captain; unless specified by orders from Central Command or immense violations of Space Law.
-<Box>[bullet/]In such cases of immense violations of Space Law, the perpetrator must have committed serious crimes and/or actively be punished with Perma Brig.</Box>
+3. Demissões e rebaixamentos não devem ocorrer sem autorização do Head of Staff responsável ou do Capitão, salvo por ordem do Comando Central ou violações gravíssimas da Space Law.
+<Box>[bullet/]Nesses casos de violações gravíssimas da Space Law, o infrator deve ter cometido crimes sérios e/ou estar recebendo punição de Perma Brig.</Box>
 
-4. Personnel that are dismissed or demoted by a Head of Staff or Authoritative Personnel must report to Head of Personnel for dismissal/demotion. Failure to do so will result in legal authority to detain with force.
+4. Pessoal demitido ou rebaixado por um Head of Staff ou autoridade deve se apresentar ao Head of Personnel para efetivar a mudança. A recusa autoriza legalmente uma detenção à força.
 
-5. Personnel that are dismissed or demoted are considered trespassing in areas they would no longer have access. Any materials kept from areas are considered contraband (if listed as such) and should be turned in.
-<Box>[bullet/]Personnel are allowed to keep items not listed as contraband, but should not inhibit the Department.</Box>
+5. Pessoal demitido ou rebaixado passa a ser considerado invasor nas áreas às quais perdeu acesso. Materiais mantidos dessas áreas contam como contrabando (quando listados como tal) e devem ser entregues.
+<Box>[bullet/]É permitido ficar com itens não listados como contrabando, desde que isso não prejudique o Departamento.</Box>
 
-## Causes for Dismissal or Demotion
-1. Any [bold]major[/bold] breach of Standard Operating Procedure without propable cause.
+## Motivos para demissão ou rebaixamento
+1. Qualquer violação [bold]grave[/bold] dos Procedimentos Operacionais Padrão sem justificativa plausível.
 
-2. Any [bold]major[/bold] breach of Space Law (and detained for such crimes).
+2. Qualquer violação [bold]grave[/bold] da Space Law (com detenção por tais crimes).
 
-3. Unreasonable/Major Incompetence in current position.
+3. Incompetência absurda/grave no cargo atual.
 
-4. Refusal to follow legal/relevant orders from respective Head of Staff or Captain.
-<Box>[bullet/]Legality and relevance of the order must be decided by Captain or Head of Personnel</Box>
+4. Recusa em cumprir ordens legais e pertinentes do respectivo Head of Staff ou do Capitão.
+<Box>[bullet/]A legalidade e a pertinência da ordem devem ser decididas pelo Capitão ou pelo Head of Personnel.</Box>
 
-5. Creation of an abusive, dangerous, and/or unsafe work environment. Written approval for dangerous creations must be approved by respective Head of Staff or Captain.
-<Box>[bullet/]Abusive environments include berating, insulting, belittling, or otherwise treating coworkers like dirt.</Box>
+5. Criação de um ambiente de trabalho abusivo, perigoso e/ou inseguro. Criações perigosas exigem aprovação escrita do Head of Staff responsável ou do Capitão.
+<Box>[bullet/]Ambientes abusivos incluem repreender, insultar, humilhar ou tratar colegas como lixo.</Box>
 
-## Vote of No Confidence
-A [italic]Vote of No Confidence[/italic] is a method for crew members to arrange for the removal of a Command Personnel (barring Central Command personnel). It must be justified with reasoning found below.
+## Voto de Desconfiança
+Um [italic]Voto de Desconfiança[/italic] permite que tripulantes organizem a remoção de alguém do Comando (exceto pessoal do Comando Central). A justificativa deve seguir os motivos abaixo.
 
-1. Voting must be verified by a third party who can tally the votes and verify the validity (this should usually be Central Command personnel, such as NTR).
-<Box>[bullet/]The third party must be on-station. The third party should be the Captain if they are not the target in question.</Box>
+1. A votação deve ser verificada por um terceiro capaz de contar os votos e confirmar sua validade (normalmente pessoal do Comando Central, como o NTR).
+<Box>[bullet/]O terceiro deve estar na estação. Deve ser o Capitão, caso ele não seja o alvo da votação.</Box>
 
-2. If the third party dismisses the vote, for any reason, the individual must be treated as if it had not happened. They maintain their authority.
-<Box>[bullet/]In cases of a tie or understaffed environments, the third party may participate in the vote.</Box>
+2. Se o terceiro invalidar a votação por qualquer motivo, o indivíduo deve ser tratado como se ela não tivesse ocorrido e mantém sua autoridade.
+<Box>[bullet/]Em caso de empate ou equipe reduzida, o terceiro pode participar da votação.</Box>
 
-3. Votes by Departmental crew against the Head of Staff must pass with majority in the Department (2/3rd majority in favor).
+3. Votos de uma equipe departamental contra seu Head of Staff exigem maioria no Departamento (maioria de 2/3rd a favor).
 
-4. Votes by Heads of Staff against Captain must be in majority favor.
+4. Votos dos Heads of Staff contra o Capitão exigem maioria favorável.
 
-5. If a Command member is dismissed or demoted by a vote, Central Command must be informed (included any Central Command on station) with voting details included (personnel, reasoning, vote tally).
+5. Se alguém do Comando for demitido ou rebaixado por votação, o Comando Central deve ser informado — inclusive qualquer representante presente na estação — com os detalhes: participantes, motivo e contagem dos votos.
 
-6. Valid reasons include, but are not limited to: 'Causes for Dismissal or Demotion', Absent/SSD (for extended periods), Critical Lack of Communication, Abuse of Authority, Incompetence, et cetera.
+6. Motivos válidos incluem, sem se limitar a: "Motivos para Demissão ou Rebaixamento", ausência/SSD por período prolongado, falta crítica de comunicação, abuso de autoridade, incompetência etc.
 
-7. Invalid reasons include, but are not limited to: Personal Gripes, Reasonable Dismissal/Demotion of Personnel, Denial of Permission, et cetera.
+7. Motivos inválidos incluem, sem se limitar a: rancores pessoais, demissão/rebaixamento razoável de pessoal, permissão negada etc.
 
 </Document>

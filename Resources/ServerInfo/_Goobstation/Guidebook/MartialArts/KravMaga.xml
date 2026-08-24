@@ -6,41 +6,41 @@
     <GuideEntityEmbed Entity="ClothingHandsGlovesKravMaga" Caption=""/>
   </Box>
 
-  Krav Maga is a self-defence [textlink="martial art" link="MartialArts"] that was developed by ancient militaries on Terra six centuries ago.
-  It can be learned through years of training or be given to a user by advanced nanomachines stored inside gloves.
-  On the station, a singular pair of Krav Maga Gloves can be found the Warden's locker.
+  Krav Maga é uma [textlink="arte marcial" link="MartialArts"] de autodefesa criada por exércitos antigos da Terra há seis séculos.
+  Pode ser aprendida com anos de treino ou concedida por nanomáquinas avançadas em luvas.
+  Na estação, há um único par de Luvas de Krav Maga no armário do Carcereiro.
 
-  ## Action Combat
+  ## Combate por Ações
 
-  Krav Maga attacks aren't like the combos of most martial arts. The user must instead ready the attack they
-  wish to use in the action bar, then follow it up by performing Harm action on the opponent as normal.
+  Ataques de Krav Maga não usam combos como outras artes. Prepare o ataque que
+  deseja na barra de ações e depois use a intenção Harm no oponente.
 
   <Box>
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  ### Leg Sweep
+  ### Rasteira
 
   <Box>
     <GuideEntityEmbed Entity="ActionLegSweep" Caption=""/>
   </Box>
 
-  Sweeps the legs out from under an opponent to knock them down.
+  Varre as pernas do oponente e o derruba.
 
-  ### Neck Chop
+  ### Golpe no Pescoço
 
   <Box>
     <GuideEntityEmbed Entity="ActionNeckChop" Caption=""/>
   </Box>
 
-  A hard swing with the side of the user's hand temporally disables the opponent's ability to speak.
+  Um golpe forte com a lateral da mão impede o oponente de falar temporariamente.
 
-  ### Lung Punch
+  ### Soco no Pulmão
 
   <Box>
     <GuideEntityEmbed Entity="ActionLungPunch" Caption=""/>
   </Box>
 
-  Deals Stamina damage and temporally disables the opponent's ability to breath.
+  Causa dano de Stamina e impede a respiração temporariamente.
 
 </Document>

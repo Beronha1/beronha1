@@ -8,51 +8,51 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Space Law
-  The charter of corporate rights grants the following rights to Nanotrasen Employees, in order of importance.
+  # Lei Espacial
+  A Carta de Direitos Corporativos concede os seguintes direitos aos Funcionários da Nanotrasen, em ordem de importância.
 
-  1. The right to follow corporate law.
-  2. The right to work towards the greater wealth and prosperity of Nanotrasen.
-  3. The right to respect one’s superiors in management and understand the hard work they accomplished to achieve their position.
-  4. The right to a Nanotrasen appointed public defender. If no lawyer is currently available, then the security officer who arrested the employee will be appointed as their defender.
-  5. The right to not be prosecuted under a C§ 01 offence. This right is waived if the party fails to comply with lawful orders from security officers that resolves this offence.
+  1. O direito de seguir a lei corporativa.
+  2. O direito de trabalhar pelo aumento da riqueza e da prosperidade da Nanotrasen.
+  3. O direito de respeitar seus superiores na gerência e reconhecer o trabalho árduo que realizaram para conquistar seus cargos.
+  4. O direito a um defensor público nomeado pela Nanotrasen. Se nenhum advogado estiver disponível, o oficial da Segurança que prendeu o funcionário será nomeado como defensor.
+  5. O direito de não ser processado por uma infração C§ 01. Esse direito é revogado se a parte deixar de cumprir ordens legais dos oficiais da Segurança destinadas a solucionar a infração.
 
-  ## Treatment Of Prisoners
+  ## Tratamento de Prisioneiros
 
-  The charter of corporate rights grants the following rights to Nanotrasen Prisoners, in order of importance.
+  A Carta de Direitos Corporativos concede os seguintes direitos aos Prisioneiros da Nanotrasen, em ordem de importância.
 
-  1. The right to medical treatment.
-  2. The right to communcations equipment, if not abused.
-  3. The right to food and water.
-  4. The right to their shift mandated PDA, unless tampered with; in which case a replacement will be issued.
-  5. The right to freedom of movement within the designated brig.
+  1. O direito a tratamento médico.
+  2. O direito a equipamentos de comunicação, desde que não sejam usados indevidamente.
+  3. O direito a comida e água.
+  4. O direito ao PDA obrigatório do turno, a menos que tenha sido adulterado; nesse caso, será fornecido um substituto.
+  5. O direito à liberdade de movimento dentro da área designada da brig.
 
-  ## Security
+  ## Segurança
 
-  The charter of corporate rights grants the following rights to Security Employees, in order of importance.
+  A Carta de Direitos Corporativos concede os seguintes direitos aos Funcionários da Segurança, em ordem de importância.
 
-  1. The right to search employees posessions on blue or higher alert, and to secure any contraband.
-  2. The right to search employees suspected of a crime on any alert, and to secure any contraband.
-  3. The right to check and remove any suspected illegal implants from crewmates suspected of possessing one.
-  4. The right to implant any crewmate convicted of any crime with tracking and/or mindshield implants.
-  5. The right to execute any crewmate refusing a mindshield implant.
-  6. The right to waive brig time for corporal punishment, not exceeding critical condition.
+  1. O direito de revistar os pertences dos funcionários durante alerta azul ou superior e apreender qualquer contrabando.
+  2. O direito de revistar, em qualquer nível de alerta, funcionários suspeitos de um crime e apreender qualquer contrabando.
+  3. O direito de verificar e remover possíveis implantes ilegais de tripulantes suspeitos de possuí-los.
+  4. O direito de implantar rastreadores e/ou mindshields em qualquer tripulante condenado por um crime.
+  5. O direito de executar qualquer tripulante que recuse um implante de mindshield.
+  6. O direito de substituir o tempo na brig por punição corporal que não ultrapasse o estado crítico.
 
-  ## Sentencing
+  ## Condenação
 
-  The charter of corporate rights grants the following rights to the Warden, Head of Security, and in their absense other security employees.
+  A Carta de Direitos Corporativos concede os seguintes direitos ao Carcereiro, ao Chefe da Segurança e, na ausência deles, aos demais funcionários da Segurança.
 
-  1. The right to sentence crewmates convicted of a crime for an appropriate time in the brig.
-  2. The right to extend brig times for trouble caused.
-  3. The right to use corporal punishment to retaliate against trouble caused.
-  4. The right to the responsibility to preserve the life of all captured terrorists, magic users, and alien creatures for study at centcom.
+  1. O direito de condenar tripulantes culpados por um crime a um período apropriado na brig.
+  2. O direito de aumentar o tempo na brig pelos problemas causados.
+  3. O direito de usar punição corporal como retaliação pelos problemas causados.
+  4. O direito e a responsabilidade de preservar a vida de todos os terroristas, usuários de magia e criaturas alienígenas capturados para estudo no CentComm.
 
-  ## [color=red][bold]"YOU MAY NOT EXCEED 5 MINUTES AS A BRIG TIME"[/bold][/color]
+  ## [color=red][bold]"O TEMPO NA BRIG NÃO PODE ULTRAPASSAR 5 MINUTOS"[/bold][/color]
 
-  ## Any total brig time that adds up to above 5 minutes will be shortened to meet this limit.
+  ## Qualquer tempo total de brig superior a 5 minutos será reduzido para respeitar esse limite.
 
-  ## If it goes above 20 minutes, you may perma the person.
+  ## Se ultrapassar 20 minutos, a pessoa poderá receber perma.
 
-  ## Crime Listing
-  - [textlink="Crime Listing" link="SpaceLawCrimeList"]
+  ## Lista de Crimes
+  - [textlink="Lista de Crimes" link="SpaceLawCrimeList"]
 </Document>

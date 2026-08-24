@@ -7,24 +7,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 
 <Document>
   # Spacing
-  Spacing is the most common form of atmospheric upset that can occur on the station.
+  Spacing — uma área aberta ao espaço — é o incidente atmosférico mais comum da estação.
 
-  While the damage that caused the spacing is often time-consuming to [textlink="fix" link="ExpandingRepairingStation"], the actual spacing problem can be quickly resolved by simply repressurizing the area.
+  Embora o dano causador possa demorar para ser [textlink="reparado" link="ExpandingRepairingStation"], o problema atmosférico se resolve rapidamente ao repressurizar o local.
 
-  Fixing spacing generally follows two simple steps:
+  Corrigir spacing normalmente exige dois passos:
 
-  1. Identify the area that has been spaced and [textlink="seal the hole." link="ExpandingRepairingStation"]
+  1. Identifique a área despressurizada e [textlink="sele o buraco." link="ExpandingRepairingStation"]
 
-  - If you're having trouble finding the hole, you can carefully listen for the flow of air rushing by you, if air is currently leaking to space.
-  - Look for any holes underneath girders that may be hard to see.
+  - Se não encontrar o buraco, escute com atenção o ar passando por você enquanto ele vaza para o espaço.
+  - Procure aberturas escondidas embaixo de girders.
 
-  2. Repressurize the area.
+  2. Repressurize a área.
 
-  - [textlink="Air vents" link="AirVent"] enter pressure lockout in order not to lose more air to spacing, so you'll need to override the vents to repressurize the area. You can do this by setting the connected [textlink="air alarm" link="AirAlarms"] to fill, or by right-clicking on the vent and selecting 'Release pressure lock out' to manually override it temporarily.
+  - [textlink="Respiradouros" link="AirVent"] entram em bloqueio de pressão para não desperdiçar mais ar. Para repressurizar, force sua ativação: coloque o [textlink="alarme de ar" link="AirAlarms"] conectado no modo Encher ou clique com o botão direito no respiradouro e selecione 'Liberar bloqueio de pressão' para ignorá-lo temporariamente.
 
-  ## Things to Avoid
-  - Keep in mind that while you have an infinite supply of [textlink="mined gas" link="GasMiningAndStorage"], it is not quick enough to fill up multiple rooms at once. Setting [textlink="air alarms" link="AirAlarms"] to fill first [italic]before[/italic] fixing the root problem will often lead to wasted time and gas.
+  ## O que evitar
+  - Embora exista uma fonte infinita de [textlink="gás minerado" link="GasMiningAndStorage"], ela não enche várias salas ao mesmo tempo com rapidez. Colocar [textlink="alarmes de ar" link="AirAlarms"] em Encher [italic]antes[/italic] de corrigir a causa costuma apenas desperdiçar tempo e gás.
 
-  - Leaving [textlink="air alarms" link="AirAlarms"] on the Fill mode unsupervised may lead to overpressuring a room, which can potentially harm crew if it gets out of hand.
+  - Deixar [textlink="alarmes de ar" link="AirAlarms"] no modo Encher sem supervisão pode pressurizar demais a sala e ferir a tripulação se sair do controle.
 
 </Document>

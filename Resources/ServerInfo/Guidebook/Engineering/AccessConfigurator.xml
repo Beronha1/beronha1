@@ -10,52 +10,52 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Access Configurator
-  The access configurator is a tool used to specify what type of personnel may use certain devices.
+  # Configurador de Acesso
+  O configurador de acesso é uma ferramenta usada para definir que tipo de pessoal pode utilizar determinados dispositivos.
 
   <Box>
-	  <GuideEntityEmbed Entity="AccessConfigurator" Caption="access configurator"/>
+	  <GuideEntityEmbed Entity="AccessConfigurator" Caption="configurador de acesso"/>
   </Box>
 
-  Configurable devices can include airlocks, secure crates and lockers, as well as access restricted machines.
-  Note: Airlocks can have their accesses configured by the [color=#a4885c]Network Configurator[/color] (or multitool), for convenience.
+  Entre os dispositivos configuráveis estão airlocks, caixotes e armários seguros, além de máquinas com acesso restrito.
+  Observação: por conveniência, o acesso dos airlocks também pode ser configurado pelo [color=#a4885c]Configurador de Rede[/color] (ou multitool).
 
-  ## Where to find Access Configurators
-  Each station is equipped with up to two access configurators. The first is in the possession of the Chief Engineer, while the second can be found with the Head of Personnel.
+  ## Onde encontrar Configuradores de Acesso
+  Cada estação conta com até dois configuradores de acesso. O primeiro fica com o Engenheiro-Chefe, enquanto o segundo pode ser encontrado com o Chefe de Pessoal.
 
-  ## How to use the access configurator
-  To modify a device using the access configurator:
-  - First, use the access configurator on the chosen device to link them together. This will automatically open the configurator UI.
-  - Next, insert an ID card into the access configurator.
-  - Set the access requirements of the connected device. What requirements can be added or removed will depend upon the access privileges of the inserted ID card.
-  - Any changes made will be applied [color=#a4885c]immediately[/color] - simply eject the ID card from the access configurator and close the UI when you are done.
+  ## Como usar o configurador de acesso
+  Para modificar um dispositivo com o configurador de acesso:
+  - Primeiro, use o configurador no dispositivo escolhido para vinculá-los. Isso abrirá automaticamente a interface do configurador.
+  - Depois, insira um cartão ID no configurador de acesso.
+  - Defina os requisitos de acesso do dispositivo conectado. O que pode ser adicionado ou removido depende dos privilégios de acesso do cartão ID inserido.
+  - Toda alteração será aplicada [color=#a4885c]imediatamente[/color]: ao terminar, basta ejetar o cartão ID do configurador e fechar a interface.
 
-  ## Restrictions on changing access
-  As a safety precaution, the inserted ID must possess [bold]all[/bold] of the access requirements that are currently active on the connected device in order to modify it.
+  ## Restrições para alterar acessos
+  Como precaução de segurança, o ID inserido precisa possuir [bold]todos[/bold] os acessos que já estão ativos no dispositivo conectado para poder modificá-lo.
 
-  For example, a device which can be accessed by both 'Science' and 'Medical' personnel can only by modified using an ID card that has access to [color=#a4885c]both[/color] of these departments.
-  The access configurator will warn the user if the inserted ID card does not have sufficient privileges to modify a device.
+  Por exemplo, um dispositivo acessível tanto pelo pessoal da 'Ciência' quanto da 'Medicina' só pode ser modificado com um cartão ID que tenha acesso a [color=#a4885c]ambos[/color] os departamentos.
+  O configurador avisará se o cartão ID inserido não tiver privilégios suficientes para modificar o dispositivo.
 
-  A device with no access requirements set, like a public access airlock, can be modified using any valid station ID card.
+  Um dispositivo sem nenhum requisito de acesso, como um airlock público, pode ser modificado com qualquer cartão ID válido da estação.
 
-  ## Repairing access-broken ID card readers
-  Syndicate agents may attempt to hack access-restricted devices through the use of an [color=#a4885c]Authentication Disruptor[/color].
-  This nefarious tool will completely short out any ID card readers that are attached to the device, making it all-access.
+  ## Consertando leitores de cartão ID com acesso quebrado
+  Agentes do Sindicato podem tentar hackear dispositivos restritos usando um [color=#a4885c]Disruptor de Autenticação[/color].
+  Essa ferramenta ardilosa coloca em curto todos os leitores de cartão ID ligados ao dispositivo, liberando o acesso para qualquer um.
 
   <Box>
     <GuideEntityEmbed Entity="AccessBreaker"/>
   </Box>
 
-  To repair the damage, you'll commonly need to partially deconstruct the device and reconstruct it.
-  This will reset the access requirements to defaults, allowing you to reconfigure the device as needed.
+  Para reparar o estrago, normalmente é preciso desmontar parcialmente o dispositivo e montá-lo de novo.
+  Isso restaura os requisitos de acesso padrão e permite reconfigurá-lo conforme necessário.
 
-  ## Repairing access-broken Airlocks
-  Airlocks can be repaired multiple ways if their access requirements have been tampered with.
+  ## Consertando airlocks com acesso quebrado
+  Se os requisitos de acesso de um airlock forem adulterados, há mais de uma forma de consertá-lo.
 
-  If you have an Access Configurator, you can use a [color=#a4885c]Screwdriver[/color] to remove the airlock's maintenance panel, and then use the Access Configurator to reconfigure the airlock's access requirements.
-  No partial deconstruction is needed.
+  Se você tiver um Configurador de Acesso, use uma [color=#a4885c]Chave de Fenda[/color] para remover o painel de manutenção do airlock e, em seguida, use o configurador para ajustar os acessos.
+  Não é necessário desmontá-lo parcialmente.
 
-  If you don't have an Access Configurator, you can still fix the airlock by partially deconstructing it until you remove the door electronics, and then reconstructing it.
-  This will reset the airlock to the default access requirements it had at the start of the shift.
+  Se você não tiver um Configurador de Acesso, ainda pode consertar o airlock desmontando-o até retirar a eletrônica da porta e então remontando-o.
+  Isso restaura os requisitos de acesso padrão que ele tinha no início do turno.
 
 </Document>

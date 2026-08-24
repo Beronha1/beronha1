@@ -6,24 +6,24 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Gas Condensing
-  Gas condensers take gasses and condense them into their liquid (reagent) forms.
+  # Condensação de gases
+  Condensadores transformam gases em suas formas líquidas, tratadas como reagentes.
 
   <Box>
     <GuideEntityEmbed Entity="BaseGasCondenser"/>
   </Box>
 
-  For example, water vapor can be condensed into liquid water, oxygen into liquid oxygen, and so on.
+  Por exemplo: vapor d'água vira água líquida, oxigênio vira oxigênio líquido e assim por diante.
 
-  It has a [textlink="pipenet" link="PipeNetworks"] connection to input gas, and an internal tank to store the condensed liquid.
+  O aparelho possui uma conexão de [textlink="pipenet" link="PipeNetworks"] para receber gás e um tanque interno para guardar o líquido condensado.
 
-  A condensor will stop condensing gas if the tank is full.
-  You can take liquid out of the condenser by interacting with it using any empty container.
+  O condensador para quando o tanque fica cheio.
+  Para retirar o líquido, interaja com a máquina usando qualquer recipiente vazio.
 
-  Gas condensors can take multiple gasses as input, and will condense them into their liquid forms.
-  For example, if you input a mixture of oxygen and nitrogen, you will get liquid oxygen and liquid nitrogen in the output tank.
+  Condensadores aceitam vários gases ao mesmo tempo e transformam cada um em sua forma líquida.
+  Se a entrada receber uma mistura de oxigênio e nitrogênio, por exemplo, o tanque de saída terá oxigênio líquido e nitrogênio líquido.
 
-  Because [textlink="Chemistry" link="Chemist"] works with limited reagents in liquid form, they will highly appreciate the work of a skilled atmospherics technician who can provide them with the reagents they need.
+  Como a [textlink="Química" link="Chemist"] trabalha com uma quantidade limitada de reagentes líquidos, seus profissionais vão valorizar muito um técnico de Atmos habilidoso que forneça os reagentes necessários.
 
 
 

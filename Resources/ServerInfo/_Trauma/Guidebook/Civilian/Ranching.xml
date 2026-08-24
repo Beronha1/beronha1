@@ -1,19 +1,19 @@
 <Document>
-  # Ranching
-  Ranching in trauma station is a near copy of the ranching for goon-station most things from that wiki are applicable to trauma (https://wiki.ss13.co/Rancher)
+  # Criação de Galinhas
+  O sistema da Trauma Station é quase uma cópia do ranching da Goonstation; a maior parte da wiki se aplica aqui (https://wiki.ss13.co/Rancher)
 
-  # Getting Started
-  You start your ranching journey buy hatching a white chicken egg that you have been supplied with in your ranching locker, in the incubator which should be on your farm.
+  # Primeiros passos
+  Comece chocando na incubadora da fazenda o ovo branco fornecido no seu armário.
 
-  # Unlocking every chickens
-  To unlock every chicken in the game you can follow this guide, most chickens are unlocked by simplify feeding the previous chicken something but others are more complex.
+  # Desbloqueando todas as galinhas
+  Siga este guia. A maioria surge ao alimentar a galinha anterior com algo específico; outras exigem passos mais complexos.
 
-  <GuideEntityEmbed Entity="GuidebookRanchingGuide" Caption="The ranching field guide!"/>
+  <GuideEntityEmbed Entity="GuidebookRanchingGuide" Caption="Guia de campo para criação!"/>
 
-  # Needs of your chickens
-  Chickens need to be fed and petted every so often, don't hurt them or the roosters will attack you, don't overcrowd them, or they'll become upset and don't feed them chicken nuggets!
+  # Necessidades das galinhas
+  Alimente e faça carinho de tempos em tempos. Não machuque, ou os galos atacarão. Não superlote, ou ficarão irritadas. E não dê nuggets de frango!
 
-  # Eggs
-  Most chicken eggs have a special effect when you eat them, the best way to find out is to just eat one and see!
+  # Ovos
+  A maioria dos ovos tem efeito especial quando comida. O melhor jeito de descobrir é provar um!
 
 </Document>

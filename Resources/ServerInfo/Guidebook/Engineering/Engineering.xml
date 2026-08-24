@@ -13,20 +13,20 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Engineering
-  [color=#f39f27]Engineering[/color] is a combination of [textlink="construction" link="Construction"] work, [textlink="repair" link="ExpandingRepairingStation"] work, maintaining a death machine that happens to produce [textlink="power" link="Power"], and making sure the station contains [textlink="breathable air" link="Atmospherics"].
+  # Engenharia
+  [color=#f39f27]Engenharia[/color] combina [textlink="construção" link="Construction"], [textlink="reparos" link="ExpandingRepairingStation"], a manutenção de uma máquina mortal que por acaso produz [textlink="energia" link="Power"] e a garantia de que a estação tenha [textlink="ar respirável" link="Atmospherics"].
 
-  ## Personnel
-  [color=#f39f27]Engineering[/color]'s staff is made up of Technical Assistants, Station Engineers and Atmospheric Technicians.
-  Engineering is run by the Chief Engineer.
+  ## Pessoal
+  A equipe da [color=#f39f27]Engenharia[/color] é formada por Assistentes Técnicos, Engenheiros da Estação e Técnicos Atmosféricos.
+  O Engenheiro-Chefe lidera o departamento.
 
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Engineer"/>
+    <GuideEntityEmbed Entity="ToyFigurineEngineer" Caption="Engenheiro"/>
     <GuideEntityEmbed Entity="ToyFigurineAtmosTech" Caption="Atmosian"/>
     <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="CE"/>
   </Box>
 
-  ## Tools
+  ## Ferramentas
   <Box>
     <GuideEntityEmbed Entity="Wrench"/>
     <GuideEntityEmbed Entity="Crowbar"/>
@@ -38,8 +38,8 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="Multitool"/>
     <GuideEntityEmbed Entity="NetworkConfigurator"/>
   </Box>
-  Your core toolset is a small variety of tools.
-  If you're an engineer, then you should have a belt on your waist containing one of each; if not, you can likely find them in maintenance shafts and in tool storage within assorted toolboxes and vending machines.
+  Seu kit básico reúne algumas ferramentas essenciais.
+  Engenheiros devem carregar uma de cada no cinto. Quem não for da área pode encontrá-las na manutenção, em depósitos de ferramentas, caixas e máquinas de venda.
 
-  Most tasks will have explainers for how to perform them on examination; for example, if you're [textlink="constructing" link="Construction"] a wall, it'll tell you the next step if you look at it a bit closer.
+  A maioria das tarefas explica o próximo passo ao examinar o objeto. Ao [textlink="construir" link="Construction"] uma parede, por exemplo, examine-a de perto para saber o que fazer em seguida.
 </Document>

@@ -12,14 +12,14 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Networking
-  On the station, devices need to communicate to each other to perform their functions.
-  [textlink="Air alarms" link="AirAlarms"] need to talk to their respective devices, [textlink="doors" link="Airlocks"] need to be linked to form proper airlocks, and much more.
+  # Redes de Dispositivos
+  Na estação, dispositivos precisam se comunicar para cumprir suas funções.
+  [textlink="Alarmes de ar" link="AirAlarms"] precisam falar com seus dispositivos, [textlink="portas" link="Airlocks"] precisam estar vinculadas para formar airlocks adequados e muito mais.
 
-  This is done through two systems, the Link system and the List system.
+  Isso é feito por dois sistemas: Vínculo e Lista.
 
-  You can use either the Multitool or Network Configurator to interact with these systems.
-  You can switch between the different systems using [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] or by hovering your cursor over the device and using [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  Você pode interagir com ambos usando um Multitool ou Configurador de Rede.
+  Alterne entre os sistemas usando [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] ou passando o cursor sobre o dispositivo e usando [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
 
   <Box HorizontalAlignment="Stretch">
     <Box>
@@ -30,12 +30,12 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     </Box>
   </Box>
 
-  Some devices will require access to link devices to them.
-  For example, you need Atmospherics access to link devices to an [textlink="air alarm" link="AirAlarms"].
-  For doors, you'll need the access level of the door you're linking to.
+  Alguns dispositivos exigem acesso para aceitar vínculos.
+  Por exemplo, você precisa de acesso à Atmosférica para vincular dispositivos a um [textlink="alarme de ar" link="AirAlarms"].
+  Para portas, precisará do mesmo nível de acesso da porta de destino.
 
-  ## Link System
-  The link system is used for explicitly linking two devices, such as linking a door to another door.
+  ## Sistema de Vínculo
+  Esse sistema conecta explicitamente dois dispositivos, como uma porta a outra.
 
   <Box>
     <GuideEntityEmbed Entity="AirlockExternal"/>
@@ -44,13 +44,13 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="SignalButton"/>
   </Box>
 
-  Under the link system, devices have [bold]ports[/bold] that are capable of either sending or receiving signals.
+  Nele, dispositivos possuem [bold]portas de sinal[/bold] capazes de enviar ou receber sinais.
 
-  Hovering over a port using your cursor will show a tooltip that tells you what the port does.
-  For example, output ports will state the conditions under which they will invoke a signal, and input ports will state what the device will do if it receives a signal.
+  Passe o cursor sobre uma porta de sinal para ver uma dica explicando o que ela faz.
+  Portas de saída informam em que condições enviam um sinal; portas de entrada informam o que o dispositivo fará ao receber um.
 
-  ## List System
-  The list system is used for linking multiple devices to a single primary device, such as linking multiple atmospherics devices to an air alarm.
+  ## Sistema de Lista
+  Esse sistema vincula vários dispositivos a um principal, como vários equipamentos atmosféricos a um único alarme de ar.
 
   <Box>
     <GuideEntityEmbed Entity="AirAlarm" Caption=""/>
@@ -60,18 +60,19 @@ SPDX-License-Identifier: AGPL-3.0-or-later
     <GuideEntityEmbed Entity="Firelock" Caption=""/>
   </Box>
 
-  Each device has its own unique address, which is used to identify it in the list system. When you link a device to a primary device, you are adding the device's address to a list of devices that the primary device will communicate with.
+  Cada dispositivo tem um endereço único que o identifica no sistema. Vinculá-lo ao dispositivo principal adiciona seu endereço à lista de aparelhos com os quais o principal se comunicará.
 
-  You can save a device's address to your tool by interacting with the device using [color=yellow][bold][keybind="Use"][/bold][/color].
+  Salve o endereço de um dispositivo na ferramenta interagindo com ele por [color=yellow][bold][keybind="Use"][/bold][/color].
 
-  Once you have a list of devices saved to your tool, you can link them to a primary device by interacting with the primary device using [color=yellow][bold][keybind="Use"][/bold][/color], which will bring up a UI.
+  Depois de salvar uma lista, interaja por [color=yellow][bold][keybind="Use"][/bold][/color] com o dispositivo principal para abrir a interface e vinculá-la.
 
-  The UI has multiple options:
-  - Set: Overwrites the current list of linked devices with the devices saved on the tool.
-  - Add: Adds the devices saved on the tool to the current list of linked devices.
-  - Clear: Removes all linked devices from the air alarm.
-  - Copy: Copies the list of currently linked devices to the tool.
-  - Show: Draws a line between the primary device and all linked devices. This is useful for visualizing the area the air alarm covers.
+  A interface tem várias opções:
+  - Definir: substitui a lista atual pelos dispositivos salvos na ferramenta.
+  - Adicionar: acrescenta os dispositivos salvos à lista atual.
+  - Limpar: remove todos os dispositivos vinculados ao alarme de ar.
+  - Copiar: copia para a ferramenta a lista atual de dispositivos vinculados.
+  - Mostrar: desenha uma linha do dispositivo principal a todos os vinculados. Isso ajuda a visualizar a área coberta pelo alarme de ar.
 
-  If you need to clear your tool, you can press [color=yellow][bold][keybind="Use"][/bold][/color] on the tool or use [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] to bring up a list of saved devices, and then press the "Clear" button.
+  Para limpar a ferramenta, use [color=yellow][bold][keybind="Use"][/bold][/color] nela ou [color=yellow][bold][keybind="ActivateItemInHand"][/bold][/color] para abrir a lista salva e então pressione o botão "Limpar".
+
 </Document>

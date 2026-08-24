@@ -6,32 +6,32 @@ SPDX-License-Identifier: AGPL-3.0-or-later
 -->
 
 <Document>
-  # Station Alert - Yellow
+  # Alerta da Estação - Amarelo
 
   <Box>
-    [italic]Called by: Anyone with Command-Level Access at a working Communications Console.[/italic]
+    [italic]Declarado por: qualquer pessoa com Acesso de Comando num Console de Comunicações funcional.[/italic]
   </Box>
 
 
-  [bold]Conditions:[/bold]
-  There is an atmospheric threat aboard the station such as mass hull breaches, spacing, or high temperatures that make the station uninhabitable without an EVA suit.
+  [bold]Condições:[/bold]
+  Ameaça atmosférica a bordo, como breaches maciços, despressurização ou temperatura alta que torne a estação inabitável sem EVA.
 
-  [bold]Security:[/bold]
+  [bold]Segurança:[/bold]
 
-  You should ensure EVA suits are properly distributed around the station while maintaining vigilance.
+  Garanta a distribuição correta de trajes EVA sem perder a vigilância.
 
-  [bold]Secure Areas:[/bold]
+  [bold]Áreas Seguras:[/bold]
 
-  EVA Storage, Tech Storage, Gravity Generator, Engineering Secure Storage, AI Upload, Vault, Gateway, anywhere else requiring command level access that does not get regularly used.
+  Armazenamento EVA, Armazenamento Técnico, Gerador de Gravidade, Armazém Seguro da Engenharia, Upload da IA, Cofre, Gateway e outras áreas pouco usadas com acesso de Comando.
 
-  It is recommended that all Secure Areas be bolted down unless their use is necessary;
+  Recomenda-se baixar os bolts de todas, salvo quando o uso for necessário;
 
-  [bold]General Crew:[/bold]
+  [bold]Tripulação Geral:[/bold]
 
-  All personnel are highly recommended to maximize their Suit Sensors;
+  É altamente recomendado maximizar os Sensores do Traje;
 
-  Personnel are to report any suspicious activity to the nearest member of Security, or use their PDA or headsets if required;
+  Informe atividade suspeita à Segurança mais próxima, por PDA ou headset se necessário;
 
-  Personnel are highly encouraged to either get into a safe area or find emergency EVA suits as well as a source of oxygen/nitrogen as required.
+  Vá para uma área segura ou encontre traje EVA emergencial e fonte de oxigênio/nitrogênio conforme necessário.
 
 </Document>

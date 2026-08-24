@@ -7,26 +7,26 @@ SPDX-License-Identifier: MIT
 -->
 
 <Document>
-## Anomaly Scanner
+## Scanner de Anomalias
 
-The Anomaly Scanner is used to gather various information on anomalies. They can be found inside the lockers in the science department.
+O Scanner coleta várias informações sobre anomalias e pode ser encontrado nos armários da Ciência.
 
 <Box>
 <GuideEntityEmbed Entity="AnomalyScanner"/>
 </Box>
 
-Scanning an anomaly shows the severity, general stability, approximate point output, reactions with particle types, and time until the next pulse. The reaction types, specifically, can be used in conjunction with the A.P.E. to manipulate anomalies.
+O escaneamento mostra severidade, estabilidade geral, produção aproximada de pontos, reação aos tipos de partícula e tempo até o próximo pulso. As reações ajudam o A.P.E. a manipular a anomalia.
 
-## Anomaly Vessel
+## Recipiente de Anomalias
 
-The anomaly vessel is a machine that generates points from anomalies. Use the anomaly scanner on an empty vessel, and the anomaly that was last scanned will be synced with the vessel.
+Essa máquina gera pontos a partir de anomalias. Use o scanner num recipiente vazio; a última anomalia escaneada será sincronizada.
 
 <Box>
 <GuideEntityEmbed Entity="MachineAnomalyVessel"/>
 </Box>
 
-The amount of points a vessel generates per second is based on the severity, stability, and health of an anomaly. The higher each of these values, the higher the point output will be.
+Os pontos por segundo dependem da severidade, estabilidade e vida da anomalia. Quanto maiores, maior a produção.
 
-Be careful: if an anomaly goes [color=#a4885c]supercritical[/color], the vessel it is linked to will explode. This may damage the station and nearby equipment.
+Cuidado: se ela ficar [color=#a4885c]supercrítica[/color], o recipiente vinculado explodirá, podendo danificar a estação e equipamentos próximos.
 
 </Document>

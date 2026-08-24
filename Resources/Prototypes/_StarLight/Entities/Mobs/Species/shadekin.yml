@@ -48,6 +48,10 @@
     # O manto some quando a luz sobe; apagar luz é a forma de a raça fabricar o
     # escuro dela, ao preço de deixar rastro de sabotagem.
     - type: MantoDeSombra
+      # 0 é sumir de vez, 1 é normal. Quanto menor, menos o shader desenha, e
+      # o vulto fica mais discreto. Fica aqui no prototype de propósito, para
+      # dar para ajustar no balanceamento sem recompilar.
+      visibilidadeNoEscuro: 0.2
     - type: ApagarLuz
       # Whiskey: o Vocal daqui não mapeia por sexo. Quem faz isso é o campo
       # defaultSoundsBySex do species.

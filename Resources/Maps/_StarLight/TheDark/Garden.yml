@@ -8387,25 +8387,21 @@ entities:
   - uid: 1087
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 27.5,-14.5
       parent: 2
   - uid: 1088
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 28.5,-14.5
       parent: 2
   - uid: 1089
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 30.5,-14.5
       parent: 2
   - uid: 1090
     components:
     - type: Transform
-      rot: 3.141592653589793 rad
       pos: 31.5,-14.5
       parent: 2
 - proto: JetpackMiniFilled

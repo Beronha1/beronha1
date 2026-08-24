@@ -1,0 +1,89 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Paredes dos mapas da escuridão. O veio de bluespace usa OreBSCrystal, que é
+# o minério equivalente neste fork; o Starlight chama de OreBluespace.
+
+- type: entity
+  id: WallRockDark
+  name: darkstone
+  parent: WallRock
+  components:
+  - type: Icon
+    sprite: _Starlight/Structures/Walls/rock.rsi
+    state: rock_dark
+  - type: Sprite
+    sprite: _Starlight/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_dark
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_dark_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_dark_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_dark_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_dark_west
+
+- type: entity
+  id: WallRockDarkBluespace
+  parent: WallRockDark
+  description: An ore vein rich with bluespace.
+  suffix: Bluespace
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OreBSCrystal
+  - type: Sprite
+    sprite: _Starlight/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_dark
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_dark_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_dark_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_dark_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_dark_west
+    - state: rock_bluespace
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  id: WallRockDarkPasma
+  parent: WallRockDark
+  description: An ore vein rich with plasma.
+  suffix: Plasma
+  components:
+  - type: OreVein
+    oreChance: 1.0
+    currentOre: OrePlasma
+  - type: Sprite
+    sprite: _Starlight/Structures/Walls/rock.rsi
+    layers:
+    - state: rock_dark
+    - map: [ "enum.EdgeLayer.South" ]
+      state: rock_dark_south
+    - map: [ "enum.EdgeLayer.East" ]
+      state: rock_dark_east
+    - map: [ "enum.EdgeLayer.North" ]
+      state: rock_dark_north
+    - map: [ "enum.EdgeLayer.West" ]
+      state: rock_dark_west
+    - state: rock_phoron
+      sprite: Structures/Walls/rock.rsi
+      map: [ "enum.MiningScannerVisualLayers.Overlay" ]
+
+- type: entity
+  parent: WallWood
+  id: WallDarkWood
+  name: dark wood wall
+  components:
+  - type: Sprite
+    sprite: _Starlight/Structures/Walls/gray_wood.rsi
+    color: "#795382"
+  - type: Icon
+    sprite: _Starlight/Structures/Walls/gray_wood.rsi

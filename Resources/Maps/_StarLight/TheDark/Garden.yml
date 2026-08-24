@@ -2130,22 +2130,6 @@ entities:
     - type: Transform
       pos: -10.5,23.5
       parent: 2
-- proto: AirlockGlassXeno
-  entities:
-  - uid: 46
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 29.5,-14.5
-      parent: 2
-    - type: AccessReader
-      accessListsOriginal: []
-  - uid: 47
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 29.5,-9.5
-      parent: 2
 - proto: APCShadekin
   entities:
   - uid: 48
@@ -2491,13 +2475,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.5,2.5
       parent: 1507
-- proto: BluespaceCrystal1
-  entities:
-  - uid: 108
-    components:
-    - type: Transform
-      pos: -1.029924,27.495378
-      parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 109
@@ -3994,27 +3971,6 @@ entities:
     - type: Transform
       pos: -0.76982975,27.799627
       parent: 2
-- proto: ClothingHeadHatBrimHat
-  entities:
-  - uid: 395
-    components:
-    - type: Transform
-      pos: -2.6185188,27.786488
-      parent: 2
-- proto: ClothingHeadHatHairFlowerBlack
-  entities:
-  - uid: 396
-    components:
-    - type: Transform
-      pos: 0.6106479,27.557322
-      parent: 2
-- proto: ClothingHeadHatHairFlowerWhite
-  entities:
-  - uid: 397
-    components:
-    - type: Transform
-      pos: 0.5106623,27.614775
-      parent: 2
 - proto: ClothingHeadHatOutlawHat
   entities:
   - uid: 398
@@ -4127,13 +4083,6 @@ entities:
     - type: Transform
       pos: -3.3060188,22.723988
       parent: 2
-- proto: ClothingOutercorset
-  entities:
-  - uid: 414
-    components:
-    - type: Transform
-      pos: 0.638813,25.558155
-      parent: 2
 - proto: ClothingOuterPlagueSuit
   entities:
   - uid: 415
@@ -4147,13 +4096,6 @@ entities:
     components:
     - type: Transform
       pos: -0.6469829,23.667633
-      parent: 2
-- proto: ClothingShoesAerostatic
-  entities:
-  - uid: 417
-    components:
-    - type: Transform
-      pos: -6.659444,25.610647
       parent: 2
 - proto: ClothingShoesBootsCowboyBlack
   entities:
@@ -4211,33 +4153,12 @@ entities:
     - type: Transform
       pos: -2.3539684,23.380596
       parent: 2
-- proto: ClothingUniformDama235123
-  entities:
-  - uid: 426
-    components:
-    - type: Transform
-      pos: -1.4056015,25.604609
-      parent: 2
 - proto: ClothingUniformJumpskirtClown
   entities:
   - uid: 427
     components:
     - type: Transform
       pos: 0.65231466,23.369822
-      parent: 2
-- proto: ClothingUniformJumpskirtVictorianBlack
-  entities:
-  - uid: 428
-    components:
-    - type: Transform
-      pos: 0.6939812,25.661488
-      parent: 2
-- proto: ClothingUniformJumpsuitAerostatic
-  entities:
-  - uid: 429
-    components:
-    - type: Transform
-      pos: -1.6659937,25.590687
       parent: 2
 - proto: ClothingUniformJumpsuitAncient
   entities:
@@ -4288,13 +4209,6 @@ entities:
     - type: Transform
       pos: -1.6297808,23.60282
       parent: 2
-- proto: ClothingUniformJumpsuitOfLife
-  entities:
-  - uid: 437
-    components:
-    - type: Transform
-      pos: 2.6685138,25.40709
-      parent: 2
 - proto: ClothingUniformJumpsuitRecruitNT
   entities:
   - uid: 438
@@ -4308,34 +4222,6 @@ entities:
     components:
     - type: Transform
       pos: -0.36012757,23.483679
-      parent: 2
-- proto: ClothingUniformJumpsuitSuitCheckered
-  entities:
-  - uid: 440
-    components:
-    - type: Transform
-      pos: 1.3739002,23.6198
-      parent: 2
-- proto: ClothingUniformJumpsuitVampir
-  entities:
-  - uid: 441
-    components:
-    - type: Transform
-      pos: 2.69119,24.672302
-      parent: 2
-- proto: ClothingUniformTimelessSkirt
-  entities:
-  - uid: 442
-    components:
-    - type: Transform
-      pos: -3.3473985,22.586107
-      parent: 2
-- proto: ClothingUniformTimelessSuit
-  entities:
-  - uid: 443
-    components:
-    - type: Transform
-      pos: -3.5777597,22.630377
       parent: 2
 - proto: CMPlatformCornerDark
   entities:
@@ -5015,13 +4901,6 @@ entities:
     components:
     - type: Transform
       pos: 3.489493,27.47464
-      parent: 2
-- proto: FlamboyantUniformSuit
-  entities:
-  - uid: 529
-    components:
-    - type: Transform
-      pos: -2.3678308,23.671646
       parent: 2
 - proto: FloorWaterEntity
   entities:
@@ -8180,25 +8059,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 10.5,-12.5
       parent: 2
-- proto: FloraObelisk01
-  entities:
-  - uid: 1056
-    components:
-    - type: Transform
-      pos: -5.494335,-23.466599
-      parent: 2
-  - uid: 1968
-    components:
-    - type: Transform
-      pos: 1.5049973,1.0395622
-      parent: 1967
-- proto: FlyCaptainUniformSuit
-  entities:
-  - uid: 1057
-    components:
-    - type: Transform
-      pos: 2.3610802,24.62931
-      parent: 2
 - proto: FoodCakeSpaceman
   entities:
   - uid: 1058
@@ -8213,72 +8073,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 12.5,12.5
-      parent: 2
-- proto: FoodThaSlop
-  entities:
-  - uid: 1060
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1061
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1062
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1063
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1064
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1065
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1066
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1067
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1068
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-  - uid: 1069
-    components:
-    - type: Transform
-      pos: 31.523794,-12.334727
-      parent: 2
-- proto: FurnitureAquarium
-  entities:
-  - uid: 1070
-    components:
-    - type: Transform
-      pos: 14.5,14.5
-      parent: 2
-- proto: FurnitureCoatRack
-  entities:
-  - uid: 1071
-    components:
-    - type: Transform
-      pos: 12.5,14.5
       parent: 2
 - proto: GasMinerNitrogen
   entities:
@@ -8511,13 +8305,6 @@ entities:
     - type: Transform
       pos: 0.31864548,-4.498539
       parent: 1919
-- proto: LilacDressUniformSuit
-  entities:
-  - uid: 1107
-    components:
-    - type: Transform
-      pos: 0.35608995,25.620052
-      parent: 2
 - proto: MirrorModern
   entities:
   - uid: 1108
@@ -8691,27 +8478,6 @@ entities:
     - type: Transform
       pos: 20.5,14.5
       parent: 2
-- proto: PoweredlightBlackLight
-  entities:
-  - uid: 1129
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 31.5,-15.5
-      parent: 2
-  - uid: 1130
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: 27.5,-15.5
-      parent: 2
-- proto: PunkJeansUniformSuit
-  entities:
-  - uid: 1131
-    components:
-    - type: Transform
-      pos: 0.49992412,25.391487
-      parent: 2
 - proto: Rack
   entities:
   - uid: 1132
@@ -8818,6 +8584,65 @@ entities:
       parent: 2
 - proto: Railing
   entities:
+  - uid: 1219
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -28.5,8.5
+      parent: 2
+  - uid: 1220
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -26.5,8.5
+      parent: 2
+  - uid: 1221
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -24.5,5.5
+      parent: 2
+  - uid: 1222
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -26.5,5.5
+      parent: 2
+  - uid: 1223
+    components:
+    - type: Transform
+      pos: 18.5,-0.5
+      parent: 2
+  - uid: 1224
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -28.5,5.5
+      parent: 2
+  - uid: 1225
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -26.5,8.5
+      parent: 2
+  - uid: 1226
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -24.5,8.5
+      parent: 2
+  - uid: 1227
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -26.5,5.5
+      parent: 2
+  - uid: 1228
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 17.5,1.5
+      parent: 2
   - uid: 1151
     components:
     - type: Transform
@@ -9215,69 +9040,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,12.5
       parent: 2
-- proto: RailingEnd
-  entities:
-  - uid: 1219
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -28.5,8.5
-      parent: 2
-  - uid: 1220
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -26.5,8.5
-      parent: 2
-  - uid: 1221
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -24.5,5.5
-      parent: 2
-  - uid: 1222
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -26.5,5.5
-      parent: 2
-  - uid: 1223
-    components:
-    - type: Transform
-      pos: 18.5,-0.5
-      parent: 2
-- proto: RailingEndAlt
-  entities:
-  - uid: 1224
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -28.5,5.5
-      parent: 2
-  - uid: 1225
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -26.5,8.5
-      parent: 2
-  - uid: 1226
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -24.5,8.5
-      parent: 2
-  - uid: 1227
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -26.5,5.5
-      parent: 2
-  - uid: 1228
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 17.5,1.5
-      parent: 2
 - proto: RandomAnomalySpawner
   entities:
   - uid: 1918
@@ -9285,13 +9047,6 @@ entities:
     - type: Transform
       pos: 0.5,0.5
       parent: 1917
-- proto: RefereeUniformSuit
-  entities:
-  - uid: 1229
-    components:
-    - type: Transform
-      pos: 0.33559895,23.461107
-      parent: 2
 - proto: ReinforcedPlasmaWindow
   entities:
   - uid: 1230
@@ -9503,13 +9258,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -0.5,4.5
-      parent: 2
-- proto: SailorUniformSuit
-  entities:
-  - uid: 1266
-    components:
-    - type: Transform
-      pos: 1.6516778,23.425356
       parent: 2
 - proto: ShadekinDoor
   entities:
@@ -9937,13 +9685,6 @@ entities:
     components:
     - type: Transform
       pos: 18.5,15.5
-      parent: 2
-- proto: TogaUniformSuit
-  entities:
-  - uid: 1324
-    components:
-    - type: Transform
-      pos: 0.3564322,23.648607
       parent: 2
 - proto: VendingMachineBooze
   entities:
@@ -13831,4 +13572,35 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,28.5
       parent: 2
+- proto: AirlockGlass
+  entities:
+  - uid: 46
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 29.5,-14.5
+      parent: 2
+    - type: AccessReader
+      accessListsOriginal: []
+  - uid: 47
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 29.5,-9.5
+      parent: 2
+- proto: PoweredlightBlack
+  entities:
+  - uid: 1129
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 31.5,-15.5
+      parent: 2
+  - uid: 1130
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 27.5,-15.5
+      parent: 2
 ...
+

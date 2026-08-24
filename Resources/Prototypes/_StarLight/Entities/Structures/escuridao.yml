@@ -1,0 +1,198 @@
+# SPDX-FileCopyrightText: 2024-2026 Starlight
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Portado de https://github.com/ss14Starlight/space-station-14
+#
+# Estruturas dos mapas da escuridão: porta, APC, gerador, portal do hub e a
+# cascata fotônica.
+
+- type: entity
+  id: ShadekinDoor
+  parent: HospitalCurtains
+  name: shadekin door
+  description: A door, where will it lead?
+  suffix: ""
+  components:
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.49,-0.49,0.49,0.49"
+          density: 100
+          mask:
+            - FullTileMask
+          layer:
+            - AirlockLayer
+    - type: Sprite
+      snapCardinals: true
+      sprite: Structures/Decoration/Curtains/hospital.rsi
+      color: "#795382"
+      layers:
+        - state: closed
+          map: ["enum.DoorVisualLayers.Base"]
+    - type: Door
+      performCollisionCheck: true
+    - type: Destructible
+      thresholds:
+        - trigger: !type:DamageTrigger
+            damage: 300
+          behaviors:
+            - !type:DoActsBehavior
+              acts: ["Destruction"]
+    - type: BlockWeather
+
+- type: entity
+  parent: APCBasic
+  id: APCShadekin
+  suffix: Shadekin, 50kJ
+  components:
+  - type: StationAiWhitelist
+    enabled: false
+  - type: AccessReader
+    access: []
+  - type: Sprite
+    drawdepth: WallMountedItems
+    sprite: Structures/Power/apc.rsi
+    layers:
+    - state: base
+      color: "#795382"
+    - state: panel
+      map: ["enum.WiresVisualLayers.MaintenancePanel"]
+      visible: false
+    - state: display-charging
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.ChargeState"]
+    - state: lock0-locked
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.InterfaceLock"]
+      visible: false
+    - state: lock1-locked
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.PanelLock"]
+      visible: false
+    - state: lock1-locked #when these are implemented get actual sprites.
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.Equipment"]
+      visible: false
+    - state: lock1-locked
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.Lighting"]
+      visible: false
+    - state: lock1-locked
+      shader: unshaded
+      map: ["enum.ApcVisualLayers.Environment"]
+      visible: false
+
+- type: entity
+  parent: BaseGenerator
+  id: DarkGenerator
+  name: Dark Generator
+  description: Somehow... this generate power... but only in the dark...
+  suffix: 10kW
+  components:
+    - type: PowerSupplier
+      voltage: Medium
+      supplyRate: 10000
+    - type: NodeContainer
+      examinable: true
+      nodes:
+        output: !type:CableDeviceNode
+          nodeGroupID: MVPower
+    - type: Sprite
+      sprite: _Starlight/Structures/Machines/darkmachines.rsi
+      layers:
+        - state: generator
+        - state: generator_unlit
+          shader: unshaded
+    - type: PowerMonitoringDevice
+      sprite: _Starlight/Structures/Machines/darkmachines.rsi
+      state: generator
+    - type: AmbientSound
+      range: 5
+      sound:
+        path: /Audio/Ambience/Objects/buzzing.ogg
+    - type: GuideHelp
+      guides:
+        - Power
+    - type: Anchorable
+      flags:
+        - Anchorable
+
+- type: entity
+  id: PortalShadekinHub
+  parent: BasePortal
+  name: dark hub
+  description: This portal is used by shadekins to go nearly anywhere in the universe!
+  placement:
+    mode: SnapgridCenter
+  components:
+    - type: DarkHub
+    - type: Sprite
+      noRot: true
+      sprite: _Starlight/Structures/Specific/Anomalies/dark.rsi
+      layers:
+        - state: hub_portal
+    - type: PointLight
+      color: "#793a80dd"
+      radius: 3
+      energy: 1
+    - type: AmbientSound
+      range: 5
+      volume: -5
+      sound:
+        path: /Audio/Ambience/Objects/gravity_gen_hum.ogg
+    - type: Portal
+      arrivalSound: /Audio/Items/hiss.ogg
+      departureSound: /Audio/Items/hiss.ogg
+      canTeleportToOtherMaps: true
+      randomTeleport: false
+    - type: WarpPoint
+      location: The Dark
+      blacklist:
+        tags:
+          - GhostOnlyWarp
+    - type: DarkLight
+    - type: GuideHelp
+      guides:
+        - Shadekin
+        - Brighteye
+
+- type: entity
+  id: Phoronic
+  parent: BaseStructure
+  name: phoronic cascade
+  description: A huge structure made of pure plasma. Dark energy roils and bursts within it.
+  components:
+    - type: StationAnchor
+    - type: Transform
+      anchored: true
+    - type: Sprite
+      noRot: true
+      drawdepth: Mobs
+      offset: "0.0,0.5"
+      sprite: _Starlight/Structures/Decorations/Phoronic.rsi
+      state: phoronic
+    - type: SpriteFade
+    - type: TheDarkImmune
+      ranged: true
+    - type: Fixtures
+      fixtures:
+        fix1:
+          shape: !type:PhysShapeAabb
+            bounds: "-0.45,-0.45,0.45,0.45"
+          density: 60
+          mask:
+            - MachineMask
+          layer:
+            - MidImpassable
+            - LowImpassable
+        fix2:
+          shape: !type:PhysShapeCircle
+            radius: 5
+          density: 0
+          hard: false
+          mask:
+            - None
+          layer:
+            - MidImpassable

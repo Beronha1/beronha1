@@ -3379,16 +3379,6 @@ entities:
     - type: Transform
       pos: -14.343634,-7.4265513
       parent: 2
-- proto: GasMixerAlt1
-  entities:
-  - uid: 570
-    components:
-    - type: Transform
-      pos: 12.5,3.5
-      parent: 2
-    - type: GasMixer
-      inletTwoConcentration: 0.78
-      inletOneConcentration: 0.22
 - proto: GasOutletInjector
   entities:
   - uid: 571
@@ -3670,31 +3660,6 @@ entities:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 12.5,2.5
-      parent: 2
-- proto: GasPortAlt1
-  entities:
-  - uid: 617
-    components:
-    - type: Transform
-      pos: 12.5,4.5
-      parent: 2
-  - uid: 618
-    components:
-    - type: Transform
-      pos: 11.5,4.5
-      parent: 2
-  - uid: 619
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 13.5,2.5
-      parent: 2
-- proto: GasVentPumpAlt1
-  entities:
-  - uid: 620
-    components:
-    - type: Transform
-      pos: 11.5,3.5
       parent: 2
 - proto: GasVentScrubber
   entities:
@@ -4076,31 +4041,6 @@ entities:
     components:
     - type: Transform
       pos: 0.5,0.5
-      parent: 2
-- proto: PoweredlightBlackLight
-  entities:
-  - uid: 685
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -8.5,-3.5
-      parent: 2
-  - uid: 686
-    components:
-    - type: Transform
-      pos: -6.5,-3.5
-      parent: 2
-  - uid: 687
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -12.5,-8.5
-      parent: 2
-  - uid: 688
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -6.5,-8.5
       parent: 2
 - proto: Rack
   entities:
@@ -5101,15 +5041,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -16.5,2.5
       parent: 2
-- proto: WallmountMassScanner
-  entities:
-  - uid: 865
-    components:
-    - type: Transform
-      pos: -7.5,2.5
-      parent: 2
-    - type: Fixtures
-      fixtures: {}
 - proto: WallReinforced
   entities:
   - uid: 866
@@ -5391,4 +5322,66 @@ entities:
       rot: 3.141592653589793 rad
       pos: 14.5,1.5
       parent: 2
+- proto: PoweredlightBlack
+  entities:
+  - uid: 685
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -8.5,-3.5
+      parent: 2
+  - uid: 686
+    components:
+    - type: Transform
+      pos: -6.5,-3.5
+      parent: 2
+  - uid: 687
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -12.5,-8.5
+      parent: 2
+  - uid: 688
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -6.5,-8.5
+      parent: 2
+- proto: GasMixer
+  entities:
+  - uid: 570
+    components:
+    - type: Transform
+      pos: 12.5,3.5
+      parent: 2
+    - type: GasMixer
+      inletTwoConcentration: 0.78
+      inletOneConcentration: 0.22
+- proto: GasPort
+  entities:
+  - uid: 617
+    components:
+    - type: Transform
+      pos: 12.5,4.5
+      parent: 2
+  - uid: 618
+    components:
+    - type: Transform
+      pos: 11.5,4.5
+      parent: 2
+  - uid: 619
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 13.5,2.5
+      parent: 2
+- proto: GasVentPump
+  entities:
+  - uid: 620
+    components:
+    - type: Transform
+      pos: 11.5,3.5
+      parent: 2
 ...
+
+

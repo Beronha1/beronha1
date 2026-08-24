@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Capacidades;
 // SPDX-FileCopyrightText: 2024-2026 Starlight
 // SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
 // SPDX-License-Identifier: MIT
@@ -13,12 +14,13 @@ namespace Content.Shared._Starlight.Shadekin;
 
 public sealed partial class TheDarkImmuneSystem : EntitySystem
 {
+    [Dependency] private FontesDeCapacidadeSystem _capacidades = default!;
     [Dependency] private IGameTiming _timing = default!;
 
     public override void Initialize()
     {
         SubscribeLocalEvent<TheDarkImmuneComponent, GotEquippedEvent>(OnEquipped);
-        SubscribeLocalEvent<TheDarkImmuneComponent, GotUnequippedEvent>((_, ref args) => RemComp<TheDarkImmuneComponent>(args.EquipTarget));
+        SubscribeLocalEvent<TheDarkImmuneComponent, GotUnequippedEvent>((uid, _, ref args) => _capacidades.Devolver<TheDarkImmuneComponent>(args.EquipTarget, uid));
     }
 
     private void OnEquipped(EntityUid uid, TheDarkImmuneComponent component, GotEquippedEvent args)
@@ -30,6 +32,6 @@ public sealed partial class TheDarkImmuneSystem : EntitySystem
             || !clothing.Slots.HasFlag(args.SlotFlags))
             return;
 
-        EnsureComp<TheDarkImmuneComponent>(args.EquipTarget);
+        _capacidades.Conceder<TheDarkImmuneComponent>(args.EquipTarget, uid);
     }
 }

@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Capacidades;
 // SPDX-FileCopyrightText: 2024-2026 Starlight
 // SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
 // SPDX-License-Identifier: MIT
@@ -15,6 +16,7 @@ namespace Content.Server._Starlight.NullSpace;
 
 public sealed partial class ShowNullSpaceSystem : SharedShowNullSpaceSystem
 {
+    [Dependency] private FontesDeCapacidadeSystem _capacidades = default!;
     [Dependency] private EyeSystem _eye = default!;
     public override void Initialize()
     {
@@ -45,5 +47,5 @@ public sealed partial class ShowNullSpaceSystem : SharedShowNullSpaceSystem
     }
 
     private void OnUnequipped(EntityUid uid, ShowNullSpaceComponent component, GotUnequippedEvent args) =>
-        RemComp<ShowNullSpaceComponent>(args.EquipTarget);
+        _capacidades.Devolver<ShowNullSpaceComponent>(args.EquipTarget, uid);
 }

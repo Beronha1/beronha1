@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Capacidades;
 // SPDX-FileCopyrightText: 2024-2026 Starlight
 // SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
 // SPDX-License-Identifier: MIT
@@ -28,6 +29,7 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
 {
     // RA0033: AddAction recusa valor literal, então a ação vira constante.
     private static readonly EntProtoId NullPhaseAction = "NullPhaseAction";
+    [Dependency] private FontesDeCapacidadeSystem _capacidades = default!;
 
     [Dependency] private SharedActionsSystem _actionsSystem = default!;
     [Dependency] private SharedPhysicsSystem _physics = default!;
@@ -64,7 +66,7 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
             || !clothing.Slots.HasFlag(args.SlotFlags))
             return;
 
-        EnsureComp<NullPhaseComponent>(args.EquipTarget);
+        _capacidades.Conceder<NullPhaseComponent>(args.EquipTarget, uid);
         if (!component.PreventLightFlicker
             || !TryComp<ShadekinComponent>(args.EquipTarget, out var shadekin))
             return;
@@ -74,7 +76,7 @@ public sealed partial class NullSpacePhaseSystem : EntitySystem
 
     private void OnUnequipped(EntityUid uid, NullPhaseComponent component, GotUnequippedEvent args)
     {
-        RemComp<NullPhaseComponent>(args.EquipTarget);
+        _capacidades.Devolver<NullPhaseComponent>(args.EquipTarget, uid);
         if (!component.PreventLightFlicker
             || !TryComp<ShadekinComponent>(args.EquipTarget, out var shadekin))
             return;

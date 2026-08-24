@@ -1,3 +1,4 @@
+using Content.Shared._Starlight.Capacidades;
 // SPDX-FileCopyrightText: 2024-2026 Starlight
 // SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
 // SPDX-License-Identifier: MIT
@@ -15,6 +16,7 @@ namespace Content.Shared._Starlight.NullSpace.Systems;
 
 public sealed partial class NullSpaceDrainerSystem : EntitySystem
 {
+    [Dependency] private FontesDeCapacidadeSystem _capacidades = default!;
     [Dependency] private SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
@@ -38,13 +40,13 @@ public sealed partial class NullSpaceDrainerSystem : EntitySystem
             || !clothing.Slots.HasFlag(args.SlotFlags))
             return;
 
-        EnsureComp<NullSpaceDrainerComponent>(args.EquipTarget);
+        _capacidades.Conceder<NullSpaceDrainerComponent>(args.EquipTarget, uid);
         component.Target = args.EquipTarget;
     }
 
     private void OnUnequipped(EntityUid uid, NullSpaceDrainerComponent component, GotUnequippedEvent args)
     {
-        RemComp<NullSpaceDrainerComponent>(args.EquipTarget);
+        _capacidades.Devolver<NullSpaceDrainerComponent>(args.EquipTarget, uid);
         component.Target = null;
     }
 

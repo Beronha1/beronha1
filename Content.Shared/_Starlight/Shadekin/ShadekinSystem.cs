@@ -249,40 +249,31 @@ public sealed partial class ShadekinSystem : EntitySystem
     /// <summary>
     ///     Ajusta a cura passiva conforme a luz.
     ///
-    ///     Whiskey: o original mexia no campo Interval, que ninguém lê, porque o
-    ///     PassiveDamageSystem crava um segundo. Então "cura mais rápida no escuro"
-    ///     não fazia nada. Agora quem muda é a quantidade, que tem efeito de verdade
-    ///     e não exige tocar em sistema base do jogo.
+    ///     Whiskey: dois defeitos foram corrigidos aqui.
     ///
-    ///     E o ramo de luz forte estava VAZIO, ou seja a cura nunca era desligada e o
-    ///     Shadekin se curava debaixo de holofote. Agora a lista de estados fica vazia.
+    ///     O ramo de luz forte estava VAZIO, então a cura nunca era desligada e o
+    ///     Shadekin se curava debaixo de holofote. Agora a lista de estados fica
+    ///     vazia, que é o jeito de não curar em estado nenhum.
+    ///
+    ///     E o original mexia no campo Interval para curar mais rápido no escuro.
+    ///     Esse campo não é lido por ninguém: o PassiveDamageSystem crava um
+    ///     segundo. Mexer na quantidade também não resolve, porque o dano é
+    ///     FixedPoint2 de duas casas e ainda é dividido entre as partes do corpo,
+    ///     então qualquer diferença fina some no arredondamento. A diferença entre
+    ///     sombra e penumbra passou a ser a que dá para expressar de verdade: no
+    ///     escuro total ele se cura mesmo em crítico e morto.
     /// </summary>
     private void SetPassiveBuff(EntityUid uid, ShadekinComponent component, ShadekinState shadekinState)
     {
         if (!TryComp<PassiveDamageComponent>(uid, out var passive))
             return;
 
-        // guarda o valor que veio do prototype na primeira passada
-        component.CuraBase ??= new DamageSpecifier(passive.Damage);
-
-        switch (shadekinState)
+        passive.AllowedStates = shadekinState switch
         {
-            case ShadekinState.Annoying:
-            case ShadekinState.High:
-            case ShadekinState.Extreme:
-                passive.AllowedStates = new List<MobState>();
-                break;
-
-            case ShadekinState.Low:
-                passive.AllowedStates = new List<MobState> { MobState.Alive };
-                passive.Damage = new DamageSpecifier(component.CuraBase);
-                break;
-
-            case ShadekinState.Dark:
-                passive.AllowedStates = new List<MobState> { MobState.Alive, MobState.Critical, MobState.Dead };
-                passive.Damage = component.CuraBase * 2f;
-                break;
-        }
+            ShadekinState.Dark => new List<MobState> { MobState.Alive, MobState.Critical, MobState.Dead },
+            ShadekinState.Low => new List<MobState> { MobState.Alive },
+            _ => new List<MobState>(),
+        };
 
         Dirty(uid, passive);
     }

@@ -103,20 +103,21 @@
     - type: PassiveDamage
       allowedStates:
         - Alive
-      # Whiskey: o PassiveDamage daqui não tem damageCap.
+      # Whiskey: os valores TÊM que ficar em 0,1 ou mais por tipo, e o motivo não é
+      # gosto. O dano e guardado em FixedPoint2, que tem duas casas decimais, e o
+      # SplitDamageBehavior.Split ainda divide o valor entre as 10 partes do corpo.
+      # Com 0,0175 por tipo, cada parte recebia 0,002, que arredonda para ZERO: a
+      # cura do porte nunca funcionou, em estado nenhum. Com 0,1, cada parte recebe
+      # 0,01, que é o mínimo representável.
+      #
+      # Quatro tipos a 0,1 dao 0,4 por segundo, ou 24 por minuto. Para comparar, o
+      # slime cura cerca de 8 por minuto, e o humano não cura sozinho.
       damage:
-        # Whiskey: aqui o PassiveDamage só aceita types. Brute e Burn têm 4 tipos
-        # cada e o valor de grupo é dividido entre eles, então -0.07 vira -0.0175
-        # por tipo e a cura por segundo fica igual à do original.
         types:
-          Blunt: -0.0175
-          Slash: -0.0175
-          Piercing: -0.0175
-          Ballistic: -0.0175
-          Heat: -0.0175
-          Shock: -0.0175
-          Cold: -0.0175
-          Caustic: -0.0175
+          Blunt: -0.1
+          Slash: -0.1
+          Piercing: -0.1
+          Heat: -0.1
     - type: Destructible
       thresholds:
         - trigger: !type:DamageTypeTrigger

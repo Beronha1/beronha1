@@ -6,8 +6,10 @@
 
 - type: entity
   id: ShadekinApagarLuzAction
-  name: shadekin-acao-apagar-luz-nome
-  description: shadekin-acao-apagar-luz-descricao
+  # Whiskey: em prototype de entidade o name e texto literal, nao chave de
+  # locale. A traducao vem por ent-<Id> em Resources/Locale.
+  name: Snuff Out
+  description: Reach out and kill the nearest lit bulb. The dark is where you heal.
   categories: [HideSpawnMenu]
   components:
     - type: Action

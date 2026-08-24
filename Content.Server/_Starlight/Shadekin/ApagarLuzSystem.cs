@@ -7,6 +7,7 @@ using Content.Shared.IdentityManagement;
 using Content.Shared.Light.Components;
 using Content.Shared.Light.EntitySystems;
 using Content.Shared.Popups;
+using Robust.Shared.Physics;
 using Robust.Shared.Player;
 
 namespace Content.Server._Starlight.Shadekin;
@@ -45,7 +46,10 @@ public sealed partial class ApagarLuzSystem : EntitySystem
         EntityUid? alvo = null;
         var menorDistancia = float.MaxValue;
 
-        foreach (var candidata in _busca.GetEntitiesInRange<PoweredLightComponent>(origem, ent.Comp.Alcance))
+        // lampada de parede e ancorada, e a busca padrao pula entidade estatica.
+        // O proprio GetLightExposure do Shadekin usa LookupFlags.All pelo mesmo motivo.
+        foreach (var candidata in _busca.GetEntitiesInRange<PoweredLightComponent>(
+                     origem, ent.Comp.Alcance, LookupFlags.All | LookupFlags.Approximate))
         {
             if (!candidata.Comp.On)
                 continue;

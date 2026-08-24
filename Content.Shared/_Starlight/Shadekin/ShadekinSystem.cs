@@ -255,6 +255,10 @@ public sealed partial class ShadekinSystem : EntitySystem
             ShadekinState.High or
             ShadekinState.Extreme)
         {
+            // Whiskey: este ramo estava VAZIO no original, então a cura nunca era
+            // desligada e o Shadekin se curava também debaixo de luz forte. Agora a
+            // lista de estados fica vazia, que é o jeito de não curar em estado nenhum.
+            passive.AllowedStates = new List<MobState>();
         }
         else if (shadekinState == ShadekinState.Low)
         {
@@ -401,8 +405,8 @@ public sealed partial class ShadekinSystem : EntitySystem
                 _manto.Atualizar(uid, manto, component.CurrentState, lightExposure);
             _speed.RefreshMovementSpeedModifiers(uid);
 
-            if (component.CurrentState == ShadekinState.Extreme)
-                ApplyLightDamage(uid, 1);
+            // Whiskey: o dano direto por luz foi retirado por decisão da administração.
+            // O peso da luz agora é parar de curar e perder a corrida.
 
             if (TryComp<BrighteyeComponent>(uid, out var brighteye))
                 UpdateEnergy(uid, component, brighteye);

@@ -9,10 +9,12 @@
 - type: damageModifierSet
   id: Shadekin
   coefficients:
-    Asphyxiation: 0
+      # Whiskey: imunidade a asfixia retirada por decisão da administração.
     Cold: 0.75
     Heat: 1.2
     Cellular: 0.25
-    Bloodloss: 1.35
+      # Whiskey: retirado. O Bloodstream do Shadekin já dobra o sangramento na
+      # fonte (1 contra 0,5 do humano), e este 1,35 empilhava por cima, dando
+      # 2,7 vezes o humano. Medido em jogo: humano 20, Shadekin 54.
     Shock: 1.25
-    Radiation: 1.3
+      # Whiskey: dano extra por radiação retirado por decisão da administração.

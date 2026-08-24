@@ -1,0 +1,65 @@
+# SPDX-FileCopyrightText: 2026 Whiskey Station Contributors
+# SPDX-License-Identifier: MIT
+#
+# Perfil de conhecimento do Shadekin.
+#
+# A ideia guia: ele é um intruso vindo de outra dimensão, não um tripulante que
+# nasceu na estação. Então ele NÃO sabe nada da indústria daqui, que é a coisa
+# que Humano, Moth e Diona ganham de graça. Em troca ele traz o que uma criatura
+# que caça no escuro traria.
+#
+# Referências usadas para calibrar, todas do próprio fork:
+#   Humano   6 pontos, nível 1 em toda construção. A linha de base.
+#   Moth     3 pontos, construção 1, mecânica e alfaiataria 1.
+#   Diona    3 pontos, construção 1, mais bônus de lore.
+#   Vox      3 pontos, tudo zero menos faxina 4. O extremo alienígena.
+#   Abductor 12 pontos, e nem fala o idioma comum.
+
+- type: knowledgeProfile
+  id: Shadekin
+  # 3, igual a todas as espécies não humanas. Antes o Shadekin não declarava
+  # perfil nenhum e caía no padrão "Human", que dá 6, ou seja o dobro de
+  # qualquer outra. Isso não foi escolha de ninguém, era omissão.
+  pointsLimit: 3
+  mastery:
+    # Construção: tudo zero. Ele não é daqui e não entende a estação. Isto é a
+    # perda real, sete níveis que espécie de tripulante recebe de graça.
+    CookingKnowledge: 0
+    DoorsKnowledge: 0
+    AirlocksKnowledge: 0
+    BananiumKnowledge: 0
+    BotsKnowledge: 0
+    FurnitureKnowledge: 0
+    InfrastructureKnowledge: 0
+    ElectronicsKnowledge: 0
+    WallsKnowledge: 0
+    WindowsKnowledge: 0
+    SmokeablesKnowledge: 0
+    # Escrita humana não diz nada a ele. O arcano diz, porque é o que está mais
+    # perto de onde ele veio. Mesmo nível que a Diona tem.
+    LiteracyKnowledge: 0
+    MagicalLiteracyKnowledge: 1
+    # Idiomas
+    LanguageSolCommon: 3
+    LanguageMarish: 3
+    # Medicina humana é estranha para ele
+    SurgeryKnowledge: 0
+    FirstAidKnowledge: 0
+    ChemistryKnowledge: 0
+    # Combate: garra. Nível 1, o mesmo teto que Anão e Reptiliano têm; ninguém
+    # no fork tem mais que isso, e não é hora de o Shadekin ser o primeiro.
+    ThrowingKnowledge: 0
+    MeleeKnowledge: 1
+    ShootingKnowledge: 0
+    KnowledgeWeaponsShield: 0
+    # Fabricação: nada. Ele não constrói, ele caça.
+    FabricationKnowledge: 0
+    WeaponsKnowledge: 0
+    ArmorKnowledge: 0
+    MetalworkingKnowledge: 0
+    CarvingKnowledge: 0
+    GunsmithingKnowledge: 0
+    MechanicsKnowledge: 0
+    TailoringKnowledge: 0
+    # Misc
+    JanitorKnowledge: 0

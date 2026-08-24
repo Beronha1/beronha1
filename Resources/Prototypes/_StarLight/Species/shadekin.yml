@@ -16,6 +16,9 @@
   prototype: MobShadekin
   dollPrototype: AppearanceShadekin
   skinColoration: Hues
+  # Sem este campo a espécie cai no perfil "Human", que dá 6 pontos, o dobro
+  # de qualquer outra espécie não humana.
+  knowledge: Shadekin
   defaultSkinTone: "#ffffff"
   maleFirstNames: names_shadekin
   femaleFirstNames: names_shadekin

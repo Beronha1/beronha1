@@ -161,7 +161,7 @@ namespace Content.Client.PDA
 
 
             HideAllViews();
-            HomeButton.IsCurrent = false;   //ADT-Tweak
+            ToHomeScreen();
         }
 
         public void UpdateState(PdaUpdateState state)
@@ -219,11 +219,13 @@ namespace Content.Client.PDA
 
             // Begin DeltaV additions
             if (state.PdaOwnerInfo.CurrentDate is { } curDate)
+            {
                 _currentDate = curDate.ToString("dd MMMM yyyy");
                 CurrentDateLabel.SetMarkup(Loc.GetString(
                     "comp-pda-ui-current-date",
                     ("date", _currentDate)
                 ));
+            }
             // End DeltaV additions
 
             AddressLabel.Text = state.Address?.ToUpper() ?? " - ";

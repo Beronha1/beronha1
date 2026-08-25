@@ -53,7 +53,10 @@ public sealed partial class ESAutoGhostSystem : EntitySystem
         if (!_mind.TryGetMind(ent, out var mindId, out var mindComp, ent))
             return;
 
-        _ghost.OnGhostAttempt(mindId, canReturnGlobal: false, forced: true, mind: mindComp);
+        // Death should move the player into a visiting ghost so they can use
+        // the return-to-body action (and /ghost does not race a permanent
+        // transfer one second after death).
+        _ghost.OnGhostAttempt(mindId, canReturnGlobal: true, forced: true, mind: mindComp);
     }
 
     private void AutoGhost(EntityUid uid)

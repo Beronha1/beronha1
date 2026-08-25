@@ -48,11 +48,15 @@
   - type: StationEvent
     startAudio:
       path: /Audio/Announcements/attention.ogg
-    weight: 2
-    minimumPlayers: 10
-    reoccurrenceDelay: 30
+    weight: 0.25
+    earliestStart: 30
+    minimumPlayers: 25
+    reoccurrenceDelay: 90
+    maxOccurrences: 1
     duration: 1
   - type: ESElectricalFireRule
+    fireRadius: 1.5
+    fireChance: 0.35
 
 - type: entity
   parent: BaseGameRule

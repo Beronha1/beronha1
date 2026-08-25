@@ -13171,3 +13171,49 @@ Entries:
     message: Hardened completed Ripley construction state during round and map initialization.
   id: 1435
   time: '2026-08-14T11:27:40.0000000+00:00'
+- author: Whiskey Station
+  changes:
+  - type: Tweak
+    message: >-
+      Regras do servidor, Space Law e todo o livro-guia receberam uma tradução
+      manual completa para PT-BR, preservando gírias e termos da cultura SS14.
+  - type: Fix
+    message: >-
+      Links, tabelas, números, atalhos e marcação dos 340 capítulos foram
+      revisados contra truncamentos e problemas de estrutura.
+  id: 1436
+  time: '2026-08-24T05:25:20.0000000+00:00'
+- author: Zequin
+  changes:
+  - type: Add
+    message: >-
+      Shadekin agora é uma espécie jogável, com corpo, órgãos, orelhas, caudas
+      e outras opções próprias de personalização.
+  - type: Tweak
+    message: >-
+      Shadekins se curam e enxergam melhor na escuridão, ficam parcialmente
+      ocultos quando parados sem nenhuma luz e sofrem dano ou lentidão sob luz
+      forte.
+  - type: Add
+    message: >-
+      Bright-eye foi adicionado como antagonista Shadekin, com objetivos e
+      poderes de fase, portais, armadilhas, salto e criação de sombras.
+  - type: Add
+    message: >-
+      A dimensão da Escuridão e seus mapas, pisos, estruturas, máquinas,
+      efeitos, sons e criaturas foram adicionados para o conteúdo Bright-eye.
+  - type: Add
+    message: >-
+      O idioma Marish e os emotes com voz marr, wurble e purr foram adicionados
+      aos Shadekins.
+  - type: Fix
+    message: >-
+      O evento Bright-eye agora encontra corretamente seu ponto de nascimento
+      no mapa da Escuridão carregado pela regra.
+  - type: Fix
+    message: >-
+      O resumo de fim de rodada das Máscaras voltou a exibir trupes, papéis e
+      objetivos completos em PT-BR.
+  id: 1437
+  time: '2026-08-25T15:03:48.0000000+00:00'
+  url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/32

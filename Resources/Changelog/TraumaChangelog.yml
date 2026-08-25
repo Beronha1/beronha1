@@ -13214,6 +13214,10 @@ Entries:
     message: >-
       O resumo de fim de rodada das Máscaras voltou a exibir trupes, papéis e
       objetivos completos em PT-BR.
+  - type: Fix
+    message: >-
+      As mensagens das habilidades, portal, núcleo e armadilhas Shadekin agora
+      aparecem corretamente em inglês e PT-BR.
   id: 1437
   time: '2026-08-25T15:03:48.0000000+00:00'
   url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/32

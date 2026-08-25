@@ -57,6 +57,27 @@ public sealed class PtBrLocalizationSmokeTest : GameTest
                     ("amount", 10),
                     ("color", "#ff0000"),
                     ("type", "sangue"));
+
+                AssertFormats(localization, "shadekin-portal-owner");
+                AssertFormatsAsMarkup(localization,
+                    "shadekin-portal-health-percentage",
+                    ("percent", "100%"));
+                AssertFormats(localization, "shadekin-portal-stabilize-info");
+                AssertFormats(localization, "shadekin-noenergy");
+                AssertFormats(localization, "shadekin-fail-generic");
+                AssertFormats(localization, "phase-fail-generic");
+                AssertFormats(localization, "hubportal-rejuvenate");
+                AssertFormats(localization, "shadekin-rejuvenate-compleated");
+                AssertFormats(localization, "shadekin-shunt");
+                AssertFormats(localization, "shadekin-too-bright");
+                AssertFormatsAsMarkup(localization,
+                    "brighteye-darktiles",
+                    ("darkCount", 42));
+                AssertFormats(localization,
+                    "shadekinTrap-trigger",
+                    ("user", "Tripulante"));
+                AssertFormats(localization, "shadekinTrap-trigger-fail");
+                AssertFormats(localization, "dark-breacher-window-title");
             });
         }
         finally

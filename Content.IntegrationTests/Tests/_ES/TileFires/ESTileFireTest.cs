@@ -6,7 +6,10 @@ using Content.IntegrationTests.Fixtures;
 using Content.Server.Atmos.Components;
 using Content.Server._ES.TileFires;
 using Content.Shared.Atmos.Components;
+using Content.Shared.Chemistry;
+using Content.Shared.Chemistry.Reagent;
 using Content.Shared._ES.TileFires;
+using Content.Shared.FixedPoint;
 using Content.Trauma.Common.Atmos;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
@@ -18,6 +21,8 @@ namespace Content.IntegrationTests.Tests._ES.TileFires;
 [TestOf(typeof(ESTileFireSystem))]
 public sealed class ESTileFireTest : GameTest
 {
+    private static readonly ResPath TestMapPath = new("Maps/Test/Breathing/3by3-20oxy-80nit.yml");
+
     [Test]
     public async Task EventStageFireIgnitesGrowsAndSpreads()
     {
@@ -26,17 +31,16 @@ public sealed class ESTileFireTest : GameTest
         var entMan = server.ResolveDependency<IEntityManager>();
         var mapLoader = entMan.System<MapLoaderSystem>();
         var mapSystem = entMan.System<SharedMapSystem>();
-        var testMapName = new ResPath("Maps/Test/Breathing/3by3-20oxy-80nit.yml");
 
         EntityUid? grid = null;
         await server.WaitPost(() =>
         {
             mapSystem.CreateMap(out var mapId);
-            Assert.That(mapLoader.TryLoadGrid(mapId, testMapName, out var gridEntity), Is.True);
+            Assert.That(mapLoader.TryLoadGrid(mapId, TestMapPath, out var gridEntity), Is.True);
             grid = gridEntity!.Value.Owner;
         });
 
-        Assert.That(grid, Is.Not.Null, $"Test blueprint {testMapName} not found.");
+        Assert.That(grid, Is.Not.Null, $"Test blueprint {TestMapPath} not found.");
 
         // This breathing fixture encloses its oxygenated 3x3 floor with eight
         // reinforced walls. Remove only those blockers so the test exercises
@@ -95,6 +99,45 @@ public sealed class ESTileFireTest : GameTest
             }
 
             Assert.That(count, Is.GreaterThan(1));
+        });
+    }
+
+    [Test]
+    public async Task OneUnitOfWaterExtinguishesStageOneFire()
+    {
+        var server = Pair.Server;
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var mapLoader = entMan.System<MapLoaderSystem>();
+        var mapSystem = entMan.System<SharedMapSystem>();
+
+        EntityUid grid = default;
+        EntityUid fireUid = default;
+        await server.WaitPost(() =>
+        {
+            mapSystem.CreateMap(out var mapId);
+            Assert.That(mapLoader.TryLoadGrid(mapId, TestMapPath, out var gridEntity), Is.True);
+            grid = gridEntity!.Value.Owner;
+
+            var fire = server.System<ESTileFireSystem>();
+            Assert.That(fire.TryDoTileFire(new EntityCoordinates(grid, 0.5f, 0.5f)), Is.True);
+
+            var query = entMan.EntityQueryEnumerator<ESTileFireComponent>();
+            Assert.That(query.MoveNext(out fireUid, out _), Is.True);
+            Assert.That(entMan.HasComponent<OnFireComponent>(fireUid), Is.True);
+
+            var reactive = entMan.System<ReactiveSystem>();
+            reactive.ReactionEntity(
+                fireUid,
+                ReactionMethod.Touch,
+                new ReagentQuantity("Water", FixedPoint2.New(1)));
+        });
+
+        await Pair.RunTicksSync(5);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(entMan.Deleted(fireUid), Is.True,
+                "A direct extinguisher spray should remove a stage-one tile fire.");
         });
     }
 }

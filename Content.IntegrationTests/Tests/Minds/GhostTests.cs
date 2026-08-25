@@ -3,6 +3,8 @@ using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Pair;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mind;
+using Content.Shared.Mobs;
+using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Robust.Server.GameObjects;
 using Robust.Shared.GameObjects;
@@ -37,6 +39,8 @@ public sealed class GhostTests : GameTest
 
         public NetEntity Player = default!;
         public EntityUid SPlayerEnt = default!;
+        public EntityUid MindId = default!;
+        public MindComponent Mind = default!;
 
         public ICommonSession ClientSession = default!;
         public ICommonSession ServerSession = default!;
@@ -54,7 +58,7 @@ public sealed class GhostTests : GameTest
         Dirty = true
     };
 
-    private async Task<GhostTestData> SetupData()
+    private async Task<GhostTestData> SetupData(string playerPrototype = null)
     {
         var data = new GhostTestData
         {
@@ -80,8 +84,10 @@ public sealed class GhostTests : GameTest
         Entity<MindComponent> mind = default!;
         await data.Pair.Server.WaitPost(() =>
         {
-            data.Player = data.SEntMan.GetNetEntity(data.SEntMan.SpawnEntity(null, data.SEntMan.GetCoordinates(data.PlayerCoords)));
+            data.Player = data.SEntMan.GetNetEntity(data.SEntMan.SpawnEntity(playerPrototype, data.SEntMan.GetCoordinates(data.PlayerCoords)));
             mind = data.SMindSys.CreateMind(data.ServerSession.UserId, "DummyPlayerEntity");
+            data.MindId = mind.Owner;
+            data.Mind = mind.Comp;
             data.SPlayerEnt = data.SEntMan.GetEntity(data.Player);
             data.SMindSys.TransferTo(mind, data.SPlayerEnt, mind: mind.Comp);
             data.Server.PlayerMan.SetAttachedEntity(data.ServerSession, data.SPlayerEnt);
@@ -104,6 +110,46 @@ public sealed class GhostTests : GameTest
         Assert.That(data.SPlayerEnt, Is.Not.EqualTo(null));
 
         return data;
+    }
+
+    [Test]
+    public async Task AutoGhostCanReturnToDeadBody()
+    {
+        var data = await SetupData("MobHuman");
+        var mobState = data.SEntMan.System<MobStateSystem>();
+
+        await data.Server.WaitPost(() => mobState.ChangeMobState(data.SPlayerEnt, MobState.Dead));
+
+        // ESAutoGhostSystem intentionally waits one second after death.
+        await data.Pair.RunTicksSync(100);
+
+        EntityUid ghost = default;
+        await data.Server.WaitAssertion(() =>
+        {
+            ghost = data.ServerSession.AttachedEntity!.Value;
+            var ghostComponent = data.SEntMan.GetComponent<GhostComponent>(ghost);
+
+            Assert.Multiple(() =>
+            {
+                Assert.That(ghostComponent.CanReturnToBody, Is.True);
+                Assert.That(data.Mind.OwnedEntity, Is.EqualTo(data.SPlayerEnt));
+                Assert.That(data.Mind.VisitingEntity, Is.EqualTo(ghost));
+            });
+
+            data.SMindSys.UnVisit(data.MindId, data.Mind);
+        });
+
+        await data.Pair.RunTicksSync(5);
+
+        await data.Server.WaitAssertion(() =>
+        {
+            Assert.Multiple(() =>
+            {
+                Assert.That(data.ServerSession.AttachedEntity, Is.EqualTo(data.SPlayerEnt));
+                Assert.That(data.Mind.VisitingEntity, Is.Null);
+                Assert.That(data.SEntMan.Deleted(ghost), Is.True);
+            });
+        });
     }
 
     /// <summary>

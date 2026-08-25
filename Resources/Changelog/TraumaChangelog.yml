@@ -13221,3 +13221,25 @@ Entries:
   id: 1437
   time: '2026-08-25T15:03:48.0000000+00:00'
   url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/32
+- author: Whiskey Station
+  changes:
+  - type: Fix
+    message: >-
+      O PDA volta a abrir corretamente na tela inicial e a data só é atualizada
+      quando o servidor fornece um valor válido.
+  - type: Tweak
+    message: >-
+      Incêndios de piso agora perdem força sozinhos, propagam muito menos e uma
+      aplicação direta de água ou extintor apaga uma chama inicial.
+  - type: Tweak
+    message: >-
+      O evento aleatório de incêndio elétrico ficou menor, mais raro, limitado
+      a uma ocorrência por rodada e passa a criar apenas chamas iniciais.
+  - type: Tweak
+    message: Ovinia foi desativada para seleção no início da rodada.
+  - type: Fix
+    message: >-
+      Fantasmas criados automaticamente após a morte podem retornar ao corpo,
+      evitando também a corrida que fazia o comando /ghost parecer não funcionar.
+  id: 1438
+  time: '2026-08-25T21:57:39.0000000+00:00'

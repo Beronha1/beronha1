@@ -21,6 +21,7 @@ namespace Content.IntegrationTests.Tests.Humanoid;
 public sealed class HumanoidProfileTests : GameTest
 {
     private static readonly EntProtoId BaseSpecies = "MobHuman";
+    private static readonly ProtoId<SpeciesPrototype> Ovinia = "Ovinia";
     private static readonly ProtoId<SpeciesPrototype> SlimePerson = "SlimePerson";
     public static readonly ProtoId<EmoteSoundsPrototype> SlimeVoice = "FemaleSlime";
 
@@ -30,6 +31,18 @@ public sealed class HumanoidProfileTests : GameTest
     [SidedDependency(Side.Server)] private HumanoidProfileSystem _humanoidProfile = default!;
     [SidedDependency(Side.Server)] private MarkingManager _markingManager = default!;
     [SidedDependency(Side.Server)] private SharedVisualBodySystem _visualBody = default!;
+
+    [Test]
+    public async Task OviniaIsNotAvailableAtRoundStart()
+    {
+        await Server.WaitIdleAsync();
+
+        await Server.WaitAssertion(() =>
+        {
+            var ovinia = SProtoMan.Index(Ovinia);
+            Assert.That(ovinia.RoundStart, Is.False);
+        });
+    }
 
     [Test]
     public async Task EnsureValidLoading()

@@ -30,6 +30,8 @@
       state: red_1
       shader: unshaded
   - type: ESTileFire
+    minFirestacksToSpread: 12
+    baseSpreadChance: 0.2
   - type: ActiveEdgeSpreader
   - type: EdgeSpreader
     id: ESTileFire
@@ -38,7 +40,7 @@
     sprintSpeedModifier: 0.8
   - type: Flammable
     firestacksOnIgnite: 0.0
-    firestackFade: 0.32
+    firestackFade: -0.25
     onFire: true
     fireStacks: 3
     minimumFireStacks: 0
@@ -52,6 +54,8 @@
     temperature: 423.15
   - type: AtmosExposed
   - type: Reactive
+    # One direct extinguisher/water contact is enough for a stage-one flame.
+    scaleOverride: 10
     groups:
       Extinguish: [ Touch ]
   # TODO ES probably use a better sound collection for this.

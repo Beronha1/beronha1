@@ -13,6 +13,7 @@
 - type: stationTrait
   id: Blackout
   group: Negative
+  chance: 0
   name: "Blackout"
   report: "Station lights seem to be damaged, be safe when starting your shift today."
   mapEffects:

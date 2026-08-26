@@ -46,7 +46,12 @@ namespace Content.Server.GameTicking
                 jObject["name"] = _baseServer.ServerName;
                 jObject["map"] = _gameMapManager.GetSelectedMap()?.MapName;
                 jObject["round_id"] = _gameTicker.RoundId;
-                jObject["players"] = _joinQueue.ActualPlayersCount; // Goobstation - Queue
+                // Keep queue/cap calculations independent from the public count.
+                // ActualPlayersCount intentionally follows AdminsCountForMaxPlayers,
+                // while this CVar exists specifically for the launcher/API count.
+                jObject["players"] = _cfg.GetCVar(CCVars.AdminsCountInReportedPlayerCount)
+                    ? Math.Max(_playerManager.PlayerCount - _joinQueue.PlayerInQueueCount, 0)
+                    : _joinQueue.ActualPlayersCount; // Goobstation - Queue
                 jObject["queue"] = _joinQueue.PlayerInQueueCount; // Goobstation - Queue
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
                 jObject["panic_bunker"] = _cfg.GetCVar(CCVars.PanicBunkerEnabled);

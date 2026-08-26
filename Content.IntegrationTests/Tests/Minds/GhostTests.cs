@@ -1,12 +1,15 @@
 using System.Numerics;
 using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Pair;
+using Content.Server.Administration.Managers;
+using Content.Server.GameTicking;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Players;
 using Robust.Server.GameObjects;
+using Robust.Shared.Console;
 using Robust.Shared.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -149,6 +152,47 @@ public sealed class GhostTests : GameTest
                 Assert.That(data.Mind.VisitingEntity, Is.Null);
                 Assert.That(data.SEntMan.Deleted(ghost), Is.True);
             });
+        });
+    }
+
+    [Test]
+    public async Task GhostCommandRejectsAliveAndAllowsCriticalPlayer()
+    {
+        var data = await SetupData("MobHuman");
+        var console = data.Server.ResolveDependency<IConsoleHost>();
+        var admin = data.Server.ResolveDependency<IAdminManager>();
+        var ticker = data.SEntMan.System<GameTicker>();
+        var mobState = data.SEntMan.System<MobStateSystem>();
+
+        await data.Server.WaitPost(() =>
+        {
+            if (admin.IsAdmin(data.ServerSession))
+                admin.DeAdmin(data.ServerSession);
+
+            ticker.PlayerJoinGame(data.ServerSession, silent: true);
+            console.GetSessionShell(data.ServerSession).ExecuteCommand("ghost");
+        });
+
+        await data.Pair.RunTicksSync(5);
+        await data.Server.WaitAssertion(() =>
+        {
+            Assert.That(data.ServerSession.AttachedEntity, Is.EqualTo(data.SPlayerEnt),
+                "A living non-admin player must not be able to ghost.");
+            Assert.That(data.SEntMan.HasComponent<GhostComponent>(data.SPlayerEnt), Is.False);
+        });
+
+        await data.Server.WaitPost(() =>
+        {
+            mobState.ChangeMobState(data.SPlayerEnt, MobState.Critical);
+            console.GetSessionShell(data.ServerSession).ExecuteCommand("ghost");
+        });
+
+        await data.Pair.RunTicksSync(5);
+        await data.Server.WaitAssertion(() =>
+        {
+            Assert.That(data.ServerSession.AttachedEntity, Is.Not.EqualTo(data.SPlayerEnt));
+            Assert.That(data.SEntMan.HasComponent<GhostComponent>(data.ServerSession.AttachedEntity), Is.True,
+                "A critical player must be able to succumb through /ghost.");
         });
     }
 

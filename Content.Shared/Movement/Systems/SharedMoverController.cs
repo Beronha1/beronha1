@@ -611,6 +611,11 @@ public abstract partial class SharedMoverController : VirtualController
 
         mobMover.StepSoundDistance -= distanceNeeded;
 
+        var beforeSound = new BeforeFootstepSoundEvent();
+        RaiseLocalEvent(uid, beforeSound);
+        if (beforeSound.Cancelled)
+            return false;
+
         // DeltaV - Don't play the sound if they have no shoes and the component
         if (NoShoesSilentQuery.HasComp(uid) &&
             !_inventory.TryGetSlotEntity(uid, "shoes", out var _))

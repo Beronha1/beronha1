@@ -204,7 +204,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafePistolMk58
-  name: mk58 safe
+  name: Fire Station sidearm safe # Whiskey
   components:
   - type: EntityTableContainerFill
     containers:
@@ -215,15 +215,29 @@
   id: FillGunSafePistolMk58
   table: !type:AllSelector
     children:
-    - id: WeaponPistolMk58
-      amount: 4
-    - id: MagazinePistol
-      amount: 8
+    - !type:GroupSelector # Whiskey: four sidearms and eight magazines, unchanged totals.
+      rolls: 4
+      children:
+      - !type:AllSelector
+        children:
+        - id: WeaponPistolMk58
+        - id: MagazinePistol
+          amount: 2
+      - !type:AllSelector
+        children:
+        - id: WhiskeyWeaponPistolM1984
+        - id: MagazinePistol
+          amount: 2
+      - !type:AllSelector
+        children:
+        - id: WhiskeyWeaponPistolACP14
+        - id: WhiskeyMagazinePistolACP14
+          amount: 2
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeRifleLecter
-  name: lecter safe
+  name: Fire Station rifle safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
@@ -235,15 +249,22 @@
   id: FillGunSafeRifleLecter
   table: !type:AllSelector
     children:
-    - id: WeaponRifleLecter
-      amount: 2
+    - !type:GroupSelector # Whiskey: two rifles, unchanged total.
+      rolls: 2
+      children:
+      - id: WeaponRifleLecter
+      - id: WhiskeyWeaponRifleM16A4
+      - id: WhiskeyWeaponRifleLeikha
+      - id: WhiskeyWeaponRifleAK103
+      - id: WhiskeyWeaponRifleM4A1
+      - id: WhiskeyWeaponRifleAR18M
     - id: MagazineRifle
       amount: 4
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeSubMachineGunDrozd
-  name: drozd safe
+  name: P-90 safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
@@ -257,13 +278,13 @@
     children:
     - id: WeaponSubMachineGunDrozd
       amount: 2
-    - id: MagazinePistolSubMachineGun
+    - id: WhiskeyMagazinePistolSubMachineGunP90 # Whiskey
       amount: 4
 
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeShotgunEnforcer
-  name: enforcer safe
+  name: SPAS-12 safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
@@ -283,7 +304,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeShotgunKammerer
-  name: kammerer safe
+  name: riot shotgun safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
@@ -303,7 +324,7 @@
 - type: entity
   id: GunSafeSubMachineGunWt550
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
-  name: wt550 safe
+  name: MP5 safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill
@@ -317,7 +338,7 @@
     children:
     - id: WeaponSubMachineGunWt550
       amount: 2
-    - id: MagazinePistolSubMachineGunTopMounted
+    - id: WhiskeyMagazinePistolSubMachineGunMP5 # Whiskey
       amount: 4
 
 - type: entity

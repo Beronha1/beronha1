@@ -1,0 +1,35 @@
+{
+    "version": 1,
+    "license": "Custom",
+    "copyright": "By Discord user peperino0290_92944 for SCP: Project Fire; used by Whiskey Station under explicit Project Fire CLA authorization (source commit 0b2576c668268acbccbf07d8af88b55a0a804b3d)",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        },
+        {
+            "name": "equipped-BACKPACK",
+            "directions": 4
+        },
+        {
+            "name": "equipped-SUITSTORAGE",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "wielded-inhand-right",
+            "directions": 4
+        }
+    ]
+}

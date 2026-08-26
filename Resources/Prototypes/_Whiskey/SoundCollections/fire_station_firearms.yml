@@ -1,0 +1,10 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+- type: soundCollection
+  id: WhiskeyM1984Gunshots
+  files:
+  - /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_m1984_1.ogg
+  - /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_m1984_2.ogg
+  - /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_m1984_3.ogg
+  - /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_m1984_4.ogg
+  - /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_m1984_5.ogg

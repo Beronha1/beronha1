@@ -1,0 +1,110 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Fire Station rifle variants inherit the Lecter's complete Whiskey balance
+# profile. This intentionally keeps fire rate, spread, damage and ammunition
+# supply identical while making every model available to existing armories.
+
+- type: entity
+  parent: WeaponRifleLecter
+  id: WhiskeyWeaponRifleM16A4
+  name: M16A4
+  description: A full-length service rifle adapted for station security logistics. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m16a4/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m16a4/tiny.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m16a4/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+
+- type: entity
+  parent: WeaponRifleLecter
+  id: WhiskeyWeaponRifleLeikha
+  name: Leikha
+  description: A scoped military service rifle adapted for station security logistics. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/leikha.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/leikha.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/leikha.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+
+- type: entity
+  parent: WeaponRifleLecter
+  id: WhiskeyWeaponRifleAK103
+  name: AK-103
+  description: A modernized Kalashnikov-pattern service rifle adapted for station security logistics. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ak103/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ak103/tiny.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ak103/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle2.ogg
+
+- type: entity
+  parent: WeaponRifleLecter
+  id: WhiskeyWeaponRifleM4A1
+  name: M4A1
+  description: A compact carbine adapted for station security logistics. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m4a1/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m4a1/tiny.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/m4a1/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/rifle.ogg
+
+- type: entity
+  parent: WeaponRifleLecter
+  id: WhiskeyWeaponRifleAR18M
+  name: AR-18M
+  description: A reinforced AR-18 variant adapted for station security logistics. Feeds from .20 rifle magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ar18m/big.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-0
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ar18m/tiny.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Rifles/ar18m/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/batrifle.ogg

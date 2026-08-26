@@ -61,3 +61,5 @@ heretic-ritual-ingredient-screwdriver = chave de fenda
 heretic-ritual-ingredient-wirecutter = corta-fios
 heretic-ritual-ingredient-hand = mão
 heretic-ritual-ingredient-bonfire = fogueira
+heretic-ritual-ingredient-rag = pano úmido
+heretic-ritual-ingredient-grenade-casing = carcaça de granada

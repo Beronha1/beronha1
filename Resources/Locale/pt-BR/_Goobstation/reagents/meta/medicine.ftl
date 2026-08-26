@@ -77,7 +77,7 @@ reagent-name-tehifin= eu faria isso
 reagent-desc-tehifin = Remédio de queimadura de baixa potência e segurança questionável.
 
 reagent-name-procenyl-lazide = lazida procenyl
-reagent-desc-procenyl-lazide = Remédio de trauma físico relativamente forte com limite de superdosagem baixo, precisa ser cristalizado em baixas temperaturas e separado da solução precursora.
+reagent-desc-procenyl-lazide = Um medicamento milagroso contra ferimentos graves, mas com baixo limite de superdosagem. Precisa ser cristalizado em baixas temperaturas e separado da solução precursora. Recomenda-se o uso oral para minimizar a chance de superdosagem.
 
 reagent-name-bozaide = bozaide
 reagent-desc-bozaide = Remédio de trauma físico de ação lenta, causa baixas quantidades de dano de radiação.

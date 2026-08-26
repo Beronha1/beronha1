@@ -100,5 +100,7 @@ namespace Content.Shared.Verbs
         // WhiteDream - Blood Cult
         public static readonly VerbCategory BloodSpells = new("verb-categories-blood-cult",
             new SpriteSpecifier.Rsi(new ResPath("/Textures/WhiteDream/BloodCult/actions.rsi"), "blood_spells"));
+        public static readonly VerbCategory Metabolizers =
+            new("verb-categories-select-target", "/Textures/Interface/VerbIcons/group.svg.192dpi.png");
     }
 }

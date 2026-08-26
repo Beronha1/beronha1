@@ -32,7 +32,7 @@ public sealed partial class SpawnOnDeathSystem : EntitySystem
             before: [typeof(MobThresholdSystem)]);
         SubscribeLocalEvent<SpawnLootOnDeathComponent, MobStateChangedEvent>(OnDropKilled);
         SubscribeLocalEvent<MegafaunaWeaponLooterComponent, GunShotEvent>(OnQualifyingGunShot);
-        SubscribeLocalEvent<MegafaunaWeaponLooterComponent, ProjectileShotEvent>(OnQualifyingProjectileShot);
+        SubscribeLocalEvent<MegafaunaWeaponLooterComponent, GunShotProjectileEvent>(OnQualifyingProjectileShot);
         SubscribeLocalEvent<MegafaunaWeaponLooterProjectileComponent, ProjectileHitEvent>(OnQualifyingProjectileHit);
     }
 
@@ -55,7 +55,7 @@ public sealed partial class SpawnOnDeathSystem : EntitySystem
         }
     }
 
-    private void OnQualifyingProjectileShot(Entity<MegafaunaWeaponLooterComponent> ent, ref ProjectileShotEvent args)
+    private void OnQualifyingProjectileShot(Entity<MegafaunaWeaponLooterComponent> ent, ref GunShotProjectileEvent args)
     {
         EnsureComp<MegafaunaWeaponLooterProjectileComponent>(args.FiredProjectile).SourceWeapon = ent.Owner;
     }

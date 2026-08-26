@@ -39,3 +39,4 @@ comp-kitchen-spike-meat-name= { $name } ({ $victim })
 comp-kitchen-spike-victim-examine = [color=orange]{ CAPITALIZE(SUBJECT($target)) } parece bastante enxuto.[/color]
 
 comp-kitchen-spike-deconstruct-occupied = Em seguida, [color=red]solte o corpo[/color].
+comp-kitchen-spike-butcher-empty = { CAPITALIZE(THE($victim)) } não tem mais carne para cortar!

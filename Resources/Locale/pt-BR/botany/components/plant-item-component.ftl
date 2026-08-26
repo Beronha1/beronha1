@@ -1,0 +1,12 @@
+plant-hoe-component-already-seeded-popup = Você remove as ervas daninhas de {$name}.
+plant-hoe-component-remove-weeds-others-popup = {$otherName} começa a arrancar as ervas daninhas.
+plant-hoe-component-no-weeds-popup = Este canteiro não tem ervas daninhas! Não é preciso arrancar nada.
+plant-shovel-component-remove-plant-popup = Você remove a planta de {$name}.
+plant-shovel-component-remove-plant-others-popup = {$name} remove a planta.
+plant-shovel-component-no-plant-popup = Não há nenhuma planta para remover.
+plant-sample-component-early-sample-popup = A planta ainda não cresceu o suficiente para retirar uma amostra.
+plant-sample-component-already-sampled-popup = Uma amostra desta planta já foi retirada.
+plant-sample-component-take-sample-popup = Você retira uma amostra de {$seedName}.
+plant-sample-component-dead-plant-popup = Esta planta está morta.
+plant-produce-component-compost-popup = Você transforma {$usingItem} em composto dentro de {$owner}.
+plant-produce-component-compost-others-popup = {$user} transforma {$usingItem} em composto dentro de {$owner}.

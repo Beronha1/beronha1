@@ -17,3 +17,12 @@ cmd-setnutrit-error-invalid-threshold = {$thresholdType} inválido `{$thresholdS
 cmd-thirsty-desc = te dá sede
 cmd-thirsty-help = define seu nível de sede para seco
 
+cmd-nutrition-satiation-need = necessidade de saciedade de {$satiation}
+cmd-setsatiation-desc = Define sua necessidade de saciedade.
+cmd-setsatiation-help = Define a necessidade de saciedade indicada para o limite especificado.
+cmd-nutrition-setsatiation-prototype-error = Saciedade inválida: "{$satiation-proto-id}"
+cmd-nutrition-setsatiation-no-matching-key-error = Chave "{$key}" não reconhecida para a saciedade "{$satiation-proto-id}"
+cmd-nutrition-setsatiation-hint-key = Chave do valor de saciedade
+cmd-nutrition-setsatiation-hint-max-value = Valor máximo
+cmd-unsatiate-desc = Torna suas necessidades de saciedade desesperadoras.
+cmd-unsatiate-help = Define as necessidades de saciedade indicadas para o limite "desesperado". Afeta os tipos de saciedade especificados ou todos os tipos se nenhum for informado.

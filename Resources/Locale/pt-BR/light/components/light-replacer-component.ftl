@@ -11,7 +11,7 @@
 ### Interaction Messages
 
 # Shown when player tries to replace light, but there is no lights left
-comp-light-replacer-missing-light =Não há mais luzes em {THE($light-replacer)}.
+comp-light-replacer-missing-light = Não restam {MAKEPLURAL($light-name)} em {THE($light-replacer)}.
 
 # Shown when player inserts light bulb inside light replacer
 comp-light-replacer-insert-light = Você insere {$bulb} em {THE($light-replacer)}.
@@ -28,5 +28,29 @@ comp-light-replacer-no-lights = Está vazio.
 comp-light-replacer-has-lights = Ele contém o seguinte:
 comp-light-replacer-light-listing= {$amount ->
     [one] [color=yellow]{$amount}[/color] [color=gray]{$name}[/color]
-    *[other] [color=yellow]{$amount}[/color] [color=gray]{$name}s[/color]
+    *[other] [color=yellow]{$amount}[/color] [color=gray]{MAKEPLURAL($name)}[/color]
 }
+
+comp-light-replacer-same-light = Esta luminária já contém {INDEFINITE($light)} {$light}!
+comp-light-replacer-eject-specified-lights = Ejetar todos os itens do tipo {MAKEPLURAL($light)}.
+comp-light-replacer-select-lights = Selecionar {MAKEPLURAL($light)}.
+comp-light-replacer-open-empty = {CAPITALIZE(THE($light-replacer))} está completamente vazio!
+comp-light-replacer-label = Tubos: {$tube}
+                            Lâmpadas: {$bulb}
+comp-light-bulb-incandescent = incandescente
+comp-light-bulb-dim = fraca
+comp-light-bulb-warm = quente
+comp-light-bulb-service = de serviço
+comp-light-bulb-fluorescent = fluorescente
+comp-light-bulb-exterior = externa
+comp-light-bulb-sodium = de sódio
+comp-light-bulb-old = antiga
+comp-light-bulb-led = LED
+comp-light-bulb-cyan = ciano
+comp-light-bulb-blue = azul
+comp-light-bulb-yellow = amarela
+comp-light-bulb-pink = rosa
+comp-light-bulb-orange = laranja
+comp-light-bulb-black = preta
+comp-light-bulb-red = vermelha
+comp-light-bulb-green = verde

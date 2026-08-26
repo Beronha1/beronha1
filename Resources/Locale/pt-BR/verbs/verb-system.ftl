@@ -58,4 +58,4 @@ verb-common-close-ui = Fechar IU
 verb-common-open-ui = Abrir IU
 verb-common-enter = Entrar
 verb-common-exit = Sair
-
+verb-categories-select-target = Definir alvo

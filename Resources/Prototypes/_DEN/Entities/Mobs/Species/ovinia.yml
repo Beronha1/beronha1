@@ -1,3 +1,13 @@
+- type: satiation
+  id: OviniaHunger
+  parent: NormalSatiationHunger
+  baseChangeRate: -0.0125
+
+- type: satiation
+  id: OviniaThirst
+  parent: NormalSatiationThirst
+  baseChangeRate: -0.075
+
 - type: entity
   parent:
   - AppearanceOvinia
@@ -34,9 +44,11 @@
     proto: ovinia
   - type: Flammable
     firestackFade: -0.15
-  - type: Hunger
-    baseDecayRate: 0.0125
-  - type: Thirst
-    baseDecayRate: 0.075
+  - type: Satiation
+    satiations:
+      Hunger:
+        prototype: OviniaHunger
+      Thirst:
+        prototype: OviniaThirst
   - type: Damageable
     damageModifierSet: Ovinia

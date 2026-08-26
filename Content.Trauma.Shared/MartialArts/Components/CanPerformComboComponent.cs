@@ -45,10 +45,4 @@ public sealed partial class CanPerformComboComponent : Component
     /// </summary>
     [DataField]
     public TimeSpan ResetTime = TimeSpan.Zero;
-
-    /// <summary>
-    /// Momentum counter.
-    /// </summary>
-    [DataField]
-    public int Momentum;
 }

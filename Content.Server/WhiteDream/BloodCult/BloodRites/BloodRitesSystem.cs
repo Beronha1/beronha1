@@ -3,6 +3,7 @@
 
 using Content.Shared.Body.Components;
 using Content.Server.Body.Systems;
+using Content.Shared.Body.Systems;
 using Content.Server.Hands.Systems;
 using Content.Server.Popups;
 using Content.Shared.Chemistry.Components.SolutionManager;

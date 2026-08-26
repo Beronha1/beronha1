@@ -1,8 +1,10 @@
 using System.Threading;
 using Content.Server.Power.Components;
 using Content.Server.Power.EntitySystems;
+using Content.Server.Station.Components;
 using Content.Server.StationEvents.Components;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station;
 using Content.Shared.Station.Components;
 using JetBrains.Annotations;
 using Robust.Shared.Audio;
@@ -17,6 +19,7 @@ namespace Content.Server.StationEvents.Events
     public sealed partial class PowerGridCheckRule : StationEventSystem<PowerGridCheckRuleComponent>
     {
         [Dependency] private ApcSystem _apcSystem = default!;
+        [Dependency] private SharedStationSystem _stationSystem = default!;
 
         public override void Initialize()
         {
@@ -29,16 +32,29 @@ namespace Content.Server.StationEvents.Events
         {
             base.Started(uid, component, gameRule, args);
 
-            if (GetRandomStationGrids(out var chosenStation) is not { } stationGrids) // Trauma - get grids instead of comparing station
+            if (GetRandomStationGrids(out var chosenStation) is null)
                 return;
 
-            component.AffectedStation = chosenStation!.Value; // Trauma - add !, shit language nullables
+            var station = chosenStation!.Value;
+            var largestGrid = _stationSystem.GetLargestGrid(station);
+
+            if (largestGrid == null)
+                return;
+
+            component.AffectedStation = station;
 
             var query = AllEntityQuery<ApcComponent, TransformComponent>();
-            while (query.MoveNext(out var apcUid ,out var apc, out var transform))
+            while (query.MoveNext(out var apcUid, out var apc, out var transform))
             {
-                if (apc.MainBreakerEnabled && transform.GridUid is { } grid && stationGrids.Contains(grid)) // Trauma - check stationGrids instead of StationMemberComponent
-                    component.Powered.Add(apcUid);
+                if (!apc.MainBreakerEnabled)
+                    continue;
+
+                // Only cut power to the station's main grid. Shuttles and auxiliary
+                // grids must stay powered so the event cannot strand a round.
+                if (transform.GridUid != largestGrid.Value)
+                    continue;
+
+                component.Powered.Add(apcUid);
             }
 
             RobustRandom.Shuffle(component.Powered);
@@ -89,10 +105,18 @@ namespace Content.Server.StationEvents.Events
             var activeRules = AllEntityQuery<PowerGridCheckRuleComponent, ActiveGameRuleComponent>();
             while (activeRules.MoveNext(out var _entity, out var powerGridRule, out var _activeGameRule))
             {
-                if (stationMemberComp.Station == powerGridRule.AffectedStation)
-                {
-                    return powerGridRule;
-                }
+                if (stationMemberComp.Station != powerGridRule.AffectedStation)
+                    continue;
+
+                var largestGrid = _stationSystem.GetLargestGrid(powerGridRule.AffectedStation);
+
+                if (largestGrid == null)
+                    continue;
+
+                if (xform.GridUid != largestGrid.Value)
+                    continue;
+
+                return powerGridRule;
             }
 
             return null;
@@ -109,7 +133,7 @@ namespace Content.Server.StationEvents.Events
 
                 if (TryComp(entity, out ApcComponent? apcComponent))
                 {
-                    if(!apcComponent.MainBreakerEnabled)
+                    if (!apcComponent.MainBreakerEnabled)
                         _apcSystem.ApcToggleBreaker(entity, apcComponent);
                 }
             }
@@ -132,7 +156,7 @@ namespace Content.Server.StationEvents.Events
             component.FrameTimeAccumulator += frameTime;
             if (component.FrameTimeAccumulator > component.UpdateRate)
             {
-                updates = (int) (component.FrameTimeAccumulator / component.UpdateRate);
+                updates = (int)(component.FrameTimeAccumulator / component.UpdateRate);
                 component.FrameTimeAccumulator -= component.UpdateRate * updates;
             }
 

@@ -77,28 +77,28 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         SubscribeLocalEvent<CrusherPoisonFangUpgradeComponent, AfterMarkerAttackedEvent>(OnPoisonMarker);
         SubscribeLocalEvent<CrusherFrostGlandUpgradeComponent, GunShotEvent>(OnFrostShot);
         SubscribeLocalEvent<CrusherEyeBloodDrunkMinerUpgradeComponent, AfterMarkerAttackedEvent>(OnMinerMarker);
-        SubscribeLocalEvent<CrusherEyeBloodDrunkMinerUpgradeComponent, ProjectileShotEvent>(OnMinerProjectile);
+        SubscribeLocalEvent<CrusherEyeBloodDrunkMinerUpgradeComponent, GunShotProjectileEvent>(OnMinerProjectile);
         SubscribeLocalEvent<CrusherIceBlockTalismanUpgradeComponent, AfterMarkerAttackedEvent>(OnIceBlockMarker);
-        SubscribeLocalEvent<CrusherIceBlockTalismanUpgradeComponent, ProjectileShotEvent>(OnIceProjectile);
+        SubscribeLocalEvent<CrusherIceBlockTalismanUpgradeComponent, GunShotProjectileEvent>(OnIceProjectile);
         SubscribeLocalEvent<CrusherAshDrakeSpikeUpgradeComponent, AfterMarkerAttackedEvent>(OnDrakeMarker);
-        SubscribeLocalEvent<CrusherAshDrakeSpikeUpgradeComponent, ProjectileShotEvent>(OnDrakeProjectile);
+        SubscribeLocalEvent<CrusherAshDrakeSpikeUpgradeComponent, GunShotProjectileEvent>(OnDrakeProjectile);
         SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, MarkerAttackAttemptEvent>(OnDemonMarker);
         SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, MeleeHitEvent>(OnDemonMelee);
         SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, GunGetProjectileSpreadEvent>(OnDemonProjectileSpread);
-        SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, ProjectileShotEvent>(OnDemonProjectile);
+        SubscribeLocalEvent<CrusherDemonClawsUpgradeComponent, GunShotProjectileEvent>(OnDemonProjectile);
         SubscribeLocalEvent<CrusherBlasterTubesUpgradeComponent, AfterMarkerAttackedEvent>(OnColossusMarker);
         SubscribeLocalEvent<CrusherBlasterTubesUpgradeComponent, GunRefreshModifiersEvent>(OnColossusRefresh);
         SubscribeLocalEvent<CrusherBlasterTubesUpgradeComponent, GunShotEvent>(OnColossusShot);
-        SubscribeLocalEvent<CrusherBlasterTubesUpgradeComponent, ProjectileShotEvent>(OnColossusProjectile);
-        SubscribeLocalEvent<CrusherLegionSkullUpgradeComponent, ProjectileShotEvent>(OnLegionProjectile);
-        SubscribeLocalEvent<CrusherMercuryAlloyUpgradeComponent, ProjectileShotEvent>(OnMercuryProjectile);
-        SubscribeLocalEvent<CrusherOniHornUpgradeComponent, ProjectileShotEvent>(OnOniProjectile);
+        SubscribeLocalEvent<CrusherBlasterTubesUpgradeComponent, GunShotProjectileEvent>(OnColossusProjectile);
+        SubscribeLocalEvent<CrusherLegionSkullUpgradeComponent, GunShotProjectileEvent>(OnLegionProjectile);
+        SubscribeLocalEvent<CrusherMercuryAlloyUpgradeComponent, GunShotProjectileEvent>(OnMercuryProjectile);
+        SubscribeLocalEvent<CrusherOniHornUpgradeComponent, GunShotProjectileEvent>(OnOniProjectile);
         SubscribeLocalEvent<KineticTrophyProjectileComponent, PreventCollideEvent>(OnTrophyProjectilePreventCollide);
         SubscribeLocalEvent<KineticTrophyProjectileComponent, ProjectileHitEvent>(OnTrophyProjectileHit);
 
         SubscribeLocalEvent<IncreasedDamageComponent, BeforeDamageChangedEvent>(OnIncreasedDamage);
         SubscribeLocalEvent<DamageMarkerComponent, MeleeHitEvent>(OnWeakeningMelee);
-        SubscribeLocalEvent<GunUpgradeAreaDamageComponent, ProjectileShotEvent>(OnAreaDamageShot);
+        SubscribeLocalEvent<GunUpgradeAreaDamageComponent, GunShotProjectileEvent>(OnAreaDamageShot);
         SubscribeLocalEvent<ProjectileAreaDamageComponent, ProjectileHitEvent>(OnAreaDamageHit);
     }
 
@@ -280,7 +280,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         });
     }
 
-    private void OnMinerProjectile(Entity<CrusherEyeBloodDrunkMinerUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnMinerProjectile(Entity<CrusherEyeBloodDrunkMinerUpgradeComponent> ent, ref GunShotProjectileEvent args)
         => EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile).BloodDrunkTrophy = ent;
 
     private void OnDrakeMarker(Entity<CrusherAshDrakeSpikeUpgradeComponent> ent, ref AfterMarkerAttackedEvent args)
@@ -318,7 +318,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         });
     }
 
-    private void OnDrakeProjectile(Entity<CrusherAshDrakeSpikeUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnDrakeProjectile(Entity<CrusherAshDrakeSpikeUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.AshDrakeTrophy = ent;
@@ -355,7 +355,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
             args.Spread = ent.Comp.ProjectileSpread;
     }
 
-    private void OnDemonProjectile(Entity<CrusherDemonClawsUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnDemonProjectile(Entity<CrusherDemonClawsUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.DemonClawsTrophy = ent;
@@ -373,12 +373,12 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         if (!ent.Comp.Active)
             return;
 
-        // ProjectileShotEvent prepared every pellet belonging to this shot.
+        // GunShotProjectileEvent prepared every pellet belonging to this shot.
         ent.Comp.Active = false;
         Dirty(ent);
     }
 
-    private void OnColossusProjectile(Entity<CrusherBlasterTubesUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnColossusProjectile(Entity<CrusherBlasterTubesUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var trophyProjectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         trophyProjectile.ColossusTrophy = ent;
@@ -394,28 +394,28 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
         area.DamageMultiplier = ent.Comp.ShockwaveDamageMultiplier;
     }
 
-    private void OnLegionProjectile(Entity<CrusherLegionSkullUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnLegionProjectile(Entity<CrusherLegionSkullUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.LegionTrophy = ent;
         Dirty(args.FiredProjectile, projectile);
     }
 
-    private void OnIceProjectile(Entity<CrusherIceBlockTalismanUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnIceProjectile(Entity<CrusherIceBlockTalismanUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.IceTalismanTrophy = ent;
         Dirty(args.FiredProjectile, projectile);
     }
 
-    private void OnMercuryProjectile(Entity<CrusherMercuryAlloyUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnMercuryProjectile(Entity<CrusherMercuryAlloyUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.MercuryTrophy = ent;
         Dirty(args.FiredProjectile, projectile);
     }
 
-    private void OnOniProjectile(Entity<CrusherOniHornUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnOniProjectile(Entity<CrusherOniHornUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticTrophyProjectileComponent>(args.FiredProjectile);
         projectile.OniTrophy = ent;
@@ -707,7 +707,7 @@ public sealed partial class CrusherUpgradeEffectsSystem : EntitySystem
             args.BonusDamage -= args.BaseDamage * (1f - ent.Comp.WeakeningModifier);
     }
 
-    private void OnAreaDamageShot(Entity<GunUpgradeAreaDamageComponent> ent, ref ProjectileShotEvent args)
+    private void OnAreaDamageShot(Entity<GunUpgradeAreaDamageComponent> ent, ref GunShotProjectileEvent args)
     {
         if (!HasComp<ProjectileComponent>(args.FiredProjectile))
             return;

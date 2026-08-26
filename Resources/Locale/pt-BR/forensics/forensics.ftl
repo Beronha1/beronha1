@@ -43,3 +43,6 @@ forensics-verb-message = Remova impressões digitais e resíduos de DNA do objet
 forensics-cleaning = Você começa a limpar as evidências de {THE($target)}...
 
 forensics-cleaning-cannot-clean = Não há nada que possa ser limpo em {THE($target)}!
+
+forensics-cleaning-user = Você começa a limpar as evidências de {THE($target)}...
+forensics-cleaning-others = {CAPITALIZE($user)} começa a limpar as evidências de {THE($target)}.

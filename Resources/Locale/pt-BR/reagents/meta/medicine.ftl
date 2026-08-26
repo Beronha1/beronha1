@@ -61,7 +61,7 @@ reagent-name-polypyrylium-oligomers = oligômeros de polipirílio
 reagent-desc-polypyrylium-oligomers = Uma mistura roxa de cadeias curtas de polieletrólitos, difícil de sintetizar em laboratório. Trata danos por asfixia e danos físicos, além de interromper sangramentos gradualmente.
 
 reagent-name-ambuzol = ambuzol
-reagent-desc-ambuzol = Uma substância altamente modificada capaz de interromper o avanço de uma infecção zumbi.
+reagent-desc-ambuzol = Uma substância altamente modificada capaz de curar a infecção zumbi.
 
 reagent-name-ambuzol-plus= ambuzol mais
 reagent-desc-ambuzol-plus = Aprimorado com omnizine, imuniza seres vivos contra a infecção.
@@ -157,3 +157,6 @@ reagent-desc-haloperidol = Elimina a maioria dos estimulantes e alucinógenos. R
 
 reagent-name-heparin = heparina
 reagent-desc-heparin = Usada com frequência como anticoagulante, dificulta a formação de coágulos. Uma superdosagem pode causar hemorragia interna.
+
+reagent-name-romerodone = romerodona
+reagent-desc-romerodone = Um subproduto da centrifugação de sangue zumbi; talvez seja possível criar uma cura com isto.

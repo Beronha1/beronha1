@@ -37,3 +37,5 @@ entity-condition-guidebook-vital-damage = { $max ->
         *[other] O alvo possui entre {NATURALFIXED($min, 2)} e {NATURALFIXED($max, 2)} de dano vital
     }
 }
+
+entity-condition-guidebook-moving = o alvo está se movendo a pelo menos { $speed } m/s

@@ -32,3 +32,4 @@ mech-no-enter = Você não pode pilotar isso.
 mech-eject-pilot-alert= {$user} está retirando o piloto do {$item}!
 
 mech-construction-guide-string = Todas as peças mecânicas devem ser fixadas ao arnês.
+mech-construction-guide-string-vim = Duas pernas de ciborgue e um capacete EVA devem ser fixados ao arnês.

@@ -263,6 +263,21 @@ public sealed class SmallRandom : IRobustRandom
         }
     }
 
+    /// <inheritdoc/>
+    [PublicAPI]
+    public long NextLong()
+        => NextInt64();
+
+    /// <inheritdoc/>
+    [PublicAPI]
+    public long NextLong(long maxValue)
+        => NextInt64(maxValue);
+
+    /// <inheritdoc/>
+    [PublicAPI]
+    public long NextLong(long minValue, long maxValue)
+        => NextInt64(minValue, maxValue);
+
     /*
      * Interface implementations.
      */

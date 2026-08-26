@@ -1,0 +1,10 @@
+examinable-satiation-component-examine-hunger-full = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} empanturrado!
+examinable-satiation-component-examine-hunger-okay = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} satisfeito.
+examinable-satiation-component-examine-hunger-concerned = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} faminto.
+examinable-satiation-component-examine-hunger-desperate = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} estar morrendo de fome!
+examinable-satiation-component-examine-hunger-none = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} não sentir fome.
+examinable-satiation-component-examine-thirst-full = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} bem hidratado!
+examinable-satiation-component-examine-thirst-okay = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} sem sede.
+examinable-satiation-component-examine-thirst-concerned = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} com sede.
+examinable-satiation-component-examine-thirst-desperate = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} ressecado!
+examinable-satiation-component-examine-thirst-none = {CAPITALIZE(SUBJECT($entity))} {CONJUGATE-BASIC($entity, "parecer", "parece")} não sentir sede.

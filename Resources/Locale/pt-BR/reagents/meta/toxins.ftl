@@ -62,3 +62,8 @@ reagent-name-toxintrash = matéria reprocessada
 reagent-desc-toxintrash = Uma pasta fétida refinada eficientemente a partir de matéria descartada. É Uma conversão perfeita e sem desperdício de salvados em alimento para Vox, embora seja um veneno violento para os demais.
 reagent-name-hemorrhinol = hemorrinol
 reagent-desc-hemorrhinol = Uma toxina que causa danos graves aos vasos sanguíneos e provoca hemorragias rápidas.
+
+reagent-name-hivarol = hivarol
+reagent-desc-hivarol = Uma toxina que ataca tipos específicos de células do corpo, prejudica a comunicação da mente coletiva e causa dor intensa quando uma está presente.
+reagent-name-phosphoric-acid = ácido fosfórico
+reagent-desc-phosphoric-acid = Uma substância ácida usada com frequência na agricultura. Mantenha longe dos olhos.

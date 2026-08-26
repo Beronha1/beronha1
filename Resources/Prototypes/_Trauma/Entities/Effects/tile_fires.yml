@@ -39,6 +39,8 @@
     walkSpeedModifier: 0.8
     sprintSpeedModifier: 0.8
   - type: Flammable
+    # Preserve the pre-upstream empty damage spec; the component now requires it explicitly.
+    damage: {}
     firestacksOnIgnite: 0.0
     firestackFade: -0.25
     onFire: true

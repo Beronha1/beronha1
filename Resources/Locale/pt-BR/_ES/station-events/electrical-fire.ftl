@@ -1,1 +1,2 @@
 es-station-event-electrical-fire-start-announcement = Atenção: os sistemas automáticos de segurança detectaram um incêndio elétrico espontâneo a bordo de {$location}. Recomenda-se o uso de agentes extintores.
+es-voter-query-string-electrical-fire-location = O incêndio elétrico deve começar em:

@@ -96,15 +96,6 @@
   - type: LanguageKnowledge
     languageId: Caprine
 
-# Preserve map compatibility after Ephemeral's status-display overhaul.
-- type: entity
-  id: Screen
-  parent: ESStatusDisplayStation
-
-- type: entity
-  id: ArrivalsShuttleTimer
-  parent: ESStatusDisplayArrivals
-
 # Restore Ephemeral prototypes referenced by selectively merged mask systems.
 - type: entity
   parent: BaseMentalAction

@@ -55,3 +55,7 @@ shuttle-console-docks-label = Docas
 
 shuttle-console-undock-fail = Falha ao desacoplar
 shuttle-console-dock-fail = Falha ao acoplar
+shuttle-console-nav-legend = Legenda
+shuttle-console-nav-other-dock = Docas externas
+shuttle-console-nav-cargo-dock = Docas de carga
+shuttle-console-nav-arrivals-dock = Docas de chegadas

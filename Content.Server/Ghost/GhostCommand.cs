@@ -60,7 +60,7 @@ namespace Content.Server.Ghost
             var mobStateSys = _entities.System<MobStateSystem>();
             if (!isAdmin && player.AttachedEntity is { Valid: true } livingEntity &&
                 (_entities.TryGetComponent<MobStateComponent>(livingEntity, out var mobState) &&
-                !mobStateSys.IsDead(livingEntity, mobState)))
+                mobStateSys.IsAlive(livingEntity, mobState)))
             {
                 shell.WriteLine(Loc.GetString("ghost-command-not-dead"));
                 return;

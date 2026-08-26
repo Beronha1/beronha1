@@ -31,6 +31,7 @@ public sealed partial class CloseRecentWindowUIController : UIController
         // (Does not need to be unlistened since UIControllers live forever)
         _uiManager.OnKeyBindDown += OnKeyBindDown;
         _uiManager.WindowRoot.OnChildAdded += OnRootChildAdded;
+        _uiManager.WindowRoot.OnChildRemoved += OnRootChildRemoved;
 
         _inputManager.SetInputCommand(EngineKeyFunctions.WindowCloseRecent,
             InputCmdHandler.FromDelegate(session => CloseMostRecentWindow()));
@@ -127,6 +128,14 @@ public sealed partial class CloseRecentWindowUIController : UIController
 
         if (window is DefaultWindow defaultWindow && _windowsWithCloseFallback.Add(defaultWindow))
             defaultWindow.FindControl<TextureButton>("CloseButton").OnPressed += _ => defaultWindow.Close();
+    }
+
+    private void OnRootChildRemoved(Control control)
+    {
+        if (control is BaseWindow window)
+        {
+            recentlyInteractedWindows.Remove(window);
+        }
     }
 
     /// <summary>

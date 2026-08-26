@@ -1,9 +1,9 @@
 using Content.Server._ES.Masks.Objectives.Components;
 using Content.Server._ES.Masks.Objectives.Relays;
 using Content.Server._ES.Masks.Objectives.Relays.Components;
-using Content.Server.Body.Systems;
 using Content.Shared._ES.Objectives;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;

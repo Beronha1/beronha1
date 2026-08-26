@@ -184,6 +184,7 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             return;
 
         component.NextAttack = minimum;
+        ResetUndamagedSwingsCount((uid, component));
         DirtyField(uid, component, nameof(MeleeWeaponComponent.NextAttack));
     }
 
@@ -400,12 +401,13 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
         AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(null, GetNetEntity(weaponUid), GetNetCoordinates(coordinates)), null);
     }
 
-    public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target, bool canParry = true) // Trauma - added CanParry
+    public bool AttemptLightAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target,
+        bool canParry = true) // Trauma - added CanParry
     {
         if (!TryComp(target, out TransformComponent? targetXform))
             return false;
 
-        return AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(targetXform.Coordinates)), null);
+        return AttemptAttack(user, weaponUid, weapon, new LightAttackEvent(GetNetEntity(target), GetNetEntity(weaponUid), GetNetCoordinates(targetXform.Coordinates), canParry: canParry), null); // Trauma - added canParry
     }
 
     public bool AttemptDisarmAttack(EntityUid user, EntityUid weaponUid, MeleeWeaponComponent weapon, EntityUid target)
@@ -707,17 +709,25 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
 
         _meleeSound.PlayHitSound(target.Value, user, GetHighestDamageSound(modifiedDamage, ProtoMan), hitEvent.HitSoundOverride, component);
 
-        if (damageResult.GetTotal() > FixedPoint2.Zero && !TerminatingOrDeleted(target.Value))
+        if (!TerminatingOrDeleted(target.Value))
         {
-            var attackerShake = new ESScreenshakeParameters
-                { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
-            var targetShake = new ESScreenshakeParameters
-                { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
-            _screenshake.Screenshake(user, null, attackerShake);
-            foreach (var shakeTarget in targets)
-                _screenshake.Screenshake(shakeTarget, targetShake, null);
+            if (damageResult.GetTotal() > FixedPoint2.Zero)
+            {
+                var attackerShake = new ESScreenshakeParameters
+                    { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
+                var targetShake = new ESScreenshakeParameters
+                    { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
+                _screenshake.Screenshake(user, null, attackerShake);
+                foreach (var shakeTarget in targets)
+                    _screenshake.Screenshake(shakeTarget, targetShake, null);
 
-            DoDamageEffect(targets, user, targetXform);
+                DoDamageEffect(targets, user, targetXform);
+                ResetUndamagedSwingsCount((meleeUid, component));
+            }
+            else
+            {
+                UndamagedAttack((meleeUid, component), target.Value, user);
+            }
         }
     }
 
@@ -902,17 +912,25 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             _meleeSound.PlayHitSound(target, user, GetHighestDamageSound(appliedDamage, ProtoMan), hitEvent.HitSoundOverride, component);
         }
 
-        if (appliedDamage.GetTotal() > FixedPoint2.Zero && targets.Count > 0)
+        if (targets.Count > 0)
         {
-            var attackerShake = new ESScreenshakeParameters
-                { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
-            var targetShake = new ESScreenshakeParameters
-                { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
-            _screenshake.Screenshake(user, null, attackerShake);
-            foreach (var shakeTarget in targets)
-                _screenshake.Screenshake(shakeTarget, targetShake, null);
+            if (appliedDamage.GetTotal() > FixedPoint2.Zero)
+            {
+                var attackerShake = new ESScreenshakeParameters
+                    { Trauma = 0.08f, DecayRate = 1.0f, Frequency = 0.009f };
+                var targetShake = new ESScreenshakeParameters
+                    { Trauma = 0.45f, DecayRate = 1.1f, Frequency = 0.04f };
+                _screenshake.Screenshake(user, null, attackerShake);
+                foreach (var shakeTarget in targets)
+                    _screenshake.Screenshake(shakeTarget, targetShake, null);
 
-            DoDamageEffect(targets, user, Transform(targets[0]));
+                DoDamageEffect(targets, user, Transform(targets[0]));
+                ResetUndamagedSwingsCount((meleeUid, component));
+            }
+            else
+            {
+                UndamagedAttack((meleeUid, component), targets[0], user);
+            }
         }
 
         // goob edit - stunmeta
@@ -1251,4 +1269,18 @@ public abstract partial class SharedMeleeWeaponSystem : EntitySystem
             }
         }
     }
+
+    /// <summary>
+    /// Updates <see cref="MeleeWeaponComponent.UndamagedSwings"/> and triggers a message if it meets <see cref="MeleeWeaponComponent.UndamagedAlertThreshold"/>.
+    /// </summary>
+    /// <param name="ent">The weapon entity tracking swings.</param>
+    /// <param name="target">The target entity that was hit without damage.</param>
+    /// <param name="user">The user swinging the weapon.</param>
+    protected virtual void UndamagedAttack(Entity<MeleeWeaponComponent> ent, EntityUid target, EntityUid user) { }
+
+    /// <summary>
+    /// Resets the <see cref="MeleeWeaponComponent.UndamagedSwings"/>; necessary to not trigger undamaged attacks messages too often.
+    /// </summary>
+    /// <param name="ent">The weapon entity tracking swings.</param>
+    protected virtual void ResetUndamagedSwingsCount(Entity<MeleeWeaponComponent> ent) { }
 }

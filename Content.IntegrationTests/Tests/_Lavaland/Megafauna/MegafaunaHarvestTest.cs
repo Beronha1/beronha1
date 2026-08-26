@@ -621,7 +621,9 @@ public sealed class MegafaunaHarvestTest : GameTest
             Assert.That(oniSword.TryComp<ScalpelComponent>(out _, components), Is.True);
             Assert.That(oniSword.TryComp<BoneSawComponent>(out _, components), Is.True);
             Assert.That(oniSword.TryComp<ItemActionGrantComponent>(out var swordAction, components), Is.True);
-            Assert.That(swordAction!.Actions, Does.Contain((EntProtoId) "ActionChildishOniBladeFlamingSlash"));
+            Assert.That(swordAction, Is.Not.Null);
+            Assert.That(oniSword.TryComp<ActionGrantComponent>(out var actionGrant, components), Is.True);
+            Assert.That(actionGrant!.Actions, Does.Contain((EntProtoId) "ActionChildishOniBladeFlamingSlash"));
 
             foreach (var oniReward in new[]
                      {

@@ -89,12 +89,6 @@
     <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Caco de vidro, tanque de água</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria um frasco de essência eldritch, uma potente mistura de cura para hereges.</Box></ColorBox>
 
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Rito dos Rostos Roubados</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">1</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Secundário T1</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Faca, coração, máscara de palhaço ou mímico</Box></ColorBox>
-    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma Faca da Inveja, arma que permite roubar a aparência de quem você esfaquear.</Box></ColorBox>
-
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Tubarão Abrasador</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">1</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Secundário T1</Box></ColorBox>
@@ -178,6 +172,12 @@
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Secundário T2</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Tábua de madeira, PDA, órgão ou membro</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria um rifle do caça-leões, arma balística fraca que pode mirar em alvos com clique direito no Modo de Combate, fortalecendo muito o projétil.</Box></ColorBox>
+
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Granada Semeadora de Ferrugem</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">1</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Secundário T2</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Carcaça de granada, pano, 2 lixos</Box></ColorBox>
+    <ColorBox><Box HorizontalAlignment="Stretch" VerticalAlignment="Center" Margin="5">Cria uma granada de ferrugem sobrenatural que espalha fumaça, aniquila silícios e cega seres orgânicos atingidos.</Box></ColorBox>
 
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">Talho Carmesim</Box></ColorBox>
     <ColorBox><Box HorizontalAlignment="Center" VerticalAlignment="Center" Margin="5">2</Box></ColorBox>

@@ -65,3 +65,8 @@ crucible-soul-effect-examine-message =
     } não parece estar todo aí.[/color]
 
 wounded-solider-effect-examine-message = [color=#5e718e]{ CAPITALIZE(SUBJECT($ent)) } { CONJUGATE-BE($ent) } em um estado de fúria eterna.[/color]
+
+reagent-name-eldritch-rust = ferrugem sobrenatural
+reagent-desc-eldritch-rust = Uma mistura de líquido marrom viscoso e encaroçado.
+reagent-physical-desc-rusty = enferrujado
+flavor-complex-rust = como cobre podre

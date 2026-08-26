@@ -50,8 +50,8 @@
   source: "https://github.com/goonstation/goonstation/blob/master/sound/voice/animal/werewolf_howl.ogg"
 
 - files: ["vulpscream1.ogg", "vulpscream2.ogg", "vulpscream3.ogg", "vulpscream4.ogg", "vulpscream5.ogg"]
-  copyright: 'inspectorj'
-  license: https://www.soundsnap.com/licence
+  copyright: "inspectorj; licensed under the Soundsnap license: https://www.soundsnap.com/licence"
+  license: "Custom"
   source: https://www.soundsnap.com
 
 - files: ["vulp_yawn1.ogg"]

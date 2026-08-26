@@ -79,6 +79,7 @@ public sealed partial class MegafaunaTest : GameTest
     public const string MercuryFissure = "MercuryFissure";
     private static readonly ProtoId<DamageTypePrototype> BluntDamage = "Blunt";
     private static readonly ProtoId<MegafaunaSelectorPrototype> ChildishOniClawSelector = "ChildishOniClawSlash";
+    private static readonly ProtoId<MegafaunaSelectorPrototype> ChildishOniRampageSelector = "ChildishOniRampage";
 
     [Test]
     public async Task BloodDrunkMinerUsesPhysicalDashAndLavalandBossComponents()
@@ -506,6 +507,45 @@ public sealed partial class MegafaunaTest : GameTest
             random.SetSeed(6734);
             var args = new MegafaunaCalculationBaseArgs(megafauna, oni, entMan, protoMan, log, random);
             Assert.That(selector.CheckConditions(args), Is.False);
+        });
+    }
+
+    [Test]
+    public async Task ChildishOniRampageGracefullyDeclinesZeroLengthTarget()
+    {
+        var pair = Pair;
+        var server = pair.Server;
+        var testMap = await pair.CreateTestMap();
+        var entMan = server.ResolveDependency<IEntityManager>();
+        var protoMan = server.ResolveDependency<IPrototypeManager>();
+        var log = server.ResolveDependency<ILogManager>().GetSawmill("lavaland.oni-rampage.test");
+        var actions = server.System<SharedActionsSystem>();
+        var megafauna = server.System<MegafaunaSystem>();
+
+        EntityUid oni = default;
+        await server.WaitPost(() =>
+            oni = entMan.SpawnAtPosition(new EntProtoId("MobChildishOni"), testMap.GridCoords));
+        await server.WaitRunTicks(1);
+
+        await server.WaitAssertion(() =>
+        {
+            Assert.That(actions.TryGetActionById(oni, "ActionChildishOniRampage", out var rampage), Is.True);
+
+            var targeting = entMan.EnsureComponent<MegafaunaAiTargetingComponent>(oni);
+            targeting.TargetEnt = null;
+            targeting.TargetCoords = entMan.GetComponent<TransformComponent>(oni).Coordinates;
+
+            var request = megafauna.GetPerformEvent(oni, rampage!.Value.Owner);
+            var oniActions = entMan.GetComponent<ActionsComponent>(oni);
+            Assert.That(actions.CanPerformAction((oni, oniActions), rampage.Value, request), Is.True);
+
+            var selector = protoMan.Index(ChildishOniRampageSelector).Selector;
+            var random = new RobustRandom();
+            random.SetSeed(8741);
+            var args = new MegafaunaCalculationBaseArgs(megafauna, oni, entMan, protoMan, log, random);
+
+            Assert.That(selector.CheckConditions(args), Is.True);
+            Assert.That(selector.Invoke(args), Is.EqualTo(selector.FailDelay));
         });
     }
 

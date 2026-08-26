@@ -56,13 +56,13 @@ public sealed partial class KineticModkitSystem : EntitySystem
         SubscribeLocalEvent<KineticDronePassthroughProjectileComponent, PreventCollideEvent>(OnDronePassthrough);
 
         SubscribeLocalEvent<KineticRapidRepeaterUpgradeComponent, RechargeBasicEntityAmmoGetCooldownModifiersEvent>(OnRapidCooldown);
-        SubscribeLocalEvent<KineticRapidRepeaterUpgradeComponent, ProjectileShotEvent>(OnRapidShot);
+        SubscribeLocalEvent<KineticRapidRepeaterUpgradeComponent, GunShotProjectileEvent>(OnRapidShot);
         SubscribeLocalEvent<KineticRapidRepeaterProjectileComponent, ProjectileHitEvent>(OnRapidHit);
 
-        SubscribeLocalEvent<KineticResonatorUpgradeComponent, ProjectileShotEvent>(OnResonatorShot);
+        SubscribeLocalEvent<KineticResonatorUpgradeComponent, GunShotProjectileEvent>(OnResonatorShot);
         SubscribeLocalEvent<KineticResonatorProjectileComponent, ProjectileHitEvent>(OnResonatorHit);
 
-        SubscribeLocalEvent<KineticDeathSyphonUpgradeComponent, ProjectileShotEvent>(OnSyphonShot);
+        SubscribeLocalEvent<KineticDeathSyphonUpgradeComponent, GunShotProjectileEvent>(OnSyphonShot);
         SubscribeLocalEvent<KineticDeathSyphonProjectileComponent, BeforeProjectileHitEvent>(OnSyphonBeforeHit);
         SubscribeLocalEvent<KineticDeathSyphonProjectileComponent, ProjectileHitEvent>(OnSyphonHit);
         SubscribeLocalEvent<KineticDeathSyphonMarkComponent, MobStateChangedEvent>(OnSyphonTargetStateChanged);
@@ -113,7 +113,7 @@ public sealed partial class KineticModkitSystem : EntitySystem
         ref RechargeBasicEntityAmmoGetCooldownModifiersEvent args)
         => args.Multiplier *= ent.Comp.MissCooldownMultiplier;
 
-    private void OnRapidShot(Entity<KineticRapidRepeaterUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnRapidShot(Entity<KineticRapidRepeaterUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticRapidRepeaterProjectileComponent>(args.FiredProjectile);
         projectile.SourceUpgrade = ent;
@@ -139,7 +139,7 @@ public sealed partial class KineticModkitSystem : EntitySystem
         Dirty(weapon, recharge);
     }
 
-    private void OnResonatorShot(Entity<KineticResonatorUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnResonatorShot(Entity<KineticResonatorUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticResonatorProjectileComponent>(args.FiredProjectile);
         projectile.SourceUpgrade = ent;
@@ -188,7 +188,7 @@ public sealed partial class KineticModkitSystem : EntitySystem
         resonance.Shooter = shooter;
     }
 
-    private void OnSyphonShot(Entity<KineticDeathSyphonUpgradeComponent> ent, ref ProjectileShotEvent args)
+    private void OnSyphonShot(Entity<KineticDeathSyphonUpgradeComponent> ent, ref GunShotProjectileEvent args)
     {
         var projectile = EnsureComp<KineticDeathSyphonProjectileComponent>(args.FiredProjectile);
         projectile.SourceUpgrade = ent;

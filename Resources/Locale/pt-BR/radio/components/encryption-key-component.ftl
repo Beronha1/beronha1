@@ -14,6 +14,5 @@ encryption-keys-are-locked = Os slots da chave de criptografia estão bloqueados
 encryption-keys-panel-locked = Abra o painel de manutenção primeiro!
 
 examine-encryption-channels-prefix = Frequências disponíveis:
-examine-encryption-channel = [color={$color}]{$key} para {$id} ({NATURALFIXED($freq, 1)}) {$deviceType}[/color]
+examine-encryption-channel = [color={$color}]{$key} para {$id} ({$freq}) {$deviceType}[/color]
 examine-encryption-default-channel = O canal padrão é [color={$color}]{$channel}[/color].
-

@@ -87,6 +87,15 @@ entity-condition-guidebook-breathing =
                 *[false] sufocante
                }
 
+entity-condition-guidebook-total-satiation =
+    { $max ->
+        [2147483648] o alvo tem ao menos {NATURALFIXED($min, 2)} de {$type} total
+        *[other] { $min ->
+                    [0] o alvo tem no máximo {NATURALFIXED($max, 2)} de {$type} total
+                    *[other] o alvo tem entre {NATURALFIXED($min, 2)} e {NATURALFIXED($max, 2)} de {$type} total
+                 }
+    }
+
 entity-condition-guidebook-internals =
     o metabolizador é { $usingInternals ->
                 [true] usando internos

@@ -16,4 +16,4 @@ borg-slot-modules-empty = Módulos
 borg-slot-powercell-empty = Células de energia
 borg-slot-inflatable-door-empty = Porta inflável
 borg-slot-inflatable-wall-empty = Parede inflável
-
+borg-slot-xenoborg-crystal-empty = Cristais de xenoborgue

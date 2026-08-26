@@ -94,4 +94,10 @@ signal-port-description-logic-enable = Carrega o sinal de entrada na célula de 
 signal-port-name-logic-random-input = Sinal de entrada
 signal-port-description-logic-random-input = Recebe qualquer sinal para acionar uma saída aleatória.
 
+signal-port-name-timer = Temporizador
+signal-port-description-timer = Inicia a contagem regressiva do dispositivo.
+signal-port-name-target-receiver = Receptor de alvo
+signal-port-description-target-receiver = Recebe informações de alvo de um localizador de alvos.
+signal-port-name-target-source = Localizador de alvos
+signal-port-description-target-source = Envia informações de alvo para um receptor de alvo.
 

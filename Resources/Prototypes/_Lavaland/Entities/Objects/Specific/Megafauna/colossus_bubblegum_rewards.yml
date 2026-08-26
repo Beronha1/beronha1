@@ -85,7 +85,6 @@
   - type: ActionGrant
     actions: [ ActionCainAbelWisps ]
   - type: ItemActionGrant
-    actions: [ ActionCainAbelWisps ]
   - type: StaticPrice
     price: 12000
 
@@ -148,7 +147,6 @@
   - type: ActionGrant
     actions: [ ActionSoulScytheBloodWave ]
   - type: ItemActionGrant
-    actions: [ ActionSoulScytheBloodWave ]
   - type: Appearance
   - type: GenericVisualizer
     visuals:
@@ -196,7 +194,6 @@
   - type: ActionGrant
     actions: [ ActionBloodContractMark ]
   - type: ItemActionGrant
-    actions: [ ActionBloodContractMark ]
   - type: StaticPrice
     price: 12000
 

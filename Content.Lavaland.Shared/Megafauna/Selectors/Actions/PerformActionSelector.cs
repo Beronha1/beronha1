@@ -29,7 +29,11 @@ public sealed partial class PerformActionSelector : MegafaunaSelector
         var ev = args.System.GetPerformEvent(args.Entity, action.Value.Owner);
         if (!actions.TryPerformAction(args.Entity, ev))
         {
-            DebugTools.Assert($"{entMan.ToPrettyString(args.Entity)}'s AI failed to perform action {entMan.ToPrettyString(action.Value.Owner)} with ID {ActionId}!");
+            // Action-specific handlers can legitimately decline after the
+            // generic availability check, for example when a world target is
+            // the boss's current position. Retry on a later AI update instead
+            // of crashing debug servers and unrelated integration tests.
+            args.Log.Debug($"{entMan.ToPrettyString(args.Entity)}'s AI declined action {entMan.ToPrettyString(action.Value.Owner)} with ID {ActionId}.");
             return FailDelay;
         }
 

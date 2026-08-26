@@ -54,26 +54,20 @@ public sealed partial class GunUpgradeSystem
     }
 
     [SubscribeLocalEvent]
-    private void OnDamageGunShotComps(Entity<GunUpgradeProjectileComponentsComponent> ent, ref GunShotEvent args)
+    private void OnDamageGunShotComps(Entity<GunUpgradeProjectileComponentsComponent> ent, ref GunShotProjectileEvent args)
     {
-        foreach (var (ammo, _) in args.Ammo)
-        {
-            if (_projQuery.HasComp(ammo))
-                EntityManager.AddComponents(ammo.Value, ent.Comp.Components);
-        }
+        if (_projQuery.HasComp(args.FiredProjectile))
+            EntityManager.AddComponents(args.FiredProjectile, ent.Comp.Components);
     }
 
     [SubscribeLocalEvent]
-    private void OnVampirismGunShot(Entity<GunUpgradeVampirismComponent> ent, ref GunShotEvent args)
+    private void OnVampirismGunShot(Entity<GunUpgradeVampirismComponent> ent, ref GunShotProjectileEvent args)
     {
-        foreach (var (ammo, _) in args.Ammo)
-        {
-            if (!_projQuery.HasComp(ammo))
-                continue;
+        if (!_projQuery.HasComp(args.FiredProjectile))
+            return;
 
-            var comp = EnsureComp<ProjectileVampirismComponent>(ammo.Value);
-            comp.DamageOnHit = ent.Comp.DamageOnHit;
-        }
+        var comp = EnsureComp<ProjectileVampirismComponent>(args.FiredProjectile);
+        comp.DamageOnHit = ent.Comp.DamageOnHit;
     }
 
     [SubscribeLocalEvent]

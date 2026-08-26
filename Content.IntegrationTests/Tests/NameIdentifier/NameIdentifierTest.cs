@@ -4,6 +4,7 @@ using Content.IntegrationTests.Fixtures;
 using Content.IntegrationTests.Fixtures.Attributes;
 using Content.Server.NameIdentifier;
 using Robust.Shared.GameObjects;
+using Robust.Shared.Localization;
 using Robust.Shared.Map;
 
 namespace Content.IntegrationTests.Tests.NameIdentifier;
@@ -220,12 +221,14 @@ public sealed class NameIdentifierTest : GameTest
     [Description("Tests that a localized value is properly fetched and attached.")]
     public async Task LocalizedIdentifier()
     {
+        var localization = Server.ResolveDependency<ILocalizationManager>();
+
         await Server.WaitAssertion(() =>
         {
             var single = SSpawn(LocTestEnt);
             Assert.That(
                 SEntMan.GetComponent<MetaDataComponent>(single).EntityName,
-                Is.EqualTo($"{LocTestEnt} TestValue"),
+                Is.EqualTo($"{LocTestEnt} {localization.GetString("name-identifier-test-1")}"),
                 "Did not create a valid localized name."
                 );
         });

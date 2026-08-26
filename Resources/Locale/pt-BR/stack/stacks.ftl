@@ -260,3 +260,7 @@ stack-white-marble-floor = piso de mármore branco
 stack-dark-marble-floor = piso de mármore escuro
 stack-plasma-marble-floor = piso de mármore de phoron
 stack-uranium-marble-floor = piso de mármore de urânio
+stack-xenoborg-crystal = {$amount ->
+    [1] cristal de xenoborgue
+    *[other] cristais de xenoborgue
+}

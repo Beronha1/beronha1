@@ -93,4 +93,7 @@ xenoarch-trigger-examine-timer = Entalhes e riscos cobrem a superfície... Mal d
 ### Pistas dos efeitos
 xenoarch-effect-puddle = Produz uma poça dos seguintes reagentes: {$reagent}
 xenoarch-effect-foam = Produz espuma dos seguintes reagentes: {$reagent}
-
+xenoarch-trigger-tip-particle = Partículas que afetam singularidades
+xenoarch-trigger-tip-anomparticle = Partículas que afetam anomalias
+xenoarch-trigger-tip-stamina-damage = Exaustão orgânica
+xenoarch-trigger-tip-laser = Impactos de fótons de alta intensidade

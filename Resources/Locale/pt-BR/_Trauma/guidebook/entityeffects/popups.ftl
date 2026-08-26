@@ -19,3 +19,4 @@ entity-effect-popup-vampire-light-2 = Você deveria se afastar do espaço...
 entity-effect-popup-vampire-light-3 = Você parece pálido!
 
 entity-effect-popup-strawberry-ice-addiction = Você sente a necessidade de um sabor rosado gaseificado
+entity-effect-popup-pressurized-slime-death = O blob se rompe, espalhando líquido pela área!

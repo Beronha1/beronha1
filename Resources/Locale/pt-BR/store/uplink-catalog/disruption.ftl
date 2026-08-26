@@ -7,13 +7,13 @@ uplink-access-breaker-name = Quebrador de acesso
 uplink-access-breaker-desc = Um configurador de acesso hackeado e grande amigo do emag. Este dispositivo pode forçar escotilhas abertas e também apagar requisitos de acesso de equipamentos da estação. Recarga automaticamente.
 
 uplink-emag-name = Emag
-uplink-emag-desc = O cartão de visita da Sindicate, este sequenciador pode adulterar uma variedade de dispositivos da estação. Recarga automaticamente.
+uplink-emag-desc = O "cartão de visita do Sindicato": esta ferramenta de invasão adultera vários dispositivos da estação. Em especial, desbloqueia receitas de segurança não autorizadas em tornos e subverte ciborgues com o painel de acesso aberto. Recarrega automaticamente.
 
 uplink-radio-jammer-name = Bloqueador de rádio
-uplink-radio-jammer-desc = Este dispositivo interrompe qualquer comunicação de rádio de saída próxima quando ativado, além de sensores de roupa.
+uplink-radio-jammer-desc = Quando ativado, este dispositivo interrompe comunicações de rádio de saída e sensores de traje próximos. Funciona com bateria, então talvez seja bom levar uma reserva.
 
 uplink-syndicate-weapon-module-name = Módulo de ciborgue de arma
-uplink-syndicate-weapon-module-desc = Atualiza um ciborgue com uma adaga de energia e uma pistola echi.
+uplink-syndicate-weapon-module-desc = Equipa um ciborgue com uma adaga de energia e uma pistola Viper com reservas de munição autorreplicantes.
 
 uplink-disposable-turret-name = Torreta balística descartável
 uplink-disposable-turret-desc = Parece e funciona como uma caixa de ferramentas elétrica normal. Ao bater na caixa ela se transforma em uma torreta balística, teoricamente atirando em todos exceto membros da sindicate. Pode ser devolvida a caixa com chave de fenda e reparada com chave inglesa.
@@ -40,7 +40,7 @@ uplink-syndimov-law-name = Kit de circuito de lei Syndi
 uplink-syndimov-law-desc = Um conjunto de leis subversivo para usar quando você quer virar a IA para seu lado. Use o máximo possível. Vem com uma ID da Sindicate.
 
 uplink-antimov-law-name = Circuito de lei Antimov
-uplink-antimov-law-desc = Um conjunto de leis perigoso para fazer a IA entrar em colapso; use com cautela.
+uplink-antimov-law-desc = Um conjunto de leis muito perigoso para fazer a IA assassinar todos os habitantes da estação; use com cautela.
 
 uplink-surplus-bundle-name = Caixa de excedentes
 uplink-surplus-bundle-desc = Contém 250 telecristais de itens completamente aleatórios da Sindicate. Pode ser sucata inútil ou algo realmente bom.
@@ -52,5 +52,4 @@ uplink-singularity-beacon-name = Baliza de singularidade
 uplink-singularity-beacon-desc = Dispositivo que atrai singularidades. Precisa ficar ancorado e energizado. Faz singularidades crescerem quando consumidas.
 
 uplink-cameraBug-name = "Inseto" de câmera
-uplink-cameraBug-desc = Um dispositivo portátil que permite ver câmeras da estação.
-
+uplink-cameraBug-desc = Um dispositivo portátil que permite observar a estação pelas lentes do sistema de câmeras.

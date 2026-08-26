@@ -10,17 +10,16 @@ uplink-reinforcement-radio-nukeops-name = Teletransportador de operador nuclear
 uplink-reinforcement-radio-nukeops-desc = Rádio para um operador nuclear de qualidade extremamente duvidosa. Sem botão de desligar, compre isso se estiver pronto para a festa. Ele vem com equipamento básico de operador nuclear.
 
 uplink-reinforcement-radio-cyborg-assault-name = Teletransportador de Ciborgue de assalto da Sindicate
-uplink-reinforcement-radio-cyborg-assault-desc = Uma máquina de matar ágil e violenta com acesso a uma Energy Sword, LMG, sequenciador criptográfico e um pinpointer.
+uplink-reinforcement-radio-cyborg-assault-desc = Uma máquina de matar ágil e violenta com acesso a uma espada de energia, uma L6 SAW com reservas de munição autorreabastecíveis, um EMAG e um localizador.
 
 uplink-reinforcement-radio-ancestor-name = Teletransportador de antepassado reforçado
-uplink-reinforcement-radio-ancestor-desc = Chame um antepassado treinado de sua escolha para ajudar você. Vem com um único cigarro da sindicate.
+uplink-reinforcement-radio-ancestor-desc = Chame um antepassado treinado de sua escolha para ajudar você. Vem com um cigarro do Sindicato e um chapéu bacana.
 
 uplink-carp-dehydrated-name = Peixe-carp desssecado
-uplink-carp-dehydrated-desc = Parece um pelúcia de carpa, mas basta adicionar água e vira uma carpa espacial real!
+uplink-carp-dehydrated-desc = O poder de uma carpa espacial na palma da sua mão. Adicione água para liberar uma carpa espacial de verdade. Faça carinho antes do uso para evitar fogo amigo suspeitamente aquático.
 
 uplink-mobcat-microbomb-name = Teletransportador de SyndiCat
-uplink-mobcat-microbomb-desc = Chama um gato equipado com implante de microbomba. Explode quando ferido seriamente. Pode morder com dor.
+uplink-mobcat-microbomb-desc = Chama um gato resistente ao espaço equipado com implante de microbomba. Explode quando gravemente ferido e pode dar mordidas dolorosas.
 
 uplink-syndicate-pai-name = Dispositivo pAI da Sindicate
 uplink-syndicate-pai-desc = Uma variante de pAI da Sindicate com acesso ao canal de rádio da Sindicate. Não garantimos a utilidade deles.
-

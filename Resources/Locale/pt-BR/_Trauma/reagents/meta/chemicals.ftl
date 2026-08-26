@@ -66,3 +66,10 @@ reagent-desc-hephaestium = hefaestio, nomeado após o deus grego da pedra Hefest
 
 reagent-name-ageium= idade
 reagent-desc-ageium = ageium, faz com que os sujeitos injetados com ele não envelheçam!
+
+reagent-name-holy-chlorine-trifluoride = trifluoreto de cloro sagrado
+reagent-desc-holy-chlorine-trifluoride = de quem foi essa ideia?
+reagent-name-burnite = burnita
+reagent-desc-burnite = Uma substância química flamejante e altamente volátil, normalmente produzida apenas ao abrir por acidente um portal para o inferno. Felizmente, isso não é fácil de fazer.
+reagent-name-unknown-reagent = unobtânio
+reagent-desc-unknown-reagent = Uma substância química incrivelmente difícil de encontrar, conhecida por causar efeitos muito voláteis, seja derramada ou aplicada em plantas.

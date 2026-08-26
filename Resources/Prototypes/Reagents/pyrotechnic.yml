@@ -198,7 +198,8 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition
@@ -240,7 +241,8 @@
   metabolisms:
     Bloodstream:
       effects:
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: 1
         conditions:
         - !type:MetabolizerTypeCondition

@@ -40,7 +40,6 @@
   - type: ActionGrant
     actions: [ ActionChildishOniBladeFlamingSlash ]
   - type: ItemActionGrant
-    actions: [ ActionChildishOniBladeFlamingSlash ]
   - type: MegafaunaWeaponLooter
 
 - type: entity

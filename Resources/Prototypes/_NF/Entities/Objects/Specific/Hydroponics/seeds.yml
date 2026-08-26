@@ -5,6 +5,6 @@
   id: CoffeeSeeds
   components:
   - type: Seed
-    seedId: coffee
+    plantId: CoffeePlants
   - type: Sprite
     sprite: _NF/Objects/Specific/Hydroponics/coffee.rsi

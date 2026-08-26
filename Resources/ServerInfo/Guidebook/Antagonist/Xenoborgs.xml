@@ -16,7 +16,9 @@
   ## Objetivos
 
   Seu objetivo principal é matar e colher todos os cérebros sencientes da estação, levando-os ao núcleo da Nave-Mãe. Podem ser cérebros orgânicos ou positrônicos.
-  Colete materiais para criar mais corpos de xenoborg.
+
+  Roube energia da estação com extratores de xenoborgue para produzir cristais de xenoborgue e criar mais corpos.
+
   Proteja a Nave-Mãe a qualquer custo.
 
   ## O núcleo da Nave-Mãe
@@ -28,7 +30,7 @@
 
   ### Adicionando tripulantes às suas fileiras:
   <Box>
-    <GuideEntityEmbed Entity="MachineArtifactCrusher" Caption="triturador de corpos"/>
+    <GuideEntityEmbed Entity="MachineArtifactCrusherXenoborg" Caption="triturador de corpos"/>
   </Box>
   Como Nave-Mãe, você deve aumentar seu exército de borgs convertendo todos os seres sencientes encontrados. Faça assim:
   - 1. Mande seus Xenoborgs trazerem tripulantes mortos até a oficina e colocá-los no triturador de corpos
@@ -61,17 +63,16 @@
   [bold]Módulos exclusivos iniciais:[/bold]
   <Box>
     <GuideEntityEmbed Entity="XenoborgModuleAccessBreaker" Caption="módulo quebrador de acesso"/>
-    <GuideEntityEmbed Entity="XenoborgModuleFireExtinguisher" Caption="módulo extintor de incêndio"/>
   </Box>
 
   [bold]O Xenoborg Engenheiro também começa com módulos de engenharia, como:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="BorgModuleAdvancedTool" Caption="módulo de ferramentas avançadas"/>
-    <GuideEntityEmbed Entity="BorgModuleConstruction" Caption="módulo de construção"/>
+    <GuideEntityEmbed Entity="XenoborgModuleAdvancedTool" Caption="módulo de ferramentas avançadas"/>
+    <GuideEntityEmbed Entity="XenoborgModuleConstruction" Caption="módulo de construção"/>
   </Box>
+  [bold]Módulos exclusivos de melhoria:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="BorgModuleRCD" Caption="módulo de engenharia"/>
-    <GuideEntityEmbed Entity="BorgModuleCable" Caption="módulo de cabos"/>
+    <GuideEntityEmbed Entity="XenoborgModuleDoorControl" Caption="módulo de controle de portas"/>
   </Box>
 
   ### Xenoborg Pesado
@@ -88,7 +89,7 @@
 
   [bold]Módulos exclusivos de upgrade:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="módulo laser pesado de xenoborg"/>
+    <GuideEntityEmbed Entity="XenoborgModuleHeavyLaser" Caption="módulo de canhão laser de xenoborgue"/>
   </Box>
 
   ### Xenoborg Batedor
@@ -125,11 +126,32 @@
 
   [bold]Módulos exclusivos de upgrade:[/bold]
   <Box>
-    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="módulo de camuflagem"/>
+    <GuideEntityEmbed Entity="XenoborgModuleSuperCloakDevice" Caption="módulo de invisibilidade"/>
   </Box>
 
-  ## Preparação
-  Antes do ataque, cada xenoborg deve ajudar a Nave-Mãe a coletar materiais para criar corpos vazios. Antes de fazer FTL perto da estação, garanta que o IFF esteja desligado. A coleta pode ser feita de qualquer forma, mas exige trabalho em equipe para ser rápida. O método mais seguro é usar detritos espaciais, colhendo sucata e materiais refinados para entregar ao núcleo. Com recursos suficientes, os Xenoborgs devem obter cérebros sencientes sem serem detectados. Quanto mais tempo a ameaça permanecer desconhecida, mais perigosa ficará.
+  ## Extratores de xenoborgue
+  <Box>
+    <GuideEntityEmbed Entity="XenoborgExtractor" Caption="extrator de xenoborgue"/>
+    <GuideEntityEmbed Entity="MaterialXenoborgCrystal" Caption="cristal de xenoborgue"/>
+  </Box>
+  O extrator é uma máquina necessária para os xenoborgues ampliarem seu exército. Ele rouba energia dos cabos conectados para produzir cristais de xenoborgue.
+
+  O núcleo da Nave-Mãe pode produzir um pacote de extrator de xenoborgue por 10 unidades de aço.
+
+  Quando ancorado, o extrator começa a drenar energia do cabo de alta tensão sob ele.
+
+  Ele produz um cristal de xenoborgue sempre que sua bateria interna fica cheia.
+
+  Consome 240 kW e leva 15 segundos para produzir um cristal de xenoborgue.
+
+  [bold]Atenção![/bold] Ele dispara o alerta de dispositivo clandestino consumidor de energia! Qualquer pessoa usando o monitor de energia saberá que há algo errado.
+
+  ## Preparação e táticas
+  Antes de fazer FTL perto da estação, garanta que o IFF esteja desligado.
+
+  Antes de lançar um ataque, os xenoborgues devem discutir a estratégia e decidir quais alvos atacar primeiro.
+
+  Os xenoborgues devem tentar coletar cérebros sencientes sem serem detectados. Quanto mais tempo a ameaça permanecer desconhecida, mais perigosos eles se tornam.
 
   ## Lawsets da Nave-Mãe e dos Xenoborgs
   A Nave-Mãe e os Xenoborgs possuem leis únicas que definem seu propósito de autorreplicação e proteção do núcleo.

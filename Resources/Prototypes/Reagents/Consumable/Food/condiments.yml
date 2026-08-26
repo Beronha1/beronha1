@@ -141,9 +141,11 @@
   metabolisms:
     Digestion:
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 0.5
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -0.5 # high salt content
 
 - type: reagent
@@ -175,7 +177,8 @@
     Digestion:
       effects:
       # eating salt on its own kinda sucks, kids
-      - !type:SatiateThirst
+      - !type:Satiate
+        satiationType: Thirst
         factor: -0.5
   tileReactions: # 古布站 - Wraith Start Goobstation
     - !type:EnsureTileReaction
@@ -205,7 +208,8 @@
     Digestion:
       # 12 diona blood for 1 unit of syrup, this stuff better be worthwhile.
       effects:
-      - !type:SatiateHunger
+      - !type:Satiate
+        satiationType: Hunger
         factor: 6.0 #Stronger than cookedramen
   footstepSound:
     collection: FootstepSlime

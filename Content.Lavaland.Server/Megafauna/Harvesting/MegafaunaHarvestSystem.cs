@@ -198,7 +198,7 @@ public sealed partial class MegafaunaHarvestSystem : EntitySystem
             if (ProtoMan.TryIndex<ToolQualityPrototype>(qualityId, out var quality))
                 tools.Add(Loc.GetString(quality.ToolName));
             else
-                tools.Add(qualityId);
+                tools.Add(qualityId.Id);
         }
 
         args.PushMarkup(Loc.GetString(

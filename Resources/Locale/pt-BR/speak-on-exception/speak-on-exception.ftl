@@ -1,0 +1,14 @@
+exception-censored-1 = `Option::unwrap()` foi chamado em um valor `None`
+exception-censored-2 = SyntaxError: sintaxe inválida
+exception-censored-3 = java.lang.NullPointerException: não foi possível invocar "com.spacestation14.ss14.Cat.meow(java.lang.String)" porque o valor retornado por "com.spacestation14.robusttoolbox.Utils.getCatSound()" é nulo
+exception-censored-4 = Erro: não foi possível abrir a tela: x3
+exception-censored-5 = Falha de segmentação (núcleo despejado)
+exception-censored-6 = cat-speech-dataset-120
+exception-censored-7 = Não foi possível resolver "Robust.Shared.GameObjects.MetaDataComponent" na entidade 5233063!
+exception-censored-8 = ReferenceError não capturado: meow não está definido
+exception-censored-9 = TabError: uso inconsistente de tabulações e espaços na indentação
+exception-censored-10 = code.dm:3:erro: meow: procedimento indefinido
+exception-censored-11 = Falha ao apagar a mente: exceção
+exception-censored-12 = Meditação do Guru: #0000000F.0000ACA7
+exception-censored-13 = Token inesperado: 'w'
+exception-censored-14 = Tempo limite da operação esgotado: AwaitNap()

@@ -39,7 +39,6 @@
       speechVerb: Robotic
       speechSounds: Borg
     - type: Silicon
-      entityType: Player
       batteryPowered: false
       chargeThresholdMid: null
       chargeThresholdLow: null
@@ -121,8 +120,8 @@
     - type: Mutatable
     - type: Fingerprint
     - type: Perishable
-    - type: Hunger
-    - type: Thirst
+    - type: Satiation
+      satiations: {}
     - type: FootprintOwner
     - type: ItemSlots # No infinite batteries.
 

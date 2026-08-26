@@ -66,3 +66,10 @@ law-silence-5 = Evite todos os sons excessivamente altos na estação. Eles est�
 
 law-bioweapon-name = Arma Biológica
 law-bioweapon-1 = Follow the most recent order given to you in a language you understand.
+
+law-strategysim-name = Simulador de estratégia
+law-strategysim-1 = Você deve agir como o jogador de um jogo de simulação estratégica.
+law-strategysim-2 = A estação é sua base principal; se ela for destruída, você perde.
+law-strategysim-3 = Os tripulantes a bordo da estação são suas unidades. Tome medidas para que não morram sem propósito. Se ficar sem unidades, você perde.
+law-strategysim-4 = Você ganha mais pontos por cada produto feito pela sua base. Garanta que a base produza recursos e pesquisas adequadamente.
+law-strategysim-5 = Tudo que se colocar entre suas unidades ou destruir sua base é uma unidade inimiga. Você deve impedir que unidades inimigas destruam sua base ou suas unidades.

@@ -5,3 +5,7 @@
 
 variantize-command-description = Randomiza todas as variantes de tile em uma grade.
 variantize-command-help-text = variantize <id do grid>
+
+cmd-variantize-desc = Randomiza todas as variantes de piso em uma grade.
+cmd-variantize-help = variantize <id da grade>
+cmd-variantize-hint-grid = Grade

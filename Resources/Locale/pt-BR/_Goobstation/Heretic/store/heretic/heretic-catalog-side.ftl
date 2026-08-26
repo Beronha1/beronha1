@@ -188,6 +188,7 @@ knowledge-path-side-t2-rifle-desc =
     Esses disparos funcionam como munição normal, apesar de serem de baixo calibre, quando disparados.
     Você pode mirar no rifle em inimigos distantes clicando com botão direito no Modo Combate,
     fazendo o tiro marcar seu alvo com seu aperto, teleportando você diretamente para ele e causando dano dobrado.
+    Permite enxergar pessoas através de paredes enquanto estiver empunhado.
 
     Você pode transmutar 3 cápsulas de munição balística (usadas ou não) de qualquer calibre, incluindo escopetas, para criar munição extra para o rifle do Caçador de Leão.
 
@@ -254,3 +255,10 @@ knowledge-path-side-t3-ash-spirit-desc =
     Permite transmutar uma Fogueira e um livro para criar um Espírito de Cinza.
     Espíritos de Cinza têm um jaunt de longo alcance e habilidade de derreter os inimigos à distância.
     Você só pode criar dois de cada vez.
+
+knowledge-path-side-t2-rustgrenade-name = Granada semeadora de ferrugem
+knowledge-path-side-t2-rustgrenade-desc =
+    As vinhas sufocadas das Colinas Enferrujadas estão carregadas de frutos maduros demais. Ela desfaz as marcas do progresso, deixando uma tela limpa para ser moldada em novas formas.
+
+    Transmute uma carcaça de granada modular, um pano e dois pedaços de lixo para criar a granada amaldiçoada cheia de Ferrugem Sobrenatural.
+    Ao detonar, ela libera uma enorme nuvem que cega seres orgânicos, enferruja as áreas atingidas e aniquila silícios e mechas.

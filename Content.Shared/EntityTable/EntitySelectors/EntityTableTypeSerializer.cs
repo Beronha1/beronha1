@@ -38,19 +38,18 @@ public sealed class EntityTableTypeSerializer :
         ISerializationContext? context = null,
         ISerializationManager.InstantiationDelegate<EntityTableSelector>? instanceProvider = null)
     {
-        var type = typeof(EntityTableSelector);
         if (node.Has(EntSelector.IdDataFieldTag))
-            type = typeof(EntSelector);
+            return serializationManager.Read<EntSelector>(node, context, notNullableOverride: true);
 
         if (node.Has(ESAllSelector.DataFieldTag))
-            type = typeof(ESAllSelector);
+            return serializationManager.Read<ESAllSelector>(node, context, notNullableOverride: true);
         if (node.Has(ESGroupSelector.DataFieldTag))
-            type = typeof(ESGroupSelector);
+            return serializationManager.Read<ESGroupSelector>(node, context, notNullableOverride: true);
         if (node.Has(ESNestedSelector.DataFieldTag))
-            type = typeof(ESNestedSelector);
+            return serializationManager.Read<ESNestedSelector>(node, context, notNullableOverride: true);
         if (node.Has(ESPickSelector.DataFieldTag))
-            type = typeof(ESPickSelector);
+            return serializationManager.Read<ESPickSelector>(node, context, notNullableOverride: true);
 
-        return (EntityTableSelector) serializationManager.Read(type, node, context)!;
+        return serializationManager.Read<EntityTableSelector>(node, context, notNullableOverride: true);
     }
 }

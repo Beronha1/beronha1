@@ -27,8 +27,6 @@
         10: High
         15: Extreme
     - type: Absorbable
-    - type: Hunger
-    - type: Thirst
     - type: Icon
       sprite: _Starlight/Mobs/Species/Shadekin/parts.rsi
       state: full

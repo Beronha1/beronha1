@@ -16,3 +16,11 @@ loadout-group-bartenderweapon = Arma do barman
 loadout-group-roboticist-envirohelm = Elmo ambiental de robótico
 loadout-group-roboticist-envirosuit = Macacão ambiental de robótico
 loadout-group-roboticist-envirogloves = Luvas ambientais de robótico
+
+# Classe D
+loadout-group-dclass-jumpsuit = Uniforme da Classe D
+loadout-group-dclass-mask = Máscara
+loadout-group-dclass-gloves = Luvas
+loadout-group-dclass-outerclothing = Roupa externa
+loadout-group-dclass-shoes = Calçados
+loadout-group-dclass-neck = Pescoço

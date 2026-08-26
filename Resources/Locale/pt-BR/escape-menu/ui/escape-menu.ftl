@@ -10,3 +10,5 @@ ui-escape-wiki= Wikipédia
 ui-escape-disconnect = Desconectar
 ui-escape-quit = Sair
 ui-escape-feedback = Comentários
+ui-escape-remarks = Observações administrativas
+ui-escape-remarks-button-disabled = Esta funcionalidade foi desativada pelo servidor.

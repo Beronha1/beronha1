@@ -11,13 +11,11 @@
 
   ## Habilidades especiais
 
-  Capoeiristas são melhores no intent Grab. Agarrar um oponente com sucesso dá ao usuário um breve boost de velocidade e impede temporariamente o alvo de sprintar.
-
   ### Postura da Capoeira
 
   Você nunca para de se mover durante a ginga, ganhando muita mobilidade na luta.
 
-  Com movimentos rápidos, mestres da Capoeira transformam velocidade em energia; seus combos ficam mais mortais quanto mais rápido correm.
+  Com movimentos rápidos, mestres da Capoeira transformam velocidade em energia; seus combos ficam mais mortais quanto mais rápidos eles estão.
   Interrompa o fluxo e sua força desaparecerá. Como os combos dependem do movimento, eles falham quando o usuário está caído.
 
   ### Embalo da Capoeira
@@ -25,11 +23,13 @@
   Pelo movimento fluido e incansável da Capoeira, cada combo bem-sucedido restaura a Stamina do usuário.
   Cada golpe conectado alimenta sua resistência, permitindo lutar por mais tempo, com mais velocidade e força, sem parar.
 
+  Quanto mais pesado o combo, mais Stamina ele restaura. Isso não aumenta com a velocidade.
+
   ### Tempo da Capoeira
 
   Acertando ou errando, tudo faz parte da dança! E a melhor parte está prestes a começar!
 
-  Um ataque errado prepara o próximo, reduzindo sua recuperação e aumentando o dano.
+  Um ataque desarmado que erra prepara o próximo, reduzindo sua recuperação e aumentando o dano.
 
   ## Ataques em combo
 
@@ -41,7 +41,7 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Derruba e empurra o oponente para longe do usuário. Não o força a soltar os itens que segura.
+  Empurra o alvo para trás e rompe temporariamente suas defesas, deixando-o vulnerável a ataques corpo a corpo.
 
   ### Chute Circular
 
@@ -61,7 +61,7 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="disarm"/>
   </Box>
 
-  Derruba e causa dano Blunt e de Stamina. Aumenta um pouco a velocidade de ataque do usuário por um tempo.
+  Derruba e causa dano Blunt e de Stamina. Aumenta temporariamente a velocidade de ataque do usuário.
   Não pode ser executada se o usuário estiver lento demais.
 
   ### Chute Giratório
@@ -73,7 +73,7 @@
     <TextureEmbed Sprite="_Goobstation/Interface/Misc/intents.rsi" State="harm"/>
   </Box>
 
-  Causa muito dano Blunt, derruba o oponente e faz o usuário dar um mortal. Só funciona em oponentes de pé.
+  Causa muito dano, derruba o oponente, rompe qualquer agarrão sobre ele, faz o usuário dar um mortal e aumenta sua velocidade de ataque. Só funciona em oponentes de pé.
   Não pode ser executado se o usuário estiver lento demais.
 
   ### Levantada com Chute

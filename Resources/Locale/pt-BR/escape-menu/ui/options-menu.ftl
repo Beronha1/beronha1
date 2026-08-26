@@ -343,3 +343,6 @@ ui-options-speech-bubble-text-opacity = Opacidade do texto dos balões de fala
 ui-options-speech-bubble-speaker-opacity = Opacidade do falante nos balões de fala
 ui-options-speech-bubble-background-opacity = Opacidade do fundo dos balões de fala
 ui-options-censor-nudity = Censurar nudez do personagem
+ui-options-max-fps = FPS máximo:
+ui-options-max-fps-display-rate = Taxa da tela
+ui-options-max-fps-tooltip = A taxa máxima de quadros na qual o cliente deve rodar. Defina como 0 para não limitar. Não tem efeito quando o VSync está ativado.

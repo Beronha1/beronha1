@@ -89,3 +89,5 @@ anomaly-behavior-fast = [color=crimson]A frequência das pulsações aumentou in
 anomaly-behavior-strenght = [color=crimson]A potência das pulsações aumentou significativamente.[/color]
 anomaly-behavior-moving = [color=crimson]Instabilidade de coordenadas detectada.[/color]
 
+anomaly-scanner-doafter-examine = { CAPITALIZE(SUBJECT($user)) } {CONJUGATE-BE($user)} [color=plum]escaneando uma anomalia[/color].
+anomaly-secret-admin = [color=red](ERRO)[/color]

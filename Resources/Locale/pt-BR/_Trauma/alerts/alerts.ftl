@@ -4,3 +4,5 @@ alerts-on-holy-fire-desc = Você está [color=cyan]em fogo sagrado[/color]. Cliq
 alerts-morph-biomass-name = Biomassa
 alerts-morph-biomass-desc = A coleta de carne e gordura retirada do consumo de seres vivos.
 
+alerts-fultoned-name = [color=yellow]Preso ao Fulton[/color]
+alerts-fultoned-desc = Você está sendo [color=yellow]transportado por um Fulton[/color] para um local remoto! Clique para removê-lo rapidamente.

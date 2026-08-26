@@ -19,6 +19,7 @@ using Content.Shared.DeviceNetwork.Components;
 using Content.Shared.Gravity;
 using Content.Shared.Nutrition.Components;
 using Content.Shared.Nutrition.EntitySystems;
+using Content.Shared.Nutrition.Prototypes;
 using Content.Shared.Shuttles.Components;
 using Content.Shared.StatusEffectNew;
 using Content.Shared.Tag;
@@ -44,14 +45,13 @@ public sealed partial class ESArrivalsSystem : EntitySystem
     [Dependency] private ContainerSystem _container = default!;
     [Dependency] private DeviceNetworkSystem _deviceNetwork = default!;
     [Dependency] private GameTicker _gameTicker = default!;
-    [Dependency] private HungerSystem _hunger = default!;
+    [Dependency] private SatiationSystem _satiation = default!;
     [Dependency] private MapSystem _map = default!;
     [Dependency] private MapLoaderSystem _mapLoader = default!;
     [Dependency] private ShuttleSystem _shuttle = default!;
     [Dependency] private StationSystem _station = default!;
     [Dependency] private StationSpawningSystem _stationSpawning = default!;
     [Dependency] private StatusEffectsSystem _statusEffects = default!;
-    [Dependency] private ThirstSystem _thirst = default!;
 
     private bool _arrivalsEnabled = true;
     private float _flightTime;
@@ -170,10 +170,10 @@ public sealed partial class ESArrivalsSystem : EntitySystem
 
         if (!HasShuttleDocked(ev.Station.Value))
         {
-            if (TryComp<HungerComponent>(ev.SpawnResult, out var hunger))
+            if (TryComp<SatiationComponent>(ev.SpawnResult, out var satiation))
             {
-                var threshold = _random.Prob(0.5f) ? HungerThreshold.Peckish : HungerThreshold.Starving;
-                _hunger.SetHunger(ev.SpawnResult.Value, hunger.Thresholds[threshold], hunger);
+                SatiationValue threshold = _random.Prob(0.5f) ? "Peckish" : "Starving";
+                _satiation.SetValue((ev.SpawnResult.Value, satiation), SatiationSystem.Hunger, threshold);
             }
 
             var sicknessTime = TimeSpan.FromSeconds(Math.Max((arrivals.ArrivalTime - _timing.CurTime).TotalSeconds + _random.Next(10, 20), _random.Next(10, 15)));

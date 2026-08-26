@@ -30,4 +30,4 @@ emitter-destroyed-broadcast = Um emissor alimentado {$location} foi destruído.
 emitter-deconstructed-broadcast = Um emissor alimentado {$location} foi desconstruído.
 emitter-unlocked-broadcast = Um emissor alimentado {$location} foi desbloqueado.
 emitter-unpowered-broadcast = Um emissor energizado {$location} perdeu energia.
-
+emitter-turn-off-broadcast = Um emissor energizado em {$location} foi desligado.

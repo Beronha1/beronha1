@@ -38,3 +38,4 @@ materials-raw-uranium = urânio bruto
 materials-raw-bananium = banânio bruto
 materials-raw-salt = sal bruto
 materials-raw-diamond = diamante bruto
+materials-xenoborg-crystal = cristal de xenoborgue

@@ -7,3 +7,5 @@ defibrillator-no-mind = Nenhum padrão de inteligência foi detectado no cérebr
 defibrillator-rotten = Decomposição corporal detectada: reanimação malsucedida.
 defibrillator-unrevivable = A composição corporal peculiar deste paciente impede sua reanimação.
 
+defibrillator-begin = {$name} posiciona as pás do desfibrilador contra {THE($target)}
+defibrillator-not-living = Aviso: o alvo da desfibrilação era um objeto inanimado. Considere escolher outro alvo.

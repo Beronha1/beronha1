@@ -3,6 +3,7 @@
 using Content.Shared.DoAfter;
 using Content.Shared.Damage;
 using Content.Shared.EntityTable.EntitySelectors;
+using Content.Shared.Tools;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization;
 
@@ -44,7 +45,7 @@ public sealed partial class WearableMegafaunaHarvesterComponent : Component
     public string InventorySlot = "head";
 
     [DataField(required: true)]
-    public List<string> ToolQualities = [];
+    public List<ProtoId<ToolQualityPrototype>> ToolQualities = [];
 
     [DataField]
     public float SpeedModifier = 1f;
@@ -63,7 +64,7 @@ public sealed partial class MegafaunaHarvestStage
     public LocId Name;
 
     [DataField(required: true)]
-    public List<string> ToolQualities = [];
+    public List<ProtoId<ToolQualityPrototype>> ToolQualities = [];
 
     [DataField]
     public TimeSpan Duration = TimeSpan.FromSeconds(8);

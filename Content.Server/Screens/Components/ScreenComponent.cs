@@ -1,5 +1,10 @@
 namespace Content.Server.Screens.Components;
 
+[RegisterComponent]
+public sealed partial class ScreenComponent : Component
+{
+}
+
 /// <summary>
 ///     Player-facing hashable string consts for NetworkPayload
 /// </summary>

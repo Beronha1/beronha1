@@ -11,6 +11,8 @@ limited-charges-charges-remaining= {$charges ->
     *[other] It has [color=fuchsia]{$charges}[/color] cargas restantes.
 }
 
+limited-charges-no-charges = Não há cargas restantes!
+
 limited-charges-max-charges = Está com cobranças [color=green]máximas[/color].
 limited-charges-recharging= {$seconds ->
     [one] There is [color=yellow]{$seconds}[/color] segundo restante até a próxima carga.

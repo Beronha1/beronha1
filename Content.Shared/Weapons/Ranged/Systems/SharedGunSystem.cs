@@ -736,7 +736,7 @@ public abstract partial class SharedGunSystem : EntitySystem
         // moving projectile with the components that define its flight or impact.
         if (gunUid is {} gun)
         {
-            var shotEv = new ProjectileShotEvent(uid, user);
+            var shotEv = new GunShotProjectileEvent(uid, user);
             RaiseLocalEvent(gun, ref shotEv);
         }
 
@@ -754,10 +754,13 @@ public abstract partial class SharedGunSystem : EntitySystem
 
         if (user is {} userUid)
         {
-            var ev = new PlayerShotProjectileEvent(uid, userUid);
-            RaiseLocalEvent(ref ev);
+            var userEv = new PlayerShotProjectileEvent(uid, userUid);
+            RaiseLocalEvent(ref userEv);
         }
         // </Trauma>
+
+        var ev = new ProjectileShotEvent();
+        RaiseLocalEvent(uid, ref ev);
     }
 
     /// <summary>

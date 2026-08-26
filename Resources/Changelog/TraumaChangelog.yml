@@ -13151,25 +13151,704 @@ Entries:
   id: 1434
   time: '2026-08-13T16:09:11.0000000+00:00'
   url: https://github.com/Trauma-Station/Trauma-Station/pull/4068
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      O preço do embaralhador de DNA mudou de 15 TC para 10 TC.
+  id: 1435
+  time: '2026-08-15T03:01:04.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4087
+- author: MayasMischief
+  changes:
+  - type: Tweak
+    message: >-
+      O Devastator agora dispara mais devagar (1,5 -> 1).
+  - type: Tweak
+    message: >-
+      A kunai causa mais dano (10 -> 15 de perfuração corpo a corpo; 15 -> 20 de perfuração de
+      arremesso e estrutural).
+  - type: Tweak
+    message: >-
+      Kunais agora são fabricadas três vezes mais rápido que as outras armas revolucionárias.
+  id: 1436
+  time: '2026-08-15T07:13:21.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4088
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigida a impossibilidade de usar pulsos como entradas de circuitos.
+  id: 1437
+  time: '2026-08-15T19:33:25.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4094
+- author: Aviu
+  changes:
+  - type: Fix
+    message: >-
+      Corrigida a proteção térmica do manto do vazio.
+  - type: Fix
+    message: >-
+      Corrigido o manto do vazio bloqueando cirurgias e a remoção do macacão.
+  - type: Fix
+    message: >-
+      Corrigidos projéteis penetrantes ainda causando dano duas vezes em alguns casos.
+  - type: Fix
+    message: >-
+      Qualquer caco de vidro, não apenas o comum, agora pode ser usado em rituais heréticos.
+  - type: Fix
+    message: >-
+      Corrigida a ERT que não surgia durante a ascensão de um herege.
+  - type: Fix
+    message: >-
+      Corrigidas as rupturas da realidade que não surgiam quando um herege sacrificava alguém.
+  id: 1438
+  time: '2026-08-15T19:57:19.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4065
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      APCs e estruturas semelhantes podem ser construídos sem uma parede novamente.
+  id: 1439
+  time: '2026-08-15T20:22:36.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4096
+- author: MayasMischief
+  changes:
+  - type: Remove
+    message: >-
+      A polpa de coco foi removida; todas as suas fontes foram substituídas por nutrimento.
+  - type: Tweak
+    message: >-
+      Crabon agora exige água de coco devido à remoção da polpa de coco.
+  id: 1440
+  time: '2026-08-15T22:21:09.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4101
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos borgs sendo apagados ao desmontar seus carregadores.
+  id: 1441
+  time: '2026-08-16T00:35:01.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4104
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigido o reciclador emagado simplesmente apagando pessoas.
+  id: 1442
+  time: '2026-08-16T00:47:07.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4097
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Mechas agora isolam seus ocupantes de choques elétricos.
+  id: 1443
+  time: '2026-08-16T01:00:19.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4107
+- author: Wizard25671
+  changes:
+  - type: Remove
+    message: >-
+      Removido o custo de phoron de todos os biocubos, exceto o de holocarp. Deixe a fábrica
+      crescer!
+  - type: Tweak
+    message: >-
+      Carrapatos espaciais agora podem ser atravessados por projéteis.
+  id: 1444
+  time: '2026-08-16T01:34:29.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4105
+- author: Wizard25671
+  changes:
+  - type: Add
+    message: >-
+      Adicionada resistência balística fixa a todas as vestes heréticas.
+  id: 1445
+  time: '2026-08-16T05:35:34.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4110
+- author: Aviu
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos a Finesse do Ladrão e o Gancho do Campeão dos hereges com alcance infinito.
+  - type: Fix
+    message: >-
+      Corrigida a possibilidade de escapar do Gancho do Campeão enquanto caído.
+  id: 1446
+  time: '2026-08-16T16:33:48.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4112
+- author: Aviu
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos carniçais que deixavam de entender Tau Ceti Básico após uma travessia.
+  id: 1447
+  time: '2026-08-16T20:07:20.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4114
+- author: MayasMischief
+  changes:
+  - type: Add
+    message: >-
+      Adicionado Trifluoreto de Cloro Sagrado!
+  - type: Add
+    message: >-
+      Adicionada Burnite!
+  - type: Add
+    message: >-
+      Adicionado reagent-name-unknown-reagent.
+  - type: Tweak
+    message: >-
+      A descrição da metade de coco foi levemente ajustada.
+  id: 1448
+  time: '2026-08-17T04:53:33.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4106
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      O analisador de plantas foi corrigido e ficou muito mais prático; agora também possui
+      pop-ups.
+  id: 1449
+  time: '2026-08-17T18:15:13.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4125
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: >-
+      Removidas as tarefas de NTR; vá interpretar seu personagem.
+  - type: Tweak
+    message: >-
+      A lâmina astral do culto cósmico agora usa o treinamento de armas de ferramentas.
+  id: 1450
+  time: '2026-08-17T19:32:20.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4124
+- author: Wizard25671
+  changes:
+  - type: Tweak
+    message: >-
+      reagent-name-unknown-reagent foi renomeado para Unobtainium e recebeu uma descrição.
+  id: 1451
+  time: '2026-08-17T20:00:53.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4120
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos líderes revolucionários com escudo mental que continuavam impossíveis de
+      converter após perderem o implante.
+  id: 1452
+  time: '2026-08-17T20:10:59.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4127
+- author: Aviu
+  changes:
+  - type: Tweak
+    message: >-
+      Itens que custam mais de 100 TC foram removidos das possíveis recompensas de contratos
+      de espião.
+  - type: Tweak
+    message: >-
+      Recompensas médias agora começam em 20 TC, em vez de 30, e as difíceis começam em 50 TC,
+      em vez de 60.
+  - type: Fix
+    message: >-
+      Corrigido o uplink de espião que não atualizava o estado de um contrato quando outra
+      pessoa coletava a recompensa.
+  id: 1453
+  time: '2026-08-17T20:24:33.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4092
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Capelães não precisam mais profanar a própria bíblia para encantar itens.
+  id: 1454
+  time: '2026-08-17T20:38:20.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4131
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigida a possibilidade de implantar em si mesmo um destruidor de escudos já usado.
+  id: 1455
+  time: '2026-08-17T20:39:25.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4132
+- author: THE FOG IS COMING
+  changes:
+  - type: Tweak
+    message: >-
+      O óxido nitroso deixou de ser um gás sonífero instantâneo invisível e agora é visível.
+  id: 1456
+  time: '2026-08-18T04:44:34.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4134
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: >-
+      Removida a caixa do Clarke do vendedor de pontos de salvamento.
+  id: 1457
+  time: '2026-08-18T19:58:28.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4147
+- author: MayasMischief
+  changes:
+  - type: Tweak
+    message: >-
+      Os fragmentos de alma demoníaca receberam novos sprites.
+  id: 1458
+  time: '2026-08-18T20:17:04.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4146
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      O grito de Shadowling não afeta mais surdos; eles não conseguem ouvi-lo.
+  id: 1459
+  time: '2026-08-18T21:08:04.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4139
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Corpos com alma agora podem ser transformados em biomassa.
+  id: 1460
+  time: '2026-08-18T21:20:12.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4149
+- author: Aviu
+  changes:
+  - type: Add
+    message: >-
+      Novo conhecimento herético lateral de nível 2: granada Semeadora de Ferrugem.
+  - type: Add
+    message: >-
+      Silicons curam uma pequena quantidade de dano iônico ao se molharem com reagente de
+      silício.
+  - type: Add
+    message: >-
+      O rifle Lionhunter revela pessoas através de paredes enquanto estiver empunhado.
+  - type: Fix
+    message: >-
+      Corrigido o dano iônico causando sangramento e feridas em orgânicos.
+  - type: Fix
+    message: >-
+      Corrigidos feixes de laser se comportando de forma estranha em grids móveis.
+  - type: Remove
+    message: >-
+      A faca da inveja foi removida dos conhecimentos laterais heréticos.
+  - type: Add
+    message: >-
+      A faca da inveja foi adicionada a uma ruína de Lavaland e agora pode ser usada por
+      qualquer pessoa.
+  - type: Add
+    message: >-
+      Escovas de arame agora limpam pisos enferrujados, e remover ferrugem ficou mais rápido.
+  - type: Fix
+    message: >-
+      Corrigidos hereges da ferrugem incapazes de destruir airlocks instantaneamente com o
+      toque.
+  - type: Add
+    message: >-
+      O Toque de Mansus agora recarrega rapidamente sobre uma runa.
+  - type: Tweak
+    message: >-
+      A essência sobrenatural agora causa dano de stamina em vez de atordoar não hereges.
+  id: 1461
+  time: '2026-08-19T18:26:12.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4142
+- author: deltanedas
+  changes:
+  - type: Add
+    message: >-
+      Ser içado por um Fulton agora mostra um alerta clicável para removê-lo sem usar o menu
+      de contexto.
+  - type: Tweak
+    message: >-
+      Fultons agora exigem que o sinalizador esteja aberto para funcionar.
+  id: 1462
+  time: '2026-08-19T20:38:07.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4160
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos problemas visuais relacionados ao jaunter de abismos.
+  id: 1463
+  time: '2026-08-19T21:24:24.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4161
+- author: Jack-Silver
+  changes:
+  - type: Tweak
+    message: >-
+      Airlocks e câmeras agora são mais fáceis de destruir.
+  id: 1464
+  time: '2026-08-20T04:21:36.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4163
+- author: deltanedas
+  changes:
+  - type: Add
+    message: >-
+      Adicionado um objetivo de traidor para esfolar Pun Pun vivo.
+  id: 1465
+  time: '2026-08-20T05:21:42.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4168
+- author: FabledTile
+  changes:
+  - type: Fix
+    message: >-
+      Os lacaios do Rei Rato agora conseguem atacar armas biológicas corretamente.
+  id: 1466
+  time: '2026-08-20T16:09:13.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4176
+- author: Aviu
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos escudos sendo duas vezes mais eficazes que o previsto.
+  - type: Tweak
+    message: >-
+      A vida dos escudos foi reduzida de 125 para 75.
+  id: 1467
+  time: '2026-08-20T17:14:50.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4153
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: >-
+      Não é mais possível chamar ou cancelar a evacuação sem motivo.
+  - type: Tweak
+    message: >-
+      A evacuação após a ascensão de um Shadowling dura 5 minutos em vez de 20.
+  - type: Tweak
+    message: >-
+      A evacuação no alerta vermelho voltou a durar 10 minutos.
+  - type: Tweak
+    message: >-
+      Mais estruturas montadas na parede deixaram de exigir uma parede para serem construídas.
+  id: 1468
+  time: '2026-08-20T17:29:06.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4181
+- author: Sherpack
+  changes:
+  - type: Tweak
+    message: >-
+      Ovos relacionados à criação agora se chamam ovos fertilizados. Chega de confusão! 🥚
+  id: 1469
+  time: '2026-08-20T19:53:22.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4177
+- author: sr483
+  changes:
+  - type: Remove
+    message: >-
+      Removido o golpe amplo do desfibrilador da Syndicate.
+  - type: Tweak
+    message: >-
+      Reduzido o dano elétrico do desfibrilador da Syndicate e adicionado dano térmico.
+  id: 1470
+  time: '2026-08-20T19:58:33.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4174
+- author: Cerzix
+  changes:
+  - type: Add
+    message: >-
+      Adicionada Cluoxadona, um potente medicamento criogênico antiveneno.
+  id: 1471
+  time: '2026-08-20T20:02:55.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4172
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      O bastão do Hierofante não permite mais teletransportar para fora de Lavaland.
+  id: 1472
+  time: '2026-08-20T22:46:50.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4191
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos flashes acumulando efeito infinitamente...
+  id: 1473
+  time: '2026-08-20T22:53:32.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4192
+- author: assripper. John Joe
+  changes:
+  - type: Add
+    message: >-
+      Nova arte de lobby destacando alguns dos antagonistas encontrados na Trauma Station.
+  id: 1474
+  time: '2026-08-21T05:01:07.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4196
+- author: Hoodsie
+  changes:
+  - type: Fix
+    message: >-
+      Corrigido o guia dos xenomorfos, que dizia incorretamente que eles resistiam ao espaço.
+  id: 1475
+  time: '2026-08-21T05:01:45.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4194
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Blob foi corrigido e reativado.
+  - type: Add
+    message: >-
+      Adicionados os químicos Veneno Criogênico, Geleia Energizada, Slime Pressurizado e
+      Espuma Replicante da tgstation.
+  - type: Tweak
+    message: >-
+      As verificações de alcance dos tiles de Blob agora variam por tipo; fábricas, por
+      exemplo, podem ficar mais afastadas que nós.
+  id: 1476
+  time: '2026-08-21T08:09:03.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4202
+- author: NoElkaTheGod
+  changes:
+  - type: Tweak
+    message: >-
+      Pequenas melhorias visuais no culto cósmico.
+  id: 1477
+  time: '2026-08-21T09:19:01.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/3614
+- author: Xenobeam-1
+  changes:
+  - type: Tweak
+    message: >-
+      O tamanho dos baldes alterado pelo upstream foi ajustado de 3x4 para 2x3.
+  id: 1478
+  time: '2026-08-21T09:30:19.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4205
+- author: Evoluxionary
+  changes:
+  - type: Add
+    message: >-
+      Novas luvas de serviço da segurança foram adicionadas à SecDrobe.
+  id: 1479
+  time: '2026-08-21T11:01:27.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4195
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      O ED-209 não exige mais um propulsor de exotraje para ser construído.
+  - type: Tweak
+    message: >-
+      Máquinas de automação não exigem mais peças, apenas a placa.
+  id: 1480
+  time: '2026-08-21T22:18:52.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4217
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Adicionada vinculação automática de sinais para interatores e esteiras, além de portas
+      lógicas iniciarem interatores.
+  id: 1481
+  time: '2026-08-21T22:49:01.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4218
+- author: deltanedas
+  changes:
+  - type: Add
+    message: >-
+      Adicionadas telas de sinal; circuitos podem definir qualquer texto nelas.
+  - type: Add
+    message: >-
+      Adicionada uma porta lógica se/senão aos circuitos.
+  - type: Fix
+    message: >-
+      As portas de início/conclusão dos interatores agora se comportam melhor.
+  id: 1482
+  time: '2026-08-22T01:43:43.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4219
+- author: buunie099
+  changes:
+  - type: Add
+    message: >-
+      O personagem mais popular entre os espectadores agora aparece na janela de fim de
+      rodada.
+  id: 1483
+  time: '2026-08-22T03:58:06.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4183
+- author: mickers7
+  changes:
+  - type: Add
+    message: >-
+      Capoeira foi readicionada.
+  - type: Tweak
+    message: >-
+      Capoeira foi reformulada.
+  id: 1484
+  time: '2026-08-22T05:00:03.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4078
+- author: jshoe2
+  changes:
+  - type: Add
+    message: >-
+      A caixa de encantamento do mago foi substituída pela nova caixa de demonologia, com tudo
+      que é necessário para invocar demônios!
+  id: 1485
+  time: '2026-08-22T08:43:07.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4201
+- author: Pi-tanium
+  changes:
+  - type: Remove
+    message: >-
+      Tempestades iônicas não podem mais sortear o conjunto de leis do culto cósmico.
+  id: 1486
+  time: '2026-08-24T01:56:43.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4249
+- author: badjuju
+  changes:
+  - type: Tweak
+    message: >-
+      Ajustadas as resistências do traje e do capacete de spationaut.
+  id: 1487
+  time: '2026-08-24T10:58:34.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4243
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: >-
+      PAIs não têm mais acesso ao canal binário.
+  id: 1488
+  time: '2026-08-24T16:54:26.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4252
+- author: sr483
+  changes:
+  - type: Tweak
+    message: >-
+      Os efeitos da Lazida de Procenil foram fortalecidos; agora ela é mais poderosa e vale a
+      pena produzir.
+  id: 1489
+  time: '2026-08-24T17:17:42.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4189
+- author: Big Brother, StarMade, Joel
+  changes:
+  - type: Remove
+    message: >-
+      Removidos os desempregados e seu estilo.
+  - type: Add
+    message: >-
+      Adicionado 1984.
+  - type: Add
+    message: >-
+      Spawners de profissão agora podem receber profissões adicionais.
+  id: 1490
+  time: '2026-08-24T17:18:43.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4169
+- author: deltanedas
+  changes:
+  - type: Remove
+    message: >-
+      Removido o xenomorfo solitário.
+  id: 1491
+  time: '2026-08-25T00:31:16.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4259
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Erupções solares agora bloqueiam todas as fontes de rádio, incluindo IPCs,
+      intercomunicadores e NanoChat.
+  id: 1492
+  time: '2026-08-25T00:40:18.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4260
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigida a Capoeira aumentando a velocidade das armas.
+  id: 1493
+  time: '2026-08-25T00:50:01.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4261
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigido o dano de slimes de xenobiologia agarrados que nunca parava, mesmo após apagar
+      o slime.
+  id: 1494
+  time: '2026-08-25T01:33:40.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4262
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigida a impossibilidade de usar holosinais sobre ervas de xenomorfo.
+  id: 1495
+  time: '2026-08-25T01:51:37.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4264
+- author: Jack-Silver
+  changes:
+  - type: Tweak
+    message: >-
+      Reduzida a vida efetiva de várias estruturas excessivamente resistentes, como montagens
+      de portas, armários e estruturas de parede.
+  id: 1496
+  time: '2026-08-25T05:01:52.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4244
+- author: deltanedas
+  changes:
+  - type: Tweak
+    message: >-
+      Dispensadores químicos de energia agora são preditos, mostram a energia total usada na
+      quantidade atual de químicos e consomem muito mais potência.
+  id: 1497
+  time: '2026-08-25T08:19:39.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4267
+- author: Pi-tanium
+  changes:
+  - type: Fix
+    message: >-
+      Metamorfos nunca mais precisam absorver outros metamorfos.
+  id: 1498
+  time: '2026-08-25T09:23:51.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4269
+- author: deltanedas
+  changes:
+  - type: Fix
+    message: >-
+      Corrigidos cartões de ID que sempre tinham o ícone da profissão redefinido ao alterar
+      acessos.
+  - type: Fix
+    message: >-
+      Corrigidos dispensadores químicos de energia demorando demais para recarregar.
+  id: 1499
+  time: '2026-08-25T15:02:29.0000000+00:00'
+  url: https://github.com/Trauma-Station/Trauma-Station/pull/4272
 - author: Whiskey Station
   changes:
   - type: Add
-    message: Integrated the current Trauma upstream and selected cross-fork systems.
+    message: >-
+      Integrado o upstream atual da Trauma Station, incluindo os sistemas selecionados
+      das demais forks.
   - type: Add
-    message: Integrated telescience, Ratvar, medical, combat and quality-of-life content.
+    message: >-
+      Integrados conteúdos de teleciência, Ratvar, medicina, combate e qualidade de
+      vida.
   - type: Tweak
-    message: Capped EggLayer mouse population at 24 entities.
+    message: A população de ratos foi limitada a 24 entidades.
   - type: Fix
-    message: Resolved cross-fork prototype, map, locale and resource incompatibilities.
+    message: >-
+      Resolvidas incompatibilidades entre forks em protótipos, mapas, localizações e
+      recursos.
   - type: Fix
-    message: Hardened announcement audio validation and client ACZ compatibility.
+    message: >-
+      Reforçadas a validação de áudio dos anúncios e a compatibilidade do cliente com
+      o ACZ.
   - type: Fix
-    message: Repaired legacy entities in Lavaland, Atlas ruins and shuttle maps.
+    message: >-
+      Reparadas entidades legadas em Lavaland, nas ruínas de Atlas e nos mapas de
+      shuttles.
   - type: Fix
-    message: Restored empty flagship links and official-client audio CVar compatibility.
+    message: >-
+      Restaurados os links vazios da nave-capitânia e a compatibilidade das CVars de
+      áudio com o cliente oficial.
   - type: Fix
-    message: Hardened completed Ripley construction state during round and map initialization.
-  id: 1435
+    message: >-
+      Fortalecido o estado final da construção do Ripley durante a rodada e a
+      inicialização de mapas.
+  id: 1500
   time: '2026-08-14T11:27:40.0000000+00:00'
 - author: Whiskey Station
   changes:
@@ -13181,7 +13860,7 @@ Entries:
     message: >-
       Links, tabelas, números, atalhos e marcação dos 340 capítulos foram
       revisados contra truncamentos e problemas de estrutura.
-  id: 1436
+  id: 1501
   time: '2026-08-24T05:25:20.0000000+00:00'
 - author: Zequin
   changes:
@@ -13218,7 +13897,7 @@ Entries:
     message: >-
       As mensagens das habilidades, portal, núcleo e armadilhas Shadekin agora
       aparecem corretamente em inglês e PT-BR.
-  id: 1437
+  id: 1502
   time: '2026-08-25T15:03:48.0000000+00:00'
   url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/32
 - author: Whiskey Station
@@ -13241,7 +13920,7 @@ Entries:
     message: >-
       Fantasmas criados automaticamente após a morte podem retornar ao corpo,
       evitando também a corrida que fazia o comando /ghost parecer não funcionar.
-  id: 1438
+  id: 1503
   time: '2026-08-25T21:57:39.0000000+00:00'
   url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/36
 - author: Whiskey Station
@@ -13250,7 +13929,7 @@ Entries:
     message: >-
       A contagem pública do servidor agora inclui administradores quando essa
       opção está habilitada, sem alterar a fila nem o limite de vagas.
-  id: 1439
+  id: 1504
   time: '2026-08-25T23:54:43.0000000+00:00'
 - author: Whiskey Station
   changes:
@@ -13258,5 +13937,5 @@ Entries:
     message: >-
       O traço aleatório Blackout foi desativado para impedir rodadas iniciadas
       com a maior parte das lâmpadas destruída.
-  id: 1440
+  id: 1505
   time: '2026-08-26T01:10:00.0000000+00:00'

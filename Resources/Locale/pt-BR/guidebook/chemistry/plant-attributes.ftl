@@ -16,3 +16,17 @@ plant-attribute-pests = nível de pragas
 plant-attribute-mutation-mod = modificador de mutação
 plant-attribute-health = saúde
 
+plant-attribute-water-consumption = consumo de água
+plant-attribute-weed-tolerance = tolerância a ervas daninhas
+plant-attribute-toxins-tolerance = tolerância a toxinas
+plant-attribute-nutrient-consumption = consumo de nutrientes
+plant-attribute-pest-tolerance = tolerância a pragas
+plant-attribute-endurance = resistência
+plant-attribute-yield = rendimento
+plant-attribute-lifespan = tempo de vida
+plant-attribute-maturation = maturação
+plant-attribute-production = produção
+plant-attribute-low-heat-tolerance = tolerância a baixas temperaturas
+plant-attribute-high-heat-tolerance = tolerância a altas temperaturas
+plant-attribute-low-pressure-tolerance = tolerância a baixa pressão
+plant-attribute-high-pressure-tolerance = tolerância a alta pressão

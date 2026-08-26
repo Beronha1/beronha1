@@ -12,6 +12,6 @@ public static class ESRandomHelpers
 
     public static int Next(this IRobustRandom random, MinMax minMax)
     {
-        return random.Next(minMax.Min, minMax.Max + 1);
+        return minMax.Next(random);
     }
 }

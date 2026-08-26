@@ -17,6 +17,7 @@ using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 using Content.Trauma.Common.Weapons.Ranged;
 using Robust.Shared.Containers;
+using Robust.Shared.Serialization.Manager;
 using Robust.Shared.Timing;
 
 namespace Content.Lavaland.Shared.Weapons.Upgrades;
@@ -30,8 +31,8 @@ public sealed partial class GunUpgradeSystem : EntitySystem
     [Dependency] private SharedEntityEffectsSystem _effects = default!;
     [Dependency] private SharedGunSystem _gun = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
-
-    private EntityQuery<GunUpgradeComponent> _upgradeQuery;
+    [Dependency] private ISerializationManager _serialization = default!;
+    [Dependency] private EntityQuery<GunUpgradeComponent> _upgradeQuery = default!;
 
     private HashSet<Entity<GunUpgradeComponent>> _upgrades = new();
 
@@ -39,8 +40,6 @@ public sealed partial class GunUpgradeSystem : EntitySystem
     public override void Initialize()
     {
         base.Initialize();
-
-        _upgradeQuery = GetEntityQuery<GunUpgradeComponent>();
 
         SubscribeLocalEvent<UpgradeableWeaponComponent, EntInsertedIntoContainerMessage>(OnUpgradeInserted);
         SubscribeLocalEvent<UpgradeableWeaponComponent, ItemSlotInsertAttemptEvent>(OnItemSlotInsertAttemptEvent);
@@ -53,7 +52,7 @@ public sealed partial class GunUpgradeSystem : EntitySystem
         SubscribeLocalEvent<UpgradeableWeaponComponent, RechargeBasicEntityAmmoGetCooldownModifiersEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GunShotEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GunGetProjectileSpreadEvent>(RelayEvent);
-        SubscribeLocalEvent<UpgradeableWeaponComponent, ProjectileShotEvent>(RelayEvent);
+        SubscribeLocalEvent<UpgradeableWeaponComponent, GunShotProjectileEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetRelayMeleeWeaponEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, GetMeleeDamageEvent>(RelayEvent);
         SubscribeLocalEvent<UpgradeableWeaponComponent, MeleeHitEvent>(RelayEvent);
@@ -67,8 +66,6 @@ public sealed partial class GunUpgradeSystem : EntitySystem
 
         SubscribeLocalEvent<GunUpgradeComponent, ExaminedEvent>(OnUpgradeExamine);
         SubscribeLocalEvent<CrusherTrophyComponent, ExaminedEvent>(OnTrophyExamine);
-
-        InitializeUpgrades();
     }
 
     private void RelayEvent<T>(Entity<UpgradeableWeaponComponent> ent, ref T args) where T : notnull
@@ -240,16 +237,16 @@ public sealed partial class GunUpgradeSystem : EntitySystem
         ent.Comp.RuntimeSlots.Clear();
         for (var i = 1; i <= ent.Comp.SlotCount; i++)
         {
-            var slot = new ItemSlot(ent.Comp.Slot);
+            var slot = _serialization.CreateCopy(ent.Comp.Slot, notNullableOverride: true);
             ent.Comp.RuntimeSlots.Add(slot);
-            _itemSlots.AddItemSlot(ent, $"{ent.Comp.SlotPrefix}{i}", slot);
+            _itemSlots.AddItemSlot(ent.Owner, $"{ent.Comp.SlotPrefix}{i}", slot);
         }
     }
 
     private void OnTrophySlotsRemoved(Entity<WeaponTrophySlotComponent> ent, ref ComponentRemove args)
     {
         foreach (var slot in ent.Comp.RuntimeSlots)
-            _itemSlots.RemoveItemSlot(ent, slot);
+            _itemSlots.RemoveItemSlot(ent.Owner, slot);
 
         ent.Comp.RuntimeSlots.Clear();
     }

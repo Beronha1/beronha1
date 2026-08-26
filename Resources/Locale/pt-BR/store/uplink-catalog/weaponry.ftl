@@ -1,7 +1,7 @@
 ﻿# Weaponry
 
 uplink-pistol-viper-name= Víbora
-uplink-pistol-viper-desc = Uma arma pequena e de fácil ocultação, porém um pouco fraca. É equipada com receptor totalmente automático. Usa carregadores de pistola (.35 auto).
+uplink-pistol-viper-desc = Uma pistola pequena e fácil de ocultar. Adaptada com um mecanismo totalmente automático. Usa carregadores estendidos de pistola (.35 auto).
 
 uplink-pistol-cobra-name = Cobra
 # Trauma - 9.5mm larp
@@ -24,7 +24,7 @@ uplink-knives-kit-name = Kit de Facas Arremessáveis
 uplink-knives-kit-desc = Um conjunto de 8 facas de arremesso marcadas da Sindicate, perfeitas para se incrustar no corpo de suas vítimas. Capazes de ignorar totalmente a armadura quando arremessadas.
 
 uplink-gloves-north-star-name = Luvas da Estrela do Norte
-uplink-gloves-north-star-desc = Um par de luvas que reduz drasticamente o tempo de recarga dos seus socos, permitindo-lhe matar gente em uma chuva de socos.
+uplink-gloves-north-star-desc = Um par de luvas que aumenta o dano e a velocidade dos seus socos, permitindo matar alguém numa rajada de golpes.
 
 uplink-gloves-knuckleduster-name = Socadores de Cotovelo da Sindicate
 uplink-gloves-knuckleduster-desc = Um par de socadores de plastitanium que permitem socar com força suficiente para esfarelar a mandíbula dos capitães.
@@ -34,11 +34,11 @@ uplink-eshield-name = Escudo de Energia
 uplink-eshield-desc = Escudo de energia exótico que reflete todos os feixes de laser e oferece alguma proteção contra balas e outros ataques físicos. Ele é descarregado ao receber dano e consegue se recarregar automaticamente. Aviso: pulsos de EMP podem descarregar a bateria interna do escudo de energia.
 
 uplink-rigged-boxing-gloves-name = Luvas de Boxe Melhoradas
-uplink-rigged-boxing-gloves-desc = Flutue como uma borboleta, pique como uma abelha.
+uplink-rigged-boxing-gloves-desc = Flutue como uma borboleta, pique como uma abelha. Bate mais forte do que parece.
 
 uplink-sniper-bundle-name = Pacote de Franco-atirador
 # Trauma - 10 -> 15
-uplink-sniper-bundle-desc = Uma mala discreta que contém um Hristov, 15 balas sobressalentes e um disfarce conveniente.
+uplink-sniper-bundle-desc = Uma mala discreta que contém um Hristov, 15 balas sobressalentes e um disfarce conveniente. Útil para operações de invasão ou tentativas de assassinato, desde que o usuário seja habilidoso o bastante.
 
 uplink-hushpup-name= Silêncio
 # Trauma - 12 gauge larp

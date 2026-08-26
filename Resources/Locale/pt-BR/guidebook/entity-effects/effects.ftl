@@ -595,3 +595,24 @@ entity-effect-guidebook-plant-mutate-chemicals =
         [1] Muta
         *[other] sofrer mutação
     } uma planta para produzir {$name}
+
+entity-effect-guidebook-satiate =
+    { $chance ->
+        [1] Sacia
+        *[other] sacia
+    } { $relative ->
+        [1] {$type} em ritmo médio
+        *[other] {$type} a {NATURALFIXED($relative, 3)} vez(es) o ritmo médio
+    }
+
+entity-effect-guidebook-plant-mutate-exude-gasses =
+    { $chance ->
+        [1] Faz a planta sofrer mutação
+        *[other] faz a planta sofrer mutação
+    } para exalar entre {$minValue} e {$maxValue} mols de gases
+
+entity-effect-guidebook-plant-mutate-consume-gasses =
+    { $chance ->
+        [1] Faz a planta sofrer mutação
+        *[other] faz a planta sofrer mutação
+    } para consumir entre {$minValue} e {$maxValue} mols de gases

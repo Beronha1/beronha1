@@ -14,6 +14,7 @@ using Content.Shared.Damage.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Movement.Systems;
 using Content.Shared.Movement.Components;
+using Content.Shared.Movement.Events;
 using Content.Shared.Damage;
 using Robust.Shared.Timing;
 using Robust.Shared.Prototypes;
@@ -108,6 +109,7 @@ public sealed partial class ShadekinSystem : EntitySystem
         });
         SubscribeLocalEvent<ShadekinComponent, EyeColorInitEvent>(OnEyeColorChange);
         SubscribeLocalEvent<ShadekinComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+        SubscribeLocalEvent<ShadekinComponent, BeforeFootstepSoundEvent>(OnBeforeFootstepSound);
         SubscribeLocalEvent<ShadekinComponent, NullSpaceShuntEvent>(NullSpaceShunt);
         SubscribeLocalEvent<ShadekinComponent, BeforeDamageChangedEvent>((_, ref args) => args.Damage.DamageDict["Asphyxiation"] = 0);
 
@@ -302,6 +304,12 @@ public sealed partial class ShadekinSystem : EntitySystem
             var sprintDif = movement.BaseWalkSpeed / movement.BaseSprintSpeed;
             args.ModifySpeed(1f, sprintDif);
         }
+    }
+
+    private void OnBeforeFootstepSound(Entity<ShadekinComponent> ent, ref BeforeFootstepSoundEvent args)
+    {
+        if (ent.Comp.CurrentState == ShadekinState.Dark)
+            args.Cancel();
     }
 
     private void ToggleNightVision(EntityUid uid, ShadekinState shadekinState)

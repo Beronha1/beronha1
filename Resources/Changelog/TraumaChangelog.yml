@@ -13244,3 +13244,11 @@ Entries:
   id: 1438
   time: '2026-08-25T21:57:39.0000000+00:00'
   url: https://github.com/Whiskey-Station/Whiskey-Station-14/pull/36
+- author: Whiskey Station
+  changes:
+  - type: Fix
+    message: >-
+      A contagem pública do servidor agora inclui administradores quando essa
+      opção está habilitada, sem alterar a fila nem o limite de vagas.
+  id: 1439
+  time: '2026-08-25T23:54:43.0000000+00:00'

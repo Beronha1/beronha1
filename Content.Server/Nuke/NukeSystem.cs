@@ -5,6 +5,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Audio;
 using Content.Server.Chat.Systems;
 using Content.Server._Starlight.Lock;
+using Content.Server.Explosion.EntitySystems;
 using Content.Shared._ES.Cinematic;
 using Content.Server.Pinpointer;
 using Content.Server.Popups;
@@ -37,6 +38,7 @@ public sealed partial class NukeSystem : EntitySystem
     [Dependency] private AlertLevelSystem _alertLevel = default!;
     [Dependency] private ChatSystem _chatSystem = default!;
     [Dependency] private ESCinematicSystem _cinematic = default!;
+    [Dependency] private ExplosionSystem _explosions = default!;
     [Dependency] private IRobustRandom _random = default!;
     [Dependency] private ItemSlotsSystem _itemSlots = default!;
     [Dependency] private NavMapSystem _navMap = default!;
@@ -627,6 +629,12 @@ public sealed partial class NukeSystem : EntitySystem
             return;
 
         component.Exploded = true;
+
+        _explosions.QueueExplosion(uid,
+            component.ExplosionType,
+            component.TotalIntensity,
+            component.IntensitySlope,
+            component.MaxIntensity);
 
         RaiseLocalEvent(new NukeExplodedEvent()
         {

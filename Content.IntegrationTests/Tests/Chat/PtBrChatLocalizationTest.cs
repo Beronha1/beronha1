@@ -1,5 +1,6 @@
 using System.Globalization;
 using Content.IntegrationTests.Fixtures;
+using Content.Server.Chat.Systems;
 using Robust.Shared.Localization;
 using Robust.Shared.Utility;
 
@@ -8,6 +9,21 @@ namespace Content.IntegrationTests.Tests.Chat;
 public sealed class PtBrChatLocalizationTest : GameTest
 {
     private const string Message = "Mensagem com acentuação: ação, órgão, você.";
+
+    [Test]
+    public void ChatDoesNotRewritePlayerWords()
+    {
+        var chat = Pair.Server.System<ChatSystem>();
+
+        Assert.Multiple(() =>
+        {
+            Assert.That(chat.SanitizeMessageReplaceWords("eu"), Is.EqualTo("eu"));
+            Assert.That(chat.SanitizeMessageReplaceWords("você"), Is.EqualTo("você"));
+            Assert.That(chat.SanitizeMessageReplaceWords("ai"), Is.EqualTo("ai"));
+            Assert.That(chat.SanitizeMessageReplaceWords("sim"), Is.EqualTo("sim"));
+            Assert.That(chat.SanitizeMessageReplaceWords("imo ik yk"), Is.EqualTo("imo ik yk"));
+        });
+    }
 
     [Test]
     public void ChatTemplatesPreserveMessagesVariablesAndMarkup()

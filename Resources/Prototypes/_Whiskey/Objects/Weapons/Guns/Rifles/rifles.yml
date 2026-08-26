@@ -45,6 +45,10 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
+  - type: MagazineVisuals
+    magState: mag
+    steps: 5 # leikha.rsi provides mag-0 through mag-4.
+    zeroVisible: true
 
 - type: entity
   parent: WeaponRifleLecter
@@ -87,6 +91,8 @@
   - type: Gun
     soundGunshot:
       path: /Audio/Weapons/Guns/Gunshots/rifle.ogg
+      params:
+        volume: 4
 
 - type: entity
   parent: WeaponRifleLecter

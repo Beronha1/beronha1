@@ -204,7 +204,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband]
   id: GunSafePistolMk58
-  name: Fire Station sidearm safe # Whiskey
+  name: security sidearm safe # Whiskey
   components:
   - type: EntityTableContainerFill
     containers:
@@ -237,7 +237,7 @@
 - type: entity
   parent: [GunSafeBaseSecure, BaseSecurityContraband, AlertLevelLock] # WWDP
   id: GunSafeRifleLecter
-  name: Fire Station rifle safe # Whiskey
+  name: security rifle safe # Whiskey
   suffix: Alert Level Lock # WWDP
   components:
   - type: EntityTableContainerFill

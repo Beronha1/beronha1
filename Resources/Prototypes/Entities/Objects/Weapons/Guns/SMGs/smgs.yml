@@ -249,7 +249,7 @@
               - CartridgePistol
     - type: MagazineVisuals
       magState: mag
-      steps: 1
+      steps: 6 # Whiskey: p90.rsi provides mag-0 through mag-5.
       zeroVisible: true
     - type: Appearance
 
@@ -279,6 +279,8 @@
     angleDecay: 16
     soundGunshot: # Whiskey
       path: /Audio/Weapons/Guns/Gunshots/atreides.ogg
+      params:
+        volume: -8
     selectedMode: FullAuto
     availableModes:
     - FullAuto
@@ -303,7 +305,7 @@
             - CartridgePistol
   - type: MagazineVisuals
     magState: mag
-    steps: 6
+    steps: 1 # Whiskey: mp5/big.rsi provides a single loaded-magazine state.
     zeroVisible: true
   - type: Appearance
   - type: Item

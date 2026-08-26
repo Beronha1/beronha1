@@ -45,3 +45,10 @@ ent-WhiskeyMagazinePistolSubMachineGunMP5 = carregador da MP5
 
 ent-WhiskeyMagazinePistolACP14 = carregador da ACP-14
     .desc = Um carregador padrão ACP-14 com capacidade para 12 munições .35 de uso geral.
+
+ent-GunSafePistolMk58 = cofre de armas secundárias da segurança
+ent-GunSafeRifleLecter = cofre de fuzis da segurança
+ent-GunSafeSubMachineGunDrozd = cofre de P-90
+ent-GunSafeSubMachineGunWt550 = cofre de MP5
+ent-GunSafeShotgunEnforcer = cofre de SPAS-12
+ent-GunSafeShotgunKammerer = cofre de escopetas antimotim

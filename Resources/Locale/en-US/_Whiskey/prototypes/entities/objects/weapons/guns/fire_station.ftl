@@ -45,3 +45,10 @@ ent-WhiskeyMagazinePistolSubMachineGunMP5 = MP5 magazine
 
 ent-WhiskeyMagazinePistolACP14 = ACP-14 magazine
     .desc = A 12-round ACP-14-pattern magazine for general-purpose .35 ammunition.
+
+ent-GunSafePistolMk58 = security sidearm safe
+ent-GunSafeRifleLecter = security rifle safe
+ent-GunSafeSubMachineGunDrozd = P-90 safe
+ent-GunSafeSubMachineGunWt550 = MP5 safe
+ent-GunSafeShotgunEnforcer = SPAS-12 safe
+ent-GunSafeShotgunKammerer = riot shotgun safe

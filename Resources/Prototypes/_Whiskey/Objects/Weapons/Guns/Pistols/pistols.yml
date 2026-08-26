@@ -18,6 +18,8 @@
   - type: Gun
     soundGunshot:
       collection: WhiskeyM1984Gunshots
+      params:
+        volume: -3
 
 - type: entity
   parent: WeaponPistolMk58
@@ -45,6 +47,7 @@
         whitelist:
           tags:
           - MagazinePistol
+          - MagazinePistolHighCapacity
         whitelistFailPopup: gun-magazine-whitelist-fail
       gun_chamber:
         name: Chamber

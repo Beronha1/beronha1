@@ -64,8 +64,11 @@ public sealed partial class StealthSystem : SharedStealthSystem
             return;
         }
 
-        if (HasComp<InteractionOutlineComponent>(uid))
-            component.HadOutline = true;
+        if (!TryComp(uid, out InteractionOutlineComponent? outline))
+            return;
+
+        component.HadOutline = true;
+        RemCompDeferred(uid, outline);
     }
 
     private void OnStartup(EntityUid uid, StealthComponent component, ComponentStartup args)

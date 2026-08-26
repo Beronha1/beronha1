@@ -188,6 +188,8 @@
     sprite: Objects/Weapons/Guns/Rifles/XL8.rsi
   - type: Clothing
     sprite: Objects/Weapons/Guns/Rifles/XL8.rsi
+  - type: Item
+    sprite: Objects/Weapons/Guns/Rifles/XL8.rsi
   - type: CursorOffsetRequiresWield
   - type: EyeCursorOffset
     maxOffset: 2
@@ -195,6 +197,8 @@
   - type: StaticPrice
     price: 1500 #3x lecter
   - type: Gun
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/ltrifle.ogg
     shotsPerBurst: 3
     selectedMode: Burst
     availableModes:

@@ -1,0 +1,23 @@
+{
+    "version": 1,
+    "license": "Custom",
+    "copyright": "By Discord user peperino0290_92944 for SCP: Project Fire; used by Whiskey Station under explicit Project Fire CLA authorization (source commit 0b2576c668268acbccbf07d8af88b55a0a804b3d)",
+    "size": {
+        "x": 64,
+        "y": 32
+    },
+    "states": [
+	{
+		"name": "icon"
+	},
+	{
+		"name": "bolt-open"
+	},
+	{
+		"name": "base"
+	},
+	{
+		"name": "mag-0"
+    }
+    ]
+}

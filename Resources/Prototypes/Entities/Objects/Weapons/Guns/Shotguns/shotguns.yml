@@ -167,17 +167,17 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
-  name: Enforcer
+  name: SPAS-12 # Whiskey
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunEnforcer
-  description: A premium semi-automatic shotgun, and the pride of all security forces. Uses 12 Gauge shotgun shells. # Goob edit
+  description: A semi-automatic tactical shotgun with a folding stock. Uses 12 Gauge shotgun shells. # Whiskey
   components: # intend for Enforcer to have wider choke for semi-auto function
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/spas12.rsi # Whiskey
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/spas12.rsi # Whiskey
   - type: Item
-    sprite: Objects/Weapons/Guns/Shotguns/enforcer_inhands_64x.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/spas12_inhands_64x.rsi # Whiskey
     shape: # Goobstation
     - 0,0,4,1
   - type: BallisticAmmoProvider
@@ -193,17 +193,17 @@
     proto: ShellShotgunBeanbag
 
 - type: entity
-  name: Kammerer
+  name: riot shotgun # Whiskey
   parent: [BaseWeaponShotgun, BaseGunWieldable, BaseSecurityContraband]
   id: WeaponShotgunKammerer
-  description: An old yet faithful design, and a favorite among irregular forces of many worlds. Uses 12 Gauge shotgun shells. # Goob edit
+  description: A sturdy pump-action shotgun with a fixed tactical stock. Uses 12 Gauge shotgun shells. # Whiskey
   components: # intend for Kammerer to have tighter choke for slower fire rate and/or manual cycling
   - type: Item
-    sprite: Objects/Weapons/Guns/Shotguns/pump_inhands_64x.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/riot_inhands_64x.rsi # Whiskey
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/riot.rsi # Whiskey
   - type: Clothing
-    sprite: Objects/Weapons/Guns/Shotguns/pump.rsi
+    sprite: _Whiskey/Objects/Weapons/Guns/Shotguns/riot.rsi # Whiskey
   - type: GunRequiresWield #remove when inaccuracy on spreads is fixed
   - type: Gun
     # fireRate: 1 # goob

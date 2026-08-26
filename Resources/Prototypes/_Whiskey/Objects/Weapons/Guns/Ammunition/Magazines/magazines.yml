@@ -1,0 +1,77 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Cosmetic magazine variants preserve Whiskey cartridge providers, capacities
+# and whitelist tags through their existing base prototypes.
+
+- type: entity
+  parent: BaseMagazinePistolSubMachineGun
+  id: WhiskeyMagazinePistolSubMachineGunP90
+  name: P-90 magazine (.35 auto)
+  description: A 30-round P-90-pattern magazine for general-purpose .35 ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+    soundInsert:
+      path: /Audio/Weapons/Guns/MagIn/bullet_insert.ogg
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Ammunition/Magazines/p90.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag
+
+- type: entity
+  parent: MagazinePistolSubMachineGunTopMounted
+  id: WhiskeyMagazinePistolSubMachineGunMP5
+  name: MP5 magazine (.35 auto top-mounted)
+  description: A 30-round MP5-pattern magazine adapted to the Whiskey top-mounted feed system.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Ammunition/Magazines/mp5.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/smg_mag_top_mounted.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left
+      right:
+      - state: inhand-right
+  - type: MagazineVisuals
+    magState: mag
+    steps: 2
+    zeroVisible: false
+
+- type: entity
+  parent: BaseMagazinePistol
+  id: WhiskeyMagazinePistolACP14
+  name: ACP-14 magazine (.35 auto)
+  description: A 12-round ACP-14-pattern magazine for general-purpose .35 ammunition.
+  components:
+  - type: BallisticAmmoProvider
+    proto: CartridgePistol
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Ammunition/Magazines/acp14.rsi
+    layers:
+    - state: base
+      map: ["enum.GunVisualLayers.Base"]
+    - state: mag-1
+      map: ["enum.GunVisualLayers.Mag"]
+  - type: Item
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Pistol/pistol_mag.rsi
+    inhandVisuals:
+      left:
+      - state: inhand-left-mag
+      right:
+      - state: inhand-right-mag

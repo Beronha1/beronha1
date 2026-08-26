@@ -1,0 +1,57 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Fire Station sidearm variants retain the Mk58's Whiskey balance profile and
+# magazine ecosystem. Only their presentation and firing report differ.
+
+- type: entity
+  parent: WeaponPistolMk58
+  id: WhiskeyWeaponPistolM1984
+  name: D1984
+  description: A compact service sidearm built for precise, controlled response. Feeds from .35 pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/m1984.rsi
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/m1984.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/m1984.rsi
+  - type: Gun
+    soundGunshot:
+      collection: WhiskeyM1984Gunshots
+      params:
+        volume: -3
+
+- type: entity
+  parent: WeaponPistolMk58
+  id: WhiskeyWeaponPistolACP14
+  name: ACP-14
+  description: A heavy-framed service pistol adapted for station security logistics. Feeds from .35 pistol magazines.
+  components:
+  - type: Sprite
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/acp14/big.rsi
+  - type: Clothing
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/acp14/tiny.rsi
+  - type: Item
+    sprite: _Whiskey/Objects/Weapons/Guns/Pistols/acp14/tiny.rsi
+  - type: Gun
+    soundGunshot:
+      path: /Audio/_Whiskey/Weapons/Guns/Gunshots/gun_DE50.ogg
+  - type: ItemSlots
+    slots:
+      gun_magazine:
+        name: Magazine
+        startingItem: WhiskeyMagazinePistolACP14
+        insertSound: /Audio/Weapons/Guns/MagIn/pistol_magin.ogg
+        ejectSound: /Audio/Weapons/Guns/MagOut/pistol_magout.ogg
+        priority: 2
+        whitelist:
+          tags:
+          - MagazinePistol
+          - MagazinePistolHighCapacity
+        whitelistFailPopup: gun-magazine-whitelist-fail
+      gun_chamber:
+        name: Chamber
+        priority: 1
+        whitelist:
+          tags:
+          - CartridgePistol

@@ -8,12 +8,10 @@ using System.Text;
 using Content.Shared.Chat;
 using Content.Shared.Ghost.Components;
 using Content.Shared.Players;
-using Content.Shared.Speech.Prototypes;
 using Robust.Shared.Console;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 
@@ -335,18 +333,10 @@ public sealed partial class ChatSystem
         return message;
     }
 
-    public static readonly ProtoId<ReplacementAccentPrototype> ChatSanitize_Accent = "chatsanitize";
-
-    public string SanitizeMessageReplaceWords(string message)
-    {
-        if (string.IsNullOrEmpty(message)) return message;
-
-        var msg = message;
-
-        msg = _wordreplacement.ApplyReplacements(msg, ChatSanitize_Accent);
-
-        return msg;
-    }
+    // Whiskey: automatic word rewriting is intentionally disabled. These replacements are driven
+    // by localized keys, so a translated trigger can silently turn ordinary words such as "eu",
+    // "você" and "sim" into unrelated phrases for every IC message.
+    public string SanitizeMessageReplaceWords(string message) => message;
 
     /// <summary>
     ///     Returns list of players and ranges for all players withing some range. Also returns observers with a range of -1.
